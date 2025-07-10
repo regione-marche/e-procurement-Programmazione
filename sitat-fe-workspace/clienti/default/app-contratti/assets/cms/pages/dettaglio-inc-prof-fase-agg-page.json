@@ -1,0 +1,298 @@
+{
+    "name": "dettaglio-inc-prof-fase-agg-page",
+    "title": "TITLE.DETTAGLIO-INCARICHI-PROFESSIONALI-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "dettaglio-inc-prof-fase-agg-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-inc-prof-fase-agg-page",
+                "label": "BREADCRUMB.DETTAGLIO-INCARICHI-PROFESSIONALI",
+                "slug": "dettaglio-inc-prof-fase-agg-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ],
+        "breadcrumbsLS": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.RICERCA-SCHEDE-TRASMESSE-PCP",
+                "slug": "ricerca-schede-trasmesse-pcp-page"
+            },
+            {
+                "code": "lista-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.LISTA-SCHEDE-TRASMESSE-PCP",
+                "slug": "lista-schede-trasmesse-pcp-page"
+            },
+            {
+                "code": "lista-fasi-lotto-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "dettaglio-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-inc-prof-fase-agg-page",
+                "label": "BREADCRUMB.DETTAGLIO-INCARICHI-PROFESSIONALI",
+                "slug": "dettaglio-inc-prof-fase-agg-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-inc-prof-fase-agg-page-content-root-section",
+            "selector": "dettaglio-incarichi-professionali-section",
+            "description": "Pagina di dettaglio incarichi professionali",
+            "classNames": "dettaglio-inc-prof-fase-agg-section",
+            "settings": {
+                "classNames": "dettaglio-inc-prof-fase-agg-index",
+                "menuTabs": [
+                    {
+                        "code": "dettaglio-fase-aggiudicazione",
+                        "title": "DETTAGLIO-FASE-AGGIUDICAZIONE.TABS.DATI-AGGIUDICAZIONE",
+                        "slug": "dettaglio-fase-aggiudicazione-page",
+                        "oggettoProtezione": "W9.W9APPA-scheda.DETTFASE",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+                    },
+                    {
+                        "code": "lista-impr-agg-fase-agg",
+                        "title": "DETTAGLIO-FASE-AGGIUDICAZIONE.TABS.IMPRESE-AGGIUDICATARIE",
+                        "slug": "lista-impr-agg-fase-agg-page",
+                        "oggettoProtezione": "W9.W9APPA-scheda.IMPR",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+                    },
+                    {
+                        "code": "dettaglio-inc-prof-fase-agg",
+                        "title": "DETTAGLIO-FASE-AGGIUDICAZIONE.TABS.INCARICHI-PROFESSIONALI",
+                        "active": true,
+                        "slug": "dettaglio-inc-prof-fase-agg-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+                    },
+                    {
+                        "code": "dettaglio-finanziamenti-fase-agg",
+                        "title": "DETTAGLIO-FASE-AGGIUDICAZIONE.TABS.FINANZIAMENTI",
+                        "slug": "dettaglio-finanziamenti-fase-agg-page",
+                        "oggettoProtezione": "W9.W9APPA-scheda.FINA",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS",
+                        "visible": "APP_GARE_FINANZIAMENTI_TABS_VISIBLE"
+                    }
+                ],
+                "menuTabsLS": [
+                    {
+                        "code": "dettaglio-fase-aggiudicazione",
+                        "title": "DETTAGLIO-FASE-AGGIUDICAZIONE.TABS.DATI-AGGIUDICAZIONE",
+                        "slug": "dettaglio-fase-aggiudicazione-page",
+                        "oggettoProtezione": "W9.W9APPA-scheda.DETTFASE",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+                    },
+                    {
+                        "code": "lista-impr-agg-fase-agg",
+                        "title": "DETTAGLIO-FASE-AGGIUDICAZIONE.TABS.IMPRESE-AGGIUDICATARIE",
+                        "slug": "lista-impr-agg-fase-agg-page",
+                        "oggettoProtezione": "W9.W9APPA-scheda.IMPR",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+                    },
+                    {
+                        "code": "dettaglio-inc-prof-fase-agg",
+                        "title": "DETTAGLIO-FASE-AGGIUDICAZIONE.TABS.INCARICHI-PROFESSIONALI",
+                        "active": true,
+                        "slug": "dettaglio-inc-prof-fase-agg-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+                    },
+                    {
+                        "code": "dettaglio-finanziamenti-fase-agg",
+                        "title": "DETTAGLIO-FASE-AGGIUDICAZIONE.TABS.FINANZIAMENTI",
+                        "slug": "dettaglio-finanziamenti-fase-agg-page",
+                        "oggettoProtezione": "W9.W9APPA-scheda.FINA",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS",
+                        "visible": "APP_GARE_FINANZIAMENTI_TABS_VISIBLE"
+                    }
+                ],
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "go-to-update-incarichi",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_GARE_INC_PROF_FASE_AGG",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "buttonsLS": [
+                        {
+                            "code": "back-to-lista-fasi-lotto-schede-trasmesse",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "dati-generali-data",
+                            "label": "INCARICHI-PROFESSIONALI.DATI-GENERALI-DATA.DATI-GENERALI-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "FORM-GROUP",
+                                    "code": "incarichi-professionali-group",
+                                    "label": "",
+                                    "minGroupsNumber": 0,
+                                    "maxGroupsNumber": -1,
+                                    "mappingInput": "incarichi",
+                                    "mappingOutput": "incarichi",
+                                    "defaultFormGroupFields": [
+                                        {
+                                            "type": "TEXT",
+                                            "code": "nomtec",
+                                            "label": "INCARICHI-PROFESSIONALI.DATI-GENERALI-DATA.NOMTEC",
+                                            "oggettoProtezione": "W9.INCA.CODTEC",
+                                            "mnemonico": "W3CODTEC",
+                                            "mappingInput": "tecnico",
+                                            "mappingOutput": "codiceTecnico",
+                                            "link": true,
+                                            "modalComponent": "rup-rw-modal-widget",
+                                            "modalComponentConfig": "rupModalRWConfig"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "id-ruolo",
+                                            "label": "INCARICHI-PROFESSIONALI.DATI-GENERALI-DATA.ID-RUOLO",
+                                            "oggettoProtezione": "W9.INCA.ID_RUOLO",
+                                            "mnemonico": "W3ID_RUOLO",
+                                            "mappingInput": "idRuolo",
+                                            "mappingOutput": "idRuolo",
+                                            "listCode": "TipologiaSoggettoAggiudicazione"
+                                        },
+                                        {
+                                            "type": "HIDDEN",
+                                            "code": "id-ruolo-hidden",
+                                            "label": "INCARICHI-PROFESSIONALI.DATI-GENERALI-DATA.ID-RUOLO",
+                                            "oggettoProtezione": "W9.INCA.ID_RUOLO",
+                                            "mnemonico": "W3ID_RUOLO",
+                                            "mappingInput": "idRuolo",
+                                            "mappingOutput": "idRuolo"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "cig-prog-esterna",
+                                            "label": "INCARICHI-PROFESSIONALI.DATI-GENERALI-DATA.CIG-PROG-ESTERNA",
+                                            "oggettoProtezione": "W9.INCA.CIG_PROG_ESTERNA",
+                                            "mnemonico": "W3CIG_PROG",
+                                            "mappingInput": "cigProgEsterna",
+                                            "mappingOutput": "cigProgEsterna",
+                                            "visible": false,
+                                            "visibleCondition": {
+                                                "or": {
+                                                    "id-ruolo-hidden": {
+                                                        "values": [
+                                                            {
+                                                                "value": "2",
+                                                                "operation": "="
+                                                            }
+                                                        ],
+                                                        "visible": false
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "data-aff-prog-esterna",
+                                            "label": "INCARICHI-PROFESSIONALI.DATI-GENERALI-DATA.DATA-AFF-PROG-ESTERNA",
+                                            "oggettoProtezione": "W9.INCA.DATA_AFF_PROG_ESTERNA",
+                                            "mnemonico": "W3DATA_AFF",
+                                            "mappingInput": "dataAffProgEsterna",
+                                            "mappingOutput": "dataAffProgEsterna",
+                                            "visible": false,
+                                            "visibleCondition": {
+                                                "or": {
+                                                    "id-ruolo-hidden": {
+                                                        "values": [
+                                                            {
+                                                                "value": "2",
+                                                                "operation": "="
+                                                            }
+                                                        ],
+                                                        "visible": false
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "data-cons-prog-esterna",
+                                            "label": "INCARICHI-PROFESSIONALI.DATI-GENERALI-DATA.DATA-CONS-PROG-ESTERNA",
+                                            "oggettoProtezione": "W9.INCA.DATA_CONS_PROG_ESTERNA",
+                                            "mnemonico": "W3DATA_CON",
+                                            "mappingInput": "dataConsProgEsterna",
+                                            "mappingOutput": "dataConsProgEsterna",
+                                            "visible": false,
+                                            "visibleCondition": {
+                                                "or": {
+                                                    "id-ruolo-hidden": {
+                                                        "values": [
+                                                            {
+                                                                "value": "2",
+                                                                "operation": "="
+                                                            }
+                                                        ],
+                                                        "visible": false
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

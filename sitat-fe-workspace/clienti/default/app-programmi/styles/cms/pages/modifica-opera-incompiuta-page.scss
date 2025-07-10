@@ -1,0 +1,30 @@
+.section-header .title {
+    padding: 0.5rem 1rem 0.3rem 1rem !important;
+}
+
+.sdk-form-group-list {
+    margin: 0.5rem 0;
+}
+
+.sdk-input.sdk-text {
+    .sdk-modal-container {
+        overflow: hidden;
+
+        .nuts-container {
+            padding: 2rem 0 0 0;
+
+            .nuts-content {
+                padding: 0 0 5rem 0;
+
+                .p-dropdown .p-dropdown-panel {
+                    overflow-y: auto;
+                    max-height: 150px;
+
+                    .p-dropdown-items-wrapper {
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+    }
+}

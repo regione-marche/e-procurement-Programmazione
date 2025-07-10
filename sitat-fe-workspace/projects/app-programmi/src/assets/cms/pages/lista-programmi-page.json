@@ -1,0 +1,215 @@
+{
+    "name": "lista-programmi-page",
+    "title": "TITLE.LISTA-PROGRAMMI-PAGE",
+    "layout": "base-layout",
+    "appName": "app-programmi",
+    "styleUrls": [],
+    "settings": {
+        "page": "lista-programmi-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-programmi-page",
+                "label": "BREADCRUMB.LISTA-PROGRAMMI",
+                "slug": "lista-programmi-page",
+                "additionalParams": "APP_PROGRAMMI_LISTA_PROGRAMMI_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "lista-programmi-page-content-root-section",
+            "selector": "lista-programmi-section",
+            "description": "Pagina per la creazione di un nuovo avviso",
+            "classNames": "lista-programmi-section",
+            "settings": {
+                "classNames": "lista-programmi-index",
+                "sectionTitle": "TITLE.LISTA-PROGRAMMI-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_PROGRAMMI_LISTA_PROGRAMMI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "grid": {
+                        "showCurrentPageReport": true,
+                        "showCurrentRecordsReport": true,
+                        "navigable": true,
+                        "resizable": false,
+                        "debug": false,
+                        "sortable": {
+                            "allowUnsort": false,
+                            "mode": "single"
+                        },
+                        "sort": [
+                            {
+                                "field": "idProgramma",
+                                "dir": "desc"
+                            }
+                        ],
+                        "pageable": {
+                            "buttonCount": 5,
+                            "info": true,
+                            "pageSizes": [
+                                5,
+                                10,
+                                20,
+                                50
+                            ],
+                            "type": "numeric"
+                        },
+                        "toolbar": {
+                            "position": "top",
+                            "actions": []
+                        },
+                        "columns": [
+                            {             
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_ACTIONS_ICON",
+                                    "params": {
+                                        "actions": [                                                                                        
+                                            {
+                                                "label": "LISTA-PROGRAMMI.PUBBLICATO",
+                                                "disabled": false,
+                                                "hidden": "isNotPubblicato",
+                                                "icon": "fas fa-flag"
+                                            },
+                                            {
+                                                "label": "LISTA-PROGRAMMI.NON-PUBBLICATO",
+                                                "disabled": false,
+                                                "hidden": "isPubblicato",
+                                                "icon": "fas fa-exclamation-circle"
+                                            }                                        
+                                        ]
+                                    }
+                                },               
+                                "title": "",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false
+                            }, 
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_LINK",
+                                    "params": {
+                                        "action": {
+                                            "label": "LISTA-PROGRAMMI.AZIONI.DETTAGLIO",
+                                            "disabled": false,
+                                            "performer": "dettaglio"
+                                        }
+                                    }
+                                },
+                                "title": "LISTA-PROGRAMMI.ID-PROGRAMMA",
+                                "field": "idProgramma",
+                                "width": 150,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "PIANI.PIATRI.CONTRI"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-PROGRAMMI.ANNO_INIZIO",
+                                "field": "annoInizio",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "PIANI.PIATRI.ANNTRI"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-PROGRAMMI.DESCRIZIONE-BREVE",
+                                "field": "descrizioneBreve",
+                                "width": 200,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "PIANI.PIATRI.BRETRI"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-PROGRAMMI.TIPOLOGIA",
+                                "field": "descrizioneTipoProgramma",
+                                "width": 150,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "PIANI.PIATRI.TIPROG"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-PROGRAMMI.RESPONSABILE",
+                                "field": "referenteProgrammazione",
+                                "width": 150,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": "PIANI.PIATRI.RESPRO"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_ACTIONS_ICON",
+                                    "params": {
+                                        "actions": [
+                                            {
+                                                "label": "LISTA-PROGRAMMI.AZIONI.TRASFERIMENTO-PROGRAMMA",
+                                                "disabled": false,
+                                                "performer": "trasferimentoProgramma",
+                                                "hidden": "trasferimentoProgrammaHidden",
+                                                "icon": "fas fa-user-edit"
+                                            },
+                                            {
+                                                "label": "LISTA-PROGRAMMI.AZIONI.CANCELLA",
+                                                "disabled": false,
+                                                "performer": "delete",
+                                                "hidden": "deleteHidden",
+                                                "icon": "mgg-icons-crud-delete",
+                                                "oggettoProtezione": "DEL.*"
+                                            },
+                                            {
+                                                "label": "LISTA-PROGRAMMI.AZIONI.NO-CANCELLA",
+                                                "disabled": true,
+                                                "hidden": "deleteNotHidden",
+                                                "icon": "mgg-icons-no-trash"
+                                            },
+                                            {
+                                                "label": "LISTA-PROGRAMMI.AZIONI.COPIA-PER-AGGIORNAMENTO",
+                                                "disabled": false,
+                                                "performer": "copiaPerAggiornamento",
+                                                "hidden": "deleteNotHidden",
+                                                "icon": "far fa-copy"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "title": "LISTA-PROGRAMMI.AZIONI.TITLE",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

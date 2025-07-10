@@ -1,0 +1,618 @@
+{
+    "name": "dettaglio-fase-modifica-contrattuale-page",
+    "title": "TITLE.DETTAGLIO-FASE-MODIFICA-CONTRATTUALE-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/pubblica-fase-lotto-page.css"
+    ],
+    "settings": {
+        "page": "dettaglio-fase-modifica-contrattuale-page",
+        "pageFeatures": [
+            "docassociati"
+        ],
+        "entity": {
+            "schema": "W9",
+            "name": "W9FASI",
+            "keys": [
+                "codGara",
+                "codLotto",
+                "codiceFase",
+                "num"
+            ]
+        },
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-modifica-contrattuale-page",
+                "label": "BREADCRUMB.DETTAGLIO-FASE-MODIFICA-CONTRATTUALE",
+                "slug": "dettaglio-fase-modifica-contrattuale-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ],
+        "breadcrumbsLS": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.RICERCA-SCHEDE-TRASMESSE-PCP",
+                "slug": "ricerca-schede-trasmesse-pcp-page"
+            },
+            {
+                "code": "lista-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.LISTA-SCHEDE-TRASMESSE-PCP",
+                "slug": "lista-schede-trasmesse-pcp-page"
+            },
+            {
+                "code": "lista-fasi-lotto-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "dettaglio-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-modifica-contrattuale-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.DETTAGLIO-FASE-MODIFICA-CONTRATTUALE",
+                "slug": "dettaglio-fase-modifica-contrattuale-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-fase-modifica-contrattuale-page-content-root-section",
+            "selector": "dettaglio-fase-modifica-contrattuale-section",
+            "description": "Pagina di dettaglio fase di modifica-contrattuale",
+            "classNames": "dettaglio-fase-modifica-contrattuale-section",
+            "settings": {
+                "classNames": "dettaglio-fase-modifica-contrattuale-index",
+                "sectionTitle": "TITLE.DETTAGLIO-FASE-MODIFICA-CONTRATTUALE-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "check-pubblicazione",
+                            "label": "BUTTONS.CHECK-DATA",
+                            "provider": "APP_FASI_LOTTO_PUBBLICA",
+                            "oggettoProtezione": "ALT.W9.FasiDiGara-schede.ControlloDatiInseriti",
+                            "type": "functions",
+                            "icon": "mgg-icons-document-text"
+                        },
+                        {
+                            "code": "go-to-update-fase",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_GARE_FASE_MODIFICA_CONTRATTUALE_PROVIDER",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "buttonsRO": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "buttonsLS": [
+                        {
+                            "code": "back-to-lista-fasi-lotto-schede-trasmesse",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "sidebar": {
+                        "code": "sidebar",
+                        "position": "right",
+                        "width": 500,
+                        "classList": [
+                            "check-pubb-sidebar"
+                        ],
+                        "headerImage": "assets/images/app/logo.png",
+                        "component": "check-pubblicazione-widget",
+                        "componentConfig": {}
+                    },
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "modifica-contrattuale-data",
+                            "label": "FASE-VARIANTE.VARIANTE.VARIANTE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "num_vari",
+                                    "label": "FASE-VARIANTE.VARIANTE.NUM-VARI",
+                                    "oggettoProtezione": "W9.W9VARI.NUM_VARI",
+                                    "mnemonico": "W3VANUMVAR",
+                                    "mappingInput": "num",
+                                    "mappingOutput": ""
+                                },                                
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-verb-appr",
+                                    "label": "FASE-VARIANTE.VARIANTE.DATA-VERB-APPR",
+                                    "oggettoProtezione": "W9.W9VARI.DATA_VERB_APPR",
+                                    "mnemonico": "W3DVERB_AP",
+                                    "mappingInput": "dataVerbaleAppr",
+                                    "mappingOutput": "dataVerbaleAppr"
+                                }                                
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "motivazioni-section",
+                            "label": "FASE-VARIANTE.MOTIVAZIONI-VARIANTE.MOTIVAZIONI-VARIANTE",
+                            "fieldSections": [
+                                {
+                                    "type": "DYNAMIC-FORM-SECTION",
+                                    "code": "motivazioni-modifica-contrattuale-data",
+                                    "mappingInput": "motivazioniVariante",
+                                    "mappingOutput": "motivazioniVariante",
+                                    "dynamicReadonly": true,
+                                    "dynamicMultipleLabel": "FASE-VARIANTE.MOTIVAZIONI-VARIANTE.MOTIVAZIONI-VARIANTE-PROGRESSIVO"
+                                },
+                                {
+                                    "type": "DYNAMIC-FORM-SECTION",
+                                    "code": "motivazioni-modifica-contrattuale-data-pcp",
+                                    "mappingInput": "motivazioniVariante",
+                                    "mappingOutput": "motivazioniVariante",
+                                    "dynamicReadonly": true,
+                                    "dynamicMultipleLabel": "FASE-VARIANTE.MOTIVAZIONI-VARIANTE.MOTIVAZIONI-VARIANTE-PROGRESSIVO",
+                                    "limit": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "altre-motivazioni",
+                                    "label": "FASE-VARIANTE.MOTIVAZIONI-VARIANTE.ALTRE-MOTIVAZIONI",
+                                    "oggettoProtezione": "W9.W9VARI.ALTRE_MOTIVAZIONI",
+                                    "mnemonico": "W3ALTRE_MO",
+                                    "mappingInput": "altreMotivazioni",
+                                    "mappingOutput": "altreMotivazioni",
+                                    "labelClasses": [
+                                        "altre-motivazioni-label"
+                                    ],
+                                    "fieldClasses": [
+                                        "altre-motivazioni-field"
+                                    ],
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "motivazioni-modifica-contrattuale-data": {
+                                                "values": [
+                                                    {
+                                                        "value": "8",
+                                                        "operation": "="
+                                                    },
+                                                    {
+                                                        "value": "18",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "altre-motivazioni-pcp",
+                                    "label": "FASE-VARIANTE.MOTIVAZIONI-VARIANTE.ALTRE-MOTIVAZIONI",
+                                    "mappingInput": "altreMotivazioni",
+                                    "mappingOutput": "altreMotivazioni",
+                                    "oggettoProtezione": "W9.W9VARI.ALTRE_MOTIVAZIONI",
+                                    "mnemonico": "W3ALTRE_MO",
+                                    "maxLength": 1000,
+                                    "labelClasses": [
+                                        "altre-motivazioni-label"
+                                    ],
+                                    "fieldClasses": [
+                                        "altre-motivazioni-field"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "altri-dati-section",
+                            "label": "FASE-VARIANTE.ALTRO.ALTRO",
+                            "fieldSections": [
+                                {
+                                    "type": "HIDDEN",
+                                    "code": "count-w9moti",
+                                    "mappingInput": "countW9moti"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "url-varianti-co",
+                                    "label": "FASE-VARIANTE.ALTRO.URL_VARIANTI_CO",
+                                    "oggettoProtezione": "W9.W9VARI.URL_VARIANTI_CO",
+                                    "mnemonico": "",
+                                    "mappingInput": "urlVariantiCo",
+                                    "mappingOutput": "urlVariantiCo"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "motivo-rev-prezzi",
+                                    "label": "FASE-VARIANTE.ALTRO.MOTIVO_REV_PREZZI",
+                                    "oggettoProtezione": "W9.W9VARI.MOTIVO_REV_PREZZI",
+                                    "mnemonico": "",
+                                    "mappingInput": "motivoRevPrezzi",
+                                    "mappingOutput": "motivoRevPrezzi",
+                                    "listCode": "motivoRevPrezzi",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "motivazioni-modifica-contrattuale-data": {
+                                                "values": [                                                    
+                                                    {
+                                                        "value": "22",
+                                                        "operation": "="
+                                                    },
+                                                    {
+                                                        "value": "36",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "motivo-rev-prezzi-pcp",
+                                    "label": "FASE-VARIANTE.ALTRO.MOTIVO_REV_PREZZI",
+                                    "oggettoProtezione": "W9.W9VARI.MOTIVO_REV_PREZZI",
+                                    "mnemonico": "",
+                                    "mappingInput": "motivoRevPrezzi",
+                                    "mappingOutput": "motivoRevPrezzi",
+                                    "listCode": "motivoRevPrezzi",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "motivazioni-modifica-contrattuale-data-pcp": {
+                                                "values": [
+                                                    {
+                                                        "value": "36",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "cig-nuova-proc",
+                                    "label": "FASE-VARIANTE.ALTRO.CIG-NUOVA-PROC",
+                                    "mappingInput": "cigNuovaProc",
+                                    "mappingOutput": "cigNuovaProc",
+                                    "oggettoProtezione": "W9.W9VARI.CIG_NUOVA_PROC",
+                                    "mnemonico": "W3CIGNPROC",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "motivazioni-modifica-contrattuale-data": {
+                                                "values": [                                                    
+                                                    {
+                                                        "value": "18",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "cig-nuova-proc-pcp",
+                                    "label": "FASE-VARIANTE.ALTRO.CIG-NUOVA-PROC",
+                                    "mappingInput": "cigNuovaProc",
+                                    "mappingOutput": "cigNuovaProc",
+                                    "oggettoProtezione": "W9.W9VARI.CIG_NUOVA_PROC",
+                                    "mnemonico": "W3CIGNPROC",
+                                    "visibleCondition": {
+                                        "or": {
+                                            "motivazioni-modifica-contrattuale-data-pcp": {
+                                                "values": [
+                                                    {
+                                                        "value": "37",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "atti-aggiuntivi-sottomissione-data",
+                            "label": "FASE-VARIANTE.ATTI-AGGIUNTIVI-SOTTOMISSIONE.ATTI-AGGIUNTIVI-SOTTOMISSIONE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-atto-aggiuntivo",
+                                    "label": "FASE-VARIANTE.ATTI-AGGIUNTIVI-SOTTOMISSIONE.DATA-ATTO-AGGIUNTIVO",
+                                    "oggettoProtezione": "W9.W9VARI.DATA_ATTO_AGGIUNTIVO",
+                                    "mnemonico": "W3DATA_ATT",
+                                    "mappingInput": "dataAttoAggiuntivo",
+                                    "mappingOutput": "dataAttoAggiuntivo"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "numero-giorni-proroga",
+                                    "label": "FASE-VARIANTE.ATTI-AGGIUNTIVI-SOTTOMISSIONE.NUMERO-GIORNI-PROROGA",
+                                    "oggettoProtezione": "W9.W9VARI.NUM_GIORNI_PROROGA",
+                                    "mnemonico": "W3NUM_GIO3",
+                                    "mappingInput": "numGiorniProroga",
+                                    "mappingOutput": "numGiorniProroga"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "quadro-economico-data",
+                            "label": "FASE-VARIANTE.QUADRO-ECONOMICO.QUADRO-ECONOMICO",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "imp-ridet-lavori",
+                                    "label": "FASE-VARIANTE.QUADRO-ECONOMICO.IMP-RIDET-LAVORI",
+                                    "oggettoProtezione": "W9.W9VARI.IMP_RIDET_LAVORI",
+                                    "mnemonico": "W3IR_LAVOR",
+                                    "mappingInput": "importoRideterminatoLavori",
+                                    "mappingOutput": "importoRideterminatoLavori",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "imp-ridet-servizi",
+                                    "label": "FASE-VARIANTE.QUADRO-ECONOMICO.IMP-RIDET-SERVIZI",
+                                    "oggettoProtezione": "W9.W9VARI.IMP_RIDET_SERVIZI",
+                                    "mnemonico": "W3IR_SERVI",
+                                    "mappingInput": "importoRideterminatoServizi",
+                                    "mappingOutput": "importoRideterminatoServizi",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "imp-ridet-fornit",
+                                    "label": "FASE-VARIANTE.QUADRO-ECONOMICO.IMP-RIDET-FORNIT",
+                                    "oggettoProtezione": "W9.W9VARI.IMP_RIDET_FORNIT",
+                                    "mnemonico": "W3IR_FORNI",
+                                    "mappingInput": "importoRideterminatoForniture",
+                                    "mappingOutput": "importoRideterminatoForniture",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "imp-subtotale",
+                                    "label": "FASE-VARIANTE.QUADRO-ECONOMICO.IMP-SUBTOTALE",
+                                    "oggettoProtezione": "W9.W9VARI.IMP_SUBTOTALE",
+                                    "mnemonico": "W3IMPSUBTO",
+                                    "mappingInput": "importoSubtotale",
+                                    "mappingOutput": "importoSubtotale",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "imp-sicurezza",
+                                    "label": "FASE-VARIANTE.QUADRO-ECONOMICO.IMP-SICUREZZA",
+                                    "oggettoProtezione": "W9.W9VARI.IMP_SICUREZZA",
+                                    "mnemonico": "W3IMP_SICU",
+                                    "mappingInput": "importoSicurezza",
+                                    "mappingOutput": "importoSicurezza",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "imp-progettazione",
+                                    "label": "FASE-VARIANTE.QUADRO-ECONOMICO.IMP-PROGETTAZIONE",
+                                    "oggettoProtezione": "W9.W9VARI.IMP_PROGETTAZIONE",
+                                    "mnemonico": "W3IMP_PRO1",
+                                    "mappingInput": "importoProgettazione",
+                                    "mappingOutput": "importoProgettazione",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "imp-non-assog",
+                                    "label": "FASE-VARIANTE.QUADRO-ECONOMICO.IMP-NON-ASSOG",
+                                    "oggettoProtezione": "W9.W9VARI.IMP_NON_ASSOG",
+                                    "mnemonico": "W3I_NON_AS1",
+                                    "mappingInput": "importoNonAssog",
+                                    "mappingOutput": "importoNonAssog",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "imp-compl-appalto",
+                                    "label": "FASE-VARIANTE.QUADRO-ECONOMICO.IMP-COMPL-APPALTO",
+                                    "oggettoProtezione": "W9.W9VARI.IMP_COMPL_APPALTO",
+                                    "mnemonico": "W3IMPCOMAP",
+                                    "mappingInput": "importoComplAppalto",
+                                    "mappingOutput": "importoComplAppalto",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "imp-modifica",
+                                    "label": "FASE-VARIANTE.QUADRO-ECONOMICO.IMP-MODIFICA",
+                                    "mappingInput": "impModifica",
+                                    "mappingOutput": "impModifica",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "imp-disposizione",
+                                    "label": "FASE-VARIANTE.QUADRO-ECONOMICO.IMP-DISPOSIZIONE",
+                                    "oggettoProtezione": "W9.W9VARI.IMP_DISPOSIZIONE",
+                                    "mnemonico": "W3IMP_DIS1",
+                                    "mappingInput": "importoDisposizione",
+                                    "mappingOutput": "importoDisposizione",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "imp-compl-intervento",
+                                    "label": "FASE-VARIANTE.QUADRO-ECONOMICO.IMP-COMPL-INTERVENTO",
+                                    "oggettoProtezione": "W9.W9VARI.IMP_COMPL_INTERVENTO",
+                                    "mnemonico": "W3VAIMPCOM",
+                                    "mappingInput": "importoComplIntervento",
+                                    "mappingOutput": "importoComplIntervento",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "imp-finpa",
+                                    "label": "FASE-VARIANTE.QUADRO-ECONOMICO.IMP-FINPA",
+                                    "oggettoProtezione": "W9.W9VARI.IMP_FINPA",
+                                    "mnemonico": "W9VARI_FINPA",
+                                    "mappingInput": "impFinpa",
+                                    "mappingOutput": "impFinpa",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "entr-utenza",
+                                    "label": "FASE-VARIANTE.QUADRO-ECONOMICO.ENTR-UTENZA",
+                                    "oggettoProtezione": "W9.W9VARI.ENTR_UTENZA",
+                                    "mnemonico": "W9VARI_ENTRUTENZA",
+                                    "mappingInput": "entrUtenza",
+                                    "mappingOutput": "entrUtenza",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "intr-attivo",
+                                    "label": "FASE-VARIANTE.QUADRO-ECONOMICO.INTR-ATTIVO",
+                                    "oggettoProtezione": "W9.W9VARI.INTR_ATTIVO",
+                                    "mnemonico": "W9VARI_INTRATTIVO",
+                                    "mappingInput": "intrAttivo",
+                                    "mappingOutput": "intrAttivo",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "imp-opzioni",
+                                    "label": "FASE-VARIANTE.QUADRO-ECONOMICO.IMP-OPZIONI",
+                                    "oggettoProtezione": "W9.W9VARI.IMP_OPZIONI",
+                                    "mnemonico": "W9VARI_IMPOPZIONI",
+                                    "mappingInput": "impOpzioni",
+                                    "mappingOutput": "impOpzioni",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "DOCUMENTS-LIST",
+                                    "code": "eform",
+                                    "label": "FASE-VARIANTE.QUADRO-ECONOMICO.EFORM",
+                                    "oggettoProtezione": "W9.W9VARI.EFORM",
+                                    "mnemonico": "W9VARIEFORM",
+                                    "mappingOutput": "eform",
+                                    "mappingInput": "eform",
+                                    "accept": ".xml",
+                                    "clickable": true,                                    
+                                    "actionsDisabled": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "liguria-data",
+                            "label": "FASE-VARIANTE.LIGURIA.LIGURIA",
+                            "visible": false,
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "flag-modifica-contrattuale",
+                                    "label": "FASE-VARIANTE.LIGURIA.FLAG-VARIANTE",
+                                    "oggettoProtezione": "W9.W9VARI.FLAG_VARIANTE",
+                                    "mnemonico": "W9VARIFLVAR",
+                                    "mappingInput": "flagVariante",
+                                    "mappingOutput": "flagVariante",
+                                    "listCode": "FlagVariante"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "quinto-obbligo",
+                                    "label": "FASE-VARIANTE.LIGURIA.QUINTO-OBBLIGO",
+                                    "oggettoProtezione": "W9.W9VARI.QUINTO_OBBLIGO",
+                                    "mnemonico": "W9VARIQUINTO",
+                                    "mappingInput": "quintoObbligo",
+                                    "mappingOutput": "quintoObbligo",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "flag-importi",
+                                    "label": "FASE-VARIANTE.LIGURIA.FLAG-IMPORTI",
+                                    "oggettoProtezione": "W9.W9VARI.FLAG_IMPORTI",
+                                    "mnemonico": "W9VARIFLIMPOR",
+                                    "mappingInput": "flagImporti",
+                                    "mappingOutput": "flagImporti",
+                                    "listCode": "FlagImporti"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "flag-sicurezza",
+                                    "label": "FASE-VARIANTE.LIGURIA.FLAG-SICUREZZA",
+                                    "oggettoProtezione": "W9.W9VARI.FLAG_SICUREZZA",
+                                    "mnemonico": "W9VARIFLSIC",
+                                    "mappingInput": "flagSicurezza",
+                                    "mappingOutput": "flagSicurezza",
+                                    "listCode": "FlagImporti"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,227 @@
+{
+	"name": "lista-modelli-page",
+	"title": "TITLE.LISTA-MODELLI-PAGE",
+	"layout": "base-layout",
+	"appName": "<APP-NAME>",
+	"styleUrls": [],
+	"settings": {
+		"page": "lista-modelli-page",
+		"breadcrumbs": [
+			{
+				"code": "home-page",
+				"label": "BREADCRUMB.HOME",
+				"slug": "home-page"
+			},
+			{
+				"code": "ricerca-modelli-page",
+				"label": "BREADCRUMB.RICERCA-MODELLI",
+				"slug": "ricerca-modelli-page"
+			},
+			{
+				"code": "lista-modelli-page",
+				"label": "BREADCRUMB.LISTA-MODELLI",
+				"slug": "lista-modelli-page"
+			}
+		]
+	},
+	"sections": [
+		{
+			"id": "lista-modelli-page-content-root-section",
+			"selector": "sdk-lista-modelli-section",
+			"description": "Pagina lista modelli",
+			"classNames": "lista-modelli-section",
+			"settings": {
+				"classNames": "lista-modelli-index",
+				"sectionTitle": "TITLE.LISTA-MODELLI-PAGE",
+				"body": {
+					"buttons": [
+						{
+							"code": "back",
+							"label": "BUTTONS.BACK",
+							"icon": "mgg-icons-paginator-previous",
+							"provider": "SDK_GESTIONE_MODELLI_LISTA",
+							"type": "cancel"
+						},
+						{
+							"code": "clean-button",
+							"label": "BUTTONS.CLEAN",
+							"provider": "SDK_GESTIONE_MODELLI_LISTA",
+							"icon": "mgg-icons-data-unfiltered"
+						},
+						{
+							"code": "nuovo",
+							"label": "BUTTONS.NUOVO",
+							"icon": "mgg-icons-crud-create",
+							"provider": "SDK_GESTIONE_MODELLI_LISTA",
+							"oggettoProtezione": "INS.*"
+						}
+					],
+					"buttonsReadonly": [
+						{
+							"code": "back",
+							"label": "BUTTONS.BACK",
+							"icon": "mgg-icons-paginator-previous",
+							"provider": "SDK_GESTIONE_MODELLI_LISTA",
+							"type": "cancel"
+						},
+						{
+							"code": "clean-button",
+							"label": "BUTTONS.CLEAN",
+							"provider": "SDK_GESTIONE_MODELLI_LISTA",
+							"icon": "mgg-icons-data-unfiltered"
+						}
+					],
+					"grid": {
+						"showCurrentPageReport": true,
+						"showCurrentRecordsReport": true,
+						"navigable": true,
+						"resizable": false,
+						"debug": false,
+						"sortable": {
+							"allowUnsort": false,
+							"mode": "single"
+						},
+						"sort": [
+							{
+								"field": "nome",
+								"dir": "asc"
+							}
+						],
+						"pageable": {
+							"buttonCount": 5,
+							"info": true,
+							"pageSizes": [5, 10, 20, 50],
+							"type": "numeric"
+						},
+						"toolbar": {
+							"position": "top",
+							"actions": []
+						},
+
+						"columns": [
+							{
+								"viewer": {
+									"type": "SDK_GRID_VIEW_CELL_STRING"
+								},
+								"title": "SDK-LISTA-MODELLI.TIPO-DOCUMENTO",
+								"field": "tipoDocumentoDesc",
+								"width": 100,
+								"hidden": false,
+								"sortable": true,
+								"resizable": false,
+								"oggettoProtezione": ""
+							},
+							{
+								"viewer": {
+									"type": "SDK_GRID_VIEW_CELL_LINK",
+									"params": {
+										"action": {
+											"label": "SDK-LISTA-MODELLI.AZIONI.DETTAGLIO",
+											"disabled": false,
+											"performer": "dettaglio"
+										}
+									}
+								},
+								"title": "SDK-LISTA-MODELLI.NOME",
+								"field": "nome",
+								"width": 125,
+								"hidden": false,
+								"sortable": true,
+								"resizable": false,
+								"oggettoProtezione": ""
+							},
+						
+							{
+								"viewer": {
+									"type": "SDK_GRID_VIEW_CELL_STRING"
+								},
+								"title": "SDK-LISTA-MODELLI.DESCRIZIONE",
+								"field": "descr",
+								"width": 100,
+								"hidden": false,
+								"sortable": true,
+								"resizable": false,
+								"oggettoProtezione": ""
+							},
+								{
+								"viewer": {
+									"type": "SDK_GRID_VIEW_CELL_STRING"
+								},
+								"title": "SDK-LISTA-MODELLI.FILE",
+								"field": "nomefile",
+								"width": 125,
+								"hidden": false,
+								"sortable": true,
+								"resizable": false,
+								"oggettoProtezione": ""
+							},
+							{
+								"viewer": {
+									"type": "SDK_GRID_VIEW_CELL_STRING"
+								},
+								"title": "SDK-LISTA-MODELLI.MODELLO-PERSONALE",
+								"field": "personaleDesc",
+								"width": 125,
+								"hidden": false,
+								"sortable": true,
+								"resizable": false,
+								"oggettoProtezione": ""
+							},
+							{
+								"viewer": {
+									"type": "SDK_GRID_VIEW_CELL_STRING"
+								},
+								"title": "SDK-LISTA-MODELLI.PRESENTE-PREDISPOSTI",
+								"field": "dispDesc",
+								"width": 125,
+								"hidden": false,
+								"sortable": true,
+								"resizable": false,
+								"oggettoProtezione": ""
+							},
+							{
+								"viewer": {
+									"type": "SDK_GRID_VIEW_CELL_STRING"
+								},
+								"title": "SDK-LISTA-MODELLI.UTENTE-CREATORE",
+								"field": "owner",
+								"width": 125,
+								"hidden": false,
+								"sortable": true,
+								"resizable": false,
+								"oggettoProtezione": ""
+							},
+							{
+								"viewer": {
+									"type": "SDK_GRID_VIEW_CELL_ACTIONS_ICON",
+									"params": {
+										"actions": [
+											{
+												"disabled": false,
+												"performer": "delete",
+												"icon": "mgg-icons-crud-delete",
+												"label": "SDK-LISTA-MODELLI.AZIONI.CANCELLA"
+											},
+											{
+												"label": "LIST.DOWNLOAD",
+												"disabled": false,
+												"performer": "download",
+												"hidden": "downloadHidden",
+												"icon": "mgg-icons-action-download"
+											}
+										]
+									}
+								},
+								"title": "SDK-LISTA-MODELLI.AZIONI.TITLE",
+								"width": 125,
+								"hidden": false,
+								"sortable": false,
+								"resizable": false
+							}
+						]
+					}
+				}
+			}
+		}
+	]
+}

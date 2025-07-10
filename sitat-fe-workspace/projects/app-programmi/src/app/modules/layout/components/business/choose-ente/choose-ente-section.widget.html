@@ -1,0 +1,24 @@
+<div [class]="config.classNames" *ngIf="isReady" #content>
+
+  <h1 class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</h1>
+  <div class="black-line"></div>
+
+  <div class="messages-box" #messages></div>
+
+  <div class="search-form" *ngIf="totalSACount > 100">
+    <label htmlFor="searchSa">{{ 'RICERCA-SA' | translate }}</label>
+    <span class="p-input-icon-right">
+      <i class="pi pi-search"></i>
+      <input type="text" id="searchSa" pInputText (input)="debounceSearch$.next($event)" />
+    </span>
+  </div>
+
+  <div class="selectable">
+    <div class="selectable-link-item" *ngFor="let sa of stazioniAppaltanti; trackBy: trackByCode" sdkClick
+      (aClick)="selezionaEnte(sa.codice)" tabindex="0" role="navigation" [attr.aria-label]="sa.nome">
+      <div class="div-link">{{sa.nome}}</div>
+      <i class="mgg-icons-paginator-next"></i>
+    </div>
+  </div>
+
+</div>

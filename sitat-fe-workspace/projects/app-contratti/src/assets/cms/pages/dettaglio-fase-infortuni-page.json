@@ -1,0 +1,165 @@
+{
+    "name": "dettaglio-fase-infortuni-page",
+    "title": "TITLE.DETTAGLIO-FASE-INFORTUNI-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/pubblica-fase-lotto-page.css"
+    ],
+    "settings": {
+        "page": "dettaglio-fase-infortuni-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-infortuni-page",
+                "label": "BREADCRUMB.DETTAGLIO-FASE-INFORTUNI",
+                "slug": "dettaglio-fase-infortuni-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-fase-infortuni-page-content-root-section",
+            "selector": "dettaglio-fase-infortuni-section",
+            "description": "Pagina di dettaglio fase di infortuni",
+            "classNames": "dettaglio-fase-infortuni-section",
+            "settings": {
+                "classNames": "dettaglio-fase-infortuni-index",
+                "sectionTitle": "TITLE.DETTAGLIO-FASE-INFORTUNI-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "check-pubblicazione",
+                            "label": "BUTTONS.CHECK-DATA",
+                            "provider": "APP_FASI_LOTTO_PUBBLICA",
+                            "oggettoProtezione": "ALT.W9.FasiDiGara-schede.ControlloDatiInseriti",
+                            "type": "functions",
+                            "icon": "mgg-icons-document-text"
+                        },
+                        {
+                            "code": "go-to-update-fase",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_GARE_FASE_INFORTUNI_PROVIDER",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "sidebar": {
+                        "code": "sidebar",
+                        "position": "right",
+                        "width": 500,
+                        "classList": [
+                            "check-pubb-sidebar"
+                        ],
+                        "headerImage": "assets/images/app/logo.png",
+                        "component": "check-pubblicazione-widget",
+                        "componentConfig": {}
+                    },
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "infortuni-data",
+                            "label": "FASE-INFORTUNI.INFORTUNI.INFORTUNI",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "num-infor",
+                                    "label": "FASE-INFORTUNI.INFORTUNI.NUM-INFOR",
+                                    "oggettoProtezione": "W9.W9INFOR.NUM_INFOR",
+                                    "mnemonico": "W3IFNUMINF",
+                                    "mappingInput": "num",
+                                    "mappingOutput": ""
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "ninfort",
+                                    "label": "FASE-INFORTUNI.INFORTUNI.NINFORT",
+                                    "oggettoProtezione": "W9.W9INFOR.NINFORT",
+                                    "mnemonico": "W3NINFORT",
+                                    "mappingInput": "totaleInfortuni",
+                                    "mappingOutput": "totaleInfortuni"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "ngiornate",
+                                    "label": "FASE-INFORTUNI.INFORTUNI.NGIORNATE",
+                                    "oggettoProtezione": "W9.W9INFOR.NGIORNATE",
+                                    "mnemonico": "W3NGIORNAT",
+                                    "mappingInput": "giornateRiconosciute",
+                                    "mappingOutput": "giornateRiconosciute"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "imorte",
+                                    "label": "FASE-INFORTUNI.INFORTUNI.IMORTE",
+                                    "oggettoProtezione": "W9.W9INFOR.IMORTE",
+                                    "mnemonico": "W3IMORTE",
+                                    "mappingInput": "infortuniMortali",
+                                    "mappingOutput": "infortuniMortali"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "iperma",
+                                    "label": "FASE-INFORTUNI.INFORTUNI.IPERMA",
+                                    "oggettoProtezione": "W9.W9INFOR.IPERMA",
+                                    "mnemonico": "W3IPERMA",
+                                    "mappingInput": "infortuniPermanenti",
+                                    "mappingOutput": "infortuniPermanenti"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "nomest",
+                                    "label": "FASE-INFORTUNI.INFORTUNI.NOMEST",
+                                    "oggettoProtezione": "W9.W9INFOR.CODIMP",
+                                    "mnemonico": "W3INCODIMP",
+                                    "mappingInput": "impresa.ragioneSociale",
+                                    "mappingOutput": "codImpresa",
+                                    "link": true,
+                                    "modalComponent": "impresa-modal-widget",
+                                    "modalComponentConfig": "impresaModalConfig"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

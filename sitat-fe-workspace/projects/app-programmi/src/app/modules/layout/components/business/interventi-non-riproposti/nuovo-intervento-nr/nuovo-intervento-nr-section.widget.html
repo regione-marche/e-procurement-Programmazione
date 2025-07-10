@@ -1,0 +1,17 @@
+<div [class]="config.classNames" *ngIf="isReady">
+    <div *ngIf="tipologia == '1'" class="edit-page-title">{{ config.sectionTitleInterventi | translate }}</div>
+    <div *ngIf="tipologia == '2'" class="edit-page-title">{{ config.sectionTitleAcquisti | translate }}</div>
+
+    <div class="messages-box" #infoBox></div>
+
+    <div class="messages-box" #messages></div>
+
+    <div class="ninr-content">
+        <sdk-form-builder [config]="formBuilderConfigObs" (output)="manageFormOutput($event)">
+        </sdk-form-builder>
+    </div>
+    <div class="buttons-row">
+        <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+    </div>
+    <sdk-dialog [config]="dialogConfigObs"></sdk-dialog>
+</div>

@@ -1,0 +1,118 @@
+{
+    "HELLO": "ciao",
+    "noRecords": "Nessun elemento",
+    "pagerOf": "di",
+    "pagerPage": "pagina",
+    "pagerItems": "elementi",
+    "pagerItemsPerPage": "elementi per pagina",
+    "currentRecordsReport": "Visualizzate da {{first}} a {{last}} di {{totalRecords}} righe",
+    "currentPageReport": "Pagina {currentPage} di {totalPages}",
+    "advancedSearchNoResult": "Nessun elemento trovato oppure la ricerca non \u00E8 stata effettuata.",
+    "primeng": {
+        "startsWith": "Inizia con",
+        "contains": "Contiene",
+        "notContains": "Non contiene",
+        "endsWith": "Finisce con",
+        "equals": "Uguale",
+        "notEquals": "Non uguale",
+        "noFilter": "Nessun filtro",
+        "lt": "Minore di",
+        "lte": "Minore o uguale di",
+        "gt": "Maggiore di",
+        "gte": "Maggiore o uguale di",
+        "is": "\u00C8",
+        "isNot": "Non \u00E8",
+        "before": "Prima",
+        "after": "Dopo",
+        "clear": "Reimposta",
+        "apply": "Applica",
+        "matchAll": "Match All",
+        "matchAny": "Match Any",
+        "addRule": "Aggiungi regola",
+        "removeRule": "Rimuovi regola",
+        "accept": "Si",
+        "reject": "No",
+        "choose": "Scegli",
+        "upload": "Upload",
+        "cancel": "Annulla",
+        "dayNames": [
+            "Domenica",
+            "Luned\u00EC",
+            "Marted\u00EC",
+            "Mercoled\u00EC",
+            "Gioved\u00EC",
+            "Venerd\u00EC",
+            "Sabato"
+        ],
+        "dayNamesShort": [
+            "Dom",
+            "Lun",
+            "Mar",
+            "Mer",
+            "Gio",
+            "Ven",
+            "Sab"
+        ],
+        "dayNamesMin": [
+            "Do",
+            "Lu",
+            "Ma",
+            "Me",
+            "Gi",
+            "Ve",
+            "Sa"
+        ],
+        "monthNames": [
+            "Gennaio",
+            "Febbraio",
+            "Marzo",
+            "Aprile",
+            "Maggio",
+            "Giugno",
+            "Luglio",
+            "Agosto",
+            "Settembre",
+            "Ottobre",
+            "Novembre",
+            "Dicembre"
+        ],
+        "monthNamesShort": [
+            "Gen",
+            "Feb",
+            "Mar",
+            "Apr",
+            "Mag",
+            "Giu",
+            "Lug",
+            "Ago",
+            "Set",
+            "Ott",
+            "Nov",
+            "Dic"
+        ],
+        "today": "Oggi",
+        "weekHeader": "St",
+        "openCalendar": "Apri Calendario"
+    },
+    "quadro-economico": {
+        "header": {
+            "col1": "Commessa {{value}} - Controllo quadro economico",
+            "col2": "Importi ultima approvazione",
+            "col3": "Importi da affidare",
+            "col4": "Importi affidati",
+            "col5": "Importi contabilizzati",
+            "col6": "Importi liquidati"
+        }
+    },
+    "form": {
+        "actions": "Azioni",
+        "search": "Ricerca"
+    },
+    "BUTTONS": {
+        "YES": "Si",
+        "NO": "No",
+        "UNLOCK-FIELD": "Sblocca campo",
+        "ESEGUI-AZIONE": "Esegui azione"
+    },
+    "LOCK-FIELD-MESSAGE": "ATTENZIONE: il valore pu\u00F2 essere modificato solo per la correzione di errori materiali, e sar\u00E0 replicato in tutti i casi in cui l'anagrafica \u00E8 utilizzata. Non deve essere modificato il nominativo sostituendolo con un altro. Continuare?"
+}

@@ -1,0 +1,155 @@
+{
+	"TITLE": {
+		"RICERCA-MODELLI-PAGE": "Ricerca modelli",
+		"LISTA-MODELLI-PAGE": "Lista modelli",
+		"NUOVO-MODELLO-PAGE": "Nuovo modello",
+		"DETTAGLIO-MODELLO-PAGE": "Dettaglio modello",
+		"MODIFICA-MODELLO-PAGE": "Modifica modello",
+		"LISTA-PARAMETRI-PAGE": "Lista parametri del modello",
+		"DETTAGLIO-PARAMETRO-PAGE": "Dettaglio parametro",
+		"LISTA-MODELLI-PREDISPOSTI-PAGE": "Lista modelli predisposti",
+		"NUOVO-PARAMETRO-PAGE": "Nuovo parametro",
+		"MODIFICA-PARAMETRO-PAGE": "Modifica parametro"
+	},
+	"BREADCRUMB": {
+		"RICERCA-MODELLI": "Ricerca modelli",
+		"LISTA-MODELLI": "Lista modelli",
+		"NUOVO-MODELLO": "Nuovo modello",
+		"DETTAGLIO-MODELLO": "Dettaglio modello",
+		"MODIFICA-MODELLO": "Modifica modello",
+		"MODELLI-PREDISPOSTI": "Lista modelli",
+		"DETTAGLIO-PARAMETRO": "Dettaglio parametro",
+		"NUOVO-PARAMETRO": "Inserimento parametro",
+		"MODIFICA-PARAMETRO": "Modifica parametro"
+	},
+	"BUTTONS": {
+		"MODELLI-PREDISPOSTI": "Modelli predisposti",
+		"MODELLI-LIST": "Componi documento",
+		"COMPONI": "Componi",
+		"DOWNLOAD": "Scarica"
+	},
+	"MENU": {
+		"GESTIONE-MODELLI": "Gestione modelli",
+		"STRUMENTI": "Strumenti"
+	},
+	"SDK-RICERCA-MODELLI": {
+		"RICERCA-MODELLI-DATA": "Ricerca modelli",
+		"TIPO-DOCUMENTO": "Tipo documento",
+		"NOME": "Nome",
+		"DESCRIZIONE": "Descrizione",
+		"FILE": "File",
+		"MODELLO-PERSONALE": "Modello personale?",
+		"MODELLI-PREDISPOSTI": "Presente in lista componi documento?",
+		"UTENTE-CREATORE": "Utente creatore"
+	},
+	"SDK-LISTA-MODELLI": {
+		"TIPO-DOCUMENTO": "Tipo documento",
+		"NOME": "Nome",
+		"FILE": "File",
+		"DESCRIZIONE": "Descrizione",
+		"MODELLO-PERSONALE": "Modello personale?",
+		"PRESENTE-PREDISPOSTI": "Presente in lista componi documento?",
+		"UTENTE-CREATORE": "Utente creatore",
+		"AZIONI": {
+			"DETTAGLIO": "Dettaglio",
+			"CANCELLA": "Elimina",
+			"TITLE": "Azioni"
+		}
+	},
+	"SDK-LISTA-PARAMETRI": {
+		"TITLE": "Lista parametri modello del modello",
+		"CODICE": "Codice",
+		"DESCRIZIONE": "Descrizione",
+		"AZIONI": {
+			"DETTAGLIO": "Dettaglio",
+			"CANCELLA": "Elimina",
+			"TITLE": "Azioni",
+			"SPOSTA-SU": "Sposta su",
+			"SPOSTA-GIU": "Sposta gi\u00F9"
+		}
+	},
+	"SDK-MODELLO": {
+		"GENERAL-DATA": {
+			"TITLE": "Dati generali",
+			"TIPO-DOCUMENTO": "Tipo documento",
+			"NOME": "Nome",
+			"DESCRIZIONE": "Descrizione",
+			"NOME-FILE": "Nome file",
+			"COMPONI-PDF": "Componi in formato PDF?",
+			"MODELLO-PERSONALE": "Modello personale?",
+			"MODELLI-PREDISPOSTI": "Presente in lista componi documento?",
+			"SCHEMA-PRINCIPALE": "Schema principale",
+			"ARGOMENTO-PRINCIPALE": "Argomento principale",
+			"CHOOSE-FILE": "File",
+			"SOSTITUISCI-FILE": "File (in sostituzione)",
+			"FILTROENT": "Filtro entit\u00E0 principale",
+			"EXISTING-DOCUMENTS": "FILE MODELLO"
+		},
+		"TABS": {
+			"DETTAGLIO-MODELLO": "Dettaglio",
+			"PARAMETRI-MODELLO": "Parametri"
+		},
+		"VALIDATORS": {
+			"TIPO-DOCUMENTO-OBBLIGATORIO": "Il campo Tipo documento è obbligatorio",
+			"NOME-OBBLIGATORIO": "Il campo Nome è obbligatorio",
+			"SCHEMA-OBBLIGATORIO": "Il campo Schema principale è obbligatorio",
+			"ARGOMENTO-OBBLIGATORIO": "Il campo Argomento principale è obbligatorio",
+			"DOCUMENTS-MODELLO-MANDATORY": "Il file è obbligatorio",
+			"PDF-MANDATORY": "Il campo 'Componi in formato PDF?' è obbligatorio",
+			"PERSONALE-MANDATORY": "Il campo 'Modello personale?' è obbligatorio",
+			"PREDISPOSTO-MANDATORY": "Il campo 'Presente in lista componi documento?' è obbligatorio"
+		},
+		"HELP": {
+			"MENU": "(Voci menu separate da '|')"
+		}
+	},
+	"SDK-PARAMETRO": {
+		"GENERAL-DATA": {
+			"TITLE": "Dati parametro",
+			"CODICE": "Codice",
+			"OBBLIGATORIO": "Obbligatorio?",
+			"DESCR-PRINC": "Descrizione per inserimento",
+			"DESCR": "Descrizione",
+			"TIPO": "Tipo",
+			"MENU": "Menu",
+			"TABELLATO": "Tabellato"
+		},
+		"VALIDATORS": {
+			"CODICE-OBBLIGATORIO": "Il campo Codice è obbligatorio",
+			"OBBL-OBBLIGATORIO": "Il campo 'Obbligatorio?' è obbligatorio",
+			"NOME-OBBLIGATORIO": "Il campo Descrizione per inserimento è obbligatorio",
+			"DESCR-OBBLIGATORIO": "Il campo Descrizione è obbligatorio",
+			"TIPO-OBBLIGATORIO": "Il campo Tipo è obbligatorio",
+			"VOCI_MENU_MANDATORY": "Il campo Menù è obbligatorio",
+			"TABELLATO_MANDATORY": "Il campo Tabellato è obbligatorio"
+		}
+	},
+	"MODELLI-PREDISPOSTI": {
+		"MOSTRA-TUTTI": "Mostra tutti",
+		"FILTRO-ENTITA": "Lista modelli ",
+		"TUTTE-LE-ENTITA": "Tutte",
+		"COMPONI": "Componi",
+		"MODELLI-PREDISPOSTI": "Modelli predisposti",
+		"COMPONI-DOCUMENTO-MODAL": "COMPOSIZIONE DEL DOCUMENTO - PARAMETRI",
+		"COMPONI-DOCUMENTO-MODAL-NO-PARAMETRI": "COMPOSIZIONE DEL DOCUMENTO",
+		"FILE-GENERATO": "Il file è stato generato correttamente",
+		"FILE-SCARICATO": "Il file è stato scaricato correttamente",
+		"INFO-NO-PARAMETRI-COMPONI": "Premendo il tasto 'Componi', verrà eseguita la composizione del documento. Procedere?",
+		"INFO-NO-PARAMETRI-SCARICA": "Premendo il tasto 'Scarica', verrà eseguito il download del documento. Procedere?"
+	},
+	"ERRORS": {
+		"VALORIZZA-PARAMETRO": "Valorizzare il parametro {{value}}",
+		"NOMEFILE-ALREADY-USED": "Esiste gi\u00E0 un file con lo stesso nome associato ad un modello.",
+		"NOME-ALREADY-USED": "Esiste gi\u00E0 un modello con lo stesso nome.",
+		"PARAMETRO-ALREADY-EXISTS": "Esiste gi\u00E0 un parametro con lo stesso codice associato al modello.",
+		"ERRORE_COMPOSIZIONE": "Si è verificato un errore durante la composizione",
+		"TIPO-PARAMETRO-ALREADY-EXISTS": "Non è possibile definire più di un parametro di tipo '{{tipo}}'",
+		"DOCUMENTO-NON-TROVATO": "Al modello corrente non risulta associato il file sorgente",
+		"UNEXPECTED-ERROR": "Si è verificato un errore imprevisto"
+	},
+	"SDK-GESTIONE-MODELLI": {
+		"BUTTONS": {
+			"MODELLI-LIST": "Componi documento"
+		}
+	}
+}

@@ -1,0 +1,106 @@
+# Configurazione Tomcat
+server:
+  port: ${sso_integr_ms_server_port:8880}
+  servlet:
+    context-path: ${sso_integr_ms_context_path:/sso-integr-ms}
+
+# Configurazione Spring
+spring:
+  main:
+    banner-mode: off
+  datasource:
+    username: ${DB_USER}
+    password: ${DB_PWD}
+    url: ${DB_URI}
+  hikari:
+    connectionTimeout: 20000
+    maximumPoolSize: 5
+  jpa:
+    database-platform: ${application.${VENDOR:POS}_DIALECT}
+#    properties:
+#      hibernate:
+#        format_sql: true
+#    show-sql: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  jackson:
+    time-zone: Europe/Rome
+  security:
+    user:
+      password: f2896400-e935-42d7-8852-d73870226854
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${sso_integr_ms_application_issuer:https://trial.auth.regione.toscana.it/auth-trial/realms/rt}
+
+# Probes
+management:
+  health:
+    defaults:
+      enabled: false
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: always
+
+# Configurazione applicazione
+application:
+  name: sso-integr-ms
+  baseUrl: ${sso_integr_ms_application_baseUrl:https://www.serviziocontrattipubblici.it}
+  errorContext: ${sso_integr_ms_application_errorContext:/sso-integr-fe}
+  currentLoginMode: ${sso_integr_ms_currentLoginMode:0}
+  codiceProdotto: ${sso_integr_ms_wConfigAppCode:W9}
+  jwt:
+    claim:
+      userCf:
+        name: USER_CF
+    signatureAlgorithm: ${sso_integr_ms_jwt_signatureAlgorithm:HS512}
+  oneGateway:
+    apiVersion: v1
+    oneGatewaySpidUrl: https://spid.mit.gov.it/login
+    oneGatewayCnsUrl: https://smartcard.mit.gov.it/login
+    oneGatewayCieUrl: https://cie.mit.gov.it/login
+    cieEnv: ${sso_integr_ms_cieEnv:preprod}
+  internalAuthentication:
+    apiVersion: v1
+    token:
+      tokenExpireTime: 10800
+      refreshTokenExpireTime: 21600
+    recuperoPasswordUrl: ${sso_integr_ms_recuperoPasswordUrl:https://www.serviziocontrattipubblici.it/scphome-fe/#/page/esegui-recupero-password-page}
+    useExternalUrlForRecuperoPassword: ${sso_integr_ms_useExternalUrlForRecuperoPassword:false}
+    caCertificateLocation: ${sso_integr_ms_caCertificateLocation:ca-admin.maggioli.it.crt}
+  gestioneUtenti:
+    apiVersion: v1
+    assistenzaAttiva: ${sso_integr_ms_richiesta_assistenza_attiva:}
+  amministrazione:
+    apiVersion: v1
+  sitar:
+    apiVersion: v1
+  POS_DIALECT: org.hibernate.dialect.PostgreSQL9Dialect
+  MSQ_DIALECT: org.hibernate.dialect.SQLServer2012Dialect
+  ORA_DIALECT: org.hibernate.dialect.Oracle12cDialect
+  captcha:
+    enabled: ${CAPTCHA_ENABLED:true}
+    friendlyCaptchaSiteVerifyApi: ${FRIENDLY_CAPTCHA_SITE_VERIFY_URL:https://apis.maggioli.cloud/rest/captcha/v2/siteverify}
+  enableProxy: ${ENABLE_PROXY:false}
+  connectionTimeout: ${CONNECTION_TIMEOUT:300}
+
+it:
+  eldasoft:
+    account:
+      opzioniDefault: ${sso_integr_ms_opzioni_default:#{null}}
+
+# Configurazione crittografia
+crypto:
+  idpPublicKeyLocation: keys/idp/onegateway.pem
+  tokenExpireTimeSeconds: 3600
+  spSymmetricKey: ${sso_integr_ms_crypto_spSymmetricKey:28ee698dd79242e6a7413094a637a8ba}
+  spSymmetricKeyEncrypted: ${sso_integr_ms_crypto_spSymmetricKeyEncrypted:false}
+  spSymmetricKeyBase64: ${sso_integr_ms_crypto_spSymmetricKeyBase64:false}
+  spSignatureAlgorithm: ${sso_integr_ms_crypto_spSignatureAlgorithm:HS256}

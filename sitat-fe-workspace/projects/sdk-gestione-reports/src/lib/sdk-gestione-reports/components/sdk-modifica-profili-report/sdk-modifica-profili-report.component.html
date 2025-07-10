@@ -1,0 +1,42 @@
+<div [class]="config.classNames" *ngIf="isReady">
+    <h1 class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</h1>
+    <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+    <div class="messages-box" #infoBox></div>
+    <div class="messages-box" #messages></div>
+
+    <div class="sdk-modifica-profili-utente-container">
+        <div class="sdk-modifica-profili-utente-content">
+            <table class="profili-container" *ngIf="listaProfiliEdit != null && listaProfiliEdit.length > 0"
+                [attr.aria-label]="'TITLE.MODIFICA-PROFILI-REPORT-PAGE' | translate">
+                <thead>
+                    <tr>
+                        <th>{{ 'SDK-DETTAGLIO-REPORT.PROFILI.MODIFICA.ASSOCIATO' | translate }}</th>
+                        <th>{{ 'SDK-DETTAGLIO-REPORT.PROFILI.MODIFICA.CODICE-PROFILO' | translate }}</th>
+                        <th>{{ 'SDK-DETTAGLIO-REPORT.PROFILI.MODIFICA.NOME-PROFILO' | translate }}</th>
+                        <th>{{ 'SDK-DETTAGLIO-REPORT.PROFILI.MODIFICA.DESCRIZIONE-PROFILO' | translate }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="profili-item" *ngFor="let profilo of listaProfiliEdit; trackBy: trackByCode">
+                        <td style="justify-content: center;">
+                            <input type="checkbox" class="p-checkbox"
+                                (change)="manageCheckboxes(profilo.codice, $event)" [checked]="profilo.checked">
+                        </td>
+                        <td>{{ profilo.codice }}</td>
+                        <td>{{ profilo.nome }}</td>
+                        <td>{{ profilo.descrizione }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="empty-list"
+                *ngIf="listaProfiliEdit == null || (listaProfiliEdit != null && listaProfiliEdit.length == 0)">
+                {{ 'SDK-DETTAGLIO-REPORT.PROFILI.MODIFICA.EMPTY-PROFILI' | translate }}
+            </div>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+    <sdk-dialog [config]="dialogConfigObs"></sdk-dialog>
+</div>

@@ -1,0 +1,227 @@
+{
+    "name": "grafica-lista-page",
+    "title": "TITLE.GRAFICA-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/grafica-page.css",
+        "assets/cms/layouts/base-menu-tabs-layout.css"
+    ],
+    "settings": {
+        "page": "grafica-lista-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "grafica-page",
+                "label": "Grafica",
+                "slug": "grafica-page"
+            },
+            {
+                "code": "grafica-page",
+                "label": "Esempio 1",
+                "slug": "grafica-page"
+            },
+            {
+                "code": "grafica-page",
+                "label": "Esempio 2",
+                "slug": "grafica-page"
+            }
+            
+
+        ]
+    },
+    "sections": [
+        {
+            "id": "grafica-lista-page-content-root-section",
+            "selector": "grafica-lista-section",
+            "description": "ì",
+            "classNames": "grafica-lista-section",
+            "settings": {
+                "classNames": "grafica-lista-index",
+                "sectionTitle": "Grafica",
+                "menuTabs": [
+                    {
+                        "code": "menu-tabs-1",
+                        "title": "Componenti form",                        
+                        "slug": "grafica-page"
+                    },
+                    {
+                        "code": "menu-tabs-2",
+                        "title": "Lista dati",
+                        "active": true,
+                        "slug": "grafica-lista-page"
+                    },
+                    {
+                        "code": "menu-tabs-3",
+                        "title": "Tabella",                        
+                        "slug": "grafica-tabella-page"
+                    },
+                    {
+                        "code": "menu-tabs-4",
+                        "title": "Form group",
+                        "slug": "grafica-form-group-page"
+                    },
+                    {
+                        "code": "menu-tabs-5",
+                        "title": "Document panel",
+                        "slug": "grafica-document-panel-page"
+                    },
+                    {
+                        "code": "menu-tabs-6",
+                        "title": "Message panel",
+                        "slug": "grafica-message-panel-page"
+                    }
+                ],
+                "body": {                    
+                    "buttons": [
+                        {
+                            "code": "annulla",
+                            "label": "Annulla",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": ""
+                        },
+                        {
+                            "code": "save",
+                            "label": "Salva",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": ""
+                        },
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "",
+                            "type": "cancel"
+                        }
+                    ],                                      
+                    "grid": {
+                        "showCurrentPageReport": true,
+                        "showCurrentRecordsReport": true,
+                        "navigable": true,
+                        "resizable": false,
+                        "debug": false,
+                        "sortable": {
+                            "allowUnsort": false,
+                            "mode": "single"
+                        },
+                        "sort": [
+                            {
+                                "field": "dato_1",
+                                "dir": "desc"
+                            }
+                        ],
+                        "pageable": {
+                            "buttonCount": 5,
+                            "info": true,
+                            "pageSizes": [
+                                5,
+                                10,
+                                20,
+                                50
+                            ],
+                            "type": "numeric"
+                        },
+                        "columns": [
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "Dato 1",
+                                "field": "dato_1",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "W9.W9GARA.IDAVGARA"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_LINK",
+                                    "params": {
+                                        "action": {
+                                            "label": "LISTA-GARE.AZIONI.DETTAGLIO",
+                                            "disabled": false,
+                                            "performer": "dettaglio"
+                                        }
+                                    }
+                                },
+                                "title": "Dato 2",
+                                "field": "dato_2",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "W9.W9GARA.OGGETTO"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "Dato 3",
+                                "field": "dato_3",
+                                "width": 150,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": "W9.W9GARA.SITUAZIONE"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "Dato 4",
+                                "field": "dato_4",
+                                "width": 150,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "W9.W9GARA.IMPORTO_GARA"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_ACTIONS_ICON",
+                                    "params": {
+                                        "actions": [
+                                            {
+                                                "label": "LISTA-GARE.AZIONI.TRASFERIMENTO-RUP",
+                                                "disabled": false,
+                                                "performer": "cambioRup",
+                                                "hidden": "cambioRupHidden",
+                                                "icon": "fas fa-user-edit"
+                                            },
+                                            {
+                                                "label": "LISTA-GARE.AZIONI.CANCELLA",
+                                                "disabled": false,
+                                                "performer": "delete",       
+                                                "icon": "mgg-icons-crud-delete"
+                                            },
+                                            {
+                                                "label": "LISTA-GARE.AZIONI.NO-CANCELLA",
+                                                "disabled": false,                                                
+                                                "icon": "mgg-icons-no-trash"
+                                            },                                            
+                                            {
+                                                "label": "Copia per aggiornamento",
+                                                "disabled": false,                                                                                                
+                                                "icon": "far fa-copy"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "title": "LISTA-GARE.AZIONI.TITLE",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false
+                            }
+                        ]
+                    }                    
+                }                
+            }
+        }
+    ]
+}

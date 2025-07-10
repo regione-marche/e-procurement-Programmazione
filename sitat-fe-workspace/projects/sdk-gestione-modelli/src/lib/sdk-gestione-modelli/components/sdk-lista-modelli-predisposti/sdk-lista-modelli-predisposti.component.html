@@ -1,0 +1,27 @@
+<div [class]="config.classNames" *ngIf="isReady">
+	<h1 class="page-title" *ngIf="config.sectionTitle != null">
+		{{ "MODELLI-PREDISPOSTI.FILTRO-ENTITA" | translate }}{{ entitaToShow }}
+	</h1>
+	<div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+	<div class="messages-box" #infoBox></div>
+
+	<div class="messages-box" #messages></div>
+	<div style="text-align: left; font-weight: 700">
+		<!-- {{ 'MODELLI-PREDISPOSTI.FILTRO-ENTITA' | translate }}{{entitaToShow}} -->
+	</div>
+	<sdk-table [config]="configSub" [reset]="resetTable"></sdk-table>
+
+	<sdk-modal
+		[config]="modalConfigObs"
+		(output)="closeModal()"
+	></sdk-modal>
+
+	<div class="buttons-row">
+		<sdk-button-group
+			[config]="buttonsSubj"
+			(output)="onButtonClick($event)"
+		></sdk-button-group>
+	</div>
+	<sdk-dialog [config]="dialogConfigObs"></sdk-dialog>
+</div>

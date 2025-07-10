@@ -1,0 +1,9 @@
+<div class="layout-side-menu-tabs-container">
+    <div class="layout-side-menu-tabs-content" [@tabsContent]="selected ? {value: 'visible', params: {transitionParams: transitionOptions}} : {value: 'hidden', params: {transitionParams: transitionOptions}}"
+    (@tabsContent.done)="onToggleDone($event)">
+        <h1 class="page-title">{{menuTitle}}</h1>
+        <div class="page-content">
+            <sdk-menu [config]="configSub" (output)="mangageMenuOutput($event)"></sdk-menu>
+        </div>
+    </div>
+</div>

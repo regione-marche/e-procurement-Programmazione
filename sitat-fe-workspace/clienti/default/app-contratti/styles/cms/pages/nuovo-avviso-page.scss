@@ -1,0 +1,8 @@
+@import "../app/app-vars.scss";
+
+.nuovo-avviso-index {
+
+    .sdk-input.sdk-text .clickable {
+        @extend %color-base;
+    }
+}

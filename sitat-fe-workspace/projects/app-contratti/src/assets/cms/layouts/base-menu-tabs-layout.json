@@ -1,0 +1,539 @@
+{
+  "name": "base-menu-tabs-layout",
+  "styleUrls": [
+    "assets/cms/layouts/base-menu-tabs-layout.css"
+  ],
+  "settings": {
+    "layout": "base-menu-tabs-layout"
+  },
+  "sections": [
+    {
+      "id": "base-menu-tabs-layout-root-section",
+      "selector": "sdk-layout-section",
+      "description": "Contenitore radice di tutte le sezioni del layout",
+      "classNames": "sdk-layout-root-section base-layout",
+      "settings": {
+        "section": "base-menu-tabs-layout-root-section"
+      }
+    },
+    {
+      "id": "base-menu-tabs-layout-header-top-section",
+      "parentId": "base-menu-tabs-layout-root-section",
+      "selector": "sdk-layout-header-top",
+      "description": "Sezione di layout per la parte alta dell'intestazione",
+      "classNames": "sdk-layout-header-top-section",
+      "settings": {
+        "logoSlug": "home-page",
+        "provider": "APP_GARE_HEADER_MID",
+        "logo": "assets/images/app/logo-white.png",
+        "logoDescription": "LOGO-DESCRIPTION",
+        "titoloApplicativo": "APP-TITLE",
+        "titoloModulo": "HOME-PAGE.HEADER-TITLE-CONTENT",
+        "searchField": {
+          "code": "advanced-search",
+          "label": "HEADER-MID.SEARCH",
+          "categories": [
+            {
+              "label": "HEADER-MID.SEARCH-CATEGORY-GARE",
+              "searchFunctionProvider": "HEADER_ADVANCED_SEARCH_GARE",
+              "selectItemFunctionProvider": "HEADER_ADVANCED_SEARCH_GARE"
+            },
+            {
+              "label": "HEADER-MID.SEARCH-CATEGORY-TECNICO",
+              "searchFunctionProvider": "HEADER_ADVANCED_SEARCH_TECNICO",
+              "selectItemFunctionProvider": "HEADER_ADVANCED_SEARCH_TECNICO",
+              "oggettoProtezione": "ARCHIVI.Archivio-tecnici"
+            },
+            {
+              "label": "HEADER-MID.SEARCH-CATEGORY-IMPRESE",
+              "searchFunctionProvider": "HEADER_ADVANCED_SEARCH_IMPRESE",
+              "selectItemFunctionProvider": "HEADER_ADVANCED_SEARCH_IMPRESE",
+              "oggettoProtezione": "ARCHIVI.Archivio-imprese"
+            },
+            {
+              "label": "HEADER-MID.SEARCH-CATEGORY-CDC",
+              "searchFunctionProvider": "HEADER_ADVANCED_SEARCH_CDC",
+              "selectItemFunctionProvider": "HEADER_ADVANCED_SEARCH_CDC",
+              "oggettoProtezione": "ARCHIVI.Archivio-centricosto"
+            }
+          ]
+        },
+        "profileDropdownButton": {
+          "code": "profile-dropdown-button",
+          "label": "PARAMS",
+          "labelParams": {
+            "value": ""
+          },
+          "expandAriaLabel": "BUTTONS.ULTERIORI-OPZIONI",
+          "look": "outline",
+          "primary": true,
+          "dropdownData": [
+            {
+              "code": "il-mio-account-button",
+              "label": "IL-MIO-ACCOUNT-BUTTON",
+              "provider": "APP_COMMONS_MIO_ACCOUNT",
+              "look": "flat",
+              "visible": "APP_COMMONS_MIO_ACCOUNT_VISIBLE"
+            },
+            {
+              "code": "change-user-password-button",
+              "label": "CHANGE-USER-PASSWORD-BUTTON",
+              "provider": "APP_COMMONS_CHANGE_USER_PASSWORD",
+              "look": "flat",
+              "visible": "APP_COMMONS_CHANGE_USER_PASSWORD_VISIBLE"
+            },
+            {
+              "code": "choose-ente-button",
+              "label": "CHOOSE-ENTE-BUTTON",
+              "provider": "APP_AVVISI_CHOOSE_ENTE",
+              "look": "flat",
+              "visible": "APP_CONTRATTI_STAZIONI_APPALTANTI_COUNT_VISIBLE"
+            },
+            {
+              "code": "choose-profile-button",
+              "label": "CHOOSE-PROFILE-BUTTON",
+              "provider": "APP_AVVISI_CHOOSE_PROFILE",
+              "look": "flat",
+              "visible": "APP_CONTRATTI_PROFILI_VISIBLE"
+            },
+            {
+              "code": "messaggi-avvisi-button",
+              "label": "MESSAGGI-AVVISI-BUTTON",
+              "provider": "APP_GARE_MESSAGGI_AVVISI",
+              "look": "flat",
+              "visible": "APP_GARE_MESSAGGI_AVVISI_ADMIN_VISIBLE"
+            },
+            {
+              "code": "cambio-modulo-button",
+              "label": "CAMBIO-MODULO-BUTTON",
+              "provider": "APP_AVVISI_CAMBIO_MODULO",
+              "look": "flat",
+              "visible": "APP_CONTRATTI_APPLICAZIONI_VISIBLE"
+            },
+            {
+              "code": "ultimi-accessi-button",
+              "label": "ULTIMI-ACCESSI-BUTTON",
+              "provider": "APP_COMMONS_ULTIMI_ACCESSI",
+              "look": "flat",
+              "visible": "APP_COMMONS_ULTIMI_ACCESSI_VISIBLE"
+            },
+            {
+              "code": "logout-button",
+              "label": "LOGOUT-BUTTON",
+              "provider": "APP_AVVISI_LOGOUT",
+              "look": "flat"
+            }
+          ]
+        },
+        "messagesOverlay": {
+          "code": "ob",
+          "openButton": {
+            "code": "message-button",
+            "title": "MESSAGGI-AVVISI.MESSAGGI-IN-ARRIVO",
+            "icon": "mgg-icons-notifications",
+            "look": "outline"
+          },
+          "component": "messaggi-avvisi-overlay-widget",
+          "width": "450px"
+        },
+        "messageOverlayStatus": "APP_COMMONS_MESSAGGI_AVVISI_STATUS",
+        "messageOverlayVisible": "APP_COMMONS_MESSAGGI_AVVISI_VISIBLE",
+        "modalComponent": "messaggi-avvisi-modal-widget",
+        "modalComponentConfig": {
+          "data": {
+            "buttons": [
+              {
+                "code": "modal-close-button",
+                "label": "BUTTONS.ANNULLA",
+                "icon": "mgg-icons-crud-cancel",
+                "provider": "APP_AVVISI_MODAL_WINDOW"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "base-menu-tabs-layout-all-section",
+      "parentId": "base-menu-tabs-layout-root-section",
+      "selector": "sdk-layout-section",
+      "description": "Contenitore per tutte le sezioni al di fuori del menu",
+      "classNames": "sdk-layout-all-section base-layout",
+      "settings": {
+        "section": "base-menu-tabs-layout-all-section"
+      }
+    },
+    {
+      "id": "base-menu-tabs-layout-container-section",
+      "parentId": "base-menu-tabs-layout-all-section",
+      "selector": "sdk-layout-section",
+      "description": "Contenitore per le sezioni del contenuto",
+      "classNames": "sdk-layout-container-section-no-scroll base-layout",
+      "settings": {
+        "section": "base-menu-tabs-layout-container-section"
+      }
+    },
+    {
+      "id": "base-menu-tabs-layout-header-menu-section",
+      "parentId": "base-menu-tabs-layout-all-section",
+      "selector": "sdk-layout-header-menu",
+      "description": "Sezione di layout per il menu' dell'intestazione",
+      "classNames": "sdk-layout-header-menu-section base-layout",
+      "settings": {
+        "section": "base-menu-tabs-layout-header-menu-section",
+        "menuVisible": true,
+        "menu": {
+          "vertical": false,
+          "items": [
+            {
+              "code": "archivi",
+              "label": "MENU.ARCHIVI",
+              "cssClass": "header-menu-item",
+              "oggettoProtezione": "ARCHIVI",
+              "icon": "mgg-icons-action-archive",
+              "items": [
+                {
+                  "code": "archivio-tecnici",
+                  "label": "MENU.ARCHIVIO-TECNICI",
+                  "cssClass": "header-menu-item",
+                  "slug": "ricerca-avanzata-archivio-tecnici-page",
+                  "oggettoProtezione": "ARCHIVI.Archivio-tecnici"
+                },
+                {
+                  "code": "archivio-imprese",
+                  "label": "MENU.ARCHIVIO-IMPRESE",
+                  "cssClass": "header-menu-item",
+                  "slug": "ricerca-avanzata-archivio-imprese-page",
+                  "oggettoProtezione": "ARCHIVI.Archivio-imprese"
+                },
+                {
+                  "code": "archivio-centri-di-costo",
+                  "label": "MENU.ARCHIVIO-CENTRI-DI-COSTO",
+                  "cssClass": "header-menu-item",
+                  "slug": "ricerca-avanzata-archivio-cdc-page",
+                  "oggettoProtezione": "ARCHIVI.Archivio-centricosto"
+                },
+                {
+                  "code": "archivio-uffici",
+                  "label": "MENU.ARCHIVIO-UFFICI",
+                  "cssClass": "header-menu-item",
+                  "slug": "ricerca-avanzata-archivio-uffici-page",
+                  "oggettoProtezione": "ARCHIVI.Archivio-uffici"
+                },
+                {
+                  "code": "archivio-stazioni-appaltanti",
+                  "label": "MENU.ARCHIVIO-STAZIONI-APPALTANTI",
+                  "cssClass": "header-menu-item",
+                  "slug": "ricerca-avanzata-archivio-stazioni-appaltanti-page",
+                  "oggettoProtezione": "ARCHIVI.Archivio-staz-appaltanti",
+                  "visibleProvider": "APP_COMMONS_ARCHIVIO_STAZIONI_APPALTANTI_MENU_VISIBLE"
+                }
+              ]
+            },
+            {
+              "code": "utilita",
+              "label": "MENU.GESTIONE-UTENTI",
+              "cssClass": "header-menu-item",
+              "oggettoProtezione": "UTILITA",
+              "icon": "mgg-icons-user",
+              "items": [
+                {
+                  "code": "gestione-utenti",
+                  "label": "MENU.GESTIONE-UTENTI",
+                  "cssClass": "header-menu-item",
+                  "slug": "ricerca-utenti-page",
+                  "visibleProvider": "SDK_GESTIONE_UTENTI_MENU_VISIBLE",
+                  "oggettoProtezione": "UTILITA.GESTIONE-UTENTI"
+                },
+                {
+                  "code": "lista-deleghe",
+                  "label": "MENU.GESTIONE-COLLABORATORI",
+                  "cssClass": "header-menu-item",
+                  "slug": "lista-deleghe-page",
+                  "visibleProvider": "APP_CONTRATTI_LISTA_DELEGHE_MENU_VISIBLE",
+                  "oggettoProtezione": ""
+                },
+                {
+                  "code": "impersonafica-rup",
+                  "label": "MENU.IMPERSONIFICA-RUP",
+                  "cssClass": "header-menu-item",
+                  "slug": "impersonafica-rup-page",
+                  "visibleProvider": "APP_CONTRATTI_IMPERSONIFICA_RUP_MENU_VISIBLE",
+                  "oggettoProtezione": ""
+                }
+              ]
+            }, 
+            {
+              "code": "strumenti",
+              "label": "MENU.STRUMENTI",
+              "cssClass": "header-menu-item",
+              "oggettoProtezione": "STRUMENTI",
+              "icon": "mgg-icons-construction",
+              "items": [
+                {
+                  "code": "gestione-report",
+                  "label": "MENU.GESTIONE-REPORT",
+                  "cssClass": "header-menu-item",
+                  "slug": "lista-report-page",
+                  "visibleProvider": "SDK_GESTIONE_REPORT_MENU_VISIBLE",
+                  "oggettoProtezione": "STRUMENTI.Generatore-report"
+                }
+              ]
+            },
+            {
+              "code": "report-predefiniti",
+              "label": "MENU.REPORT",
+              "cssClass": "header-menu-item",
+              "oggettoProtezione": "REPORT",
+              "icon": "mgg-icons-file-type-data",
+              "items": [              
+                {
+                  "code": "report-predefiniti",
+                  "label": "MENU.REPORT-PREDEFINITI",
+                  "cssClass": "header-menu-item",
+                  "slug": "lista-report-predefiniti-page",
+                  "visibleProvider": "SDK_REPORT_PREDEFINITI_MENU_VISIBLE",
+                  "oggettoProtezione": "REPORT.Report-predefiniti"
+                }
+              ]
+            } 
+          ]
+        },
+        "bottomMenu": {
+          "vertical": false,
+          "items": [
+            {
+              "code": "amministrazione",
+              "label": "MENU.AMMINISTRAZIONE",
+              "cssClass": "header-menu-item",
+              "icon": "mgg-icons-settings",
+              "visibleProvider": "SDK_GESTIONE_UTENTI_AMMINISTRAZIONE_MENU_VISIBLE",
+              "items": [
+                {
+                  "code": "gestione-configurazioni",
+                  "label": "SDK-AMMINISTRAZIONE.GESTIONE-CONFIGURAZIONI",
+                  "cssClass": "header-menu-item",
+                  "slug": "ricerca-configurazioni-page"
+                },
+                {
+                  "code": "gestione-pianificazioni",
+                  "label": "SDK-AMMINISTRAZIONE.GESTIONE-PIANIFICAZIONI",
+                  "cssClass": "header-menu-item",
+                  "slug": "lista-pianificazioni-page"
+                },
+                {
+                  "code": "visualizzazione-eventi",
+                  "label": "SDK-AMMINISTRAZIONE.VISUALIZZAZIONE-EVENTI",
+                  "cssClass": "header-menu-item",
+                  "slug": "ricerca-eventi-page"
+                },
+                {
+                  "code": "server-posta",
+                  "label": "SDK-AMMINISTRAZIONE.SERVER-POSTA",
+                  "cssClass": "header-menu-item",
+                  "slug": "lista-server-posta-page"
+                },
+                {
+                  "code": "gestione-tabellati",
+                  "label": "SDK-AMMINISTRAZIONE.GESTIONE-TABELLATI",
+                  "cssClass": "header-menu-item",
+                  "slug": "ricerca-tabellati-page"
+                },
+                {
+                  "code": "lista-mnemonici",
+                  "label": "SDK-AMMINISTRAZIONE.LISTA-MNEMONICI",
+                  "cssClass": "header-menu-item",
+                  "slug": "lista-mnemonici-page"
+                },
+                {
+                  "code": "codifica-automatica",
+                  "label": "SDK-AMMINISTRAZIONE.CODIFICA-AUTOMATICA",
+                  "cssClass": "header-menu-item",
+                  "slug": "lista-codifica-automatica-page"
+                }
+              ]
+            },
+            {
+              "code": "assistenza",
+              "label": "MENU.ASSISTENZA",
+              "cssClass": "header-menu-item",
+              "icon": "mgg-icons-help-support",
+              "items": [
+                {
+                  "code": "assistenza-internal",
+                  "label": "MENU.ASSISTENZA",
+                  "cssClass": "header-menu-item",
+                  "slug": "richiesta-assistenza-page",
+                  "visibleProvider": "SDK_GESTIONE_UTENTI_RICHIESTA_ASSISTENZA_MENU_VISIBLE"
+                },
+                {
+                  "code": "manuali",
+                  "label": "MENU.MANUALI",
+                  "cssClass": "header-menu-item",
+                  "externalLink": "assets/manuali/",
+                  "oggettoProtezione": "UTILITA.Manuali",
+                  "icon": "mgg-icons-document-book",
+                  "additionalProvider": "APP_COMMONS_MANUALI_URL"
+                }
+              ]
+            },
+            {
+              "code": "info",
+              "label": "MENU.INFO",
+              "cssClass": "header-menu-item",
+              "icon": "mgg-icons-status-info",
+              "modalComponent": "app-info-modal-widget",
+              "modalComponentConfig": "appInfo"
+            }
+          ]
+        },
+        "headerLogoSmall": "assets/images/app/logo-white.png",
+        "profileDropdownButton": {
+          "code": "profile-dropdown-button",
+          "label": "PARAMS",
+          "labelParams": {
+            "value": ""
+          },
+          "expandAriaLabel": "BUTTONS.ULTERIORI-OPZIONI",
+          "look": "outline",
+          "primary": true,
+          "dropdownData": [
+            {
+              "code": "choose-ente-button",
+              "label": "CHOOSE-ENTE-BUTTON",
+              "provider": "APP_AVVISI_CHOOSE_ENTE",
+              "look": "flat"
+            },
+            {
+              "code": "choose-profile-button",
+              "label": "CHOOSE-PROFILE-BUTTON",
+              "provider": "APP_AVVISI_CHOOSE_PROFILE",
+              "look": "flat",
+              "visible": "APP_CONTRATTI_PROFILI_VISIBLE"
+            },
+            {
+              "code": "messaggi-avvisi-button",
+              "label": "MESSAGGI-AVVISI-BUTTON",
+              "provider": "APP_GARE_MESSAGGI_AVVISI",
+              "look": "flat",
+              "visible": "APP_GARE_MESSAGGI_AVVISI_ADMIN_VISIBLE"
+            },
+            {
+              "code": "cambio-modulo-button",
+              "label": "CAMBIO-MODULO-BUTTON",
+              "provider": "APP_AVVISI_CAMBIO_MODULO",
+              "look": "flat",
+              "visible": "APP_CONTRATTI_APPLICAZIONI_VISIBLE"
+            },
+            {
+              "code": "ultimi-accessi-button",
+              "label": "ULTIMI-ACCESSI-BUTTON",
+              "provider": "APP_COMMONS_ULTIMI_ACCESSI",
+              "look": "flat",
+              "visible": "APP_COMMONS_ULTIMI_ACCESSI_VISIBLE"
+            },
+            {
+              "code": "logout-button",
+              "label": "LOGOUT-BUTTON",
+              "provider": "APP_AVVISI_LOGOUT",
+              "look": "flat"
+            }
+          ]
+        },
+        "messagesOverlay": {
+          "code": "ob",
+          "openButton": {
+            "code": "message-button",
+            "title": "MESSAGGI-AVVISI.MESSAGGI-IN-ARRIVO",
+            "icon": "mgg-icons-notifications",
+            "look": "outline"
+          },
+          "component": "messaggi-avvisi-overlay-widget",
+          "width": "450px"
+        },
+        "modalComponent": "messaggi-avvisi-modal-widget",
+        "modalComponentConfig": {
+          "data": {
+            "buttons": [
+              {
+                "code": "modal-close-button",
+                "label": "BUTTONS.ANNULLA",
+                "icon": "mgg-icons-crud-cancel",
+                "provider": "APP_AVVISI_MODAL_WINDOW"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "base-menu-tabs-layout-breadcrumbs-section",
+      "parentId": "base-menu-tabs-layout-container-section",
+      "selector": "sdk-layout-breadcrumbs",
+      "description": "Contenitore per le briciole di pane",
+      "classNames": "sdk-layout-breadcrumbs-section",
+      "settings": {
+        "section": "base-menu-tabs-layout-breadcrumbs-section",
+        "collapseEnabled": true
+      }
+    },
+    {
+      "id": "base-menu-tabs-layout-container2-section",
+      "parentId": "base-menu-tabs-layout-container-section",
+      "selector": "sdk-layout-section",
+      "description": "Contenitore per le sezioni del contenuto 2",
+      "classNames": "sdk-layout-container2-section base-layout",
+      "settings": {
+        "section": "base-menu-tabs-layout-container2-section"
+      }
+    },
+    {
+      "id": "base-side-menu-tabs-layout-menu-tabs-section",
+      "parentId": "base-menu-tabs-layout-container2-section",
+      "selector": "layout-side-menu-tabs",
+      "description": "Contenitore per il side menu tabs",
+      "classNames": "layout-side-menu-tabs-section",
+      "settings": {
+        "section": "base-side-menu-tabs-layout-menu-tabs-section",
+        "sideMenu": {
+          "vertical": true
+        }
+      }
+    },
+    {
+      "id": "base-menu-tabs-layout-container3-section",
+      "parentId": "base-menu-tabs-layout-container2-section",
+      "selector": "sdk-layout-section",
+      "description": "Contenitore per le sezioni del contenuto 3",
+      "classNames": "sdk-layout-container3-section base-layout",
+      "settings": {
+        "section": "base-menu-tabs-layout-container3-section"
+      }
+    },
+    {
+      "id": "base-menu-tabs-layout-menu-tabs-section",
+      "parentId": "base-menu-tabs-layout-container3-section",
+      "selector": "layout-menu-tabs",
+      "description": "Contenitore per il menu tabs",
+      "classNames": "layout-menu-tabs-section element-tabs-container",
+      "settings": {
+        "section": "base-menu-tabs-layout-menu-tabs-section",
+        "menuTabs": {
+          "tabPosition": "top",
+          "tabAlignment": "start",
+          "tabs": []
+        }
+      }
+    },
+    {
+      "id": "base-menu-tabs-layout-content-section",
+      "parentId": "base-menu-tabs-layout-container3-section",
+      "selector": "sdk-layout-content",
+      "description": "Contenitore per il contenuto di pagina",
+      "classNames": "sdk-layout-content-section element-tabs-container main-content with-tabs",
+      "settings": {
+        "section": "base-menu-tabs-layout-content-section"
+      }
+    }
+  ]
+}

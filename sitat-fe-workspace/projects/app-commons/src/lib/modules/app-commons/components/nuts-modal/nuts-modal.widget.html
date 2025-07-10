@@ -1,0 +1,24 @@
+<div class="nuts-modal" *ngIf="isReady">
+    <div class="messages-box" #messages></div>
+
+    <div class="nuts-container">
+        <div class="nuts-testata">
+
+        </div>
+        <div class="nuts-content">
+            <sdk-textbox [config]="nutsConfigurationObs" [data]="calculateDataSubject"></sdk-textbox>
+            <sdk-combobox [config]="paeseComboboxConfig" (output)="onComboChange($event)" [data]="paeseComboData">
+            </sdk-combobox>
+            <sdk-combobox [config]="areaComboboxConfig" (output)="onComboChange($event)" [data]="areaComboData">
+            </sdk-combobox>
+            <sdk-combobox [config]="regioneComboboxConfig" (output)="onComboChange($event)" [data]="regioneComboData">
+            </sdk-combobox>
+            <sdk-combobox [config]="provinciaComboboxConfig" (output)="onComboChange($event)"
+                [data]="provinciaComboData"></sdk-combobox>
+
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+</div>

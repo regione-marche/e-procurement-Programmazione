@@ -1,0 +1,99 @@
+@import "../app/app-vars.scss";
+
+.lista-atti-container {
+    padding: 0 1rem;
+
+    .sdk-panelbar-container {
+        @extend %transparent-background;
+
+        .p-accordion .p-accordion-header a {
+            position: relative;
+            padding-left: 2rem;
+
+            .counter {
+                position: absolute;
+                left: 1rem;
+                top: 0.5rem;
+            }
+        }
+
+
+        .panel-child {
+            background-color: #e2e2e2;
+            @extend %color-testo;
+            padding: 0.5rem;
+            cursor: pointer;
+        }        
+    }
+
+    .la-content .radio-container{
+        display: flex !important;
+        justify-content: start;
+    }
+    
+        
+    .la-content .radio-label {
+        font-size: 1.2em!important;
+        font-weight: bold!important;    
+    }
+    
+    .la-content p-radiobutton {
+        margin-bottom: 0.5em;
+    }
+
+    .la-content{
+        padding-bottom: 2em;
+    }
+
+    .radio-item{
+        padding: 0 0.3em;
+    }
+
+    .matrice-atti-container{
+
+        .matrice-atti-row{
+            background-color: #f4f4f4;
+        }
+
+        .matrice-atti-black-flag{
+            color: black;
+        }
+
+        table{
+            font-size: 12px;
+            padding: 2em;
+        }
+
+        th {
+            writing-mode: tb-rl;
+            height: 200px;
+            transform: rotate(-180deg);
+        }
+
+        td {
+            text-align: center;
+        }
+
+        .matrice-atti-white-flag{
+            color: white;
+        }
+    
+        .matrice-legenda{
+            padding: 1rem 1rem 0.5rem 1rem;
+        }
+
+        .legenda-atti{
+            padding: 1rem 1rem 0.5rem 1rem;
+        }
+
+        .title {
+            font-weight: 600;
+            @extend %color-titolo;
+            margin: 1rem;
+            border-bottom: 1px solid map-get($light-colors, grey);
+            font-size: 1.2rem !important;
+            padding: 1rem 1rem 0.5rem 1rem;
+        }
+    }
+
+}

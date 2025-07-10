@@ -1,0 +1,11 @@
+<div class="ricarica-dati-container">
+    <div class="messages-box" #messages></div>
+    <div class="pubblica-content">
+        <sdk-radio [config]="radioConfig" [data]="radioData" (output)="onOutput($event)"></sdk-radio>
+        <div class="messages-box" #warningPanelMessage></div>      
+    </div>
+    <div class="buttons-row">
+        <sdk-button-group *ngIf="buttonsSubj != null" [config]="buttonsSubj" (output)="onButtonClick($event)">
+        </sdk-button-group>
+    </div>
+</div>

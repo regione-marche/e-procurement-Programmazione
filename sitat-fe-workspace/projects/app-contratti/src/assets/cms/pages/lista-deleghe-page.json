@@ -1,0 +1,202 @@
+{
+    "name": "lista-deleghe-page",
+    "title": "TITLE.LISTA-DELEGHE-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "lista-deleghe-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-deleghe-page",
+                "label": "BREADCRUMB.LISTA-DELEGHE",
+                "slug": "lista-deleghe-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "lista-deleghe-page-content-root-section",
+            "selector": "lista-deleghe-section",
+            "description": "Pagina di lista deleghe",
+            "classNames": "lista-deleghe-section",
+            "settings": {
+                "classNames": "lista-deleghe-index",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_CONTRATTI_LISTA_DELEGHE",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "nuovo-delega",
+                            "label": "BUTTONS.NUOVO",
+                            "icon": "mgg-icons-crud-create",
+                            "provider": "APP_CONTRATTI_LISTA_DELEGHE",
+                            "oggettoProtezione": "INS.*"
+                        }
+                    ],
+                    "grid": {
+                        "navigable": true,
+                        "resizable": false,
+                        "debug": false,
+                        "sortable": {
+                            "allowUnsort": false,
+                            "mode": "single"
+                        },
+                        "sort": [
+                            {
+                                "field": "sysute",
+                                "dir": "asc"
+                            }
+                        ],
+                        "pageable": false,
+                        "columns": [
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_LINK",
+                                    "params": {
+                                        "action": {
+                                            "label": "LISTA-DELEGHE.AZIONI.DETTAGLIO",
+                                            "disabled": false,
+                                            "performer": "dettaglio"
+                                        }
+                                    }
+                                },
+                                "title": "LISTA-DELEGHE.SYSUTE",
+                                "field": "sysute",
+                                "oggettoProtezione": "W3.W9DELEGHE.SYSCON",
+                                "width": 250,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-DELEGHE.RUOLO",
+                                "field": "desRuolo",
+                                "oggettoProtezione": "W3.W9DELEGHE.RUOLO",
+                                "width": 120,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_ACTIONS_ICON",
+                                    "params": {
+                                        "actions": [
+                                            {
+                                                "label": "LISTA-DELEGHE.AZIONI.CANCELLA",
+                                                "disabled": false,
+                                                "performer": "delete",
+                                                "hidden": "deleteHidden",
+                                                "icon": "mgg-icons-crud-delete",
+                                                "oggettoProtezione": "DEL.*"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "title": "LISTA-DELEGHE.AZIONI.TITLE",
+                                "width": 60,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false
+                            }
+                        ]
+                    },
+                    "credenzialiSimogData": {
+                        "fields": [
+                            {
+                                "type": "FORM-SECTION",
+                                "code": "general-data",
+                                "label": "CREDENZIALI-SIMOG.TITLE",
+                                "fieldSections": [
+                                    {
+                                        "type": "TEXT",
+                                        "code": "username",
+                                        "label": "CREDENZIALI-SIMOG.USERNAME",
+                                        "mappingInput": "username",
+                                        "mappingOutput": "username",
+                                        "maxLength": 200,
+                                        "validators": [
+                                            {
+                                                "config": {
+                                                    "required": true
+                                                },
+                                                "messages": [
+                                                    {
+                                                        "level": "error",
+                                                        "text": "CREDENZIALI-SIMOG.VALIDATORS.USERNAME-OBBLIGATORIO"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "PASSWORD",
+                                        "code": "password",
+                                        "label": "CREDENZIALI-SIMOG.PASSWORD",
+                                        "mappingInput": "password",
+                                        "mappingOutput": "password",
+                                        "maxLength": 200,
+                                        "validators": [
+                                            {
+                                                "config": {
+                                                    "required": true
+                                                },
+                                                "messages": [
+                                                    {
+                                                        "level": "error",
+                                                        "text": "CREDENZIALI-SIMOG.VALIDATORS.PASSWORD-OBBLIGATORIO"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "CHECKBOX",
+                                        "code": "saveCredentials",
+                                        "label": "CREDENZIALI-SIMOG.SAVE_CREDENTIALS",
+                                        "mappingInput": "saveCredentials",
+                                        "mappingOutput": "saveCredentials",
+                                        "items": [
+                                            {
+                                                "code": 1,
+                                                "label": ""
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "buttons": [
+                            {
+                                "code": "modal-close-button",
+                                "label": "BUTTONS.ANNULLA",
+                                "icon": "mgg-icons-crud-cancel",
+                                "provider": "APP_AVVISI_MODAL_WINDOW"
+                            },
+                            {
+                                "code": "confirm-data",
+                                "label": "BUTTONS.SET",
+                                "icon": "mgg-icons-crud-save",
+                                "provider": "APP_CONTRATTI_CREDENZIALI_SIMOG_MODAL"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

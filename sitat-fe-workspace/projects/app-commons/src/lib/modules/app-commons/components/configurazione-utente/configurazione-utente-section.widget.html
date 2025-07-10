@@ -1,0 +1,16 @@
+<div class="configurazione-utente-section" >
+    <div class="messages-box" #messages></div>
+
+    <div class="configurazione-utente-container">
+        <div class="configurazione-utente-testata">
+
+        </div>
+        <div class="configurazione-utente-content">
+            <sdk-form-builder [config]="formBuilderConfigObs" (output)="manageFormOutput($event)">
+            </sdk-form-builder>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+</div>

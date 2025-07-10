@@ -1,0 +1,280 @@
+{
+    "name": "modifica-fase-avanzamento-page",
+    "title": "TITLE.MODIFICA-FASE-AVANZAMENTO-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "modifica-fase-avanzamento-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-avanzamento-page",
+                "label": "BREADCRUMB.DETTAGLIO-FASE-AVANZAMENTO",
+                "slug": "dettaglio-fase-avanzamento-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            },
+            {
+                "code": "modifica-fase-avanzamento-page",
+                "label": "BREADCRUMB.MODIFICA-FASE-AVANZAMENTO",
+                "slug": "modifica-fase-avanzamento-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-fase-avanzamento-page-content-root-section",
+            "selector": "modifica-fase-avanzamento-section",
+            "description": "Pagina di modifica fase di avanzamento",
+            "classNames": "modifica-fase-avanzamento-section",
+            "settings": {
+                "classNames": "modifica-fase-avanzamento-index",
+                "sectionTitle": "TITLE.MODIFICA-FASE-AVANZAMENTO-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-dettaglio-fase",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_GARE_FASE_AVANZAMENTO_PROVIDER",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-fase",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_FASE_AVANZAMENTO_PROVIDER"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "stato-avanzamento-data",
+                            "label": "FASE-AVANZAMENTO.STATO-AVANZAMENTO.STATO-AVANZAMENTO",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "num-avan",
+                                    "label": "FASE-AVANZAMENTO.STATO-AVANZAMENTO.NUM-AVAN",
+                                    "oggettoProtezione": "W9.W9AVAN.NUM_AVAN",
+                                    "mnemonico": "W3AVNUMAVA",
+                                    "mappingInput": "num",
+                                    "mappingOutput": "num"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-raggiuntimento",
+                                    "label": "FASE-AVANZAMENTO.STATO-AVANZAMENTO.DATA-RAGGIUNGIMENTO",
+                                    "oggettoProtezione": "W9.W9AVAN.DATA_RAGGIUNGIMENTO",
+                                    "mnemonico": "W3DATA_RAG",
+                                    "mappingInput": "dataRaggiungimento",
+                                    "mappingOutput": "dataRaggiungimento"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "denom-avanzamento",
+                                    "label": "FASE-AVANZAMENTO.STATO-AVANZAMENTO.DENOM-AVANZAMENTO",
+                                    "oggettoProtezione": "W9.W9AVAN.DENOM_AVANZAMENTO",
+                                    "mnemonico": "W3AVANDENO",
+                                    "mappingInput": "denomAvanzamento",
+                                    "mappingOutput": "denomAvanzamento",
+                                    "maxLength": 250
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-sal",
+                                    "label": "FASE-AVANZAMENTO.STATO-AVANZAMENTO.IMPORTO-SAL",
+                                    "oggettoProtezione": "W9.W9AVAN.DENOM_AVANZAMENTO",
+                                    "mnemonico": "W3I_SAL",
+                                    "mappingInput": "importoSal",
+                                    "mappingOutput": "importoSal",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-certificato",
+                                    "label": "FASE-AVANZAMENTO.STATO-AVANZAMENTO.DATA-CERTIFICATO",
+                                    "oggettoProtezione": "W9.W9AVAN.DATA_CERTIFICATO",
+                                    "mnemonico": "W3DATA_CER",
+                                    "mappingInput": "dataCertificato",
+                                    "mappingOutput": "dataCertificato"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-certificato",
+                                    "label": "FASE-AVANZAMENTO.STATO-AVANZAMENTO.IMPORTO-CERTIFICATO",
+                                    "actionButtonLabel": "BUTTONS.ESEGUI-AZIONE",
+                                    "nomeCampo": "IMPORTO_CERTIFICATO.W9AVAN.W9",
+                                    "oggettoProtezione": "W9.W9AVAN.IMPORTO_CERTIFICATO",
+                                    "mnemonico": "W3I_CERTIF",
+                                    "mappingInput": "importoCertificato",
+                                    "mappingOutput": "importoCertificato",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "flag-ritardo",
+                                    "label": "FASE-AVANZAMENTO.STATO-AVANZAMENTO.FLAG-RITARDO",
+                                    "oggettoProtezione": "W9.W9AVAN.FLAG_RITARDO",
+                                    "mnemonico": "W3FLAG_RIT",
+                                    "mappingInput": "flagRitardo",
+                                    "mappingOutput": "flagRitardo",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "Ritardo"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "num-giorni-scost",
+                                    "label": "FASE-AVANZAMENTO.STATO-AVANZAMENTO.NUM-GIORNI-SCOST",
+                                    "oggettoProtezione": "W9.W9AVAN.NUM_GIORNI_SCOST",
+                                    "mnemonico": "W3NUM_GIO1",
+                                    "mappingInput": "numGiorniScost",
+                                    "mappingOutput": "numGiorniScost",
+                                    "decimals": 0,
+                                    "maxLength": 5,
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "flag-ritardo": {
+                                                "values": [
+                                                    {
+                                                        "value": "A",
+                                                        "operation": "="
+                                                    },
+                                                    {
+                                                        "value": "R",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "num-giorni-proroga",
+                                    "label": "FASE-AVANZAMENTO.STATO-AVANZAMENTO.NUM-GIORNI-PROROGA",
+                                    "oggettoProtezione": "W9.W9AVAN.NUM_GIORNI_PROROGA",
+                                    "mnemonico": "W3NUM_GIO2",
+                                    "mappingInput": "numGiorniProroga",
+                                    "mappingOutput": "numGiorniProroga",
+                                    "decimals": 0,
+                                    "maxLength": 5
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "flag-pagamento",
+                                    "label": "FASE-AVANZAMENTO.STATO-AVANZAMENTO.FLAG-PAGAMENTO",
+                                    "oggettoProtezione": "W9.W9AVAN.FLAG_PAGAMENTO",
+                                    "mnemonico": "W3FLAG_PAG",
+                                    "mappingInput": "flagPagamento",
+                                    "mappingOutput": "flagPagamento",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "Pagamento"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-anticipazione",
+                                    "label": "FASE-AVANZAMENTO.STATO-AVANZAMENTO.IMPORTO-ANTICIPAZIONE",
+                                    "actionButtonLabel": "BUTTONS.ESEGUI-AZIONE",
+                                    "nomeCampo": "IMPORTO_ANTICIPAZIONE.W9AVAN.W9",
+                                    "oggettoProtezione": "W9.W9AVAN.IMPORTO_ANTICIPAZIONE",
+                                    "mnemonico": "W3I_ANTICI",
+                                    "mappingInput": "importoAnticipazione",
+                                    "mappingOutput": "importoAnticipazione",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "num-avan": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    },
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-anticipazione",
+                                    "label": "FASE-AVANZAMENTO.STATO-AVANZAMENTO.DATA-ANTICIPAZIONE",
+                                    "oggettoProtezione": "W9.W9AVAN.DATA_ANTICIPAZIONE",
+                                    "mnemonico": "W3DATA_ANT",
+                                    "mappingInput": "dataAnticipazione",
+                                    "mappingOutput": "dataAnticipazione",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "num-avan": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "subappalti",
+                                    "label": "FASE-AVANZAMENTO.STATO-AVANZAMENTO.SUBAPPALTI",
+                                    "oggettoProtezione": "W9.W9AVAN.SUBAPPALTI",
+                                    "mnemonico": "W9AVANSUBAPP",
+                                    "mappingInput": "subappalti",
+                                    "mappingOutput": "subappalti",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino",
+                                    "visible": false
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

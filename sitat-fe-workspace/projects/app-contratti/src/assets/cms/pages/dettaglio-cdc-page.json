@@ -1,0 +1,105 @@
+{
+    "name": "dettaglio-cdc-page",
+    "title": "TITLE.DETTAGLIO-CDC-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "dettaglio-cdc-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-archivio-cdc-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-ARCHIVIO-CDC",
+                "slug": "ricerca-avanzata-archivio-cdc-page"
+            },
+            {
+                "code": "lista-archivio-cdc-page",
+                "label": "BREADCRUMB.LISTA-ARCHIVIO-CDC",
+                "slug": "lista-archivio-cdc-page"
+            },
+            {
+                "code": "dettaglio-cdc-page",
+                "label": "BREADCRUMB.DETTAGLIO-CDC",
+                "slug": "dettaglio-cdc-page",
+                "additionalParams": "APP_COMMONS_CDC_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-cdc-page-content-root-section",
+            "selector": "dettaglio-cdc-section",
+            "description": "Pagina di dettaglio centro di costo",
+            "classNames": "dettaglio-cdc-section",
+            "settings": {
+                "classNames": "dettaglio-cdc-index",
+                "sectionTitle": "TITLE.DETTAGLIO-CDC-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-archivio-cdc",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_COMMONS_LISTA_CDC",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "go-to-update-cdc",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_COMMONS_LISTA_CDC",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "CENTRO-DI-COSTO.GENERAL-DATA.GENERAL-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "codice-centro-costo",
+                                    "label": "CENTRO-DI-COSTO.GENERAL-DATA.CODICE",
+                                    "oggettoProtezione": "W9.CENTRICOSTO.CODCENTRO",
+                                    "mnemonico": "W9CCCODICE",
+                                    "mappingInput": "codiceCentro"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "denominazione-centro-di-costo",
+                                    "label": "CENTRO-DI-COSTO.GENERAL-DATA.DENOMINAZIONE",
+                                    "oggettoProtezione": "W9.CENTRICOSTO.DENOMCENTRO",
+                                    "mnemonico": "W9CCDENOM",
+                                    "mappingInput": "denominazione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "note-cdc",
+                                    "label": "CENTRO-DI-COSTO.GENERAL-DATA.NOTE",
+                                    "oggettoProtezione": "W9.CENTRICOSTO.NOTE",
+                                    "mnemonico": "W9CCNOTE",
+                                    "mappingInput": "note"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "tipologia-cdc",
+                                    "label": "CENTRO-DI-COSTO.GENERAL-DATA.TIPOLOGIA",
+                                    "oggettoProtezione": "W9.CENTRICOSTO.TIPOLOGIA",
+                                    "mnemonico": "W9CCTIPO",
+                                    "mappingInput": "tipologia",
+                                    "listCode": "TipologiaCC"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

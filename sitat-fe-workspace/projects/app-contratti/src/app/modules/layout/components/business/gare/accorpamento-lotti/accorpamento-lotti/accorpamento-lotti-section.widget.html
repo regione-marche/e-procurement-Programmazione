@@ -1,0 +1,49 @@
+<div [class]="config.classNames" *ngIf="isReady">
+    <h1 class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</h1>
+    <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+    <div class="messages-box" #infoBox></div>
+
+    <div class="messages-box" #messages></div>
+
+    <div class="accorpamento-lotti-container">
+
+        <div class="al-content">
+            <sdk-autocomplete [config]="cigMasterConfigSubj" (output)="onCigMasterOutput($event)">
+            </sdk-autocomplete>
+            <div class="lotti-accorpabli-table-empty empty-list" *ngIf="listaLottiAccorpabili == null">
+                {{ 'ACCORPAMENTO-LOTTI.EMPTY-LIST' | translate }}
+            </div>
+            <div class="lotti-accorpabli-table-empty empty-list"
+                *ngIf="listaLottiAccorpabili != null && listaLottiAccorpabili.length == 0">
+                {{ 'ACCORPAMENTO-LOTTI.CIG-NON-ACCORPABILE' | translate }}
+            </div>
+            <table class="lotti-accorpabli-table"
+                *ngIf="listaLottiAccorpabili != null && listaLottiAccorpabili.length > 0"
+                [attr.aria-label]="config.sectionTitle | translate">
+                <thead>
+                    <th class="lotti-accorpabli-header">{{ 'ACCORPAMENTO-LOTTI.TABLE.CIG-SELEZIONATO' | translate }}
+                    </th>
+                    <th class="lotti-accorpabli-header cig">{{ 'ACCORPAMENTO-LOTTI.TABLE.CIG' | translate }}</th>
+                    <th class="lotti-accorpabli-header">{{ 'ACCORPAMENTO-LOTTI.TABLE.OGGETTO-LOTTO' | translate }}
+                    </th>
+                </thead>
+                <tbody>
+                    <tr class="lotti-accorpabli-row" *ngFor="let lotto of listaLottiAccorpabili">
+                        <td class="lotti-accorpabli-cell first">
+                            <input type="checkbox" (change)="manageCheckboxes(lotto.cig, $event)"
+                                [checked]="checkedCig[lotto.cig]">
+                        </td>
+                        <td class="lotti-accorpabli-cell">{{lotto.cig}}</td>
+                        <td class="lotti-accorpabli-cell">{{lotto.oggetto}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group *ngIf="buttonsSubj != null" [config]="buttonsSubj" (output)="onButtonClick($event)">
+            </sdk-button-group>
+        </div>
+    </div>
+    <sdk-dialog [config]="dialogConfigSubj"></sdk-dialog>
+</div>

@@ -1,0 +1,305 @@
+{
+    "name": "dettaglio-fase-aggiudicazione-semp-page",
+    "title": "TITLE.DETTAGLIO-FASE-AGGIUDICAZIONE-SEMP-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/pubblica-fase-lotto-page.css"
+    ],
+    "settings": {
+        "page": "dettaglio-fase-aggiudicazione-semp-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-aggiudicazione-semp-page",
+                "label": "BREADCRUMB.DETTAGLIO-FASE-AGGIUDICAZIONE-SEMP",
+                "slug": "dettaglio-fase-aggiudicazione-semp-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-fase-aggiudicazione-semp-page-content-root-section",
+            "selector": "dettaglio-fase-aggiudicazione-semp-section",
+            "description": "Pagina di dettaglio fase di aggiudicazione semplificata",
+            "classNames": "dettaglio-fase-aggiudicazione-semp-section",
+            "settings": {
+                "classNames": "dettaglio-fase-aggiudicazione-semp-index",
+                "menuTabs": [
+                    {
+                        "code": "dettaglio-fase-aggiudicazione-semp",
+                        "title": "DETTAGLIO-FASE-AGGIUDICAZIONE-SEMP.TABS.DATI-AGGIUDICAZIONE",
+                        "active": true,
+                        "slug": "dettaglio-fase-aggiudicazione-semp-page",
+                        "oggettoProtezione": "W9.W9APPA-scheda.DETTFASE",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+                    },
+                    {
+                        "code": "lista-impr-agg-fase-agg-semp",
+                        "title": "DETTAGLIO-FASE-AGGIUDICAZIONE-SEMP.TABS.IMPRESE-AGGIUDICATARIE",
+                        "slug": "lista-impr-agg-fase-agg-semp-page",
+                        "oggettoProtezione": "W9.W9APPA-scheda.IMPR",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+                    },
+                    {
+                        "code": "dettaglio-inc-prof-fase-agg-semp",
+                        "title": "DETTAGLIO-FASE-AGGIUDICAZIONE-SEMP.TABS.INCARICHI-PROFESSIONALI",
+                        "oggettoProtezione": "W9.W9APPA-scheda.INCAPROF",
+                        "slug": "dettaglio-inc-prof-fase-agg-semp-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+                    }
+                ],
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "check-pubblicazione",
+                            "label": "BUTTONS.CHECK-DATA",
+                            "provider": "APP_FASI_LOTTO_PUBBLICA",
+                            "oggettoProtezione": "ALT.W9.FasiDiGara-schede.ControlloDatiInseriti",
+                            "type": "functions",
+                            "icon": "mgg-icons-document-text"
+                        },
+                        {
+                            "code": "go-to-update-fase",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_GARE_FASE_AGGIUDICAZIONE_SEMP_PROVIDER",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "sidebar": {
+                        "code": "sidebar",
+                        "position": "right",
+                        "width": 500,
+                        "classList": [
+                            "check-pubb-sidebar"
+                        ],
+                        "headerImage": "assets/images/app/logo.png",
+                        "component": "check-pubblicazione-widget",
+                        "componentConfig": {}
+                    },
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "dati-economici-data",
+                            "label": "FASE-AGGIUDICAZIONE-SEMP.DATI-ECONOMICI-DATA.DATI-ECONOMICI-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "asta-elettronica",
+                                    "label": "FASE-AGGIUDICAZIONE-SEMP.DATI-ECONOMICI-DATA.ASTA-ELETTRONICA",
+                                    "oggettoProtezione": "W9.W9APPA.ASTA_ELETTRONICA",
+                                    "mnemonico": "W3ASTA_ELE",
+                                    "mappingInput": "astaElettronica",
+                                    "mappingOutput": "astaElettronica",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "importo-subtotale",
+                                    "label": "FASE-AGGIUDICAZIONE-SEMP.DATI-ECONOMICI-DATA.IMPORTO-SUBTOTALE",
+                                    "oggettoProtezione": "W9.W9APPA.IMPORTO_SUBTOTALE",
+                                    "mnemonico": "W3I_SUBTOT",
+                                    "mappingInput": "importoSub",
+                                    "mappingOutput": "importoSub",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "importo-attuazione-sicurezza",
+                                    "label": "FASE-AGGIUDICAZIONE-SEMP.DATI-ECONOMICI-DATA.IMPORTO-ATTUAZIONE-SICUREZZA",
+                                    "oggettoProtezione": "W9.W9APPA.IMPORTO_ATTUAZIONE_SICUREZZA",
+                                    "mnemonico": "W3AP_ATTSI",
+                                    "mappingInput": "importoSicurezza",
+                                    "mappingOutput": "importoSicurezza",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "importo-compl-appalto",
+                                    "label": "FASE-AGGIUDICAZIONE-SEMP.DATI-ECONOMICI-DATA.IMPORTO-COMPL-APPALTO",
+                                    "oggettoProtezione": "W9.W9APPA.IMPORTO_COMPL_APPALTO",
+                                    "mnemonico": "W3I_C_APPA",
+                                    "mappingInput": "importoComplAppalto",
+                                    "mappingOutput": "importoComplAppalto",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "iva",
+                                    "label": "FASE-AGGIUDICAZIONE-SEMP.DATI-ECONOMICI-DATA.IVA",
+                                    "oggettoProtezione": "W9.W9APPA.IVA",
+                                    "mnemonico": "W9APIVA",
+                                    "mappingInput": "iva",
+                                    "mappingOutput": "iva"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "importo-iva",
+                                    "label": "FASE-AGGIUDICAZIONE-SEMP.DATI-ECONOMICI-DATA.IMPORTO-IVA",
+                                    "oggettoProtezione": "W9.W9APPA.IMPORTO_IVA",
+                                    "mnemonico": "W9APIMPIVA",
+                                    "mappingInput": "importoIva",
+                                    "mappingOutput": "importoIva",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "altre-somme",
+                                    "label": "FASE-AGGIUDICAZIONE-SEMP.DATI-ECONOMICI-DATA.ALTRE-SOMME",
+                                    "oggettoProtezione": "W9.W9APPA.ALTRE_SOMME",
+                                    "mnemonico": "W9APALTSOM",
+                                    "mappingInput": "altreSomme",
+                                    "mappingOutput": "altreSomme",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "importo-disposizione",
+                                    "label": "FASE-AGGIUDICAZIONE-SEMP.DATI-ECONOMICI-DATA.IMPORTO-DISPOSIZIONE",
+                                    "oggettoProtezione": "W9.W9APPA.IMPORTO_DISPOSIZIONE",
+                                    "mnemonico": "W3I_DISPS",
+                                    "mappingInput": "importoDisposizione",
+                                    "mappingOutput": "importoDisposizione",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "importo-compl-intervento",
+                                    "label": "FASE-AGGIUDICAZIONE-SEMP.DATI-ECONOMICI-DATA.IMPORTO-COMPL-INTERVENTO",
+                                    "oggettoProtezione": "W9.W9APPA.IMPORTO_COMPL_INTERVENTO",
+                                    "mnemonico": "W3I_C_INTE",
+                                    "mappingInput": "importoComplIntervento",
+                                    "mappingOutput": "importoComplIntervento",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "perc-ribasso-agg",
+                                    "label": "FASE-AGGIUDICAZIONE-SEMP.DATI-ECONOMICI-DATA.PERC-RIBASSO-AGG",
+                                    "oggettoProtezione": "W9.W9APPA.PERC_RIBASSO_AGG",
+                                    "mnemonico": "W3PERC_RIB",
+                                    "mappingInput": "percRibassoAgg",
+                                    "mappingOutput": "percRibassoAgg",
+                                    "decimals": 5
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "perc-off-aumento",
+                                    "label": "FASE-AGGIUDICAZIONE-SEMP.DATI-ECONOMICI-DATA.PERC-OFF-AUMENTO",
+                                    "oggettoProtezione": "W9.W9APPA.PERC_OFF_AUMENTO",
+                                    "mnemonico": "W3PERC_OFF",
+                                    "mappingInput": "percOffAumento",
+                                    "mappingOutput": "percOffAumento",
+                                    "decimals": 5
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-verb-aggiudicazione",
+                                    "label": "FASE-AGGIUDICAZIONE-SEMP.DATI-ECONOMICI-DATA.DATA-VERB-AGGIUDICAZIONE",
+                                    "oggettoProtezione": "W9.W9APPA.DATA_VERB_AGGIUDICAZIONE",
+                                    "mnemonico": "W3DVERB",
+                                    "mappingInput": "dataVerbAgg",
+                                    "mappingOutput": "dataVerbAgg"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "importo-aggiudicazione",
+                                    "label": "FASE-AGGIUDICAZIONE-SEMP.DATI-ECONOMICI-DATA.IMPORTO-AGGIUDICAZIONE",
+                                    "oggettoProtezione": "W9.W9APPA.IMPORTO_AGGIUDICAZIONE",
+                                    "mnemonico": "W3IMP_AGGI",
+                                    "mappingInput": "importoAgg",
+                                    "mappingOutput": "importoAgg",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "tipo-atto",
+                                    "label": "FASE-AGGIUDICAZIONE-SEMP.DATI-ECONOMICI-DATA.TIPO-ATTO",
+                                    "oggettoProtezione": "W9.W9APPA.TIPO_ATTO",
+                                    "mnemonico": "W9APTIPAT",
+                                    "mappingInput": "tipoAtto",
+                                    "mappingOutput": "tipoAtto",
+                                    "listCode": "TipoAtto"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-atto",
+                                    "label": "FASE-AGGIUDICAZIONE-SEMP.DATI-ECONOMICI-DATA.DATA-ATTO",
+                                    "oggettoProtezione": "W9.W9APPA.DATA_ATTO",
+                                    "mnemonico": "W9APDATAT",
+                                    "mappingInput": "dataAtto",
+                                    "mappingOutput": "dataAtto"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "numero-atto",
+                                    "label": "FASE-AGGIUDICAZIONE-SEMP.DATI-ECONOMICI-DATA.NUMERO-ATTO",
+                                    "oggettoProtezione": "W9.W9APPA.NUMERO_ATTO",
+                                    "mnemonico": "W9APNUMAT",
+                                    "mappingInput": "numeroAtto",
+                                    "mappingOutput": "numeroAtto"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-stipula",
+                                    "label": "FASE-AGGIUDICAZIONE-SEMP.DATI-ECONOMICI-DATA.DATA-STIPULA",
+                                    "oggettoProtezione": "W9.W9APPA.DATA_STIPULA",
+                                    "mnemonico": "W9APDATA_STI",
+                                    "mappingInput": "dataStipula",
+                                    "mappingOutput": "dataStipula"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "durata-con",
+                                    "label": "FASE-AGGIUDICAZIONE-SEMP.DATI-ECONOMICI-DATA.DURATA-CON",
+                                    "oggettoProtezione": "W9.W9APPA.DURATA_CON",
+                                    "mnemonico": "W9APDURCON",
+                                    "mappingInput": "durataCon",
+                                    "mappingOutput": "durataCon"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

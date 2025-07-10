@@ -1,0 +1,252 @@
+{
+    "name": "ricerca-avanzata-gare-page",
+    "title": "TITLE.RICERCA-AVANZATA-GARE-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/ricerca-avanzata-gare-page.css"
+    ],
+    "settings": {
+        "page": "ricerca-avanzata-gare-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "ricerca-avanzata-gare-page-content-root-section",
+            "selector": "ricerca-avanzata-gare-section",
+            "description": "Pagina ricerca avanzata gare",
+            "classNames": "ricerca-avanzata-gare-section",
+            "settings": {
+                "classNames": "ricerca-avanzata-gare-index",
+                "sectionTitle": "TITLE.RICERCA-AVANZATA-GARE-PAGE",
+                "body": {
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "gara-data",
+                            "label": "RICERCA-AVANZATA-GARE.GARA-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "MULTIPLE-AUTOCOMPLETE",
+                                    "code": "stazione-appaltante",
+                                    "label": "RICERCA-AVANZATA-GARE.STAZIONE-APPALTANTE",
+                                    "oggettoProtezione": "W9.AVVISO.CODEIN",
+                                    "mnemonico": "W3PACODEIN",
+                                    "noDataLabel": "NO-DATA",
+                                    "itemsProviderCode": "STAZIONE_APPALTANTE_AUTOCOMPLETE",
+                                    "mappingInput": "stazioneAppaltante",
+                                    "mappingOutput": "stazioneAppaltante"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "oggetto-gara",
+                                    "label": "RICERCA-AVANZATA-GARE.OGGETTO-GARA",
+                                    "oggettoProtezione": "W9.W9GARA.OGGETTO",
+                                    "mnemonico": "W3OGGETTO1",
+                                    "mappingOutput": "oggetto",
+                                    "mappingInput": "oggetto"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "modalita-realizzazione",
+                                    "label": "RICERCA-AVANZATA-GARE.MODALITA-REALIZZAZIONE",
+                                    "oggettoProtezione": "W9.W9GARA.TIPO_APP",
+                                    "mnemonico": "W3TIPOAPP",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "TipoRealizzazione",
+                                    "mappingOutput": "modalitaRealizzazione",
+                                    "mappingInput": "modalitaRealizzazione"
+                                },                                
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "id-gara",
+                                    "label": "RICERCA-AVANZATA-GARE.ID-GARA",
+                                    "oggettoProtezione": "W9.W9GARA.IDAVGARA",
+                                    "mnemonico": "W3IDGARA",
+                                    "mappingOutput": "numGara",
+                                    "mappingInput": "numGara"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-gara-da",
+                                    "label": "RICERCA-AVANZATA-GARE.IMPORTO-GARA-DA",
+                                    "oggettoProtezione": "W9.W9GARA.IMPORTO_GARA",
+                                    "mnemonico": "W3I_GARA",
+                                    "mappingOutput": "importoGaraDa",
+                                    "mappingInput": "importoGaraDa"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-gara-a",
+                                    "label": "RICERCA-AVANZATA-GARE.IMPORTO-GARA-A",
+                                    "oggettoProtezione": "W9.W9GARA.IMPORTO_GARA",
+                                    "mnemonico": "W3I_GARA",
+                                    "mappingOutput": "importoGaraA",
+                                    "mappingInput": "importoGaraA"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "situazione",
+                                    "label": "RICERCA-AVANZATA-GARE.SITUAZIONE",
+                                    "oggettoProtezione": "W9.W9GARA.SITUAZIONE",
+                                    "mnemonico": "W9GASITUAZ",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "Situazione",
+                                    "mappingOutput": "situazioneGara",
+                                    "mappingInput": "situazioneGara"
+                                }, 
+                                {
+
+                                    "type": "MULTIPLE-AUTOCOMPLETE",
+                                    "code": "rup-gara",
+                                    "label": "RICERCA-AVANZATA-GARE.RUP-GARA",
+                                    "oggettoProtezione": "W9.W9GARA_ENTINAZ.RUP",
+                                    "mnemonico": "W9GNRUP",
+                                    "itemsProviderCode": "APP_AVVISI_RUP_AVVISO",
+                                    "mappingInput": "rup",
+                                    "mappingOutput": "rup",
+                                    "noDataLabel": "NO-DATA"
+                                },                                
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "datada",
+                                    "label": "RICERCA-AVANZATA-GARE.DATAPUBB_DA",
+                                    "oggettoProtezione": "W9.W9GARA.DATA_PUBBLICAZIONE",
+                                    "mnemonico": "W9GADATPUB",
+                                    "mappingOutput": "dataDa",
+                                    "mappingInput": "dataDa"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "dataA",
+                                    "label": "RICERCA-AVANZATA-GARE.DATAPUBB_A",
+                                    "oggettoProtezione": "W9.W9GARA.DATA_PUBBLICAZIONE",
+                                    "mnemonico": "W9GADATPUB",
+                                    "mappingOutput": "dataA",
+                                    "mappingInput": "dataA"
+                                },{
+                                    "type": "COMBOBOX",
+                                    "code": "gare-archiviate",
+                                    "label": "RICERCA-AVANZATA-GARE.GARE-ARCHIVIATE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino",
+                                    "mappingOutput": "archiviate",
+                                    "mappingInput": "archiviate"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "lotto-data",
+                            "label": "RICERCA-AVANZATA-GARE.LOTTO-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "cig",
+                                    "label": "RICERCA-AVANZATA-GARE.CIG",
+                                    "oggettoProtezione": "W9.W9LOTT.CIGCOM",
+                                    "mnemonico": "W3CIGCOM",
+                                    "mappingOutput": "cigLotto",
+                                    "mappingInput": "cigLotto",
+                                    "maxLength": 10
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "oggetto-lotto",
+                                    "label": "RICERCA-AVANZATA-GARE.OGGETTO-LOTTO",
+                                    "oggettoProtezione": "W9.W9LOTT.OGGETTO ",
+                                    "mnemonico": "W3OGGETTO2",
+                                    "mappingOutput": "oggettoLotto",
+                                    "mappingInput": "oggettoLotto"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tipo-procedura-lotto",
+                                    "label": "RICERCA-AVANZATA-GARE.TIPO-PROCEDURA-LOTTO",
+                                    "oggettoProtezione": "W9.W9LOTT.ID_SCELTA_CONTRAENTE",
+                                    "mnemonico": "W3ID_SCEL2",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "SceltaContraente",
+                                    "mappingOutput": "proceduraContraenteLotto",
+                                    "mappingInput": "proceduraContraenteLotto"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tipo-appalto",
+                                    "label": "RICERCA-AVANZATA-GARE.TIPO-APPALTO",
+                                    "oggettoProtezione": "W9.W9LOTT.TIPO_CONTRATTO",
+                                    "mnemonico": "W3TIPO_CON",
+                                    "mappingOutput": "tipoAppaltoLotto",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "TipoAppalto",
+                                    "mappingInput": "tipoAppaltoLotto"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-lotto-da",
+                                    "label": "RICERCA-AVANZATA-GARE.IMPORTO-LOTTO-DA",
+                                    "oggettoProtezione": "W9.W9LOTT.IMPORTO_LOTTO",
+                                    "mnemonico": "W3I_LOTTO",
+                                    "mappingOutput": "importoLottoDa",
+                                    "mappingInput": "importoLottoDa"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-lotto-a",
+                                    "label": "RICERCA-AVANZATA-GARE.IMPORTO-LOTTO-A",
+                                    "oggettoProtezione": "W9.W9LOTT.IMPORTO_LOTTO",
+                                    "mnemonico": "W3I_LOTTO",
+                                    "mappingOutput": "importoLottoA",
+                                    "mappingInput": "importoLottoA"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "cup",
+                                    "label": "RICERCA-AVANZATA-GARE.CUP",
+                                    "oggettoProtezione": "W9.W9LOTT.CUP",
+                                    "mnemonico": "W3CUP",
+                                    "mappingOutput": "cupLotto",
+                                    "mappingInput": "cupLotto"
+                                }
+                            ]
+                        }
+                    ],
+                    "buttons": [
+                        {
+                            "code": "back-button",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_ADVANCED_SEARCH",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "clean-button",
+                            "label": "BUTTONS.CLEAN",
+                            "provider": "APP_GARE_ADVANCED_SEARCH",
+                            "icon": "mgg-icons-data-unfiltered"
+                        },
+                        {
+                            "code": "search-button",
+                            "label": "BUTTONS.SEARCH",
+                            "provider": "APP_GARE_ADVANCED_SEARCH",
+                            "icon": "mgg-icons-data-search"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+<div [class]="config.classNames" *ngIf="isReady">
+    <h1 class="edit-page-title">{{ config.sectionTitle | translate }}</h1>
+
+    <div class="messages-box" #infoBox></div>
+
+    <div class="messages-box" #messages></div>
+    <div class="fase-conclusione-container">
+        <div class="fase-conclusione-content">
+            <sdk-form-builder [config]="formBuilderConfigObs" [data]="formBuilderDataSubject"
+                (output)="manageFormOutput($event)" (outputField)="manageOutputField($event)"
+                (outputInfoBox)="manageOutputInfoBox($event)"
+                (outputActionClick)="manageOutputActionClick($event)">
+            </sdk-form-builder>
+            <sdk-modal [config]="modalConfigObs" (output)="manageModalOutput($event)"></sdk-modal>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+    <sdk-dialog [config]="dialogConfigObs"></sdk-dialog>
+</div>

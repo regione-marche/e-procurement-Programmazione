@@ -1,0 +1,68 @@
+<div class="sdk-login-form" [class.mtoken]="step == 2">
+
+    <div class="sdk-login-form-title">
+        {{ 'SDK-GESTIONE-UTENTI.TITLE.INTERNAL_LOGIN' | translate }}
+    </div>
+
+    <div class="messages-box" #messages></div>
+
+    <form *ngIf="step == 1" action="#" [formGroup]="loginForm" (ngSubmit)="onSubmit()" autocomplete="off">
+        <div class="p-grid p-fluid">
+            <div class="p-col-12 p-md-4 sdk-login-form-field-group">
+                <label for="username" class="sdk-login-form-label">{{ 'SDK-GESTIONE-UTENTI.FORM.USERNAME' | translate }}
+                    ( * )</label>
+                <input id="username" type="text" pInputText formControlName="username">
+            </div>
+            <div class="p-col-12 p-md-4 sdk-login-form-field-group">
+                <label for="password" class="sdk-login-form-label">{{ 'SDK-GESTIONE-UTENTI.FORM.PASSWORD' | translate }}
+                    ( * )</label>
+                <p-password inputId="password" formControlName="password" [feedback]="false" />
+            </div>
+        </div>
+        <div class="sdk-login-form-pulsantiera">
+            <button pButton type="button" class="p-button-outlined p-button-secondary" sdkClick (aClick)="goBack()">{{
+                'SDK-GESTIONE-UTENTI.FORM.BUTTONS.INDIETRO' | translate }}</button>
+            <button pButton type="submit">{{ 'SDK-GESTIONE-UTENTI.FORM.BUTTONS.LOGIN' |
+                translate }}</button>
+        </div>
+        <div class="sdk-login-form-links">
+            <ng-container *ngIf="registrazioneUtenteAttiva">
+                <span sdkClick (aClick)="navigateUserRegistration()" tabindex="0" role="navigation">{{
+                    'SDK-GESTIONE-UTENTI.FORM.REGISTRATION' | translate }}</span>
+                <br><br>
+            </ng-container>
+            <span sdkClick (aClick)="navigatePasswordRecovery()" tabindex="0" role="navigation">{{
+                'SDK-GESTIONE-UTENTI.FORM.REQUEST-PASSWORD-RECOVERY'
+                | translate }}</span>
+        </div>
+    </form>
+
+    <form *ngIf="step == 2" action="#" [formGroup]="mTokenForm" (ngSubmit)="onMTokenSubmit()" autocomplete="off">
+        <div class="p-grid p-fluid">
+            <div class="p-col-12 p-md-4 sdk-login-form-field-group file">
+                <label for="certificatoFile" class="sdk-login-form-label">{{ 'SDK-GESTIONE-UTENTI.FORM.CERTIFICATO-FILE'
+                    | translate }}</label>
+                <input id="certificatoFile" type="file" size="50" (change)="onFileChange($event)" />
+            </div>
+            <div class="p-col-12 p-md-4 sdk-login-form-field-group">
+                <label for="certificatoText" class="sdk-login-form-label">{{ 'SDK-GESTIONE-UTENTI.FORM.CERTIFICATO-TEXT'
+                    | translate }}</label>
+                <textarea id="certificatoText" rows="20" cols="60" pInputTextarea
+                    formControlName="certificatoText"></textarea>
+            </div>
+            <div class="p-col-12 p-md-4 sdk-login-form-field-group">
+                <label for="motivazione" class="sdk-login-form-label">{{ 'SDK-GESTIONE-UTENTI.FORM.MOTIVAZIONE' |
+                    translate }}( * )</label>
+                <input id="motivazione" type="text" pInputText formControlName="motivazione">
+            </div>
+        </div>
+        <div class="sdk-login-form-pulsantiera">
+            <button pButton type="button" class="p-button-outlined p-button-secondary" sdkClick
+                (aClick)="goMTokenBack()">{{
+                'SDK-GESTIONE-UTENTI.FORM.BUTTONS.INDIETRO' | translate }}</button>
+            <button pButton type="submit">{{ 'SDK-GESTIONE-UTENTI.FORM.BUTTONS.CONFIRM' |
+                translate }}</button>
+        </div>
+    </form>
+
+</div>

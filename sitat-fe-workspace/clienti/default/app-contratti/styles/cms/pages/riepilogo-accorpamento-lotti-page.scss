@@ -1,0 +1,29 @@
+@import "../app/app-vars.scss";
+@import "../../sdk-flex.scss";
+
+.riepilogo-accorpamento-lotti-container .ral-content {
+    .empty-list {
+        @extend %e8e8e8-background;
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 3px;
+    }
+
+    .title {
+        font-weight: bold;
+        padding: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .riepilogo-accorpamenti-table {
+        width: 100%;
+
+        tr.riepilogo-accorpamenti-row:nth-child(even) {
+            background-color: #f2f2f2
+        }
+
+        .riepilogo-accorpamenti-cell {
+            padding: 1rem;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+
+    <sdk-form-builder [config]="formBuilderConfigObs" [data]="formBuilderDataSubject"
+        (output)="manageFormOutput($event)" (outputField)="manageOutputField($event)"
+        (outputClick)="manageFormClick($event)" (outputInfoBox)="manageOutputInfoBox($event)">
+    </sdk-form-builder>
+   
+    <sdk-modal [config]="modalConfigObs"></sdk-modal>
+  
+<div class="buttons-row">
+    <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+</div>       
+
+<sdk-sidebar [config]="sidebarConfigObs"></sdk-sidebar>

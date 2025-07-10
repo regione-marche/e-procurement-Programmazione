@@ -1,0 +1,74 @@
+<div [class]="config.classNames" *ngIf="isReady">
+
+  <div class="messages-box" #infoBox></div>
+
+  <div class="messages-box" #messages></div>
+
+  <!-- BEGIN Box Testata -->
+  <div class="box-container box-container-main" *ngIf="config.testata == true">
+    <div class="header-title">
+      <h2 class="header-title-content-main">{{ 'HOME-PAGE.HEADER-TITLE-CONTENT' | translate }}</h2>
+      <p class="header-description">
+        {{ 'HOME-PAGE.HEADER-DESCRIPTION' | translate }}
+      </p>
+    </div>
+  </div>
+  <!-- END Box Testata -->
+
+  <!-- BEGIN Boxes -->
+  <div class="boxes">
+    <!-- BEGIN Box Atti generali -->
+    <div class="box-container-atti-generali" *ngIf="attiGeneraliCards != null">
+      <div class="header-title">
+        <h2 class="header-title-content">{{ 'HOME-ATTI-GENERALI-PAGE.HEADER-TITLE-CONTENT' | translate }}</h2>
+        <p class="header-description">
+          {{ 'HOME-ATTI-GENERALI-PAGE.HEADER-DESCRIPTION' | translate }}
+        </p>
+      </div>
+      <div class="box-cards">
+        <div class="cards-container">
+          <div class="item-card" *ngFor="let card of attiGeneraliCards" sdkClick (aClick)="manageCardClick(card)" tabindex="0"
+            role="navigation" [attr.aria-label]="card.label | translate">
+            <div class="item-card-icon">
+              <i [ngClass]="getIcons(card)"></i>
+            </div>
+            <div class="item-card-title">
+              {{ card.label | translate }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <sdk-dialog-no-label [config]="dialogConfigObs"></sdk-dialog-no-label>
+    </div>
+    <!-- END Box Atti generali -->
+
+    <!-- BEGIN Box Gare -->
+    <div class="box-container-gare">
+      <div class="header-title">
+        <h2 class="header-title-content">{{ 'HOME-GARE-PAGE.HEADER-TITLE-CONTENT' | translate }}</h2>
+        <p class="header-description">
+          {{ 'HOME-GARE-PAGE.HEADER-DESCRIPTION' | translate }}
+        </p>
+      </div>
+      <div class="box-cards">
+        <div class="cards-container">
+          <div class="item-card" *ngFor="let card of gareCards" sdkClick (aClick)="manageCardClick(card)" tabindex="0"
+            role="navigation" [attr.aria-label]="card.label | translate">
+            <div class="item-card-icon">
+              <i [ngClass]="getIcons(card)"></i>
+            </div>
+            <div class="item-card-title">
+              {{ card.label | translate }}
+            </div>
+          </div>
+        </div>
+        <div class="div-link selectable-link-item" *ngIf="isTest === true && insertGaraCard != null">
+          <a sdkClick (aClick)="manageCardClick(insertGaraCard)">{{ insertGaraCard.label | translate }}</a>
+        </div>
+      </div>
+    </div>
+    <!-- END Box Gare -->
+
+  </div>
+  <!-- END Boxes -->
+</div>

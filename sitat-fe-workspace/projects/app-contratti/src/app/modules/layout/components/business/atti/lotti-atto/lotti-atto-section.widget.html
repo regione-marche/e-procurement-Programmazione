@@ -1,0 +1,43 @@
+<div [class]="config.classNames" *ngIf="isReady">
+    <h1 class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</h1>
+    <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+    <div class="messages-box" #infoBox></div>
+
+    <div class="messages-box" #messages></div>
+    <div class="la-container">
+        <div class="la-content">
+            <div class="empty-list" *ngIf="lottiAtto !== undefined && lottiAtto.length === 0">
+                {{'LOTTI-ATTO.EMPTY-LIST' | translate}}
+            </div>
+            <table class="lotti-atto-table" *ngIf="lottiAtto !== undefined && lottiAtto.length > 0"
+                [attr.aria-label]="config.sectionTitle | translate">
+                <thead>
+                    <th scope="col" class="lotti-atto-header-check"><input type="image"
+                            src="assets/images/app/select-all.svg" (click)="selectAll()"
+                            [alt]="'BUTTONS.SELECT-ALL' | translate"><input type="image"
+                            src="assets/images/app/deselect-all.svg" (click)="deselectAll()"
+                            [alt]="'BUTTONS.UNSELECT-ALL' | translate"></th>
+                    <th scope="col" class="lotti-atto-header">{{ 'LOTTI-ATTO.CIG' | translate }}</th>
+                    <th scope="col" class="lotti-atto-header">{{ 'LOTTI-ATTO.OGGETTO' | translate }}</th>
+                    <th scope="col" class="lotti-atto-header">{{ 'LOTTI-ATTO.IMPORTO' | translate }}</th>
+                </thead>
+                <tbody>
+                    <tr class="lotti-atto-row" *ngFor="let lottoAtto of lottiAtto;let i=index">
+                        <td class="lotti-atto-cell"><input id=check_{{i}} type="checkbox"
+                                (change)="manageCheckboxes(lottoAtto.codLotto, $event)" [checked]="lottoAtto.associato">
+                        </td>
+                        <td class="lotti-atto-cell">{{lottoAtto.cig}}</td>
+                        <td class="lotti-atto-cell">{{lottoAtto.oggetto}}</td>
+                        <td class="lotti-atto-cell">
+                            {{sdkNumberFormatService.formatCurrencyString(lottoAtto.importoNetto, locale, currency)}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+</div>

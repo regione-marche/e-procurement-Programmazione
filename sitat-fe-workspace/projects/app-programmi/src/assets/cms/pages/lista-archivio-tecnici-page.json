@@ -1,0 +1,169 @@
+{
+    "name": "lista-archivio-tecnici-page",
+    "title": "TITLE.LISTA-ARCHIVIO-TECNICI-PAGE",
+    "layout": "base-layout",
+    "appName": "app-programmi",
+    "styleUrls": [
+        "assets/cms/pages/lista-archivio-tecnici-page.css"
+    ],
+    "settings": {
+        "page": "lista-archivio-tecnici-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-archivio-tecnici-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-ARCHIVIO-TECNICI",
+                "slug": "ricerca-avanzata-archivio-tecnici-page"
+            },
+            {
+                "code": "lista-archivio-tecnici-page",
+                "label": "BREADCRUMB.LISTA-ARCHIVIO-TECNICI",
+                "slug": "lista-archivio-tecnici-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "lista-archivio-tecnici-page-content-root-section",
+            "selector": "lista-archivio-tecnici-section",
+            "description": "Pagina per la lista dei tecnici",
+            "classNames": "lista-archivio-tecnici-section",
+            "settings": {
+                "classNames": "lista-archivio-tecnici-index",
+                "sectionTitle": "TITLE.LISTA-ARCHIVIO-TECNICI-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_COMMONS_LISTA_TECNICI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "clean-button",
+                            "label": "BUTTONS.CLEAN",
+                            "provider": "APP_COMMONS_LISTA_TECNICI",
+                            "icon": "mgg-icons-data-unfiltered"
+                        },
+                        {
+                            "code": "nuovo",
+                            "label": "BUTTONS.NUOVO",
+                            "icon": "mgg-icons-crud-create",
+                            "provider": "APP_COMMONS_LISTA_TECNICI",
+                            "oggettoProtezione": "INS.*"
+                        }
+                    ],
+                    "grid": {
+                        "showCurrentPageReport": true,
+                        "showCurrentRecordsReport": true,
+                        "navigable": true,
+                        "resizable": false,
+                        "debug": false,
+                        "sortable": {
+                            "allowUnsort": false,
+                            "mode": "single"
+                        },
+                        "sort": [
+                            {
+                                "field": "nominativo",
+                                "dir": "asc"
+                            }
+                        ],
+                        "pageable": {
+                            "buttonCount": 5,
+                            "info": true,
+                            "pageSizes": [
+                                5,
+                                10,
+                                20,
+                                50
+                            ],
+                            "type": "numeric"
+                        },
+                        "toolbar": {
+                            "position": "top",
+                            "actions": []
+                        },
+                        "columns": [{
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-ARCHIVIO-TECNICI.STAZIONE-APPALTANTE",
+                                "field": "nominativoStazioneAppaltante",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_LINK",
+                                    "params": {
+                                        "action": {
+                                            "label": "LISTA-ARCHIVIO-TECNICI.AZIONI.DETTAGLIO",
+                                            "disabled": false,
+                                            "performer": "dettaglio"
+                                        }
+                                    }
+                                },
+                                "title": "LISTA-ARCHIVIO-TECNICI.INTESTAZIONE",
+                                "field": "nominativo",
+                                "width": 300,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "GENE.TECNI.NOMTEC"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-ARCHIVIO-TECNICI.CODICE-FISCALE",
+                                "field": "cf",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "GENE.TECNI.CFTEC"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_ACTIONS_ICON",
+                                    "params": {
+                                        "actions": [
+                                            {
+                                                "label": "LISTA-ARCHIVIO-TECNICI.AZIONI.CANCELLA",
+                                                "disabled": false,
+                                                "performer": "delete",
+                                                "hidden": "deleteHidden",
+                                                "icon": "mgg-icons-crud-delete",
+                                                "oggettoProtezione": "DEL.*"
+                                            },
+                                            {
+                                                "label": "LISTA-ARCHIVIO-TECNICI.AZIONI.NO-CANCELLA",
+                                                "disabled": true,
+                                                "hidden": "deleteNotHidden",
+                                                "icon": "mgg-icons-no-trash"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "title": "LISTA-ARCHIVIO-TECNICI.AZIONI.TITLE",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

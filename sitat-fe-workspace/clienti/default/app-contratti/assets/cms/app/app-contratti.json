@@ -1,0 +1,1690 @@
+{
+    "name": "@maggioli/app-contratti",
+    "styleUrls": [
+        "assets/cms/app/app-contratti.css"
+    ],
+    "settings": {
+        "app": "app-contratti",
+        "locale": {
+            "langCode": "it",
+            "dateFormat": "dd/MM/yyyy",
+            "timeFormat": "LTS",
+            "dateTimeFormat": "L LTS",
+            "fullDateformat": "dd/MM/yyyy ore HH:mm",
+            "fullDateTimeFormat": "dd/MM/yyyy - HH:mm",
+            "currencyCode": "EUR"
+        },
+        "loadRemoteTitle": true,
+        "infoBoxModalConfig": {
+            "component": "mnemonico-modal-widget",
+            "fields": [
+                {
+                    "type": "FORM-SECTION",
+                    "code": "informazioni-campo-data",
+                    "label": "MNEMONICO-INFO-BOX.INFORMAZIONI-CAMPO",
+                    "fieldSections": [
+                        {
+                            "type": "TEXT",
+                            "code": "campo",
+                            "label": "MNEMONICO-INFO-BOX.CAMPO",
+                            "oggettoProtezione": "",
+                            "mappingInput": "campo",
+                            "fieldClasses": [
+                                "text-bold"
+                            ]
+                        },
+                        {
+                            "type": "TEXT",
+                            "code": "descrizione",
+                            "label": "MNEMONICO-INFO-BOX.DESCRIZIONE",
+                            "oggettoProtezione": "",
+                            "mappingInput": "descrizione"
+                        },
+                        {
+                            "type": "TEXT",
+                            "code": "formato",
+                            "label": "MNEMONICO-INFO-BOX.FORMATO",
+                            "oggettoProtezione": "",
+                            "mappingInput": "formato"
+                        },
+                        {
+                            "type": "TEXT",
+                            "code": "mnemonico-compositore",
+                            "label": "MNEMONICO-INFO-BOX.MNEMONICO-COMPOSITORE",
+                            "oggettoProtezione": "",
+                            "mappingInput": "mnemonico"
+                        }
+                    ]
+                },
+                {
+                    "type": "FORM-SECTION",
+                    "code": "informazioni-entita-appartenenza-data",
+                    "label": "MNEMONICO-INFO-BOX.INFORMAZIONI-ENTITA-APPARTENENZA",
+                    "fieldSections": [
+                        {
+                            "type": "TEXT",
+                            "code": "schema-appartenenza",
+                            "label": "MNEMONICO-INFO-BOX.SCHEMA-APPARTENENZA",
+                            "oggettoProtezione": "",
+                            "mappingInput": "schema",
+                            "fieldClasses": [
+                                "text-bold"
+                            ]
+                        },
+                        {
+                            "type": "TEXT",
+                            "code": "descrizione-schema",
+                            "label": "MNEMONICO-INFO-BOX.DESCRIZIONE-SCHEMA",
+                            "oggettoProtezione": "",
+                            "mappingInput": "descrizioneSchema"
+                        },
+                        {
+                            "type": "TEXT",
+                            "code": "entita-appartenenza",
+                            "label": "MNEMONICO-INFO-BOX.ENTITA-APPARTENENZA",
+                            "oggettoProtezione": "",
+                            "mappingInput": "entita",
+                            "fieldClasses": [
+                                "text-bold"
+                            ]
+                        },
+                        {
+                            "type": "TEXT",
+                            "code": "descrizione-entita",
+                            "label": "MNEMONICO-INFO-BOX.DESCRIZIONE-ENTITA",
+                            "oggettoProtezione": "",
+                            "mappingInput": "descrizioneEntita"
+                        },
+                        {
+                            "type": "TEXT",
+                            "code": "chiave-entita",
+                            "label": "MNEMONICO-INFO-BOX.CHIAVE-ENTITA",
+                            "oggettoProtezione": "",
+                            "mappingInput": "chiaveEntita"
+                        }
+                    ]
+                }
+            ],
+            "buttons": [
+                {
+                    "code": "modal-close-button",
+                    "label": "BUTTONS.ANNULLA",
+                    "icon": "mgg-icons-crud-cancel",
+                    "provider": "APP_AVVISI_MODAL_WINDOW"
+                }
+            ]
+        },
+        "stazioneAppaltanteModalConfig": {
+            "stazioneAppaltanteData": {
+                "fields": [
+                    {
+                        "type": "FORM-SECTION",
+                        "code": "stazione-appaltante-data",
+                        "label": "AVVISO.DATI-STAZIONE-APPALTANTE",
+                        "fieldSections": [
+                            {
+                                "type": "TEXT",
+                                "code": "denominazione",
+                                "label": "STAZIONE-APPALTANTE.DENOMINAZIONE",
+                                "mappingInput": "nome",
+                                "mappingOutput": "nome",
+                                "oggettoProtezione": "GENE.UFFINT.NOMEIN",
+                                "mnemonico": "NOMEIN"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "codice-fiscale",
+                                "label": "STAZIONE-APPALTANTE.CODICE-FISCALE",
+                                "mappingInput": "codFiscale",
+                                "mappingOutput": "codFiscale",
+                                "oggettoProtezione": "GENE.UFFINT.CFEIN",
+                                "mnemonico": "CFEIN"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "comune",
+                                "label": "STAZIONE-APPALTANTE.COMUNE",
+                                "mappingInput": "comune",
+                                "mappingOutput": "comune",
+                                "oggettoProtezione": "GENE.UFFINT.CITEIN",
+                                "mnemonico": "CITEIN"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "provincia",
+                                "label": "STAZIONE-APPALTANTE.PROVINCIA",
+                                "mappingInput": "provincia",
+                                "mappingOutput": "provincia",
+                                "oggettoProtezione": "GENE.UFFINT.PROEIN",
+                                "mnemonico": "PROEIN"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "codausa",
+                                "label": "STAZIONE-APPALTANTE.CODAUSA",
+                                "mappingInput": "codAusa",
+                                "mappingOutput": "codAusa",
+                                "oggettoProtezione": "",
+                                "mnemonico": ""
+                            }
+                        ]
+                    }
+                ],
+                "buttons": [
+                    {
+                        "code": "modal-close-button",
+                        "label": "BUTTONS.ANNULLA",
+                        "icon": "mgg-icons-crud-cancel",
+                        "provider": "APP_AVVISI_MODAL_WINDOW"
+                    }
+                ]
+            }
+        },
+        "esempioModalConfig":{
+            "esempioData": {
+                "fields": [
+                    {
+                        "type": "FORM-SECTION",
+                        "code": "esempio-data",
+                        "label": "Esempio modale",
+                        "fieldSections": [
+                            {
+                                "type": "TEXTBOX",
+                                "code": "textbox_1",
+                                "label": "Textbox 1",
+                                "mappingInput": "textbox_1",
+                                "mappingOutput": "textbox_1"                                
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "textbox_2",
+                                "label": "Textbox 2",
+                                "mappingInput": "textbox_2",
+                                "mappingOutput": "textbox_2"
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "textbox_3",
+                                "label": "Textbox 3",
+                                "mappingInput": "textbox_3",
+                                "mappingOutput": "textbox_3"
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "textbox_4",
+                                "label": "Textbox 4",
+                                "mappingInput": "textbox_4",
+                                "mappingOutput": "textbox_4"
+                            }
+                        ]
+                    }
+                ],
+                "buttons": [
+                    {
+                        "code": "modal-close-button",
+                        "label": "BUTTONS.ANNULLA",
+                        "icon": "mgg-icons-crud-cancel",
+                        "provider": "APP_AVVISI_MODAL_WINDOW"
+                    },
+                    {
+                        "code": "save-button",
+                        "label": "BUTTONS.SAVE",
+                        "icon": "mgg-icons-crud-save",
+                        "provider": ""
+                    }
+                ]
+            }    
+        },
+        "rupModalConfig": {
+            "rupData": {
+                "fields": [
+                    {
+                        "type": "FORM-SECTION",
+                        "code": "rup-data",
+                        "label": "GARA.GENERAL-DATA.DATI-RUP",
+                        "fieldSections": [
+                            {
+                                "type": "TEXTBOX",
+                                "code": "cognome",
+                                "label": "RUP.COGNOME",
+                                "mappingInput": "cognome",
+                                "mappingOutput": "cognome",
+                                "validators": [
+                                    {
+                                        "config": {
+                                            "required": true
+                                        },
+                                        "messages": [
+                                            {
+                                                "level": "error",
+                                                "text": "RUP.COGNOME-OBBLIGATORIO"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "oggettoProtezione": "GENE.TECNI.COGTEI",
+                                "mnemonico": "COGTEI"
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "nome",
+                                "label": "RUP.NOME",
+                                "mappingInput": "nome",
+                                "mappingOutput": "nome",
+                                "validators": [
+                                    {
+                                        "config": {
+                                            "required": true
+                                        },
+                                        "messages": [
+                                            {
+                                                "level": "error",
+                                                "text": "RUP.NOME-OBBLIGATORIO"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "oggettoProtezione": "GENE.TECNI.NOMETEI",
+                                "mnemonico": "NOMETEI"
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "intestazione",
+                                "label": "RUP.INTESTAZIONE",
+                                "mappingInput": "nominativo",
+                                "mappingOutput": "nominativo",
+                                "oggettoProtezione": "GENE.TECNI.NOMTEC",
+                                "mnemonico": "NOMTEC1"
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "codice-fiscale",
+                                "label": "RUP.CODICE-FISCALE",
+                                "mappingInput": "cf",
+                                "mappingOutput": "cf",
+                                "validators": [
+                                    {
+                                        "config": {
+                                            "required": true
+                                        },
+                                        "messages": [
+                                            {
+                                                "level": "error",
+                                                "text": "RUP.CODICE-FISCALE-OBBLIGATORIO"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "oggettoProtezione": "GENE.TECNI.CFTEC",
+                                "mnemonico": "CFTEC1"
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "indirizzo",
+                                "label": "RUP.INDIRIZZO",
+                                "mappingInput": "indirizzo",
+                                "mappingOutput": "indirizzo",
+                                "oggettoProtezione": "GENE.TECNI.INDTEC",
+                                "mnemonico": "INDTEC1"
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "num-civico",
+                                "label": "RUP.NUM-CIVICO",
+                                "mappingInput": "numCivico",
+                                "mappingOutput": "numCivico",
+                                "oggettoProtezione": "GENE.TECNI.NCITEC",
+                                "mnemonico": "NCITEC1"
+                            },
+                            {
+                                "type": "AUTOCOMPLETE",
+                                "code": "comune",
+                                "label": "RUP.COMUNE",
+                                "noDataLabel": "NO-DATA",
+                                "mappingInput": "comune",
+                                "mappingOutput": "comune",
+                                "itemsProviderCode": "APP_GARE_COMUNI",
+                                "oggettoProtezione": "GENE.TECNI.CITTEC",
+                                "mnemonico": "G_CITTECI",
+                                "minSearchCharacters": 2
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "provincia",
+                                "label": "RUP.PROVINCIA",
+                                "validators": [
+                                    {
+                                        "config": {
+                                            "regexp": "^.{0,2}$"
+                                        },
+                                        "messages": [
+                                            {
+                                                "level": "error",
+                                                "text": "VALIDATORS.NUMERO-CARATTERI-INSERITI-NON-VALIDO"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "maxLength": 2,
+                                "mappingInput": "provincia",
+                                "mappingOutput": "provincia",
+                                "oggettoProtezione": "GENE.TECNI.PROTEC",
+                                "mnemonico": "PROTEC1"
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "cap",
+                                "label": "RUP.CAP",
+                                "mappingInput": "cap",
+                                "mappingOutput": "cap",
+                                "oggettoProtezione": "GENE.TECNI.CAPTEC",
+                                "mnemonico": "CAPTEC1",
+                                "maxLength":5
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "cod-istat",
+                                "label": "RUP.COD-ISTAT",
+                                "mappingInput": "codIstat",
+                                "mappingOutput": "codIstat",
+                                "oggettoProtezione": "GENE.TECNI.CITTEC",
+                                "mnemonico": "G_CITTECI"
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "telefono",
+                                "label": "RUP.TELEFONO",
+                                "mappingInput": "telefono",
+                                "mappingOutput": "telefono",
+                                "oggettoProtezione": "GENE.TECNI.TELTEC",
+                                "mnemonico": "TELTEC1"
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "fax",
+                                "label": "RUP.FAX",
+                                "mappingInput": "fax",
+                                "mappingOutput": "fax",
+                                "oggettoProtezione": "GENE.TECNI.FAXTEC",
+                                "mnemonico": "FAXTEC1"
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "email",
+                                "label": "RUP.EMAIL",
+                                "mappingInput": "email",
+                                "mappingOutput": "email",
+                                "oggettoProtezione": "GENE.TECNI.EMATEC",
+                                "mnemonico": "G_EMATECI"
+                            }
+                        ]
+                    }
+                ],
+                "buttons": [
+                    {
+                        "code": "modal-close-button",
+                        "label": "BUTTONS.ANNULLA",
+                        "icon": "mgg-icons-crud-cancel",
+                        "provider": "APP_AVVISI_MODAL_WINDOW"
+                    },
+                    {
+                        "code": "save-button",
+                        "label": "BUTTONS.SAVE",
+                        "icon": "mgg-icons-crud-save",
+                        "provider": "APP_AVVISI_RUP_NEW_MODAL"
+                    }
+                ]
+            }
+        },
+        "rupModalRWConfig": {
+            "rupData": {
+                "detailFields": [
+                    {
+                        "type": "FORM-SECTION",
+                        "code": "rup-data",
+                        "label": "AVVISO.DATI-RUP",
+                        "fieldSections": [
+                            {
+                                "type": "TEXT",
+                                "code": "cognome",
+                                "label": "RUP.COGNOME",
+                                "mappingInput": "cognome",
+                                "mappingOutput": "cognome",
+                                "oggettoProtezione": "GENE.TECNI.COGTEI",
+                                "mnemonico": "COGTEI"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "nome",
+                                "label": "RUP.NOME",
+                                "mappingInput": "nome",
+                                "mappingOutput": "nome",
+                                "oggettoProtezione": "GENE.TECNI.NOMETEI",
+                                "mnemonico": "NOMETEI"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "intestazione",
+                                "label": "RUP.INTESTAZIONE",
+                                "mappingInput": "nominativo",
+                                "mappingOutput": "nominativo",
+                                "oggettoProtezione": "GENE.TECNI.NOMTEC",
+                                "mnemonico": "NOMTEC1"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "codice-fiscale",
+                                "label": "RUP.CODICE-FISCALE",
+                                "mappingInput": "cf",
+                                "mappingOutput": "cf",
+                                "oggettoProtezione": "GENE.TECNI.CFTEC",
+                                "mnemonico": "CFTEC1"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "indirizzo",
+                                "label": "RUP.INDIRIZZO",
+                                "mappingInput": "indirizzo",
+                                "mappingOutput": "indirizzo",
+                                "oggettoProtezione": "GENE.TECNI.INDTEC",
+                                "mnemonico": "INDTEC1"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "num-civico",
+                                "label": "RUP.NUM-CIVICO",
+                                "mappingInput": "numCivico",
+                                "mappingOutput": "numCivico",
+                                "oggettoProtezione": "GENE.TECNI.NCITEC",
+                                "mnemonico": "NCITEC1"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "comune",
+                                "label": "RUP.COMUNE",
+                                "mappingInput": "comune",
+                                "mappingOutput": "comune",
+                                "oggettoProtezione": "GENE.TECNI.CITTEC",
+                                "mnemonico": "G_CITTECI"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "provincia",
+                                "label": "RUP.PROVINCIA",
+                                "mappingInput": "provincia",
+                                "mappingOutput": "provincia",
+                                "oggettoProtezione": "GENE.TECNI.PROTEC",
+                                "mnemonico": "PROTEC1"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "cap",
+                                "label": "RUP.CAP",
+                                "mappingInput": "cap",
+                                "mappingOutput": "cap",
+                                "oggettoProtezione": "GENE.TECNI.CAPTEC",
+                                "mnemonico": "CAPTEC1"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "cod-istat",
+                                "label": "RUP.COD-ISTAT",
+                                "mappingInput": "codIstat",
+                                "mappingOutput": "codIstat",
+                                "oggettoProtezione": "GENE.TECNI.CITTEC",
+                                "mnemonico": "G_CITTECI"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "telefono",
+                                "label": "RUP.TELEFONO",
+                                "mappingInput": "telefono",
+                                "mappingOutput": "telefono",
+                                "oggettoProtezione": "GENE.TECNI.TELTEC",
+                                "mnemonico": "TELTEC1"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "fax",
+                                "label": "RUP.FAX",
+                                "mappingInput": "fax",
+                                "mappingOutput": "fax",
+                                "oggettoProtezione": "GENE.TECNI.FAXTEC",
+                                "mnemonico": "FAXTEC1"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "email",
+                                "label": "RUP.EMAIL",
+                                "mappingInput": "email",
+                                "mappingOutput": "email",
+                                "oggettoProtezione": "GENE.TECNI.EMATEC",
+                                "mnemonico": "G_EMATECI"
+                            }
+                        ]
+                    }
+                ],
+                "updateFields": [
+                    {
+                        "type": "FORM-SECTION",
+                        "code": "rup-data",
+                        "label": "GARA.GENERAL-DATA.DATI-RUP",
+                        "fieldSections": [
+                            {
+                                "type": "TEXTBOX",
+                                "code": "cognome",
+                                "label": "RUP.COGNOME",
+                                "mappingInput": "cognome",
+                                "mappingOutput": "cognome",
+                                "validators": [
+                                    {
+                                        "config": {
+                                            "required": true
+                                        },
+                                        "messages": [
+                                            {
+                                                "level": "error",
+                                                "text": "RUP.COGNOME-OBBLIGATORIO"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "oggettoProtezione": "GENE.TECNI.COGTEI",
+                                "mnemonico": "COGTEI"
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "nome",
+                                "label": "RUP.NOME",
+                                "mappingInput": "nome",
+                                "mappingOutput": "nome",
+                                "validators": [
+                                    {
+                                        "config": {
+                                            "required": true
+                                        },
+                                        "messages": [
+                                            {
+                                                "level": "error",
+                                                "text": "RUP.NOME-OBBLIGATORIO"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "oggettoProtezione": "GENE.TECNI.NOMETEI",
+                                "mnemonico": "NOMETEI"
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "intestazione",
+                                "label": "RUP.INTESTAZIONE",
+                                "mappingInput": "nominativo",
+                                "mappingOutput": "nominativo",
+                                "oggettoProtezione": "GENE.TECNI.NOMTEC",
+                                "mnemonico": "NOMTEC1"
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "codice-fiscale",
+                                "label": "RUP.CODICE-FISCALE",
+                                "mappingInput": "cf",
+                                "mappingOutput": "cf",
+                                "validators": [
+                                    {
+                                        "config": {
+                                            "required": true
+                                        },
+                                        "messages": [
+                                            {
+                                                "level": "error",
+                                                "text": "RUP.CODICE-FISCALE-OBBLIGATORIO"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "oggettoProtezione": "GENE.TECNI.CFTEC",
+                                "mnemonico": "CFTEC1"
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "indirizzo",
+                                "label": "RUP.INDIRIZZO",
+                                "mappingInput": "indirizzo",
+                                "mappingOutput": "indirizzo",
+                                "oggettoProtezione": "GENE.TECNI.INDTEC",
+                                "mnemonico": "INDTEC1"
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "num-civico",
+                                "label": "RUP.NUM-CIVICO",
+                                "mappingInput": "numCivico",
+                                "mappingOutput": "numCivico",
+                                "oggettoProtezione": "GENE.TECNI.NCITEC",
+                                "mnemonico": "NCITEC1"
+                            },
+                            {
+                                "type": "AUTOCOMPLETE",
+                                "code": "comune",
+                                "label": "RUP.COMUNE",
+                                "noDataLabel": "NO-DATA",
+                                "mappingInput": "comune",
+                                "mappingOutput": "comune",
+                                "itemsProviderCode": "APP_GARE_COMUNI",
+                                "oggettoProtezione": "GENE.TECNI.CITTEC",
+                                "mnemonico": "G_CITTECI",
+                                "minSearchCharacters": 2
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "provincia",
+                                "label": "RUP.PROVINCIA",
+                                "validators": [
+                                    {
+                                        "config": {
+                                            "regexp": "^.{0,2}$"
+                                        },
+                                        "messages": [
+                                            {
+                                                "level": "error",
+                                                "text": "VALIDATORS.NUMERO-CARATTERI-INSERITI-NON-VALIDO"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "maxLength": 2,
+                                "mappingInput": "provincia",
+                                "mappingOutput": "provincia",
+                                "oggettoProtezione": "GENE.TECNI.PROTEC",
+                                "mnemonico": "PROTEC1"
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "cap",
+                                "label": "RUP.CAP",
+                                "mappingInput": "cap",
+                                "mappingOutput": "cap",
+                                "oggettoProtezione": "GENE.TECNI.CAPTEC",
+                                "mnemonico": "CAPTEC1",
+                                "maxLength":5
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "cod-istat",
+                                "label": "RUP.COD-ISTAT",
+                                "mappingInput": "codIstat",
+                                "mappingOutput": "codIstat",
+                                "oggettoProtezione": "GENE.TECNI.CITTEC",
+                                "mnemonico": "G_CITTECI"
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "telefono",
+                                "label": "RUP.TELEFONO",
+                                "mappingInput": "telefono",
+                                "mappingOutput": "telefono",
+                                "oggettoProtezione": "GENE.TECNI.TELTEC",
+                                "mnemonico": "TELTEC1"
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "fax",
+                                "label": "RUP.FAX",
+                                "mappingInput": "fax",
+                                "mappingOutput": "fax",
+                                "oggettoProtezione": "GENE.TECNI.FAXTEC",
+                                "mnemonico": "FAXTEC1"
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "email",
+                                "label": "RUP.EMAIL",
+                                "mappingInput": "email",
+                                "mappingOutput": "email",
+                                "oggettoProtezione": "GENE.TECNI.EMATEC",
+                                "mnemonico": "G_EMATECI"
+                            }
+                        ]
+                    }
+                ],
+                "buttonsRO": [
+                    {
+                        "code": "modal-close-button",
+                        "label": "BUTTONS.ANNULLA",
+                        "icon": "mgg-icons-crud-cancel",
+                        "provider": "APP_AVVISI_MODAL_WINDOW"
+                    }
+                ],
+                "detailButtons": [
+                    {
+                        "code": "modal-close-button",
+                        "label": "BUTTONS.ANNULLA",
+                        "icon": "mgg-icons-crud-cancel",
+                        "provider": "APP_AVVISI_MODAL_WINDOW"
+                    },
+                    {
+                        "code": "update-button",
+                        "label": "BUTTONS.UPDATE",
+                        "icon": "mgg-icons-crud-edit",
+                        "provider": "APP_AVVISI_RUP_NEW_MODAL",
+                        "oggettoProtezione": "MOD.*"
+                    }
+                ],
+                "updateButtons": [
+                    {
+                        "code": "modal-close-button",
+                        "label": "BUTTONS.ANNULLA",
+                        "icon": "mgg-icons-crud-cancel",
+                        "provider": "APP_AVVISI_MODAL_WINDOW"
+                    },
+                    {
+                        "code": "save-button",
+                        "label": "BUTTONS.SAVE",
+                        "icon": "mgg-icons-crud-save",
+                        "provider": "APP_AVVISI_RUP_NEW_MODAL"
+                    }
+                ]
+            }
+        },
+        "impresaModalConfig": {
+            "impresaData": {
+                "fields": [
+                    {
+                        "type": "FORM-SECTION",
+                        "code": "general-data",
+                        "label": "IMPRESA.GENERAL-DATA.GENERAL-DATA",
+                        "fieldSections": [
+                            {
+                                "type": "TEXT",
+                                "code": "regione-sociale",
+                                "label": "IMPRESA.GENERAL-DATA.RAGIONE-SOCIALE",
+                                "oggettoProtezione": "GENE.IMPR.NOMEST",
+                                "mnemonico": "NOMIMP",
+                                "mappingInput": "ragioneSociale"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "forma-giuridica",
+                                "label": "IMPRESA.GENERAL-DATA.FORMA-GIURIDICA",
+                                "oggettoProtezione": "GENE.IMPR.NATGIUI",
+                                "mnemonico": "G_NATGIUI",
+                                "mappingInput": "formaGiuridica",
+                                "listCode": "FormaGiuridica"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "codice-fiscale-impresa",
+                                "label": "IMPRESA.GENERAL-DATA.CODICE-FISCALE",
+                                "oggettoProtezione": "GENE.IMPR.CFIMP",
+                                "mnemonico": "CFIMP",
+                                "mappingInput": "codiceFiscale"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "partita-iva",
+                                "label": "IMPRESA.GENERAL-DATA.PARTITA-IVA",
+                                "oggettoProtezione": "GENE.IMPR.PIVIMP",
+                                "mnemonico": "PIVIMP",
+                                "mappingInput": "partitaIva"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "numero-iscrizione-registro-imprese",
+                                "label": "IMPRESA.GENERAL-DATA.NUMERO-ISCRIZIONE-REGISTRO-IMPRESE",
+                                "oggettoProtezione": "GENE.IMPR.NCCIAA",
+                                "mnemonico": "NCCIAA",
+                                "mappingInput": "numeroIscrizione"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "codice-ditta-inail",
+                                "label": "IMPRESA.GENERAL-DATA.CODICE-DITTA-INAIL",
+                                "oggettoProtezione": "GENE.IMPR.NINAIL",
+                                "mnemonico": "NINAIL",
+                                "mappingInput": "codiceInail"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "numero-iscrizione-albo",
+                                "label": "IMPRESA.GENERAL-DATA.NUMERO-ISCRIZIONE-ALBO",
+                                "oggettoProtezione": "GENE.IMPR.ALBTEC",
+                                "mnemonico": "G_ALBTEC",
+                                "mappingInput": "numeroIscrizioneAlbo"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "FORM-SECTION",
+                        "code": "legale-rappresentante-data",
+                        "label": "IMPRESA.LEGALE-RAPPRESENTANTE-DATA.LEGALE-RAPPRESENTANTE-DATA",
+                        "fieldSections": [
+                            {
+                                "type": "TEXT",
+                                "code": "cognome-legale",
+                                "label": "IMPRESA.LEGALE-RAPPRESENTANTE-DATA.COGNOME",
+                                "oggettoProtezione": "GENE.TEIM.COGTIM",
+                                "mnemonico": "COGTIM",
+                                "mappingInput": "rappresentante.cognome"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "nome-legale",
+                                "label": "IMPRESA.LEGALE-RAPPRESENTANTE-DATA.NOME",
+                                "oggettoProtezione": "GENE.TEIM.NOMTIM",
+                                "mnemonico": "NOMTIM",
+                                "mappingInput": "rappresentante.nome"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "codice-fiscale-legale",
+                                "label": "IMPRESA.LEGALE-RAPPRESENTANTE-DATA.CODICE-FISCALE",
+                                "oggettoProtezione": "GENE.TEIM.CFTIM",
+                                "mnemonico": "CFTIM",
+                                "mappingInput": "rappresentante.cf"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "FORM-SECTION",
+                        "code": "indirizzo-data",
+                        "label": "IMPRESA.INDIRIZZO-DATA.INDIRIZZO-DATA",
+                        "fieldSections": [
+                            {
+                                "type": "TEXT",
+                                "code": "indirizzo",
+                                "label": "IMPRESA.INDIRIZZO-DATA.INDIRIZZO",
+                                "oggettoProtezione": "GENE.IMPR.INDIMP",
+                                "mnemonico": "INDIMP",
+                                "mappingInput": "indirizzo"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "n-civico",
+                                "label": "IMPRESA.INDIRIZZO-DATA.N-CIVICO",
+                                "oggettoProtezione": "GENE.IMPR.NCIIMP",
+                                "mnemonico": "NCIIMP",
+                                "mappingInput": "numeroCivico"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "comune",
+                                "label": "IMPRESA.INDIRIZZO-DATA.COMUNE",
+                                "oggettoProtezione": "GENE.IMPR.LOCIMP",
+                                "mnemonico": "LOCIMP",
+                                "mappingInput": "comune"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "cap",
+                                "label": "IMPRESA.INDIRIZZO-DATA.CAP",
+                                "oggettoProtezione": "GENE.IMPR.CAPIMP",
+                                "mnemonico": "CAPIMP",
+                                "mappingInput": "cap"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "provincia",
+                                "label": "IMPRESA.INDIRIZZO-DATA.PROVINCIA",
+                                "oggettoProtezione": "GENE.IMPR.PROIMP",
+                                "mnemonico": "PROIMP",
+                                "mappingInput": "provincia",
+                                "listCode": "Province"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "nazione",
+                                "label": "IMPRESA.INDIRIZZO-DATA.NAZIONE",
+                                "oggettoProtezione": "GENE.IMPR.NAZIMP",
+                                "mnemonico": "G_NAZIMP",
+                                "mappingInput": "nazione",
+                                "listCode": "Nazioni"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "telefono",
+                                "label": "IMPRESA.INDIRIZZO-DATA.TELEFONO",
+                                "oggettoProtezione": "GENE.IMPR.TELIMP",
+                                "mnemonico": "TELIMP",
+                                "mappingInput": "telefono"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "fax",
+                                "label": "IMPRESA.INDIRIZZO-DATA.FAX",
+                                "oggettoProtezione": "GENE.IMPR.FAXIMP",
+                                "mnemonico": "FAXIMP",
+                                "mappingInput": "fax"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "email",
+                                "label": "IMPRESA.INDIRIZZO-DATA.EMAIL",
+                                "oggettoProtezione": "GENE.IMPR.EMAIIP",
+                                "mnemonico": "G_EMAIIP",
+                                "mappingInput": "email"
+                            }
+                        ]
+                    }
+                ],
+                "buttons": [
+                    {
+                        "code": "modal-close-button",
+                        "label": "BUTTONS.ANNULLA",
+                        "icon": "mgg-icons-crud-cancel",
+                        "provider": "APP_AVVISI_MODAL_WINDOW"
+                    }
+                ]
+            }
+        },
+        "impresaRWModalConfig": {
+            "impresaData": {
+                "fields": [
+                    {
+                        "type": "FORM-SECTION",
+                        "code": "general-data",
+                        "label": "IMPRESA.GENERAL-DATA.GENERAL-DATA",
+                        "fieldSections": [
+                            {
+                                "type": "TEXTAREA",
+                                "code": "regione-sociale",
+                                "label": "IMPRESA.GENERAL-DATA.RAGIONE-SOCIALE",
+                                "oggettoProtezione": "GENE.IMPR.NOMEST",
+                                "mnemonico": "NOMIMP",
+                                "mappingInput": "ragioneSociale",
+                                "mappingOutput": "ragioneSociale",
+                                "validators": [
+                                    {
+                                        "config": {
+                                            "required": true
+                                        },
+                                        "messages": [
+                                            {
+                                                "level": "error",
+                                                "text": "IMPRESA.GENERAL-DATA.VALIDATORS.RAGIONE-SOCIALE-OBBLIGATORIA"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "maxLength": 2000
+                            },
+                            {
+                                "type": "COMBOBOX",
+                                "code": "forma-giuridica",
+                                "label": "IMPRESA.GENERAL-DATA.FORMA-GIURIDICA",
+                                "oggettoProtezione": "GENE.IMPR.NATGIUI",
+                                "mnemonico": "G_NATGIUI",
+                                "mappingInput": "formaGiuridica",
+                                "mappingOutput": "formaGiuridica",
+                                "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                "listCode": "FormaGiuridica"
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "codice-fiscale-impresa",
+                                "label": "IMPRESA.GENERAL-DATA.CODICE-FISCALE",
+                                "oggettoProtezione": "GENE.IMPR.CFIMP",
+                                "mnemonico": "CFIMP",
+                                "mappingInput": "codiceFiscale",
+                                "mappingOutput": "codiceFiscale",
+                                "maxLength": 16
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "partita-iva",
+                                "label": "IMPRESA.GENERAL-DATA.PARTITA-IVA",
+                                "oggettoProtezione": "GENE.IMPR.PIVIMP",
+                                "mnemonico": "PIVIMP",
+                                "mappingInput": "partitaIva",
+                                "mappingOutput": "partitaIva",
+                                "maxLength": 16
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "numero-iscrizione-registro-imprese",
+                                "label": "IMPRESA.GENERAL-DATA.NUMERO-ISCRIZIONE-REGISTRO-IMPRESE",
+                                "oggettoProtezione": "GENE.IMPR.NCCIAA",
+                                "mnemonico": "NCCIAA",
+                                "mappingInput": "numeroIscrizione",
+                                "mappingOutput": "numeroIscrizione",
+                                "maxLength": 10
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "codice-ditta-inail",
+                                "label": "IMPRESA.GENERAL-DATA.CODICE-DITTA-INAIL",
+                                "oggettoProtezione": "GENE.IMPR.NINAIL",
+                                "mnemonico": "NINAIL",
+                                "mappingInput": "codiceInail",
+                                "mappingOutput": "codiceInail",
+                                "maxLength": 16
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "numero-iscrizione-albo",
+                                "label": "IMPRESA.GENERAL-DATA.NUMERO-ISCRIZIONE-ALBO",
+                                "oggettoProtezione": "GENE.IMPR.ALBTEC",
+                                "mnemonico": "G_ALBTEC",
+                                "mappingInput": "numeroIscrizioneAlbo",
+                                "mappingOutput": "numeroIscrizioneAlbo",
+                                "maxLength": 50
+                            }
+                        ]
+                    },
+                    {
+                        "type": "FORM-SECTION",
+                        "code": "legale-rappresentante-data",
+                        "label": "IMPRESA.LEGALE-RAPPRESENTANTE-DATA.LEGALE-RAPPRESENTANTE-DATA",
+                        "fieldSections": [
+                            {
+                                "type": "TEXTBOX",
+                                "code": "cognome-legale",
+                                "label": "IMPRESA.LEGALE-RAPPRESENTANTE-DATA.COGNOME",
+                                "oggettoProtezione": "GENE.TEIM.COGTIM",
+                                "mnemonico": "COGTIM",
+                                "mappingInput": "rappresentante.cognome",
+                                "mappingOutput": "cognome",
+                                "maxLength": 80
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "nome-legale",
+                                "label": "IMPRESA.LEGALE-RAPPRESENTANTE-DATA.NOME",
+                                "oggettoProtezione": "GENE.TEIM.NOMTIM",
+                                "mnemonico": "NOMTIM",
+                                "mappingInput": "rappresentante.nome",
+                                "mappingOutput": "nome",
+                                "maxLength": 80
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "codice-fiscale-legale",
+                                "label": "IMPRESA.LEGALE-RAPPRESENTANTE-DATA.CODICE-FISCALE",
+                                "oggettoProtezione": "GENE.TEIM.CFTIM",
+                                "mnemonico": "CFTIM",
+                                "mappingInput": "rappresentante.cf",
+                                "mappingOutput": "cf",
+                                "maxLength": 16
+                            }
+                        ]
+                    },
+                    {
+                        "type": "FORM-SECTION",
+                        "code": "indirizzo-data",
+                        "label": "IMPRESA.INDIRIZZO-DATA.INDIRIZZO-DATA",
+                        "fieldSections": [
+                            {
+                                "type": "TEXTBOX",
+                                "code": "indirizzo",
+                                "label": "IMPRESA.INDIRIZZO-DATA.INDIRIZZO",
+                                "oggettoProtezione": "GENE.IMPR.INDIMP",
+                                "mnemonico": "INDIMP",
+                                "mappingInput": "indirizzo",
+                                "mappingOutput": "indirizzo",
+                                "maxLength": 24
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "n-civico",
+                                "label": "IMPRESA.INDIRIZZO-DATA.N-CIVICO",
+                                "oggettoProtezione": "GENE.IMPR.NCIIMP",
+                                "mnemonico": "NCIIMP",
+                                "mappingInput": "numeroCivico",
+                                "mappingOutput": "numeroCivico",
+                                "maxLength": 16
+                            },
+                            {
+                                "type": "AUTOCOMPLETE",
+                                "code": "comune",
+                                "label": "IMPRESA.INDIRIZZO-DATA.COMUNE",
+                                "noDataLabel": "NO-DATA",
+                                "oggettoProtezione": "GENE.IMPR.LOCIMP",
+                                "mnemonico": "LOCIMP",
+                                "mappingInput": "comune",
+                                "mappingOutput": "comune",
+                                "itemsProviderCode": "APP_GARE_COMUNI",
+                                "minSearchCharacters": 2
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "cap",
+                                "label": "IMPRESA.INDIRIZZO-DATA.CAP",
+                                "oggettoProtezione": "GENE.IMPR.CAPIMP",
+                                "mnemonico": "CAPIMP",
+                                "mappingInput": "cap",
+                                "mappingOutput": "cap",
+                                "maxLength":5
+                            },
+                            {
+                                "type": "COMBOBOX",
+                                "code": "provincia",
+                                "label": "IMPRESA.INDIRIZZO-DATA.PROVINCIA",
+                                "oggettoProtezione": "GENE.IMPR.PROIMP",
+                                "mnemonico": "PROIMP",
+                                "mappingInput": "provincia",
+                                "mappingOutput": "provincia",
+                                "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                "listCode": "Province"
+                            },
+                            {
+                                "type": "COMBOBOX",
+                                "code": "nazione",
+                                "label": "IMPRESA.INDIRIZZO-DATA.NAZIONE",
+                                "oggettoProtezione": "GENE.IMPR.NAZIMP",
+                                "mnemonico": "G_NAZIMP",
+                                "mappingInput": "nazione",
+                                "mappingOutput": "nazione",
+                                "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                "listCode": "Nazioni"
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "telefono",
+                                "label": "IMPRESA.INDIRIZZO-DATA.TELEFONO",
+                                "oggettoProtezione": "GENE.IMPR.TELIMP",
+                                "mnemonico": "TELIMP",
+                                "mappingInput": "telefono",
+                                "mappingOutput": "telefono",
+                                "maxLength": 50
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "fax",
+                                "label": "IMPRESA.INDIRIZZO-DATA.FAX",
+                                "oggettoProtezione": "GENE.IMPR.FAXIMP",
+                                "mnemonico": "FAXIMP",
+                                "mappingInput": "fax",
+                                "mappingOutput": "fax",
+                                "maxLength": 20
+                            },
+                            {
+                                "type": "TEXTBOX",
+                                "code": "email",
+                                "label": "IMPRESA.INDIRIZZO-DATA.EMAIL",
+                                "oggettoProtezione": "GENE.IMPR.EMAIIP",
+                                "mnemonico": "G_EMAIIP",
+                                "mappingInput": "email",
+                                "mappingOutput": "email",
+                                "maxLength": 100
+                            }
+                        ]
+                    }
+                ],
+                "buttons": [
+                    {
+                        "code": "modal-close-button",
+                        "label": "BUTTONS.ANNULLA",
+                        "icon": "mgg-icons-crud-cancel",
+                        "provider": "APP_AVVISI_MODAL_WINDOW"
+                    },
+                    {
+                        "code": "save-button",
+                        "label": "BUTTONS.SAVE",
+                        "icon": "mgg-icons-crud-save",
+                        "provider": "APP_GARE_IMPRESA_NEW_MODAL"
+                    }
+                ]
+            }
+        },
+        "cdcModalConfig": {
+            "cdcData": {
+                "fields": [
+                    {
+                        "type": "FORM-SECTION",
+                        "code": "cdc-data",
+                        "label": "GARA.CENTRO-DI-COSTO.DATI-CENTRO-DI-COSTO",
+                        "fieldSections": [
+                            {
+                                "type": "TEXT",
+                                "code": "codcentro",
+                                "label": "CENTRO-DI-COSTO.GENERAL-DATA.CODICE",
+                                "mappingInput": "codiceCDC",
+                                "mappingOutput": "codiceCentro",
+                                "oggettoProtezione": "W9.CENTRICOSTO.CODCENTRO"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "denomcentro",
+                                "label": "CENTRO-DI-COSTO.GENERAL-DATA.DENOMINAZIONE",
+                                "mappingInput": "nominativoCDC",
+                                "mappingOutput": "denominazione",
+                                "oggettoProtezione": "W9.CENTRICOSTO.DENOMCENTRO"
+                            },
+                            {
+                                "type": "TEXTAREA",
+                                "code": "note",
+                                "label": "CENTRO-DI-COSTO.GENERAL-DATA.NOTE",
+                                "mappingInput": "note",
+                                "mappingOutput": "note",
+                                "oggettoProtezione": "W9.CENTRICOSTO.NOTE"
+                            },
+                            {
+                                "type": "COMBOBOX",
+                                "code": "tipologia",
+                                "label": "CENTRO-DI-COSTO.GENERAL-DATA.TIPOLOGIA",
+                                "mappingInput": "tipologia",
+                                "mappingOutput": "tipologia",
+                                "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                "listCode": "TipologiaCC",
+                                "oggettoProtezione": "W9.CENTRICOSTO.TIPOLOGIA"
+                            }
+                        ]
+                    }
+                ],
+                "buttons": [
+                    {
+                        "code": "modal-close-button",
+                        "label": "BUTTONS.ANNULLA",
+                        "icon": "mgg-icons-crud-cancel",
+                        "provider": "APP_AVVISI_MODAL_WINDOW"
+                    },
+                    {
+                        "code": "save-cdc",
+                        "label": "BUTTONS.SAVE",
+                        "icon": "mgg-icons-crud-save",
+                        "provider": "APP_GARE_CDC_MODAL"
+                    }
+                ]
+            }
+        },
+        "cdcModalConfigReadOnly": {
+            "cdcData": {
+                "fields": [
+                    {
+                        "type": "FORM-SECTION",
+                        "code": "cdc-data",
+                        "label": "GARA.CENTRO-DI-COSTO.DATI-CENTRO-DI-COSTO",
+                        "fieldSections": [
+                            {
+                                "type": "TEXT",
+                                "code": "codcentro",
+                                "label": "CENTRO-DI-COSTO.GENERAL-DATA.CODICE",
+                                "mappingInput": "codiceCDC",
+                                "mappingOutput": "codiceCentro",
+                                "oggettoProtezione": "W9.CENTRICOSTO.CODCENTRO"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "denomcentro",
+                                "label": "CENTRO-DI-COSTO.GENERAL-DATA.DENOMINAZIONE",
+                                "mappingInput": "nominativoCDC",
+                                "mappingOutput": "denominazione",
+                                "oggettoProtezione": "W9.CENTRICOSTO.DENOMCENTRO"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "note",
+                                "label": "CENTRO-DI-COSTO.GENERAL-DATA.NOTE",
+                                "mappingInput": "note",
+                                "mappingOutput": "note",
+                                "oggettoProtezione": "W9.CENTRICOSTO.NOTE"
+                            },
+                            {
+                                "type": "TEXT",
+                                "code": "tipologia",
+                                "label": "CENTRO-DI-COSTO.GENERAL-DATA.TIPOLOGIA",
+                                "mappingInput": "tipologia",
+                                "mappingOutput": "tipologia",
+                                "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                "listCode": "TipologiaCC",
+                                "oggettoProtezione": "W9.CENTRICOSTO.TIPOLOGIA"
+                            }
+                        ]
+                    }
+                ],
+                "buttons": [
+                    {
+                        "code": "modal-close-button",
+                        "label": "BUTTONS.ANNULLA",
+                        "icon": "mgg-icons-crud-cancel",
+                        "provider": "APP_AVVISI_MODAL_WINDOW"
+                    }
+                ]
+            }
+        },
+        "uffModalConfig": {
+            "ufficiData": {
+                "fields": [
+                    {
+                        "type": "FORM-SECTION",
+                        "code": "uffici-data",
+                        "label": "GARA.STAZIONE-APPALTANTE-DATA.DATI-UFFICIO",
+                        "fieldSections": [
+                            {
+                                "type": "TEXT",
+                                "code": "denominazione",
+                                "label": "UFFICIO.DENOMINAZIONE",
+                                "mappingInput": "denominazione",
+                                "mappingOutput": "denominazione"
+                            }
+                        ]
+                    }
+                ],
+                "buttons": [
+                    {
+                        "code": "modal-close-button",
+                        "label": "BUTTONS.ANNULLA",
+                        "icon": "mgg-icons-crud-cancel",
+                        "provider": "APP_AVVISI_MODAL_WINDOW"
+                    }
+                ]
+            }
+        },
+        "uffModalRWConfig": {
+            "ufficiData": {
+                "fields": [
+                    {
+                        "type": "FORM-SECTION",
+                        "code": "uffici-data",
+                        "label": "GARA.STAZIONE-APPALTANTE-DATA.DATI-UFFICIO",
+                        "fieldSections": [
+                            {
+                                "type": "TEXTBOX",
+                                "code": "denominazione",
+                                "label": "UFFICIO.DENOMINAZIONE",
+                                "mappingInput": "denominazione",
+                                "mappingOutput": "denominazione"
+                            }
+                        ]
+                    }
+                ],
+                "buttons": [
+                    {
+                        "code": "modal-close-button",
+                        "label": "BUTTONS.ANNULLA",
+                        "icon": "mgg-icons-crud-cancel",
+                        "provider": "APP_AVVISI_MODAL_WINDOW"
+                    },
+                    {
+                        "code": "save-button",
+                        "label": "BUTTONS.SAVE",
+                        "icon": "mgg-icons-crud-save",
+                        "provider": "APP_GARE_UFFICI_NEW_MODAL"
+                    }
+                ]
+            }
+        },
+        "cambioReferenteModalConfig": {
+            "sectionTitle": "CAMBIO-REFERENTE.TITLE",
+            "avvisoMessage": "CAMBIO-REFERENTE.AVVISO",
+            "fields": [
+                {
+                    "type": "FORM-SECTION",
+                    "code": "cambio-referente-data",
+                    "label": "CAMBIO-REFERENTE.DATA.TITLE",
+                    "fieldSections": [
+                        {
+                            "type": "TEXT",
+                            "code": "oggetto-gara",
+                            "label": "CAMBIO-REFERENTE.DATA.OGGETTO-GARA",
+                            "mappingInput": "oggettoGara",
+                            "oggettoProtezione": "",
+                            "mnemonico": ""
+                        },
+                        {
+                            "type": "AUTOCOMPLETE",
+                            "code": "nuovo-referente",
+                            "label": "CAMBIO-REFERENTE.DATA.NUOVO-REFERENTE",
+                            "mappingOutput": "syscon",
+                            "noDataLabel": "NO-DATA",
+                            "itemsProviderCode": "APP_GARE_CAMBIO_REFERENTE",
+                            "oggettoProtezione": "",
+                            "mnemonico": "",
+                            "validators": [
+                                {
+                                    "config": {
+                                        "required": true
+                                    },
+                                    "messages": [
+                                        {
+                                            "level": "error",
+                                            "text": "CAMBIO-REFERENTE.VALIDATORS.NUOVO-REFERENTE-OBBLIGATORIO"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "buttonsFirstPage": [
+                {
+                    "code": "modal-close-button",
+                    "label": "BUTTONS.ANNULLA",
+                    "icon": "mgg-icons-crud-cancel",
+                    "provider": "APP_AVVISI_MODAL_WINDOW"
+                },
+                {
+                    "code": "conferma-utente",
+                    "label": "BUTTONS.SET",
+                    "icon": "mgg-icons-crud-save",
+                    "provider": "APP_CAMBIO_RUP"
+                }
+            ],
+            "buttonsSecondPage": [
+                {
+                    "code": "modal-close-button",
+                    "label": "BUTTONS.ANNULLA",
+                    "icon": "mgg-icons-crud-cancel",
+                    "provider": "APP_AVVISI_MODAL_WINDOW"
+                },
+                {
+                    "code": "cambia-utente",
+                    "label": "BUTTONS.CAMBIA-REFERENTE",
+                    "provider": "APP_CAMBIO_RUP"
+                }
+            ]
+        },
+
+        "cambioRupModalConfig": {
+            "sectionTitle": "CAMBIO-RUP.TITLE",
+            "avvisoMessage": "CAMBIO-RUP.AVVISO",
+            "fields": [
+                {
+                    "type": "FORM-SECTION",
+                    "code": "cambio-rup-data",
+                    "label": "CAMBIO-RUP.DATA.TITLE",
+                    "fieldSections": [
+                        {
+                            "type": "TEXT",
+                            "code": "oggetto-gara",
+                            "label": "CAMBIO-RUP.DATA.OGGETTO-GARA",
+                            "mappingInput": "oggettoGara",
+                            "oggettoProtezione": "",
+                            "mnemonico": ""
+                        },
+                        {
+                            "type": "AUTOCOMPLETE",
+                            "code": "nuovo-rup",
+                            "label": "CAMBIO-RUP.DATA.NUOVO-RUP",
+                            "mappingOutput": "rup",
+                            "noDataLabel": "NO-DATA",
+                            "itemsProviderCode": "APP_AVVISI_RUP_AVVISO",
+                            "oggettoProtezione": "",
+                            "mnemonico": "",
+                            "validators": [
+                                {
+                                    "config": {
+                                        "required": true
+                                    },
+                                    "messages": [
+                                        {
+                                            "level": "error",
+                                            "text": "CAMBIO-RUP.VALIDATORS.NUOVO-RUP-OBBLIGATORIO"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],           
+            "buttonsFirstPage": [
+                {
+                    "code": "modal-close-button",
+                    "label": "BUTTONS.ANNULLA",
+                    "icon": "mgg-icons-crud-cancel",
+                    "provider": "APP_AVVISI_MODAL_WINDOW"
+                },
+                {
+                    "code": "conferma",
+                    "label": "BUTTONS.SET",
+                    "icon": "mgg-icons-crud-save",
+                    "provider": "APP_CAMBIO_RUP"
+                }
+            ],
+            "buttonsSecondPage": [
+                {
+                    "code": "modal-close-button",
+                    "label": "BUTTONS.ANNULLA",
+                    "icon": "mgg-icons-crud-cancel",
+                    "provider": "APP_AVVISI_MODAL_WINDOW"
+                },
+                {
+                    "code": "cambia-rup",
+                    "label": "BUTTONS.CAMBIA-RUP",
+                    "provider": "APP_CAMBIO_RUP"
+                }
+            ]
+        },
+        "trasferimentoAvvisoModalConfig": {
+            "sectionTitle": "TRASFERIMENTO-AVVISO.TITLE",
+            "avvisoMessage": "TRASFERIMENTO-AVVISO.AVVISO",
+            "fields": [
+                {
+                    "type": "FORM-SECTION",
+                    "code": "trasferimento-avviso-data",
+                    "label": "TRASFERIMENTO-AVVISO.DATA.TITLE",
+                    "fieldSections": [
+                        {
+                            "type": "TEXT",
+                            "code": "descrizione-avviso",
+                            "label": "TRASFERIMENTO-AVVISO.DATA.DESCRIZIONE-AVVISO",
+                            "mappingInput": "descrizioneAvviso",
+                            "oggettoProtezione": "",
+                            "mnemonico": ""
+                        },
+                        {
+                            "type": "AUTOCOMPLETE",
+                            "code": "nuovo-referente",
+                            "label": "TRASFERIMENTO-AVVISO.DATA.NUOVO-REFERENTE",
+                            "mappingOutput": "syscon",
+                            "noDataLabel": "NO-DATA",
+                            "itemsProviderCode": "APP_USER_OPTIONS_AUTOCOMPLETE",
+                            "oggettoProtezione": "",
+                            "mnemonico": "",
+                            "validators": [
+                                {
+                                    "config": {
+                                        "required": true
+                                    },
+                                    "messages": [
+                                        {
+                                            "level": "error",
+                                            "text": "TRASFERIMENTO-AVVISO.VALIDATORS.NUOVO-REFERENTE-OBBLIGATORIO"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "buttonsFirstPage": [
+                {
+                    "code": "modal-close-button",
+                    "label": "BUTTONS.ANNULLA",
+                    "icon": "mgg-icons-crud-cancel",
+                    "provider": "APP_AVVISI_MODAL_WINDOW"
+                },
+                {
+                    "code": "conferma",
+                    "label": "BUTTONS.SET",
+                    "icon": "mgg-icons-crud-save",
+                    "provider": "APP_TRASFERIMENTO_AVVISO"
+                }
+            ],
+            "buttonsSecondPage": [
+                {
+                    "code": "modal-close-button",
+                    "label": "BUTTONS.ANNULLA",
+                    "icon": "mgg-icons-crud-cancel",
+                    "provider": "APP_AVVISI_MODAL_WINDOW"
+                },
+                {
+                    "code": "trasferisci-avviso",
+                    "label": "BUTTONS.CAMBIA-REFERENTE",
+                    "provider": "APP_TRASFERIMENTO_AVVISO"
+                }
+            ]
+        },
+        "appInfo": {
+            "buttons": [
+                {
+                    "code": "modal-close-button",
+                    "label": "BUTTONS.ANNULLA",
+                    "icon": "mgg-icons-crud-cancel",
+                    "provider": "APP_AVVISI_MODAL_WINDOW"
+                }
+            ]
+        },
+        "modalComponentConfigReportIndicatori": {
+            "buttons": [
+                {
+                    "code": "modal-close-button",
+                    "label": "BUTTONS.ANNULLA",
+                    "icon": "mgg-icons-crud-cancel",
+                    "provider": "APP_AVVISI_MODAL_WINDOW",
+                    "type":"cancel"
+                },
+                {
+                    "code": "conferma-report-indicatori",
+                    "label": "BUTTONS.SET",
+                    "provider": "APP_GARE_LISTA_LOTTI",
+                    "icon": "mgg-icons-crud-save"
+                }
+            ]            
+        },
+        "modalComponentConfigDatiContabilita":{
+            "buttons": [   
+                {
+                    "code": "modal-close-button",
+                    "label": "BUTTONS.CLOSE",
+                    "icon": "mgg-icons-crud-cancel",
+                    "provider": "APP_AVVISI_MODAL_WINDOW"
+                }
+            ],
+            "buttonsSelection": [   
+                {
+                    "code": "modal-close-button",
+                    "label": "BUTTONS.ANNULLA",
+                    "icon": "mgg-icons-crud-cancel",
+                    "provider": "APP_AVVISI_MODAL_WINDOW"
+                },
+                {
+                    "code": "conferma-dati-contabilita",
+                    "label": "BUTTONS.SET",
+                    "icon": "mgg-icons-crud-save"
+                }
+
+            ]
+        },
+        "buttonsRO":[
+            {
+                "code": "go-to-fasi-visibili",
+                "label": "BUTTONS.BACK",
+                "icon": "mgg-icons-paginator-previous",
+                "provider": "APP_GARE_LISTA_FASI",
+                "type": "cancel"
+            }
+        ],
+        "buttonsReadOnly": [
+            {
+                "code": "back-to-lista-fasi-lotto",
+                "label": "BUTTONS.BACK",
+                "icon": "mgg-icons-paginator-previous",
+                "provider": "APP_GARE_LISTA_FASI",
+                "type": "cancel"
+            }
+        ]
+    }
+}

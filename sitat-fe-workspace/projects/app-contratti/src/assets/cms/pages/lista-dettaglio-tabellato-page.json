@@ -1,0 +1,630 @@
+{
+    "name": "lista-dettaglio-tabellato-page",
+    "title": "TITLE.LISTA-DETTAGLIO-TABELLATO-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "lista-dettaglio-tabellato-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-tabellati-page",
+                "label": "BREADCRUMB.RICERCA-TABELLATI",
+                "slug": "ricerca-tabellati-page"
+            },
+            {
+                "code": "lista-tabellati-page",
+                "label": "BREADCRUMB.LISTA-TABELLATI",
+                "slug": "lista-tabellati-page"
+            },
+            {
+                "code": "lista-dettaglio-tabellato-page",
+                "label": "BREADCRUMB.LISTA-DETTAGLIO-TABELLATO",
+                "slug": "lista-dettaglio-tabellato-page",
+                "additionalParams": "SDK_GESTIONE_UTENTI_LISTA_DETTAGLIO_TABELLATO_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "lista-dettaglio-tabellato-page-content-root-section",
+            "selector": "sdk-lista-dettaglio-tabellato-section",
+            "description": "Pagina lista dettaglio tabellato",
+            "classNames": "lista-dettaglio-tabellato-section",
+            "settings": {
+                "classNames": "lista-dettaglio-tabellato-index",
+                "sectionTitle": "TITLE.LISTA-DETTAGLIO-TABELLATO-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-tabellati",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_TABELLATI_LISTA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "nuovo",
+                            "label": "BUTTONS.NUOVO",
+                            "icon": "mgg-icons-crud-create",
+                            "provider": "SDK_GESTIONE_TABELLATI_LISTA",
+                            "oggettoProtezione": "INS.*"
+                        }
+                    ],
+                    "grid": {
+                        "showCurrentPageReport": true,
+                        "showCurrentRecordsReport": true,
+                        "navigable": true,
+                        "resizable": false,
+                        "debug": false,
+                        "sortable": {
+                            "allowUnsort": false,
+                            "mode": "single"
+                        },
+                        "sort": [
+                            {
+                                "field": "descrizioneTabellato",
+                                "dir": "desc"
+                            }
+                        ],
+                        "pageable": {
+                            "buttonCount": 20,
+                            "info": true,
+                            "pageSizes": [
+                                20,
+                                50,
+                                100
+                            ],
+                            "type": "numeric"
+                        },
+                        "pageSize": 20,
+                        "toolbar": {
+                            "position": "top",
+                            "actions": []
+                        },
+                        "columns": []
+                    },
+                    "TAB0_columns": [
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_STRING"
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.CODICE",
+                            "field": "tab0cod",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_STRING"
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.NUMERO-ORDINE",
+                            "field": "ordinamento",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_LINK",
+                                "params": {
+                                    "action": {
+                                        "label": "SDK-TABELLATO.AZIONI.DETTAGLIO",
+                                        "disabled": false,
+                                        "performer": "dettaglio"
+                                    }
+                                }
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.IDENTIFICATIVO",
+                            "field": "tab0tip",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_STRING"
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.CARATTERI",
+                            "field": "tab0vid",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_STRING"
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.DESCRIZIONE-BREVE",
+                            "field": "descrizione",
+                            "width": 150,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_STRING"
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.BLOCCATO",
+                            "field": "bloccato",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_STRING"
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.ARCHIVIATO",
+                            "field": "archiviato",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_ACTIONS_ICON",
+                                "params": {
+                                    "actions": [
+                                        {
+                                            "label": "SDK-TABELLATO.AZIONI.CANCELLA",
+                                            "disabled": false,
+                                            "performer": "delete",
+                                            "icon": "mgg-icons-crud-delete",
+                                            "oggettoProtezione": "DEL.*"
+                                        }
+                                    ]
+                                }
+                            },
+                            "title": "SDK-TABELLATO.AZIONI.TITLE",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false
+                        }
+                    ],
+                    "TAB1_columns": [
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_STRING"
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.CODICE",
+                            "field": "tab1cod",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_STRING"
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.NUMERO-ORDINE",
+                            "field": "ordinamento",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_LINK",
+                                "params": {
+                                    "action": {
+                                        "label": "SDK-TABELLATO.AZIONI.DETTAGLIO",
+                                        "disabled": false,
+                                        "performer": "dettaglio"
+                                    }
+                                }
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.IDENTIFICATIVO",
+                            "field": "tab1tip",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_STRING"
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.DESCRIZIONE-BREVE",
+                            "field": "descrizione",
+                            "width": 150,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_STRING"
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.BLOCCATO",
+                            "field": "bloccato",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_STRING"
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.ARCHIVIATO",
+                            "field": "archiviato",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_ACTIONS_ICON",
+                                "params": {
+                                    "actions": [
+                                        {
+                                            "label": "SDK-TABELLATO.AZIONI.CANCELLA",
+                                            "disabled": false,
+                                            "performer": "delete",
+                                            "icon": "mgg-icons-crud-delete",
+                                            "oggettoProtezione": "DEL.*"
+                                        }
+                                    ]
+                                }
+                            },
+                            "title": "SDK-TABELLATO.AZIONI.TITLE",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false
+                        }
+                    ],
+                    "TAB2_columns": [
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_STRING"
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.CODICE",
+                            "field": "tab2cod",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_STRING"
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.NUMERO-ORDINE",
+                            "field": "ordinamento",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_LINK",
+                                "params": {
+                                    "action": {
+                                        "label": "SDK-TABELLATO.AZIONI.DETTAGLIO",
+                                        "disabled": false,
+                                        "performer": "dettaglio"
+                                    }
+                                }
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.IDENTIFICATIVO",
+                            "field": "tab2tip",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_STRING"
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.PARAMETRO-ASSOCIATO",
+                            "field": "parametroAssociato",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_STRING"
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.DESCRIZIONE-BREVE",
+                            "field": "descrizione",
+                            "width": 150,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_STRING"
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.BLOCCATO",
+                            "field": "bloccato",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_STRING"
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.ARCHIVIATO",
+                            "field": "archiviato",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_ACTIONS_ICON",
+                                "params": {
+                                    "actions": [
+                                        {
+                                            "label": "SDK-TABELLATO.AZIONI.CANCELLA",
+                                            "disabled": false,
+                                            "performer": "delete",
+                                            "icon": "mgg-icons-crud-delete",
+                                            "oggettoProtezione": "DEL.*"
+                                        }
+                                    ]
+                                }
+                            },
+                            "title": "SDK-TABELLATO.AZIONI.TITLE",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false
+                        }
+                    ],
+                    "TAB3_columns": [
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_STRING"
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.CODICE",
+                            "field": "tab3cod",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_STRING"
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.NUMERO-ORDINE",
+                            "field": "ordinamento",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_LINK",
+                                "params": {
+                                    "action": {
+                                        "label": "SDK-TABELLATO.AZIONI.DETTAGLIO",
+                                        "disabled": false,
+                                        "performer": "dettaglio"
+                                    }
+                                }
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.IDENTIFICATIVO",
+                            "field": "tab3tip",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_STRING"
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.DESCRIZIONE-BREVE",
+                            "field": "descrizione",
+                            "width": 150,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_STRING"
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.BLOCCATO",
+                            "field": "bloccato",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_STRING"
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.ARCHIVIATO",
+                            "field": "archiviato",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_ACTIONS_ICON",
+                                "params": {
+                                    "actions": [
+                                        {
+                                            "label": "SDK-TABELLATO.AZIONI.CANCELLA",
+                                            "disabled": false,
+                                            "performer": "delete",
+                                            "icon": "mgg-icons-crud-delete",
+                                            "oggettoProtezione": "DEL.*"
+                                        }
+                                    ]
+                                }
+                            },
+                            "title": "SDK-TABELLATO.AZIONI.TITLE",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false
+                        }
+                    ],
+                    "TAB5_columns": [
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_STRING"
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.CODICE",
+                            "field": "tab5cod",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_STRING"
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.NUMERO-ORDINE",
+                            "field": "ordinamento",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_LINK",
+                                "params": {
+                                    "action": {
+                                        "label": "SDK-TABELLATO.AZIONI.DETTAGLIO",
+                                        "disabled": false,
+                                        "performer": "dettaglio"
+                                    }
+                                }
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.IDENTIFICATIVO",
+                            "field": "tab5tip",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_STRING"
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.DESCRIZIONE-BREVE",
+                            "field": "descrizione",
+                            "width": 150,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_STRING"
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.BLOCCATO",
+                            "field": "bloccato",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_STRING"
+                            },
+                            "title": "SDK-TABELLATO.GENERAL-DATA.ARCHIVIATO",
+                            "field": "archiviato",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false,
+                            "oggettoProtezione": ""
+                        },
+                        {
+                            "viewer": {
+                                "type": "SDK_GRID_VIEW_CELL_ACTIONS_ICON",
+                                "params": {
+                                    "actions": [
+                                        {
+                                            "label": "SDK-TABELLATO.AZIONI.CANCELLA",
+                                            "disabled": false,
+                                            "performer": "delete",
+                                            "icon": "mgg-icons-crud-delete",
+                                            "oggettoProtezione": "DEL.*"
+                                        }
+                                    ]
+                                }
+                            },
+                            "title": "SDK-TABELLATO.AZIONI.TITLE",
+                            "width": 100,
+                            "hidden": false,
+                            "sortable": false,
+                            "resizable": false
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

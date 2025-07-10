@@ -1,0 +1,91 @@
+
+
+.sdk-inserisci-parametri-report-container{
+    .sdk-inserisci-parametri-report-content{
+        padding: 2em;
+    }
+
+    .lista-params-inserimento {
+        padding: 0px 0.5em 0px 0.5em;
+
+        .line-separator{
+            height: 1px;
+            margin: 4px 10px 0.5rem;
+            background-color: rgb(0, 77, 170);
+        }
+
+        .parametro-container{
+            display: flex;
+            padding: 1em;
+            width: 100%;
+
+            .nome-parametro-label{
+                display: flex;
+                width: calc(40% - 1rem);
+
+                .label-parametri{
+                    margin-left: 10px;
+                    font-weight: normal;
+                    align-content: center;
+                }
+
+                .mandatory-box{
+                    color: red !important;
+                    padding-left: 0.3em;
+                    align-content: center;
+                }
+
+                .mgg-icons-status-info{
+                    color: rgb(0, 102, 204);
+                    align-content: center;
+                    padding-left: 0.5em;
+
+                    .p-tooltip{
+                        //margin: auto;
+                        padding: 0;
+                        margin: 0;
+                    }
+
+                    .p-tooltip-text {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+            }
+    
+            .inserisci-input-parametro{
+                display: flex;
+                width: calc(60% - 1rem);
+                margin-left: 16px;
+                padding: 5px;
+
+                .inserisci-select-parametro{
+                    display: flex;
+                    width: calc(60% - 1rem);
+                }
+    
+                input,
+                select{
+                    width: 100%;
+                    color: #333333;
+                    background: #ffffff;
+                    padding: .429rem;
+                    line-height: 1.5rem;
+                    border: 1px solid #a6a6a6;
+                    appearance: none;
+                    border-radius: 3px;
+                    font-size: 18px;
+                    font-family: Titillium Web, sans-serif;
+                }
+    
+                .custom-calendar .p-inputtext{
+                    font-size: 1.5em;
+                    height: 3em;
+                    width: 100%;
+                    padding: 0.5em;
+                }
+            }
+        }
+    }    
+}

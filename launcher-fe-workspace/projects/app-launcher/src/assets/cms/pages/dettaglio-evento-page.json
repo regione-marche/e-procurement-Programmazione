@@ -1,0 +1,146 @@
+{
+    "name": "dettaglio-evento-page",
+    "title": "TITLE.DETTAGLIO-EVENTO-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "dettaglio-evento-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-eventi-page",
+                "label": "BREADCRUMB.RICERCA-EVENTI",
+                "slug": "ricerca-eventi-page"
+            },
+            {
+                "code": "lista-eventi-page",
+                "label": "BREADCRUMB.LISTA-EVENTI",
+                "slug": "lista-eventi-page"
+            },
+            {
+                "code": "dettaglio-evento-page",
+                "label": "BREADCRUMB.DETTAGLIO-EVENTO",
+                "slug": "dettaglio-evento-page",
+                "additionalParams": "SDK_GESTIONE_UTENTI_DETTAGLIO_EVENTO_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-evento-page-content-root-section",
+            "selector": "sdk-dettaglio-evento-section",
+            "description": "Pagina dettaglio evento",
+            "classNames": "dettaglio-evento-section",
+            "settings": {
+                "classNames": "dettaglio-evento-index",
+                "sectionTitle": "TITLE.DETTAGLIO-EVENTO-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-eventi",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_EVENTI_LISTA",
+                            "type": "cancel"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "SDK-EVENTO.GENERAL-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "id-evento",
+                                    "label": "SDK-EVENTO.GENERAL-DATA.ID-EVENTO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "idEvento"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-ora",
+                                    "label": "SDK-EVENTO.GENERAL-DATA.DATA-EVENTO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "dataOra"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "livello-evento",
+                                    "label": "SDK-EVENTO.GENERAL-DATA.LIVELLO-EVENTO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "livelloEvento",
+                                    "listCode": "LivelloEvento"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "codice-evento",
+                                    "label": "SDK-EVENTO.GENERAL-DATA.CODICE-EVENTO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "codiceEvento"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "oggetto-evento",
+                                    "label": "SDK-EVENTO.GENERAL-DATA.OGGETTO-EVENTO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "oggettoEvento"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "descrizione",
+                                    "label": "SDK-EVENTO.GENERAL-DATA.DESCRIZIONE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "descrizione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "messaggio-errore",
+                                    "label": "SDK-EVENTO.GENERAL-DATA.MESSAGGIO-ERRORE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "errorMessage"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "cod-profilo",
+                                    "label": "SDK-EVENTO.GENERAL-DATA.CODICE-PROFILO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "codProfilo"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "descrizione-utente",
+                                    "label": "SDK-EVENTO.GENERAL-DATA.DESCRIZIONE-UTENTE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "descrizioneUtente"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "ip-evento",
+                                    "label": "SDK-EVENTO.GENERAL-DATA.IP-EVENTO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "ipEvento"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

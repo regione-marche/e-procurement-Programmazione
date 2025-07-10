@@ -1,0 +1,196 @@
+{
+    "name": "pubblica-avviso-page",
+    "title": "TITLE.PUBBLICA-AVVISO-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/pubblica-avviso-page.css"
+    ],
+    "settings": {
+        "page": "pubblica-avviso-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-avvisi-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-AVVISI",
+                "slug": "ricerca-avanzata-avvisi-page",
+                "visible": "BREADCRUMB_RICERCA_AVVISI_VISIBLE"
+            },
+            {
+                "code": "lista-avvisi-page",
+                "label": "BREADCRUMB.LISTA-AVVISI",
+                "slug": "lista-avvisi-page"
+            },
+            {
+                "code": "pubblica-avviso-page",
+                "label": "BREADCRUMB.PUBBLICA-AVVISO",
+                "slug": "pubblica-avviso-page",
+                "additionalParams": "APP_AVVISI_ID_AVVISO"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "pubblica-avviso-page-content-root-section",
+            "selector": "pubblica-avviso-section",
+            "description": "Pagina di pubblicazione di un avviso",
+            "classNames": "pubblica-avviso-section",
+            "settings": {
+                "classNames": "pubblica-avviso-index",
+                "menuTabs": [
+                    {
+                        "code": "dettaglio-avviso",
+                        "title": "DETTAGLIO-AVVISO.TAB-DATI-TITLE",
+                        "slug": "dettaglio-avviso-page",
+                        "additionalParams": "APP_AVVISO_DETTAGLIO_FASE_PARAMS"
+                    },
+                    {
+                        "code": "pubblica-avviso",
+                        "title": "DETTAGLIO-AVVISO.TAB-PUBB-TITLE",
+                        "active": true,
+                        "slug": "pubblica-avviso-page",
+                        "additionalParams": "APP_AVVISO_DETTAGLIO_FASE_PARAMS"
+                    }
+                ],
+                "dettaglioFlussoAvviso": {
+                    "modalComponent": "dettaglio-pubblicazione-modal-widget",
+                    "modalComponentConfig": {
+                        "dettaglioPubblicazione": {
+                            "fields": [
+                                {
+                                    "type": "FORM-SECTION",
+                                    "code": "dettaglio",
+                                    "label": "FLUSSOAVVISO.DETTAGLIO.DETTAGLIO",
+                                    "fieldSections": [
+                                        {
+                                            "type": "TEXT",
+                                            "code": "tipo-invio",
+                                            "label": "FLUSSOAVVISO.DETTAGLIO.TIPO-INVIO",
+                                            "oggettoProtezione": "W9.W9FLUSSI.TINVIO2",
+                                            "mnemonico": "W9FLTINVIO",
+                                            "mappingInput": "tipoInvio"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "data-invio",
+                                            "label": "FLUSSOAVVISO.DETTAGLIO.DATA-INVIO",
+                                            "oggettoProtezione": "W9.W9FLUSSI.DATINV",
+                                            "mnemonico": "W9FLDATINV",
+                                            "mappingInput": "dataInvio"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "note-invio",
+                                            "label": "FLUSSOAVVISO.DETTAGLIO.NOTE-INVIO",
+                                            "oggettoProtezione": "W9.W9FLUSSI.NOTEINVIO",
+                                            "mnemonico": "W9NOTINVIO",
+                                            "mappingInput": "noteInvio"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "autore",
+                                            "label": "FLUSSOAVVISO.DETTAGLIO.AUTORE",
+                                            "oggettoProtezione": "W9.W9FLUSSI.AUTORE",
+                                            "mnemonico": "W9FLAUTORE",
+                                            "mappingInput": "autore"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "xml",
+                                            "label": "FLUSSOAVVISO.DETTAGLIO.XML",
+                                            "oggettoProtezione": "W9.W9FLUSSI.XML",
+                                            "mnemonico": "W9FLXML",
+                                            "link": true
+                                        }
+                                    ]
+                                }
+                            ],
+                            "buttons": [
+                                {
+                                    "code": "modal-close-button",
+                                    "label": "BUTTONS.ANNULLA",
+                                    "icon": "mgg-icons-crud-cancel",
+                                    "provider": "APP_AVVISI_MODAL_WINDOW"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "body": {
+                    "sidebar": {
+                        "code": "sidebar",
+                        "position": "right",
+                        "width": 500,
+                        "classList": [
+                            "check-pubb-sidebar"
+                        ],
+                        "headerImage": "assets/images/app/logo.png",
+                        "component": "check-pubblicazione-widget",
+                        "componentConfig": {
+                            "checkSuccessActionDescr": "PUBBLICAZIONI.CHECK-SUCCESS.PUBBLICA-AVVISO"
+                        }
+                    },
+                    "buttons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_AVVISI_DETTAGLIO_AVVISO",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "elimina-flussi-avviso",
+                            "label": "BUTTONS.ELIMINA-FLUSSI",
+                            "provider": "APP_AVVISI_DETTAGLIO_AVVISO",
+                            "oggettoProtezione": "ALT.W9.DEL.ENTITA_PER_AMMINISTRATORE",
+                            "type": "functions",
+                            "icon": "mgg-icons-crud-delete"
+                        },
+                        {
+                            "code": "verify",
+                            "label": "BUTTONS.VERIFY",
+                            "provider": "APP_AVVISI_DETTAGLIO_AVVISO",
+                            "oggettoProtezione": "ALT.W9.AVVISO-scheda.ControlloDatiInseriti",
+                            "type": "functions",
+                            "icon": "mgg-icons-document-text"
+                        },
+                        {
+                            "code": "publish",
+                            "label": "BUTTONS.PUBLISH",
+                            "provider": "APP_AVVISI_DETTAGLIO_AVVISO",
+                            "icon": "mgg-icons-action-send"
+                        }
+                    ],
+                    "buttonsNoPubb": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_AVVISI_DETTAGLIO_AVVISO",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "verify",
+                            "label": "BUTTONS.VERIFY",
+                            "provider": "APP_AVVISI_DETTAGLIO_AVVISO",
+                            "oggettoProtezione": "ALT.W9.AVVISO-scheda.ControlloDatiInseriti",
+                            "type": "functions",
+                            "icon": "mgg-icons-document-text"
+                        },
+                        {
+                            "code": "publish",
+                            "label": "BUTTONS.PUBLISH",
+                            "provider": "APP_AVVISI_DETTAGLIO_AVVISO",
+                            "icon": "mgg-icons-action-send"
+                        }
+                    ],
+                    "fields": []
+                }
+            }
+        }
+    ]
+}

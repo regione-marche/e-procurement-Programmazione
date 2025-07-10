@@ -1,0 +1,126 @@
+{
+    "name": "ricerca-atti-generali-page",
+    "title": "TITLE.RICERCA-ATTI-GENERALI-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "ricerca-atti-generali-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-atti-generali-page",
+                "label": "BREADCRUMB.RICERCA-ATTI-GENERALI",
+                "slug": "ricerca-atti-generali-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "ricerca-atti-generali-page-content-root-section",
+            "selector": "ricerca-atti-generali-section",
+            "description": "Pagina per la ricerca degli atti generali",
+            "classNames": "ricerca-atti-generali-section",
+            "settings": {
+                "classNames": "ricerca-atti-generali-index",
+                "sectionTitle": "TITLE.RICERCA-ATTI-GENERALI-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-home",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_CONTRATTI_ATTI_GENERALI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "pulisciFiltriRicercaAttiGenerali",
+                            "label": "BUTTONS.CLEAN",
+                            "provider": "APP_CONTRATTI_ATTI_GENERALI",
+                            "icon": "mgg-icons-data-filtered"
+                        },
+                        {
+                            "code": "search-atti-generali",
+                            "label": "BUTTONS.SEARCH",
+                            "provider": "APP_CONTRATTI_ATTI_GENERALI",
+                            "icon": "mgg-icons-data-search"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "ricerca-atti-generali",
+                            "label": "RICERCA-ATTI-GENERALI.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "MULTIPLE-AUTOCOMPLETE",
+                                    "code": "stazione-appaltante",
+                                    "label": "RICERCA-ATTI-GENERALI.UFFINT",
+                                    "mappingInput": "stazioneAppaltante",
+                                    "mappingOutput": "stazioneAppaltante",
+                                    "oggettoProtezione": "ALT.GENE.associazioneUffintAbilitata",
+                                    "noDataLabel": "NO-DATA",
+                                    "itemsProviderCode": "STAZIONE_APPALTANTE_AUTOCOMPLETE"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "idAtto",
+                                    "label": "RICERCA-ATTI-GENERALI.IDATTO",
+                                    "mappingInput": "idAtto",
+                                    "mappingOutput": "idAtto",
+                                    "decimals": 0,
+                                    "currency": false
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tipologia",
+                                    "label": "RICERCA-ATTI-GENERALI.TIPOLOGIA",
+                                    "mappingInput": "tipologia",
+                                    "mappingOutput": "tipologia",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "TipoAttoGenerale"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "descrizione",
+                                    "label": "RICERCA-ATTI-GENERALI.DESCRIZIONE",
+                                    "mappingInput": "descrizione",
+                                    "mappingOutput": "descrizione"
+                                },
+                                {
+                                    "type": "MULTIPLE-AUTOCOMPLETE",
+                                    "code": "rup",
+                                    "label": "RICERCA-ATTI-GENERALI.RUP",
+                                    "oggettoProtezione": "W9.ATTIGENERALI.RUP",
+                                    "mnemonico": "W9GNRUP",
+                                    "itemsProviderCode": "APP_AVVISI_RUP_AVVISO",
+                                    "mappingInput": "rup",
+                                    "mappingOutput": "rup",
+                                    "noDataLabel": "NO-DATA"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "dataPubbSistemaDa",
+                                    "label": "RICERCA-ATTI-GENERALI.DATAPUBBSISTEMA-DA",
+                                    "mappingInput": "dataPubbSistemaDa",
+                                    "mappingOutput": "dataPubbSistemaDa"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "dataPubbSistemaA",
+                                    "label": "RICERCA-ATTI-GENERALI.DATAPUBBSISTEMA-A",
+                                    "mappingInput": "dataPubbSistemaA",
+                                    "mappingOutput": "dataPubbSistemaA"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

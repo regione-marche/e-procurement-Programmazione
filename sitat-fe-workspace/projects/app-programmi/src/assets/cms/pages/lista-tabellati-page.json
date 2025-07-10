@@ -1,0 +1,133 @@
+{
+    "name": "lista-tabellati-page",
+    "title": "TITLE.LISTA-TABELLATI-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "lista-tabellati-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-tabellati-page",
+                "label": "BREADCRUMB.RICERCA-TABELLATI",
+                "slug": "ricerca-tabellati-page"
+            },
+            {
+                "code": "lista-tabellati-page",
+                "label": "BREADCRUMB.LISTA-TABELLATI",
+                "slug": "lista-tabellati-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "lista-tabellati-page-content-root-section",
+            "selector": "sdk-lista-tabellati-section",
+            "description": "Pagina lista tabellati",
+            "classNames": "lista-tabellati-section",
+            "settings": {
+                "classNames": "lista-tabellati-index",
+                "sectionTitle": "TITLE.LISTA-TABELLATI-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_TABELLATI_LISTA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "clean-button",
+                            "label": "BUTTONS.CLEAN",
+                            "provider": "SDK_GESTIONE_TABELLATI_LISTA",
+                            "icon": "mgg-icons-data-unfiltered"
+                        }
+                    ],
+                    "grid": {
+                        "showCurrentPageReport": true,
+                        "showCurrentRecordsReport": true,
+                        "navigable": true,
+                        "resizable": false,
+                        "debug": false,
+                        "sortable": {
+                            "allowUnsort": false,
+                            "mode": "single"
+                        },
+                        "sort": [
+                            {
+                                "field": "descrizioneTabellato",
+                                "dir": "desc"
+                            }
+                        ],
+                        "pageable": {
+                            "buttonCount": 50,
+                            "info": true,
+                            "pageSizes": [
+                                20,
+                                50,
+                                100
+                            ],
+                            "pageSize": 20,
+                            "type": "numeric"
+                        },
+                        "toolbar": {
+                            "position": "top",
+                            "actions": []
+                        },
+                        "columns": [
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_LINK",
+                                    "params": {
+                                        "action": {
+                                            "label": "SDK-TABELLATO.AZIONI.DETTAGLIO",
+                                            "disabled": false,
+                                            "performer": "dettaglio"
+                                        }
+                                    }
+                                },
+                                "title": "SDK-TABELLATO.GENERAL-DATA.CODICE",
+                                "field": "codiceTabellato",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-TABELLATO.GENERAL-DATA.DESCRIZIONE",
+                                "field": "descrizioneTabellato",
+                                "width": 150,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-TABELLATO.GENERAL-DATA.PROVENIENZA",
+                                "field": "provenienza",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

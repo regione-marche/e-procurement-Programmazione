@@ -1,0 +1,57 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "forceConsistentCasingInFileNames": true,
+    "strict": false,
+    "noImplicitReturns": false,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2022",
+    "module": "es2020",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2020",
+      "dom"
+    ],
+    "paths": {
+      "sdk-commons": [
+        "dist/sdk-commons"
+      ],
+      "sdk-commons/*": [
+        "dist/sdk-commons/*"
+      ],
+      "sdk-controls": [
+        "dist/sdk-controls"
+      ],
+      "sdk-controls/*": [
+        "dist/sdk-controls/*"
+      ],
+      "sdk-widgets": [
+        "dist/sdk-widgets"
+      ],
+      "sdk-widgets/*": [
+        "dist/sdk-widgets/*"
+      ]
+    },
+    "useDefineForClassFields": false
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": false,
+    "strictInputAccessModifiers": false,
+    "strictTemplates": false
+  }
+}

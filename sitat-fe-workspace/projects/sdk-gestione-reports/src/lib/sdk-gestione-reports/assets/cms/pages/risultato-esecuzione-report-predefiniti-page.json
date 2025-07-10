@@ -1,0 +1,97 @@
+{
+    "name": "risultato-esecuzione-report-predefiniti-page",
+    "title": "TITLE.RISULTATI-REPORT-PREDEFINITI-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [
+        "assets/cms/pages/risultato-report-page.css"
+    ],
+    "settings": {
+        "page": "risultato-esecuzione-report-predefiniti-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-report-predefiniti-page",
+                "label": "BREADCRUMB.LISTA-REPORT-PREDEFINITI",
+                "slug": "lista-report-predefiniti-page"
+            },
+            {
+                "code": "risultati-report-predefiniti-page",
+                "label": "BREADCRUMB.RISULTATI-REPORT-PREDEFINITI",
+                "slug": "risultati-report-predefiniti-page",
+                "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS",
+                "labelProvider": "BREADCRUMB_NOME_REPORT_PROVIDER"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "risultato-esecuzione-report-page-content-root-section",
+            "selector": "sdk-risultato-esecuzione-report-predefiniti-page-section",
+            "description": "Pagina per la visualizzazione dei risultati dell'esecuzione di un report predefinito",
+            "classNames": "sdk-risultato-esecuzione-report-predefiniti-page-section",
+            "settings": {
+                "classNames": "risultato-esecuzione-report-predefiniti-index",
+                "sectionTitle": "TITLE.RISULTATI-REPORT-PREDEFINITI-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-report-predefiniti",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_REPORT_PREDEFINITI_LISTA_REPORT_PROVIDER",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "export-report-result",
+                            "label": "BUTTONS.EXPORT",
+                            "icon": "mgg-icons-data-export",
+                            "dropdown": true,
+                            "dropdownData": [                                
+                                {
+                                    "code": "export-report-csv",
+                                    "label": "BUTTONS.CSV",
+                                    "provider": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PROVIDER"
+                                },
+                                {
+                                    "code": "export-report-xlsx",
+                                    "label": "BUTTONS.XLSX",
+                                    "provider": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PROVIDER"
+                                },
+                                {
+                                    "code": "export-report-docx",
+                                    "label": "BUTTONS.DOCX",
+                                    "provider": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PROVIDER"
+                                },
+                                {
+                                    "code": "export-report-pdf",
+                                    "label": "BUTTONS.PDF",
+                                    "provider": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PROVIDER"
+                                },
+                                {
+                                    "code": "export-report-json",
+                                    "label": "BUTTONS.JSON",
+                                    "provider": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PROVIDER"
+                                }
+                            ],
+                            "look": "icon"
+                        }
+                    ],
+                    "buttonsErr": [
+                        {
+                            "code": "back-to-lista-report-predefiniti",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_REPORT_PREDEFINITI_LISTA_REPORT_PROVIDER",
+                            "type": "cancel"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

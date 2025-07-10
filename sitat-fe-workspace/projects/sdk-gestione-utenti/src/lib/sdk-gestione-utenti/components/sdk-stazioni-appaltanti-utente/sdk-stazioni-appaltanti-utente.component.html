@@ -1,0 +1,38 @@
+<div [class]="config.classNames" *ngIf="isReady">
+    <h1 class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</h1>
+    <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+    <div class="messages-box" #infoBox></div>
+    <div class="messages-box" #messages></div>
+
+    <div class="sdk-stazioni-appaltanti-utente-container">
+        <div class="sdk-stazioni-appaltanti-utente-content">
+            <table class="stazioni-appaltanti-container"
+                *ngIf="stazioniAppaltantiUtente != null && stazioniAppaltantiUtente.length > 0"
+                [attr.aria-label]="'TITLE.STAZIONI-APPALTANTI-UTENTE-PAGE' | translate">
+                <thead>
+                    <tr>
+                        <th>{{ 'SDK-STAZIONI-APPALTANTI-UTENTE.CODICE-STAZIONE-APPALTANTE' | translate }}</th>
+                        <th>{{ 'SDK-STAZIONI-APPALTANTI-UTENTE.DENOMINAZIONE-STAZIONE-APPALTANTE' | translate }}</th>
+                        <th>{{ 'SDK-STAZIONI-APPALTANTI-UTENTE.CODICE-FISCALE-STAZIONE-APPALTANTE' | translate }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="stazioni-appaltanti-item"
+                        *ngFor="let sa of stazioniAppaltantiUtente; trackBy: trackByCode">
+                        <td>{{ sa.codice }}</td>
+                        <td>{{ sa.denominazione }}</td>
+                        <td>{{ sa.codiceFiscale }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="empty-list"
+                *ngIf="stazioniAppaltantiUtente == null || (stazioniAppaltantiUtente != null && stazioniAppaltantiUtente.length == 0)">
+                {{ 'SDK-STAZIONI-APPALTANTI-UTENTE.EMPTY-STAZIONI-APPALTANTI-UTENTE' | translate }}
+            </div>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+</div>

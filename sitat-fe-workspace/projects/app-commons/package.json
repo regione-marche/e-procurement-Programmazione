@@ -1,0 +1,11 @@
+{
+  "name": "app-commons",
+  "version": "7.1.2.2",
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
+  "peerDependencies": {
+    "@angular/common": "~16.1.5",
+    "@angular/core": "~16.1.5"
+  }
+}

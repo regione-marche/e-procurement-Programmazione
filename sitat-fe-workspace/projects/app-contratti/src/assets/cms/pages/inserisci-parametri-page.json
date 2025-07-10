@@ -1,0 +1,69 @@
+{
+    "name": "inserisci-parametri-page",
+    "title": "TITLE.INSERISCI-PARAMETRI-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "inserisci-parametri-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-report-page",
+                "label": "BREADCRUMB.GESTIONE-REPORT",
+                "slug": "lista-report-page"
+            },
+            {
+                "code": "parametri-report-page",
+                "label": "BREADCRUMB.PARAMETRI-REPORT",
+                "slug": "parametri-report-page",
+                "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+            },
+            {
+                "code": "inserisci-parametri-page",
+                "label": "BREADCRUMB.INSERISCI-PARAMETRI",
+                "slug": "inserisci-parametri-page",
+                "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "inserisci-parametri-page-content-root-section",
+            "selector": "sdk-inserisci-parametri-page-section",
+            "description": "Pagina per l'inserimento dei parametri di un report",
+            "classNames": "sdk-inserisci-parametri-page-section",
+            "settings": {
+                "classNames": "inserisci-parametri-report-index",
+                "sectionTitle": "TITLE.INSERISCI-PARAMETRI-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-def-or-param-list",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "SDK_GESTIONE_REPORT_LISTA_REPORT",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "reimposta-inserimento-params",
+                            "label": "BUTTONS.REIMPOSTA",
+                            "icon": "mgg-icons-data-unfiltered",
+                            "provider": "SDK_GESTIONE_REPORT_LISTA_REPORT"
+                        },
+                        {
+                            "code": "esegui-report-params",
+                            "label": "BUTTONS.ESEGUI",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "SDK_GESTIONE_REPORT_LISTA_REPORT"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

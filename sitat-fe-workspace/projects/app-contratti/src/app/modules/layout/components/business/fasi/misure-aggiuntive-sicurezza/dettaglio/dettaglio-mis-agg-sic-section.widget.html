@@ -1,0 +1,23 @@
+<div [class]="config.classNames" *ngIf="isReady">
+    <h1 class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</h1>
+    <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+    <div class="messages-box" #infoBox></div>
+
+    <div class="messages-box" #messages></div>
+    <div class="dmas-container">
+        <div class="dmas-content">
+            <div *ngIf="misureAggiuntiveSicurezza === undefined" class="empty-list">
+                {{'MISURE-AGGIUNTIVE-SICUREZZA.EMPTY-OBJECT' | translate}}
+            </div>
+            <sdk-form-builder *ngIf="misureAggiuntiveSicurezza !== undefined" [config]="formBuilderConfigObs"
+                (output)="manageFormOutput($event)" (outputClick)="manageFormClick($event)">
+            </sdk-form-builder>
+            <sdk-dialog [config]="dialogConfigObs"></sdk-dialog>
+            <sdk-modal [config]="modalConfigObs"></sdk-modal>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+</div>

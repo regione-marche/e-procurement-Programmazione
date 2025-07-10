@@ -1,0 +1,120 @@
+<div [class]="config.classNames" *ngIf="isReady">
+    <h1 class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</h1>
+    <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+    <div class="messages-box" #infoBox></div>
+
+    <div class="sdk-lista-reports-container">
+        <div class="sdk-lista-reports-content">
+            <div class="card">
+                <p-table #dt2 
+                    [value]="listaAllReports" 
+                    dataKey="idRicerca"
+                    styleClass="p-datatable-all-reports" 
+                    [globalFilterFields]="['nome','descrizione', 'pubblicato', 'sysute']" 
+                    (onFilter)="onFilter($event)"
+                    [scrollable]="true"
+                    [virtualScroll]="true"
+                    [virtualScrollItemSize]="'56px'"
+                    [scrollHeight]="'calc(100vh - 300px)'"
+                    [scrollDirection]="'vertical'"
+                >
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th scope="col">{{ 'SDK-LISTA-REPORT.ID-REPORT' | translate }}</th>
+                            <th scope="col">{{ 'SDK-LISTA-REPORT.TITOLO-REPORT' | translate }}</th>
+                            <th scope="col">{{ 'SDK-LISTA-REPORT.DESCRIZIONE-REPORT' | translate }}</th>
+                            <th scope="col">{{ 'SDK-LISTA-REPORT.PUBBLICATO' | translate }}</th>
+                            <th scope="col">{{ 'SDK-LISTA-REPORT.CREATORE-REPORT' | translate }}</th>
+                            <th scope="col">{{ 'SDK-LISTA-REPORT.AZIONI' | translate }}</th>
+                        </tr>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">
+                                <p-columnFilter [placeholder]="'PLACEHOLDERS.SCRIVI-FILTER' | translate" type="text" matchMode="contains" [showMenu]="false" field="nome"></p-columnFilter>
+                            </th>
+                            <th scope="col">
+                                <p-columnFilter [placeholder]="'PLACEHOLDERS.SCRIVI-FILTER' | translate" type="text" matchMode="contains" [showMenu]="false" field="descrizione"></p-columnFilter>
+                            </th>
+                            <th scope="col">
+                                <p-columnFilter [placeholder]="'PLACEHOLDERS.SCRIVI-FILTER' | translate" type="text" matchMode="contains" [showMenu]="false" field="pubblicato"></p-columnFilter>
+                            </th>
+                            <th scope="col">
+                                <p-columnFilter [placeholder]="'PLACEHOLDERS.SCRIVI-FILTER' | translate" type="text" matchMode="contains" [showMenu]="false" field="sysute"></p-columnFilter>
+                            </th>
+                            <th scope="col"></th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-uffint>
+                        <tr (mouseenter)="hoveredRow = uffint.idRicerca" 
+                            (mouseleave)="hoveredRow = null">
+                            <td>
+                                {{uffint.idRicerca}}
+                            </td>
+                            <td>
+                                <div class="link-icon-container">
+                                    <a (click)="loadDettaglioReport(uffint.idRicerca)" style="cursor: pointer;">
+                                        <u>{{uffint.nome}}</u>
+                                    </a>
+                                    <div class="icon-content">
+                                        <i
+                                            [ngClass]="{
+                                                'mgg-icons-data-like': uffint.isPreferito,
+                                                'mgg-icons-data-like-off': !uffint.isPreferito && hoveredRow === uffint.idRicerca,
+                                                'preferito-icon': true,
+                                                'visibile': !uffint.isPreferito && hoveredRow === uffint.idRicerca,
+                                                'preferito': uffint.isPreferito
+                                            }"
+                                            [ngStyle]="!uffint.isPreferito && hoveredRow === uffint.idRicerca ? {'color': '#06c'} : {}"
+                                            [title]="
+                                                uffint.isPreferito 
+                                                ? 
+                                                    ('SDK-LISTA-REPORT.TOOLTIP.RIMUOVI-PREFERITO' | translate) 
+                                                : 
+                                                    ('SDK-LISTA-REPORT.TOOLTIP.AGGIUNGI-PREFERITO' | translate)"
+                                            (click)="togglePreferito(uffint); $event.stopPropagation()"
+                                        ></i>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                {{uffint.descrizione}}
+                            </td>
+                            <td>
+                                {{uffint.pubblicato}}
+                            </td>
+                            <td>
+                                {{uffint.sysute}}
+                            </td>
+                            <td>
+                                <div class="sdk-lista-report-cell-container">
+                                    <i 
+                                        class="mgg-icons-action-copy" 
+                                        style="cursor: pointer;" 
+                                        (click)="copyRowReport(uffint.idRicerca)"
+                                        title="{{ 'SDK-LISTA-REPORT.TOOLTIP.COPIA-REPORT' | translate}}"    
+                                    ></i>
+                                    <i 
+                                        class="mgg-icons-crud-delete" 
+                                        style="cursor: pointer;" 
+                                        (click)="performModalOnCancel(uffint.idRicerca)"
+                                        title="{{ 'SDK-LISTA-REPORT.TOOLTIP.CANCELLA-RIGA' | translate}}"    
+                                    ></i>
+                                </div>
+                            </td>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="emptymessage">
+                        <tr>
+                            <td colspan="6">{{ 'noRecords' | translate }}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+    <sdk-dialog [config]="dialogConfigObs"></sdk-dialog>
+</div>

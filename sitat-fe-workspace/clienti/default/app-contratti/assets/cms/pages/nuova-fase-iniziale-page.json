@@ -1,0 +1,305 @@
+{
+    "name": "nuova-fase-iniziale-page",
+    "title": "TITLE.NUOVA-FASE-INIZIALE-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "nuova-fase-iniziale-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "nuova-fase-page",
+                "label": "BREADCRUMB.NUOVA-FASE",
+                "slug": "nuova-fase-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS"
+            },
+            {
+                "code": "nuova-fase-iniziale-page",
+                "label": "BREADCRUMB.NUOVA-FASE-INIZIALE",
+                "slug": "nuova-fase-iniziale-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "nuova-fase-iniziale-page-content-root-section",
+            "selector": "nuova-fase-iniziale-section",
+            "description": "Pagina di inserimento nuova fase iniziale",
+            "classNames": "nuova-fase-iniziale-section",
+            "settings": {
+                "classNames": "nuova-fase-iniziale-index",
+                "sectionTitle": "TITLE.NUOVA-FASE-INIZIALE-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "go-to-fasi-visibili",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-fase",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_FASE_INIZIALE_PROVIDER"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "contratto-appalto-data",
+                            "label": "FASE-INIZIALE.CONTRATTO-APPALTO-DATA.CONTRATTO-APPALTO-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-stipula",
+                                    "label": "FASE-INIZIALE.CONTRATTO-APPALTO-DATA.DATA-STIPULA",
+                                    "oggettoProtezione": "W9.W9INIZ.DATA_STIPULA",
+                                    "mnemonico": "W3DATA_STI",
+                                    "mappingInput": "dataStipula",
+                                    "mappingOutput": "dataStipula"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-esecutivita",
+                                    "label": "FASE-INIZIALE.CONTRATTO-APPALTO-DATA.DATA-ESECUTIVITA",
+                                    "oggettoProtezione": "W9.W9INIZ.DATA_ESECUTIVITA",
+                                    "mnemonico": "W3DATA_ESE",
+                                    "mappingInput": "dataEsecutivita",
+                                    "mappingOutput": "dataEsecutivita"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-cauzione",
+                                    "label": "FASE-INIZIALE.CONTRATTO-APPALTO-DATA.IMPORTO-CAUZIONE",
+                                    "oggettoProtezione": "W9.W9INIZ.IMPORTO_CAUZIONE",
+                                    "mnemonico": "W3I_CAUZIO",
+                                    "mappingInput": "importoCauzione",
+                                    "mappingOutput": "importoCauzione",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "incontri-vigil",
+                                    "label": "FASE-INIZIALE.CONTRATTO-APPALTO-DATA.INCONTRI-VIGIL",
+                                    "oggettoProtezione": "W9.W9INIZ.INCONTRI_VIGIL",
+                                    "mnemonico": "W9ININCVIGIL",
+                                    "mappingInput": "incontriVigil",
+                                    "mappingOutput": "incontriVigil",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "IncontriOrganiVigilanza"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "termine-esecuzione-data",
+                            "label": "FASE-INIZIALE.TERMINE-ESECUZIONE-DATA.TERMINE-ESECUZIONE-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-ini-prog-esec",
+                                    "label": "FASE-INIZIALE.TERMINE-ESECUZIONE-DATA.DATA-INI-PROG-ESEC",
+                                    "oggettoProtezione": "W9.W9INIZ.DATA_INI_PROG_ESEC",
+                                    "mnemonico": "W3DPROG_ES",
+                                    "mappingInput": "dataInizioProg",
+                                    "mappingOutput": "dataInizioProg"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-app-prog-esec",
+                                    "label": "FASE-INIZIALE.TERMINE-ESECUZIONE-DATA.DATA-APP-PROG-ESEC",
+                                    "oggettoProtezione": "W9.W9INIZ.DATA_APP_PROG_ESEC",
+                                    "mnemonico": "W3DATA_APP",
+                                    "mappingInput": "dataApprovazioneProg",
+                                    "mappingOutput": "dataApprovazioneProg"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "flag-frazionata",
+                                    "label": "FASE-INIZIALE.TERMINE-ESECUZIONE-DATA.FLAG-FRAZIONATA",
+                                    "oggettoProtezione": "W9.W9INIZ.FLAG_FRAZIONATA",
+                                    "mnemonico": "W3FLAG_FRA",
+                                    "mappingInput": "frazionata",
+                                    "mappingOutput": "frazionata",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-verbale-cons",
+                                    "label": "FASE-INIZIALE.TERMINE-ESECUZIONE-DATA.DATA-VERBALE-CONS",
+                                    "oggettoProtezione": "W9.W9INIZ.DATA_VERBALE_CONS",
+                                    "mnemonico": "W3DVERB_CO",
+                                    "mappingInput": "dataVerbaleCons",
+                                    "mappingOutput": "dataVerbaleCons"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-verbale-def",
+                                    "label": "FASE-INIZIALE.TERMINE-ESECUZIONE-DATA.DATA-VERBALE-DEF",
+                                    "oggettoProtezione": "W9.W9INIZ.DATA_VERBALE_DEF",
+                                    "mnemonico": "W3DVERB_DE",
+                                    "mappingInput": "dataVerbaleDef",
+                                    "mappingOutput": "dataVerbaleDef"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "flag-riserva",
+                                    "label": "FASE-INIZIALE.TERMINE-ESECUZIONE-DATA.FLAG-RISERVA",
+                                    "oggettoProtezione": "W9.W9INIZ.FLAG_RISERVA",
+                                    "mnemonico": "W3RISERVA",
+                                    "mappingInput": "riserva",
+                                    "mappingOutput": "riserva",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-verb-inizio",
+                                    "label": "FASE-INIZIALE.TERMINE-ESECUZIONE-DATA.DATA-VERB-INIZIO",
+                                    "oggettoProtezione": "W9.W9INIZ.DATA_VERB_INIZIO",
+                                    "mnemonico": "W3DVERB_IN",
+                                    "mappingInput": "dataVerbInizio",
+                                    "mappingOutput": "dataVerbInizio"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-termine",
+                                    "label": "FASE-INIZIALE.TERMINE-ESECUZIONE-DATA.DATA-TERMINE",
+                                    "oggettoProtezione": "W9.W9INIZ.DATA_TERMINE",
+                                    "mnemonico": "W3DTERM1",
+                                    "mappingInput": "dataTermine",
+                                    "mappingOutput": "dataTermine"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "pubblicazione-esito-data",
+                            "label": "FASE-INIZIALE.PUBBLICAZIONE-ESITO-DATA.PUBBLICAZIONE-ESITO-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-guce",
+                                    "label": "FASE-INIZIALE.PUBBLICAZIONE-ESITO-DATA.DATA-GUCE",
+                                    "oggettoProtezione": "W9.W9PUES.DATA_GUCE",
+                                    "mnemonico": "W3GUCE2",
+                                    "mappingInput": "pubblicazioneEsito.dataGuce",
+                                    "mappingOutput": "pubblicazioneEsito.dataGuce"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-guri",
+                                    "label": "FASE-INIZIALE.PUBBLICAZIONE-ESITO-DATA.DATA-GURI",
+                                    "oggettoProtezione": "W9.W9PUES.DATA_GURI",
+                                    "mnemonico": "W3GURI2",
+                                    "mappingInput": "pubblicazioneEsito.dataGuri",
+                                    "mappingOutput": "pubblicazioneEsito.dataGuri"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-albo",
+                                    "label": "FASE-INIZIALE.PUBBLICAZIONE-ESITO-DATA.DATA-ALBO",
+                                    "oggettoProtezione": "W9.W9PUES.DATA_ALBO",
+                                    "mnemonico": "W3ALBO2",
+                                    "mappingInput": "pubblicazioneEsito.dataAlbo",
+                                    "mappingOutput": "pubblicazioneEsito.dataAlbo"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "quotidiani-naz",
+                                    "label": "FASE-INIZIALE.PUBBLICAZIONE-ESITO-DATA.QUOTIDIANI-NAZ",
+                                    "oggettoProtezione": "W9.W9PUES.QUOTIDIANI_NAZ",
+                                    "mnemonico": "W3NAZ2",
+                                    "mappingInput": "pubblicazioneEsito.quotidianiNaz",
+                                    "mappingOutput": "pubblicazioneEsito.quotidianiNaz",
+                                    "decimals": 0,
+                                    "maxLength": 5
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "quotidiani-reg",
+                                    "label": "FASE-INIZIALE.PUBBLICAZIONE-ESITO-DATA.QUOTIDIANI-REG",
+                                    "oggettoProtezione": "W9.W9PUES.QUOTIDIANI_REG",
+                                    "mnemonico": "W3REG2",
+                                    "mappingInput": "pubblicazioneEsito.quotidianiReg",
+                                    "mappingOutput": "pubblicazioneEsito.quotidianiReg",
+                                    "decimals": 0,
+                                    "maxLength": 5
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "profilo-committente",
+                                    "label": "FASE-INIZIALE.PUBBLICAZIONE-ESITO-DATA.PROFILO-COMMITTENTE",
+                                    "oggettoProtezione": "W9.W9PUES.PROFILO_COMMITTENTE",
+                                    "mnemonico": "W3PROFILO2",
+                                    "mappingInput": "pubblicazioneEsito.profiloCommittente",
+                                    "mappingOutput": "pubblicazioneEsito.profiloCommittente",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "sito-ministero-inf-trasp",
+                                    "label": "FASE-INIZIALE.PUBBLICAZIONE-ESITO-DATA.SITO-MINISTERO-INF-TRASP",
+                                    "oggettoProtezione": "W9.W9PUES.SITO_MINISTERO_INF_TRASP",
+                                    "mnemonico": "W3MIN2",
+                                    "mappingInput": "pubblicazioneEsito.sitoMinInfTrasp",
+                                    "mappingOutput": "pubblicazioneEsito.sitoMinInfTrasp",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "sito-osservatorio-cp",
+                                    "label": "FASE-INIZIALE.PUBBLICAZIONE-ESITO-DATA.SITO-OSSERVATORIO-CP",
+                                    "oggettoProtezione": "W9.W9PUES.SITO_OSSERVATORIO_CP",
+                                    "mnemonico": "W3OSS2",
+                                    "mappingInput": "pubblicazioneEsito.sitoOsservatorio",
+                                    "mappingOutput": "pubblicazioneEsito.sitoOsservatorio",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

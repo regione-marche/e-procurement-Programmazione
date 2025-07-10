@@ -1,0 +1,150 @@
+{
+    "name": "nuove-mis-agg-sic-fase-ini-semp-page",
+    "title": "TITLE.NUOVE-MISURE-AGGIUNTIVE-SICUREZZA-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "nuove-mis-agg-sic-fase-ini-semp-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-mis-agg-sic-fase-ini-semp-page",
+                "label": "BREADCRUMB.DETTAGLIO-MISURE-AGGIUNTIVE-SICUREZZA",
+                "slug": "dettaglio-mis-agg-sic-fase-ini-semp-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            },
+            {
+                "code": "nuove-mis-agg-sic-fase-ini-semp-page",
+                "label": "BREADCRUMB.NUOVE-MISURE-AGGIUNTIVE-SICUREZZA",
+                "slug": "nuove-mis-agg-sic-fase-ini-semp-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "nuove-mis-agg-sic-fase-ini-semp-page-content-root-section",
+            "selector": "nuove-misure-aggiuntive-sicurezza-section",
+            "description": "Pagina di inserimento misure aggiuntive sicurezza",
+            "classNames": "nuove-mis-agg-sic-fase-ini-semp-section",
+            "settings": {
+                "classNames": "nuove-mis-agg-sic-fase-ini-semp-index",
+                "sectionTitle": "TITLE.NUOVE-MISURE-AGGIUNTIVE-SICUREZZA-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-dettaglio-misure-aggiuntive-sicurezza",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_GARE_MIS_AGG_SIC_FASE_INI_SEMP",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-misure-aggiuntive-sicurezza",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_MIS_AGG_SIC_FASE_INI_SEMP"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "MISURE-AGGIUNTIVE-SICUREZZA.GENERAL-DATA.GENERAL-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "descmis",
+                                    "label": "MISURE-AGGIUNTIVE-SICUREZZA.GENERAL-DATA.DESCMIS",
+                                    "oggettoProtezione": "W9.W9MISSIC.DESCMIS",
+                                    "mnemonico": "W3MSDESCMI",
+                                    "mappingInput": "descrizione",
+                                    "mappingOutput": "descrizione",
+                                    "maxLength": 2000
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "nomest",
+                                    "label": "MISURE-AGGIUNTIVE-SICUREZZA.GENERAL-DATA.NOMEST",
+                                    "oggettoProtezione": "W9.W9MISSIC.CODIMP",
+                                    "mnemonico": "W3MSCODIMP",
+                                    "mappingInput": "impresa",
+                                    "mappingOutput": "codiceImpresa",
+                                    "itemsProviderCode": "APP_GARE_IMPRESE_AGGIUDICATARIE_AGGI_SUBA_AUTOCOMPLETE",
+                                    "noDataLabel": "NO-DATA",
+                                    "newEditAvailable": false,
+                                    "modalComponent": "impresa-modal-widget",
+                                    "modalComponentConfig": "impresaRWModalConfig"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "docuemntazione-data",
+                            "label": "MISURE-AGGIUNTIVE-SICUREZZA.DOCUMENTAZIONE-DATA.DOCUMENTAZIONE-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "FORM-GROUP",
+                                    "code": "documents-data-group",
+                                    "label": "",
+                                    "minGroupsNumber": 1,
+                                    "maxGroupsNumber": 0,
+                                    "defaultFormGroupFields": [
+                                        {
+                                            "type": "DOCUMENT",
+                                            "code": "documents",
+                                            "label": "MISURE-AGGIUNTIVE-SICUREZZA.DOCUMENTAZIONE-DATA.DOCUMENTS",
+                                            "switchFileLabel": "MISURE-AGGIUNTIVE-SICUREZZA.UPLOAD-FILE",
+                                            "switchUrlLabel": "MISURE-AGGIUNTIVE-SICUREZZA.UPLOAD-URL",
+                                            "urlLabel": "MISURE-AGGIUNTIVE-SICUREZZA.URL",
+                                            "fileInputLabel": "MISURE-AGGIUNTIVE-SICUREZZA.CHOOSE-FILE",
+                                            "titleInputLabel": "MISURE-AGGIUNTIVE-SICUREZZA.TITOLO-DOCUMENT",
+                                            "maxFileSize": "25 MB",
+                                            "maxFileSizeLabel": "VALIDATORS.MAX-FILE-SIZE",
+                                            "wrongExtensionLabel": "VALIDATORS.WRONG-EXTENSION",
+                                            "mappingInput": "",
+                                            "mappingOutput": "documents",
+                                            "onlyFile": true,
+                                            "mandatory": false,
+                                            "accept": ".pdf"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

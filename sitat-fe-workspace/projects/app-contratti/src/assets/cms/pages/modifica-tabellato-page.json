@@ -1,0 +1,428 @@
+{
+    "name": "modifica-tabellato-page",
+    "title": "TITLE.MODIFICA-TABELLATO-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "modifica-tabellato-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-tabellati-page",
+                "label": "BREADCRUMB.RICERCA-TABELLATI",
+                "slug": "ricerca-tabellati-page"
+            },
+            {
+                "code": "lista-tabellati-page",
+                "label": "BREADCRUMB.LISTA-TABELLATI",
+                "slug": "lista-tabellati-page"
+            },
+            {
+                "code": "lista-dettaglio-tabellato-page",
+                "label": "BREADCRUMB.LISTA-DETTAGLIO-TABELLATO",
+                "slug": "lista-dettaglio-tabellato-page",
+                "additionalParams": "SDK_GESTIONE_UTENTI_LISTA_DETTAGLIO_TABELLATO_PARAMS"
+            },
+            {
+                "code": "dettaglio-tabellato-page",
+                "label": "BREADCRUMB.DETTAGLIO-TABELLATO",
+                "slug": "dettaglio-tabellato-page",
+                "additionalParams": "SDK_GESTIONE_UTENTI_DETTAGLIO_TABELLATO_PARAMS"
+            },
+            {
+                "code": "modifica-tabellato-page",
+                "label": "BREADCRUMB.MODIFICA-TABELLATO",
+                "slug": "modifica-tabellato-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-tabellato-page-content-root-section",
+            "selector": "sdk-modifica-tabellato-section",
+            "description": "Pagina modifica tabellato",
+            "classNames": "modifica-tabellato-section",
+            "settings": {
+                "classNames": "modifica-tabellato-index",
+                "sectionTitle": "TITLE.MODIFICA-TABELLATO-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-dettaglio-tabellato",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_TABELLATI_LISTA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-tabellato",
+                            "label": "BUTTONS.SAVE",
+                            "provider": "SDK_GESTIONE_TABELLATI_TABELLATO",
+                            "icon": "mgg-icons-crud-save"
+                        }
+                    ],
+                    "TAB0_fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "SDK-TABELLATO.GENERAL-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "codice-tabellato",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.CODICE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "tab0cod"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "numero-ordine",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.NUMERO-ORDINE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "ordinamento",
+                                    "mappingOutput": "ordinamento",
+                                    "decimals": 0
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "identificativo",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.IDENTIFICATIVO-ALFANUMERICO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "tab0tip"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "caratteri",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.CARATTERI",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "tab0vid",
+                                    "mappingOutput": "tab0vid",
+                                    "maxLength": 3
+                                },
+                                {
+                                    "type": "TEXTAREA",
+                                    "code": "descrizione",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.DESCRIZIONE-BREVE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "descrizione",
+                                    "mappingOutput": "descrizione",
+                                    "maxLength": 60
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "bloccato",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.BLOCCATO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "bloccato",
+                                    "mappingOutput": "bloccato",
+                                    "itemsProviderCode": "SDK_GESTIONE_UTENTI_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "archiviato",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.ARCHIVIATO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "archiviato",
+                                    "mappingOutput": "archiviato",
+                                    "itemsProviderCode": "SDK_GESTIONE_UTENTI_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                }
+                            ]
+                        }
+                    ],
+                    "TAB1_fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "SDK-TABELLATO.GENERAL-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "codice-tabellato",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.CODICE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "tab1cod"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "numero-ordine",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.NUMERO-ORDINE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "ordinamento",
+                                    "mappingOutput": "ordinamento",
+                                    "decimals": 0
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "identificativo",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.IDENTIFICATIVO-NUMERICO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "tab1tip"
+                                },
+                                {
+                                    "type": "TEXTAREA",
+                                    "code": "descrizione",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.DESCRIZIONE-BREVE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "descrizione",
+                                    "mappingOutput": "descrizione",
+                                    "maxLength": 200
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "bloccato",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.BLOCCATO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "bloccato",
+                                    "mappingOutput": "bloccato",
+                                    "itemsProviderCode": "SDK_GESTIONE_UTENTI_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "archiviato",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.ARCHIVIATO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "archiviato",
+                                    "mappingOutput": "archiviato",
+                                    "itemsProviderCode": "SDK_GESTIONE_UTENTI_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                }
+                            ]
+                        }
+                    ],
+                    "TAB2_fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "SDK-TABELLATO.GENERAL-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "codice-tabellato",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.CODICE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "tab2cod"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "numero-ordine",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.NUMERO-ORDINE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "ordinamento",
+                                    "mappingOutput": "ordinamento",
+                                    "decimals": 0
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "identificativo",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.IDENTIFICATIVO-ALFANUMERICO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "tab2tip"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "parametro-associato",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.PARAMETRO-ASSOCIATO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "parametroAssociato",
+                                    "mappingOutput": "parametroAssociato",
+                                    "maxLength": 200
+                                },
+                                {
+                                    "type": "TEXTAREA",
+                                    "code": "descrizione",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.DESCRIZIONE-BREVE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "descrizione",
+                                    "mappingOutput": "descrizione",
+                                    "maxLength": 200
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "bloccato",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.BLOCCATO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "bloccato",
+                                    "mappingOutput": "bloccato",
+                                    "itemsProviderCode": "SDK_GESTIONE_UTENTI_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "archiviato",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.ARCHIVIATO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "archiviato",
+                                    "mappingOutput": "archiviato",
+                                    "itemsProviderCode": "SDK_GESTIONE_UTENTI_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                }
+                            ]
+                        }
+                    ],
+                    "TAB3_fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "SDK-TABELLATO.GENERAL-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "codice-tabellato",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.CODICE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "tab3cod"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "numero-ordine",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.NUMERO-ORDINE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "ordinamento",
+                                    "mappingOutput": "ordinamento",
+                                    "decimals": 0
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "identificativo",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.IDENTIFICATIVO-ALFANUMERICO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "tab3tip"
+                                },
+                                {
+                                    "type": "TEXTAREA",
+                                    "code": "descrizione",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.DESCRIZIONE-BREVE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "descrizione",
+                                    "mappingOutput": "descrizione",
+                                    "maxLength": 100
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "bloccato",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.BLOCCATO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "bloccato",
+                                    "mappingOutput": "bloccato",
+                                    "itemsProviderCode": "SDK_GESTIONE_UTENTI_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "archiviato",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.ARCHIVIATO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "archiviato",
+                                    "mappingOutput": "archiviato",
+                                    "itemsProviderCode": "SDK_GESTIONE_UTENTI_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                }
+                            ]
+                        }
+                    ],
+                    "TAB5_fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "SDK-TABELLATO.GENERAL-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "codice-tabellato",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.CODICE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "tab5cod"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "numero-ordine",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.NUMERO-ORDINE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "ordinamento",
+                                    "mappingOutput": "ordinamento",
+                                    "decimals": 0
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "identificativo",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.IDENTIFICATIVO-ALFANUMERICO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "tab5tip"
+                                },
+                                {
+                                    "type": "TEXTAREA",
+                                    "code": "descrizione",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.DESCRIZIONE-BREVE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "descrizione",
+                                    "mappingOutput": "descrizione",
+                                    "maxLength": 240
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "bloccato",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.BLOCCATO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "bloccato",
+                                    "mappingOutput": "bloccato",
+                                    "itemsProviderCode": "SDK_GESTIONE_UTENTI_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "archiviato",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.ARCHIVIATO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "archiviato",
+                                    "mappingOutput": "archiviato",
+                                    "itemsProviderCode": "SDK_GESTIONE_UTENTI_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

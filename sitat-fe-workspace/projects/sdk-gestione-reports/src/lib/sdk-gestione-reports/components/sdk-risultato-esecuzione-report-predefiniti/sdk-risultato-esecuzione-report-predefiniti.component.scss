@@ -1,0 +1,39 @@
+.sdk-risultati-esecuzione-report-container {
+    width: 100%;
+
+    .buttons-row {
+        z-index: 11;
+    }
+
+    .sdk-risultati-esecuzione-report-content {
+        padding: 1em;
+
+        td {
+            padding: 0 0.5rem;
+        }
+
+        .p-overlay.p-component {
+            top: auto !important;
+            bottom: 38px;
+        }
+
+        .defsql-replaced-with-params{
+            display: flex;
+            padding: 0em 0em 1em 0em;
+
+            span:first-child {
+                font-weight: bold;
+                width: 20%;
+                color: #06c;
+            }
+            
+            span:last-child {
+                width: 100%;
+            }
+        }
+    }
+
+    tr:nth-child(even) {
+        background-color: #f4f4f4;
+    }
+}

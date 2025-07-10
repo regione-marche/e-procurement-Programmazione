@@ -1,0 +1,93 @@
+{
+    "name": "impersonifica-rup-page",
+    "title": "TITLE.impersonifica-rup-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "impersonifica-rup-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "impersonifica-rup-page",
+                "label": "BREADCRUMB.IMPERSONIFICA-RUP",
+                "slug": "impersonifica-rup-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "impersonifica-rup-page-content-root-section",
+            "selector": "impersonifica-rup-section",
+            "description": "Pagina di accorpamento lotti",
+            "classNames": "impersonifica-rup-section",
+            "settings": {
+                "classNames": "impersonifica-rup-index",
+                "sectionTitle": "TITLE.IMPERSONIFICA-RUP-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-home",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_IMPERSONIFICA_RUP",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-rp",
+                            "label": "BUTTONS.SET",
+                            "provider": "APP_GARE_IMPERSONIFICA_RUP"
+                        }
+                    ],
+                    "buttonsError": [
+                        {
+                            "code": "back-to-lista-lotti",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_LOTTI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "impersonifica-data",
+                            "label": "IMPERSONIFICA-RUP.GENERAL-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "idp",
+                                    "label": "IMPERSONIFICA-RUP.IDP",                                   
+                                    "mappingInput": "idpImpersonato",
+                                    "mappingOutput": "idpImpersonato",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "idpCombo"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "loa",
+                                    "label": "IMPERSONIFICA-RUP.LOA",
+                                    "mappingInput": "loaImpersonato",
+                                    "mappingOutput": "loaImpersonato",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "loaCombo"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "cf",
+                                    "label": "IMPERSONIFICA-RUP.CF",                                
+                                    "mappingInput": "cfImpersonato",
+                                    "mappingOutput": "cfImpersonato"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

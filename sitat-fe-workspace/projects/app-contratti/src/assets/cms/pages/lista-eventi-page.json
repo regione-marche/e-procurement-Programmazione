@@ -1,0 +1,193 @@
+{
+    "name": "lista-eventi-page",
+    "title": "TITLE.LISTA-EVENTI-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "lista-eventi-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-eventi-page",
+                "label": "BREADCRUMB.RICERCA-EVENTI",
+                "slug": "ricerca-eventi-page"
+            },
+            {
+                "code": "lista-eventi-page",
+                "label": "BREADCRUMB.LISTA-EVENTI",
+                "slug": "lista-eventi-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "lista-eventi-page-content-root-section",
+            "selector": "sdk-lista-eventi-section",
+            "description": "Pagina lista eventi",
+            "classNames": "lista-eventi-section",
+            "settings": {
+                "classNames": "lista-eventi-index",
+                "sectionTitle": "TITLE.LISTA-EVENTI-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_EVENTI_LISTA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "clean-button",
+                            "label": "BUTTONS.CLEAN",
+                            "provider": "SDK_GESTIONE_EVENTI_LISTA",
+                            "icon": "mgg-icons-data-unfiltered"
+                        }
+                    ],
+                    "grid": {
+                        "showCurrentPageReport": true,
+                        "showCurrentRecordsReport": true,
+                        "navigable": true,
+                        "resizable": false,
+                        "debug": false,
+                        "sortable": {
+                            "allowUnsort": false,
+                            "mode": "single"
+                        },
+                        "sort": [
+                            {
+                                "field": "idEvento",
+                                "dir": "desc"
+                            }
+                        ],
+                        "pageable": {
+                            "buttonCount": 50,
+                            "info": true,
+                            "pageSizes": [
+                                50,
+                                100,
+                                500
+                            ],
+                            "type": "numeric"
+                        },
+                        "pageSize": 50,
+                        "toolbar": {
+                            "position": "top",
+                            "actions": []
+                        },
+                        "columns": [
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_LINK",
+                                    "params": {
+                                        "action": {
+                                            "label": "SDK-EVENTO.AZIONI.DETTAGLIO",
+                                            "disabled": false,
+                                            "performer": "dettaglio"
+                                        }
+                                    }
+                                },
+                                "title": "SDK-EVENTO.GENERAL-DATA.N-EVENTO",
+                                "field": "idEvento",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_DATE"
+                                },
+                                "title": "SDK-EVENTO.GENERAL-DATA.DATA-EVENTO",
+                                "field": "dataOra",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-EVENTO.GENERAL-DATA.LIVELLO-EVENTO",
+                                "field": "livelloEvento",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-EVENTO.GENERAL-DATA.CODICE-EVENTO",
+                                "field": "codiceEvento",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-EVENTO.GENERAL-DATA.OGGETTO-EVENTO",
+                                "field": "oggettoEvento",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-EVENTO.GENERAL-DATA.DESCRIZIONE",
+                                "field": "descrizione",
+                                "width": 150,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-EVENTO.GENERAL-DATA.CODICE-PROFILO",
+                                "field": "codProfilo",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-EVENTO.GENERAL-DATA.UTENTE",
+                                "field": "descrizioneUtente",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,111 @@
+{
+  "name": "base-layout",
+  "styleUrls": [
+    "assets/cms/layouts/base-layout.css"
+  ],
+  "settings": {
+    "layout": "base-layout"
+  },
+  "sections": [
+    {
+      "id": "base-layout-root-section",
+      "selector": "sdk-layout-section",
+      "description": "Contenitore radice di tutte le sezioni del layout",
+      "classNames": "sdk-layout-root-section",
+      "settings": {
+        "section": "base-layout-root-section"
+      }
+    },
+    {
+      "id": "base-layout-header-section",
+      "parentId": "base-layout-root-section",
+      "selector": "sdk-layout-section",
+      "description": "Contenitore per le sezioni dell'header",
+      "classNames": "sdk-layout-header-section",
+      "settings": {
+        "section": "base-layout-header-section"
+      }
+    },
+    {
+      "id": "base-layout-header-top-section",
+      "parentId": "base-layout-header-section",
+      "selector": "sdk-layout-header-top",
+      "description": "Sezione di layout per la parte alta dell'intestazione",
+      "classNames": "sdk-layout-header-top-section",
+      "settings": {
+        "logoUrl": "",
+        "logo": "assets/images/app/logo_aec.svg",
+        "logoDescription": "LOGO-DESCRIPTION",
+        "profileDropdownButton": {
+          "code": "profile-dropdown-button",
+          "label": "PARAMS",
+          "labelParams": {
+            "value": ""
+          },
+          "expandAriaLabel": "BUTTONS.ULTERIORI-OPZIONI",
+          "look": "outline",
+          "primary": true,
+          "dropdownData": [
+            {
+              "code": "logout-button",
+              "label": "LOGOUT-BUTTON",
+              "provider": "LAUNCHER_LOGOUT",
+              "look": "flat"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "base-layout-content-section",
+      "parentId": "base-layout-root-section",
+      "selector": "sdk-layout-content",
+      "description": "Contenitore per il contenuto di pagina",
+      "classNames": "sdk-layout-content-section element-container main-content",
+      "settings": {
+        "section": "base-layout-content-section"
+      }
+    },
+    {
+      "id": "base-layout-footer-section",
+      "parentId": "base-layout-root-section",
+      "selector": "sdk-layout-footer",
+      "description": "Sezione di layout per il footer",
+      "classNames": "sdk-layout-footer-section",
+      "settings": {
+        "section": "base-layout-footer-section",
+        "logoFooter": "assets/images/app/logo-white-maggioli.png",
+        "footerSitenameTitle": "FOOTER.SITENAME-TITLE",
+        "footerSitenameSubtitle": "FOOTER.SITENAME-SUBTITLE",
+        "footerSitenameDescription": "FOOTER.SITENAME-DESCRIPTION",
+        "footerContactsTitle": "FOOTER.CONTACTS-TITLE",
+        "footerVerticalLinksTitle": "FOOTER.VERTICAL-LINKS-TITLE",
+        "links": [
+          {
+            "code": "link-privacy",
+            "label": "FOOTER.LINK-PRIVACY",
+            "url": "http://www.maggioli.it/"
+          },
+          {
+            "code": "link-note",
+            "label": "FOOTER.LINK-NOTE",
+            "url": "http://www.maggioli.it/"
+          },
+          {
+            "code": "link-contatti",
+            "label": "FOOTER.LINK-CONTATTI",
+            "url": "http://www.maggioli.it/"
+          }
+        ],
+        "footerContacts": [
+          {
+            "code": "address",
+            "label": "",
+            "value": "Via del Carpino, 8  - 47822 Santarcangelo di Romagna (RN) - Italia",
+            "url": "http://www.maggioli.it/"
+          }         
+        ]
+      }
+    }
+  ]
+}

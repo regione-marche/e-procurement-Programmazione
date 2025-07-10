@@ -1,0 +1,283 @@
+{
+    "name": "dettaglio-fase-richiesta-subappalto-page",
+    "title": "TITLE.DETTAGLIO-FASE-RICHIESTA-SUBAPPALTO-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/pubblica-fase-lotto-page.css"
+    ],
+    "settings": {
+        "page": "dettaglio-fase-richiesta-subappalto-page",
+        "pageFeatures": [
+            "docassociati"
+        ],
+        "entity": {
+            "schema": "W9",
+            "name": "W9FASI",
+            "keys": [
+                "codGara",
+                "codLotto",
+                "codiceFase",
+                "num"
+            ]
+        },
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-richiesta-subappalto-page",
+                "label": "BREADCRUMB.DETTAGLIO-FASE-RICHIESTA-SUBAPPALTO",
+                "slug": "dettaglio-fase-richiesta-subappalto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ],
+        "breadcrumbsLS": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.RICERCA-SCHEDE-TRASMESSE-PCP",
+                "slug": "ricerca-schede-trasmesse-pcp-page"
+            },
+            {
+                "code": "lista-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.LISTA-SCHEDE-TRASMESSE-PCP",
+                "slug": "lista-schede-trasmesse-pcp-page"
+            },
+            {
+                "code": "lista-fasi-lotto-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "dettaglio-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-richiesta-subappalto-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.DETTAGLIO-FASE-RICHIESTA-SUBAPPALTO",
+                "slug": "dettaglio-fase-richiesta-subappalto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-fase-richiesta-subappalto-page-content-root-section",
+            "selector": "dettaglio-fase-richiesta-subappalto-section",
+            "description": "Pagina di dettaglio fase di richiesta subappalto",
+            "classNames": "dettaglio-fase-richiesta-subappalto-section",
+            "settings": {
+                "classNames": "dettaglio-fase-richiesta-subappalto-index",
+                "sectionTitle": "TITLE.DETTAGLIO-FASE-RICHIESTA-SUBAPPALTO-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "check-pubblicazione",
+                            "label": "BUTTONS.CHECK-DATA",
+                            "provider": "APP_FASI_LOTTO_PUBBLICA",
+                            "oggettoProtezione": "ALT.W9.FasiDiGara-schede.ControlloDatiInseriti",
+                            "type": "functions",
+                            "icon": "mgg-icons-document-text"
+                        },
+                        {
+                            "code": "go-to-update-fase",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_GARE_FASE_RICHIESTA_SUBAPPALTO_PROVIDER",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "buttonsRO": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "buttonsLS": [
+                        {
+                            "code": "back-to-lista-fasi-lotto-schede-trasmesse",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "sidebar": {
+                        "code": "sidebar",
+                        "position": "right",
+                        "width": 500,
+                        "classList": [
+                            "check-pubb-sidebar"
+                        ],
+                        "headerImage": "assets/images/app/logo.png",
+                        "component": "check-pubblicazione-widget",
+                        "componentConfig": {}
+                    },
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "subappalto-data",
+                            "label": "FASE-SUBAPPALTO.SUBAPPALTO-DATA.SUBAPPALTO-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "num-suba",
+                                    "label": "FASE-SUBAPPALTO.SUBAPPALTO-DATA.NUM-SUBA",
+                                    "oggettoProtezione": "W9.W9SUBA.NUM_SUBA",
+                                    "mnemonico": "W3SUNUMSUB",
+                                    "mappingInput": "num",
+                                    "mappingOutput": ""
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "oggetto-subappalto",
+                                    "label": "FASE-SUBAPPALTO.SUBAPPALTO-DATA.OGGETTO-SUBAPPALTO",
+                                    "oggettoProtezione": "W9.W9SUBA.OGGETTO_SUBAPPALTO",
+                                    "mnemonico": "W3O_SUBA",
+                                    "mappingInput": "oggetto",
+                                    "mappingOutput": "oggetto"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "nomest-aggiudicatrice",
+                                    "label": "FASE-SUBAPPALTO.SUBAPPALTO-DATA.NOMEST-AGGIUDICATRICE",
+                                    "oggettoProtezione": "W9.W9SUBA.CODIMP_AGGIUDICATRICE",
+                                    "mnemonico": "W9SUIMPAGG",
+                                    "mappingInput": "impresaAggiudicatrice.ragioneSociale",
+                                    "mappingOutput": "codImpresaAgg",
+                                    "link": true,
+                                    "modalComponent": "impresa-modal-widget",
+                                    "modalComponentConfig": "impresaModalConfig"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "importo-presunto",
+                                    "label": "FASE-SUBAPPALTO.SUBAPPALTO-DATA.IMPORTO-PRESUNTO",
+                                    "oggettoProtezione": "W9.W9SUBA.IMPORTO_PRESUNTO",
+                                    "mnemonico": "W3I_PRESUN",
+                                    "mappingInput": "importoPresunto",
+                                    "mappingOutput": "importoPresunto",
+                                    "currency": true
+                                },                                
+                                {
+                                    "type": "TEXT",
+                                    "code": "nomest-subappaltatrice",
+                                    "label": "FASE-SUBAPPALTO.SUBAPPALTO-DATA.NOMEST-SUBAPPALTATRICE",
+                                    "oggettoProtezione": "W9.W9SUBA.CODIMP",
+                                    "mnemonico": "W3SUBCODIM",
+                                    "mappingInput": "impresaSubappaltatrice.ragioneSociale",
+                                    "mappingOutput": "codImpresa",
+                                    "link": true,
+                                    "modalComponent": "impresa-modal-widget",
+                                    "modalComponentConfig": "impresaModalConfig"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "tipo-impresa",
+                                    "label": "FASE-SUBAPPALTO.SUBAPPALTO-DATA.TIPO-IMPRESA",                                  
+                                    "mappingInput": "tipoImpresa",
+                                    "mappingOutput": "tipoImpresa"
+                                },
+                                {
+                                    "type": "FORM-GROUP",
+                                    "code": "mandanti-group",
+                                    "label": "",
+                                    "minGroupsNumber": -1,
+                                    "maxGroupsNumber": -1,
+                                    "mappingInput": "mandanti",
+                                    "mappingOutput": "mandanti",
+                                    "defaultFormGroupFields": [
+                                        {
+                                            "type": "TEXT",
+                                            "code": "nome-impresa",
+                                            "label": "FASE-SUBAPPALTO.SUBAPPALTO-DATA.NOME-IMPRESA",                                         
+                                            "mappingInput": "ragioneSociale"
+                                        }
+                                    ]
+                                },                                
+                                {
+                                    "type": "TEXT",
+                                    "code": "id-categoria",
+                                    "label": "FASE-SUBAPPALTO.SUBAPPALTO-DATA.ID-CATEGORIA",
+                                    "oggettoProtezione": "W9.W9SUBA.ID_CATEGORIA",
+                                    "mnemonico": "W3ID_CATE2",
+                                    "mappingInput": "idCategoria",
+                                    "mappingOutput": "idCategoria",
+                                    "listCode": "Categorie"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "cpv",
+                                    "label": "FASE-SUBAPPALTO.SUBAPPALTO-DATA.CPV",
+                                    "oggettoProtezione": "W9.W9SUBA.ID_CPV",
+                                    "mnemonico": "W3ID_CPV",
+                                    "mappingInput": "idCpv",
+                                    "mappingOutput": "idCpv"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "descrizione-cpv",
+                                    "label": "FASE-SUBAPPALTO.SUBAPPALTO-DATA.DESCRIZIONE-CPV",
+                                    "oggettoProtezione": "W9.W9SUBA.ID_CPV",
+                                    "mnemonico": "W3ID_CPV",
+                                    "mappingInput": "descCpv"
+                                },
+                                {
+                                    "type": "DOCUMENTS-LIST",
+                                    "code": "dgue",
+                                    "label": "FASE-SUBAPPALTO.SUBAPPALTO-DATA.DGUE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingOutput": "dgue",
+                                    "mappingInput": "dgue",
+                                    "clickable": true,
+                                    "actionsDisabled": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

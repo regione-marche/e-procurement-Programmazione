@@ -1,0 +1,153 @@
+{
+    "name": "modifica-fase-accordo-bonario-page",
+    "title": "TITLE.MODIFICA-FASE-ACCORDO-BONARIO-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "modifica-fase-accordo-bonario-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-accordo-bonario-page",
+                "label": "BREADCRUMB.DETTAGLIO-FASE-ACCORDO-BONARIO",
+                "slug": "dettaglio-fase-accordo-bonario-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            },
+            {
+                "code": "modifica-fase-accordo-bonario-page",
+                "label": "BREADCRUMB.MODIFICA-FASE-ACCORDO-BONARIO",
+                "slug": "modifica-fase-accordo-bonario-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-fase-accordo-bonario-page-content-root-section",
+            "selector": "modifica-fase-accordo-bonario-section",
+            "description": "Pagina di modifica fase di accordo-bonario",
+            "classNames": "modifica-fase-accordo-bonario-section",
+            "settings": {
+                "classNames": "modifica-fase-accordo-bonario-index",
+                "sectionTitle": "TITLE.MODIFICA-FASE-ACCORDO-BONARIO-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-dettaglio-fase",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_GARE_FASE_ACCORDO_BONARIO_PROVIDER",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-fase",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_FASE_ACCORDO_BONARIO_PROVIDER"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "accordo-bonario-data",
+                            "label": "FASE-ACCORDO-BONARIO.ACCORDO-BONARIO-DATA.ACCORDO-BONARIO-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "num-acco",
+                                    "label": "FASE-ACCORDO-BONARIO.ACCORDO-BONARIO-DATA.NUM-ACCO",
+                                    "oggettoProtezione": "W9.W9ACCO.NUM_ACCO",
+                                    "mnemonico": "W3ACNUMCON",
+                                    "mappingInput": "num",
+                                    "mappingOutput": ""
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-accordo",
+                                    "label": "FASE-ACCORDO-BONARIO.ACCORDO-BONARIO-DATA.DATA-ACCORDO",
+                                    "oggettoProtezione": "W9.W9ACCO.DATA_ACCORDO",
+                                    "mnemonico": "W3DATA_ACC",
+                                    "mappingInput": "dataAccordo",
+                                    "mappingOutput": "dataAccordo"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "oneri-derivanti",
+                                    "label": "FASE-ACCORDO-BONARIO.ACCORDO-BONARIO-DATA.ONERI-DERIVANTI",
+                                    "actionButtonLabel": "BUTTONS.ESEGUI-AZIONE",
+                                    "nomeCampo": "ONERI_DERIVANTI.W9ACCO.W9",
+                                    "oggettoProtezione": "W9.W9ACCO.ONERI_DERIVANTI",
+                                    "mnemonico": "W3ONERI_DE",
+                                    "mappingInput": "oneriDerivanti",
+                                    "mappingOutput": "oneriDerivanti",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "num-riserve",
+                                    "label": "FASE-ACCORDO-BONARIO.ACCORDO-BONARIO-DATA.NUM-RISERVE",
+                                    "oggettoProtezione": "W9.W9ACCO.NUM_RISERVE",
+                                    "mnemonico": "W3NUM_RISE",
+                                    "mappingInput": "numRiserve",
+                                    "mappingOutput": "numRiserve",
+                                    "decimals": 0,
+                                    "maxLength": 5
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-inizio-acc",
+                                    "label": "FASE-ACCORDO-BONARIO.ACCORDO-BONARIO-DATA.DATA-INIZIO-ACC",
+                                    "oggettoProtezione": "W9.W9ACCO.DATA_INIZIO_ACC",
+                                    "mnemonico": "W9ACCODTINAC",
+                                    "mappingInput": "dataInizioAcc",
+                                    "mappingOutput": "dataInizioAcc"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-fine-acc",
+                                    "label": "FASE-ACCORDO-BONARIO.ACCORDO-BONARIO-DATA.DATA-FINE-ACC",
+                                    "oggettoProtezione": "W9.W9ACCO.DATA_FINE_ACC",
+                                    "mnemonico": "W9ACCODTFIAC",
+                                    "mappingInput": "dataFineAcc",
+                                    "mappingOutput": "dataFineAcc"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

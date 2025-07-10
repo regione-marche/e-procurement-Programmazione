@@ -1,0 +1,423 @@
+{
+    "name": "modifica-avviso",
+    "title": "TITLE.MODIFICA-AVVISO-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/modifica-avviso-page.css"
+    ],
+    "settings": {
+        "page": "modifica-avviso",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-avvisi-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-AVVISI",
+                "slug": "ricerca-avanzata-avvisi-page",
+                "visible": "BREADCRUMB_RICERCA_AVVISI_VISIBLE"
+            },
+            {
+                "code": "lista-avvisi-page",
+                "label": "BREADCRUMB.LISTA-AVVISI",
+                "slug": "lista-avvisi-page"
+            },
+            {
+                "code": "dettaglio-avviso-page",
+                "label": "BREADCRUMB.DETTAGLIO-AVVISO",
+                "slug": "dettaglio-avviso-page",
+                "additionalParams": "APP_AVVISI_ID_AVVISO"
+            },
+            {
+                "code": "modifica-avviso",
+                "label": "BREADCRUMB.MODIFICA-AVVISO",
+                "slug": "modifica-avviso-page",
+                "additionalParams": "APP_AVVISI_ID_AVVISO"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-avviso-page-content-root-section",
+            "selector": "modifica-avviso-section",
+            "description": "Pagina di update di un avviso",
+            "classNames": "modifica-avviso-section",
+            "settings": {
+                "classNames": "modifica-avviso-index",
+                "sectionTitle": "TITLE.MODIFICA-AVVISO-PAGE",
+                "body": {
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "AVVISO.GENERAL-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "stazione-appaltante",
+                                    "label": "AVVISO.STAZIONE-APPALTANTE",
+                                    "oggettoProtezione": "W9.AVVISO.CODEIN",
+                                    "mnemonico": "W3PACODEIN",
+                                    "link": true,
+                                    "modalComponent": "stazione-appaltante-modal-widget",
+                                    "modalComponentConfig": "stazioneAppaltanteModalConfig"
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "ufficio",
+                                    "label": "GARA.STAZIONE-APPALTANTE-DATA.UFFICIO",
+                                    "oggettoProtezione": "W9.UFFICI.DENOM",
+                                    "mnemonico": "W9GAUFF",
+                                    "itemsProviderCode": "APP_GARE_UFFICI",
+                                    "mappingInput": "idUfficio",
+                                    "mappingOutput": "idUfficio",
+                                    "newEditAvailable": true,
+                                    "newItemButton": {
+                                        "code": "new",
+                                        "label": "BUTTONS.NUOVO",
+                                        "icon": "mgg-icons-crud-create",
+                                        "oggettoProtezione": "INS.*"
+                                    },
+                                    "editItemButton": {
+                                        "code": "edit",
+                                        "label": "BUTTONS.UPDATE",
+                                        "icon": "mgg-icons-crud-edit",
+                                        "oggettoProtezione": "MOD.*"
+                                    },
+                                    "modalComponent": "uff-modal-widget",
+                                    "modalComponentConfig": "uffModalRWConfig"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "numero-progressivo-avviso",
+                                    "label": "AVVISO.NUMERO-AVVISO",
+                                    "oggettoProtezione": "W9.AVVISO.IDAVVISO",
+                                    "mnemonico": "W3PAVVISOI",
+                                    "mappingInput": "numeroAvviso",
+                                    "mappingOutput": "numeroAvviso"
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "rup",
+                                    "label": "AVVISO.RUP",
+                                    "oggettoProtezione": "W9.AVVISO.RUP",
+                                    "mnemonico": "W9PARUP",
+                                    "itemsProviderCode": "APP_AVVISI_RUP_AVVISO",
+                                    "noDataLabel": "NO-DATA",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "AVVISO.RUP-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "mappingInput": "rupCod",
+                                    "mappingOutput": "rupCod",
+                                    "newEditAvailable": true,
+                                    "newItemButton": {
+                                        "code": "new",
+                                        "label": "BUTTONS.NUOVO",
+                                        "icon": "mgg-icons-crud-create",
+                                        "oggettoProtezione": "INS.*"
+                                    },
+                                    "editItemButton": {
+                                        "code": "edit",
+                                        "label": "BUTTONS.UPDATE",
+                                        "icon": "mgg-icons-crud-edit",
+                                        "oggettoProtezione": "MOD.*"
+                                    },
+                                    "modalComponent": "rup-modal-widget",
+                                    "modalComponentConfig": "rupModalConfig"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "external-data",
+                            "label": "AVVISO.EXTERNAL-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "cig",
+                                    "label": "AVVISO.CIG",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "regexp": "^.{0,10}$"
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "VALIDATORS.NUMERO-CARATTERI-INSERITI-NON-VALIDO"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "validator": "CIG",
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "VALIDATORS.FORMATO-CIG-NON-VALIDO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "mappingInput": "cig",
+                                    "mappingOutput": "cig",
+                                    "maxLength": 10,
+                                    "oggettoProtezione": "W9.AVVISO.CIG",
+                                    "mnemonico": "W3PACIG"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "cup",
+                                    "label": "AVVISO.CUP",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "regexp": "^.{0,15}$"
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "VALIDATORS.NUMERO-CARATTERI-INSERITI-NON-VALIDO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "mappingInput": "cup",
+                                    "mappingOutput": "cup",
+                                    "maxLength": 15,
+                                    "oggettoProtezione": "W9.AVVISO.CUP",
+                                    "mnemonico": "W9PACUP"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "numero-intervento-cui",
+                                    "label": "AVVISO.CUI",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "regexp": "^.{0,20}$"
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "VALIDATORS.NUMERO-CARATTERI-INSERITI-NON-VALIDO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "mappingInput": "cui",
+                                    "mappingOutput": "cui",
+                                    "maxLength": 20,
+                                    "oggettoProtezione": "W9.AVVISO.CUIINT",
+                                    "mnemonico": "W9PACUI"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "avvisi-data",
+                            "label": "AVVISO.AVVISI-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tipologia-avviso",
+                                    "label": "AVVISO.TIPOLOGIA",
+                                    "itemsProviderCode": "APP_AVVISI_TIPOLOGIA_AVVISO",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "AVVISO.TIPOLOGIA-OBBLIGATORIA"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "mappingInput": "tipologia",
+                                    "mappingOutput": "tipologia",
+                                    "oggettoProtezione": "W9.AVVISO.TIPOAVV",
+                                    "mnemonico": "W3PATAVVI"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-avviso",
+                                    "label": "AVVISO.DATA-AVVISO",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "AVVISO.DATA-AVVISO-OBBLIGATORIA"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "mappingInput": "dataAvviso",
+                                    "mappingOutput": "dataAvviso",
+                                    "oggettoProtezione": "W9.AVVISO.DATAAVV",
+                                    "mnemonico": "W3PADATA"
+                                },
+                                {
+                                    "type": "TEXTAREA",
+                                    "code": "descrizione-avviso",
+                                    "label": "AVVISO.DESCRIZIONE",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "AVVISO.DESCRIZIONE-OBBLIGATORIA"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "config": {
+                                                "regexp": "^(.|\\s){1,500}$"
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "VALIDATORS.NUMERO-CARATTERI-INSERITI-NON-VALIDO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "mappingInput": "descrizione",
+                                    "mappingOutput": "descrizione",
+                                    "maxLength": 500,
+                                    "oggettoProtezione": "W9.AVVISO.DESCRI",
+                                    "mnemonico": "W3PADESCRI"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-scadenza",
+                                    "label": "AVVISO.DATA-SCADENZA",
+                                    "mappingInput": "dataScadenza",
+                                    "mappingOutput": "dataScadenza",
+                                    "oggettoProtezione": "W9.AVVISO.DATASCADENZA",
+                                    "mnemonico": "W9PADATASCA"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "ubicazione-data",
+                            "label": "AVVISO.UBICAZIONE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "indirizzo",
+                                    "label": "AVVISO.INDIRIZZO",
+                                    "mappingInput": "indirizzo",
+                                    "mappingOutput": "indirizzo",
+                                    "maxLength": 100,
+                                    "oggettoProtezione": "W9.AVVISO.INDSEDE",
+                                    "mnemonico": "W3PAINDSEDE"
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "comune",
+                                    "label": "AVVISO.COMUNE",
+                                    "mappingInput": "comune",
+                                    "mappingOutput": "comune",
+                                    "oggettoProtezione": "W9.AVVISO.COMSEDE",
+                                    "mnemonico": "W3PACOMSEDE",
+                                    "noDataLabel": "NO-DATA",
+                                    "itemsProviderCode": "APP_GARE_COMUNI",
+                                    "minSearchCharacters": 2
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "provincia",
+                                    "label": "AVVISO.PROVINCIA",
+                                    "mappingInput": "provincia",
+                                    "mappingOutput": "provincia",
+                                    "oggettoProtezione": "W9.AVVISO.PROSEDE",
+                                    "mnemonico": "W3PAPROSEDE",
+                                    "maxLength": 2
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "documents-data",
+                            "label": "AVVISO.DOCUMENTS-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "DOCUMENTS-LIST",
+                                    "code": "documents-list",
+                                    "label": "AVVISO.EXISTING-DOCUMENTS",
+                                    "mappingInput": "existingDocuments",
+                                    "mappingOutput": "existingDocuments",
+                                    "clickable": true
+                                },
+                                {
+                                    "type": "FORM-GROUP",
+                                    "code": "documents-data-group",
+                                    "label": "",
+                                    "minGroupsNumber": 1,
+                                    "maxGroupsNumber": 0,
+                                    "defaultFormGroupFields": [
+                                        {
+                                            "type": "DOCUMENT",
+                                            "code": "doucment-field",
+                                            "label": "",
+                                            "switchFileLabel": "AVVISO.UPLOAD-FILE",
+                                            "switchUrlLabel": "AVVISO.UPLOAD-URL",
+                                            "urlLabel": "AVVISO.URL",
+                                            "fileInputLabel": "AVVISO.CHOOSE-FILE",
+                                            "titleInputLabel": "AVVISO.TITOLO-DOCUMENT",
+                                            "maxFileSize": "25 MB",
+                                            "maxFileSizeLabel": "VALIDATORS.MAX-FILE-SIZE",
+                                            "wrongExtensionLabel": "VALIDATORS.WRONG-EXTENSION",
+                                            "mappingOutput": "newDocuments",
+                                            "mandatory": true,
+                                            "accept": ".pdf,.p7m,.zip",
+                                            "maxTitleLength": 250
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "buttons": [
+                        {
+                            "code": "back-button",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_AVVISI_MODIFICA_AVVISO",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-button",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_AVVISI_MODIFICA_AVVISO"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

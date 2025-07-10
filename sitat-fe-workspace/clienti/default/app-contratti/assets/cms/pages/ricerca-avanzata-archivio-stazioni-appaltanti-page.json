@@ -1,0 +1,132 @@
+{
+    "name": "ricerca-avanzata-archivio-stazioni-appaltanti-page",
+    "title": "TITLE.RICERCA-AVANZATA-ARCHIVIO-STAZIONI-APPALTANTI-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "ricerca-avanzata-archivio-stazioni-appaltanti-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-archivio-stazioni-appaltanti-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-ARCHIVIO-STAZIONI-APPALTANTI",
+                "slug": "ricerca-avanzata-archivio-stazioni-appaltanti-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "ricerca-avanzata-archivio-stazioni-appaltanti-page-content-root-section",
+            "selector": "ricerca-avanzata-archivio-stazioni-appaltanti-section",
+            "description": "Pagina ricerca avanzata archivio stazioni appaltanti",
+            "classNames": "ricerca-avanzata-archivio-stazioni-appaltanti-section",
+            "settings": {
+                "classNames": "ricerca-avanzata-archivio-stazioni-appaltanti-index",
+                "sectionTitle": "TITLE.RICERCA-AVANZATA-ARCHIVIO-STAZIONI-APPALTANTI-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_COMMONS_ADVANCED_SEARCH_ARCHIVIO_STAZIONI_APPALTANTI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "clean-button",
+                            "label": "BUTTONS.CLEAN",
+                            "provider": "APP_COMMONS_ADVANCED_SEARCH_ARCHIVIO_STAZIONI_APPALTANTI",
+                            "icon": "mgg-icons-data-unfiltered"
+                        },
+                        {
+                            "code": "search-button",
+                            "label": "BUTTONS.SEARCH",
+                            "provider": "APP_COMMONS_ADVANCED_SEARCH_ARCHIVIO_STAZIONI_APPALTANTI",
+                            "icon": "mgg-icons-data-search"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "archivio-stazioni-appaltanti-data",
+                            "label": "RICERCA-AVANZATA-ARCHIVIO-STAZIONI-APPALTANTI.RICERCA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "codein",
+                                    "label": "RICERCA-AVANZATA-ARCHIVIO-STAZIONI-APPALTANTI.CODEIN",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "codiceAnagrafico",
+                                    "mappingOutput": "codiceAnagrafico"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "nomein",
+                                    "label": "RICERCA-AVANZATA-ARCHIVIO-STAZIONI-APPALTANTI.NOMEIN",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "denominazione",
+                                    "mappingOutput": "denominazione"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "cfein",
+                                    "label": "RICERCA-AVANZATA-ARCHIVIO-STAZIONI-APPALTANTI.CFEIN",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "codiceFiscale",
+                                    "mappingOutput": "codiceFiscale"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "indirizzo",
+                                    "label": "RICERCA-AVANZATA-ARCHIVIO-STAZIONI-APPALTANTI.INDIRIZZO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "indirizzo",
+                                    "mappingOutput": "indirizzo"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "provincia",
+                                    "label": "RICERCA-AVANZATA-ARCHIVIO-STAZIONI-APPALTANTI.PROVINCIA",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "Province",
+                                    "mappingInput": "provincia",
+                                    "mappingOutput": "provincia"
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "comune",
+                                    "label": "RICERCA-AVANZATA-ARCHIVIO-STAZIONI-APPALTANTI.COMUNE",
+                                    "noDataLabel": "NO-DATA",
+                                    "oggettoProtezione": "",
+                                    "mappingInput": "citta",
+                                    "mappingOutput": "citta",
+                                    "itemsProviderCode": "APP_GARE_COMUNI_ISTAT",
+                                    "minSearchCharacters": 2
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "codAusa",
+                                    "label": "RICERCA-AVANZATA-ARCHIVIO-STAZIONI-APPALTANTI.CODAUSA",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "codAusa",
+                                    "mappingOutput": "codAusa"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

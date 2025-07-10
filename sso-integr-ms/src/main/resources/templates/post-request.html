@@ -1,0 +1,12 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body onload="document.forms['authenticationPostRequest'].submit()">
+	<form name="authenticationPostRequest" method="POST" action="#"
+		th:action="${redirectUrl}" th:object="${formObject}">
+		<input type="hidden" id="jwtToken" th:field="*{jwtToken}" />
+	</form>
+<body>
+</html>

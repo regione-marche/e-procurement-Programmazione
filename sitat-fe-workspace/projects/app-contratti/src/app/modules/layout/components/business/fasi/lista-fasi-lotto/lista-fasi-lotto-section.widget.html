@@ -1,0 +1,119 @@
+<div [class]="config.classNames" *ngIf="isReady">
+    <h1 class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</h1>
+    <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+    <div class="messages-box" #infoBox></div>
+
+    <div class="messages-box" #messages></div>
+    <div class="lfl-container">
+        <div class="lfl-content">
+            <div class="empty-list" *ngIf="fasiLotto !== undefined && fasiLotto.length === 0">
+                {{'FASI-LOTTO.EMPTY-LIST' | translate}}
+            </div>
+            <!-- controllo che la lista sia maggiore di 1 perche' il singolo elemento rappresenta l'aggiudicazione attuale -->
+            <div class="storico-combo-container" *ngIf="listaStoricoFasi != null && listaStoricoFasi.length > 1">
+                <sdk-combobox [config]="comboStoricoConfigSub" [data]="comboStoricoDataSub"
+                    (output)="changeStorico($event)"></sdk-combobox>
+            </div>
+            <table class="fasi-lotto-table" *ngIf="fasiLotto !== undefined && fasiLotto.length > 0"
+                [attr.aria-label]="config.sectionTitle | translate">
+                <thead>
+                    <th class="fasi-lotto-header">{{ 'FASI-LOTTO.FASE' | translate }}</th>
+                    <th class="fasi-lotto-header">{{ 'FASI-LOTTO.PROGRESSIVO' | translate }}</th>
+                    <th class="fasi-lotto-header" *ngIf="gara.pcp === false">{{ 'FASI-LOTTO.STATO-TRASMISSIONE' | translate }}</th>
+                    <th class="fasi-lotto-header" *ngIf="gara.pcp === true">{{ 'FASI-LOTTO.STATO' | translate }}</th>
+                    <th class="fasi-lotto-header" *ngIf="current === true && isCigFiglio === false">{{
+                        'FASI-LOTTO.AZIONE' | translate }}</th>
+                </thead>
+                <tbody>
+                    <tr class="fasi-lotto-row" *ngFor="let fase of fasiLotto; trackBy: trackByCode">
+                        <td class="fasi-lotto-cell clickable" sdkClick (aClick)="goToDettaglioFase(fase)" tabindex="0"
+                            role="navigation" [attr.aria-label]="getDescrizioneFase(fase.fase)">
+                            {{getDescrizioneFase(fase.fase)}}
+                        </td>
+                        <td class="fasi-lotto-cell">{{fase.progressivo}}</td>
+                        <td class="fasi-lotto-cell pubb" *ngIf="gara.pcp === false">
+                            <div [ngClass]="{'azione-pubblica': true}">
+                                <div class="stato-title" [title]="getPubblicazioneIconAlt(fase)">
+                                    {{getPubblicazioneIconAlt(fase)}}
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fasi-lotto-cell pubb" *ngIf="gara.pcp === true">
+                            <div [ngClass]="{'azione-pubblica': true}">
+                                <div class="stato-title" [title]="getPubblicazioneIconAlt(fase)">
+                                    {{getPubblicazioneIconAltPcp(fase)}}
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fasi-lotto-cell pubb" *ngIf="current === true && isCigFiglio === false && gara.pcp === false">
+                            <div class="fasi-lotto-azioni" *ngIf="!gara.readOnly">
+                                <div class="azione-pubblica clickable"
+                                    *ngIf="invioDisabilitato === false && fase.pubblicabile === true && isAdminOrRup"
+                                    [title]="'FASI-LOTTO.AZIONI.PUBBLICA' | translate"
+                                    [attr.aria-label]="'FASI-LOTTO.AZIONI.PUBBLICA' | translate" sdkClick
+                                    (aClick)="pubblicaFase(fase)" tabindex="0" role="navigation">
+                                    <i [class]="getInvioIcon(fase)"></i>
+                                </div>
+                                <div [ngClass]="{'azione-eliminazione': true, 'clickable': fase.deleteFisica === true || fase.deleteLogica === true }"
+                                    *ngIf="(fase.deleteFisica === true || fase.deleteLogica === true) && deletePermission"
+                                    sdkClick (aClick)="deleteFase(fase)" tabindex="0" role="button">
+                                    <i *ngIf="fase.deleteFisica === true || fase.deleteLogica === true  && !gara.pcp"
+                                        [class]="getDeleteIcon(fase)" [title]="getDeleteTitle(fase)"></i>
+                                    <i *ngIf="fase.deleteFisica === false && fase.deleteLogica === false"
+                                        class="fas fa-ban" [title]="getDeleteTitle()"></i>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="fasi-lotto-cell pubb" *ngIf="current === true && isCigFiglio === false && gara.pcp === true">
+                            <div class="fasi-lotto-azioni" *ngIf="!gara.readOnly">
+                                <div class="azione-pubblica clickable"
+                                    *ngIf="fase.pubblicabile === true && ((!thereIsDrp && isRp) || isDrp) && fase.daExportNum === 1 && fase.recordTinvio2Uguale3 === 0  && (loa == '3' || loa == '4' || loaImpersonato == '3' || loaImpersonato == '4')" 
+                                    [title]="'FASI-LOTTO.AZIONI.PUBBLICA' | translate"
+                                    [attr.aria-label]="'FASI-LOTTO.AZIONI.PUBBLICA' | translate" sdkClick
+                                    (aClick)="pubblicaFase(fase)" tabindex="0" role="navigation">
+                                    <i class="mgg-icons-action-email-send" title="Trasmetti scheda"></i>
+                                </div>
+                                <div class="azione-verifica clickable"
+                                    *ngIf="fase.daExportNum === 3  && (loa == '3' || loa == '4' || loaImpersonato == '3' || loaImpersonato == '4') && (isRp || isDrp)"
+                                    [title]="'FASI-LOTTO.AZIONI.VERIFICA' | translate"
+                                    [attr.aria-label]="'FASI-LOTTO.AZIONI.VERIFICA' | translate" sdkClick
+                                    (aClick)="verificaScheda(fase)" tabindex="0" role="navigation">
+                                    <i class="mgg-icons-action-refresh" title="verifica scheda"></i>
+                                </div>
+                                <div class="azione-dettaglio clickable"
+                                    *ngIf="fase.pubblicata === true"
+                                    [title]="'FASI-LOTTO.AZIONI.DETTAGLIO' | translate"
+                                    [attr.aria-label]="'FASI-LOTTO.AZIONI.DETTAGLIO' | translate" sdkClick
+                                    (aClick)="dettaglioScheda(fase)" tabindex="0" role="navigation">
+                                    <i class="mgg-icons-action-view-detail" title="Dettaglio trasmissione scheda"></i>
+                                </div>
+                                <div class="azione-eliminazione clickable"
+                                    *ngIf="fase.deleteLogica === true && (((!thereIsDrp && isRp) || isDrp) && fase.daExportNum === 1 && fase.recordTinvio2Uguale3 === 0 && fase.recordTinvio2Uguale1 > 0 && (loa == '3' || loa == '4' || loaImpersonato == '3' || loaImpersonato == '4'))"
+                                    sdkClick (aClick)="deleteScheda(fase)" tabindex="0" role="button">
+                                    <i *ngIf="fase.deleteLogica === true"
+                                        class="mgg-icons-close-circle" [title]="getDeleteTitle(fase)"></i>
+                                    <i *ngIf="fase.deleteFisica === false && fase.deleteLogica === false"
+                                        class="fas fa-ban" [title]="getDeleteTitle()"></i>
+                                </div>
+                                <div class="azione-eliminazione clickable"
+                                    *ngIf="fase.deleteFisica === true && fase.pubblicata === false"
+                                    sdkClick (aClick)="deleteScheda(fase)" tabindex="0" role="button">
+                                    <i *ngIf="fase.deleteFisica === true"
+                                        class="mgg-icons-crud-delete" [title]="getDeleteTitle(fase)"></i>
+                                    <i *ngIf="fase.deleteFisica === false && fase.deleteLogica === false"
+                                        class="fas fa-ban" [title]="getDeleteTitle()"></i>
+                                </div>                                
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+        <sdk-dialog [config]="dialogConfigObs"></sdk-dialog>
+        <sdk-motivazione-dialog [config]="motivazioneDialogConfigObs"></sdk-motivazione-dialog>
+    </div>
+</div>

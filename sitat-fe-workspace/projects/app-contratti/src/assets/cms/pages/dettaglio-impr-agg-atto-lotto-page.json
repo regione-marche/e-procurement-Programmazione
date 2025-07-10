@@ -1,0 +1,244 @@
+{
+    "name": "dettaglio-impr-agg-atto-lotto-page",
+    "title": "TITLE.DETTAGLIO-IMPRESA-AGGIUDICATARIA-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "dettaglio-impr-agg-atto-lotto-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-atti-lotto-page",
+                "label": "BREADCRUMB.LISTA-ATTI-LOTTO",
+                "slug": "lista-atti-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS"
+            },
+            {
+                "code": "lista-impr-agg-atto-lotto-page",
+                "label": "BREADCRUMB.LISTA-IMPRESE-AGGIUDICATARIE",
+                "slug": "lista-impr-agg-atto-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_ATTO_PARAMS"
+            },
+            {
+                "code": "dettaglio-impr-agg-atto-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-IMPRESA-AGGIUDICATARIA",
+                "slug": "dettaglio-impr-agg-atto-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_IMPRESA_AGGIUDICATARIA_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-impr-agg-atto-lotto-page-content-root-section",
+            "selector": "dettaglio-impresa-aggiudicataria-section",
+            "description": "Pagina di dettaglio impresa aggiudicataria",
+            "classNames": "dettaglio-impr-agg-atto-lotto-section",
+            "settings": {
+                "classNames": "dettaglio-impr-agg-atto-lotto-index",
+                "sectionTitle": "TITLE.DETTAGLIO-IMPRESA-AGGIUDICATARIA-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-imprese-aggiudicatarie",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_IMPR_AGG_ATTO_LOTTO",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "go-to-update-impresa-aggiudicataria",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_GARE_LISTA_IMPR_AGG_ATTO_LOTTO",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "buttonsRO": [
+                        {
+                            "code": "back-to-lista-imprese-aggiudicatarie",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_IMPR_AGG_ATTO_LOTTO",
+                            "type": "cancel"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.GENERAL-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "id-tipo-agg",
+                                    "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.ID-TIPO-AGG",
+                                    "oggettoProtezione": "W9.W9AGGI.ID_TIPOAGG",
+                                    "mnemonico": "W3ID_TIPOA",
+                                    "mappingInput": "idTipoAgg",
+                                    "mappingOutput": "idTipoAgg",
+                                    "listCode": "TipologiaAggiudicatario"
+                                },
+                                {
+                                    "type": "HIDDEN",
+                                    "code": "id-tipo-agg-hidden",
+                                    "mappingInput": "idTipoAgg"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "nomest-singola",
+                                    "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.NOMEST",
+                                    "oggettoProtezione": "W9.W9AGGI.CODIMP",
+                                    "mnemonico": "W3CODIMP",
+                                    "mappingInput": "impresa.ragioneSociale",
+                                    "mappingOutput": "codImpresa",
+                                    "link": true,
+                                    "modalComponent": "impresa-modal-widget",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "id-tipo-agg-hidden": {
+                                                "values": [
+                                                    {
+                                                        "value": "3",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    },
+                                    "modalComponentConfig": "impresaModalConfig"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "impresa-data",
+                            "label": "IMPRESA-AGGIUDICATARIA.IMPRESA-DATA.IMPRESA-DATA",
+                            "visible": false,
+                            "visibleCondition": {
+                                "or": {
+                                    "id-tipo-agg-hidden": {
+                                        "values": [
+                                            {
+                                                "value": "2",
+                                                "operation": "="
+                                            },
+                                            {
+                                                "value": "4",
+                                                "operation": "="
+                                            }
+                                        ],
+                                        "visible": false
+                                    }
+                                }
+                            },
+                            "fieldSections": [
+                                {
+                                    "type": "FORM-GROUP",
+                                    "code": "imprese-group",
+                                    "label": "",
+                                    "minGroupsNumber": 0,
+                                    "maxGroupsNumber": -1,
+                                    "mappingInput": "imprese",
+                                    "mappingOutput": "imprese",
+                                    "defaultFormGroupFields": [
+                                        {
+                                            "type": "TEXT",
+                                            "code": "nomest",
+                                            "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.NOMEST",
+                                            "oggettoProtezione": "W9.W9AGGI.CODIMP",
+                                            "mnemonico": "W3CODIMP",
+                                            "mappingInput": "impresa.ragioneSociale",
+                                            "mappingOutput": "codImpresa",
+                                            "link": true,
+                                            "modalComponent": "impresa-modal-widget",
+                                            "modalComponentConfig": "impresaModalConfig"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "impresa-data2",
+                            "label": "IMPRESA-AGGIUDICATARIA.IMPRESA-DATA.IMPRESA-DATA",
+                            "visible": false,
+                            "visibleCondition": {
+                                "or": {
+                                    "id-tipo-agg-hidden": {
+                                        "values": [
+                                            {
+                                                "value": "1",
+                                                "operation": "="
+                                            }
+                                        ],
+                                        "visible": false
+                                    }
+                                }
+                            },
+                            "fieldSections": [
+                                {
+                                    "type": "FORM-GROUP",
+                                    "code": "imprese-group",
+                                    "label": "",
+                                    "minGroupsNumber": 0,
+                                    "maxGroupsNumber": -1,
+                                    "mappingInput": "imprese",
+                                    "mappingOutput": "imprese",
+                                    "defaultFormGroupFields": [
+                                        {
+                                            "type": "TEXT",
+                                            "code": "nomest",
+                                            "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.NOMEST",
+                                            "oggettoProtezione": "W9.W9AGGI.CODIMP",
+                                            "mnemonico": "W3CODIMP",
+                                            "mappingInput": "impresa.ragioneSociale",
+                                            "mappingOutput": "codImpresa",
+                                            "link": true,
+                                            "modalComponent": "impresa-modal-widget",
+                                            "modalComponentConfig": "impresaModalConfig"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "ruolo",
+                                            "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.RUOLO",
+                                            "oggettoProtezione": "W9.W9AGGI.RUOLO",
+                                            "mnemonico": "W3RUOLO",
+                                            "mappingInput": "ruolo",
+                                            "mappingOutput": "ruolo",
+                                            "listCode": "RuoloAssociazione"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

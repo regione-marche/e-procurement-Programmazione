@@ -1,0 +1,140 @@
+{
+    "name": "nuova-fase-iniz-sottoscrizione-contratto-page",
+    "title": "TITLE.NUOVA-FASE-INIZ-SOTTOSCRIZIONE-CONTRATTO-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "nuova-fase-iniz-sottoscrizione-contratto-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "nuova-fase-page",
+                "label": "BREADCRUMB.NUOVA-FASE",
+                "slug": "nuova-fase-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS"
+            },
+            {
+                "code": "nuova-fase-iniz-sottoscrizione-contratto-page",
+                "label": "BREADCRUMB.NUOVA-FASE-INIZIALE",
+                "slug": "nuova-fase-iniz-sottoscrizione-contratto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "nuova-fase-iniz-sottoscrizione-contratto-page-content-root-section",
+            "selector": "nuova-fase-iniz-sottoscrizione-contratto-section",
+            "description": "Pagina di inserimento nuova fase iniziale",
+            "classNames": "nuova-fase-iniz-sottoscrizione-contratto-section",
+            "settings": {
+                "classNames": "nuova-fase-iniz-sottoscrizione-contratto-index",
+                "sectionTitle": "TITLE.NUOVA-FASE-INIZ-SOTTOSCRIZIONE-CONTRATTO-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "go-to-fasi-visibili",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-fase",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_FASE_INIZIALE_SOTTOSCR_CONTR_PROVIDER"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "contratto-appalto-data",
+                            "label": "FASE-INIZIALE.CONTRATTO-APPALTO-DATA.CONTRATTO-APPALTO-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-stipula",
+                                    "label": "FASE-INIZIALE.CONTRATTO-APPALTO-DATA.DATA-STIPULA",
+                                    "oggettoProtezione": "W9.W9INIZ.DATA_STIPULA",
+                                    "mnemonico": "W3DATA_STI",
+                                    "mappingInput": "dataStipula",
+                                    "mappingOutput": "dataStipula"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-esecutivita",
+                                    "label": "FASE-INIZIALE.CONTRATTO-APPALTO-DATA.DATA-ESECUTIVITA",
+                                    "oggettoProtezione": "W9.W9INIZ.DATA_ESECUTIVITA",
+                                    "mnemonico": "W3DATA_ESE",
+                                    "mappingInput": "dataEsecutivita",
+                                    "mappingOutput": "dataEsecutivita"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-decorrenza",
+                                    "label": "FASE-INIZIALE.CONTRATTO-APPALTO-DATA.DATA-DECORRENZA",
+                                    "oggettoProtezione": "W9.W9INIZ.DATA_DECORRENZA",
+                                    "mnemonico": "W3DATA_ESE",
+                                    "mappingInput": "dataDecorrenza",
+                                    "mappingOutput": "dataDecorrenza"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-scadenza",
+                                    "label": "FASE-INIZIALE.CONTRATTO-APPALTO-DATA.DATA-SCADENZA",
+                                    "oggettoProtezione": "W9.W9INIZ.DATA_SCADENZA",
+                                    "mnemonico": "W3DATA_ESE",
+                                    "mappingInput": "dataScadenza",
+                                    "mappingOutput": "dataScadenza"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-cauzione",
+                                    "label": "FASE-INIZIALE.CONTRATTO-APPALTO-DATA.IMPORTO-CAUZIONE",
+                                    "oggettoProtezione": "W9.W9INIZ.IMPORTO_CAUZIONE",
+                                    "mnemonico": "W3I_CAUZIO",
+                                    "mappingInput": "importoCauzione",
+                                    "mappingOutput": "importoCauzione",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

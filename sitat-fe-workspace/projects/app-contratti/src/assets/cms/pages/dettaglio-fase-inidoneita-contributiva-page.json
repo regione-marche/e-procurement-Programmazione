@@ -1,0 +1,183 @@
+{
+    "name": "dettaglio-fase-inidoneita-contributiva-page",
+    "title": "TITLE.DETTAGLIO-FASE-INIDONEITA-CONTRIBUTIVA-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/pubblica-fase-lotto-page.css"
+    ],
+    "settings": {
+        "page": "dettaglio-fase-inidoneita-contributiva-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-inidoneita-contributiva-page",
+                "label": "BREADCRUMB.DETTAGLIO-FASE-INIDONEITA-CONTRIBUTIVA",
+                "slug": "dettaglio-fase-inidoneita-contributiva-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-fase-inidoneita-contributiva-page-content-root-section",
+            "selector": "dettaglio-fase-inidoneita-contributiva-section",
+            "description": "Pagina di dettaglio fase di inidoneita-contributiva",
+            "classNames": "dettaglio-fase-inidoneita-contributiva-section",
+            "settings": {
+                "classNames": "dettaglio-fase-inidoneita-contributiva-index",
+                "sectionTitle": "TITLE.DETTAGLIO-FASE-INIDONEITA-CONTRIBUTIVA-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "check-pubblicazione",
+                            "label": "BUTTONS.CHECK-DATA",
+                            "provider": "APP_FASI_LOTTO_PUBBLICA",
+                            "oggettoProtezione": "ALT.W9.FasiDiGara-schede.ControlloDatiInseriti",
+                            "type": "functions",
+                            "icon": "mgg-icons-document-text"
+                        },
+                        {
+                            "code": "go-to-update-fase",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_GARE_FASE_INIDONEITA_CONTRIBUTIVA_QUADRO_PROVIDER",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "sidebar": {
+                        "code": "sidebar",
+                        "position": "right",
+                        "width": 500,
+                        "classList": [
+                            "check-pubb-sidebar"
+                        ],
+                        "headerImage": "assets/images/app/logo.png",
+                        "component": "check-pubblicazione-widget",
+                        "componentConfig": {}
+                    },
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "collaudo-conformita-prestazioni-data",
+                            "label": "FASE-INIDONEITA-CONTRIBUTIVA.SCHEDA-IRREGOLARITA.SCHEDA-IRREGOLARITA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "num-rego",
+                                    "label": "FASE-INIDONEITA-CONTRIBUTIVA.SCHEDA-IRREGOLARITA.NUM-REGO",
+                                    "oggettoProtezione": "W9.W9REGCON.NUM_REGO",
+                                    "mnemonico": "W3RGNUMREG",
+                                    "mappingInput": "num"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "riscontro-irr",
+                                    "label": "FASE-INIDONEITA-CONTRIBUTIVA.SCHEDA-IRREGOLARITA.RISCONTRO-IRR",
+                                    "oggettoProtezione": "W9.W9REGCON.RISCONTRO_IRR",
+                                    "mnemonico": "W9RCRISCIRR",
+                                    "mappingInput": "riscontroIrregolare",
+                                    "mappingOutput": "riscontroIrregolare",
+                                    "listCode": "RiscontroIrregolarita"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "descare",
+                                    "label": "FASE-INIDONEITA-CONTRIBUTIVA.SCHEDA-IRREGOLARITA.DESCARE",
+                                    "oggettoProtezione": "W9.W9REGCON.DESCARE",
+                                    "mnemonico": "W3RCDESCARE",
+                                    "mappingInput": "descrizione",
+                                    "mappingOutput": "descrizione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "nomest",
+                                    "label": "FASE-INIDONEITA-CONTRIBUTIVA.SCHEDA-IRREGOLARITA.NOMEST",
+                                    "oggettoProtezione": "W9.W9REGCON.CODIMP",
+                                    "mnemonico": "W3RCCODIMP",
+                                    "mappingInput": "impresa.ragioneSociale",
+                                    "mappingOutput": "codImpresa",
+                                    "link": true,
+                                    "modalComponent": "impresa-modal-widget",
+                                    "modalComponentConfig": "impresaModalConfig"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-comun",
+                                    "label": "FASE-INIDONEITA-CONTRIBUTIVA.SCHEDA-IRREGOLARITA.DATA-COMUN",
+                                    "oggettoProtezione": "W9.W9REGCON.DATACOMUN",
+                                    "mnemonico": "W9RCDATACOMU",
+                                    "mappingInput": "dataComunicazione",
+                                    "mappingOutput": "dataComunicazione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "iddurc",
+                                    "label": "FASE-INIDONEITA-CONTRIBUTIVA.SCHEDA-IRREGOLARITA.IDDURC",
+                                    "oggettoProtezione": "W9.W9REGCON.IDDURC",
+                                    "mnemonico": "W3RCIDDURC",
+                                    "mappingInput": "estremiDurc",
+                                    "mappingOutput": "estremiDurc"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-durc",
+                                    "label": "FASE-INIDONEITA-CONTRIBUTIVA.SCHEDA-IRREGOLARITA.DATA-DURC",
+                                    "oggettoProtezione": "W9.W9REGCON.DATADURC",
+                                    "mnemonico": "W3RCDATADURC",
+                                    "mappingInput": "dataDurc",
+                                    "mappingOutput": "dataDurc"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "cassaedi",
+                                    "label": "FASE-INIDONEITA-CONTRIBUTIVA.SCHEDA-IRREGOLARITA.CASSAEDI",
+                                    "oggettoProtezione": "W9.W9REGCON.CASSAEDI",
+                                    "mnemonico": "W3RCCASSAEDI",
+                                    "mappingInput": "cassaEdile",
+                                    "mappingOutput": "cassaEdile"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

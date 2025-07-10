@@ -1,0 +1,63 @@
+{
+    "name": "home-page",
+    "title": "TITLE.HOME-PAGE",
+    "layout": "home-layout",
+    "appName": "app-programmi",
+    "styleUrls": [
+        "assets/cms/pages/home-page.css"
+    ],
+    "settings": {
+        "page": "home-page"
+    },
+    "sections": [
+        {
+            "id": "home-page-content-root-section",
+            "selector": "index-section",
+            "description": "Home page di app programmi",
+            "classNames": "index-section",
+            "settings": {
+                "classNames": "app-programmi-index",
+                "searchField": {
+                    "code": "search",
+                    "label": "HOME-PAGE.SEARCH-FIELD",
+                    "filterList": [
+                        {
+                            "value": "1",
+                            "label": "HOME-PAGE.PROGRAMMI-LAVORI"
+                        },
+                        {
+                            "value": "2",
+                            "label": "HOME-PAGE.PROGRAMMI-FORNITURE-SERVIZI"
+                        },
+                        {
+                            "value": "0",
+                            "label": "HOME-PAGE.ENTRAMBI",
+                            "default": true
+                        }
+                    ],
+                    "opzioniLabel": "BUTTONS.OPZIONI_RICERCA"
+                },
+                "cards": [
+                    {
+                        "icon": "mgg-icons-crud-create",
+                        "label": "HOME-PAGE.NUOVO-PROGRAMMA-LAVORI",
+                        "slug": "nuovo-programma-page",
+                        "params": {
+                            "tipologia": "1"
+                        },
+                        "oggettoProtezione": "INS.*"
+                    },
+                    {
+                        "icon": "mgg-icons-crud-create",
+                        "label": "HOME-PAGE.NUOVO-PROGRAMMA-FORNITURE-SERVIZI",
+                        "slug": "nuovo-programma-page",
+                        "params": {
+                            "tipologia": "2"
+                        },
+                        "oggettoProtezione": "INS.*"
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,169 @@
+{
+    "name": "lista-configurazioni-page",
+    "title": "TITLE.LISTA-CONFIGURAZIONI-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "lista-configurazioni-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-configurazioni-page",
+                "label": "BREADCRUMB.RICERCA-CONFIGURAZIONI",
+                "slug": "ricerca-configurazioni-page"
+            },
+            {
+                "code": "lista-configurazioni-page",
+                "label": "BREADCRUMB.LISTA-CONFIGURAZIONI",
+                "slug": "lista-configurazioni-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "lista-configurazioni-page-content-root-section",
+            "selector": "sdk-lista-configurazioni-section",
+            "description": "Pagina lista configurazioni",
+            "classNames": "lista-configurazioni-section",
+            "settings": {
+                "classNames": "lista-configurazioni-index",
+                "sectionTitle": "TITLE.LISTA-CONFIGURAZIONI-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_CONFIGURAZIONI_LISTA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "clean-button",
+                            "label": "BUTTONS.CLEAN",
+                            "provider": "SDK_GESTIONE_CONFIGURAZIONI_LISTA",
+                            "icon": "mgg-icons-data-unfiltered"
+                        }
+                    ],
+                    "grid": {
+                        "showCurrentPageReport": true,
+                        "showCurrentRecordsReport": true,
+                        "navigable": true,
+                        "resizable": false,
+                        "debug": false,
+                        "sortable": {
+                            "allowUnsort": false,
+                            "mode": "single"
+                        },
+                        "sort": [
+                            {
+                                "field": "chiave",
+                                "dir": "asc"
+                            }
+                        ],
+                        "pageable": {
+                            "buttonCount": 10,
+                            "info": true,
+                            "pageSizes": [
+                                10,
+                                50,
+                                100,
+                                500
+                            ],
+                            "type": "numeric"
+                        },
+                        "toolbar": {
+                            "position": "top",
+                            "actions": []
+                        },
+                        "columns": [
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-CONFIGURAZIONE.GENERAL-DATA.CODAPP",
+                                "field": "codApp",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-CONFIGURAZIONE.GENERAL-DATA.SEZIONE",
+                                "field": "sezione",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_LINK",
+                                    "params": {
+                                        "action": {
+                                            "label": "SDK-CONFIGURAZIONE.AZIONI.DETTAGLIO",
+                                            "disabled": false,
+                                            "performer": "dettaglio"
+                                        }
+                                    }
+                                },
+                                "title": "SDK-CONFIGURAZIONE.GENERAL-DATA.CONFIGURAZIONE",
+                                "field": "chiave",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-CONFIGURAZIONE.GENERAL-DATA.DESCRIZIONE",
+                                "field": "descrizione",
+                                "width": 150,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-CONFIGURAZIONE.GENERAL-DATA.CRIPTATO",
+                                "field": "criptato",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-CONFIGURAZIONE.GENERAL-DATA.VALORE-EFFETTIVO",
+                                "field": "valore",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

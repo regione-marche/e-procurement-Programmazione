@@ -1,0 +1,87 @@
+import { Routes } from '@angular/router';
+
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { BasicButtonComponent } from './button/basic-button/basic-button.component';
+import { ButtonDropdownComponent } from './button/button-dropdown/button-dropdown.component';
+import { ButtonGroupComponent } from './button/button-group/button-group.component';
+import { ToolbarComponent } from './button/toolbar/toolbar.component';
+import { DatepickerComponent } from './date/datepicker/datepicker.component';
+import { TimepickerComponent } from './date/timepicker/timepicker.component';
+import { DialogComponent } from './dialog/dialog.component';
+import { DynamicFormSectionComponent } from './dynamic-form-section/dynamic-form-section.component';
+import { ExtendedTableComponent } from './extended-table/extended-table.component';
+import {
+    FormBuilderAdvancedAutocompleteComponent,
+} from './form-builder-advanced-autocomplete/form-builder-advanced-autocomplete.component';
+import { FormBuilderPickerComponent } from './form-builder-picker/form-builder-picker.component';
+import { FormBuilderComponent } from './form-builder/form-builder.component';
+import { FormAutocompleteComponent } from './form/form-autocomplete/form-autocomplete.component';
+import { FormCheckboxComponent } from './form/form-checkbox/form-checkbox.component';
+import { FormComboboxComponent } from './form/form-combobox/form-combobox.component';
+import { FormDocumentComponent } from './form/form-document/form-document.component';
+import { FormDocumentsListComponent } from './form/form-documents-list/form-documents-list.component';
+import { FormMaskedTextboxComponent } from './form/form-masked-textbox/form-masked-textbox.component';
+import { FormMultiselectComponent } from './form/form-multiselect/form-multiselect.component';
+import { FormNumericTextboxComponent } from './form/form-numeric-textbox/form-numeric-textbox.component';
+import { FormRadioComponent } from './form/form-radio/form-radio.component';
+import { FormSliderComponent } from './form/form-slider/form-slider.component';
+import { FormSwitchComponent } from './form/form-switch/form-switch.component';
+import { FormTextComponent } from './form/form-text/form-text.component';
+import { FormTextareaComponent } from './form/form-textarea/form-textarea.component';
+import { FormTextboxMatrixComponent } from './form/form-textbox-matrix/form-textbox-matrix.component';
+import { FormTextboxComponent } from './form/form-textbox/form-textbox.component';
+import { FormTreeComponent } from './form/form-tree/form-tree.component';
+import { GridComponent } from './grid/grid.component';
+import { HomeComponent } from './home/home.component';
+import { MenuComponent } from './menu/menu.component';
+import { MessagePanelComponent } from './message-panel/message-panel.component';
+import { ModalComponent } from './modal/modal.component';
+import { NotificationsComponent } from './notifications/notifications.component';
+import { OverlayPanelComponent } from './overlay-panel/overlay-panel.component';
+import { PanelbarComponent } from './panelbar/panelbar.component';
+import { SearchComponent } from './search/search.component';
+import { TabsComponent } from './tabs/tabs.component';
+
+export const routes: Routes = [
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: 'home', component: HomeComponent },
+    { path: 'basic-button', component: BasicButtonComponent },
+    { path: 'button-group', component: ButtonGroupComponent },
+    { path: 'button-dropdown', component: ButtonDropdownComponent },
+    { path: 'toolbar', component: ToolbarComponent },
+    { path: 'form-document', component: FormDocumentComponent },
+    { path: 'form-documents-list', component: FormDocumentsListComponent },
+    { path: 'form-textbox', component: FormTextboxComponent },
+    { path: 'form-textarea', component: FormTextareaComponent },
+    { path: 'form-numeric-textbox', component: FormNumericTextboxComponent },
+    { path: 'form-switch', component: FormSwitchComponent },
+    { path: 'form-slider', component: FormSliderComponent },
+    { path: 'form-masked-textbox', component: FormMaskedTextboxComponent },
+    { path: 'form-combobox', component: FormComboboxComponent },
+    { path: 'form-multiselect', component: FormMultiselectComponent },
+    { path: 'form-autocomplete', component: FormAutocompleteComponent },
+    { path: 'form-radio', component: FormRadioComponent },
+    { path: 'form-textbox-matrix', component: FormTextboxMatrixComponent },
+    { path: 'date-datepicker', component: DatepickerComponent },
+    { path: 'date-timepicker', component: TimepickerComponent },
+    { path: 'menu', component: MenuComponent },
+    { path: 'breadcrumb', component: BreadcrumbComponent },
+    { path: 'search', component: SearchComponent },
+    { path: 'tabs', component: TabsComponent },
+    { path: 'notifications', component: NotificationsComponent },
+    { path: 'dialog', component: DialogComponent },
+    { path: 'message-panel', component: MessagePanelComponent },
+    { path: 'form-builder', component: FormBuilderComponent },
+    { path: 'modal', component: ModalComponent },
+    { path: 'form-tree', component: FormTreeComponent },
+    { path: 'grid', component: GridComponent },
+    { path: 'overlay-panel', component: OverlayPanelComponent },
+    { path: 'panelbar', component: PanelbarComponent },
+    { path: 'form-builder-picker', component: FormBuilderPickerComponent },
+    { path: 'form-checkbox', component: FormCheckboxComponent },
+    { path: 'dynamic-form-section', component: DynamicFormSectionComponent },
+    { path: 'form-text', component: FormTextComponent },
+    { path: 'extended-table', component: ExtendedTableComponent },
+    { path: 'form-builder-advanced-autocomplete', component: FormBuilderAdvancedAutocompleteComponent },
+    { path: '**', component: HomeComponent }
+];

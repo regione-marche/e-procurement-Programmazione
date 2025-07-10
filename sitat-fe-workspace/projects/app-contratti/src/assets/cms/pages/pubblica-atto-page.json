@@ -1,0 +1,233 @@
+{
+    "name": "pubblica-atto-page",
+    "title": "TITLE.PUBBLICA-GARA-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/pubblica-atto-page.css"
+    ],
+    "settings": {
+        "page": "pubblica-atto-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-atti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-atti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "pubblica-atto-page",
+                "label": "BREADCRUMB.PUBBLICA-ATTO",
+                "slug": "pubblica-atto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_ATTO_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "pubblica-atto-page-content-root-section",
+            "selector": "pubblica-atto-section",
+            "description": "Pagina di pubblicazione gara",
+            "classNames": "pubblica-atto-section",
+            "settings": {
+                "classNames": "pubblica-atto-index",
+                "menuTabs": [
+                    {
+                        "code": "dettaglio-atto",
+                        "title": "DETTAGLIO-ATTO.TABS.DETTAGLIO-ATTO",
+                        "slug": "dettaglio-atto-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_ATTO_PARAMS"
+                    },
+                    {
+                        "code": "lotti-atto",
+                        "title": "DETTAGLIO-ATTO.TABS.LOTTO-ATTO",
+                        "slug": "lotti-atto-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_ATTO_PARAMS",
+                        "visible": "APP_GARE_ATTO_LOTTI_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "pubblica-atto",
+                        "title": "DETTAGLIO-ATTO.TABS.PUBBLICA-ATTO",
+                        "active": true,
+                        "slug": "pubblica-atto-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_ATTO_PARAMS"
+                    }
+                ],
+                "dettaglioFlussoAtto": {
+                    "modalComponent": "dettaglio-pubblicazione-modal-widget",
+                    "modalComponentConfig": {
+                        "dettaglioPubblicazione": {
+                            "fields": [
+                                {
+                                    "type": "FORM-SECTION",
+                                    "code": "dettaglio",
+                                    "label": "FLUSSOATTO.DETTAGLIO.DETTAGLIO",
+                                    "fieldSections": [
+                                        {
+                                            "type": "TEXT",
+                                            "code": "idFlusso",
+                                            "label": "FLUSSOATTO.DETTAGLIO.ID-FLUSSO",
+                                            "oggettoProtezione": "W9.W9FLUSSI.IDFLUSSO",
+                                            "mnemonico": "W9FLID",
+                                            "mappingInput": "idFlusso"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "tipo-invio",
+                                            "label": "FLUSSOATTO.DETTAGLIO.TIPO-INVIO",
+                                            "oggettoProtezione": "W9.W9FLUSSI.TINVIO2",
+                                            "mnemonico": "W9FLTINVIO",
+                                            "mappingInput": "tipoInvio"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "data-invio",
+                                            "label": "FLUSSOATTO.DETTAGLIO.DATA-INVIO",
+                                            "oggettoProtezione": "W9.W9FLUSSI.DATINV",
+                                            "mnemonico": "W9FLDATINV",
+                                            "mappingInput": "dataInvio"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "note-invio",
+                                            "label": "FLUSSOATTO.DETTAGLIO.NOTE-INVIO",
+                                            "oggettoProtezione": "W9.W9FLUSSI.NOTEINVIO",
+                                            "mnemonico": "W9NOTINVIO",
+                                            "mappingInput": "noteInvio"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "autore",
+                                            "label": "FLUSSOATTO.DETTAGLIO.AUTORE",
+                                            "oggettoProtezione": "W9.W9FLUSSI.AUTORE",
+                                            "mnemonico": "W9FLAUTORE",
+                                            "mappingInput": "autore"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "xml",
+                                            "label": "FLUSSOATTO.DETTAGLIO.XML",
+                                            "oggettoProtezione": "W9.W9FLUSSI.XML",
+                                            "mnemonico": "W9FLXML",
+                                            "link": true
+                                        }
+                                    ]
+                                }
+                            ],
+                            "buttons": [
+                                {
+                                    "code": "modal-close-button",
+                                    "label": "BUTTONS.ANNULLA",
+                                    "icon": "mgg-icons-crud-cancel",
+                                    "provider": "APP_AVVISI_MODAL_WINDOW"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-atti",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_ATTI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "elimina-flussi-atto",
+                            "label": "BUTTONS.ELIMINA-FLUSSI",
+                            "provider": "APP_GARE_LISTA_ATTI",
+                            "oggettoProtezione": "ALT.W9.DEL.ENTITA_PER_AMMINISTRATORE",
+                            "type": "functions",
+                            "icon": "mgg-icons-crud-delete"
+                        },
+                        {
+                            "code": "check-pubblicazione",
+                            "label": "BUTTONS.VERIFY",
+                            "provider": "APP_GARE_PUBBLICA_ATTO",
+                            "type": "functions",
+                            "icon": "mgg-icons-document-text"
+                        },
+                        {
+                            "code": "pubblica-atto",
+                            "label": "BUTTONS.PUBLISH",
+                            "provider": "APP_GARE_PUBBLICA_ATTO",
+                            "icon": "mgg-icons-action-send"
+                        }
+                    ],
+                    "buttonsNoPubb": [
+                        {
+                            "code": "back-to-lista-atti",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_ATTI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "check-pubblicazione",
+                            "label": "BUTTONS.VERIFY",
+                            "provider": "APP_GARE_PUBBLICA_ATTO",
+                            "type": "functions",
+                            "icon": "mgg-icons-document-text"
+                        },
+                        {
+                            "code": "pubblica-atto",
+                            "label": "BUTTONS.PUBLISH",
+                            "provider": "APP_GARE_PUBBLICA_ATTO",
+                            "icon": "mgg-icons-action-send"
+                        }
+                    ],
+                    "defaultButtons": [
+                        {
+                            "code": "back-to-lista-atti",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_ATTI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "buttonsRO": [
+                        {
+                            "code": "back-to-lista-atti",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_ATTI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "sidebar": {
+                        "code": "sidebar",
+                        "position": "right",
+                        "width": 500,
+                        "classList": [
+                            "check-pubb-sidebar"
+                        ],
+                        "headerImage": "assets/images/app/logo.png",
+                        "component": "check-pubblicazione-widget",
+                        "componentConfig": {
+                            "checkSuccessActionDescr": "PUBBLICAZIONI.CHECK-SUCCESS.PUBBLICA-ATTO"
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

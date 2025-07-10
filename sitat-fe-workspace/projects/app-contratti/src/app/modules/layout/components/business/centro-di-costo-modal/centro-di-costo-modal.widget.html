@@ -1,0 +1,16 @@
+<div class="cdc-modal" *ngIf="isReady">
+    <div class="messages-box" #messages></div>
+
+    <div class="cdc-container">
+        <div class="cdc-testata">
+
+        </div>
+        <div class="cdc-content">
+            <sdk-form-builder [config]="formBuilderConfigObs" (output)="manageFormOutput($event)">
+            </sdk-form-builder>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+</div>

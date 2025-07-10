@@ -1,0 +1,199 @@
+{
+	"name": "sdk-c0oggass-list-page",
+	"title": "SDK-DOC-ASSOCIATI.TITLE.C0OGGASS-LIST-PAGE",
+	"layout": "base-layout",
+	"appName": "<APP-NAME>",
+	"styleUrls": [],
+	"settings": {
+		"page": "sdk-c0oggass-list-page",
+		"breadcrumbs": [
+			{
+				"code": "sdk-c0oggass-list-page",
+				"label": "SDK-DOC-ASSOCIATI.BREADCRUMB.C0OGGASS-LIST",
+				"slug": "sdk-c0oggass-list-page"
+			}
+		]
+	},
+	"sections": [
+		{
+			"id": "sdk-c0oggass-list-page-root-section",
+			"selector": "sdk-c0oggass-list-section",
+			"description": "",
+			"classNames": "sdk-c0oggass-list-section",
+			"settings": {
+				"classNames": "sdk-c0oggass-list-index",
+				"body": {
+					"buttons": [
+						{
+							"code": "back",
+							"label": "BUTTONS.BACK",
+							"icon": "mgg-icons-paginator-previous",
+							"provider": "SDK_DOC_ASSOCIATI_C0OGGASS",
+							"type": "cancel"
+						},
+						{
+							"code": "create",
+							"label": "BUTTONS.CREATE",
+							"icon": "mgg-icons-crud-create",
+							"provider": "SDK_DOC_ASSOCIATI_C0OGGASS",
+							"oggettoProtezione": "INS.GENE.C0OGGASS-Lista.LISTANUOVO"
+						}
+					],
+					"grid": {
+						"showCurrentPageReport": true,
+						"showCurrentRecordsReport": true,
+						"navigable": true,
+						"resizable": false,
+						"debug": false,
+						"sortable": false,
+						"sort": [
+							{
+								"field": "c0adat",
+								"dir": "desc"
+							}
+						],
+						"pageable": {
+							"buttonCount": 5,
+							"info": true,
+							"pageSizes": [5, 10, 20, 50],
+							"type": "numeric"
+						},
+						"columns": [
+							{
+								"viewer": {
+									"type": "SDK_GRID_VIEW_CELL_DATE",
+									"params": {
+										"format": "dd/MM/yyyy HH:mm:ss"
+									}
+								},
+								"title": "SDK-DOC-ASSOCIATI.C0OGGASS-LIST.C0ADAT",
+								"oggettoProtezione": "GENE.C0OGGASS.C0ADAT",
+								"field": "c0adat",
+								"width": 0,
+								"hidden": false,
+								"sortable": true,
+								"resizable": false
+							},
+							{
+								"viewer": {
+									"type": "SDK_GRID_VIEW_CELL_STRING"
+								},
+								"title": "SDK-DOC-ASSOCIATI.C0OGGASS-LIST.C0ANPROT",
+								"oggettoProtezione": "GENE.C0OGGASS.C0ANPROT",
+								"field": "c0anprot",
+								"width": 0,
+								"hidden": false,
+								"sortable": true,
+								"resizable": false
+							},
+							{
+								"viewer": {
+									"type": "SDK_GRID_VIEW_CELL_DATE"
+								},
+								"title": "SDK-DOC-ASSOCIATI.C0OGGASS-LIST.C0ADPROT",
+								"oggettoProtezione": "GENE.C0OGGASS.C0ADPROT",
+								"field": "c0adprot",
+								"width": 0,
+								"hidden": false,
+								"sortable": true,
+								"resizable": false
+							},
+							{
+								"viewer": {
+									"type": "SDK_GRID_VIEW_CELL_STRING"
+								},
+								"title": "SDK-DOC-ASSOCIATI.C0OGGASS-LIST.C0ANATTO",
+								"oggettoProtezione": "GENE.C0OGGASS.C0ANATTO",
+								"field": "c0anatto",
+								"width": 0,
+								"hidden": false,
+								"sortable": true,
+								"resizable": false
+							},
+                            {
+								"viewer": {
+									"type": "SDK_GRID_VIEW_CELL_DATE"
+								},
+								"title": "SDK-DOC-ASSOCIATI.C0OGGASS-LIST.C0ADATTO",
+								"oggettoProtezione": "GENE.C0OGGASS.C0ADATTO",
+								"field": "c0adatto",
+								"width": 0,
+								"hidden": false,
+								"sortable": true,
+								"resizable": false
+							},
+							{
+								"viewer": {
+									"type": "SDK_GRID_VIEW_CELL_LINK",
+									"params": {
+										"action": {
+											"label": "SDK-DOC-ASSOCIATI.C0OGGASS-LIST.ACTION-DETAILS",
+											"disabled": false,
+											"hidden": false,
+											"performer": "details"
+										}
+									}
+								},
+								"title": "SDK-DOC-ASSOCIATI.C0OGGASS-LIST.C0ATIT",
+								"oggettoProtezione": "GENE.C0OGGASS.C0ATIT",
+								"field": "c0atit",
+								"width": 0,
+								"hidden": false,
+								"sortable": true,
+								"resizable": false
+							},
+							{
+								"viewer": {
+									"type": "SDK_GRID_VIEW_CELL_STRING"
+								},
+								"title": "SDK-DOC-ASSOCIATI.C0OGGASS-LIST.C0ANOMOGG",
+								"oggettoProtezione": "GENE.C0OGGASS.C0ANOMOGG",
+								"field": "c0anomogg",
+								"width": 0,
+								"hidden": false,
+								"sortable": true,
+								"resizable": false
+							},
+							{
+								"viewer": {
+									"type": "SDK_GRID_VIEW_CELL_ACTIONS_ICON",
+									"params": {
+										"actions": [
+											{
+												"label": "LIST.DOWNLOAD",
+												"disabled": false,
+												"performer": "download",
+												"hidden": "downloadHidden",
+												"icon": "mgg-icons-action-download"
+											},
+											{
+												"label": "LIST.DELETE",
+												"disabled": false,
+												"performer": "delete",
+												"hidden": "deleteHidden",
+												"icon": "mgg-icons-crud-delete",
+												"oggettoProtezione": "DEL.GENE.C0OGGASS-Lista.DEL"
+											},
+											{
+												"label": "LIST.DELETE-DISABLED",
+												"disabled": true,
+												"hidden": "deleteNotHidden",
+												"icon": "mgg-icons-no-trash",
+												"oggettoProtezione": "DEL.GENE.C0OGGASS-Lista.DEL"
+											}
+										]
+									}
+								},
+								"title": "LIST.ACTIONS",
+								"width": 125,
+								"hidden": false,
+								"sortable": false,
+								"resizable": false
+							}
+						]
+					}
+				}
+			}
+		}
+	]
+}

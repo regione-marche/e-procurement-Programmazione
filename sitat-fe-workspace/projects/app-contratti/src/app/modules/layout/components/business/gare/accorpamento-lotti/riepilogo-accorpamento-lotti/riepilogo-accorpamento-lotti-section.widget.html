@@ -1,0 +1,48 @@
+<div [class]="config.classNames" *ngIf="isReady">
+    <h1 class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</h1>
+    <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+    <div class="messages-box" #infoBox></div>
+
+    <div class="messages-box" #messages></div>
+
+    <div class="riepilogo-accorpamento-lotti-container">
+
+        <div class="ral-content">
+            <h1 class="title">
+                {{ 'ACCORPAMENTO-LOTTI.RIEPILOGO.TITLE' | translate }}
+            </h1>
+            <div class="riepilogo-accorpamenti-table-empty empty-list"
+                *ngIf="riepilogoAccorpamenti != null && riepilogoAccorpamenti.accorpamenti != null && riepilogoAccorpamenti.accorpamenti.length == 0">
+                {{ 'ACCORPAMENTO-LOTTI.RIEPILOGO.EMPTY-LIST' | translate }}
+            </div>
+            <table class="riepilogo-accorpamenti-table"
+                *ngIf="riepilogoAccorpamenti != null && riepilogoAccorpamenti.accorpamenti != null && riepilogoAccorpamenti.accorpamenti.length > 0"
+                [attr.aria-label]="config.sectionTitle | translate">
+                <thead>
+                    <th class="riepilogo-accorpamenti-header">
+                        {{ 'ACCORPAMENTO-LOTTI.RIEPILOGO.TABLE.CIG-MASTER' | translate }}</th>
+                    <th class="riepilogo-accorpamenti-header">
+                        {{ 'ACCORPAMENTO-LOTTI.RIEPILOGO.TABLE.CIG-ACCORPATI' | translate }}
+                    </th>
+                </thead>
+                <tbody>
+                    <tr class="riepilogo-accorpamenti-row"
+                        *ngFor="let accorpamento of riepilogoAccorpamenti.accorpamenti">
+                        <td class="riepilogo-accorpamenti-cell">{{accorpamento.cigMaster}}</td>
+                        <td class="riepilogo-accorpamenti-cell">
+                            <ul>
+                                <li *ngFor="let cigAccorpato of accorpamento.cigAccorpati">{{cigAccorpato}}</li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group *ngIf="buttonsSubj != null" [config]="buttonsSubj" (output)="onButtonClick($event)">
+            </sdk-button-group>
+        </div>
+    </div>
+    <sdk-dialog [config]="dialogConfigSubj"></sdk-dialog>
+</div>

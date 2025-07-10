@@ -1,0 +1,17 @@
+<div [class]="config.classNames" *ngIf="isReady">
+    <h1 class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</h1>
+    <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+    <div class="messages-box" #infoBox></div>
+    <div class="messages-box" #messages></div>
+
+    <div class="ricerca-avanzata-archivio-cdc-container">
+        <div class="raacdc-content">
+            <sdk-form-builder [config]="formBuilderConfigObs" (output)="manageFormOutput($event)">
+            </sdk-form-builder>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+</div>

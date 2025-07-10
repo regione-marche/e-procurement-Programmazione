@@ -1,0 +1,2904 @@
+{
+    "PARAMS": "{{value}}",
+    "LOGO-DESCRIPTION": "Logo della Regione Toscana",
+    "BLOCCO-ACCESSIBILITA-CONTENT": "Vai al contenuto principale",
+    "HEADER-TITLE": "Bandi, esiti e altri atti delle procedure di appalto",
+    "APP-TITLE": "SITAT",
+    "APP-SUBTITLE": "Sistema Telematico Appalti Toscana",
+    "LOGOUT-BUTTON": "Logout",
+    "CAMBIO-MODULO-BUTTON": "Accedi ad un altro applicativo",
+    "ULTIMI-ACCESSI-BUTTON": "Ultimi accessi",
+    "IL-MIO-ACCOUNT-BUTTON": "Il mio account",
+    "CHANGE-USER-PASSWORD-BUTTON": "Cambia password",
+    "CHOOSE-ENTE-BUTTON": "Cambia Stazione Appaltante",
+    "CHOOSE-PROFILE-BUTTON": "Cambia Profilo",
+    "MESSAGGI-AVVISI-BUTTON": "Messaggi e comunicazioni",
+    "RICERCA-SA": "Ricerca Stazioni Appaltanti",
+    "RICERCA-SA-SPID": "Ricerca ente",
+    "TITLE": {
+        "HOME-PAGE": "Home Page",
+        "SELEZIONE-PROVIDER-SPID-PAGE":"Scegli il tuo provider SPID",
+        "CHOOSE-ENTE-PAGE": "Selezione Stazione Appaltante",
+        "CHOOSE-ENTE-SPID-PAGE": "Selezione l'ente per l'accesso a SPID",
+        "CHOOSE-PROFILE-PAGE": "Selezione Profilo",
+        "NUOVO-AVVISO-PAGE": "Creazione nuovo avviso",
+        "LISTA-AVVISI-PAGE": "Lista degli avvisi",
+        "RICERCA-AVANZATA-AVVISI-PAGE": "Ricerca avanzata avvisi",
+        "DETTAGLIO-AVVISO-PAGE": "Dettaglio avviso",
+        "MODIFICA-AVVISO-PAGE": "Modifica avviso",
+        "PUBBLICA-AVVISO-PAGE": "Pubblicazione avviso",
+        "LISTA-ARCHIVIO-TECNICI-PAGE": "Archivio Soggetti",
+        "NUOVO-TECNICO-PAGE": "Nuovo Soggetto",
+        "DETTAGLIO-TECNICO-PAGE": "Dettaglio Soggetto",
+        "MODIFICA-TECNICO-PAGE": "Modifica Soggetto",
+        "HOME-AVVISI-PAGE": "Avvisi",
+        "HOME-GARE-PAGE": "Procedure",
+        "RICERCA-AVANZATA-GARE-PAGE": "Ricerca avanzata procedure",
+        "LISTA-GARE-PAGE": "Lista procedure",
+        "DETTAGLIO-GARA-PAGE": "Dettaglio procedura",
+        "RICERCA-AVANZATA-ARCHIVIO-IMPRESE-PAGE": "Ricerca avanzata archivio imprese",
+        "LISTA-ARCHIVIO-IMPRESE-PAGE": "Archivio imprese",
+        "DETTAGLIO-IMPRESA-PAGE": "Dettaglio impresa",
+        "NUOVA-IMPRESA-PAGE": "Nuova impresa",
+        "MODIFICA-IMPRESA-PAGE": "Modifica impresa",
+        "RICERCA-AVANZATA-ARCHIVIO-CDC-PAGE": "Ricerca avanzata archivio centri di costo",
+        "LISTA-ARCHIVIO-CDC-PAGE": "Archivio centri di costo",
+        "NUOVO-CDC-PAGE": "Nuovo centro di costo",
+        "DETTAGLIO-CDC-PAGE": "Dettaglio centro di costo",
+        "MODIFICA-CDC-PAGE": "Modifica centro di costo",
+        "MODIFICA-GARA-PAGE": "Modifica procedura",
+        "NUOVA-GARA-PAGE": "Nuova procedura",
+        "LISTA-LOTTI-PAGE": "Lista Lotti",
+        "LISTA-ATTI-PAGE": "Lista Atti",
+        "NUOVO-ATTO-PAGE": "Nuovo atto",
+        "DETTAGLIO-ATTO-PAGE": "Dettaglio atto",
+        "MODIFICA-ATTO-PAGE": "Modifica atto",
+        "DETTAGLIO-LOTTO-PAGE": "Dettaglio lotto",
+        "LOTTI-ATTO-PAGE": "Lotti",
+        "PUBBLICITA-GARA-PAGE": "Pubblicit\u00E0 procedura",
+        "MODIFICA-PUBBLICITA-GARA-PAGE": "Modifica pubblicit\u00E0 procedura",
+        "MODIFICA-LOTTO-PAGE": "Modifica lotto",
+        "NUOVO-LOTTO-PAGE": "Nuovo Lotto",
+        "FASI-EVENTI-PAGE": "Schede",
+        "NUOVA-FASE-PAGE": "Nuova scheda",
+        "NUOVA-FASE-INIZIALE-PAGE": "Nuova scheda iniziale",
+        "DETTAGLIO-FASE-INIZIALE-PAGE": "Dettaglio scheda iniziale",
+        "MODIFICA-FASE-INIZIALE-PAGE": "Modifica scheda iniziale",
+        "NUOVA-FASE-AGGIUDICAZIONE-PAGE": "Nuova scheda di aggiudicazione",
+        "DETTAGLIO-FASE-AGGIUDICAZIONE-PAGE": "Dettaglio scheda di aggiudicazione",
+        "MODIFICA-FASE-AGGIUDICAZIONE-PAGE": "Modifica scheda di aggiudicazione",
+        "NUOVA-COMUNICAZIONE-ESITO-PAGE": "Nuova comunicazione esito",
+        "DETTAGLIO-COMUNICAZIONE-ESITO-PAGE": "Dettaglio comunicazione esito",
+        "MODIFICA-COMUNICAZIONE-ESITO-PAGE": "Modifica comunicazione esito",
+        "LISTA-IMPRESE-AGGIUDICATARIE-PAGE": "Lista imprese aggiudicatarie/affidatarie",
+        "NUOVA-IMPRESA-AGGIUDICATARIA-PAGE": "Nuova impresa aggiudicataria/affidataria",
+        "DETTAGLIO-IMPRESA-AGGIUDICATARIA-PAGE": "Dettaglio impresa aggiudicataria/affidataria",
+        "MODIFICA-IMPRESA-AGGIUDICATARIA-PAGE": "Modifica impresa aggiudicataria/affidataria",
+        "DETTAGLIO-INCARICHI-PROFESSIONALI-PAGE": "Dettaglio incarichi professionali",
+        "MODIFICA-INCARICHI-PROFESSIONALI-PAGE": "Modifica incarichi professionali",
+        "NUOVA-FASE-AGGIUDICAZIONE-SEMP-PAGE": "Nuova scheda di aggiudicazione semplificata",
+        "DETTAGLIO-FASE-AGGIUDICAZIONE-SEMP-PAGE": "Dettaglio scheda di aggiudicazione semplificata",
+        "MODIFICA-FASE-AGGIUDICAZIONE-SEMP-PAGE": "Modifica scheda di aggiudicazione semplificata",
+        "DETTAGLIO-FINANZIAMENTI-PAGE": "Dettaglio finanziamenti",
+        "MODIFICA-FINANZIAMENTI-PAGE": "Modifica finanziamenti",
+        "DETTAGLIO-SCHEDA-SICUREZZA-PAGE": "Dettaglio scheda sicurezza",
+        "MODIFICA-SCHEDA-SICUREZZA-PAGE": "Modifica scheda sicurezza",
+        "NUOVA-SCHEDA-SICUREZZA-PAGE": "Nuova scheda sicurezza",
+        "LISTA-ELENCO-IMPR-INV-PARTE-PAGE": "Elenco imprese invitate/partecipanti",
+        "NUOVA-IMPR-INV-PARTE-PAGE": "Nuova impresa invitata/partecipante",
+        "DETTAGLIO-IMPR-INV-PARTE-PAGE": "Dettaglio impresa invitata/partecipante",
+        "MODIFICA-IMPR-INV-PARTE-PAGE": "Modifica impresa invitata/partecipante",
+        "NUOVA-FASE-AVANZAMENTO-PAGE": "Nuova scheda di esecuzione e avanzamento",
+        "DETTAGLIO-FASE-AVANZAMENTO-PAGE": "Dettaglio scheda di esecuzione e avanzamento",
+        "MODIFICA-FASE-AVANZAMENTO-PAGE": "Modifica scheda di esecuzione e avanzamento",
+        "NUOVA-FASE-SOSPENSIONE-PAGE": "Nuova scheda di sospensione",
+        "DETTAGLIO-FASE-SOSPENSIONE-PAGE": "Dettaglio scheda di sospensione",
+        "MODIFICA-FASE-SOSPENSIONE-PAGE": "Modifica scheda di sospensione",
+        "NUOVA-FASE-AVANZAMENTO-SEMP-PAGE": "Nuova scheda semplificata di esecuzione e avanzamento",
+        "DETTAGLIO-FASE-AVANZAMENTO-SEMP-PAGE": "Dettaglio scheda semplificata di esecuzione e avanzamento",
+        "MODIFICA-FASE-AVANZAMENTO-SEMP-PAGE": "Modifica scheda semplificata di esecuzione e avanzamento",
+        "NUOVA-FASE-MODIFICA-CONTRATTUALE-PAGE": "Nuova modifica contrattuale",
+        "DETTAGLIO-FASE-MODIFICA-CONTRATTUALE-PAGE": "Dettaglio modifica contrattuale",
+        "MODIFICA-FASE-MODIFICA-CONTRATTUALE-PAGE": "Modifica modifica contrattuale",
+        "NUOVA-FASE-ADESIONE-ACCORDO-QUADRO-PAGE": "Nuova scheda adesione ad accordo quadro/convenzione",
+        "DETTAGLIO-FASE-ADESIONE-ACCORDO-QUADRO-PAGE": "Dettaglio scheda adesione ad accordo quadro/convenzione",
+        "MODIFICA-FASE-ADESIONE-ACCORDO-QUADRO-PAGE": "Modifica scheda adesione ad accordo quadro/convenzione",
+        "NUOVA-FASE-STIPULA-ACCORDO-QUADRO-PAGE": "Nuova scheda stipula accordo quadro/convenzione",
+        "DETTAGLIO-FASE-STIPULA-ACCORDO-QUADRO-PAGE": "Dettaglio scheda stipula accordo quadro/convenzione",
+        "MODIFICA-FASE-STIPULA-ACCORDO-QUADRO-PAGE": "Modifica scheda adesione accordo quadro/convenzione",
+        "NUOVA-FASE-CONCLUSIONE-PAGE": "Nuova scheda conclusione del contratto",
+        "DETTAGLIO-FASE-CONCLUSIONE-PAGE": "Dettaglio scheda conclusione del contratto",
+        "MODIFICA-FASE-CONCLUSIONE-PAGE": "Modifica scheda conclusione del contratto",
+        "NUOVA-FASE-INIZIALE-SEMP-PAGE": "Nuova scheda iniziale semplificata",
+        "DETTAGLIO-FASE-INIZIALE-SEMP-PAGE": "Dettaglio scheda iniziale semplificata",
+        "MODIFICA-FASE-INIZIALE-SEMP-PAGE": "Modifica scheda iniziale semplificata",
+        "NUOVE-MISURE-AGGIUNTIVE-SICUREZZA-PAGE": "Nuove misure aggiuntive sulla sicurezza",
+        "DETTAGLIO-MISURE-AGGIUNTIVE-SICUREZZA-PAGE": "Dettaglio misure aggiuntive sulla sicurezza",
+        "MODIFICA-MISURE-AGGIUNTIVE-SICUREZZA-PAGE": "Modifica misure aggiuntive sulla sicurezza",
+        "IMPORTA-GARA-SIMOG-PAGE": "Importa da servizi ANAC/prendi in carico",
+        "IMPORT-IMPR-AGG-PAGE": "Import imprese aggiudicatarie",
+        "NUOVA-FASE-CONCLUSIONE-SEMP-PAGE": "Nuova scheda conclusione semplificata del contratto",
+        "DETTAGLIO-FASE-CONCLUSIONE-SEMP-PAGE": "Dettaglio scheda conclusione semplificata del contratto",
+        "MODIFICA-FASE-CONCLUSIONE-SEMP-PAGE": "Modifica scheda conclusione semplificata del contratto",
+        "NUOVA-FASE-ACCORDO-BONARIO-PAGE": "Nuova scheda accordo bonario",
+        "DETTAGLIO-FASE-ACCORDO-BONARIO-PAGE": "Dettaglio scheda accordo bonario",
+        "MODIFICA-FASE-ACCORDO-BONARIO-PAGE": "Modifica scheda accordo bonario",
+        "NUOVA-FASE-COLLAUDO-PAGE": "Nuova scheda di collaudo del contratto",
+        "DETTAGLIO-FASE-COLLAUDO-PAGE": "Dettaglio di scheda collaudo del contratto",
+        "MODIFICA-FASE-COLLAUDO-PAGE": "Modifica di scheda collaudo del contratto",
+        "NUOVA-FASE-SUBAPPALTO-PAGE": "Nuova scheda di subappalto",
+        "DETTAGLIO-FASE-SUBAPPALTO-PAGE": "Dettaglio scheda di subappalto",
+        "MODIFICA-FASE-SUBAPPALTO-PAGE": "Modifica scheda di subappalto",
+        "NUOVA-FASE-RECESSO-PAGE": "Nuova scheda di istanza di recesso",
+        "DETTAGLIO-FASE-RECESSO-PAGE": "Dettaglio scheda di istanza di recesso",
+        "MODIFICA-FASE-RECESSO-PAGE": "Modifica scheda di istanza di recesso",
+        "NUOVA-FASE-INIDONEITA-TECNICO-PROF-PAGE": "Nuova scheda di inidoneit\u00E0 tecnico professionale",
+        "DETTAGLIO-FASE-INIDONEITA-TECNICO-PROF-PAGE": "Dettaglio scheda di inidoneit\u00E0 tecnico professionale",
+        "MODIFICA-FASE-INIDONEITA-TECNICO-PROF-PAGE": "Modifica scheda di inidoneit\u00E0 tecnico professionale",
+        "NUOVA-FASE-INIDONEITA-CONTRIBUTIVA-PAGE": "Nuova scheda di inidoneit\u00E0 contributiva",
+        "DETTAGLIO-FASE-INIDONEITA-CONTRIBUTIVA-PAGE": "Dettaglio scheda inidoneit\u00E0 contributiva",
+        "MODIFICA-FASE-INIDONEITA-CONTRIBUTIVA-PAGE": "Modifica scheda inidoneit\u00E0 contributiva",
+        "NUOVA-FASE-INADEMPIENZE-SICUREZZA-PAGE": "Nuova scheda di inadempienze sicurezza",
+        "DETTAGLIO-FASE-INADEMPIENZE-SICUREZZA-PAGE": "Dettaglio scheda inadempienze sicurezza",
+        "MODIFICA-FASE-INADEMPIENZE-SICUREZZA-PAGE": "Modifica scheda inadempienze sicurezza",
+        "NUOVA-FASE-INFORTUNI-PAGE": "Nuova scheda infortuni",
+        "DETTAGLIO-FASE-INFORTUNI-PAGE": "Dettaglio scheda infortuni",
+        "MODIFICA-FASE-INFORTUNI-PAGE": "Modifica scheda infortuni",
+        "NUOVA-FASE-CANTIERI-PAGE": "Nuova scheda cantieri",
+        "DETTAGLIO-FASE-CANTIERI-PAGE": "Dettaglio scheda cantieri",
+        "MODIFICA-FASE-CANTIERI-PAGE": "Modifica scheda cantieri",
+        "PUBBLICA-GARA-PAGE": "Invio procedura",
+        "PUBBLICA-ATTO-PAGE": "Pubblicazione atto",
+        "PUBBLICA-FASE-LOTTO-PAGE": "Trasmissione scheda",
+        "LISTA-INVII-FASI-PAGE": "Lista invii fasi",
+        "LISTA-ATTI-LOTTO-PAGE": "Lista atti lotto",
+        "DELETE-FASE-PAGE": "Cancellazione Scheda",
+        "NUOVO-SMARTCIG-PAGE": "Nuovo SmartCIG",
+        "DETTAGLIO-SMARTCIG-PAGE": "Dettaglio SmartCIG",
+        "MODIFICA-SMARTCIG-PAGE": "Modifica SmartCIG",
+        "RICERCA-AVANZATA-ARCHIVIO-STAZIONI-APPALTANTI-PAGE": "Ricerca avanzata amministrazioni",
+        "LISTA-ARCHIVIO-STAZIONI-APPALTANTI-PAGE": "Archivio Amministrazioni",
+        "NUOVA-STAZIONE-APPALTANTE-PAGE": "Nuova Amministrazione",
+        "DETTAGLIO-STAZIONE-APPALTANTE-PAGE": "Dettaglio Amministrazione",
+        "MODIFICA-STAZIONE-APPALTANTE-PAGE": "Modifica Amministrazione",
+        "ACCORPAMENTO-LOTTI-PAGE": "Accorpamento Lotti",
+        "RIEPILOGO-ACCORPAMENTO-LOTTI-PAGE": "Riepilogo accorpamento lotti",
+        "REDIRECT-PAGE": "Redirect...",
+        "RICERCA-AVANZATA-ARCHIVIO-TECNICI-PAGE": "Ricerca avanzata archivio Soggetti",
+        "UTENTI-STAZIONE-APPALTANTE-PAGE": "Utenti",
+        "MODIFICA-UTENTI-STAZIONE-APPALTANTE-PAGE": "Modifica associazione utenti",
+        "ALL-SA": "Tutte le Stazioni Appaltanti",
+        "INTERNAL-LOGIN-PAGE": "Autenticazione interna",
+        "CHANGE-PASSWORD-PAGE": "Cambio Password",
+        "DETT-IMPRESE-AGGIUDICATARIE-PAGE": "Dettaglio impresa aggiudicataria",
+        "MODIFICA-IMPRESE-AGGIUDICATARIE-PAGE": "Modifica impresa aggiudicataria",
+        "NUOVA-IMPRESE-AGGIUDICATARIE-PAGE": "Nuova impresa aggiudicataria",
+        "RICERCA-AVANZATA-ARCHIVIO-UFFICI-PAGE": "Ricerca avanzata archivio uffici",
+        "LISTA-ARCHIVIO-UFFICI-PAGE": "Archivio Uffici",
+        "NUOVO-UFFICIO-PAGE": "Nuovo Ufficio",
+        "DETTAGLIO-UFFICIO-PAGE": "Dettaglio Ufficio",
+        "MODIFICA-UFFICIO-PAGE": "Modifica Ufficio",
+        "CHANGE-USER-PASSWORD-PAGE": "Cambia password",
+        "LISTA-DELEGHE-PAGE": "Gestisci collaboratori",
+        "NUOVO-DELEGA-PAGE": "Nuovo collaboratore",
+        "MODIFICA-DELEGA-PAGE": "Modifica collaboratore",
+        "DETTAGLIO-DELEGA-PAGE": "Dettaglio collaboratore",
+        "CREDENZIALI-SIMOG-PAGE": "Credenziali SIMOG",
+        "NUOVA-FASE-INIZ-SOTTOSCRIZIONE-CONTRATTO-PAGE":"Nuova scheda sottoscrizione contratto",
+        "DETTAGLIO-FASE-INIZ-SOTTOSCRIZIONE-CONTRATTO-PAGE":"Dettaglio scheda sottoscrizione contratto",
+        "MODIFICA-FASE-INIZ-SOTTOSCRIZIONE-CONTRATTO-PAGE":"Modifica scheda sottoscrizione contratto",
+        "NUOVA-FASE-CONCLUSIONE-AFFIDAMENTI-DIRETTI-PAGE":"Nuova scheda conclusione affidamento diretto sotto 5.000€",
+        "DETTAGLIO-FASE-CONCLUSIONE-AFFIDAMENTI-DIRETTI-PAGE":"Dettaglio scheda conclusione affidamento diretto sotto 5.000€",
+        "MODIFICA-FASE-CONCLUSIONE-AFFIDAMENTI-DIRETTI-PAGE":"Modifica scheda conclusione affidamento diretto sotto 5.000€",
+        "NUOVA-FASE-RIPRESA-PRESTAZIONE-PAGE":"Nuova scheda ripresa prestazione",
+        "MODIFICA-FASE-RIPRESA-PRESTAZIONE-PAGE":"Modifica scheda ripresa prestazione",
+        "DETTAGLIO-FASE-RIPRESA-PRESTAZIONE-PAGE":"Dettaglio scheda ripresa prestazione",        
+        "NUOVA-FASE-SUPERAMENTO-QUARTO-CONTRATTUALE-PAGE":"Nuova scheda superamento del quarto del tempo contrattuale",
+        "MODIFICA-FASE-SUPERAMENTO-QUARTO-CONTRATTUALE-PAGE":"Modifica scheda superamento del quarto del tempo contrattuale",
+        "DETTAGLIO-FASE-SUPERAMENTO-QUARTO-CONTRATTUALE-PAGE":"Dettaglio scheda superamento del quarto del tempo contrattuale",
+        "NUOVA-FASE-RICHIESTA-SUBAPPALTO-PAGE":"Nuova scheda richiesta subappalto",
+        "MODIFICA-FASE-RICHIESTA-SUBAPPALTO-PAGE":"Modifica scheda richiesta subappalto",
+        "DETTAGLIO-FASE-RICHIESTA-SUBAPPALTO-PAGE":"Dettaglio scheda richiesta subappalto",
+        "NUOVA-FASE-ESITO-SUBAPPALTO-PAGE":"Nuova scheda esito subappalto",
+        "MODIFICA-FASE-ESITO-SUBAPPALTO-PAGE":"Modifica scheda esito subappalto",
+        "DETTAGLIO-FASE-ESITO-SUBAPPALTO-PAGE":"Dettaglio scheda esito subappalto",
+        "NUOVA-FASE-CONCLUSIONE-SUBAPPALTO-PAGE":"Nuova scheda conclusione subappalto",
+        "MODIFICA-FASE-CONCLUSIONE-SUBAPPALTO-PAGE":"Modifica scheda conclusione subappalto",
+        "DETTAGLIO-FASE-CONCLUSIONE-SUBAPPALTO-PAGE":"Dettaglio scheda conclusione subappalto",
+        "NUOVA-INCARICHI-PROFESSIONALI-PAGE" : "Nuovi incarichi professionali",
+        "IMPERSONIFICA-RUP-PAGE":"Impersona RP",
+        "DATI-CONTABILITA-PAGE":"Dati contabilit\u00E0",
+        "ULTIMI-ACCESSI-PAGE": "Accessi negli ultimi 30 giorni",
+        "LISTA-ATTI-GENERALI-PAGE": "Lista degli atti generali",
+        "RICERCA-ATTI-GENERALI-PAGE": "Ricerca atti generali",
+        "NUOVO-ATTO-GENERALE-PAGE": "Carica nuovo atto",
+        "DETTAGLIO-ATTO-GENERALE-PAGE": "Dettaglio atto generale",
+        "MODIFICA-ATTO-GENERALE-PAGE": "Modifica atto generale",
+        "RICERCA-SCHEDE-TRASMESSE-PCP-PAGE": "Ricerca schede trasmesse a PCP",
+        "LISTA-SCHEDE-TRASMESSE-PCP-PAGE": "Lista schede trasmesse a PCP",
+        "RICERCA-SCHEDE-TRASMESSE-PCP-FILTRO": "Impostazioni di filtro",
+        "NUOVA-VARIAZIONE-AGGIUDICATARI-PAGE": "Nuova fase variazione aggiudicatari",
+        "MODIFICA-VARIAZIONE-AGGIUDICATARI-PAGE": "Modifica fase variazione aggiudicatari",
+        "DETTAGLIO-VARIAZIONE-AGGIUDICATARI-PAGE": "Dettaglio fase variazione aggiudicatari"
+    },
+    "BREADCRUMB": {
+        "HOME": "Home",
+        "CHOOSE-ENTE": "Selezione Stazione Appaltante",
+        "CHOOSE-PROFILE": "Selezione Profilo",
+        "NUOVO-AVVISO": "Nuovo Avviso",
+        "LISTA-AVVISI": "Lista degli avvisi",
+        "RICERCA-AVANZATA-AVVISI": "Ricerca avanzata avvisi",
+        "DETTAGLIO-AVVISO": "Dettaglio avviso",
+        "MODIFICA-AVVISO": "Modifica avviso",
+        "PUBBLICA-AVVISO": "Pubblicazione avviso",
+        "LISTA-ARCHIVIO-TECNICI": "Archivio Soggetti",
+        "NUOVO-TECNICO": "Nuovo Soggetto",
+        "DETTAGLIO-TECNICO": "Dettaglio Soggetto",
+        "MODIFICA-TECNICO": "Modifica Soggetto",
+        "HOME-AVVISI": "Avvisi",
+        "HOME-GARE": "Procedure",
+        "RICERCA-AVANZATA-GARE": "Ricerca avanzata procedure",
+        "LISTA-GARE": "Lista procedure",
+        "DETTAGLIO-GARA": "Procedura {{value}}",
+        "RICERCA-AVANZATA-ARCHIVIO-TECNICI": "Ricerca avanzata archivio Soggetti",
+        "RICERCA-AVANZATA-ARCHIVIO-IMPRESE": "Ricerca avanzata archivio imprese",
+        "LISTA-ARCHIVIO-IMPRESE": "Archivio imprese",
+        "DETTAGLIO-IMPRESA": "Dettaglio impresa",
+        "NUOVA-IMPRESA": "Nuova impresa",
+        "MODIFICA-IMPRESA": "Modifica impresa",
+        "RICERCA-AVANZATA-ARCHIVIO-CDC": "Ricerca avanzata archivio centri di costo",
+        "LISTA-ARCHIVIO-CDC": "Archivio centri di costo",
+        "NUOVO-CDC": "Nuovo centro di costo",
+        "DETTAGLIO-CDC": "Dettaglio centro di costo",
+        "MODIFICA-CDC": "Modifica centro di costo",
+        "MODIFICA-GARA": "Modifica procedura",
+        "NUOVA-GARA": "Nuova procedura",
+        "NUOVO-ATTO": "Nuovo atto",
+        "DETTAGLIO-ATTO": "Dettaglio atto",
+        "MODIFICA-ATTO": "Modifica atto",
+        "DETTAGLIO-LOTTO": "Lotto {{value}}",
+        "MODIFICA-PUBBLICITA-GARA": "Modifica pubblicit\u00E0 procedura",
+        "MODIFICA-LOTTO": "Modifica lotto",
+        "NUOVO-LOTTO": "Nuovo Lotto",
+        "NUOVA-FASE": "Nuova scheda",
+        "NUOVA-FASE-INIZIALE": "Nuova scheda iniziale",
+        "DETTAGLIO-FASE-INIZIALE": "Dettaglio scheda iniziale",
+        "MODIFICA-FASE-INIZIALE": "Modifica scheda iniziale",
+        "NUOVA-FASE-AGGIUDICAZIONE": "Nuova scheda di aggiudicazione",
+        "DETTAGLIO-FASE-AGGIUDICAZIONE": "Dettaglio scheda di aggiudicazione",
+        "MODIFICA-FASE-AGGIUDICAZIONE": "Modifica scheda di aggiudicazione",
+        "NUOVA-COMUNICAZIONE-ESITO": "Nuova comunicazione esito",
+        "DETTAGLIO-COMUNICAZIONE-ESITO": "Dettaglio comunicazione esito",
+        "MODIFICA-COMUNICAZIONE-ESITO": "Modifica comunicazione esito",
+        "LISTA-IMPRESE-AGGIUDICATARIE": "Lista imprese aggiudicatarie/affidatarie",
+        "NUOVA-IMPRESA-AGGIUDICATARIA": "Nuova impresa aggiudicataria/affidataria",
+        "DETTAGLIO-IMPRESA-AGGIUDICATARIA": "Dettaglio impresa aggiudicataria/affidataria",
+        "MODIFICA-IMPRESA-AGGIUDICATARIA": "Modifica impresa aggiudicataria/affidataria",
+        "DETTAGLIO-INCARICHI-PROFESSIONALI": "Dettaglio incarichi professionali",
+        "MODIFICA-INCARICHI-PROFESSIONALI": "Modifica incarichi professionali",
+        "NUOVA-FASE-AGGIUDICAZIONE-SEMP": "Nuova scheda di aggiudicazione semplificata",
+        "DETTAGLIO-FASE-AGGIUDICAZIONE-SEMP": "Dettaglio scheda di aggiudicazione semplificata",
+        "MODIFICA-FASE-AGGIUDICAZIONE-SEMP": "Modifica scheda di aggiudicazione semplificata",
+        "DETTAGLIO-FINANZIAMENTI": "Dettaglio finanziamenti",
+        "MODIFICA-FINANZIAMENTI": "Modifica finanziamenti",
+        "DETTAGLIO-SCHEDA-SICUREZZA": "Dettaglio scheda sicurezza",
+        "MODIFICA-SCHEDA-SICUREZZA": "Modifica scheda sicurezza",
+        "NUOVA-SCHEDA-SICUREZZA": "Nuova scheda sicurezza",
+        "LISTA-ELENCO-IMPR-INV-PARTE": "Elenco imprese invitate/partecipanti",
+        "NUOVA-IMPR-INV-PARTE": "Nuova impresa invitata/partecipante",
+        "DETTAGLIO-IMPR-INV-PARTE": "Dettaglio impresa invitata/partecipante",
+        "MODIFICA-IMPR-INV-PARTE": "Modifica impresa invitata/partecipante",
+        "NUOVA-FASE-AVANZAMENTO": "Nuova scheda di esecuzione e avanzamento",
+        "DETTAGLIO-FASE-AVANZAMENTO": "Dettaglio scheda di esecuzione e avanzamento",
+        "MODIFICA-FASE-AVANZAMENTO": "Modifica scheda di esecuzione e avanzamento",
+        "NUOVA-FASE-SOSPENSIONE": "Nuova scheda di sospensione",
+        "DETTAGLIO-FASE-SOSPENSIONE": "Dettaglio scheda di sospensione",
+        "MODIFICA-FASE-SOSPENSIONE": "Modifica scheda di sospensione",
+        "NUOVA-FASE-AVANZAMENTO-SEMP": "Nuova scheda semplificata di esecuzione e avanzamento",
+        "DETTAGLIO-FASE-AVANZAMENTO-SEMP": "Dettaglio scheda semplificata di esecuzione e avanzamento",
+        "MODIFICA-FASE-AVANZAMENTO-SEMP": "Modifica scheda semplificata di esecuzione e avanzamento",
+        "NUOVA-FASE-MODIFICA-CONTRATTUALE": "Nuova modifica contrattuale",
+        "DETTAGLIO-FASE-MODIFICA-CONTRATTUALE": "Dettaglio modifica contrattuale",
+        "MODIFICA-FASE-MODIFICA-CONTRATTUALE": "Modifica modifica contrattuale",
+        "NUOVA-FASE-ADESIONE-ACCORDO-QUADRO": "Nuova scheda adesione ad accordo quadro/convenzione",
+        "DETTAGLIO-FASE-ADESIONE-ACCORDO-QUADRO": "Dettaglio scheda adesione ad accordo quadro/convenzione",
+        "MODIFICA-FASE-ADESIONE-ACCORDO-QUADRO": "Modifica scheda adesione ad accordo quadro/convenzione",
+        "NUOVA-FASE-STIPULA-ACCORDO-QUADRO": "Nuova scheda stipula accordo quadro/convenzione",
+        "DETTAGLIO-FASE-STIPULA-ACCORDO-QUADRO": "Dettaglio scheda stipula accordo quadro/convenzione",
+        "MODIFICA-FASE-STIPULA-ACCORDO-QUADRO": "Modifica scheda stipula accordo quadro/convenzione",
+        "NUOVA-FASE-CONCLUSIONE": "Nuova scheda conclusione del contratto",
+        "DETTAGLIO-FASE-CONCLUSIONE": "Dettaglio scheda conclusione del contratto",
+        "MODIFICA-FASE-CONCLUSIONE": "Modifica scheda conclusione del contratto",
+        "NUOVA-FASE-INIZIALE-SEMP": "Nuova scheda iniziale semplificata",
+        "DETTAGLIO-FASE-INIZIALE-SEMP": "Dettaglio scheda iniziale semplificata",
+        "MODIFICA-FASE-INIZIALE-SEMP": "Modifica scheda iniziale semplificata",
+        "NUOVE-MISURE-AGGIUNTIVE-SICUREZZA": "Nuove misure aggiuntive sulla sicurezza",
+        "DETTAGLIO-MISURE-AGGIUNTIVE-SICUREZZA": "Dettaglio misure aggiuntive sulla sicurezza",
+        "MODIFICA-MISURE-AGGIUNTIVE-SICUREZZA": "Modifica misure aggiuntive sulla sicurezza",
+        "IMPORTA-GARA-SIMOG": "Importa da servizi ANAC/prendi in carico",
+        "IMPORT-IMPR-AGG": "Import imprese aggiudicatarie",
+        "NUOVA-FASE-CONCLUSIONE-SEMP": "Nuova scheda conclusione semplificata del contratto",
+        "DETTAGLIO-FASE-CONCLUSIONE-SEMP": "Dettaglio scheda conclusione semplificata del contratto",
+        "MODIFICA-FASE-CONCLUSIONE-SEMP": "Modifica scheda conclusione semplificata del contratto",
+        "NUOVA-FASE-ACCORDO-BONARIO": "Nuova scheda accordo bonario",
+        "DETTAGLIO-FASE-ACCORDO-BONARIO": "Dettaglio scheda accordo bonario",
+        "MODIFICA-FASE-ACCORDO-BONARIO": "Modifica scheda accordo bonario",
+        "NUOVA-FASE-COLLAUDO": "Nuova scheda di collaudo del contratto",
+        "DETTAGLIO-FASE-COLLAUDO": "Dettaglio scheda di collaudo del contratto",
+        "MODIFICA-FASE-COLLAUDO": "Modifica scheda di collaudo del contratto",
+        "NUOVA-FASE-SUBAPPALTO": "Nuova scheda di subappalto",
+        "DETTAGLIO-FASE-SUBAPPALTO": "Dettaglio scheda di subappalto",
+        "MODIFICA-FASE-SUBAPPALTO": "Modifica scheda di subappalto",
+        "NUOVA-FASE-RECESSO": "Nuova scheda di istanza di recesso",
+        "DETTAGLIO-FASE-RECESSO": "Dettaglio scheda di istanza di recesso",
+        "MODIFICA-FASE-RECESSO": "Modifica scheda di istanza di recesso",
+        "NUOVA-FASE-INIDONEITA-TECNICO-PROF": "Nuova scheda di inidoneit\u00E0 tecnico professionale",
+        "DETTAGLIO-FASE-INIDONEITA-TECNICO-PROF": "Dettaglio scheda di inidoneit\u00E0 tecnico professionale",
+        "MODIFICA-FASE-INIDONEITA-TECNICO-PROF": "Modifica scheda di inidoneit\u00E0 tecnico professionale",
+        "NUOVA-FASE-INIDONEITA-CONTRIBUTIVA": "Nuova scheda di inidoneit\u00E0 contributiva",
+        "DETTAGLIO-FASE-INIDONEITA-CONTRIBUTIVA": "Dettaglio scheda inidoneit\u00E0 contributiva",
+        "MODIFICA-FASE-INIDONEITA-CONTRIBUTIVA": "Modifica scheda inidoneit\u00E0 contributiva",
+        "NUOVA-FASE-INADEMPIENZE-SICUREZZA": "Nuova scheda di inadempienze sicurezza",
+        "DETTAGLIO-FASE-INADEMPIENZE-SICUREZZA": "Dettaglio scheda inadempienze sicurezza",
+        "MODIFICA-FASE-INADEMPIENZE-SICUREZZA": "Modifica scheda inadempienze sicurezza",
+        "NUOVA-FASE-INFORTUNI": "Nuova scheda infortuni",
+        "DETTAGLIO-FASE-INFORTUNI": "Dettaglio scheda infortuni",
+        "MODIFICA-FASE-INFORTUNI": "Modifica scheda infortuni",
+        "NUOVA-FASE-CANTIERI": "Nuova scheda cantieri",
+        "DETTAGLIO-FASE-CANTIERI": "Dettaglio scheda cantieri",
+        "MODIFICA-FASE-CANTIERI": "Modifica scheda cantieri",
+        "PUBBLICA-GARA": "Invio procedura",
+        "PUBBLICA-ATTO": "Pubblicazione atto",
+        "PUBBLICA-FASE": "Trasmissione scheda",
+        "LISTA-INVII-FASI": "Lista invii fasi",
+        "LISTA-ATTI-LOTTO": "Lista atti lotto",
+        "DELETE-FASE": "Cancellazione Scheda",
+        "NUOVO-SMARTCIG": "Nuovo SmartCIG",
+        "DETTAGLIO-SMARTCIG": "Dettaglio SmartCIG",
+        "MODIFICA-SMARTCIG": "Modifica SmartCIG",
+        "RICERCA-AVANZATA-ARCHIVIO-STAZIONI-APPALTANTI": "Ricerca avanzata amministrazioni",
+        "LISTA-ARCHIVIO-STAZIONI-APPALTANTI": "Archivio Amministrazioni",
+        "NUOVA-STAZIONE-APPALTANTE": "Nuova Amministrazione",
+        "DETTAGLIO-STAZIONE-APPALTANTE": "Dettaglio Amministrazione",
+        "MODIFICA-STAZIONE-APPALTANTE": "Modifica Amministrazione",
+        "ACCORPAMENTO-LOTTI": "Accorpamento Lotti",
+        "UTENTI-STAZIONE-APPALTANTE": "Utenti",
+        "MODIFICA-UTENTI-STAZIONE-APPALTANTE": "Modifica associazione utenti",
+        "GESTIONE-SMARTCIG": "Compilazione di uno nuovo SmartCIG",
+        "IMPORTA-SMARTCIG": "Importa SmartCIG",
+        "CONFIGURAZIONE-UTENTE": "Configurazione utente",
+        "MODIFICA-CONFIGURAZIONE-UTENTE": "Modifica configurazione utente",
+        "RICERCA-AVANZATA-ARCHIVIO-UFFICI": "Ricerca avanzata archivio uffici",
+        "LISTA-ARCHIVIO-UFFICI": "Archivio Uffici",
+        "NUOVO-UFFICIO": "Nuovo Ufficio",
+        "DETTAGLIO-UFFICIO": "Dettaglio Ufficio",
+        "MODIFICA-UFFICIO": "Modifica Ufficio",
+        "CHANGE-USER-PASSWORD": "Cambia password",
+        "LISTA-DELEGHE": "Gestisci collaboratori",
+        "NUOVO-DELEGA": "Nuovo collaboratore",
+        "MODIFICA-DELEGA": "Modifica collaboratore",
+        "DETTAGLIO-DELEGA": "Dettaglio collaboratore",
+        "CREDENZIALI-SIMOG": "Credenziali SIMOG",
+        "RIEPILOGO-ACCORPAMENTO-LOTTI":"Riepilogo accorpamento lotti",
+        "NUOVA-FASE-INIZ-SOTTOSCRIZIONE-CONTRATTO":"Nuova scheda sottoscrizione contratto",
+        "DETTAGLIO-FASE-INIZ-SOTTOSCRIZIONE-CONTRATTO":"Dettaglio scheda sottoscrizione contratto",
+        "MODIFICA-FASE-INIZ-SOTTOSCRIZIONE-CONTRATTO":"Modifica scheda sottoscrizione contratto",
+        "NUOVA-FASE-CONCLUSIONE-AFFIDAMENTI-DIRETTI":"Nuova scheda Conclusione affidamento diretto sotto 5.000€",
+        "DETTAGLIO-FASE-CONCLUSIONE-AFFIDAMENTI-DIRETTI":"Dettaglio scheda Conclusione affidamento diretto sotto 5.000€",
+        "MODIFICA-FASE-CONCLUSIONE-AFFIDAMENTI-DIRETTI":"Modifica scheda Conclusione affidamento diretto sotto 5.000€",
+        "NUOVA-FASE-RIPRESA-PRESTAZIONE":"Nuova scheda ripresa prestazione",
+        "MODIFICA-FASE-RIPRESA-PRESTAZIONE":"Modifica scheda ripresa prestazione",
+        "DETTAGLIO-FASE-RIPRESA-PRESTAZIONE":"Dettaglio scheda ripresa prestazione",
+        "NUOVA-FASE-SUPERAMENTO-QUARTO-CONTRATTUALE":"Nuova scheda superamento del quarto del tempo contrattuale",
+        "MODIFICA-FASE-SUPERAMENTO-QUARTO-CONTRATTUALE":"Modifica scheda superamento del quarto del tempo contrattuale",
+        "DETTAGLIO-FASE-SUPERAMENTO-QUARTO-CONTRATTUALE":"Dettaglio scheda superamento del quarto del tempo contrattuale",
+        "NUOVA-FASE-RICHIESTA-SUBAPPALTO":"Nuova scheda richiesta subappalto",
+        "MODIFICA-FASE-RICHIESTA-SUBAPPALTO":"Modifica scheda richiesta subappalto",
+        "DETTAGLIO-FASE-RICHIESTA-SUBAPPALTO":"Dettaglio scheda richiesta subappalto",
+        "NUOVA-FASE-ESITO-SUBAPPALTO":"Nuova scheda esito subappalto",
+        "MODIFICA-FASE-ESITO-SUBAPPALTO":"Modifica scheda esito subappalto",
+        "DETTAGLIO-FASE-ESITO-SUBAPPALTO":"Dettaglio scheda esito subappalto",
+        "NUOVA-FASE-CONCLUSIONE-SUBAPPALTO":"Nuova scheda conclusione subappalto",
+        "MODIFICA-FASE-CONCLUSIONE-SUBAPPALTO":"Modifica scheda conclusione subappalto",
+        "DETTAGLIO-FASE-CONCLUSIONE-SUBAPPALTO":"Dettaglio scheda conclusione subappalto",
+        "NUOVA-INCARICHI-PROFESSIONALI" : "Nuovi incarichi professionali",
+        "IMPERSONIFICA-RUP":"Impersona RP",
+        "ULTIMI-ACCESSI": "Ultimi accessi",
+        "LISTA-ATTI-GENERALI": "Lista atti generali",
+        "RICERCA-ATTI-GENERALI": "Ricerca atti generali",
+        "NUOVO-ATTO-GENERALE": "Carica nuovo atto",
+        "DETTAGLIO-ATTO-GENERALE": "Dettaglio atto generale",
+        "MODIFICA-ATTO-GENERALE": "Modifica atto generale",
+        "RICERCA-SCHEDE-TRASMESSE-PCP": "Ricerca schede trasmesse a PCP",
+        "LISTA-SCHEDE-TRASMESSE-PCP": "Lista schede trasmesse a PCP",
+        "NUOVA-VARIAZIONE-AGGIUDICATARI": "Nuova fase variazione aggiudicatari",
+        "MODIFICA-VARIAZIONE-AGGIUDICATARI": "Modifica fase variazione aggiudicatari",
+        "DETTAGLIO-VARIAZIONE-AGGIUDICATARI": "Dettaglio fase variazione aggiudicatari"
+    },
+    "HEADER-MID": {
+        "FOLLOWUS-TITLE": "Seguici su:",
+        "SEARCH": "Cerca e vai...",
+        "SEARCH-CATEGORY-TECNICO": "Soggetti",
+        "SEARCH-CATEGORY-IMPRESE": "Imprese",
+        "SEARCH-CATEGORY-CDC": "Centri di Costo",
+        "SEARCH-CATEGORY-GARE": "Procedure",
+        "SEARCH-CATEGORY-AVVISI": "Avvisi"
+    },
+    "MENU": {
+        "HOME": "Home",
+        "ARCHIVI": "Archivi",
+        "ARCHIVIO-TECNICI": "Archivio Soggetti",
+        "ARCHIVIO-UFFICI": "Archivio Uffici",
+        "UTILITA": "Utilit\u00E0",
+        "MANUALI": "Manuali",
+        "ARCHIVIO-IMPRESE": "Archivio Imprese",
+        "ARCHIVIO-CENTRI-DI-COSTO": "Archivio Centri di Costo",
+        "ARCHIVIO-STAZIONI-APPALTANTI": "Archivio Amministrazioni",
+        "GRAFICA": "Grafica",
+        "INFO": "Info",
+        "ASSISTENZA": "Ottieni supporto",
+        "ASSISTENZA-EXTERNAL": "Richiedi assistenza",
+        "GESTIONE-COLLABORATORI": "Gestione collaboratori",
+        "STRUMENTI": "Strumenti",
+        "IMPERSONIFICA-RUP":"Impersona RP"
+    },
+    "FOOTER": {
+        "SITENAME-TITLE": "Sistema informativo telematico appalti toscana",
+        "SITENAME-SUBTITLE": "Regione Toscana",
+        "SITENAME-DESCRIPTION": "Osservatorio contratti pubblici",
+        "LINK-PRIVACY": "Privacy policy",
+        "LINK-NOTE": "Note legali",
+        "LINK-CONTATTI": "Contatti",
+        "CONTACTS": {
+            "PHONE": "Telefono:",
+            "CODICE-FISCALE": "Codice Fiscale:",
+            "PEC": "PEC:",
+            "CONTATTI-STAMPA": "Contatti Stampa:"
+        },
+        "CONTACTS-TITLE": "Contatti",
+        "VERTICAL-LINKS-TITLE": "Links"
+    },
+    "ERRORS": {
+        "NO-USER": "L'utente {{utente}} non \u00E8 accreditato per accedere all'applicativo.",
+        "NO-SA": "Nessuna Stazione Appaltante abilitata per l'utente corrente.",
+        "NO-VALID-SA": "La Stazione Appaltante selezionata non \u00E8 abilitata per l'utente corrente.",
+        "UNEXPECTED-ERROR": "Si \u00E8 verificato un errore durante l'operazione.",
+        "unexpected-error": "Si \u00E8 verificato un errore durante l'operazione.",
+        "ERROR-PERMISSION": "L'utente non possiede i permessi per questa risorsa.",
+        "EXISTING-CF": "Il Codice Fiscale inserito \u00E8 gi\u00E0 utilizzato",
+        "INVALID_CF": "Il Codice Fiscale inserito non \u00E8 valido",
+        "INVALID_CF_LEGALE": "Il Codice Fiscale inserito per il legale rappresentante non \u00E8 valido",
+        "PUBLISH-FAILURE": "Si sono riscontrati problemi nella validazione dei dati. Si prega di utilizzare la funzionalit\u00E0 di verifica.",
+        "PUBLISH-FAILURE-GARA": "Si sono riscontrati problemi nella pubblicazione della procedura",
+        "TIPO_APP_NON_COMPATIBILE": "La modalit\u00E0 di realizzazione specificata non \u00E8 compatibile con le fasi gi\u00E0 create",
+        "GARA-NON-MIGRATA": "Non \u00E8 stato possibile migrare la procedura, in quanto non risulta cambiata la stazione appaltante presso i servizi SIMOG.",
+        "MIGRAZIONE-GARA-NO-LOTTI": "Non \u00E8 possibile effettuare la migrazione della procedura. La procedura non ha lotti.",
+        "SA-NON-ESISTENTE": "Errore durante la migrazione della procedura. La Stazione Appaltante di destinazione non esiste.",
+        "SA-NON-ABILITATA": "Errore durante la migrazione della procedura. La Stazione Appaltante di destinazione non \u00E8 abilitata per l'utente.",
+        "ERROR-IMPRESA-GIA-IMPORTATA": "Errore durante l'import dell'impresa. L'impresa \u00E8 gi\u00E0 stata importata",
+        "ERROR-CIG-GIA-INSERITO": "Errore durante la creazione dello SmartCIG. Lo smartCIG {{0}} \u00E8 gi\u00E0 presente in archivio.",
+        "ERROR-CIG-GIA-INSERITO-SA": "Errore durante la creazione dello SmartCIG. Lo smartCIG {{0}} \u00E8 presente nell'archivio dell'ente {{1}}.",
+        "ERROR_PRESA_IN_CARICO_DELEGA": "Errore durante la presa in carico di una procedura delegata. La Stazione Appaltante delegata non ha ancora completato la trasmissione delle schede assegnate.",
+        "INIZ_ADESIONE_GARA_NOT_FOUND": "CIG accordo quadro non corretto",
+        "INIZ_ADESIONE_AGGIUDICAZIONE_NOT_FOUND": "La scheda di aggiudicazione dell'accordo quadro per il CIG non \u00E8 stata confermata in SIMOG",
+        "ID_INDIZIONE_MANDATORY": "Il campo Modalit\u00E0 indizione \u00E8 obbligatorio",
+        "SIMOG_RIC_004": "Il CIG padre non \u00E8 consultabile in quanto di competenza di altra regione. Non potranno potranno essere riportati i suoi dati",
+        "SA-NOT-FOUND": "Non \u00E8 stata trovata la stazione appaltante utilizzata per la richiesta",
+        "EXISTING_PARTITA_IVA": "La partita IVA inserita \u00E8 gi\u00E0 utilizzata",
+        "INVALID_PARTITA_IVA": "La partita IVA inserita non \u00E8 valida",
+        "NO_LOGIN_SIMOG": "Si \u00E8 verificato un errore nella login ai servizi SIMOG.",
+        "NO_VALID_INDEX": "L'utente inserito non dispone dei permessi necessari.",
+        "PUBBLICAZIONI-NO-ATTI": "Nessun atto da pubblicare",
+        "WRONG-PROFILE-SA": "Il profilo selezionato non \u00E8 compatibile con la selezione di tutte le stazioni appaltanti",
+        "ERROR_ENTITY_HAS_CONNECTIONS": "Errore durante la cancellazione. L'entit\u00E0 risulta collegata ad una o pi\u00F9 collezioni.",
+        "NOT-FOUND": "L'elemento selezionato non \u00E8 stato trovato",
+        "ERROR-NUM-IMPRESE": "Indicare le imprese esecutrici. Se in proprio, indicare Tipologia=Impresa singola",
+        "NO-PROFILES": "Nessun profilo associato all'utente",
+        "ERROR-NO-PUBBLICAZIONE-AVVISO": "Attenzione l'avviso non \u00E8 presente nel sistema di pubblicazione",
+        "ERROR-NO-PUBBLICAZIONE-ATTO": "Attenzione l'atto non \u00E8 presente nel sistema di pubblicazione",
+        "NO-ATTO-ESITO":"Errore: non \u00E8 possibile creare la fase di aggiudicazione prima dell'invio dell'atto di esito dell'aggiudicazione",
+        "NO-ATTO-ESITO-WARNING":"Attenzione: non \u00E8 ancora stato effettuato l'invio dell'atto di esito dell'aggiudicazione",
+        "ERROR-INVALID-VALUE":"Valore invalido",
+        "ERROR-PERMISSION-LOA": "L'utente non possiede i permessi (loa) per questa risorsa.",
+        "ERROR-PERMISSION-SA": "Nessuna Stazione Appaltante abilitata per l'utente corrente.",
+        "ERROR-PERMISSION-SA-PCP": "La Stazione Appaltante attiva non è associata a questo appalto in PCP",
+        "ERROR-ALREADY-EXIST": "Appalto già esistente",
+        "ERROR-SCHEDA-WAITING-PCP":"Una delle schede precedenti è ancora in attesa di conferma da parte dei servizi ANAC. Riprovare l'operazione in un secondo momento",
+        "ERROR-NOT-FOUND-IN-PCP": "La ricerca non ha dato esito. Se si è sicuri del valore inserito, provare ad immettere l'ID appalto",
+        "ERROR-PERMISSION-IDP": "È necessario eseguire la login tramite un sistema di autenticazione SSO che si appoggi a SPID o CIE con livello di autenticazione maggiore o uguale a L2 per poter inviare i dati a PCP.",
+        "ERROR-FUNCTION-NOT-AVAILABLE": "Funzione non disponibile",
+        "ERROR-PERMISSION-PCP": "Permessi insufficienti",
+        "PRESA-CARICO-COMPLETE":"La presa in carico sui sistemi ANAC è stata effettuata correttamente",
+        "ERROR-STATO-APPALTO-PCP": "Lo stato dell'appalto non risulta pubblicato",
+        "ERROR-NO-CIG-PCP": "Si è verificato un problema durante l'importazione: non risulta alcun CIG associato all'appalto",
+        "ERROR-INVALID-CF-IMPR": "Errore nel formato del codice fiscale dell'operato economico: {{0}}",
+        "ERROR-RIALLINEA-ANAC-S4": "ATTENZIONE: le schede già inserite sono incompatibili con i dati presenti in ANAC. Cancellare se possibile le schede",
+        "ERROR_APPALTO_ANNULLATO":"L'appalto specificato è annullato. Non è possibile preseguire con l'importazione",
+        "ERROR-PCP-CONFERMA-ESITO-OP":"ATTENZIONE: l'operazione di conferma della scheda non è andata a buon fine",
+        "ERROR-PCP-PRESA-CARICO-NO-IDAPPALTO":"Per  effettuare la presa in carico di un appalto è necessario fornire l'id appalto",
+        "ERROR-FORMAT-NOT-VALID":"Il testo inserito contiene caratteri non consentiti. Rimuovi eventuali tag HTML o codice speciale."
+
+    },
+    "HOME-PAGE": {
+        "HEADER-TITLE-CONTENT": "Gestione Appalti",
+        "HEADER-DESCRIPTION": "Compilazione e trasmissione all'Osservatorio dei Contratti Pubblici e/o ad ANAC di dati e atti inerenti alle procedure d'appalto",
+        "SEARCH-FIELD": "Ricerca",
+        "ATTI-PROCEDURE": "Atti e procedure d'interesse",
+        "AVVISI": "Avvisi",
+        "GARE": "Procedure",
+        "CARDS-HEADER": "Funzioni principali"
+    },
+    "HOME-AVVISI-PAGE": {
+        "HEADER-TITLE-CONTENT": "Comunicazioni di avvisi",
+        "HEADER-DESCRIPTION": "Modulo applicativo in cui \u00E8 possibile inserire e pubblicare avvisi per procedure senza CIG o per le quali non \u00E8 ancora stato richiesto il CIG",
+        "CARDS-HEADER": "Funzioni principali",
+        "NUOVO-AVVISO": "Compilazione di un nuovo avviso",
+        "RICERCA-AVANZATA": "Ricerca avanzata",
+        "VISUALIZZA-AVVISI": "Visualizza avvisi"
+    },
+    "HOME-GARE-PAGE": {
+        "HEADER-TITLE-CONTENT": "Comunicazioni di eventi di contratti e pubblicit\u00E0 delle procedure d'appalto",
+        "HEADER-DESCRIPTION": "Modulo applicativo in cui \u00E8 possibile inserire eventi ed atti relativi a contratti di lavori, forniture e servizi",
+        "SEARCH-FIELD": "Ricerca in procedure",
+        "CARDS-HEADER": "Funzioni Principali",
+        "RICERCA-AVANZATA": "Ricerca Avanzata",
+        "VISUALIZZA-GARE": "Visualizza Procedure",
+        "SCHEDE-TRASMESSE-PCP": "Schede trasmesse a PCP",
+        "IMPORT-SIMOG": "Importa da servizi ANAC/prendi in carico",
+        "NUOVA-GARA": "Nuova procedura",
+        "NUOVO-SMART-CIG": "Nuovo SmartCIG"
+    },
+    "HOME-ATTI-GENERALI-PAGE": {
+        "HEADER-TITLE-CONTENT": "Atti di carattere generale",
+        "HEADER-DESCRIPTION": "Modulo applicativo in cui \u00E8 possibile compilare e pubblicare in Amministrazione Trasparente atti e informazioni di carattere generale e manifestazioni di interesse e altri avvisi a scadenza.",
+        "NUOVO-ATTO": "Carica nuovo atto",
+        "VISUALIZZA-ATTI": "Visualizza atti",
+        "RICERCA-ATTI": "Ricerca atti",
+        "GENERA-URL-ANAC": "Genera URL per ANAC"
+    },
+    "RICERCA-AVANZATA-AVVISI": {
+        "NUMERO-PROGRESSIVO-AVVISO": "Numero Progressivo Avviso",
+        "TIPOLOGIA-AVVISO": "Tipologia avviso",
+        "DATA-AVVISO-DA": "Data avviso da",
+        "DATA-AVVISO-A": "Data avviso a",
+        "DATA-SCADENZA-DA": "Data scadenza da",
+        "DATA-SCADENZA-A": "Data scadenza a",
+        "DESCRIZIONE-AVVISO": "Descrizione",
+        "CIG": "CIG",
+        "CUP": "CUP",
+        "AVVISI-DATA": "Dati dell'avviso",
+        "STAZIONE-APPALTANTE": "Stazione Appaltante"
+    },
+    "DETTAGLIO-AVVISO": {
+        "STAZIONE-APPALTANTE": "Stazione appaltante",
+        "NUMERO-AVVISO": "Numero progressivo avviso",
+        "RUP": "RUP",
+        "CIG": "CIG",
+        "CUP": "Codice CUP",
+        "CUI": "Numero intervento CUI",
+        "TIPOLOGIA": "Tipologia avviso",
+        "DESCRIZIONE": "Descrizione avviso",
+        "DATA-AVVISO": "Data avviso",
+        "DATA-SCADENZA": "Data scadenza",
+        "GENERAL-DATA": "Dati generali",
+        "EXTERNAL-DATA": "Riferimenti sistemi esterni",
+        "AVVISI-DATA": "Dati dell'avviso",
+        "DOCUMENTS-DATA": "Atti e documenti allegati",
+        "TAB-DATI-TITLE": "Dati avviso",
+        "TAB-PUBB-TITLE": "Pubblicazioni"
+    },
+    "PUBBLICA-AVVISO": {
+        "PRIMA-PUBBLICAZIONE": "Primo invio in data",
+        "RETTIFICA-PUBBLICAZIONE": "Rettifica o integrazione in data",
+        "AVVISO-PUBBLICATO": "Avviso pubblicato con successo"
+    },
+    "BUTTONS": {
+        "BACK": "Indietro",
+        "ANNULLA": "Annulla",
+        "CLEAN": "Reimposta",
+        "CLEAN-FILTERS": "Reimposta tutti i filtri",
+        "SET-FILTERS": "Imposta filtro",
+        "SEARCH": "Cerca",
+        "VERIFY": "Verifica dati scheda",
+        "PUBLISH": "Invia",
+        "TRANSMIT": "Trasmetti",
+        "UPDATE": "Modifica",
+        "SAVE": "Salva",
+        "CLOSE": "Chiudi",
+        "CLICCA": "Clicca qui",
+        "NUOVO": "Nuovo",
+        "ELIMINA": "Elimina",
+        "SET": "Conferma",
+        "DETTAGLIO": "Dettaglio",
+        "PROSEGUI": "Prosegui",
+        "IMPORTA": "Importa",
+        "MESSAGGI-INVIATI": "Messaggi inviati",
+        "MESSAGGI-IN-ARRIVO": "Messaggi in arrivo",
+        "NUOVO-MESSAGGIO": "Nuovo Messaggio",
+        "INVIA-MESSAGGIO": "Invia Messaggio",
+        "MENU": "Men\u00F9",
+        "CHECK-DATA": "Controlla dati inseriti",
+        "CAMBIA-RUP": "Cambia RUP",
+        "CAMBIA-REFERENTE": "Cambia Referente",
+        "RIALLINEA-SIMOG": "Riallinea al SIMOG",
+        "ALTRE-AZIONI": "Altre Azioni",
+        "MIGRAZIONE-GARA": "Migrazione Procedura",
+        "ARCHIVIAZIONE-GARA": "Archiviazione Procedura",
+        "ANNULLA-ARCHIVIAZIONE-GARA": "Annulla archiviazione Procedura",
+        "VERIFY-INVIO": "Verifica dati",
+        "INVIA": "Invia",
+        "RIAGGIUDICAZIONE": "Riaggiudicazione",
+        "ACCORPAMENTO-LOTTI": "Accorpamento Lotti",
+        "CONTINUA": "Continua",
+        "TERMINA": "Termina",
+        "POPUP": "Apri in popup",
+        "SEND": "Invia",
+        "EXPORT-CSV": "Esporta in CSV",
+        "PUBBLICA-TUTTO": "Pubblica tutti gli atti",
+        "SAVE-AND-PUBLISH": "Salva e invia",
+        "ULTERIORI-OPZIONI": "Ulteriori opzioni",
+        "ELIMINA-FLUSSI": "Elimina Flussi",
+        "REDIRECT-LINK-SCP": "Link di pubblicazione",
+        "YES": "Si",
+        "NO": "No",
+        "UNLOCK-FIELD": "Sblocca campo",
+        "DOWNLOAD-CSV": "Scarica CSV",
+        "REPORT-INDICATORI": "Report indicatori",
+        "MATRICE-ATTI": "Matrice atti/lotti",
+        "SELECT-ALL": "Seleziona tutto",
+        "UNSELECT-ALL": "Deseleziona tutto",
+        "EXPAND": "Espandi",
+        "COLLAPSE": "Collassa",
+        "DELEGA":"Assegna/cambia responsabile di fase",
+        "RIALLINEA": "Riallinea ad ANAC",
+        "PRESA-CARICO": "Presa in carico",
+        "DATI-CONTABILITA": "Visualizza dati contabilit\u00E0",
+        "PUBBLICA": "Pubblica",
+        "PROGRAMMA-PUBBLICAZIONE": "Programma la pubblicazione",
+        "ANNULLA-PUBBLICAZIONE": "Annulla pubblicazione",
+        "CREATE": "Nuovo",
+        "DOWNLOAD": "Scarica",
+        "EDIT": "Modifica",
+        "SIGN":"Verifica firma documento"
+    },
+    "LIST":{        
+        "ACTIONS": "Azioni",
+        "DELETE": "Elimina",
+        "DOWNLOAD": "Scarica"
+    },
+    "AVVISO": {
+        "STAZIONE-APPALTANTE": "Stazione Appaltante",
+        "NUMERO-AVVISO": "Numero progressivo avviso",
+        "RUP": "RUP",
+        "RUP-OBBLIGATORIO": "Il campo RUP \u00E8 obbligatorio.",
+        "CIG": "CIG",
+        "CUP": "Codice CUP",
+        "CUI": "Numero intervento CUI",
+        "TIPOLOGIA": "Tipologia avviso",
+        "TIPOLOGIA-OBBLIGATORIA": "Il campo Tipologia \u00E8 obbligatorio.",
+        "DESCRIZIONE": "Descrizione avviso",
+        "DESCRIZIONE-OBBLIGATORIA": "Il campo Descrizione \u00E8 obbligatorio.",
+        "DATA-AVVISO": "Data avviso",
+        "DATA-AVVISO-OBBLIGATORIA": "Il campo Data avviso \u00E8 obbligatorio.",
+        "DATA-SCADENZA": "Data scadenza",
+        "GENERAL-DATA": "Dati generali",
+        "EXTERNAL-DATA": "Riferimenti sistemi esterni",
+        "AVVISI-DATA": "Dati dell'avviso",
+        "DOCUMENTS-DATA": "Atti e documenti allegati",
+        "UPLOAD-FILE": "Upload File",
+        "UPLOAD-URL": "Inserire URL",
+        "URL": "URL",
+        "CHOOSE-FILE": "Scegli File",
+        "TITOLO-DOCUMENT": "Titolo documento (*)",
+        "DATI-RUP": "Dati anagrafici",
+        "DATI-STAZIONE-APPALTANTE": "Dati Stazione Appaltante",
+        "EXISTING-DOCUMENTS": "Documenti Esistenti",
+        "UBICAZIONE": "Ubicazione",
+        "INDIRIZZO": "Indirizzo",
+        "COMUNE": "Comune",
+        "PROVINCIA": "Provincia"
+    },
+    "VALIDATORS": {
+        "MANDATORY": "Il campo \u00E8 obbligatorio",
+        "NUMERO-CARATTERI-INSERITI-NON-VALIDO": "Numero di caratteri inseriti non valido",
+        "DOCUMENTS-MANDATORY": "\u00C8 obbligatorio inserire almeno un documento, e per questo documento deve essere presente il titolo e l'URL oppure il FILE",
+        "DOCUMENTS-URL-ERRATO": "Il campo URL deve iniziare per http:// o https://",
+        "FORM-NON-COMPILATA": "\u00C8 necessario compilare la form",
+        "FORM-MODIFICA-NON-COMPILATA": "\u00C8 necessario modificare almeno un campo",
+        "FORM-INSERIMENTO-NUOVO-ALLEGATO": "Inserire almeno un documento",
+        "FORM-MODIFICA-DOCUMENTI-NON-PRESENTI": "Inserire almeno un documento",
+        "MAX-FILE-SIZE": "Il file selezionato supera la dimensione massima consentita.",
+        "DOCUMENTS-FILE-MANDATORY": "Per il documento indicato \u00E8 obbligatorio inserire sia il titolo che il FILE.",
+        "FORMATO-CIG-NON-VALIDO": "Il formato del CIG inserito non \u00E8 valido.",
+        "WRONG-EXTENSION": "L'estensione del file selezionato non \u00E8 ammessa. Si prega di selezionare un file corretto",
+        "MOTIVAZIONE-CANCELLAZIONE-LOGICA-OBBLIGATORIA": "Inserire la causa per la richiesta di cancellazione della scheda",
+        "CAMPO-OBBLIGATORIO-PARAMS": "Il campo \"{{ campo }}\" \u00E8 obbligatorio",
+        "IMPORT-GARA-VALORE-NON-VALIDO": "Valore immesso non valido",
+        "DATA-ANTECEDENTE": "Inserire una data successiva alla data attuale"
+    },
+    "DIALOG": {
+        "DELETE-TITLE": "Cancellazione elemento",
+        "DELETE-TEXT": "Sei sicuro di voler eliminare l'elemento?",
+        "CANCEL-ACTION": "NO",
+        "CONFIRM-ACTION": "SI",
+        "BACK-TITLE": "Torna alla pagina precedente",
+        "BACK-TEXT": "Sei sicuro di voler tornare alla pagina precedente? Se abbandoni questa pagina perderai i dati non salvati.",
+        "DELETE-FASE-LOGICA-TEXT": "Con questa operazione verr\u00E0 avviata una richiesta di annullamento della trasmissione della scheda. Continuare?",
+        "RIALLINEA-TITLE": "Riallineamento al SIMOG",
+        "RIALLINEA-TEXT": "Questa funzionalit\u00E0 potr\u00E0 cambiare i dati della procedura e del lotto rileggendoli dal SIMOG. Continuare?",
+        "RIALLINEA-ANAC-TITLE": "Riallineamento al ANAC",        
+        "RIALLINEA-ANAC-TEXT": "Questa funzionalit\u00E0 aggiorner\u00E0 i dati dell'appalto rileggendoli dai servizi ANAC. Continuare?",
+        "MIGRA-TITLE": "Migrazione procedura",
+        "MIGRA-TEXT": "Migrazione procedura a {{stazioneAppaltante}}",
+        "ARCHIVIA-GARA-TITLE": "Archiviazione procedura",
+        "ARCHIVIA-GARA-TEXT": "Proseguendo la procedura sar\u00E0 archiviata. Le procedure archiviate vengono nascoste dall'elenco procedure, e sono visualizzabili solo tramite la ricerca avanzata. Proseguire?",
+        "ANNULLA-ARCHIVIA-GARA-TITLE": "Annulla archiviazione procedura",
+        "ANNULLA-ARCHIVIA-GARA-TEXT": "Questa funzionalit\u00E0 ti permette di annullare l'archiviazione della procedura. Continuare?",
+        "MOTIVAZIONE-CANCELLAZIONE-LOGICA-TEXT": "Causa richiesta",
+        "RIAGGIUDICAZIONE-TITLE": "Riaggiudicazione",
+        "RIAGGIUDICAZIONE-TEXT": "ATTENZIONE: con la riaggiudicazione, le schede gi\u00E0 compilate non saranno pi\u00F9 trasmissibili e modificabili, procedere con l'operazione?",
+        "PRESA-IN-CARICO-TITLE": "Presa in carico",
+        "PRESA-IN-CARICO-TEXT": "ATTENZIONE: la procedura risulta presente nel sistema ed \u00E8 associata alla stazione appaltante <b>{{ nomeSA }}</b>, effettuare la presa in carico?",
+        "PRESA-IN-CARICO-PCP-TEXT": "<b>ATTENZIONE</b>: l’utente attualmente non è il Responsabile di Progetto dell’appalto.<br>Premere 'SI' se si intende procedere con la <b>presa in carico</b>, dichiarando così di essere il <b>Responsabile Unico del Progetto</b>, nominato dalla stazione appaltante ai sensi dell'art. 15 comma 1 Dlgs 36/2023, oppure, in coerenza con il comunicato ANAC del 6/03/24, il <b>responsabile per la fase di esecuzione</b>, nominato dalla stazione appaltante ai sensi dell'art. 15 comma 4 Dlgs 36/2023.<br>        In caso contrario, premere 'NO' e terminare l'operazione.<br>        Procedere con la presa in carico?",
+        "PRESA-IN-CARICO-GARA-DELEGATA-TITLE": "Presa in carico procedura delegata",
+        "PRESA-IN-CARICO-GARA-DELEGATA-TEXT": "ATTENZIONE: la procedura risulta essere delegata alla stazione appaltante <b>{{ nomeSA }}</b>, effettuare la presa in carico con il seguente centro di costo: <b>{{ nomeUfficio }}</b>?",
+        "CONFERMA-ACCORPAMENTO-TITLE": "Accorpamento lotti",
+        "CONFERMA-ACCORPAMENTO-TEXT": "ATTENZIONE: se si conferma verranno accorpati i lotti selezionati con il CIG Master <b>{{cigMaster}}</b>. Continuare?",
+        "EXISTS-ACCORPAMENTO-LOTTI-TITLE": "Accorpamento lotti",
+        "EXISTS-ACCORPAMENTO-LOTTI-TEXT": "ATTENZIONE: esistono gi\u00E0 accorpamenti per la procedura selezionata. Procedendo essi verranno cancellati. Continuare?",
+        "CONCLUSIONE-TITLE": "Trasmissione scheda conclusione",
+        "CONCLUSIONE-TEXT": "ATTENZIONE: esistono schede in attesa di trasmissione, procedere ugualmente con la trasmissione della scheda conclusione?",
+        "DELETE-FLUSSO-TITLE": "ATTENZIONE",
+        "DELETE-FLUSSO-TEXT": "Continuando verranno eliminati i dati di invio/pubblicazione. La funzione deve essere utilizzata solo da un utente amministratore. Continuare?",
+        "INSUFFICIENT-LOA":"ATTENZIONE: le funzioni di importazione e trasmissione ai sistemi PCP di ANAC sono disabilitate. Per utilizzarle è necessario autenticarsi almeno con SPiD 2, o sistema equivalente",
+        "NO-AGG":"Non è possibile procedere alla creazione di schede, poiché non è presente l'aggiudicazione. Se l'aggiudicazione è stata già trasmessa dalla piattaforma di e-procurement, utilizzare la funzione di riallineamento ad ANAC per importarla",
+        "ELIMINA-APPALTOP-PCP-TITLE":"Cancella Appalto",
+        "ELIMINA-APPALTOP-PCP-TEXT":"L'appalto è stato annullato; cancellarlo?",
+        "ANNULLA-PROGR-PUBBLICAZIONE":"Annulla programmazione pubblicazione",
+        "DELETE-TEXT-DATA-PUBB-SISTEMA-FUTURA": "Annullare la programmazione della pubblicazione dell'atto?",
+        "ANNULLA-PUBBLICAZIONE":"Annulla pubblicazione",
+        "ANNULLAMENTO-PUBBLICAZIONE": "Annullamento pubblicazione",
+        "ANNULLA-PROGR-PUBBLICAZIONE-MOTIVAZIONE-FIRST-HEADER": "Annullamento pubblicazione",
+        "ANNULLA-PROGR-PUBBLICAZIONE-MOTIVAZIONE-FIRST-MESSAGE": "L'atto risulta già pubblicato; annullarne la pubblicazione? L’operazione sar\u00E0 permanente, e l’atto non potr\u00E0 pi\u00F9 essere pubblicato",
+        "MOTIVAZIONE-ANNULLAMENTO-TITLE": "Motivazione annullamento pubblicazione",
+        "MOTIVAZIONE-ANNULLAMENTO-MESSAGE": "Immettere la motivazione dell’annullamento, che sarà pubblicata",
+        "MOTIVAZIONE-ANNULLAMENTO-LABEL": "Motivazione annullamento",
+        "DATEPICKER-PUBBLICAZIONE-TITLE": "Programma la pubblicazione",
+        "DATEPICKER-PUBBLICAZIONE-MESSAGE": "Inserisci la data in cui l'atto verrà pubblicato",
+        "DATEPICKER-PUBBLICAZIONE-LABEL": "Data e ora di pubblicazione",
+        "PUBBLICA-ATTO-TITLE": "Pubblica atto",
+        "PUBBLICA-ATTO-MESSAGE": "Si \u00E8 sicuri di voler procedere?",
+        "CONFERMA-AZIONE": "Conferma",
+        "ANNULLA-AZIONE": "Annulla",
+        "ANNULLA-PUBBLICAZIONE-ALLEGATO-HEADER": "Annulla pubblicazione",
+        "ANNULLA-PUBBLICAZIONE-ALLEGATO-MESSAGE": "L’atto risulta già pubblicato; annullare la pubblicazione dell’allegato?",
+        "ANNULLA-PUBBLICAZIONE-ALLEGATO-MOTIVAZIONE-HEADER": "Immettere la motivazione",
+        "ANNULLA-PUBBLICAZIONE-ALLEGATO-MOTIVAZIONE-MESSAGE": "Immettere la motivazione dell’annullamento, che sarà pubblicata",
+        "CAMPO-MOTIVAZIONE-ANNULLAMENTO": "Campo di motivazione",
+        "PUBBLICA-NUOVO-ALLEGATO-HEADER": "Salvataggio dell'atto",
+        "PUBBLICA-NUOVO-ALLEGATO-MESSAGE": "Attenzione: l’atto risulta gi\u00E0 pubblicato, per cui l’allegato sarà pubblicato immediatamente al salvataggio. Continuare?",
+        "URL-PER-ANAC-HEADER": "URL per ANAC",
+        "URL-PER-ANAC-MESSAGE": "Indirizzo dei documenti di procedura da comunicare ad ANAC alla creazione di un appalto:",
+        "URL-PER-ANAC-CLOSE": "Chiudi",
+        "ATTO-PUBBLICATO-CORRETTO": "Atto pubblicato correttamente",
+        "ATTO-PROGRAMMATO-CORRETTO": "Pubblicazione programmata: {{dataProgrammazione}}"
+    },
+    "RUP": {
+        "NOME": "Nome",
+        "NOME-OBBLIGATORIO": "Il campo Nome \u00E8 obbligatorio.",
+        "COGNOME": "Cognome",
+        "COGNOME-OBBLIGATORIO": "Il campo Cognome \u00E8 obbligatorio.",
+        "CODICE-FISCALE": "Codice Fiscale",
+        "CODICE-FISCALE-OBBLIGATORIO": "Il campo Codice Fiscale \u00E8 obbligatorio.",
+        "INDIRIZZO": "Indirizzo",
+        "NUM-CIVICO": "Num Civico",
+        "PROVINCIA": "Provincia",
+        "CAP": "CAP",
+        "COMUNE": "Comune",
+        "COD-ISTAT": "Codice Istat",
+        "TELEFONO": "Telefono",
+        "FAX": "Fax",
+        "EMAIL": "E-Mail",
+        "INTESTAZIONE": "Intestazione"
+    },
+    "STAZIONE-APPALTANTE": {
+        "DENOMINAZIONE": "Denominazione",
+        "CODICE-FISCALE": "Codice Fiscale",
+        "INDIRIZZO": "Indirizzo",
+        "NUM-CIVICO": "Num Civico",
+        "PROVINCIA": "Provincia",
+        "CAP": "Codice di avviamento postale",
+        "COMUNE": "Comune",
+        "COD-ISTAT": "Codice Istat del Comune",
+        "TELEFONO": "Telefono",
+        "CELLULARE": "Cellulare",
+        "FAX": "Fax",
+        "EMAIL": "Indirizzo E-Mail della stazione appaltante",
+        "DATI-GENERALI": "Dati generali",
+        "ID-AMMIN": "ID amministrazione per schede trimestrali on-line",
+        "PROFILO-COMMITTENTE": "Profilo di committente (URL)",
+        "TIPOLOGIA": "Tipologia",
+        "VALIDATORS": {
+            "DENOMINAZIONE-OBBLIGATORIA": "Il campo denominazione \u00E8 obbligatorio.",
+            "CODICE-FISCALE-OBBLIGATORIO": "Il campo Codice Fiscale \u00E8 obbligatorio."
+        },
+        "TABS": {
+            "DETTAGLIO-STAZIONE-APPALTANTE": "Dettaglio stazione appaltante",
+            "UTENTI-STAZIONE-APPALTANTE": "Utenti"
+        },
+        "UTENTI": {
+            "DENOMINAZIONE": "Denominazione",
+            "CODICE-FISCALE": "Codice fiscale",
+            "EMPTY-UTENTI-STAZIONE-APPALTANTE": "Non ci sono utenti associati a questa stazione appaltante.",
+            "ASSOCIATO": "Associato",
+            "CERCA": "Cerca",
+            "SELECT-CURRENT-FILTERED-UTENTI": "Seleziona utenti filtrati"
+        },
+        "CODAUSA":"Codice AUSA"
+    },
+    "LISTA-AVVISI": {
+        "NUMERO-AVVISO": "Numero progressivo avviso",
+        "CIG": "CIG",
+        "TIPOLOGIA": "Tipologia avviso",
+        "DESCRIZIONE": "Descrizione avviso",
+        "DATA-AVVISO": "Data avviso",
+        "DATA-SCADENZA": "Data scadenza",
+        "PUBBLICATO": "Pubblicato",
+        "STAZIONE-APPALTANTE": "Stazione appaltante",
+        "AZIONI": {
+            "TITLE": "Azioni",
+            "CANCELLA": "Cancella",
+            "DETTAGLIO": "Dettaglio",
+            "NO-CANCELLA": "Eliminazione disabilitata. L'avviso risulta pubblicato",
+            "TRASFERIMENTO-AVVISO": "Trasferimento dell'avviso ad un altro referente"
+        }
+    },
+    "LISTA-ATTI-GENERALI": {
+        "NOMEIN": "Ente",
+        "IDATTO": "ID",
+        "TIPOLOGIA": "Tipologia",
+        "DESCRIZIONE": "Descrizione",
+        "DATAPUBB-SISTEMA": "Data pubblicazione sul sistema",
+        "DATA-SCADENZA": "Data scadenza",
+        "STATO": "Stato",
+        "AZIONI": {
+            "TITLE": "Azioni",
+            "DETTAGLIO": "Dettaglio",
+            "CANCELLA": "Elimina atto",
+            "ANNULLA-PUBBLICAZIONE": "Annulla pubblicazione",
+            "PUBBLICATO": "Pubblicato",
+            "ANNULLATO": "Annullato",
+            "PROGRAMMATO": "Programmato",
+            "IN-COMPILAZIONE": "In compilazione"
+        },
+        "VALIDATORS": {
+            "MOTIVAZIONE-OBBLIGATORIA": "Il campo 'Motivazione' è obbligatorio"
+        }
+    },
+    "noRecords": "Nessun elemento",
+    "pagerOf": "di",
+    "pagerPage": "pagina",
+    "pagerItems": "elementi",
+    "pagerItemsPerPage": "elementi per pagina",
+    "currentRecordsReport": "Visualizzate da {{first}} a {{last}} di {{totalRecords}} righe",
+    "currentPageReport": "Pagina {currentPage} di {totalPages}",
+    "CHECK-PUBB": {
+        "CHECK-PUBB-TITLE": "Controllo dati",
+        "CHECK-PUBB-BLOCKING_ERRORS": "Numero errori bloccanti:",
+        "CHECK-PUBB-CAMPO": "Campo",
+        "CHECK-PUBB-DESC": "Descrizione",
+        "CHECK-PUBB-SUCCESS": "Nessun errore di validazione. ",
+        "CHECK-PUBB-WARNING_ERRORS": "Numero errori non bloccanti:"
+    },
+    "NO-DATA": "Nessun dato trovato",
+    "NO-MESSAGE-DATA": "Nessun messaggio",
+    "LISTA-ARCHIVIO-TECNICI": {
+        "INTESTAZIONE": "Intestazione",
+        "CODICE-FISCALE": "Codice Fiscale",
+        "STAZIONE-APPALTANTE": "Stazione appaltante",
+        "AZIONI": {
+            "DETTAGLIO": "Dettaglio",
+            "TITLE": "Azioni",
+            "CANCELLA": "Elimina",
+            "NO-CANCELLA": "Non \u00E8 possibile eliminare l’anagrafica perché risulta utilizzata in altri dati"
+        }
+    },
+    "MESSAGGI-AVVISI": {
+        "MESSAGGI-IN-ARRIVO": "Messaggi in arrivo",
+        "MESSAGGI-INVIATI": "Messaggi inviati",
+        "NUOVO-MESSAGGIO": "Nuovo Messaggio",
+        "RICERCA-DESTINATARI": "Ricerca destinatari",
+        "DESTINATARI-SELEZIONATI": "Destinatari selezionati",
+        "CORPO": "Corpo",
+        "OGGETTO": "Oggetto",
+        "NON-LETTO": "Non letto",
+        "MESSAGGIO-PUBBLICATO": "Messaggio pubblicato con successo."
+    },
+    "RICERCA-AVANZATA-GARE": {
+        "GARA-DATA": "Dati della procedura",
+        "OGGETTO-GARA": "Oggetto della procedura",
+        "MODALITA-REALIZZAZIONE": "Modalit\u00E0 di realizzazione",
+        "ID-GARA": "ID appalto/gara",
+        "UFFICIO": "Ufficio",
+        "SITUAZIONE": "Stato",
+        "GARE-ARCHIVIATE": "Visualizza anche procedure archiviate",
+        "LOTTO-DATA": "Dati del lotto",
+        "CIG": "CIG del lotto",
+        "OGGETTO-LOTTO": "Oggetto del lotto",
+        "TIPO-PROCEDURA-LOTTO": "Tipo di procedura del lotto",
+        "TIPO-APPALTO": "Tipo di appalto",
+        "CUP": "CUP",
+        "RUP-GARA": "RUP",
+        "DATAPUBB_DA": "Data perfezionamento (da)",
+        "DATAPUBB_A": "Data perfezionamento (a)",
+        "IMPORTO-LOTTO-A": "Importo lotto (a)",
+        "IMPORTO-LOTTO-DA": "Importo lotto (da)",
+        "IMPORTO-GARA-A": "Importo procedura (a)",
+        "IMPORTO-GARA-DA": "Importo procedura (da)",
+        "STAZIONE-APPALTANTE": "Stazione Appaltante"
+    },
+    "COMBOBOX": {
+        "NO": "No",
+        "SI": "Si",
+        "POSITIVO":"Positivo",
+        "NEGATIVO":"Negativo",
+        "IMPRESA-SINGOLA": "Impresa Singola",
+        "MANDATARIA": "Mandataria di un raggruppamento",
+        "AMBITO-TERRITORIALE-IT": "Operatore economico italiano",
+        "AMBITO-TERRITORIALE-UE": "Operatore economico UE (non italiano) o extra UE",
+        "LOA":{
+            "LOA3":"LOA 3",
+            "LOA4":"LOA 4"
+        },
+        "IDP":{
+            "SPID":"SPID",
+            "CIE":"CIE",
+            "CUSTOM":"CUSTOM"
+        },
+        "ESEGUITO": "Eseguito",
+        "NON-ESEGUITO": "Non eseguito"
+    },
+    "LISTA-GARE": {
+        "COD-GARA": "Codice procedura",
+        "OGGETTO-GARA": "Oggetto",
+        "SITUAZIONE": "Stato",
+        "MODALITA-REALIZZAZIONE": "Modalit\u00E0 di realizzazione",
+        "IMPORTO-TOTALE-GARA": "Importo totale",
+        "CIG_LOTTI": "CIG",
+        "DATA_PUBB": "Data perfezionamento",
+        "IDENTIFICATIVO_GARA": "ID appalto/gara",
+        "RUP_GARA": "RUP",
+        "STAZIONE-APPALTANTE": "Stazione Appaltante",
+        "MAX-ROW-CSV": "Attenzione: la funzionalit\u00E0 di esportazione pu\u00F2 essere utilizzata con un massimo di 1.000 righe. Si consiglia di modificare i criteri di filtro",
+        "NO-CSV": "Nessuna procedura esportabile",
+        "AZIONI": {
+            "TITLE": "Azioni",
+            "CANCELLA": "Cancella",
+            "DETTAGLIO": "Dettaglio",
+            "NO-CANCELLA": "La procedura non \u00E8 cancellabile",
+            "TRASFERIMENTO-RUP": "Trasferimento del RUP",
+            "TRASFERIMENTO-REFERENTE": "Trasferimento del referente"
+        }
+    },
+    "GARA": {
+        "GENERAL-DATA": {
+            "WARNING-NON-PERFEZIONATA": "La procedura non risulta perfezionata; dopo averla perfezionata su SIMOG, utilizzare la funzione 'Riallinea al Simog' nei dati generali della procedura",
+            "TITLE": "Dati generali",
+            "OGGETTO": "Oggetto",
+            "SITUAZIONE": "Stato",
+            "PROVENIENZA-DATO": "Provenienza del dato",
+            "ID-GARA": "ID appalto/gara",
+            "TIPO-SETTORE": "Tipo di settore",
+            "ID-MODO-INDIZIONE": "Modalit\u00E0 indizione procedura",
+            "MODALITA-REALIZZAZIONE": "Modalit\u00E0 di realizzazione",
+            "CIG-ACCQUADRO": "CIG accordo quadro/convenzione",
+            "SOMMA-URGENZA": "Estrema urgenza o Esecuzione di lavori di somma urgenza?",
+            "IMPORTO-GARA": "Importo",
+            "NUMERO-LOTTI": "Numero totale dei lotti",
+            "DATA-PUBBLICAZIONE": "Data perfezionamento bando",
+            "RUP": "RUP",
+            "DATI-RUP": "Dati anagrafici",
+            "RICOSTRUZIONE-ALLUVIONE": "Interv. ai sensi ordinanza ricostr. alluvione Lunigiana ed Elba",
+            "CAM": "Procedura in ambito delle disposizioni art.34 Dlgs. 50/2016?",
+            "SISMA": "Nesso di causalit\u00E0 con gli eventi sismici maggio 2012?",
+            "DATA-LETTERA-INVITO": "Data della lettera di invito",
+            "DATA-CREAZIONE": "Data creazione su SIMOG",
+            "ALLEGATO-IX": "Modalità di indizione allegato IX",
+            "GARA-URGENZA": "Motivo somma urgenza",
+            "WARNING-DELEGA": "Con la seguente operazione il Responsabile Unico del Progetto indica il nominativo del responsabile per la fase di esecuzione, nominato dalla stazione appaltante, ai sensi dell'art. 15 c.4 Dlgs 36/2023.",
+            "DRP":"Responsabile di fase",
+            "DATA-SCADENZA-OFFERTA":"Data scadenza presentazione offerta"
+        },
+        "STAZIONE-APPALTANTE-DATA": {
+            "TITLE": "Stazione appaltante",
+            "STAZIONE-APPALTANTE": "Stazione appaltante",
+            "CODICE-CENTRO-COSTO": "Codice del centro di costo",
+            "DENOMINAZIONE-CENTRO-COSTO": "Denominazione del centro di costo",
+            "UFFICIO": "Ufficio/area di pertinenza",
+            "DATI-UFFICIO": "Dati Ufficio",
+            "INDIRIZZO-SEDE-GARA": "Indirizzo sede di procedura",
+            "COMUNE-SEDE-GARA": "Comune sede di procedura",
+            "PROVINCIA-SEDE-GARA": "Provincia sede di procedura",
+            "DURATA-ACCORDO-QUADRO": "Durata accordo quadro",
+            "FLAG-SA-AGENTE": "La stazione appaltante agisce per conto di altro singolo soggetto?",
+            "TIPOLOGIA-SA": "Tipologia della stazione appaltante",
+            "DENOMINAZIONE-SA-AGENTE": "Denominazione del soggetto per cui agisce la stazione appaltante",
+            "CODICE-FISCALE-SA-AGENTE": "Codice fiscale del soggetto per cui agisce la stazione appaltante",
+            "TIPOLOGIA-PROCEDURA": "Tipologia procedura (nel caso agisca per conto di altri)",
+            "FLAG-CENTRALE-STIPULA": "La centrale di committenza procede alla stipula?",
+            "FUNZIONI-DELEGA": "Funzioni delegate",
+            "URL-DOCUMENTAZIONE": "URL della documentazione di procedura"
+        },
+        "CENTRO-DI-COSTO": {
+            "DATI-CENTRO-DI-COSTO": "Dati centro di costo"
+        }
+    },
+    "DETTAGLIO-GARA": {
+        "TABS": {
+            "DATI-GENERALI": "Dati generali",
+            "LISTA-LOTTI": "Lotti",
+            "LISTA-ATTI": "Atti",
+            "PUBBLICITA-GARA": "Pubblicit\u00E0 procedura",
+            "PUBBLICA": "Invii",
+            "IMPRESE-PARTECIPANTI": "Imprese invitate/Partecipanti",
+            "IMPRESE-AGGIUDICATARIE": "Imprese aggiudicatarie"
+        },
+        "RIALLINEA-SUCCESS": "La procedura \u00E8 stata riallineata con successo.",
+        "RIALLINEA-SUCCESS-ANAC": "Operazione effettuata",
+        "RIALLINEA-NOTHING-ANAC": "Non è stato trovato nessun dato da aggiornare"
+    },
+    "CENTRO-DI-COSTO": {
+        "GENERAL-DATA": {
+            "GENERAL-DATA": "Dati generali",
+            "CODICE": "Codice del centro di costo",
+            "DENOMINAZIONE": "Denominazione del centro di costo",
+            "NOTE": "Note",
+            "TIPOLOGIA": "Tipologia",
+            "VALIDATORS": {
+                "CODICE-CENTRO-OBBLIGATORIO": "Il codice del centro di costo \u00E8 obbligatorio.",
+                "DENOMINAZIONE-CENTRO-OBBLIGATORIO": "La denominazione del centro di costo \u00E8 obbligatoria."
+            }
+        }
+    },
+    "RICERCA-AVANZATA-ARCHIVIO-IMPRESE": {
+        "ARCHIVIO-IMPRESE-DATA": "Dati generali",
+        "DENOMINAZIONE": "Ragione sociale o denominazione",
+        "CODICE-FISCALE": "Codice fiscale",
+        "PARTITA-IVA": "Partita I.V.A. o V.A.T.",
+        "PROVINCIA": "Provincia",
+        "COMUNE": "Comune",
+        "EMAIL": "E-mail",
+        "LEGALE-RAPPRESENTANTE": "Legale rappresentante"
+    },
+    "LISTA-ARCHIVIO-IMPRESE": {
+        "RAGIONE-SOCIALE": "Ragione sociale",
+        "CODICE-FISCALE": "Codice Fiscale",
+        "PARTITA-IVA": "Partita I.V.A.",
+        "COMUNE": "Comune",
+        "STAZIONE-APPALTANTE": "Stazione appaltante",
+        "AZIONI": {
+            "TITLE": "Azioni",
+            "CANCELLA": "Cancella",
+            "DETTAGLIO": "Dettaglio",
+            "NO-CANCELLA": "Eliminazione disabilitata. L'impresa risulta avere una collezione collegata"
+        }
+    },
+    "IMPRESA": {
+        "GENERAL-DATA": {
+            "GENERAL-DATA": "Dati generali",
+            "RAGIONE-SOCIALE": "Ragione sociale",
+            "FORMA-GIURIDICA": "Forma giuridica",
+            "CODICE-FISCALE": "Codice Fiscale",
+            "PARTITA-IVA": "Partita I.V.A.",
+            "NUMERO-ISCRIZIONE-REGISTRO-IMPRESE": "Numero iscrizione Registro Imprese",
+            "CODICE-DITTA-INAIL": "Codice ditta I.N.A.I.L.",
+            "NUMERO-ISCRIZIONE-ALBO": "Numero iscrizione all'albo",
+            "AMBITO-TERRITORIALE": "Ambito territoriale",
+            "CF-ESTERO": "Identificativo fiscale estero",
+            "VALIDATORS": {
+                "RAGIONE-SOCIALE-OBBLIGATORIA": "La Ragione Sociale \u00E8 obbligatoria."
+            }
+        },
+        "LEGALE-RAPPRESENTANTE-DATA": {
+            "LEGALE-RAPPRESENTANTE-DATA": "Legale rappresentante attuale",
+            "COGNOME": "Cognome",
+            "NOME": "Nome",
+            "CODICE-FISCALE": "Codice Fiscale"
+        },
+        "INDIRIZZO-DATA": {
+            "INDIRIZZO-DATA": "Indirizzo",
+            "INDIRIZZO": "Indirizzo",
+            "N-CIVICO": "N.Civico",
+            "PROVINCIA": "Provincia",
+            "CAP": "C.A.P.",
+            "COMUNE": "Comune",
+            "NAZIONE": "Nazione",
+            "TELEFONO": "Telefono",
+            "FAX": "FAX",
+            "EMAIL": "E-mail"
+        }
+    },
+    "RICERCA-AVANZATA-ARCHIVIO-CDC": {
+        "ARCHIVIO-CDC-DATA": "Dati generali",
+        "CODICE-CDC": "Codice del centro di costo",
+        "CODICE-STAZIONE-APPALTANTE": "Codice stazione appaltante"
+    },
+    "LISTA-ARCHIVIO-CDC": {
+        "CODICE-CDC": "Cod. centro costo",
+        "DENOMINAZIONE-CDC": "Denominazione centro",
+        "STAZIONE-APPALTANTE": "Stazione appaltante",
+        "AZIONI": {
+            "TITLE": "Azioni",
+            "CANCELLA": "Cancella",
+            "DETTAGLIO": "Dettaglio",
+            "NO-CANCELLA": "Eliminazione disabilitata. Il centro di costo risulta avere una collezione collegata"
+        }
+    },
+    "LISTA-LOTTI": {
+        "NUMERO-LOTTO": "Numero lotto",
+        "CIG": "CIG",
+        "OGGETTO": "Oggetto del lotto",
+        "SITUAZIONE": "Stato",
+        "TIPOLOGIA-APPALTO": "Tipologia dell'appalto",
+        "IMPORTO-TOTALE-LOTTO": "Importo complessivo appalto",
+        "AZIONI": {
+            "TITLE": "Azioni",
+            "CANCELLA": "Cancella",
+            "DETTAGLIO": "Dettaglio",
+            "NO-CANCELLA": "Eliminazione disabilitata."
+        }
+    },
+    "ATTO-FIGLIO-PROGRESSIVO": "Pubb nr.{{value}}",
+    "ATTO": {
+        "URL_PREFIX_INVALID": "I campi URL devono iniziare per http:// o https://",
+        "UPLOAD-FILE": "Upload File",
+        "UPLOAD-URL": "Inserire URL",
+        "URL": "URL",
+        "CHOOSE-FILE": "Scegli File",
+        "TITOLO-DOCUMENT": "Titolo documento (*)",
+        "EXISTING-DOCUMENTS": "Documenti Esistenti",
+        "GENERAL-DATA": {
+            "GENERAL-DATA": "Dati generali",
+            "TIPOLOGIA-PUBBLICAZIONE": "Tipologia pubblicazione",
+            "DESCRIZIONE": "Descrizione",
+            "DATA-DECRETO": "Data decreto",
+            "DATA-PROVVEDIMENTO": "Data provvedimento",
+            "DATA-STIPULA": "Data stipula",
+            "DATA-VERB-AGGIUDICAZIONE": "Data di aggiudicazione definitiva",
+            "PRIMA-PUBB": "Prima pubblicazione?",
+            "DATAPUBB": "Data prima pubblicazione",
+            "DATA-SCAD": "Data scadenza",
+            "IMPORTO-AGGIUDICAZIONE": "Importo di aggiudicazione",
+            "NUM-PROVVEDIMENTO": "Numero provvedimento",
+            "NUM-PUBB": "Numero progressivo lotto",
+            "NUM-REPERTORIO": "Numero repertorio",
+            "PERC-OFF-AUMENTO": "Offerta in aumento %",
+            "PERC-RIBASSO-AGG": "Ribasso di aggiudicazione (nel caso di appalto con lotti \u00E8 calcolato in relazione al ribasso dei singoli lotti)",
+            "URL-COMMITTENTE": "URL profilo del committente",
+            "URL-EPROC": "URL piattaforma e-procurement di svolgimento procedura",
+            "DATA-PUBB-SISTEMA": "Data pubblicazione sul sistema"
+        },
+        "DOCUMENTS-DATA": {
+            "DOCUMENTS-DATA": "Documenti dell'atto"
+        },
+        "VALIDATORS": {
+            "DATA-DECRETO-OBBLIGATORIO": "Il campo Data decreto \u00E8 obbligatorio.",
+            "DATA-PROVVEDIMENTO-OBBLIGATORIO": "Il campo Data provvedimento \u00E8 obbligatorio.",
+            "DATA-STIPULA-OBBLIGATORIO": "Il campo Data stipula \u00E8 obbligatorio.",
+            "DATA_VERB_AGGIUDICAZIONE-OBBLIGATORIO": "Il campo Data di aggiudicazione definitiva \u00E8 obbligatorio.",
+            "DATAPUBB-OBBLIGATORIO": "Il campo Data prima pubblicazione \u00E8 obbligatorio.",
+            "DATASCAD-OBBLIGATORIO": "Il campo Data scadenza \u00E8 obbligatorio.",
+            "IMPORTO_AGGIUDICAZIONE-OBBLIGATORIO": "Il campo Importo di aggiudicazione \u00E8 obbligatorio.",
+            "NUM-PROVVEDIMENTO-OBBLIGATORIO": "Il campo Numero provvedimento \u00E8 obbligatorio.",
+            "NUM-PUBB-OBBLIGATORIO": "Il campo Numero progressivo lotto \u00E8 obbligatorio.",
+            "NUM-REPERTORIO-OBBLIGATORIO": "Il campo Numero repertorio \u00E8 obbligatorio.",
+            "PERC-OFF-AUMENTO-OBBLIGATORIO": "Il campo Offerta in aumento % \u00E8 obbligatorio.",
+            "PERC-RIBASSO-AGG-OBBLIGATORIO": "Il campo Ribasso di aggiudicazione \u00E8 obbligatorio.",
+            "URL-COMMITTENTE-OBBLIGATORIO": "Il campo URL profilo del committente \u00E8 obbligatorio.",
+            "URL-EPROC-OBBLIGATORIO": "Il campo URL piattaforma e-procurement di svolgimento procedura \u00E8 obbligatorio.",
+            "URL-COMMITTENTE-PREFIX-INVALID": "Il campo Url profilo del committente deve iniziare per http:// o https://",
+            "URL-EPROC-PREFIX-INVALID": "Il campo URL piattaforma e-procurement di svolgimento procedura deve iniziare per http:// o https://",
+            "PRIMA-PUBB-OBBLIGATORIO": "Il campo Prima pubblicazione \u00E8 obbligatorio."
+        }
+    },
+    "LOTTO": {
+        "GENERAL-DATA": {
+            "GENERAL-DATA": "Dati generali",
+            "CIG": "Codice CIG",
+            "OGGETTO-LOTTO": "Oggetto del lotto",
+            "CUI-PROGRAMMAZIONE": "CUI programmazione",
+            "URL-EPROC": "URL piattaforma e-procurement di svolgimento procedura",
+            "SITUAZIONE": "Stato",
+            "NUMERO-LOTTO": "Numero del lotto di procedura",
+            "COMCON": "Lotto derivante da contratto precedente?",
+            "DESCOM": "Indicare motivo del completamento del contratto",
+            "CIGCOM": "CIG del contratto dal quale deriva il presente lotto",
+            "TIPO-APPALTO": "Tipo appalto",
+            "TIPO-SETTORE": "Tipo settore",
+            "ART-E1": "Contratto escluso ex art 19/ 26 D. Lgs. 163/06?",
+            "CONTRATTO-ESCLUSO-ALLEGGERITO": "Contratto escluso o rientrante nel regime alleggerito?",
+            "ESCLUSIONE-REGIME-SPECIALE": "Esclusione o regime speciale?",
+            "ID-SCELTA-CONTRAENTE": "Procedura di scelta del contraente",
+            "ID-SCELTA-CONTRAENTE-50": "Procedura di scelta del contraente ai sensi del D.lgs. 50/2016",
+            "ID-MODO-GARA": "Criterio di aggiudicazione",
+            "ID-SCHEDA-LOCALE": "ID scheda locale",
+            "PRESTAZIONE-COMPRESE-APPALTO": "Prestazione comprese nell'appalto"
+        },
+        "AQUISIZIONE-FORNITURE-SERVIZI-DATA": {
+            "AQUISIZIONE-FORNITURE-SERVIZI-DATA": "Modalit\u00E0 di acquisizione forniture/servizi",
+            "AQUISIZIONE-FORNITURE-SERVIZI-DATA-PROGRESSIVO": "Modalit\u00E0 di acquisizione forniture/servizi N. {{value}}"
+        },
+        "TIPOLOGIA-LAVORO-DATA": {
+            "TIPOLOGIA-LAVORO-DATA": "Modalit\u00E0 tipologia lavoro",
+            "TIPOLOGIA-LAVORO-DATA-PROGRESSIVO": "Modalit\u00E0 tipologia lavoro N. {{value}}"
+        },
+        "CONDIZIONI-PROCEDURA-NEGOZIATA-DATA": {
+            "CONDIZIONI-PROCEDURA-NEGOZIATA-DATA": "Condizioni che giustificano il ricorso alla procedura negoziata",
+            "CONDIZIONI-PROCEDURA-NEGOZIATA-DATA-PROGRESSIVO": "Condizione N. {{value}}"
+        },
+        "ECONOMICS-DATA": {
+            "ECONOMICS-DATA": "Dati economici",
+            "IMPORTO-LOTTO": "Importo del lotto al netto dei costi della sicurezza",
+            "IMPORTO-ATTUAZIONE-SICUREZZA": "Importo oneri per la sicurezza",
+            "IMPORTO-TOTALE": "Importo complessivo appalto",
+            "CUP-ESENTE": "Esente da CUP?",
+            "CUP": "Codice CUP",
+            "CPV": "Codice CPV",
+            "DESCRIZIONE-CPV": "Descrizione CPV"
+        },
+        "CPV-SECONDARIO-DATA": {
+            "CPV-SECONDARIO-DATA": "CPV secondari",
+            "CPV-SECONDARIO": "Codice CPV",
+            "DESCRIZIONE-CPV-SECONDARIO": "Descrizione CPV",
+            "IN-OPERA-MANODOPERA": "Posa in opera o manodopera?",
+            "CATEGORIA-PREVALENTE": "Categoria prevalente",
+            "CLASSE-IMPORTO-CATEGORIA-PREVALENTE": "Classe importo categoria prevalente",
+            "EMPTY-GROUP": "Non \u00E8 presente alcun CPV secondario"
+        },
+        "ULTERIORI-CATEGORIE-DATA": {
+            "ULTERIORI-CATEGORIE-DATA": "Ulteriori categorie",
+            "CATEGORIA": "Categoria",
+            "CLASSE-IMPORTO": "Classe importo",
+            "SCORPORABILE": "Scorporabile",
+            "SUBAPPALTABILE": "Subappaltabile",
+            "EMPTY-GROUP": "Non \u00E8 presente alcuna ulteriore categoria"
+        },
+        "LOCALIZZAZIONE-DATA": {
+            "TITLE": "Localizzazione",
+            "LUOGO-ISTAT": "Luogo di esecuzione del contratto - ISTAT",
+            "LUOGO-NUTS": "Luogo di esecuzione del contratto - NUTS"
+        },
+        "VALIDATORS": {
+            "TIPO-APPALTO-OBBLIGATORIO": "Il campo Tipo appalto \u00E8 obbligatorio.",
+            "IMPORTO-LOTTO-OBBLIGATORIO": "Il campo Importo del lotto al netto dei costi della sicurezza \u00E8 obbligatorio.",
+            "IN-OPERA-MANODOPERA-OBBLIGATORIO": "Il campo Posa in opera o manodopera? \u00E8 obbligatorio."
+        },
+        "ALTRI-DATI": {
+            "TITLE": "Altri Dati",
+            "QUALIFICAZIONE-SA": "Deroga qualificazione stazione appaltante",
+            "CATEGORIA-MERCEOLOGICA": "Categoria merceologica",
+            "FLAG-PREVEDE-RIP": "L'appalto prevede ripetizioni o altre opzioni?",
+            "DURATA-RINNOVI": "Durata dei rinnovi e delle ripetizioni in giorni",
+            "MOTIVO-COLLEGAMENTO": "Ipotesi di collegamento",
+            "CIG-ORIGINE-RIP": "CIG collegato",
+            "FLAG-PNRR-PNC": "Appalto afferente investimenti finanziati con risorse previste dal PNRR o dal PNC?",
+            "FLAG-PREVISIONE-QUOTA": "Previsione nel bando, avviso o invito di quota assunzioni per occupazione giovanile e/o femminile",
+            "FLAG-MISURE-PRELIMINARI": "Previsione nel bando, avviso o invito di ulteriori misure premiali",
+            "DATA-SCADENZA-PAGAMENTI": "Data scadenza pagamenti"
+        }
+    },
+    "DETTAGLIO-ATTO": {
+        "TABS": {
+            "DETTAGLIO-ATTO": "Dettaglio atto",
+            "IMPRESE-AGGIUDICATARIE-ATTO": "Imprese aggiudicatarie / affidatarie",
+            "LOTTO-ATTO": "Lotti",
+            "PUBBLICA-ATTO": "Pubblicazioni"
+        }
+    },
+    "LOTTI-ATTO": {
+        "SELEZIONARE-UN-ELEMENTO": "Errore in fase di associazione. \u00C8 necessario selezionare almeno un lotto.",
+        "CIG": "CIG",
+        "OGGETTO": "Oggetto",
+        "IMPORTO": "Importo",
+        "EMPTY-LIST": "Nessun elemento trovato.",
+        "UPDATE-SUCCESS": "Aggiornamento associazioni avvenuto con successo."
+    },
+    "PUBBLICITA-GARA": {
+        "GENERAL-DATA": {
+            "TITLE": "Pubblicit\u00E0 di procedura",
+            "DATA-GUCE": "Gazzetta Ufficiale Comunit\u00E0 Europea",
+            "DATA-GURI": "Gazzetta ufficiale Repubblica Italiana",
+            "DATA-ALBO": "Albo pretorio del comuni ove si eseguono i lavori",
+            "QUOTIDIANI-NAZ": "Numero quotidiani nazionali",
+            "QUOTIDIANI-REG": "Numero quotidiani locali",
+            "PROFILO-COMMITTENTE": "Profilo del committente",
+            "SITO-MINISTERO-INF-TRASP": "Sito Informatico Ministero Infrastrutture",
+            "SITO-OSSERVATORIO-CP": "Sito Informatico Osservatorio Contratti Pubblici",
+            "DATA-BORE": "Gazzetta ufficiale o bollettino regionale",
+            "PERIODICI": "Numero periodici"
+        },
+        "EMPTY": "Nessun dato trovato."
+    },
+    "UFFICIO": {
+        "DATI-UFFICIO": "Dati ufficio",
+        "DENOMINAZIONE": "Denomin. ufficio",
+        "DENOMINAZIONE-OBBLIGATORIA": "Il campo Denominazione \u00E8 obbligatorio",
+        "CENTRO-COSTO": "\u00C8 centro di costo per la programmazione?"
+    },
+    "DETTAGLIO-LOTTO": {
+        "TABS": {
+            "DATI-GENERALI": "Dati generali",
+            "FASI-EVENTI": "Elenco schede",
+            "LISTA-ATTI-LOTTO": "Atti pubblicati",
+            "LISTA-INVII-FASI": "Schede trasmesse"
+        }
+    },
+    "FASI-LOTTO": {
+        "FASE": "Scheda",
+        "PROGRESSIVO": "N.",
+        "STATO-TRASMISSIONE": "Stato trasmissione",
+        "STATO": "Stato",
+        "PUBBLICA": "Trasmissione",
+        "AZIONE": "Azione",
+        "EMPTY-LIST": "Nessuna scheda trovata.",
+        "ICONS": {
+            "INVIO-FLUSSO-BN": "Invio non possibile",
+            "INVIO-FLUSSO": "Invio gi\u00E0 effettuato",
+            "INVIO-FLUSSO-IN-ATTESA": "Invio da effettuare",
+            "INVIO-RETTIFICA-FLUSSO": "Rettifica da inviare",
+            "NON-TRASMESSA": "Non trasmessa",
+            "NON-CONFERMATA": "Non confermata",
+            "IN-ATT-CONF": "In attesa di conferma",
+            "CONF": "Confermata"
+        },
+        "AZIONI": {
+            "PUBBLICA": "Trasmissione scheda",
+            "DELETE": "Elimina",
+            "ANNULLA-INVIO": "Annulla trasmissione"
+        },
+        "ART_E2": "Nessuna comunicazione prevista per questa tipologia di lotto",
+        "COMBO-STORICO": "Storico aggiudicazioni",
+        "STORICO-DESCRIPTION-AGGIUDICAZIONE": "Aggiudicazione",
+        "STORICO-DESCRIPTION-RIAGGIUDICAZIONE": "Riaggiudicazione",
+        "STORICO-DESCRIPTION": "{{param}}^ Riaggiudicazione"
+    },
+    "FASI-VISIBILI": {
+        "FASI-RILEVAZIONE-DATI": "Informazioni relative a:",
+        "EVENTI-SIGNIFICATIVI": "Informazioni relative ad altri eventi:",
+        "EMPTY-LIST": "Nessun elemento trovato. Per poter aggiungere schede occorre eseguire una pubblicazione della procedura."
+    },
+    "FASE-INIZIALE": {
+        "CONTRATTO-APPALTO-DATA": {
+            "CONTRATTO-APPALTO-DATA": "Contratto di appalto",
+            "DATA-STIPULA": "Data stipula contratto",
+            "DATA-ESECUTIVITA": "Data esecutivit\u00E0 contratto",
+            "IMPORTO-CAUZIONE": "Importo cauzione",
+            "INCONTRI-VIGIL": "Effettuati incontri organi vigilanza (art23 c2 LR38/07)?",
+            "DATA-DECORRENZA":"Data decorrenza contrattuale",
+            "DATA-SCADENZA":"Data scadenza contrattuale",
+            "COD-CONTRATTO": "Codice contratto",
+            "GG-DATA-AGG": "Giorni trascorsi dalla data di aggiudicazione"
+        },
+        "TERMINE-ESECUZIONE-DATA": {
+            "TERMINE-ESECUZIONE-DATA": "Termine di esecuzione",
+            "DATA-INI-PROG-ESEC": "Data disposizione dell'inizio della progettazione esecutiva",
+            "DATA-APP-PROG-ESEC": "Data approvazione del progetto esecutivo",
+            "FLAG-FRAZIONATA": "Consegna frazionata?",
+            "DATA-VERBALE-CONS": "Data verbale prima consegna lavori",
+            "DATA-VERBALE-DEF": "Data verbale consegna definitiva",
+            "FLAG-RISERVA": "Consegnata sotto riserva di legge?",
+            "DATA-VERB-INIZIO": "Data effettivo inizio lavori/forniture/servizi",
+            "DATA-TERMINE": "Data fine prevista per dare ultimazione ai lavori/servizi/forniture",
+            "FLAG-FRAZIONATA-FS": "Avvio esecuzione contratto per fasi",
+            "DATA-VERBALE-CONS-FS": "Data verbale avvio prima fase esecuzione contratto",
+            "DATA-VERBALE-DEF-FS": "Data verbale avvio esecuzione contratto",
+            "GG-DATA-STIPULA": "Giorni trascorsi dalla data di stipula del contratto"
+        },
+        "PUBBLICAZIONE-ESITO-DATA": {
+            "PUBBLICAZIONE-ESITO-DATA": "Pubblicazione esito di procedura",
+            "DATA-GUCE": "Gazzetta Ufficiale Comunit\u00E0 Europea",
+            "DATA-GURI": "Gazzetta ufficiale Repubblica Italiana",
+            "DATA-ALBO": "Albo pretorio del comuni ove si eseguono i lavori",
+            "QUOTIDIANI-NAZ": "Numero quotidiani nazionali",
+            "QUOTIDIANI-REG": "Numero quotidiani locali",
+            "PROFILO-COMMITTENTE": "Profilo del committente",
+            "SITO-MINISTERO-INF-TRASP": "Sito Informatico Ministero Infrastrutture",
+            "SITO-OSSERVATORIO-CP": "Sito Informatico Osservatorio Contratti Pubblici"
+        }
+    },    
+    "FASE-AGGIUDICAZIONE": {
+        "DATI-ECONOMICI-DATA": {
+            "DATI-ECONOMICI-DATA": "Dati economici dell'appalto",
+            "COD-STRUMENTO": "Codice dello strumento di programmazione",
+            "IMPORTO-LAVORI": "Importo componente lavori al netto della sicurezza",
+            "IMPORTO-SERVIZI": "Importo componente servizi al netto della sicurezza",
+            "IMPORTO-FORNITURE": "Importo componente forniture al netto della sicurezza",
+            "IMPORTO-SUBTOTALE": "Importo al netto della sicurezza",
+            "IMPORTO-ATTUAZIONE-SICUREZZA": "Importo totale per l'attuazione della sicurezza",
+            "IMPORTO-PROGETTAZIONE": "Importo progettazione",
+            "IMPORTO-NON-ASSOG": "Eventuali ulteriori somme non assoggettate al ribasso d'asta",
+            "IMPORTO-COMPL-APPALTO": "Importo complessivo appalto",
+            "IVA": "IVA (%)",
+            "IMPORTO-IVA": "Importo IVA",
+            "ALTRE-SOMME": "Altre somme a disposizione",
+            "IMPORTO-DISPOSIZIONE": "Importo totale somme a disposizione",
+            "IMPORTO-COMPL-INTERVENTO": "Importo complessivo intervento",
+            "OPERE-URBANIZ-SCOMPUTO": "Opere di urbanizzazione a scomputo?",
+            "MODALITA-RIAGGIUDICAZIONE": "Modalit\u00E0 di riaggiudicazione",
+            "IMPORTO-OPZIONI":"Importo opzioni e rinnovi",
+            "IMPORTO-RIPETIZIONI":"Importo per ripetizioni e consegne complementari"
+        },
+        "DATI-PROCEDURALI-APPALTO-DATA": {
+            "DATI-PROCEDURALI-APPALTO-DATA": "Dati procedurali dell'appalto",
+            "REQUISITI-SETT-SPEC": "Requisiti settori speciali",
+            "PROCEDURA-ACC": "\u00C8 stata utilizzata la procedura accelerata?",
+            "PREINFORMAZIONE": "\u00C8 stata effettuata la preinformazione?",
+            "TERMINE-RIDOTTO": "\u00C8 stato utilizzato il termine ridotto?",
+            "ID-MODO-INDIZIONE": "Modalit\u00E0 di indizione della procedura"
+        },
+        "INVITI-OFFERTE-SOGLIA-DATA": {
+            "INVITI-OFFERTE-SOGLIA-DATA": "Inviti ed offerte/soglia di anomalia",
+            "DATA-MANIF-INTERESSE": "Data di scadenza per la presentazione delle manifestazioni di interesse",
+            "NUM-MANIF-INTERESSE": "Numero soggetti che hanno presentato manifestazione interesse",
+            "DATA-SCADENZA-RICHIESTA-INVITO": "Data di scadenza per la presentazione delle richieste invito",
+            "NUM-IMPRESE-RICHIEDENTI": "Numero soggetti che hanno presentato richiesta di invito",
+            "DATA-INVITO": "Data di invito",
+            "NUM-IMPRESE-INVITATE": "Numero soggetti invitati a presentare l'offerta",
+            "DATA-SCADENZA-PRES-OFFERTA": "Data di scadenza per la presentazione delle offerte",
+            "NUM-IMPRESE-OFFERENTI": "Numero soggetti che hanno presentato offerta",
+            "NUM-OFFERTE-AMMESSE": "Numero offerte ammesse",
+            "NUM-OFFERTE-ESCLUSE": "Numero imprese escluse automaticamente",
+            "NUM-IMP-ESCL-INSUF-GIUST": "Numero imprese escluse per insufficienti giustificazioni",
+            "OFFFERTA-MASSIMO": "Offerta di massimo ribasso %",
+            "OFFFERTA-MINIMA": "Offerta di minimo ribasso %",
+            "VAL-SOGLIA-ANOMALIA": "Valore soglia di anomalia %",
+            "NUM-OFFERTE-FUORI-SOGLIA": "Numero offerte al di fuori della soglia di anomalia",
+            "ASTA-ELETTRONICA": "Ricorso all'asta elettronica"
+        },
+        "AGGIUDICAZIONE-AFFIDAMENTO-DATA": {
+            "AGGIUDICAZIONE-AFFIDAMENTO-DATA": "Aggiudicazione/affidamento",
+            "PERC-RIBASSO-AGG": "Ribasso di aggiudicazione %",
+            "PERC-OFF-AUMENTO": "Offerta in aumento %",
+            "IMPORTO-AGGIUDICAZIONE": "Importo di aggiudicazione",
+            "DATA-VERB-AGGIUDICAZIONE": "Data di aggiudicazione definitiva",
+            "TIPO-ATTO": "Tipologia atto",
+            "DATA-ATTO": "Data atto",
+            "NUMERO-ATTO": "Numero atto",
+            "FLAG-RELAZIONE-UNICA": "Redatta e disponibile a richiesta la Relazione Unica sulle Procedure di Aggiudicazione",
+            "FLAG-RICH-SUBAPPALTO": "L'affidatario ha richiesto di subappaltare"
+        },
+        "ALTRI-CAMPI-LIGURIA-DIGITALE-DATA": {
+            "ALTRI-CAMPI-LIGURIA-DIGITALE-DATA": "Altri campi per integrazione con Liguria Digitale",
+            "FIN-REGIONALE": "Il contratto attinge a finanziamenti regionali?",
+            "FLAG-IMPORTI": "Tipo di importo in esecuzione",
+            "FLAG-SICUREZZA": "Tipo di oneri di sicurezza",
+            "FLAG-LIVELLO-PROGETTUALE": "Livello progettuale",
+            "VERIFICA-CAMPIONE": "Effettuata la verifica a campione dei requisiti?"
+        }
+    },
+    "COMUNICAZIONE-ESITO": {
+        "STATO-ATTUALE-DATA": {
+            "STATO-ATTUALE-DATA": "Stato attuale",
+            "ESITO-PROCEDURA": "Esito della procedura"
+        },
+        "PUBBLICAZIONE-DATA": {
+            "PUBBLICAZIONE-DATA": "Pubblicazione",
+            "DATA-VERB-AGGIUDICAZIONE": "Data di aggiudicazione definitiva",
+            "DATA-VERBALE": "Data verbale",
+            "IMPORTO-AGGIUDICAZIONE": "Importo di aggiudicazione",
+            "FILE-ALLEGATO": "File PDF per la pubblicazione"
+        },
+        "UPLOAD-FILE": "Upload File",
+        "UPLOAD-URL": "Inserire URL",
+        "URL": "URL",
+        "CHOOSE-FILE": "Scegli File",
+        "TITOLO-DOCUMENT": "Titolo documento (*)"
+    },
+    "IMPRESE-AGGIUDICATARIE": {
+        "EMPTY-LIST": "Nessun elemento trovato.",
+        "ID-IMPRESA": "Id. Impresa",
+        "DESC-TIPO-IMPRESA": "Descr. Tipo Impresa",
+        "NOME-IMPRESA": "Nome Impresa",
+        "AZIONE": "Azione",
+        "ELIMINA-IMPRESA": "Elimina impresa aggiudicataria"
+    },
+    "DETTAGLIO-FASE-AGGIUDICAZIONE": {
+        "TABS": {
+            "DATI-AGGIUDICAZIONE": "Dati aggiudicazione",
+            "IMPRESE-AGGIUDICATARIE": "Imprese aggiudicatarie / affidatarie",
+            "INCARICHI-PROFESSIONALI": "Incarichi professionali",
+            "FINANZIAMENTI": "Finanziamenti"
+        }
+    },
+    "IMPRESA-AGGIUDICATARIA": {
+        "GENERAL-DATA": {
+            "GENERAL-DATA": "Dati generali",
+            "NOMEST": "Denominazione dell'impresa aggiudicataria",
+            "ID-TIPO-AGG": "Tipologia del soggetto aggiudicatario",
+            "RUOLO": "Ruolo nell'associazione",
+            "FLAG-AVVALIMENTO": "L'aggiudicatario ha fatto ricorso all'avvalimento?",
+            "NOMEST-AUSILIARIA": "Denominazione dell'impresa ausiliaria",
+            "NUMERO-RAGGRUPPAMENTO": "Numero raggruppamento",
+            "IMPORTO-AGGIUDICAZIONE": "Importo di aggiudicazione",
+            "RIBASSO-AGGIUDICAZIONE": "Ribasso di aggiudicazione %",
+            "OFFERTA-AUMENTO": "Offerta in aumento %",
+            "NOME-LEGALE-RAPPR": "Nome legale rappresentante",
+            "COGNOME-LEGALE-RAPPR": "Cognome legale rappresentante",
+            "CF-LEGALE-RAPPR": "Codice Fiscale legale rappresentante"
+        },
+        "IMPRESA-DATA": {
+            "IMPRESA-DATA": "Impresa"
+        }
+    },
+    "INCARICHI-PROFESSIONALI": {
+        "DATI-GENERALI-DATA": {
+            "DATI-GENERALI-DATA": "Dati generali",
+            "INCARICO": "Incarico",
+            "NOMTEC": "Denominazione",
+            "ID-RUOLO": "Tipologia del soggetto",
+            "CIG-PROG-ESTERNA": "CIG affidamento incarico esterno",
+            "DATA-AFF-PROG-ESTERNA": "Data affidamento incarico esterno",
+            "DATA-CONS-PROG-ESTERNA": "Data consegna progetto",
+            "TIPO-PROG":"Tipo progettazione"
+        }
+    },
+    "NUTS": {
+        "PAESE": "Paese",
+        "AREA": "Area",
+        "REGIONE": "Regione",
+        "PROVINCIA": "Provincia",
+        "CALCULATED": "Codice NUTS",
+        "VALIDATORS": {
+            "COMBO-REQUIRED": "Per poter selezionare il valore \u00E8 necessario compilare almeno un campo"
+        }
+    },
+    "FASE-AGGIUDICAZIONE-SEMP": {
+        "DATI-ECONOMICI-DATA": {
+            "DATI-ECONOMICI-DATA": "Dati economici dell'appalto",
+            "ASTA-ELETTRONICA": "Ricorso all'asta elettronica",
+            "IMPORTO-SUBTOTALE": "Importo dell'appalto al netto della sicurezza",
+            "IMPORTO-ATTUAZIONE-SICUREZZA": "Importo totale per l'attuazione della sicurezza",
+            "IMPORTO-COMPL-APPALTO": "Importo complessivo appalto",
+            "IVA": "IVA (%)",
+            "IMPORTO-IVA": "Importo IVA",
+            "ALTRE-SOMME": "Altre somme a disposizione",
+            "IMPORTO-DISPOSIZIONE": "Importo totale somme a disposizione",
+            "IMPORTO-COMPL-INTERVENTO": "Importo complessivo intervento",
+            "PERC-RIBASSO-AGG": "Ribasso di aggiudicazione %",
+            "PERC-OFF-AUMENTO": "Offerta in aumento %",
+            "DATA-VERB-AGGIUDICAZIONE": "Data di aggiudicazione definitiva",
+            "IMPORTO-AGGIUDICAZIONE": "Importo di aggiudicazione",
+            "TIPO-ATTO": "Tipologia atto",
+            "DATA-ATTO": "Data atto",
+            "NUMERO-ATTO": "Numero atto",
+            "DATA-STIPULA": "Data stipula contratto",
+            "DURATA-CON": "Durata contrattuale in giorni"
+        }
+    },
+    "DETTAGLIO-FASE-AGGIUDICAZIONE-SEMP": {
+        "TABS": {
+            "DATI-AGGIUDICAZIONE": "Dati aggiudicazione",
+            "IMPRESE-AGGIUDICATARIE": "Imprese aggiudicatarie / affidatarie",
+            "INCARICHI-PROFESSIONALI": "Incarichi professionali"
+        }
+    },
+    "DETTAGLIO-FASE-INIZIALE": {
+        "TABS": {
+            "DATI-GENERALI": "Dati generali",
+            "SCHEDA-SICUREZZA": "Scheda Sicurezza",
+            "MISURE-AGGIUNTIVE-SICUREZZA": "Misure aggiuntive sulla sicurezza",
+            "INCARICHI-PROFESSIONALI": "Incarichi professionali"
+        }
+    },
+    "FINANZIAMENTI": {
+        "DATI-GENERALI-DATA": {
+            "DATI-GENERALI-DATA": "Dati generali",
+            "ID-FINANZIAMENTO": "Tipo di finanziamento",
+            "IMPORTO-FINANZIAMENTO": "Importo finanziamento"
+        }
+    },
+    "SCHEDA-SICUREZZA": {
+        "EMPTY-OBJECT": "Nessuna scheda trovata.",
+        "DATI-GENERALI-DATA": {
+            "DATI-GENERALI-DATA": "Dati generali",
+            "PIANSCIC": "Presenza piano sicurezza e coordinamento?",
+            "DIROPE": "Nominato dir. Operativo ai sensi art.21 c.3 LR38/07?",
+            "TUTOR": "Nominato tutor ai sensi art.2 LR38/07?"
+        }
+    },
+    "IMPRESE-PARTECIPANTI": {
+        "EMPTY-LIST": "Nessun elemento trovato.",
+        "ID-IMPRESA": "Id. Impresa",
+        "DESC-TIPO-IMPRESA": "Descr. Tipo Impresa",
+        "NOME-IMPRESA": "Nome Impresa",
+        "PARTECIPA": "Partecipa?",
+        "AZIONE": "Azione",
+        "RAGGRUPPAMENTO": "Gruppo R",
+        "ELIMINA-IMPRESA": "Elimina impresa"
+    },
+    "IMPRESA-IMPR-INV-PARTE": {
+        "GENERAL-DATA": {
+            "GENERAL-DATA": "Dati generali",
+            "TIPOLOGIA-SOGGETTO": "Tipologia del soggetto partecipante",
+            "PARTECIPANTE": "Partecipante?",
+            "DENOMINAZIONE-IMPRESA": "Denominazione Impresa"
+        },
+        "IMPRESA-DATA": {
+            "IMPRESA-DATA": "Nuova impresa invitata / partecipante",
+            "DENOMINAZIONE-IMPRESA": "Denominazione Impresa",
+            "RUOLO": "Ruolo"
+        },
+        "VALIDATORS": {
+            "DENOMINAZIONE-OBBLIGATORIA": "Il campo denominazione \u00E8 obbligatorio.",
+            "TIPO-SOGGETTO-OBBLIGATORIO": "Il campo tipo soggetto \u00E8 obbligatorio.",
+            "PARTECIPANTE-OBBLIGATORIO": "Il campo partecipante \u00E8 obbligatorio.",
+            "CODIMP-DUPLICATO": "Non \u00E8 possibile inserire la stessa impresa pi\u00F9 volte in un consorzio o raggruppamento"
+        }
+    },
+    "DETTAGLIO-FASE-AVANZAMENTO": {
+        "TABS": {
+            "DATI-AVANZAMENTO": "Dati avanzamento"
+        }
+    },
+    "FASE-AVANZAMENTO": {
+        "STATO-AVANZAMENTO": {
+            "STATO-AVANZAMENTO": "Stato di avanzamento",
+            "NUM-AVAN": "Numero dello stato di avanzamento",
+            "DATA-RAGGIUNGIMENTO": "Data dello stato di avanzamento",
+            "DENOM-AVANZAMENTO": "Denominazione stato di avanzamento",
+            "IMPORTO-SAL": "Importo SAL",
+            "PERCENTUALE-SAL": "% SAL",
+            "DATA-CERTIFICATO": "Data emissione del certificato di pagamento",
+            "IMPORTO-CERTIFICATO": "Importo del certificato di pagamento",
+            "FLAG-RITARDO": "Ritardo/Anticipo",
+            "NUM-GIORNI-SCOST": "Numero giorni di scostamento",
+            "NUM-GIORNI-PROROGA": "Numero di giorni di proroga concessi (non conseguenti a varianti)",
+            "FLAG-PAGAMENTO": "Modalit\u00E0 di pagamento del corrispettivo",
+            "IMPORTO-ANTICIPAZIONE": "Importo anticipazione",
+            "DATA-ANTICIPAZIONE": "Data del certificato di pagamenti relativo all'anticipazione",
+            "SUBAPPALTI": "Sono stati autorizzati subappalti per questo SAL?"
+        }
+    },
+    "FASE-SOSPENSIONE": {
+        "SOSPENSIONE": {
+            "SOSPENSIONE": "Sospensione dell'esecuzione",
+            "DATA-VERB-SOSP": "Data del verbale di sospensione",
+            "DATA-VERB-RIPR": "Data del verbale di ripresa",
+            "MOTIVO-SOSP": "Motivazione della sospensione",
+            "FLAG-SUPERO-TEMPO": "\u00C8 stato superato il quarto del tempo contrattuale?",
+            "FLAG-RISERVE": "Iscrizione di riserve?",
+            "FLAG-VERBALE": "Verbale non sottoscritto dall'appaltatore",
+            "NUM-SOSP": "Numero Sospensione",
+            "SOSP_PARZIALE-SOSP":"Sospensione parziale",
+            "INC_CRONO":"Incidenza cronoprogramma",
+            "DATA_SUPER_QUARTO":"Data superamento quarto contrattuale",
+            "SELEZIONE-SOSPENSIONE":"Selezionare la sospensione da riprendere",
+            "SOSPENSIONE-SELEZIONATA":"Sospensione Selezionata",
+            "WARNING-FLAG-SUPERO-TEMPO":"Se si è superato il quarto del tempo contrattuale, prima della scheda 'ripresa prestazione' deve essere compilata la scheda 'Superamento del quarto contrattuale'"
+        }
+    },
+    "FASE-AVANZAMENTO-SEMP": {
+        "STATO-AVANZAMENTO-SEMP": {
+            "STATO-AVANZAMENTO-SEMP": "Stato di avanzamento",
+            "NUM-AVAN": "Numero dello stato di avanzamento",
+            "DATA-CERTIFICATO": "Data emissione del certificato di pagamento",
+            "IMPORTO-CERTIFICATO": "Importo liquidato"
+        }
+    },
+    "FASE-VARIANTE": {
+        "VARIANTE": {
+            "VARIANTE": "Dati della modifica",
+            "DATA-VERB-APPR": "Data di approvazione della modifica",
+            "NUM-VARI": "Numero Progressivo"
+        },
+        "ALTRO": {
+            "ALTRO": "Altri dati",
+            "URL_VARIANTI_CO": "URL documentazione varianti in corso d'opera",
+            "MOTIVO_REV_PREZZI": "Motivo Revisione prezzi",
+            "CIG-NUOVA-PROC": "CIG della nuova procedura avviata"
+        },
+        "MOTIVAZIONI-VARIANTE": {
+            "MOTIVAZIONI-VARIANTE": "Motivazioni della modifica",
+            "MOTIVAZIONI-VARIANTE-PROGRESSIVO": "Motivazione N. {{value}}",
+            "ALTRE-MOTIVAZIONI": "Altre motivazioni"
+        },
+        "ATTI-AGGIUNTIVI-SOTTOMISSIONE": {
+            "ATTI-AGGIUNTIVI-SOTTOMISSIONE": "Atti aggiuntivi/sottomissione",
+            "DATA-ATTO-AGGIUNTIVO": "Data sottoscrizione eventuale atto aggiuntivo",
+            "NUMERO-GIORNI-PROROGA": "Giorni di proroga concessi / tempo aggiuntivo rispetto ai termini contrattuali"
+        },
+        "QUADRO-ECONOMICO": {
+            "QUADRO-ECONOMICO": "Quadro economico rideterminato",
+            "IMP-RIDET-LAVORI": "Importo componente lavori al netto della sicurezza",
+            "IMP-RIDET-SERVIZI": "Importo componente servizi al netto della sicurezza",
+            "IMP-RIDET-FORNIT": "Importo componente forniture al netto della sicurezza",
+            "IMP-SUBTOTALE": "Importo al netto della sicurezza",
+            "IMP-SICUREZZA": "Importo totale per l'attuazione della sicurezza",
+            "IMP-PROGETTAZIONE": "Importo progettazione",
+            "IMP-NON-ASSOG": "Eventuali ulteriori somme non assoggettate al ribasso d'asta",
+            "IMP-COMPL-APPALTO": "Importo complessivo appalto",
+            "IMP-DISPOSIZIONE": "Importo totale somme a disposizione",
+            "IMP-COMPL-INTERVENTO": "Importo complessivo intervento",
+            "IMP-FINPA": "Finanziamenti o canoni della PA",
+            "ENTR-UTENZA": "Entrate derivanti dall'utenza",
+            "INTR-ATTIVO": "Introito attivo per la PA",
+            "IMP-OPZIONI": "Somme per opzioni/rinnovi",
+            "EFORM": "E-form",
+            "WARNING-EFORM":"In questo campo deve essere caricato l'e-form in versione 1.9, codificato in base64, relativo alla modifica contrattuale per la pubblicazione sul sistema europeo",
+            "IMP-MODIFICA": "Importo della modifica contrattuale"
+        },
+        "LIGURIA": {
+            "LIGURIA": "Liguria",
+            "FLAG-VARIANTE": "Tipologia di modifica-contrattuale",
+            "QUINTO-OBBLIGO": "Rientranti nel quinto d'obbligo?",
+            "FLAG-IMPORTI": "Tipo di importo in esecuzione",
+            "FLAG-SICUREZZA": "Tipo di oneri di sicurezza"
+        },
+        "VALIDATION":{
+            "URL-VARIANTI-CO-OBBLIGATORIO": "Il campo \"URL documentazione varianti in corso d'opera\" è obbligatorio"
+        }
+    },
+    "DETTAGLIO-FASE-ADESIONEACCORDOQUADRO": {
+        "TABS": {
+            "DATI-ADESIONE": "Dati adesione",
+            "IMPRESE-AGGIUDICATARIE": "Imprese aggiudicatarie / affidatarie",
+            "INCARICHI-PROFESSIONALI": "Incarichi professionali",
+            "FINANZIAMENTI": "Finanziamenti"
+        }
+    },
+    "FASE-ADESIONEACCORDOQUADRO": {
+        "DATI-ECONOMICI-ADESIONE-DATA": {
+            "DATI-ECONOMICI-ADESIONE": "Dati economici dell'adesione",
+            "COD-STRUMENTO": "Codice dello strumento di programmazione",
+            "IMPORTO-LAVORI": "Importo componente lavori al netto della sicurezza",
+            "IMPORTO-SERVIZI": "Importo componente servizi al netto della sicurezza",
+            "IMPORTO-FORNITURE": "Importo componente forniture al netto della sicurezza",
+            "IMPORTO-SUBTOTALE": "Importo al netto sicurezza",
+            "IMPORTO-ATTUAZIONE-SICUREZZA": "Importo totale per l'attuazione della sicurezza",
+            "IMPORTO-PROGETTAZIONE": "Importo progettazione",
+            "IMPORTO-NON-ASSOG": "Eventuali ulteriori somme non assoggettate al ribasso d'asta",
+            "IMPORTO-COMPL-APPALTO": "Importo complessivo appalto",
+            "IMPORTO-COMPL-INTERVENTO": "Importo complessivo intervento"
+        },
+        "AGGIUDICAZIONE-AFFIDAMENTO-DATA": {
+            "AGGIUDICAZIONE-AFFIDAMENTO": "Aggiudicazione/Affidamento",
+            "PERC-RIBASSO-AGG": "Ribasso di aggiudicazione %",
+            "PERC-OFF-AUMENTO": "Offerta in aumento %",
+            "IMPORTO-AGGIUDICAZIONE": "Importo di aggiudicazione",
+            "DATA-VERB-AGGIUDICAZIONE": "Data di aggiudicazione definitiva",
+            "TIPO-ATTO": "Tipologia atto",
+            "DATA-ATTO": "Data atto",
+            "NUMERO-ATTO": "Numero atto",
+            "FLAG-RICH-SUBAPPALTO": "L'affidatario ha richiesto di subappaltare"
+        }
+    },
+    "FASE-STIPULAACCORDOQUADRO": {
+        "PUBBLICAZIONE-ESITO-SELEZIONE-DATA": {
+            "PUBBLICAZIONE-ESITO-SELEZIONE": "Pubblicazione esito procedura di selezione",
+            "DATA-GUCE": "Gazzetta Ufficiale Comunit\u00E0 Europea",
+            "DATA-GURI": "Gazzetta ufficiale Repubblica Italiana",
+            "QUOTIDIANI-NAZ": "Numero quotidiani nazionali",
+            "QUOTIDIANI-REG": "Numero quotidiani locali",
+            "PROFILO-COMMITTENTE": "Profilo del committente",
+            "SITO-MINISTERO-INF-TRASP": "Sito Informatico Ministero Infrastrutture",
+            "SITO-OSSERVATORIO-CP": "Sito Informatico Osservatorio Contratti Pubblici"
+        },
+        "ACCORDO-QUADRO-DATA": {
+            "ACCORDO-QUADRO": "Accordo quadro/convenzione",
+            "DATA-STIPULA": "Data stipula accordo quadro/convenzione"
+        },
+        "TERMINE-ESECUZIONE-DATA": {
+            "TERMINE-ESECUZIONE": "Termine di esecuzione",
+            "DATA-DECORRENZA": "Data decorrenza contrattuale",
+            "DATA-VERB-SCADENZA": "Data scadenza contrattuale"
+        }
+    },
+    "FASE-INIZIALE-SEMP": {
+        "CONTRATTO-APPALTO-DATA": {
+            "CONTRATTO-APPALTO-DATA": "Contratto di appalto",
+            "DATA-STIPULA": "Data stipula contratto"
+        },
+        "TERMINE-ESECUZIONE-DATA": {
+            "TERMINE-ESECUZIONE-DATA": "Termine di esecuzione",
+            "FLAG-RISERVA": "Consegnata sotto riserva di legge?",
+            "DATA-VERB-INIZIO": "Data effettivo inizio lavori/forniture/servizi",
+            "DATA-TERMINE": "Data fine prevista per dare ultimazione ai lavori/servizi/forniture"
+        }
+    },
+    "DETTAGLIO-FASE-INIZIALE-SEMP": {
+        "TABS": {
+            "DATI-GENERALI": "Dati generali",
+            "SCHEDA-SICUREZZA": "Scheda Sicurezza",
+            "MISURE-AGGIUNTIVE-SICUREZZA": "Misure aggiuntive sulla sicurezza",
+            "INCARICHI-PROFESSIONALI": "Incarichi professionali"
+        }
+    },
+    "MISURE-AGGIUNTIVE-SICUREZZA": {
+        "GENERAL-DATA": {
+            "GENERAL-DATA": "Dati generali",
+            "DESCMIS": "Breve descrizione delle misure aggiuntive e migliorative per la sicurezza",
+            "NOMEST": "Denominazione dell'impresa aggiudicataria"
+        },
+        "DOCUMENTAZIONE-DATA": {
+            "DOCUMENTAZIONE-DATA": "Documentazione",
+            "DOCUMENTS": "Upload Documento",
+            "EXISTING-DOCUMENTS": "Documenti Esistenti"
+        },
+        "EMPTY-OBJECT": "Nessuna misura aggiuntiva sulla sicurezza trovata.",
+        "UPLOAD-FILE": "Upload File",
+        "UPLOAD-URL": "Inserire URL",
+        "URL": "URL",
+        "CHOOSE-FILE": "File PDF",
+        "TITOLO-DOCUMENT": "Titolo del documento"
+    },
+    "FASE-CONCLUSIONE": {
+        "INTERRUZIONE-ANTICIPATA-DATA": {
+            "INTERRUZIONE-ANTICIPATA-PROCEDIMENTO": "Interruzione anticipata del procedimento",
+            "INTANTIC": "Interruzione anticipata del procedimento?",
+            "ID-MOTIVO-INTERR": "Causa dell'interruzione anticipata",
+            "ID-MOTIVO-RISOL": "Motivazione della risoluzione",
+            "DATA-RISOLUZIONE": "Data interruzione anticipata",
+            "FLAG-ONERI": "Oneri economici derivanti dalla risoluzione/recesso",
+            "ONERI-RISOLUZIONE": "Importo degli oneri",
+            "FLAG-POLIZZA": "Incamerata polizza?"
+        },
+        "ULTIMAZIONE-LAVORI-DATA": {
+            "ULTIMAZIONE-LAVORI": "Ultimazione lavori",
+            "DATA-VERBALE-CONSEGNA": "Data verbale di consegna",
+            "TERMINE-CONTRATTO-ULT": "Data termine contrattuale ultimazione",
+            "DATA-ULTIMAZIONE": "Data ultimazione",
+            "NUM-INFORTUNI": "Numero infortuni",
+            "NUM-INF-PERM": "Numero infortuni con postumi permanenti",
+            "NUM-INF-MORT": "Numero infortuni mortali",
+            "NUM-GIORNI-PROROGA": "N. giorni di proroga non conseguenti a varianti",
+            "ORE-LAVORATE": "Ore lavorate",
+            "SCOST-DATA-FINE": "Scostamento rispetto alla data di fine prevista",
+            "GG-FINE-ESE": "Giorni trascorsi dalla data fine esecuzione"
+        }
+    },
+    "FASE-CONCLUSIONE-SEMP": {
+        "INTERRUZIONE-ANTICIPATA-DATA": {
+            "INTERRUZIONE-ANTICIPATA-PROCEDIMENTO": "Interruzione anticipata del procedimento",
+            "INTANTIC": "Interruzione anticipata del procedimento?",
+            "ID-MOTIVO-INTERR": "Causa dell'interruzione anticipata",
+            "ID-MOTIVO-RISOL": "Motivazione della risoluzione",
+            "DATA-RISOLUZIONE": "Data interruzione anticipata ",
+            "FLAG-ONERI": "Oneri economici derivanti dalla risoluzione/recesso",
+            "ONERI-RISOLUZIONE": "Importo degli oneri",
+            "FLAG-POLIZZA": "Incamerata polizza?"
+        },
+        "ULTIMAZIONE-LAVORI-DATA": {
+            "ULTIMAZIONE-LAVORI": "Ultimazione lavori",
+            "DATA-ULTIMAZIONE": "Data ultimazione",
+            "ORE-LAVORATE": "Ore lavorate"
+        }
+    },
+    "FASE-CONCLUSIONE-AFFIDAMENTI-DIRETTI":{        
+        "GENERAL-DATA":{
+            "TITLE":"Dati generali",
+            "DATA-VERB-INIZIO":"Data inizio",
+            "DATA-ULTIMAZIONE":"Data ultimazione",
+            "IMPORTO-CERTIFICATO":"Importo liquidato"
+        }
+    },
+    "IMPORTA-GARA": {
+        "CARICA-LOTTO-SIMOG": {
+            "CARICA-LOTTO-SIMOG": "",
+            "CIG-IDAVGARA": "CIG / Numero procedura/ ID appalto",
+            "CIG-IDAPPALTO": "CIG / ID appalto"
+        },
+        "NON-PERFEZIONATA": "La procedura non \u00E8 perfezionata",
+        "SA-DIFFERENTE": "ATTENZIONE: importazione avvenuta con successo, ma la procedura/CIG importanto \u00E8 di un' altra Stazione Appaltante ({{value}})",
+        "ERRORE-IMPORT": "Errore durante l'import del lotto con CIG: {{value}}. ",
+        "CIG": "CIG: {{value}}. ",
+        "CIG-IDAVGARA-OBBLIGATORIO": "CIG o Numero procedura ANAC obbligatorio.",
+        "PRESA-IN-CARICO-SUCCESS": "La presa in carico della procedura indicata \u00E8 avvenuto con successo.",
+        "LISTA-TECNICI-MODAL": {
+            "GENERAL-DATA": {
+                "TITLE": "Scelta RUP",
+                "LISTA-TECNICI": "Lista RUP"
+            },
+            "INFO": "Selezionare il tecnico responsabile per la presa in carico della procedura delegata"
+        },
+        "LISTA-COLLABORAZIONI-MODAL": {
+            "GENERAL-DATA": {
+                "TITLE": "Scelta Centro di costo",
+                "LISTA-COLLABORAZIONI": "Lista Centro di costo"
+            },
+            "INFO": "Selezionare il centro di costo per la presa in carico della procedura delegata"
+        }
+    },
+    "FASE-ACCORDO-BONARIO": {
+        "ACCORDO-BONARIO-DATA": {
+            "ACCORDO-BONARIO-DATA": "Accordo bonario",
+            "NUM-ACCO": "Numero accordo bonario",
+            "DATA-ACCORDO": "Data dell'accordo bonario",
+            "ONERI-DERIVANTI": "Oneri derivanti",
+            "NUM-RISERVE": "Numero riserve transate",
+            "DATA-INIZIO-ACC": "Data inizio accordo",
+            "DATA-FINE-ACC": "Data fine accordo"
+        }
+    },
+    "FASE-SUBAPPALTO": {
+        "SUBAPPALTO-DATA": {
+            "SUBAPPALTO-DATA": "Subappalto",
+            "NUM-SUBA": "Numero subappalto",
+            "OGGETTO-SUBAPPALTO": "Oggetto subappalto",
+            "NOMEST-AGGIUDICATRICE": "Denominazione impresa aggiudicatrice",
+            "IMPORTO-PRESUNTO": "Importo presunto",
+            "DATA-AUTORIZZAZIONE": "Data autorizzazione subappalto",
+            "NOMEST-SUBAPPALTATRICE": "Denominazione impresa subappaltatrice",
+            "IMPORTO-EFFETTIVO": "Importo effettivo",
+            "ID-CATEGORIA": "Categoria",
+            "CPV": "Codice CPV",
+            "DESCRIZIONE-CPV": "Descrizione CPV",
+            "NOME-IMPRESA": "Denominazione impresa mandante",
+            "TIPO-IMPRESA": "Tipo Impresa",
+            "ERRORE-MANDANTI-NON-PRESENTI": "Deve essere obbligatoriamente indicata almeno una mandante se \u00E8 selezionato il tipo impresa \"Mandataria di un raggruppamento\"",
+            "ERRORE-MANDATARIA-PRESENTE": "Non \u00E8 possibile aggiungere un'impresa mandataria alla lista di imprese mandanti",
+            "DGUE":"DGUE",
+            "SUBAPPALTO-SELEZIONATO": "Subappalto selezionato",
+            "SELEZIONA-SUBAPPALTO": "Selezionare subappalto",
+            "ESITO":"Esito subappalto",
+            "MOTIVO-MANCATO-SUB":"Motivo mancato subappalto",
+            "DATA-ULTIMAZIONE":"Data ultimazione",
+            "MOTIVO-MANCATA-ESEC":"Motivo mancata esecuzione",
+            "WARNING-DGUE":"In questo campo deve essere caricato l’ESPD Request (European Single Procurement Document) in formato XML",
+            "ESECUZIONE-SUBA": "Esecuzione del subappalto"
+        },
+        "VALIDATORS": {
+            "NOMEST-AGGIUDICATRICE-OBBLIGATORIA": "\u00C8 obbligatorio indicare l'impresa aggiudicatrice",
+            "SELEZIONA-SUBAPPALTO-OBBLIGATORIO":"\u00C8 obbligatorio indicare il subappalto",
+            "ESITO-OBBLIGATORIO":"\u00C8 obbligatorio indicare l'esito",
+            "DATA_AUTORIZZAZIONE-OBBLIGATORIO":"\u00C8 obbligatorio indicare la Data autorizzazione subappalto",
+            "MOTIVO-MANCATO-SUB-OBBLIGATORIO":"\u00C8 obbligatorio indicare il Motivo mancato subappalto"
+        }
+    },
+    "CPV": {
+        "CALCULATED": "Codice CPV"
+    },
+    "DETTAGLIO-FASE-COLLAUDO": {
+        "TABS": {
+            "DATI-GENERALI": "Dati generali",
+            "INCARICHI-PROFESSIONALI": "Incarichi professionali"
+        }
+    },
+    "FASE-COLLAUDO": {
+        "COLLAUDO-CONFORMITA-PRESTAZIONI": {
+            "TIPO-COLLAUDO": "Tipologia collaudo",
+            "COLLAUDO-CONFORMITA-PRESTAZIONI-ESEGUITE": "Quadro economico finale",
+            "DATA-REGOLARE-ESEC": "Data del certificato di regolare esecuzione",
+            "DATA-COLLAUDO-STAT": "Data del collaudo statico",
+            "MODO-COLLAUDO": "Modalit\u00E0 del collaudo tecnico amministrativo",
+            "DATA-NOMINA-COLL": "Data nomina collaudatore/commissione",
+            "DATA-INIZ-OPER": "Data inizio operazioni di collaudo",
+            "DATA-CERT-COLLAUDO": "Data redazione certificato di collaudo",
+            "DATA-DELIBERA": "Data delibera di ammissibilit\u00E0 del collaudo",
+            "ESITO-COLLAUDO": "Esito del collaudo",
+            "IMP-FINALE-LAVORI": "Importo componente lavori al netto della sicurezza",
+            "IMP-FINAL-SERVIZI": "Importo componente servizi al netto della sicurezza",
+            "IMP-FINALE-FORNITURE": "Importo componente forniture al netto della sicurezza",
+            "IMP-SUBTOTALE": "Importo al netto della sicurezza",
+            "IMP-FINALE-SECUR": "Importo totale per l'attuazione della sicurezza",
+            "IMP-PROGETTAZIONE": "Importo progettazione",
+            "IMP-COMPL-APPALTO": "Importo complessivo appalto",
+            "IMP-DISPOSIZIONE": "Importo totale somme a disposizione",
+            "IMP-COMPL-INTERVENTO": "Importo a consuntivo dell'intervento",
+            "LAVORI-ESTESI": "Lavori annuali estesi a pi\u00F9 esercizi?",
+            "IMP-NON-ASSOG":"Eventuali ulteriori somme non assoggettate al ribasso d'asta",
+            "IMP-FINALE-OPZIONI":"Importo opzioni e rinnovi",
+            "IMP-FINALE-RIPETIZIONI":"Importo per ripetizioni e consegne complementari",
+            "SCOSTAMENTO-IMP-PREV": "Scostamento rispetto all’importo previsto"
+        },
+        "ULTERIORI-RISERVE-IN-VIA-AMMINISTRATIVA": {
+            "ULTERIORI-RISERVE-IN-VIA-AMMINISTRATIVA": "Ulteriori riserve definite o da definire in via amministrativa in sede di collaudo",
+            "ULTERIORI-RISERVE-IN-VIA-AMMINISTRATIVA-PCP": "Ulteriori riserve definite o da definire con diversa modalità",
+            "AMM-IMPORTO-DEF": "Importo totale eventuale definizione",
+            "AMM-NUM-DEFINITIVE": "Numero riserve definite",
+            "AMM-NUM-DADEF": "Numero riserve da definire",
+            "AMM-IMP-RICHIESTO": "Importo totale richiesto"
+        },
+        "ULTERIORI-RISERVE-IN-VIA-ARBITRALE": {
+            "ULTERIORI-RISERVE-IN-VIA-ARBITRALE": "Ulteriori riserve definite o da definire in via arbitrale",
+            "ARB-IMPORTO-DEF": "Importo totale eventuale definizione",
+            "ARB-NUM-DEFINITIVE": "Numero riserve definite",
+            "ARB-NUM-DADEF": "Numero riserve da definire",
+            "ARB-IMP-RICHIESTO": "Importo totale richiesto"
+        },
+        "ULTERIORI-RISERVE-IN-VIA-GIUDIZIALE": {
+            "ULTERIORI-RISERVE-IN-VIA-GIUDIZIALE": "Ulteriori riserve definite o da definire in via giudiziale",
+            "GIU-IMPORTO-DEF": "Importo totale eventuale definizione",
+            "GIU-NUM-DEFINITIVE": "Numero riserve definite",
+            "GIU-NUM-DADEF": "Numero riserve da definire",
+            "GIU-IMP-RICHIESTO": "Importo totale richiesto"
+        },
+        "ULTERIORI-RISERVE-IN-VIA-TRANSATTIVA": {
+            "ULTERIORI-RISERVE-IN-VIA-TRANSATTIVA": "Ulteriori riserve definite o da definire in via transattiva",
+            "TRA-IMPORTO-DEF": "Importo totale eventuale definizione",
+            "TRA-NUM-DEFINITIVE": "Numero riserve definite",
+            "TRA-NUM-DADEF": "Numero riserve da definire",
+            "TRA-IMP-RICHIESTO": "Importo totale richiesto"
+        },
+        "ALTRI-DATI": {
+            "ALTRI-DATI": "Altri dati",
+            "FLAG-SINGOLO-COMMISSIONE": "Collaudatore o commissione?",
+            "DATA-APPROVAZIONE": "Data approvazione del certificato relativo",
+            "FLAG-IMPORTI": "Tipo di importo in esecuzione",
+            "FLAG-SICUREZZA": "Tipo di oneri di sicurezza",
+            "FLAG-SUBAPPALTATORI": "Nel contratto l'aggiudicatorio ha usufruito di subappalti",
+            "DATA-INIZIO-AMM-RISERVE": "Data inizio riserva in via amministrativa",
+            "DATA-INIZIO-ARB-RISERVE": "Data inizio riserva in via arbitrale",
+            "DATA-INIZIO-GIU-RISERVE": "Data inizio riserva in via giudiziale",
+            "DATA-INIZIO-TRA-RISERVE": "Data inizio riserva in via transattiva",
+            "DATA-FINE-AMM-RISERVE": "Data fine riserva in via amministrativa",
+            "DATA-FINE-ARB-RISERVE": "Data fine riserva in via arbitrale",
+            "DATA-FINE-GIU-RISERVE": "Data fine riserva in via giudiziale",
+            "DATA-FINE-TRA-RISERVE": "Data fine riserva in via transattiva"
+        },
+        "VALIDATORS": {
+            "TIPO-COLLAUDO-OBBLIGATORIO": "Il campo Tipologia di collaudo \u00E8 obbligatorio"
+        },
+        "CONTENZIOSO":{
+            "CONTENZIOSO": "Contenzioso",
+            "NUM-RISERVE":"Numero totale riserve definite con accordo bonario",
+            "ONERI-DERIVANTI":"Oneri complessivi derivanti"
+        }
+    },
+    "FASE-RECESSO": {
+        "RITARDO-SOSPENSIONE": {
+            "RITARDO-SOSPENSIONE": "Ritardo o sospensione nella consegna",
+            "NUM-RITA": "Numero istanza di recesso",
+            "DATA-TERMINE": "Termine previsto per la consegna",
+            "DATA-CONSEGNA": "Data della consegna dei lavori",
+            "TIPO-COMUN": "Tipologia comunicazione",
+            "RITARDO": "Ritardo della consegna in giorni",
+            "DURATA-SOSP": "Durata della sospensione in giorni",
+            "MOTIVO-SOSP": "Motivo della sospensione"
+        },
+        "RECESSO": {
+            "RECESSO": "Istanza di recesso",
+            "DATA-IST-RECESSO": "Data presentazione istanza recesso",
+            "FLAG-ACCOLTA": "L'istanza di recesso \u00E8 stata accolta?",
+            "FLAG-TARDIVA": "Si \u00E8 proceduto a consegna tardiva?",
+            "FLAG-RIPRESA": "Si \u00E8 proceduto alla ripresa dei lavori?",
+            "FLAG-RISERVA": "L'appaltatore ha formulato riserve?",
+            "IMPORTO-SPESE": "Importo eventuale rimborso spese",
+            "IMPORTO-ONERI": "Eventuale compenso degli oneri derivanti dal ritardo"
+        }
+    },
+    "FASE-INIDONEITA-TECNICO-PROF": {
+        "INIDONEITA": {
+            "INIDONEITA": "Idoneit\u00E0 tecnico-professionale",
+            "NUM-TPRO": "Numero progressivo",
+            "DESCARE": "Descrizioni delle principali carenze dell'impresa",
+            "NOMEST": "Denominazione dell'impresa",
+            "DATA-UNI": "Data verifica inidoneit\u00E0",
+            "INIDO1": "Non idoneit\u00E0 da verifica iscrizione a CCIAA",
+            "INIDO2": "Non indicati contratti coll. O dich. Obbl. assicurativi",
+            "INIDO3": "Mancata nomina resp. Servizio prevenzione e protezione",
+            "INIDO4": "Mancata nomina medico competente",
+            "INIDO5": "Mancato documento valutazione rischi",
+            "INIDO6": "Inadeguata formazione su sicurezza e salute",
+            "INIDO7": "Altre cause"
+        }
+    },
+    "FASE-INIDONEITA-CONTRIBUTIVA": {
+        "SCHEDA-IRREGOLARITA": {
+            "SCHEDA-IRREGOLARITA": "Scheda irregolarit\u00E0 contributiva ed assicurativa",
+            "NUM-REGO": "Numero progressivo",
+            "RISCONTRO-IRR": "Riscontro irregolarit\u00E0 contributiva Operatore Economico",
+            "DESCARE": "Descrizione delle principali carenze dell'impresa aggiudicataria",
+            "NOMEST": "Denominazione dell'impresa",
+            "DATA-COMUN": "Data atto comunicazione mancata aggiud. O pagamento",
+            "IDDURC": "Estremi DURC (ID sistema DURC)",
+            "DATA-DURC": "Data del DURC",
+            "CASSAEDI": "Cassa edile (provincia)"
+        }
+    },
+    "FASE-INADEMPIENZE-SICUREZZA": {
+        "INADEMPIENZE-SICUREZZA": {
+            "INADEMPIENZE-SICUREZZA": "Inadempienze sicurezza",
+            "NUM-INAD": "Numero progressivo",
+            "DATA-RISCONTRO-INADEMPIENZA": "Data riscontro inadempienza",
+            "COMMA3A": "Mancata adozione sistemi di rilevazione presenze",
+            "COMMA3B": "Mancata conservazione documentazione regolarit\u00E0 rapporti lavoro",
+            "COMMA45A": "Mancato svolgimento momenti formativi",
+            "COMMA5": "Mancata estensione formazione agli altri soggetti che operano nel cantiere",
+            "COMMA6": "Inadeguatezza dei moduli informativi di ingresso per i lavoratori operanti nel cantiere",
+            "COMMALTRO": "Altri motivi",
+            "DESCVIO": "Descrizione violazione",
+            "NOMEST": "Denominazione dell'impresa aggiudicataria"
+        }
+    },
+    "FASE-INFORTUNI": {
+        "INFORTUNI": {
+            "INFORTUNI": "Infortuni",
+            "NUM-INFOR": "Numero progressivo",
+            "NINFORT": "Numero infortuni totali",
+            "NGIORNATE": "Numero giornate riconosciute",
+            "IMORTE": "Numero infortuni mortali",
+            "IPERMA": "Numero infortuni permanenti",
+            "NOMEST": "Denominazione dell'impresa aggiudicataria"
+        }
+    },
+    "FASE-CANTIERI": {
+        "CANTIERI": {
+            "CANTIERI": "Cantieri",
+            "NUM-CANT": "Numero progressivo"
+        },
+        "OPERA": {
+            "OPERA": "Dati opera",
+            "TIPOPERA": "Tipo Opera",
+            "TIPINTERV": "Tipologia Intervento",
+            "TIPCOSTR": "Tipologia Costruttiva"
+        },
+        "CANTIERE": {
+            "CANTIERE": "Dati cantiere",
+            "DATA-INIZIO": "Data inizio lavori",
+            "DLAV": "Durata presunta dei lavori",
+            "INDCAN": "Indirizzo del cantiere",
+            "CIVICO": "Numero civico cantiere",
+            "COMUNE": "Comune cantiere",
+            "PROVINCIA": "Provincia cantiere",
+            "COORD-X": "Coordinata Gauss Boaga X cantiere",
+            "COORD-Y": "Coordinata Gauss Boaga Y cantiere",
+            "LATIT": "Coordinata WGS84 latitudine",
+            "LONGIT": "Coordinata WGS84 longitudine",
+            "NUMLAV": "Numero massimo dei lavoratori",
+            "NUMIMP": "Numero di Imprese",
+            "LAVAUT": "Numero di lavoratori autonomi",
+            "INFRDA": "Infrastruttura di rete da",
+            "INFRA": "Infrastruttura di rete a",
+            "INFRDE": "Descrizione infrastruttura di rete",
+            "MAILRIC": "Ulteriore indirizzo mail di ricezione attestato notifica preliminare"
+        },
+        "DESTINATARI-NOTIFICA": {
+            "DESTINATARI-NOTIFICA": "Destinatari notifica",
+            "DESTINATARI-NOTIFICA-PROGRESSIVO": "Destinatario N. {{value}}"
+        },
+        "IMPRESE": {
+            "IMPRESE": "Imprese",
+            "NOMEST": "Denominazione dell'impresa",
+            "CIPDURC": "Codice identificativo pratica DURC",
+            "PROTDURC": "Protocollo pratica DURC",
+            "DATA-DURC": "Data emissione DURC"
+        }
+    },
+    "DETTAGLIO-FASE-CANTIERI": {
+        "TABS": {
+            "DATI-CANTIERE": "Dati cantiere",
+            "INCARICHI-PROFESSIONALI": "Incarichi professionali"
+        }
+    },
+    "FASE-VARIAZIONE-AGGIUDICATARI":{
+        "DATI-GENERALI-DATA":{
+            "DATI-GENERALI-DATA":"Dati Generali",
+            "NUM-VARAGGI":"Numero variazione",
+            "ID-PARTECIPANTE":"Partecipante",
+            "DENOMINAZIONE-IMPRESA":"Denominazione impresa",
+            "ID-RUOLO":"Ruolo",
+            "TIPO-OE":"Tipo operatore economico",
+            "FLAG-AVVALIMENTO":"Ricorso all’avvalimento",
+            "MOTIVO-VARIAZIONE":"Motivazione variazione"
+        },
+        "VALIDATORS":{
+            "NUM-VARAGGI-OBBLIGATORIO":"Il campo \"Numero variazione\" \u00E8 obbligatorio",
+            "ID-PARTECIPANTE-OBBLIGATORIO":"Il campo \"ID partecipante\" \u00E8 obbligatorio",
+            "DENOMINAZIONE-OBBLIGATORIA":"Il campo \"Denominazione impresaumero\" \u00E8 obbligatorio",
+            "ID-RUOLO-OBBLIGATORIO":"Il campo \"Ruolo\" \u00E8 obbligatorio",
+            "TIPO-OE-OBBLIGATORIO":"Il campo \"Tipo operatore economic\" \u00E8 obbligatorio",
+            "FLAG-AVVALIMENTO-OBBLIGATORIO":"Il campo \"Ricorso all’avvalimento\" \u00E8 obbligatorio",
+            "MOTIVO-VARIAZIONE-OBBLIGATORIO":"Il campo \"Motivazione variazione\" \u00E8 obbligatorio"
+        }
+    },
+    "PUBBLICAZIONI": {
+        "EMPTY-LIST": "Non ancora inviato/pubblicato.",
+        "PUBLISH-DATA": "Trasmissione scheda",
+        "PRIMA-PUBBLICAZIONE-IN-DATA": "Prima trasmissione in data",
+        "RETTIFICA-PUBBLICAZIONE-IN-DATA": "Rettifica o integrazione in data",
+        "PRIMA-PUBBLICAZIONE": "Prima trasmissione",
+        "PRIMA-PUBBLICAZIONE-FASE": {
+            "SIMOG": "Prima trasmissione",
+            "PCP": "Creazione scheda"
+        },
+        "RETTIFICA-PUBBLICAZIONE": "Rettifica o integrazione",
+        "GARA-PUBBLICATA": "Procedura trasmessa con successo",
+        "ATTO-PUBBLICATO": "Atto pubblicato con successo",
+        "FASE-PUBBLICATA": "Scheda trasmessa con successo",
+        "CHECK-SUCCESS": {
+            "PUBBLICA-GARA": "Si pu\u00F2 procedere con l'invio della procedura",
+            "PUBBLICA-ATTO": "Si pu\u00F2 procedere con la pubblicazione dell'atto",
+            "PUBBLICA-FASE": "Si pu\u00F2 procedere con la trasmissione della scheda",
+            "PUBBLICA-AVVISO": "Si pu\u00F2 procedere con la pubblicazione dell'avviso"
+        },
+        "ANAGRAFICA-GARA-DA-PUBBLICARE": "Non \u00E8 stata ancora trasmessa l'anagrafica procedura/lotti, oppure alcuni dati sono stati aggiornati ma non trasmessi. E' necessario effettuare l'invio dei dati",
+        "ANAGRAFICA-GARA-NON-PUBBLICATA": "La pubblicazione \u00E8 disabilitata. Non \u00E8 stata trasmessa l'anagrafica della procedura oppure uno o pi\u00F9 lotti presentano dati aggiornati ma non trasmessi. Si prega di eseguire una nuova trasmissione dell'anagrafica della procedura prima di proseguire con la pubblicazione dell'atto.",
+        "ANAGRAFICA-GARA-NON-PUBBLICATA-LISTA-FASI": "La pubblicazione \u00E8 disabilitata. Non \u00E8 stata trasmessa l'anagrafica della procedura oppure uno o pi\u00F9 lotti presentano dati aggiornati ma non trasmessi. Si prega di eseguire una nuova trasmissione dell'anagrafica della procedura prima di proseguire con l'inserimento di una scheda.",
+        "ANAGRAFICA-GARA-NON-PUBBLICATA-PUBBLICAZIONE-FASI": "La pubblicazione \u00E8 disabilitata. Non \u00E8 stata trasmessa l'anagrafica della procedura oppure uno o pi\u00F9 lotti presentano dati aggiornati ma non trasmessi. Si prega di eseguire una nuova trasmissione dell'anagrafica della procedura prima di proseguire con la trasmissione di una scheda.",
+        "DATA-NON-DISPONIBILE": "Data non disponibile",
+        "MESSAGE-OK": "Tutti gli atti sono stati pubblicati correttamente",
+        "MESSAGE-KO": "Nessun atto pubblicabile; eseguire la funzione \"Controlla dati\" sui singoli atti per maggiori dettagli",
+        "MESSAGE-ERROR": "Funzione eseguita correttamente; i seguenti atti non sono stati pubblicati in quanto incompleti o con errori; eseguire la funzione \"Controlla dati\" sui singoli atti per maggiori dettagli {{value}}",
+        "WARNING":"<b>ATTENZIONE</b>: la trasmissione della scheda alla BDNCP \u00E8 un'operazione <b>non annullabile</b> e <b>non rettificabile</b>. Una volta trasmessi, i dati <b>non saranno pi\u00F9 modificabili</b>. Premere 'Trasmetti' per confermare, 'Indietro' per annullare"
+    },
+    "FORM-GROUP": {
+        "AGGIUNGI": "Aggiungi",
+        "ELIMINA": "Elimina"
+    },
+    "MNEMONICO-INFO-BOX": {
+        "INFORMAZIONI-CAMPO": "Informazioni Campo",
+        "INFORMAZIONI-ENTITA-APPARTENENZA": "Informazioni entit\u00E0 di appartenenza",
+        "CAMPO": "Campo",
+        "DESCRIZIONE": "Descrizione",
+        "FORMATO": "Formato",
+        "MNEMONICO-COMPOSITORE": "Mnemonico da utilizzare nel compositore",
+        "SCHEMA-APPARTENENZA": "Schema di appartenenza",
+        "DESCRIZIONE-SCHEMA": "Descrizione schema",
+        "ENTITA-APPARTENENZA": "Entit\u00E0 di appartenenza",
+        "DESCRIZIONE-ENTITA": "Descrizione entit\u00E0",
+        "CHIAVE-ENTITA": "Chiave entit\u00E0",
+        "NO-MNEMONICO": "Non \u00E8 stato configurato alcun mnemonico per questo campo"
+    },
+    "FLUSSOFASE": {
+        "EMPTY-LIST": "Scheda non ancora trasmessa",
+        "DETTAGLIO": {
+            "ID-FLUSSO": "Identificativo del flusso",
+            "DETTAGLIO": "Dettaglio",
+            "CODLOTTO": "Codice del lotto",
+            "NUM-FASE": "Tipologia della fase di esecuzione",
+            "NUM-PROGRESSIVO": "Numero progressivo fase",
+            "TIPO-INVIO": "Tipo di invio",
+            "AUTORE": "Autore",
+            "DATA-INVIO": "Data invio",
+            "NOTE-INVIO": "Note invio",
+            "XML": "File trasmesso",
+            "XML-ANAC": "File trasmesso ad ANAC"
+        }
+    },
+    "FLUSSOATTO": {
+        "DETTAGLIO": {
+            "ID-FLUSSO": "Identificativo del flusso",
+            "DETTAGLIO": "Dettaglio",
+            "TIPO-INVIO": "Tipo di invio",
+            "AUTORE": "Autore",
+            "DATA-INVIO": "Data invio",
+            "NOTE-INVIO": "Note invio",
+            "XML": "File trasmesso"
+        }
+    },
+    "FLUSSOGARA": {
+        "DETTAGLIO": {
+            "ID-FLUSSO": "Identificativo del flusso",
+            "DETTAGLIO": "Dettaglio",
+            "TIPO-INVIO": "Tipo di invio",
+            "AUTORE": "Autore",
+            "DATA-INVIO": "Data invio",
+            "NOTE-INVIO": "Note invio",
+            "XML": "File trasmesso"
+        }
+    },
+    "FLUSSOAVVISO": {
+        "DETTAGLIO": {
+            "DETTAGLIO": "Dettaglio",
+            "TIPO-INVIO": "Tipo di invio",
+            "AUTORE": "Autore",
+            "DATA-INVIO": "Data invio",
+            "NOTE-INVIO": "Note invio",
+            "XML": "File trasmesso"
+        }
+    },
+    "TIPOLOGIAFASI": {
+        "988": "Anagrafica e bando",
+        "101": "Elenco imprese invitate/partecipanti",
+        "984": "Comunicazione esito",
+        "1": "Aggiudicazione",
+        "987": "Aggiudicazione semplificata",
+        "12": "Adesione acc. Quadro",
+        "13": "Sottoscrizione contratto",
+        "2": "Inizio",
+        "986": "Inizio semplificata",
+        "11": "Stipula acc. Quadro",
+        "3": "Avanzamento",
+        "102": "Avanzamento semplificato",
+        "4": "Conclusione",
+        "985": "Conclusione semplificata",
+        "19": "Conclusione affidamento diretto <5k",
+        "5": "Collaudo",
+        "6": "Sospensione",
+        "14": "Superamento del quarto del tempo contrattuale",
+        "15": "Ripresa prestazione",
+        "7": "Modifica Contrattuale",
+        "8": "Accordo bonario",
+        "9": "Subappalto",
+        "16": "Richiesta Subappalto",
+        "17": "Esito Subappalto",
+        "18": "Conclusione subappalto",
+        "10": "Istanza di recesso",
+        "997": "Inidoneit\u00E0 tecnico professionale",
+        "996": "Inidoneit\u00E0 contributiva",
+        "995": "Inadempienze sicurezza",
+        "994": "Infortuni",
+        "998": "Scheda cantiere/notifica preliminare"
+    },
+    "TIPO-INVIO": {
+        "1": {
+            "SIMOG": "Prima trasmissione",
+            "PCP": "Creazione scheda"
+        },
+        "2": "Rettifica o integrazione",
+        "-1": "Cancellazione Fase / Evento",
+        "-2": "Cancellazione Fase / Evento accettata.",
+        "3": "Conferma trasmissione"
+    },
+    "LISTA-INVII-FASI": {
+        "FASE-EVENTO": "Scheda",
+        "PROGRESSIVO": "Progressivo",
+        "DATA-INVIO": "Data Invio",
+        "TIPO-INVIO": "Tipo di invio",
+        "AZIONI": {
+            "DETTAGLIO": "Dettaglio"
+        }
+    },
+    "LISTA-ATTI-LOTTO": {
+        "NUMPUBB": "Numero atto",
+        "TIPDOC": "Tipo documento",
+        "PUBBLICATO": "Pubblicato",
+        "PUBBLICATO-IL": " - Pubblicato il ",
+        "AZIONI": {
+            "DETTAGLIO": "Dettaglio"
+        }
+    },
+    "DETTAGLIO-FASE": {
+        "SCHEDA-INVIATA": "ATTENZIONE: la scheda \u00E8 gi\u00E0 stata trasmessa. Se si apportano modifiche sar\u00E0 necessario provvedere a trasmetterla nuovamente"
+    },
+    "MAX-FILE-SIZE": "Massima dimensione consentita",
+    "CAMBIO-RUP": {
+        "TITLE": "Cambia RUP",
+        "AVVISO": "<b>ATTENZIONE!</b><br/><br/>Cambiando il RUP non si avr\u00E0 pi\u00F9 accesso alla procedura: questa sar\u00E0 visibile solo al nuovo RUP<br/><br/><b>Si desidera continuare ?</b>",
+        "DATA": {
+            "TITLE": "Indicare il nuovo RUP",
+            "OGGETTO-GARA": "Oggetto della procedura",
+            "NUOVO-RUP": "RUP"
+        },
+        "VALIDATORS": {
+            "NUOVO-RUP-OBBLIGATORIO": "\u00C8 obbligatorio indicare un nuovo RUP"
+        }
+    },
+    "CAMBIO-REFERENTE": {
+        "TITLE": "Cambia Referente",
+        "DATA": {
+            "TITLE": "Indicare il nuovo Referente",
+            "OGGETTO-GARA": "Oggetto della procedura",
+            "NUOVO-REFERENTE": "Referente"
+        },
+        "VALIDATORS": {
+            "NUOVO-REFERENTE-OBBLIGATORIO": "\u00C8 obbligatorio indicare un nuovo referente"
+        }
+    },
+    "TRASFERIMENTO-AVVISO": {
+        "TITLE": "Trasferisci avvisi ad un altro referente",
+        "AVVISO": "<b>ATTENZIONE!</b><br/><br/>Cambio di Referente",
+        "DATA": {
+            "TITLE": "Indicare il nuovo Referente",
+            "DESCRIZIONE-AVVISO": "Descrizione dell'avviso",
+            "NUOVO-REFERENTE": "Nuovo Referente"
+        },
+        "VALIDATORS": {
+            "NUOVO-REFERENTE-OBBLIGATORIO": "\u00C8 obbligatorio indicare un nuovo Referente"
+        }
+    },
+    "SMARTCIG": {
+        "GENERAL-DATA": {
+            "TITLE": "Dati Generali",
+            "SMARTCIG": "Codice SmartCIG",
+            "OGGETTO": "Oggetto",
+            "TIPO-APPALTO": "Tipo appalto",
+            "PROCEDURA-CONTRAENTE": "Procedura di scelta del contraente",
+            "CRITERIO-AGGIUDICAZIONE": "Criterio di aggiudicazione",
+            "TIPO-SETTORE": "Tipo di settore",
+            "MODALITA-REALIZZAZIONE": "Modalit\u00E0 di realizzazione",
+            "RUP": "RUP",
+            "IMPORT-TITLE": "Importa da Sistema ANAC",
+            "USERNAME": "Utente",
+            "PASSWORD": "Password",
+            "SALVA_CREDENZIALI": "Salva credenziali",
+            "SCHEDA-NON-INVIATA": "La procedura \u00E8 stata salvata ma non \u00E8 stata pubblicata. Utilizzare la funzionalit\u00E0 controlla dati inseriti"
+        },
+        "RUP-DATA": {
+            "TITLE": "Credenziali SIMOG del RUP"
+        },
+        "STAZIONE-APPALTANTE-DATA": {
+            "TITLE": "Stazione appaltante",
+            "STAZIONE-APPALTANTE": "Stazione appaltante",
+            "UFFICIO": "Ufficio/area di pertinenza",
+            "INDIRIZZO-SEDE-GARA": "Indirizzo sede della procedura",
+            "COMUNE-SEDE-GARA": "Comune sede della procedura",
+            "PROVINCIA-SEDE-GARA": "Provincia sede della procedura",
+            "FLAG-SA-AGENTE": "La stazione appaltante agisce per conto di altro singolo soggetto?",
+            "TIPOLOGIA-SA": "Tipologia della stazione appaltante",
+            "DENOMINAZIONE-SA-AGENTE": "Denominazione del soggetto per cui agisce la stazione appaltante",
+            "CODICE-FISCALE-SA-AGENTE": "Codice fiscale del soggetto per cui agisce la stazione appaltante",
+            "TIPOLOGIA-PROCEDURA": "Tipologia procedura (nel caso agisca per conto di altri)",
+            "FLAG-CENTRALE-STIPULA": "La centrale di committenza procede alla stipula?"
+        },
+        "DATI-ECONOMICI-DATA": {
+            "TITLE": "Dati economici",
+            "IMPORTO-LOTTO": "Importo del lotto al netto dei costi della sicurezza",
+            "IMPORTO-ATTUAZIONE-SICUREZZA": "Importo totale per l'attuazione della sicurezza",
+            "IMPORTO-TOTALE": "Importo complessivo appalto",
+            "CUP-ESENTE": "Esente da CUP?",
+            "CUP": "Codice CUP",
+            "CPV": "Codice CPV",
+            "DESCRIZIONE-CPV": "Descrizione CPV",
+            "CATEGORIA-PREVALENTE": "Categoria prevalente",
+            "CLASSE-IMPORTO-CATEGORIA-PREVALENTE": "Classe importo categoria prevalente",
+            "LUOGO-ISTAT": "Luogo di esecuzione del contratto - ISTAT",
+            "LUOGO-NUTS": "Luogo di esecuzione del contratto - NUTS"
+        },
+        "ESECUZIONE-DATA": {
+            "TITLE": "Dati resoconti gestione finanziaria",
+            "DATA-VERB-INIZIO": "Data inizio",
+            "DATA-ULTIMAZIONE": "Data ultimazione",
+            "IMPORTO-CERTIFICATO": "Importo liquidato"
+        },
+        "VALIDATORS": {
+            "OGGETTO-OBBLIGATORIO": "Il campo Oggetto \u00E8 obbligatorio.",
+            "TIPO-APPALTO-OBBLIGATORIO": "Il campo Tipo Appalto \u00E8 obbligatorio.",
+            "IMPORTO-LOTTO-OBBLIGATORIO": "Il campo Importo del lotto al netto dei costi della sicurezza \u00E8 obbligatorio.",
+            "CIG-OBBLIGATORIO": "Il campo SmartCIG \u00E8 obbligatorio.",
+            "USERNAME-OBBLIGATORIO": "Il campo username \u00E8 obbligatorio.",
+            "PASSWORD-OBBLIGATORIO": "Il campo password \u00E8 obbligatorio."
+        }
+    },
+    "MIGRAZIONE_COMPLETATA": "La migrazione della procedura \u00E8 avvenuta con successo",
+    "LISTA-ARCHIVIO-STAZIONI-APPALTANTI": {
+        "CODEIN": "Codice",
+        "DENOMINAZIONE": "Denominazione",
+        "CODICE-FISCALE": "Codice Fiscale",
+        "AZIONI": {
+            "DETTAGLIO": "Dettaglio",
+            "TITLE": "Azioni",
+            "CANCELLA": "Elimina",
+            "NO-CANCELLA": "Eliminazione disabilitata. La stazione appaltante risulta associata ad un utente oppure ha una collezione collegata."
+        }
+    },
+    "RICERCA-AVANZATA-ARCHIVIO-STAZIONI-APPALTANTI": {
+        "RICERCA": "Ricerca amministrazioni",
+        "CODEIN": "Codice dell'anagrafico",
+        "NOMEIN": "Denominazione",
+        "CFEIN": "Codice fiscale",
+        "INDIRIZZO": "Indirizzo",
+        "PROVINCIA": "Provincia",
+        "COMUNE": "Comune",
+        "CODAUSA": "Codice AUSA"
+    },
+    "ACCORPAMENTO-LOTTI": {
+        "CIG-MASTER": "Scelta CIG Master",
+        "EMPTY-LIST": "Nessun elemento selezionato.",
+        "CIG-NON-ACCORPABILE": "Il CIG selezionato non pu\u00F2 essere accorpato.",
+        "TABLE": {
+            "CIG-SELEZIONATO": "CIG Selezionato",
+            "CIG": "CIG",
+            "OGGETTO-LOTTO": "Oggetto Lotto"
+        },
+        "SUCCESS-ACCORPAMENTO": "Accorpamento creato con successo con CIG Master {{value}}",
+        "RIEPILOGO": {
+            "TITLE": "Lista accorpamenti",
+            "EMPTY-LIST": "Nessun accorpamento trovato.",
+            "TABLE": {
+                "CIG-MASTER": "CIG Master",
+                "CIG-ACCORPATI": "CIG Accorpati"
+            }
+        },
+        "VALIDAZIONE-KO": "Si sono riscontrati degli errori durante l'accorpamento dei lotti",
+        "VALIDAZIONE-CIG": "Errore durante la pubblicazione del lotto con CIG: {{value}}."
+    },
+    "LISTA-ATTI": {
+        "PANELBAR-HEADER-TOOLTIP-IMAGE": "Pubblicit\u00E0 ex DM MIT 02/12/2016 ai sensi art. 73 c.4 del Dlgs 50/2016",
+        "LABEL-RADIO": "Visualizza:",
+        "RADIO-PRINCIPALI": "Visualizza solo gli atti principali",
+        "RADIO-TUTTI": "Visualizza tutti gli atti",
+        "LOTTI-PARZIALI": " lotti su ",
+        "MATRICE-ATTI": {
+            "TITLE": "Matrice degli atti",
+            "LEGENDA": {
+                "TITLE": "Legenda",
+                "PUBBLICATO": "Atto pubblicato",
+                "NON-PUBBLICATO": "Atto compilato ma non pubblicato"
+            }
+        }
+    },
+    "primeng": {
+        "startsWith": "Inizia con",
+        "contains": "Contiene",
+        "notContains": "Non contiene",
+        "endsWith": "Finisce con",
+        "equals": "Uguale",
+        "notEquals": "Non uguale",
+        "noFilter": "Nessun filtro",
+        "lt": "Minore di",
+        "lte": "Minore o uguale di",
+        "gt": "Maggiore di",
+        "gte": "Maggiore o uguale di",
+        "is": "\u00C8",
+        "isNot": "Non \u00E8",
+        "before": "Prima",
+        "after": "Dopo",
+        "clear": "Reimposta",
+        "apply": "Applica",
+        "matchAll": "Match All",
+        "matchAny": "Match Any",
+        "addRule": "Aggiungi regola",
+        "removeRule": "Rimuovi regola",
+        "accept": "Si",
+        "reject": "No",
+        "choose": "Scegli",
+        "upload": "Upload",
+        "cancel": "Annulla",
+        "dayNames": [
+            "Domenica",
+            "Luned\u00EC",
+            "Marted\u00EC",
+            "Mercoled\u00EC",
+            "Gioved\u00EC",
+            "Venerd\u00EC",
+            "Sabato"
+        ],
+        "dayNamesShort": [
+            "Dom",
+            "Lun",
+            "Mar",
+            "Mer",
+            "Gio",
+            "Ven",
+            "Sab"
+        ],
+        "dayNamesMin": [
+            "Do",
+            "Lu",
+            "Ma",
+            "Me",
+            "Gi",
+            "Ve",
+            "Sa"
+        ],
+        "monthNames": [
+            "Gennaio",
+            "Febbraio",
+            "Marzo",
+            "Aprile",
+            "Maggio",
+            "Giugno",
+            "Luglio",
+            "Agosto",
+            "Settembre",
+            "Ottobre",
+            "Novembre",
+            "Dicembre"
+        ],
+        "monthNamesShort": [
+            "Gen",
+            "Feb",
+            "Mar",
+            "Apr",
+            "Mag",
+            "Giu",
+            "Lug",
+            "Ago",
+            "Set",
+            "Ott",
+            "Nov",
+            "Dic"
+        ],
+        "today": "Oggi",
+        "weekHeader": "St",
+        "openCalendar": "Apri Calendario"
+    },
+    "APP-INFO-MODAL": {
+        "INFORMAZIONI-TECNICHE": "Informazioni tecniche",
+        "NOME-PRODOTTO": "Nome prodotto",
+        "VERSIONE": "Versione",
+        "PROFILO-APPLICATIVO": "Profilo applicativo",
+        "DEVELOPMENT_INFO": "<div class=\"img-logo\"><img src=\"assets/images/app/logo.png\" alt=\"Logo\" /></div><br>Sviluppato da Maggioli S.p.A Via del Carpino 8, 47822 Santarcangelo di Romagna (RN) - P.IVA 02066400405 - C.F. 06188330150",
+        "NOMECOMPONENTE": "Nome componente",
+        "NOMEPIATTAFORMA": "Nome piattaforma"
+    },
+    "advancedSearchNoResult": "Nessun elemento trovato oppure la ricerca non \u00E8 stata effettuata.",
+    "RICERCA-AVANZATA-ARCHIVIO-TECNICI": {
+        "ARCHIVIO-TECNICI-DATA": "Dati generali",
+        "NOMINATIVO": "Nominativo del soggetto",
+        "COD_FISC": "Codice fiscale"
+    },
+    "LABEL-RADIO-SMARTCIG": {
+        "TITLE": "Compilazione di un nuovo SmartCIG",
+        "COMPILAZIONE": "Compilazione manuale di un nuovo SmartCIG",
+        "IMPORTA": "Importa da Sistema ANAC"
+    },
+    "CONFIGURAZIONE-UTENTI": {
+        "NESSUN-CENTRO-COSTO": "Non \u00E8 disponibile nessun centro di costo per l'utente"
+    },
+    "SDK-UTENTE": {
+        "CONTRATTI-DATA": {
+            "TITLE": "Configurazione contratti",
+            "PRIVILEGI-UTENTE-CONTRATTI": "Privilegi dell'utente sui contratti"
+        },
+        "PROGRAMMI-DATA": {
+            "TITLE": "Configurazione di accesso alla programmazione",
+            "CENTRO-DI-COSTO": "Centro di costo"
+        },
+        "TABS": {
+            "CONFIGURAZIONE-UTENTE": "Configurazione utente"
+        }
+    },
+    "LABEL-RADIO-PUBBLICA-TUTTO": {
+        "TITLE": "Pubblica tutti gli atti",
+        "SOLO-NON-PUBBLICATI": "Pubblicare solo gli atti non pubblicati",
+        "TUTTO": "Pubblicare tutto"
+    },
+    "CAPTCHA": {
+        "TITLE": "Dimostra di non essere un robot",
+        "ERROR": "Errore! Si chiede di risolvere il captcha.",
+        "ERROR-SOLUTION": "Errore durante la verifica del captcha."
+    },
+    "SDK-DOCUMENT-LIST": {
+        "DESCRIZIONE": "Descrizione",
+        "TITOLO-DOCUMENTO": "Titolo"
+    },
+    "RICERCA-AVANZATA-ARCHIVIO-UFFICI": {
+        "ARCHIVIO-UFFICI-DATA": "Dati generali",
+        "DESCRIZIONE": "Descrizione dell'ufficio"
+    },
+    "LISTA-ARCHIVIO-UFFICI": {
+        "DENOMINAZIONE": "Denominazione ufficio",
+        "AZIONI": {
+            "DETTAGLIO": "Dettaglio",
+            "TITLE": "Azioni",
+            "CANCELLA": "Elimina",
+            "NO-CANCELLA": "Eliminazione disabilitata. L'ufficio risulta avere una collezione collegata"
+        }
+    },
+    "LOCK-FIELD-MESSAGE": "ATTENZIONE: il valore pu\u00F2 essere modificato solo per la correzione di errori materiali, e sar\u00E0 replicato in tutti i casi in cui l'anagrafica \u00E8 utilizzata. Non deve essere modificato il nominativo sostituendolo con un altro. Continuare?",
+    "LABEL-RADIO-REPORT-INDICATORI": {
+        "TITLE": "Selezionare il tipo di report desiderato:",
+        "ANOMALIA": "Report anomalia:  valore degli indicatori riferiti alla procedura (Cig)",
+        "PRELIMINARE": "Report preliminare: distribuzione dei valori di normalità del gruppo di appartenenza"
+    },
+    "LISTA-DELEGHE": {
+        "SYSUTE": "Collaboratore",
+        "RUOLO": "Ruolo",
+        "AZIONI": {
+            "TITLE": "Azioni",
+            "CANCELLA": "Elimina",
+            "DETTAGLIO": "Dettaglio"
+        },
+        "INFO": "Con questa funzione il RUP o il responsabile di fase indica, tra gli utenti applicativi, coloro che possono accedere ai propri appalti, ed a compilarne le schede."
+    },
+    "DELEGA": {
+        "TITLE": "Collaboratore",
+        "ID_COLLABORATORE": "Collaboratore",
+        "RUOLO": "Ruolo",
+        "RUOLO_1": "Solo compilazione",
+        "RUOLO_2": "Gestione completa",
+        "VALIDATORS": {
+            "ID_COLLABORATORE-OBBLIGATORIO": "Il campo Collaboratore \u00E8 obbligatorio.",
+            "RUOLO-OBBLIGATORIO": "Il campo Ruolo \u00E8 obbligatorio."
+        }
+    },
+    "CREDENZIALI-SIMOG": {
+        "TITLE": "Credenziali SIMOG",
+        "INFO": "Credenziali mancanti o non valide. Inserire nuove credenziali per accesso a servizi SIMOG.",
+        "USERNAME": "Codice utente",
+        "PASSWORD": "Password",
+        "SAVE_CREDENTIALS": "Memorizza le credenziali",
+        "DELETE_CREDENTIALS": "Cancella le credenziali",
+        "DATA_SAVED": "Dati aggiornati con successo",
+        "DATA_DELETED": "Dati cancellati con successo",
+        "VALIDATORS": {
+            "USERNAME-OBBLIGATORIO": "Il campo Codice utente \u00E8 obbligatorio.",
+            "PASSWORD-OBBLIGATORIO": "Il campo Password \u00E8 obbligatorio."
+        }
+    },
+    "SCELTA-CONTRAENTE": {
+        "INFO": "ATTENZIONE: per accedere alla scheda è necessario valorizzare la procedura di scelta di contraente nel lotto"
+    },
+    "IMPERSONIFICA-RUP":{
+        "GENERAL-DATA":"Impersona un RP",
+        "IDP":"idp",
+        "LOA":"loa",
+        "CF":"Codice Fiscale RP"
+    },
+    "IMPERSONIFICA":{
+        "SUCCESS":"Operazione avvenuta con successo",
+        "ERROR":"Operazione non effettuata"
+    },
+    "LABEL-RADIO-DELEGATO":{
+        "AGGIUNGI": "Aggiungi/cambia responsabile",
+        "CANCELLA": "Cancella responsabile"
+    },
+    "LABEL-RADIO-RIALINEA-ANAC":{
+        "TITLE":"Riallinea ad ANAC",
+        "PRE-ESE":"Ricarica solo dati fino alla scheda sottoscrizione contratto",
+        "CANCELLA":"Ricarica tutto (previa cancellazione eventuali schede già create)"
+    },
+    "DATI-CONTABILITA": {
+        "LOADING-LIST": "Attendere...",
+        "IMPEGNI": {
+            "LIST-TITLE":"Impegni",
+            "LOADING-LIST": "Attendere...",
+            "EMPTY-LIST": "Nessun elemento trovato.",
+            "CODICE-IMPEGNO":"Codice impegno",
+            "DESCRIZIONE":"Descrizione",
+            "DATA-IMPEGNO":"Data",
+            "ATTO":"Atto",
+            "IMPRESA":"Impresa",
+            "IMPORTO":"Importo"
+        },
+        "PAGAMENTI": {
+            "LIST-TITLE":"Pagamenti",
+            "LOADING-LIST": "Attendere...",
+            "EMPTY-LIST": "Nessun elemento trovato.",
+            "CODICE-PAGAMENTO":"Codice pagamento",
+            "OGGETTO":"Oggetto",
+            "DATA-PAGAMENTO":"Data",            
+            "IMPRESA":"Impresa",
+            "IMPORTO":"Importo",
+            "UTILIZZATO":"Utilizzato"
+        }
+    },   
+    "ULTIMI-ACCESSI": {
+        "HEADER": {
+            "N-EVENTO": "N. evento",
+            "DATA-EVENTO": "Data e ora",
+            "LIVELLO-EVENTO": "Tipo messaggio",
+            "CODICE-EVENTO": "Codice evento",
+            "IP-EVENTO": "IP",
+            "DESCRIZIONE-EVENTO": "Azione"
+        }
+    },
+    "RICERCA-ATTI-GENERALI": {
+        "TITLE": "Impostazioni di filtro",
+        "UFFINT": "Stazione appaltante",
+        "IDATTO": "ID",
+        "TIPOLOGIA": "Tipologia",
+        "DESCRIZIONE": "Descrizione",
+        "RUP": "RUP",
+        "DATAPUBBSISTEMA-DA": "Data pubblicazione sul sistema da",
+        "DATAPUBBSISTEMA-A": "Data pubblicazione sul sistema a"
+    },
+    "NUOVO-ATTO-GENERALE": {
+        "TITLE-SECTION": "Dati del nuovo atto",
+        "DATI-GENERALI": "Dati generali",
+        "DATI-ATTO": "Dati dell'atto",
+        "GENERAL-DATA": {
+            "NOMEIN": "Stazione appaltante",
+            "IDATTO": "Numero progressivo",
+            "UTENTE-PROP": "Identificativo utente",
+            "RUP": "RUP"
+        },
+        "DATI": {
+            "TIPO-ATTO": "Tipo atto",
+            "TIPOLOGIA": "Tipologia",
+            "DESCRIZIONE": "Descrizione",
+            "DATA-ATTO": "Data atto",
+            "NUMERO-ATTO": "Numero/Identificativo atto",
+            "PRIMA-PUBB": "Prima pubblicazione",
+            "DATA-PRIMA-PUBB": "Data prima pubblicazione",
+            "DATA-PUBB-SISTEMA": "Data pubblicazione sul sistema",
+            "DATA-SCADENZA": "Data scadenza"
+        },
+        "VALIDATORS": {
+            "TIPO-ATTO-OBBLIG": "Campo 'Tipo atto' obbligatorio",
+            "TIPOLOGIA-OBBLIG": "Campo 'Tipologia' obbligatorio",
+            "DESCRIZIONE-OBBLIG": "Campo 'Descrizione' obbligatorio",
+            "PRIMA-PUBB-OBBLIG": "Campo 'Prima pubblicazione' obbligatorio",
+            "DATA-PRIMA-PUBB-OBBLIG": "Campo 'Data prima pubblicazione' obbligatorio",
+            "DATA-SCADENZA-OBBLIG": "Campo 'Data scadenza' obbligatorio"
+        }
+    },
+    "DETTAGLIO-ATTO-GENERALE": {
+        "TITLE-SECTION": "Dettaglio atto",
+        "DATI-GENERALI":"Dati generali",
+        "DATI-ATTO": "Dati dell'atto",
+        "GENERAL-DATA": {
+            "NOMEIN": "Stazione appaltante",
+            "IDATTO": "ID atto",
+            "UTENTE-PROP": "Identificativo utente",
+            "RUP": "RUP"
+        },
+        "DATI": {
+            "TIPO-ATTO": "Tipo atto",
+            "ATTI-GENERALI": "Atti generali",
+            "MANIFESTAZIONE-E-ALTRI": "Manifestazioni di interesse ed altri avvisi",
+            "TIPOLOGIA": "Tipologia",
+            "DESCRIZIONE": "Descrizione",
+            "DATA-ATTO": "Data atto",
+            "NUMERO-ATTO": "Numero/Identificativo atto",
+            "PRIMA-PUBB": "Prima pubblicazione",
+            "DATA-PRIMA-PUBB": "Data prima pubblicazione",
+            "DATA-PUBB-SISTEMA": "Data pubblicazione sul sistema",
+            "DATA-SCADENZA": "Data scadenza",
+            "DATA-CANCELLAZIONE": "Data cancellazione",
+            "MOTIVO-CANCELLAZIONE": "Motivo cancellazione"
+        },
+        "DOCUMENTS-DATA": {
+            "ALLEGATI": "Atti e documenti allegati",
+            "EXISTING-DOCUMENTS": "Documenti Esistenti"
+        },
+        "VALIDATORS": {
+            "TIPO-ATTO-OBBLIG": "Campo 'Tipo atto' obbligatorio",
+            "TIPOLOGIA-OBBLIG": "Campo 'Tipologia' obbligatorio",
+            "DESCRIZIONE-OBBLIG": "Campo 'Descrizione' obbligatorio",
+            "PRIMA-PUBB-OBBLIG": "Campo 'Prima pubblicazione' obbligatorio",
+            "DATA-PRIMA-PUBB-OBBLIG": "Campo 'Data prima pubblicazione' obbligatorio",
+            "DATA-SCADENZA-OBBLIG": "Campo 'Data scadenza' obbligatorio"
+        },
+        "PLACEHOLDER": {
+            "CLICCA-INSERT": "Clicca per inserire"
+        }
+    },
+    "MODIFICA-ATTO-GENERALE": {
+        "TITLE-SECTION": "Modifica dettaglio atto",
+        "DATI-GENERALI":"Dati generali",
+        "DATI-ATTO": "Dati dell'atto",
+        "GENERAL-DATA": {
+            "NOMEIN": "Stazione appaltante",
+            "IDATTO": "ID atto",
+            "UTENTE-PROP": "Identificativo utente",
+            "RUP": "RUP"
+        },
+        "DATI": {
+            "TIPO-ATTO": "Tipo atto",
+            "ATTI-GENERALI": "Atti generali",
+            "MANIFESTAZIONE-E-ALTRI": "Manifestazioni di interesse ed altri avvisi",
+            "TIPOLOGIA": "Tipologia",
+            "DESCRIZIONE": "Descrizione",
+            "DATA-ATTO": "Data atto",
+            "NUMERO-ATTO": "Numero/Identificativo atto",
+            "PRIMA-PUBB": "Prima pubblicazione",
+            "DATA-PRIMA-PUBB": "Data prima pubblicazione",
+            "DATA-PUBB-SISTEMA": "Data pubblicazione sul sistema",
+            "DATA-SCADENZA": "Data scadenza"
+        },
+        "VALIDATORS": {
+            "TIPO-ATTO-OBBLIG": "Campo 'Tipo atto' obbligatorio",
+            "TIPOLOGIA-OBBLIG": "Campo 'Tipologia' obbligatorio",
+            "DESCRIZIONE-OBBLIG": "Campo 'Descrizione' obbligatorio",
+            "PRIMA-PUBB-OBBLIG": "Campo 'Prima pubblicazione' obbligatorio",
+            "DATA-PRIMA-PUBB-OBBLIG": "Campo 'Data prima pubblicazione' obbligatorio",
+            "DATA-SCADENZA-OBBLIG": "Campo 'Data scadenza' obbligatorio"
+        },
+        "DOCUMENTS-DATA": {
+            "ALLEGATI": "Atti e documenti allegati",
+            "EXISTING-DOCUMENTS": "Documenti Esistenti",
+            "NEW-DOCUMENTS": "Aggiungi documenti",
+            "ANNULLATO-IL": " - Annullato il "
+        }
+    },
+    "ATTI-GENERALI-LIST-CODE": {
+        "ATTI-GENERALI": "Atti generali",
+        "MANIFESTAZIONE-E-ALTRI": "Manifestazioni di interesse ed altri avvisi"
+    },
+    "RICERCA-SCHEDE-PCP": {
+        "TITLE": "Ricerca schede trasmesse a PCP",
+        "UFFINT": "Stazione appaltante",
+        "AUTORE": "Autore dell'invio delle schede",
+        "DATA-TRASMISSIONE-DA": "Data trasmissione da",
+        "DATA-TRASMISSIONE-A": "Data trasmissione a",
+        "ID-APPALTO": "ID appalto",
+        "CIG": "CIG",
+        "TIPO-SCHEDA": "Tipo di scheda",
+        "ID-SCHEDA": "Numero progessivo scheda"
+    },
+    "LISTA-SCHEDE-TRASMESSE-PCP": {
+        "TITLE": "Lista schede trasmesse a PCP",
+        "NOMEIN": "Stazione appaltante",
+        "CIG": "CIG",
+        "FASE-ESECUZIONE": "Tipo scheda",
+        "PROGRESSIVO-SCHEDA": "Numero progressivo scheda",
+        "DATINV": "Data trasmissione",
+        "AUTORE": "Autore invio schede",
+        "AZIONI": {
+            "DETTAGLIO": "Dettaglio"
+        }
+    }
+}

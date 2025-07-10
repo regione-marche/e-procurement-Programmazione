@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<p>
+		Gent.le <span th:text="${intestazione}"></span>,
+	</p>
+	<p>
+		il suo utente &egrave; stato disabilitato dall'amministratore di <span th:text="${nomeMittente}"></span>.<br>
+		Per ottenere la riabilitazione dell'utenza contattare l'Ente.<br>
+		<span th:text="${nomeMittente}"></span>
+	</p>
+	<p>
+		-------<br>
+		La presente comunicazione &egrave; inviata da un sistema automatico, si prega di non rispondere.
+	</p>
+</body>
+</html>

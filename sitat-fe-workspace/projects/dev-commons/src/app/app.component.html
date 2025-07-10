@@ -1,0 +1,14 @@
+<h3>Global State</h3>
+{{ state$ | async | json }}
+
+<h3>Selected State</h3>
+
+{{ spanish$ | async | json }}
+
+<h3>All</h3>
+{{ all$ | async | json }}
+
+<hr>
+<button (click)="set()">Set</button>
+<button (click)="update()">Update</button>
+<button (click)="delete()">Remove</button>

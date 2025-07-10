@@ -1,0 +1,10 @@
+@import "../app/app-vars.scss";
+
+.sdk-login-form {
+    @extend %login-form-border;
+    @extend %background-sfondo-testo;
+
+    .sdk-login-form-title {
+        @extend %color-titolo;
+    }
+}

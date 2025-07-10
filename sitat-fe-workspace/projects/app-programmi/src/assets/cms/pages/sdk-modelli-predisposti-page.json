@@ -1,0 +1,169 @@
+{
+    "name": "lista-modelli-predisposti-page",
+    "title": "TITLE.LISTA-MODELLI-PREDISPOSTI-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "lista-modelli-predisposti-page",
+        "breadcrumbs": [
+            {
+                "code": "modelli-predisposti",
+                "label": "BREADCRUMB.MODELLI-PREDISPOSTI",
+                "slug": "sdk-modelli-predisposti-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "lista-modelli-page-content-root-section",
+            "selector": "sdk-modelli-predisposti-section",
+            "description": "Pagina lista modelli",
+            "classNames": "lista-modelli-predisposti-section",
+            "settings": {
+                "classNames": "lista-modelli-predisposti-index",
+                "sectionTitle": "TITLE.LISTA-MODELLI-PREDISPOSTI-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_MODELLI_PREDISPOSTI",
+                            "type": "cancel"
+                        }                
+                        
+                    ],                   
+                    "grid": {
+                        "showCurrentPageReport": true,
+                        "showCurrentRecordsReport": true,
+                        "navigable": true,
+                        "resizable": false,
+                        "debug": false,
+                        "sortable": {
+                            "allowUnsort": false,
+                            "mode": "single"
+                        },
+                        "sort": [
+                            {
+                                "field": "nome",
+                                "dir": "asc"
+                            }
+                        ],
+                        "pageable": {
+                            "buttonCount": 5,
+                            "info": true,
+                            "pageSizes": [
+                                5,
+                                10,
+                                20,
+                                50
+                            ],
+                            "type": "numeric"
+                        },
+                        "toolbar": {
+                            "position": "top",
+                            "actions": []
+                        },
+
+                        
+                        "columns": [
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-LISTA-MODELLI.TIPO-DOCUMENTO",
+                                "field": "tipoDocumentoDesc",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"                                    
+                                },
+                                "title": "SDK-LISTA-MODELLI.NOME",
+                                "field": "nome",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-LISTA-MODELLI.FILE",
+                                "field": "nomefile",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-LISTA-MODELLI.DESCRIZIONE",
+                                "field": "descr",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                           
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_ACTIONS_ICON",
+                                    "params": {
+                                        "actions": [                                            
+                                            {
+                                                "disabled": false,
+                                                "performer": "componi",
+                                                "icon": "mgg-icons-write-only",
+                                                "label": "MODELLI-PREDISPOSTI.COMPONI"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "title": "SDK-LISTA-MODELLI.AZIONI.TITLE",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false
+                            }
+                        ]
+                    }
+                },
+                "modalConfig": {
+                    "component": "sdk-componi-parametri-modal.widget",
+                    "buttons": [
+                        {
+                            "code": "modal-close-button",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "SDK_COMPOSITORE"
+                        },
+                        {
+                            "code": "clean-button",
+                            "label": "BUTTONS.CLEAN",
+                            "provider": "SDK_GESTIONE_MODELLI_SEARCH",
+                            "icon": "mgg-icons-data-unfiltered"
+                        },
+                        {
+                            "code": "invia-parametri-button",
+                            "label": "BUTTONS.COMPONI",
+                            "icon": "mgg-icons-write-only",
+                            "provider": "SDK_COMPOSITORE"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

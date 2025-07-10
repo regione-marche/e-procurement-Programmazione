@@ -1,0 +1,16 @@
+{
+    "name": "@maggioli/app-launcher",
+    "styleUrls": [
+        "assets/cms/app/app-launcher.css"
+    ],
+    "settings": {
+        "app": "app-launcher",
+        "locale": {
+            "langCode": "it",
+            "dateFormat": "dd/MM/yyyy",
+            "timeFormat": "LTS",
+            "dateTimeFormat": "L LTS"
+        },
+        "loadRemoteTitle": true
+    }
+}

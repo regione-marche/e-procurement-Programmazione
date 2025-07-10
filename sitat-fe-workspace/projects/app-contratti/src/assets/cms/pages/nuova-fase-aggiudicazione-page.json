@@ -1,0 +1,737 @@
+{
+    "name": "nuova-fase-aggiudicazione-page",
+    "title": "TITLE.NUOVA-FASE-AGGIUDICAZIONE-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "nuova-fase-aggiudicazione-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "nuova-fase-page",
+                "label": "BREADCRUMB.NUOVA-FASE",
+                "slug": "nuova-fase-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS"
+            },
+            {
+                "code": "nuova-fase-aggiudicazione-page",
+                "label": "BREADCRUMB.NUOVA-FASE-AGGIUDICAZIONE",
+                "slug": "nuova-fase-aggiudicazione-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "nuova-fase-aggiudicazione-page-content-root-section",
+            "selector": "nuova-fase-aggiudicazione-section",
+            "description": "Pagina di inserimento nuova fase di aggiudicazione",
+            "classNames": "nuova-fase-aggiudicazione-section",
+            "settings": {
+                "classNames": "nuova-fase-aggiudicazione-index",
+                "sectionTitle": "TITLE.NUOVA-FASE-AGGIUDICAZIONE-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "go-to-fasi-visibili",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-fase",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_FASE_AGGIUDICAZIONE_PROVIDER"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "dati-economici-data",
+                            "label": "FASE-AGGIUDICAZIONE.DATI-ECONOMICI-DATA.DATI-ECONOMICI-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "cod-strumento",
+                                    "label": "FASE-AGGIUDICAZIONE.DATI-ECONOMICI-DATA.COD-STRUMENTO",
+                                    "oggettoProtezione": "W9.W9APPA.COD_STRUMENTO",
+                                    "mnemonico": "W3COD_STRU",
+                                    "mappingInput": "codStrumento",
+                                    "mappingOutput": "codStrumento",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "CodStrumento"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-lavori",
+                                    "label": "FASE-AGGIUDICAZIONE.DATI-ECONOMICI-DATA.IMPORTO-LAVORI",
+                                    "oggettoProtezione": "W9.W9APPA.IMPORTO_LAVORI",
+                                    "mnemonico": "W3I_LAVORI",
+                                    "mappingInput": "importoLavori",
+                                    "mappingOutput": "importoLavori",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-servizi",
+                                    "label": "FASE-AGGIUDICAZIONE.DATI-ECONOMICI-DATA.IMPORTO-SERVIZI",
+                                    "oggettoProtezione": "W9.W9APPA.IMPORTO_SERVIZI",
+                                    "mnemonico": "W3I_SERVIZ",
+                                    "mappingInput": "importoServizi",
+                                    "mappingOutput": "importoServizi",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-forniture",
+                                    "label": "FASE-AGGIUDICAZIONE.DATI-ECONOMICI-DATA.IMPORTO-FORNITURE",
+                                    "oggettoProtezione": "W9.W9APPA.IMPORTO_FORNITURE",
+                                    "mnemonico": "W3I_FORNIT",
+                                    "mappingInput": "importoForniture",
+                                    "mappingOutput": "importoForniture",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "importo-subtotale",
+                                    "label": "FASE-AGGIUDICAZIONE.DATI-ECONOMICI-DATA.IMPORTO-SUBTOTALE",
+                                    "oggettoProtezione": "W9.W9APPA.IMPORTO_SUBTOTALE",
+                                    "mnemonico": "W3I_SUBTOT",
+                                    "mappingInput": "importosubtotale",
+                                    "mappingOutput": "importosubtotale",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-attuazione-sicurezza",
+                                    "label": "FASE-AGGIUDICAZIONE.DATI-ECONOMICI-DATA.IMPORTO-ATTUAZIONE-SICUREZZA",
+                                    "oggettoProtezione": "W9.W9APPA.IMPORTO_ATTUAZIONE_SICUREZZA",
+                                    "mnemonico": "W3AP_ATTSI",
+                                    "mappingInput": "importoSicurezza",
+                                    "mappingOutput": "importoSicurezza",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-progettazione",
+                                    "label": "FASE-AGGIUDICAZIONE.DATI-ECONOMICI-DATA.IMPORTO-PROGETTAZIONE",
+                                    "oggettoProtezione": "W9.W9APPA.IMPORTO_PROGETTAZIONE",
+                                    "mnemonico": "W3I_PROGETT",
+                                    "mappingInput": "importoProgettazione",
+                                    "mappingOutput": "importoProgettazione",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-non-assog",
+                                    "label": "FASE-AGGIUDICAZIONE.DATI-ECONOMICI-DATA.IMPORTO-NON-ASSOG",
+                                    "oggettoProtezione": "W9.W9APPA.IMP_NON_ASSOG",
+                                    "mnemonico": "W3I_NON_AS",
+                                    "mappingInput": "impNonAssog",
+                                    "mappingOutput": "impNonAssog",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "importo-compl-appalto",
+                                    "label": "FASE-AGGIUDICAZIONE.DATI-ECONOMICI-DATA.IMPORTO-COMPL-APPALTO",
+                                    "oggettoProtezione": "W9.W9APPA.IMPORTO_COMPL_APPALTO",
+                                    "mnemonico": "W3I_C_APPA",
+                                    "mappingInput": "importoComplAppalto",
+                                    "mappingOutput": "importoComplAppalto",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "iva",
+                                    "label": "FASE-AGGIUDICAZIONE.DATI-ECONOMICI-DATA.IVA",
+                                    "oggettoProtezione": "W9.W9APPA.IVA",
+                                    "mnemonico": "W9APIVA",
+                                    "mappingInput": "iva",
+                                    "mappingOutput": "iva",
+                                    "decimals": 2,
+                                    "min": 0,
+                                    "max": 100,
+                                    "maxLength": 13
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-iva",
+                                    "label": "FASE-AGGIUDICAZIONE.DATI-ECONOMICI-DATA.IMPORTO-IVA",
+                                    "oggettoProtezione": "W9.W9APPA.IMPORTO_IVA",
+                                    "mnemonico": "W9APIMPIVA",
+                                    "mappingInput": "importoIva",
+                                    "mappingOutput": "importoIva",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "altre-somme",
+                                    "label": "FASE-AGGIUDICAZIONE.DATI-ECONOMICI-DATA.ALTRE-SOMME",
+                                    "oggettoProtezione": "W9.W9APPA.ALTRE_SOMME",
+                                    "mnemonico": "W9APALTSOM",
+                                    "mappingInput": "altreSomme",
+                                    "mappingOutput": "altreSomme",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "importo-disposizione",
+                                    "label": "FASE-AGGIUDICAZIONE.DATI-ECONOMICI-DATA.IMPORTO-DISPOSIZIONE",
+                                    "oggettoProtezione": "W9.W9APPA.IMPORTO_DISPOSIZIONE",
+                                    "mnemonico": "W3I_DISPS",
+                                    "mappingInput": "importoDisposizione",
+                                    "mappingOutput": "importoDisposizione",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-opzioni",
+                                    "label": "FASE-AGGIUDICAZIONE.DATI-ECONOMICI-DATA.IMPORTO-OPZIONI",
+                                    "oggettoProtezione": "W9.W9APPA.IMPORTO_OPZIONI",
+                                    "mnemonico": "",
+                                    "mappingInput": "importoSommeOpzioniRinnovi",
+                                    "mappingOutput": "importoSommeOpzioniRinnovi",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-ripetizioni",
+                                    "label": "FASE-AGGIUDICAZIONE.DATI-ECONOMICI-DATA.IMPORTO-RIPETIZIONI",
+                                    "oggettoProtezione": "W9.W9APPA.IMPORTO_RIPETIZIONI",
+                                    "mnemonico": "",
+                                    "mappingInput": "importoSommeripetizioni",
+                                    "mappingOutput": "importoSommeripetizioni",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "importo-compl-intervento",
+                                    "label": "FASE-AGGIUDICAZIONE.DATI-ECONOMICI-DATA.IMPORTO-COMPL-INTERVENTO",
+                                    "oggettoProtezione": "W9.W9APPA.IMPORTO_COMPL_INTERVENTO",
+                                    "mnemonico": "W3I_C_INTE",
+                                    "mappingInput": "importoComplIntervento",
+                                    "mappingOutput": "importoComplIntervento",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "opere-urbaniz-scomputo",
+                                    "label": "FASE-AGGIUDICAZIONE.DATI-ECONOMICI-DATA.OPERE-URBANIZ-SCOMPUTO",
+                                    "oggettoProtezione": "W9.W9APPA.OPERE_URBANIZ_SCOMPUTO",
+                                    "mnemonico": "W9APOUSCOMP",
+                                    "mappingInput": "opereUrbanizScomputo",
+                                    "mappingOutput": "opereUrbanizScomputo",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "dati-procedurali-appalto-data",
+                            "label": "FASE-AGGIUDICAZIONE.DATI-PROCEDURALI-APPALTO-DATA.DATI-PROCEDURALI-APPALTO-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "requisiti-sett-spec",
+                                    "label": "FASE-AGGIUDICAZIONE.DATI-PROCEDURALI-APPALTO-DATA.REQUISITI-SETT-SPEC",
+                                    "oggettoProtezione": "W9.W9APPA.REQUISITI_SETT_SPEC",
+                                    "mnemonico": "W3APREQSS",
+                                    "mappingInput": "requisitiSettSpec",
+                                    "mappingOutput": "requisitiSettSpec",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "SettoriSpeciali",
+                                    "visible": false
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "procedura-acc",
+                                    "label": "FASE-AGGIUDICAZIONE.DATI-PROCEDURALI-APPALTO-DATA.PROCEDURA-ACC",
+                                    "oggettoProtezione": "W9.W9APPA.PROCEDURA_ACC",
+                                    "mnemonico": "W3PROCEDUR",
+                                    "mappingInput": "proceduraAcc",
+                                    "mappingOutput": "proceduraAcc",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "preinformazione",
+                                    "label": "FASE-AGGIUDICAZIONE.DATI-PROCEDURALI-APPALTO-DATA.PREINFORMAZIONE",
+                                    "oggettoProtezione": "W9.W9APPA.PREINFORMAZIONE",
+                                    "mnemonico": "W3PREINFOR",
+                                    "mappingInput": "preinformazione",
+                                    "mappingOutput": "preinformazione",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "termine-ridotto",
+                                    "label": "FASE-AGGIUDICAZIONE.DATI-PROCEDURALI-APPALTO-DATA.TERMINE-RIDOTTO",
+                                    "oggettoProtezione": "W9.W9APPA.TERMINE_RIDOTTO",
+                                    "mnemonico": "W3TERMINE",
+                                    "mappingInput": "termineRidotto",
+                                    "mappingOutput": "termineRidotto",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "id-modo-indizione",
+                                    "label": "FASE-AGGIUDICAZIONE.DATI-PROCEDURALI-APPALTO-DATA.ID-MODO-INDIZIONE",
+                                    "oggettoProtezione": "W9.W9APPA.ID_MODO_INDIZIONE",
+                                    "mnemonico": "W3MOD_IND",
+                                    "mappingInput": "idIndizione",
+                                    "mappingOutput": "idIndizione",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "Indizione",
+                                    "visible": false
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "inviti-offerte-soglia-data",
+                            "label": "FASE-AGGIUDICAZIONE.INVITI-OFFERTE-SOGLIA-DATA.INVITI-OFFERTE-SOGLIA-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-manif-interesse",
+                                    "label": "FASE-AGGIUDICAZIONE.INVITI-OFFERTE-SOGLIA-DATA.DATA-MANIF-INTERESSE",
+                                    "oggettoProtezione": "W9.W9APPA.DATA_MANIF_INTERESSE",
+                                    "mnemonico": "W3DATA_MAN",
+                                    "mappingInput": "dataManifestInteresse",
+                                    "mappingOutput": "dataManifestInteresse"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "num-manif-interesse",
+                                    "label": "FASE-AGGIUDICAZIONE.INVITI-OFFERTE-SOGLIA-DATA.NUM-MANIF-INTERESSE",
+                                    "oggettoProtezione": "W9.W9APPA.NUM_MANIF_INTERESSE",
+                                    "mnemonico": "W3NUM_MANI",
+                                    "mappingInput": "numManifestInteresse",
+                                    "mappingOutput": "numManifestInteresse",
+                                    "decimals": 0,
+                                    "maxLength": 7
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-scadenza-richiesta-invito",
+                                    "label": "FASE-AGGIUDICAZIONE.INVITI-OFFERTE-SOGLIA-DATA.DATA-SCADENZA-RICHIESTA-INVITO",
+                                    "oggettoProtezione": "W9.W9APPA.DATA_SCADENZA_RICHIESTA_INVITO",
+                                    "mnemonico": "W3DSCARI",
+                                    "mappingInput": "dataScadRichiestaInvito",
+                                    "mappingOutput": "dataScadRichiestaInvito"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "num-imprese-richiedenti",
+                                    "label": "FASE-AGGIUDICAZIONE.INVITI-OFFERTE-SOGLIA-DATA.NUM-IMPRESE-RICHIEDENTI",
+                                    "oggettoProtezione": "W9.W9APPA.NUM_IMPRESE_RICHIEDENTI",
+                                    "mnemonico": "W3IMPR_RIC",
+                                    "mappingInput": "numImpreseRichiedenti",
+                                    "mappingOutput": "numImpreseRichiedenti",
+                                    "decimals": 0,
+                                    "maxLength": 7
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-invito",
+                                    "label": "FASE-AGGIUDICAZIONE.INVITI-OFFERTE-SOGLIA-DATA.DATA-INVITO",
+                                    "oggettoProtezione": "W9.W9APPA.DATA_INVITO",
+                                    "mnemonico": "W3DATA_INV",
+                                    "mappingInput": "dataInvito",
+                                    "mappingOutput": "dataInvito"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "num-imprese-invitate",
+                                    "label": "FASE-AGGIUDICAZIONE.INVITI-OFFERTE-SOGLIA-DATA.NUM-IMPRESE-INVITATE",
+                                    "oggettoProtezione": "W9.W9APPA.NUM_IMPRESE_INVITATE",
+                                    "mnemonico": "W3IMPR_INV",
+                                    "mappingInput": "numImpreseInvitate",
+                                    "mappingOutput": "numImpreseInvitate",
+                                    "decimals": 0,
+                                    "maxLength": 7
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-scadenza-pres-offerta",
+                                    "label": "FASE-AGGIUDICAZIONE.INVITI-OFFERTE-SOGLIA-DATA.DATA-SCADENZA-PRES-OFFERTA",
+                                    "oggettoProtezione": "W9.W9APPA.DATA_SCADENZA_PRES_OFFERTA",
+                                    "mnemonico": "W3DSCAPO",
+                                    "mappingInput": "dataScadenzaPresOfferta",
+                                    "mappingOutput": "dataScadenzaPresOfferta"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "num-imprese-offerenti",
+                                    "label": "FASE-AGGIUDICAZIONE.INVITI-OFFERTE-SOGLIA-DATA.NUM-IMPRESE-OFFERENTI",
+                                    "oggettoProtezione": "W9.W9APPA.NUM_IMPRESE_OFFERENTI",
+                                    "mnemonico": "W3IMPR_OFF",
+                                    "mappingInput": "numImpreseOfferenti",
+                                    "mappingOutput": "numImpreseOfferenti",
+                                    "decimals": 0,
+                                    "maxLength": 7
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "num-offerte-ammesse",
+                                    "label": "FASE-AGGIUDICAZIONE.INVITI-OFFERTE-SOGLIA-DATA.NUM-OFFERTE-AMMESSE",
+                                    "oggettoProtezione": "W9.W9APPA.NUM_OFFERTE_AMMESSE",
+                                    "mnemonico": "W3IMPR_AMM",
+                                    "mappingInput": "numOfferteAmmesse",
+                                    "mappingOutput": "numOfferteAmmesse",
+                                    "decimals": 0,
+                                    "maxLength": 7
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "num-offerte-escluse",
+                                    "label": "FASE-AGGIUDICAZIONE.INVITI-OFFERTE-SOGLIA-DATA.NUM-OFFERTE-ESCLUSE",
+                                    "oggettoProtezione": "W9.W9APPA.NUM_OFFERTE_ESCLUSE",
+                                    "mnemonico": "W3OFFE_ESC",
+                                    "mappingInput": "numOfferteEscluse",
+                                    "mappingOutput": "numOfferteEscluse",
+                                    "decimals": 0,
+                                    "maxLength": 7
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "num-imp-escl-insuf-giust",
+                                    "label": "FASE-AGGIUDICAZIONE.INVITI-OFFERTE-SOGLIA-DATA.NUM-IMP-ESCL-INSUF-GIUST",
+                                    "oggettoProtezione": "W9.W9APPA.NUM_IMP_ESCL_INSUF_GIUST",
+                                    "mnemonico": "W3NUM_IMP",
+                                    "mappingInput": "impEsclusInsuffGiust",
+                                    "mappingOutput": "impEsclusInsuffGiust",
+                                    "decimals": 0,
+                                    "maxLength": 7
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "offerta-massimo",
+                                    "label": "FASE-AGGIUDICAZIONE.INVITI-OFFERTE-SOGLIA-DATA.OFFFERTA-MASSIMO",
+                                    "oggettoProtezione": "W9.W9APPA.OFFERTA_MASSIMO",
+                                    "mnemonico": "W3OFFE_MAX",
+                                    "mappingInput": "offertaMassima",
+                                    "mappingOutput": "offertaMassima",
+                                    "decimals": 5,
+                                    "maxLength": 13,
+                                    "percentuale": true
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "offerta-minima",
+                                    "label": "FASE-AGGIUDICAZIONE.INVITI-OFFERTE-SOGLIA-DATA.OFFFERTA-MINIMA",
+                                    "oggettoProtezione": "W9.W9APPA.OFFERTA_MINIMA",
+                                    "mnemonico": "W3OFFE_MIN",
+                                    "mappingInput": "offertaMinima",
+                                    "mappingOutput": "offertaMinima",
+                                    "decimals": 5,
+                                    "maxLength": 13,
+                                    "percentuale": true
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "val-soglia-anomalia",
+                                    "label": "FASE-AGGIUDICAZIONE.INVITI-OFFERTE-SOGLIA-DATA.VAL-SOGLIA-ANOMALIA",
+                                    "oggettoProtezione": "W9.W9APPA.VAL_SOGLIA_ANOMALIA",
+                                    "mnemonico": "W3VAL_SOGL",
+                                    "mappingInput": "valoreSogliaAnomalia",
+                                    "mappingOutput": "valoreSogliaAnomalia",
+                                    "decimals": 2,
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "num-offerte-ammesse": {
+                                                "values": [
+                                                    {
+                                                        "value": 15,
+                                                        "operation": ">="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    },
+                                    "maxLength": 13
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "num-offerte-fuori-soglia",
+                                    "label": "FASE-AGGIUDICAZIONE.INVITI-OFFERTE-SOGLIA-DATA.NUM-OFFERTE-FUORI-SOGLIA",
+                                    "oggettoProtezione": "W9.W9APPA.NUM_OFFERTE_FUORI_SOGLIA",
+                                    "mnemonico": "W3OFFE_FUO",
+                                    "mappingInput": "numOfferteFuoriSoglia",
+                                    "mappingOutput": "numOfferteFuoriSoglia",
+                                    "decimals": 0,
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "num-offerte-ammesse": {
+                                                "values": [
+                                                    {
+                                                        "value": 15,
+                                                        "operation": ">="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    },
+                                    "maxLength": 5
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "asta-elettronica",
+                                    "label": "FASE-AGGIUDICAZIONE.INVITI-OFFERTE-SOGLIA-DATA.ASTA-ELETTRONICA",
+                                    "oggettoProtezione": "W9.W9APPA.ASTA_ELETTRONICA",
+                                    "mnemonico": "W3ASTA_ELE",
+                                    "mappingInput": "astaElettronica",
+                                    "mappingOutput": "astaElettronica",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "aggiudicazione-affidamento-data",
+                            "label": "FASE-AGGIUDICAZIONE.AGGIUDICAZIONE-AFFIDAMENTO-DATA.AGGIUDICAZIONE-AFFIDAMENTO-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "HIDDEN",
+                                    "code": "modalita-riaggiudicazione",
+                                    "label": "FASE-AGGIUDICAZIONE.DATI-ECONOMICI-DATA.MODALITA-RIAGGIUDICAZIONE",
+                                    "oggettoProtezione": "W9.W9APPA.MODALITA_RIAGGIUDICAZIONE",
+                                    "mnemonico": "W9APMODRIAG",
+                                    "mappingInput": "modalitaRiaggiudicazione",
+                                    "mappingOutput": "modalitaRiaggiudicazione",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "ModalitaRiaggiudicazione"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "perc-ribasso-agg",
+                                    "label": "FASE-AGGIUDICAZIONE.AGGIUDICAZIONE-AFFIDAMENTO-DATA.PERC-RIBASSO-AGG",
+                                    "oggettoProtezione": "W9.W9APPA.PERC_RIBASSO_AGG",
+                                    "mnemonico": "W3PERC_RIB",
+                                    "mappingInput": "percentRibassoAgg",
+                                    "mappingOutput": "percentRibassoAgg",
+                                    "decimals": 5,
+                                    "maxLength": 13,
+                                    "percentuale": true
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "perc-off-aumento",
+                                    "label": "FASE-AGGIUDICAZIONE.AGGIUDICAZIONE-AFFIDAMENTO-DATA.PERC-OFF-AUMENTO",
+                                    "oggettoProtezione": "W9.W9APPA.PERC_OFF_AUMENTO",
+                                    "mnemonico": "W3PERC_OFF",
+                                    "mappingInput": "percOffAumento",
+                                    "mappingOutput": "percOffAumento",
+                                    "decimals": 5,
+                                    "maxLength": 13,
+                                    "percentuale": true
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-aggiudicazione",
+                                    "label": "FASE-AGGIUDICAZIONE.AGGIUDICAZIONE-AFFIDAMENTO-DATA.IMPORTO-AGGIUDICAZIONE",
+                                    "oggettoProtezione": "W9.W9APPA.IMPORTO_AGGIUDICAZIONE",
+                                    "mnemonico": "W3IMP_AGGI",
+                                    "mappingInput": "importoAggiudicazione",
+                                    "mappingOutput": "importoAggiudicazione",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-verb-aggiudicazione",
+                                    "label": "FASE-AGGIUDICAZIONE.AGGIUDICAZIONE-AFFIDAMENTO-DATA.DATA-VERB-AGGIUDICAZIONE",
+                                    "oggettoProtezione": "W9.W9APPA.DATA_VERB_AGGIUDICAZIONE",
+                                    "mnemonico": "W3DVERB",
+                                    "mappingInput": "dataVerbAggiudicazione",
+                                    "mappingOutput": "dataVerbAggiudicazione"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tipo-atto",
+                                    "label": "FASE-AGGIUDICAZIONE.AGGIUDICAZIONE-AFFIDAMENTO-DATA.TIPO-ATTO",
+                                    "oggettoProtezione": "W9.W9APPA.TIPO_ATTO",
+                                    "mnemonico": "W9APTIPAT",
+                                    "mappingInput": "tipoAtto",
+                                    "mappingOutput": "tipoAtto",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "TipoAtto"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-atto",
+                                    "label": "FASE-AGGIUDICAZIONE.AGGIUDICAZIONE-AFFIDAMENTO-DATA.DATA-ATTO",
+                                    "oggettoProtezione": "W9.W9APPA.DATA_ATTO",
+                                    "mnemonico": "W9APDATAT",
+                                    "mappingInput": "dataAtto",
+                                    "mappingOutput": "dataAtto"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "numero-atto",
+                                    "label": "FASE-AGGIUDICAZIONE.AGGIUDICAZIONE-AFFIDAMENTO-DATA.NUMERO-ATTO",
+                                    "oggettoProtezione": "W9.W9APPA.NUMERO_ATTO",
+                                    "mnemonico": "W9APNUMAT",
+                                    "mappingInput": "numeroAtto",
+                                    "mappingOutput": "numeroAtto",
+                                    "maxLength": 50
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "flag-relazione-unica",
+                                    "label": "FASE-AGGIUDICAZIONE.AGGIUDICAZIONE-AFFIDAMENTO-DATA.FLAG-RELAZIONE-UNICA",
+                                    "oggettoProtezione": "W9.W9APPA.RELAZIONE_UNICA",
+                                    "mnemonico": "W9APRELAZIONE_UNICA",
+                                    "mappingInput": "flagRelazioneUnica",
+                                    "mappingOutput": "flagRelazioneUnica",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino",
+                                    "visible": false
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "flag-rich-subappalto",
+                                    "label": "FASE-AGGIUDICAZIONE.AGGIUDICAZIONE-AFFIDAMENTO-DATA.FLAG-RICH-SUBAPPALTO",
+                                    "oggettoProtezione": "W9.W9APPA.FLAG_RICH_SUBAPPALTO",
+                                    "mnemonico": "W3FLAG_RIC",
+                                    "mappingInput": "flagRichSubappalto",
+                                    "mappingOutput": "flagRichSubappalto",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "altri-campi-liguria-digitale-data",
+                            "label": "FASE-AGGIUDICAZIONE.ALTRI-CAMPI-LIGURIA-DIGITALE-DATA.ALTRI-CAMPI-LIGURIA-DIGITALE-DATA",
+                            "oggettoProtezione": "",
+                            "mnemonico": "",
+                            "visible": false,
+                            "fieldSections": [
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "fin-regionale",
+                                    "label": "FASE-AGGIUDICAZIONE.ALTRI-CAMPI-LIGURIA-DIGITALE-DATA.FIN-REGIONALE",
+                                    "oggettoProtezione": "W9.W9APPA.FIN_REGIONALE",
+                                    "mnemonico": "W9APPAFINREG",
+                                    "mappingInput": "flagSubappFinReg",
+                                    "mappingOutput": "flagSubappFinReg",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "flag-importi",
+                                    "label": "FASE-AGGIUDICAZIONE.ALTRI-CAMPI-LIGURIA-DIGITALE-DATA.FLAG-IMPORTI",
+                                    "oggettoProtezione": "W9.W9APPA.FLAG_IMPORTI",
+                                    "mnemonico": "W9APPAFLAGIMP",
+                                    "mappingInput": "flagImporti",
+                                    "mappingOutput": "flagImporti",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "flag-sicurezza",
+                                    "label": "FASE-AGGIUDICAZIONE.ALTRI-CAMPI-LIGURIA-DIGITALE-DATA.FLAG-SICUREZZA",
+                                    "oggettoProtezione": "W9.W9APPA.FLAG_SICUREZZA",
+                                    "mnemonico": "W9APPAFLAGSIC",
+                                    "mappingInput": "flagSicurezza",
+                                    "mappingOutput": "flagSicurezza",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "flag-livello-progettuale",
+                                    "label": "FASE-AGGIUDICAZIONE.ALTRI-CAMPI-LIGURIA-DIGITALE-DATA.FLAG-LIVELLO-PROGETTUALE",
+                                    "oggettoProtezione": "W9.W9APPA.FLAG_LIVELLO_PROGETTUALE",
+                                    "mnemonico": "W9APPALIVPROG",
+                                    "mappingInput": "flagLivelloProgettuale",
+                                    "mappingOutput": "flagLivelloProgettuale",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "verifica-campione",
+                                    "label": "FASE-AGGIUDICAZIONE.ALTRI-CAMPI-LIGURIA-DIGITALE-DATA.VERIFICA-CAMPIONE",
+                                    "oggettoProtezione": "W9.W9APPA.VERIFICA_CAMPIONE",
+                                    "mnemonico": "W9APPA_VERICAMP",
+                                    "mappingInput": "verificaCampione",
+                                    "mappingOutput": "verificaCampione",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

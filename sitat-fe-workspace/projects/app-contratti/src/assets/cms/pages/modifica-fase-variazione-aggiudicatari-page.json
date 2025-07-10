@@ -1,0 +1,252 @@
+{
+    "name": "modifica-fase-variazione-aggiudicatari-page",
+    "title": "TITLE.MODIFICA-VARIAZIONE-AGGIUDICATARI-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "modifica-fase-variazione-aggiudicatari-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "modifica-fase-variazione-aggiudicatari-page",
+                "label": "BREADCRUMB.MODIFICA-VARIAZIONE-AGGIUDICATARI",
+                "slug": "modifica-fase-variazione-aggiudicatari-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-fase-variazione-aggiudicatari-page-content-root-section",
+            "selector": "modifica-fase-variazione-aggiudicatari-section",
+            "description": "Pagina di modifica incarichi professionali",
+            "classNames": "modifica-fase-variazione-aggiudicatari-section",
+            "settings": {
+                "classNames": "modifica-fase-variazione-aggiudicatari-index",
+                "sectionTitle": "TITLE.MODIFICA-VARIAZIONE-AGGIUDICATARI-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-dettaglio-fase",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_GARE_FASE_VARIAZIONE_AGGIUDICATARI_PROVIDER",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-fase",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_FASE_VARIAZIONE_AGGIUDICATARI_PROVIDER"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "dati-generali-data",
+                            "label": "FASE-VARIAZIONE-AGGIUDICATARI.DATI-GENERALI-DATA.DATI-GENERALI-DATA",
+                            "fieldSections": [                                                                    
+                                {
+                                    "type": "TEXT",
+                                    "code": "num-varaggi",
+                                    "label": "FASE-VARIAZIONE-AGGIUDICATARI.DATI-GENERALI-DATA.NUM-VARAGGI",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "num",
+                                    "mappingOutput": "num"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "id-partecipante",
+                                    "label": "FASE-VARIAZIONE-AGGIUDICATARI.DATI-GENERALI-DATA.ID-PARTECIPANTE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "idPartecipante",
+                                    "mappingOutput": "idPartecipante",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "FASE-VARIAZIONE-AGGIUDICATARI.VALIDATORS.ID-PARTECIPANTE-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "denominazione-impresa",
+                                    "label": "FASE-VARIAZIONE-AGGIUDICATARI.DATI-GENERALI-DATA.DENOMINAZIONE-IMPRESA",
+                                    "oggettoProtezione": "P",
+                                    "mnemonico": "",
+                                    "mappingInput": "impresa",
+                                    "mappingOutput": "codImpresa",
+                                    "itemsProviderCode": "APP_GARE_IMPRESE_W9VARAGGI_AUTOCOMPLETE",
+                                    "noDataLabel": "NO-DATA",
+                                    "newEditAvailable": true,
+                                    "newItemButton": {
+                                        "code": "new",
+                                        "label": "BUTTONS.NUOVO",
+                                        "icon": "mgg-icons-crud-create",
+                                        "oggettoProtezione": "INS.*"
+                                    },
+                                    "editItemButton": {
+                                        "code": "edit",
+                                        "label": "BUTTONS.UPDATE",
+                                        "icon": "mgg-icons-crud-edit",
+                                        "oggettoProtezione": "MOD.*"
+                                    },
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "FASE-VARIAZIONE-AGGIUDICATARI.VALIDATORS.DENOMINAZIONE-OBBLIGATORIA"
+                                                }
+                                            ]
+                                        }
+                                    ],                                 
+                                    "modalComponent": "impresa-modal-widget",
+                                    "modalComponentConfig": "impresaRWModalConfig"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "id-ruolo",
+                                    "label": "FASE-VARIAZIONE-AGGIUDICATARI.DATI-GENERALI-DATA.ID-RUOLO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "idRuolo",
+                                    "mappingOutput": "idRuolo",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "RuoloVaraggi",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "FASE-VARIAZIONE-AGGIUDICATARI.VALIDATORS.ID-RUOLO-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tipo-oe",
+                                    "label": "FASE-VARIAZIONE-AGGIUDICATARI.DATI-GENERALI-DATA.TIPO-OE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "tipoOe",
+                                    "mappingOutput": "tipoOe",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "TipoOperatoreEconomico",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "FASE-VARIAZIONE-AGGIUDICATARI.VALIDATORS.TIPO-OE-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "flag-avvalimento",
+                                    "label": "FASE-VARIAZIONE-AGGIUDICATARI.DATI-GENERALI-DATA.FLAG-AVVALIMENTO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "flagAvvalimento",
+                                    "mappingOutput": "flagAvvalimento",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "FlagAvvalimento",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "FASE-VARIAZIONE-AGGIUDICATARI.VALIDATORS.FLAG-AVVALIMENTO-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "motivo-variazione",
+                                    "label": "FASE-VARIAZIONE-AGGIUDICATARI.DATI-GENERALI-DATA.MOTIVO-VARIAZIONE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "motivoVariazione",
+                                    "mappingOutput": "motivoVariazione",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "MotivoVariazione",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "FASE-VARIAZIONE-AGGIUDICATARI.VALIDATORS.MOTIVO-VARIAZIONE-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }                             
+                            ]                                
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

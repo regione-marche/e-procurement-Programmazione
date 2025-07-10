@@ -1,0 +1,162 @@
+{
+    "name": "richiesta-assistenza-page",
+    "title": "TITLE.RICHIESTA-ASSISTENZA-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "richiesta-assistenza-page"
+    },
+    "sections": [
+        {
+            "id": "richiesta-assistenza-content-root-section",
+            "selector": "sdk-richiesta-assistenza-section",
+            "description": "Componente per la richiesta assistenza",
+            "classNames": "richiesta-assistenza-section anag-page",
+            "settings": {
+                "classNames": "richiesta-assistenza-section",
+                "sectionTitle": "TITLE.RICHIESTA-ASSISTENZA-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-home-page",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_UTENTI_RICHIESTA_ASSISTENZA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "richiedi-assistenza",
+                            "label": "BUTTONS.SEND",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "SDK_GESTIONE_UTENTI_RICHIESTA_ASSISTENZA"
+                        }
+                    ],
+                    "buttonsErr": [
+                        {
+                            "code": "back-to-home-page",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_UTENTI_RICHIESTA_ASSISTENZA",
+                            "type": "cancel"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "assistenza-section",
+                            "label": "SDK-RICHIESTA-ASSISTENZA.ASSISTENZA-SECTION.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "nominativo-ente-amministrazione",
+                                    "label": "SDK-RICHIESTA-ASSISTENZA.ASSISTENZA-SECTION.NOMINATIVO-ENTE-AMMINISTRAZIONE",
+                                    "mappingInput": "nominativoEnteAmministrazione",
+                                    "mappingOutput": "nominativoEnteAmministrazione",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-RICHIESTA-ASSISTENZA.VALIDATORS.NOMINATIVO-ENTE-AMMINISTRAZIONE-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "referente-da-contattare",
+                                    "label": "SDK-RICHIESTA-ASSISTENZA.ASSISTENZA-SECTION.REFERENTE-DA-CONTATTARE",
+                                    "mappingInput": "referenteDaContattare",
+                                    "mappingOutput": "referenteDaContattare",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-RICHIESTA-ASSISTENZA.VALIDATORS.REFERENTE-DA-CONTATTARE-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "email",
+                                    "label": "SDK-RICHIESTA-ASSISTENZA.ASSISTENZA-SECTION.EMAIL",
+                                    "mappingInput": "email",
+                                    "mappingOutput": "email",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-RICHIESTA-ASSISTENZA.VALIDATORS.EMAIL-OBBLIGATORIA"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "telefono",
+                                    "label": "SDK-RICHIESTA-ASSISTENZA.ASSISTENZA-SECTION.TELEFONO",
+                                    "mappingOutput": "telefono"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tipologia-richiesta",
+                                    "label": "SDK-RICHIESTA-ASSISTENZA.ASSISTENZA-SECTION.TIPOLOGIA-RICHIESTA",
+                                    "itemsProviderCode": "SDK_GESTIONE_UTENTI_TABELLATI_COMBO",
+                                    "listCode": "TipologiaRichiesta",
+                                    "mappingOutput": "tipologiaRichiesta",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-RICHIESTA-ASSISTENZA.VALIDATORS.TIPOLOGIA-RICHIESTA-OBBLIGATORIA"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "TEXTAREA",
+                                    "code": "descrizione",
+                                    "label": "SDK-RICHIESTA-ASSISTENZA.ASSISTENZA-SECTION.DESCRIZIONE",
+                                    "mappingOutput": "descrizione"
+                                },
+                                {
+                                    "type": "DOCUMENT",
+                                    "code": "upload-documento",
+                                    "label": "SDK-RICHIESTA-ASSISTENZA.ASSISTENZA-SECTION.UPLOAD-DOCUMENTO",
+                                    "mappingOutput": "allegato",
+                                    "maxFileSize": "25 MB",
+                                    "maxFileSizeLabel": "VALIDATORS.MAX-FILE-SIZE",
+                                    "wrongExtensionLabel": "VALIDATORS.WRONG-EXTENSION",
+                                    "onlyFile": true,
+                                    "mandatory": false,
+                                    "withTitle": false
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

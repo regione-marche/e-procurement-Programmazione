@@ -1,0 +1,443 @@
+openapi: 3.0.3
+info:
+  title: Specifiche Servizi Appalto - OpenAPI 3.0
+  x-summary: >-
+    Specifiche dei servizi esposti dalla Piattaforma Contratti Pubblici (PCP), richiamabili dalle Stazioni Appaltanti, per il recupero delle tipologiche.
+  description: |-
+    Sono descritte le Specifiche dei servizi esposti dalla Piattaforma Contratti Pubblici (PCP), richiamabili dalle Stazioni Appaltanti, per il recupero delle tipologiche.
+
+      #### Documentazione
+      La documentazione a supporto delle specifiche di interfaccia con i sistemi che interoperano con il nuovo sistema di digitalizzazione è redatta con il linguaggio di markup Markdown ed è presente al segunete url:
+        [documento-specifiche-servizi-npa](https://github.com/anticorruzione/npa/blob/main/docs/specifiche-interfacce/documento-specifiche-servizi-npa.md)
+    ```
+  # I termini del servizio.
+  termsOfService: 'https://github.com/anticorruzione/npa/blob/main/README.md#termini-del-servizio'
+  # Chi posso contattare per informazioni sul servizio e sul suo stato?
+  contact:
+    email: ufficio.uscp@anticorruzione.it
+    name: ANAC - Ufficio Servizi IT Contratti Pubblici
+    url: https://www.anticorruzione.it
+  # L'audience delle API. Attualmente e' definito solamente
+  #   la tipologia `public`.
+  x-audience:
+    - public
+  # Ogni API deve avere un UUID, invariante nel tempo e
+  #   rispetto al `title`.
+  x-api-id: b3f0698e-2486-11ee-be56-0242ac120002
+  license:
+    name: Licenza Pubblica dell'Unione Europea v. 1.2
+    url: 'https://eupl.eu/1.2/it/'
+  # Per dare indicazioni sul ciclo di vita dell'API
+  # si puo' usare un parametro come:
+  x-lifecycle:
+    published: 2023-03-31
+    maturity: published  
+  version: 1.0.3
+servers:
+  - url: https://apigw-test.anticorruzione.it/modi/rest/CodeList/v2
+    description: Ambiente di Qualificazione
+tags:
+  - name: codeList
+    description: In questo contesto si riportano i servizi per il recupero delle tipologiche.
+  - name: serviziTecnici 
+    description: Operazioni richiesti dalle linee guida sull'interoperabilità
+paths:
+  /status:
+    get:
+      summary: Ritorna lo stato dell'applicazione. SINCRONO
+      description: |
+        Ritorna lo stato dell'applicazione. A scopo
+        di test, su base randomica puo' ritornare
+        un errore.
+      operationId: idStatusShow
+      tags:
+        - serviziTecnici
+      responses:
+        '200':
+            description: |
+              Il server ha ritornato lo status. In caso di problemi
+              ritorna sempre un problem+json.
+            headers: &ratelimit_headers 
+              X-RateLimit-Limit:
+                 $ref: '#/components/headers/X-RateLimit-Limit'
+              X-RateLimit-Remaining:
+                 $ref: '#/components/headers/X-RateLimit-Remaining'
+              X-RateLimit-Reset:
+                 $ref: '#/components/headers/X-RateLimit-Reset'
+            content:
+              application/problem+json:
+                schema:
+                  $ref: '#/components/schemas/BaseResponse'
+        '429':
+            description: Limite di richieste raggiunto
+            headers:
+              Retry-After:
+                $ref: '#/components/headers/Retry-After'
+            content:
+              application/problem+json:
+                schema:
+                  $ref: '#/components/schemas/BaseResponse'        
+        '500':
+          description: Internal Server Error
+          content:
+            application/problem+json:
+              schema:
+                $ref: '#/components/schemas/BaseResponse'          
+  /recupera-elenco-tipologiche:
+    get:
+      tags:
+        - codeList
+      summary: API Rest per il recupero dell'elenco delle tipologiche disponibili. SINCRONO
+      description: Il servizio restituiti un'elenco delle tipologiche disponibili. SINCRONO
+      operationId: idRecuperaElencoTipologiche
+      parameters:
+        - in: query
+          name: page
+          description: numero della pagina da visualizzare
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 1
+        - in: query
+          name: perPage
+          description: numero di elementi per pagina
+          required: false
+          schema:
+            type: integer
+            format: int32
+            default: 20     
+      responses:
+        '200':
+          description: Operazione terminato con successo
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TipologicaListaResponse' 
+        '400':
+            $ref: '#/components/responses/400BadRequest'
+        '404':
+            $ref: '#/components/responses/404NotFound'
+        '429':
+            $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+        - apiKeyAuth: [] 
+  /recupera-tipologica:
+    get:
+      tags:
+        - codeList
+      summary: API Rest per il recupero di una specifica tipologica. SINCRONO
+      description: Il servizio restituiti l'elenco di una singola tipologica. SINCRONO
+      operationId: idRecuperaTipologica
+      parameters:
+        - in: query
+          name: idTipologica
+          description: Identificativo della tipologica
+          schema:
+            type: string
+            example: 'CPV'
+          required: true
+        - in: query
+          name: dataInizio
+          description: Data di inizio (A date-time specified by ISO 8601 as profiled by RFC 3339)
+          schema:
+            type: string
+            format: date-time
+            example: '2022-01-23T12:02:05Z'
+        - in: query
+          name: dataFine
+          description: Data di fine (A date-time specified by ISO 8601 as profiled by RFC 3339)
+          schema:
+            type: string
+            format: date-time
+            example: '2022-01-23T12:02:05Z'
+        - in: query
+          name: page
+          description: numero della pagina da visualizzare
+          schema:
+            type: integer
+            format: int32
+            default: 1
+        - in: query  
+          name: perPage
+          description: numero di elementi per pagina
+          schema:
+            type: integer
+            format: int32
+            default: 20            
+      responses:
+        '200':
+          description: Operazione terminato con successo
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TipologicaResponse'
+        '400':
+            $ref: '#/components/responses/400BadRequest'
+        '404':
+            $ref: '#/components/responses/404NotFound'
+        '429':
+            $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+        - apiKeyAuth: []
+  /recupera-valore-tipologica:
+    get:
+      tags:
+        - codeList
+      summary: API Rest per il recupero di un singolo item di una tipologica. SINCRONO
+      description: Il servizio restituiti il valore di un singolo item che si vuole recuperare dalla tipologica. SINCRONO
+      operationId: idRecuperaItemTipologica
+      parameters:
+        - in: query
+          name: idTipologica
+          description: Identificativo della tipologica
+          schema:
+            type: string
+            example: 'CPV'
+          required: true
+        - in: query
+          name: codice
+          description: Codice del valore che si vuole recuperare dalla tipologica
+          schema:
+            type: string
+            example: '001'
+          required: true          
+      responses:
+        '200':
+          description: Operazione terminato con successo
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TipologicaItemResponse'
+        '400':
+            $ref: '#/components/responses/400BadRequest'
+        '404':
+            $ref: '#/components/responses/404NotFound'
+        '429':
+            $ref: '#/components/responses/429TooManyRequests'
+        '500':
+          $ref: '#/components/responses/500InternalServerError'
+      security:
+        - apiKeyAuth: []        
+components:
+  headers:
+    Retry-After:
+      description: |-
+        Retry contacting the endpoint *at least* after seconds.
+        See https://tools.ietf.org/html/rfc7231#section-7.1.3
+      schema:
+        format: int32
+        maximum: 186400
+        minimum: 0
+        type: integer
+    Sunset:
+      description: The Sunset HTTP response header field, indicates that a URI is likely
+        to become unresponsive at a specified point in the future.  It also defines
+        a sunset link relation type that allows linking to resources providing information
+        about an upcoming resource or service sunset.
+      schema:
+        example: Sun, 06 Nov 1994 08:49:37 GMT
+        externalDocs:
+          url: https://tools.ietf.org/html/rfc7231#appendix-D
+        format: HTTP-date
+        maxLength: 30
+        type: string
+    X-RateLimit-Limit:
+      description: The number of allowed requests in the current period
+      schema:
+        format: int32
+        maximum: 1000000
+        minimum: 0
+        type: integer
+    X-RateLimit-Remaining:
+      description: The number of remaining requests in the current period
+      schema:
+        format: int32
+        maximum: 1000000
+        minimum: 0
+        type: integer
+    X-RateLimit-Reset:
+      description: The number of seconds left in the current period
+      schema:
+        format: int32
+        maximum: 186400
+        minimum: 0
+        type: integer  
+    X-Ratelimit-Used: 
+      description: The number of requests used in the current period
+      schema:
+        type: integer
+        format: int32      
+  responses:
+    200AckResponse:
+      description: Richiesta accettata
+      headers: *ratelimit_headers
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/AckResponse'
+    400BadRequest:
+      description: Richiesta malformattata
+      headers: *ratelimit_headers
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    404NotFound:
+      description: Dato non trovato
+      headers: *ratelimit_headers
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    429TooManyRequests:
+      description: Limite di richieste raggiunto
+      headers:
+        Retry-After:
+            $ref: '#/components/headers/Retry-After'
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    500InternalServerError:
+      description: Errore generico. Operazione terminato con errore. Viene restitutito il dettaglio dell'errore
+      headers: *ratelimit_headers
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    503ServiceUnavailable:
+      description: Service Unavailable
+      headers:
+        Retry-After:
+            $ref: '#/components/headers/Retry-After'
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    default:
+      description: |-
+       Errore inatteso. Non ritornare informazioni
+       sulla logica interna e/o non pertinenti all'interfaccia.
+      content:
+        application/problem+json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+  schemas:
+    ErroriEnum:
+      $ref: 'https://raw.githubusercontent.com/anticorruzione/npa/main/docs/modello-dati/modello-dati-tipologiche.yaml#/components/schemas/ErroriEnum'
+    PaginazioneType:
+      $ref: 'https://raw.githubusercontent.com/anticorruzione/npa/main/docs/modello-dati/modello-dati-npa.yaml#/components/schemas/PaginazioneType'
+    TipologicaBaseType:
+      $ref: 'https://raw.githubusercontent.com/anticorruzione/npa/main/docs/modello-dati/modello-dati-npa.yaml#/components/schemas/TipologicaBaseType'      
+    TipologicaType:
+      $ref: 'https://raw.githubusercontent.com/anticorruzione/npa/main/docs/modello-dati/modello-dati-npa.yaml#/components/schemas/TipologicaType'
+    DatiTipologicaType:
+      $ref: 'https://raw.githubusercontent.com/anticorruzione/npa/main/docs/modello-dati/modello-dati-npa.yaml#/components/schemas/DatiTipologicaType'
+    TipologicaResponse:
+      allOf: # estende la classe BaseResponse e PaginazioneType
+        - $ref: '#/components/schemas/BaseResponse'
+        - $ref: '#/components/schemas/PaginazioneType'  
+      type: object
+      additionalProperties: false
+      properties:
+        tipologica:  
+          $ref: '#/components/schemas/TipologicaType'   
+    TipologicaItemResponse:
+      allOf: # estende la classe BaseResponse
+        - $ref: '#/components/schemas/BaseResponse'
+      type: object
+      additionalProperties: false
+      properties:
+        tipologica:  
+          $ref: '#/components/schemas/DatiTipologicaType'       
+    TipologicaListaResponse:
+      allOf: # estende la classe BaseResponse e PaginazioneType
+        - $ref: '#/components/schemas/BaseResponse'
+        - $ref: '#/components/schemas/PaginazioneType'
+      description: Oggetto generico di ritorno di una risposta con paginazione
+      type: object
+      additionalProperties: false
+      properties:
+        result: 
+          description: Elenco di tutte le tipologiche
+          type: array
+          items:
+            $ref: '#/components/schemas/TipologicaBaseType'
+    BaseResponse:
+      type: object
+      additionalProperties: false
+      properties:
+          instance:
+              description: |
+                An absolute URI that identifies the specific occurrence of the
+                problem.
+                It may or may not yield further information if dereferenced.
+              format: uri
+              maxLength: 2048
+              type: string
+          status:
+              description: |
+                The HTTP status code generated by the origin server for this
+                occurrence
+                of the problem.
+              exclusiveMaximum: true
+              format: int32
+              maximum: 600
+              minimum: 100
+              type: integer
+              example: 400
+          title:
+              description: |
+                A short, summary of the problem type. Written in english and
+                readable
+                for engineers (usually not suited for non technical stakeholders
+                and not localized);
+              maxLength: 64
+              pattern: ^[ -~]{0,64}$
+              type: string
+              example: 'There was a validation error'
+          detail:
+              description: |
+                A human readable explanation specific to this occurrence of the
+                problem.
+              maxLength: 4096
+              pattern: ^.{0,1024}$
+              type: string
+              example: 'Object Validation Error'
+          type:
+              description: |
+                An absolute URI that identifies the problem type. When
+                dereferenced,
+                it SHOULD provide human-readable documentation for the problem
+                type
+                (e.g., using HTML).
+              default: about:blank
+              format: uri
+              maxLength: 2048
+              type: string
+              example: 'https://tools.ietf.org/html/rfc7231#section-6.6.4'
+    ErrorResponse:
+      allOf: # estende la classe BaseResponse
+        - $ref: '#/components/schemas/BaseResponse'
+      properties:
+        errori: 
+          description: elenco degli errori
+          type: array
+          items:
+            $ref: '#/components/schemas/ErroriEnum'
+    AckResponse:
+      allOf: # estende la classe BaseResponse
+        - $ref: '#/components/schemas/BaseResponse'
+      example:
+        status: 200
+        title: "Richiesta acquisita"
+  securitySchemes:
+    apiKeyAuth:
+      type: apiKey
+      name: apiKeyAuth # name of the header, query parameter or cookie
+      in: header  # can be "header", "query" or "cookie"

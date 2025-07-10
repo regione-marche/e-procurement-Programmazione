@@ -1,0 +1,84 @@
+{
+    "name": "ricerca-tabellati-page",
+    "title": "TITLE.RICERCA-TABELLATI-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "ricerca-tabellati-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-tabellati-page",
+                "label": "BREADCRUMB.RICERCA-TABELLATI",
+                "slug": "ricerca-tabellati-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "ricerca-tabellati-page-content-root-section",
+            "selector": "sdk-ricerca-tabellati-section",
+            "description": "Pagina ricerca tabellati",
+            "classNames": "ricerca-tabellati-section",
+            "settings": {
+                "classNames": "ricerca-tabellati-index",
+                "sectionTitle": "TITLE.RICERCA-TABELLATI-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-button",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_TABELLATI_SEARCH",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "clean-button",
+                            "label": "BUTTONS.CLEAN",
+                            "provider": "SDK_GESTIONE_TABELLATI_SEARCH",
+                            "icon": "mgg-icons-data-unfiltered"
+                        },
+                        {
+                            "code": "search-button",
+                            "label": "BUTTONS.SEARCH",
+                            "provider": "SDK_GESTIONE_TABELLATI_SEARCH",
+                            "icon": "mgg-icons-data-search"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "ricerca-eventi-data",
+                            "label": "SDK-TABELLATO.RICERCA-TABELLATI-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "codice",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.CODICE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingOutput": "codiceTabellato",
+                                    "mappingInput": "codiceTabellato"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "descrizione",
+                                    "label": "SDK-TABELLATO.GENERAL-DATA.DESCRIZIONE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingOutput": "descrizioneTabellato",
+                                    "mappingInput": "descrizioneTabellato"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

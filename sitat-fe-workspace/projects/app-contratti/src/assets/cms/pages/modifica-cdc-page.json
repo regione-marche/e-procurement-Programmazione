@@ -1,0 +1,127 @@
+{
+    "name": "modifica-cdc-page",
+    "title": "TITLE.MODIFICA-CDC-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "modifica-cdc-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-archivio-cdc-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-ARCHIVIO-CDC",
+                "slug": "ricerca-avanzata-archivio-cdc-page"
+            },
+            {
+                "code": "lista-archivio-cdc-page",
+                "label": "BREADCRUMB.LISTA-ARCHIVIO-CDC",
+                "slug": "lista-archivio-cdc-page"
+            },
+            {
+                "code": "dettaglio-cdc-page",
+                "label": "BREADCRUMB.DETTAGLIO-CDC",
+                "slug": "dettaglio-cdc-page",
+                "additionalParams": "APP_COMMONS_CDC_PARAMS"
+            },
+            {
+                "code": "modifica-cdc-page",
+                "label": "BREADCRUMB.MODIFICA-CDC",
+                "slug": "modifica-cdc-page",
+                "additionalParams": "APP_COMMONS_CDC_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-cdc-page-content-root-section",
+            "selector": "modifica-cdc-section",
+            "description": "Pagina di modifica centro di costo",
+            "classNames": "modifica-cdc-section",
+            "settings": {
+                "classNames": "modifica-cdc-index",
+                "sectionTitle": "TITLE.MODIFICA-CDC-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-dettaglio-cdc",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_COMMONS_LISTA_CDC",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-cdc",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_COMMONS_CDC"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "CENTRO-DI-COSTO.GENERAL-DATA.GENERAL-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "HIDDEN",
+                                    "code": "stazione-appaltante",
+                                    "label": "CENTRO-DI-COSTO.GENERAL-DATA.STAZIONE-APPALTANTE",
+                                    "oggettoProtezione": "W9.CENTRICOSTO.CODEIN",
+                                    "mnemonico": "W9CCCODEIN",
+                                    "mappingInput": "stazioneAppaltante",
+                                    "mappingOutput": "stazioneAppaltante"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "codice-centro-costo",
+                                    "label": "CENTRO-DI-COSTO.GENERAL-DATA.CODICE",
+                                    "oggettoProtezione": "W9.CENTRICOSTO.CODCENTRO",
+                                    "mnemonico": "W9CCCODICE",
+                                    "mappingInput": "codiceCentro",
+                                    "mappingOutput": "codiceCentro",
+                                    "maxLength": 40
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "denominazione-centro-di-costo",
+                                    "label": "CENTRO-DI-COSTO.GENERAL-DATA.DENOMINAZIONE",
+                                    "oggettoProtezione": "W9.CENTRICOSTO.DENOMCENTRO",
+                                    "mnemonico": "W9CCDENOM",
+                                    "mappingInput": "denominazione",
+                                    "mappingOutput": "denominazione",
+                                    "maxLength": 250
+                                },
+                                {
+                                    "type": "TEXTAREA",
+                                    "code": "note-cdc",
+                                    "label": "CENTRO-DI-COSTO.GENERAL-DATA.NOTE",
+                                    "oggettoProtezione": "W9.CENTRICOSTO.NOTE",
+                                    "mnemonico": "W9CCNOTE",
+                                    "mappingInput": "note",
+                                    "mappingOutput": "note",
+                                    "maxLength": 2000
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tipologia-cdc",
+                                    "label": "CENTRO-DI-COSTO.GENERAL-DATA.TIPOLOGIA",
+                                    "oggettoProtezione": "W9.CENTRICOSTO.TIPOLOGIA",
+                                    "mnemonico": "W9CCTIPO",
+                                    "mappingInput": "tipologia",
+                                    "mappingOutput": "tipologia",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "TipologiaCC"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

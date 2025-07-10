@@ -1,0 +1,87 @@
+<div [class]="config.classNames" *ngIf="isReady">
+    <h1 class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</h1>
+    <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+    <div class="messages-box" #infoBox></div>
+
+    <div class="sdk-lista-reports-predefiniti-container">
+        <div class="sdk-lista-reports-predefiniti-content">
+            <div class="card">
+                <p-table 
+                    #dt2 
+                    [value]="listaAllReports" 
+                    dataKey="idRicerca"
+                    styleClass="p-datatable-all-reports" 
+                    [globalFilterFields]="['nome','descrizione']" 
+                    (onFilter)="onFilter($event)"
+                    [scrollable]="true"
+                    [virtualScroll]="true"
+                    [virtualScrollItemSize]="'56px'"
+                    [scrollHeight]="'calc(100vh - 300px)'"
+                    [scrollDirection]="'vertical'"
+                >
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th scope="col">{{ 'SDK-LISTA-REPORT.TITOLO-REPORT' | translate }}</th>
+                            <th scope="col">{{ 'SDK-LISTA-REPORT.DESCRIZIONE-REPORT' | translate }}</th>
+                        </tr>
+                        <tr>
+                            <th scope="col">
+                                <p-columnFilter type="text" matchMode="contains" [showMenu]="false" field="nome"></p-columnFilter>
+                            </th>
+                            <th scope="col">
+                                <p-columnFilter type="text" matchMode="contains" [showMenu]="false" field="descrizione"></p-columnFilter>
+                            </th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-report>
+                        <tr 
+                            class="sdk-lista-reports-predefiniti-item"
+                            (mouseenter)="hoveredRow = report.idRicerca" 
+                            (mouseleave)="hoveredRow = null"
+                        >
+                            <td>
+                                <div class="link-icon-container">
+                                    <a (click)="eseguiReport(report.idRicerca)" style="cursor: pointer;">
+                                        <u>{{report.nome}}</u>
+                                    </a>
+                                    <div class="icon-content">
+                                        <i 
+                                            [ngClass]="{
+                                                'mgg-icons-data-like': report.isPreferito,
+                                                'mgg-icons-data-like-off': !report.isPreferito && hoveredRow === report.idRicerca,
+                                                'preferito-icon': true,
+                                                'visibile': !report.isPreferito && hoveredRow === report.idRicerca,
+                                                'preferito': report.isPreferito
+                                            }"
+                                            [ngStyle]="!report.isPreferito && hoveredRow === report.idRicerca ? {'color': '#06c'} : {}"
+                                            [title]="
+                                                report.isPreferito 
+                                                ? 
+                                                    ('SDK-LISTA-REPORT.TOOLTIP.RIMUOVI-PREFERITO' | translate) 
+                                                : 
+                                                    ('SDK-LISTA-REPORT.TOOLTIP.AGGIUNGI-PREFERITO' | translate)"
+                                            (click)="togglePreferito(report); $event.stopPropagation()"
+                                        ></i>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                {{report.descrizione ? report.descrizione : ''}}
+                            </td>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="emptymessage">
+                        <tr>
+                            <td colspan="2">{{ 'noRecords' | translate }}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+    <sdk-dialog [config]="dialogConfigObs"></sdk-dialog>
+</div>

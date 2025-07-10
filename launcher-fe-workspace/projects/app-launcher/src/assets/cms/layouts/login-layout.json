@@ -1,0 +1,137 @@
+{
+  "name": "login-layout",
+  "styleUrls": [
+    "assets/cms/layouts/base-layout.css"
+  ],
+  "settings": {
+    "layout": "login-layout"
+  },
+  "sections": [
+    {
+      "id": "login-layout-root-section",
+      "selector": "sdk-layout-section",
+      "description": "Contenitore radice di tutte le sezioni del layout",
+      "classNames": "sdk-layout-root-section",
+      "settings": {
+        "section": "login-layout-root-section"
+      }
+    },
+    {
+      "id": "login-layout-header-section",
+      "parentId": "login-layout-root-section",
+      "selector": "sdk-layout-section",
+      "description": "Contenitore per le sezioni dell'header",
+      "classNames": "sdk-layout-header-section",
+      "settings": {
+        "section": "login-layout-header-section"
+      }
+    },
+    {
+      "id": "login-layout-header-top-section",
+      "parentId": "login-layout-header-section",
+      "selector": "sdk-layout-header-top",
+      "description": "Sezione di layout per la parte alta dell'intestazione",
+      "classNames": "sdk-layout-header-top-section",
+      "settings": {
+        "logoUrl": "#",
+        "logoDescription": "LOGO-DESCRIPTION",
+        "logo": "assets/images/app/logo-white.png",
+        "titoloApplicativo": "APP-TITLE",
+        "titoloModulo": "APP-SUBTITLE",
+        "profileDropdownButton": {
+          "code": "profile-dropdown-button",
+          "label": "PARAMS",
+          "labelParams": {
+            "value": ""
+          },
+          "expandAriaLabel": "BUTTONS.ULTERIORI-OPZIONI",
+          "look": "outline",
+          "primary": true,
+          "dropdownData": [
+            {
+              "code": "logout-button",
+              "label": "LOGOUT-BUTTON",
+              "provider": "LAUNCHER_LOGOUT",
+              "look": "flat"
+            }
+          ]
+        }
+      }
+    },    
+    {
+      "id": "login-layout-title-section",
+      "parentId": "login-layout-root-section",
+      "selector": "sdk-layout-title",
+      "description": "Sezione di layout per il titolo dell'applicazione",
+      "classNames": "sdk-layout-title-section",
+      "settings": {
+        "section": "login-layout-title-section",
+        "title": "LOGIN-PAGE.TITLE",
+        "body": "LOGIN-PAGE.BODY"
+      }
+    },
+    {
+      "id": "login-layout-content-section",
+      "parentId": "login-layout-root-section",
+      "selector": "sdk-layout-content",
+      "description": "Contenitore per il contenuto di pagina",
+      "classNames": "sdk-layout-content-section element-container main-content",
+      "settings": {
+        "section": "login-layout-content-section"
+      }
+    },
+    {
+      "id": "login-layout-footer-section",
+      "parentId": "login-layout-root-section",
+      "selector": "sdk-layout-footer",
+      "description": "Sezione di layout per il footer",
+      "classNames": "sdk-layout-footer-section",
+      "settings": {
+        "section": "login-layout-footer-section",
+        "logoFooter": "assets/images/app/logo-footer.png",
+        "footerContactsTitle": "FOOTER.CONTACTS-TITLE",
+        "footerVerticalLinksTitle": "FOOTER.VERTICAL-LINKS-TITLE",
+        "footerContacts": [
+          {
+            "code": "title",
+            "label": "",
+            "value": "Osservatorio provinciale dei contratti pubblici",
+            "url": "void(0)"
+          },
+          {
+            "code": "address",
+            "label": "",
+            "value": "Via Dogana, 8\n38122 Trento",
+            "url": "void(0)"
+          },
+          {
+            "code": "phone",
+            "label": "FOOTER.CONTACTS.PHONE",
+            "value": "Tel 0461.496888",
+            "url": "void(0)"
+          },
+          {
+            "code": "email",
+            "label": "FOOTER.CONTACTS.EMAIL",
+            "value": "uff.osscontrattipubblici@provincia.tn.it",
+            "classList": [
+              "bold"
+            ]
+          }
+        ],
+        "footerVerticalLinks": [          
+          {
+            "code": "link-anac",
+            "label": "FOOTER.LINK-ANAC",
+            "url": "https://www.anticorruzione.it/portal/public/classic/"
+          },
+          {
+            "code": "link-servizio-contratti-pubblici",
+            "label": "FOOTER.LINK-SERVIZIO-CONTRATTI-PUBBLICI",
+            "url": "https://www.serviziocontrattipubblici.it/SPInApp/"
+          }
+        ]
+      }
+    }
+  ]
+}

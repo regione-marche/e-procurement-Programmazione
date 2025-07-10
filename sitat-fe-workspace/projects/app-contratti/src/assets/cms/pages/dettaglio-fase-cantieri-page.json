@@ -1,0 +1,399 @@
+{
+    "name": "dettaglio-fase-cantieri-page",
+    "title": "TITLE.DETTAGLIO-FASE-CANTIERI-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/pubblica-fase-lotto-page.css"
+    ],
+    "settings": {
+        "page": "dettaglio-fase-cantieri-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-cantieri-page",
+                "label": "BREADCRUMB.DETTAGLIO-FASE-CANTIERI",
+                "slug": "dettaglio-fase-cantieri-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-fase-cantieri-page-content-root-section",
+            "selector": "dettaglio-fase-cantieri-section",
+            "description": "Pagina di dettaglio fase di cantieri",
+            "classNames": "dettaglio-fase-cantieri-section",
+            "settings": {
+                "classNames": "dettaglio-fase-cantieri-index",
+                "menuTabs": [
+                    {
+                        "code": "dettaglio-fase-cantieri",
+                        "title": "DETTAGLIO-FASE-CANTIERI.TABS.DATI-CANTIERE",
+                        "active": true,
+                        "slug": "dettaglio-fase-cantieri-page",
+                        "oggettoProtezione": "W9.W9CANT-scheda.DETTFASE",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+                    },
+                    {
+                        "code": "dettaglio-inc-prof-fase-cant",
+                        "title": "DETTAGLIO-FASE-CANTIERI.TABS.INCARICHI-PROFESSIONALI",
+                        "slug": "dettaglio-inc-prof-fase-cantieri-page",
+                        "oggettoProtezione": "W9.W9CANT-scheda.TECNI",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+                    }
+                ],
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "check-pubblicazione",
+                            "label": "BUTTONS.CHECK-DATA",
+                            "provider": "APP_FASI_LOTTO_PUBBLICA",
+                            "oggettoProtezione": "ALT.W9.FasiDiGara-schede.ControlloDatiInseriti",
+                            "type": "functions",
+                            "icon": "mgg-icons-document-text"
+                        },
+                        {
+                            "code": "go-to-update-fase",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_GARE_FASE_CANTIERI_PROVIDER",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "sidebar": {
+                        "code": "sidebar",
+                        "position": "right",
+                        "width": 500,
+                        "classList": [
+                            "check-pubb-sidebar"
+                        ],
+                        "headerImage": "assets/images/app/logo.png",
+                        "component": "check-pubblicazione-widget",
+                        "componentConfig": {}
+                    },
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "cantieri-data",
+                            "label": "FASE-CANTIERI.CANTIERI.CANTIERI",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "num-cant",
+                                    "label": "FASE-CANTIERI.CANTIERI.NUM-CANT",
+                                    "oggettoProtezione": "W9.W9CANT.NUM_CANT",
+                                    "mnemonico": "W3CANUMCAN",
+                                    "mappingInput": "num",
+                                    "mappingOutput": ""
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "opera-data",
+                            "label": "FASE-CANTIERI.OPERA.OPERA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "tipopera",
+                                    "label": "FASE-CANTIERI.OPERA.TIPOPERA",
+                                    "oggettoProtezione": "W9.W9CANT.TIPOPERA",
+                                    "mnemonico": "W9CATIPOPERA",
+                                    "mappingInput": "tipoOpera",
+                                    "mappingOutput": "tipoOpera",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "TipologiaOpera"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "tipinterv",
+                                    "label": "FASE-CANTIERI.OPERA.TIPINTERV",
+                                    "oggettoProtezione": "W9.W9CANT.TIPINTERV",
+                                    "mnemonico": "W9CATIPINTER",
+                                    "mappingInput": "tipoIntervento",
+                                    "mappingOutput": "tipoIntervento",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "TipologiaInterventoCantiere"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "tipcostr",
+                                    "label": "FASE-CANTIERI.OPERA.TIPCOSTR",
+                                    "oggettoProtezione": "W9.W9CANT.TIPCOSTR",
+                                    "mnemonico": "W9CATIPCOSTR",
+                                    "mappingInput": "tipologiaCostruttiva",
+                                    "mappingOutput": "tipologiaCostruttiva",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "TipologiaCostruttiva"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "cantiere-data",
+                            "label": "FASE-CANTIERI.CANTIERE.CANTIERE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-inizio",
+                                    "label": "FASE-CANTIERI.CANTIERE.DATA-INIZIO",
+                                    "oggettoProtezione": "W9.W9CANT.DINIZ",
+                                    "mnemonico": "W3DINIZCA",
+                                    "mappingInput": "dataInizio",
+                                    "mappingOutput": "dataInizio"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "dlav",
+                                    "label": "FASE-CANTIERI.CANTIERE.DLAV",
+                                    "oggettoProtezione": "W9.W9CANT.DLAV",
+                                    "mnemonico": "W3DLAVCA",
+                                    "mappingInput": "durataPresunta",
+                                    "mappingOutput": "durataPresunta"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "indcan",
+                                    "label": "FASE-CANTIERI.CANTIERE.INDCAN",
+                                    "oggettoProtezione": "W9.W9CANT.INDCAN",
+                                    "mnemonico": "W3INDCAN",
+                                    "mappingInput": "indirizzoCantiere",
+                                    "mappingOutput": "indirizzoCantiere"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "civico",
+                                    "label": "FASE-CANTIERI.CANTIERE.CIVICO",
+                                    "oggettoProtezione": "W9.W9CANT.CIVICO",
+                                    "mnemonico": "W9CACIVICO",
+                                    "mappingInput": "civico",
+                                    "mappingOutput": "civico"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "cod-istat-comune",
+                                    "label": "FASE-CANTIERI.CANTIERE.COMUNE",
+                                    "oggettoProtezione": "W9.W9CANT.COMUNE",
+                                    "mnemonico": "W9CACOMUNE",
+                                    "mappingInput": "codIstatComune",
+                                    "mappingOutput": "codIstatComune"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "provincia",
+                                    "label": "FASE-CANTIERI.CANTIERE.PROVINCIA",
+                                    "oggettoProtezione": "W9.W9CANT.PROV",
+                                    "mnemonico": "W9CAPROV",
+                                    "mappingInput": "provincia",
+                                    "mappingOutput": "provincia"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "coord-x",
+                                    "label": "FASE-CANTIERI.CANTIERE.COORD-X",
+                                    "oggettoProtezione": "W9.W9CANT.COORD_X",
+                                    "mnemonico": "W9CACOORD_X",
+                                    "mappingInput": "coordX",
+                                    "mappingOutput": "coordX"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "coord-y",
+                                    "label": "FASE-CANTIERI.CANTIERE.COORD-Y",
+                                    "oggettoProtezione": "W9.W9CANT.COORD_Y",
+                                    "mnemonico": "W9CACOORD_Y",
+                                    "mappingInput": "coordY",
+                                    "mappingOutput": "coordY"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "latit",
+                                    "label": "FASE-CANTIERI.CANTIERE.LATIT",
+                                    "oggettoProtezione": "W9.W9CANT.LATIT",
+                                    "mnemonico": "W9CALATIT",
+                                    "mappingInput": "latitudine",
+                                    "mappingOutput": "latitudine"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "longit",
+                                    "label": "FASE-CANTIERI.CANTIERE.LONGIT",
+                                    "oggettoProtezione": "W9.W9CANT.LONGIT",
+                                    "mnemonico": "W9CALONGIT",
+                                    "mappingInput": "longitudine",
+                                    "mappingOutput": "longitudine"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "numlav",
+                                    "label": "FASE-CANTIERI.CANTIERE.NUMLAV",
+                                    "oggettoProtezione": "W9.W9CANT.LONGIT",
+                                    "mnemonico": "W9CALONGIT",
+                                    "mappingInput": "numMaxLavoratori",
+                                    "mappingOutput": "numMaxLavoratori"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "numimp",
+                                    "label": "FASE-CANTIERI.CANTIERE.NUMIMP",
+                                    "oggettoProtezione": "W9.W9CANT.NUMIMP",
+                                    "mnemonico": "W9CANUMIMP",
+                                    "mappingInput": "numeroImprese",
+                                    "mappingOutput": "numeroImprese"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "lavaut",
+                                    "label": "FASE-CANTIERI.CANTIERE.LAVAUT",
+                                    "oggettoProtezione": "W9.W9CANT.NUMLAV",
+                                    "mnemonico": "W9CANUMLAV",
+                                    "mappingInput": "numLavoratoriAutonomi",
+                                    "mappingOutput": "numLavoratoriAutonomi"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "infrda",
+                                    "label": "FASE-CANTIERI.CANTIERE.INFRDA",
+                                    "oggettoProtezione": "W9.W9CANT.INFRDA",
+                                    "mnemonico": "W3INFRDA",
+                                    "mappingInput": "infrastrutturaReteDa",
+                                    "mappingOutput": "infrastrutturaReteDa"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "infra",
+                                    "label": "FASE-CANTIERI.CANTIERE.INFRA",
+                                    "oggettoProtezione": "W9.W9CANT.INFRA",
+                                    "mnemonico": "W3INFRA",
+                                    "mappingInput": "infrastrutturaReteA",
+                                    "mappingOutput": "infrastrutturaReteA"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "infrde",
+                                    "label": "FASE-CANTIERI.CANTIERE.INFRDE",
+                                    "oggettoProtezione": "W9.W9CANT.INFRDE",
+                                    "mnemonico": "W3INFRDE",
+                                    "mappingInput": "descInfrsatrutturaRete",
+                                    "mappingOutput": "descInfrsatrutturaRete"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "mailric",
+                                    "label": "FASE-CANTIERI.CANTIERE.MAILRIC",
+                                    "oggettoProtezione": "W9.W9CANT.MAILRIC",
+                                    "mnemonico": "W9CAMAILRIC",
+                                    "mappingInput": "ulterioreMail",
+                                    "mappingOutput": "ulterioreMail"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "DYNAMIC-FORM-SECTION",
+                            "code": "destinatari-notifica-data",
+                            "label": "FASE-CANTIERI.DESTINATARI-NOTIFICA.DESTINATARI-NOTIFICA",
+                            "mappingInput": "destinatariNotifica",
+                            "mappingOutput": "destinatariNotifica",
+                            "dynamicReadonly": true,
+                            "dynamicMultipleLabel": "FASE-CANTIERI.DESTINATARI-NOTIFICA.DESTINATARI-NOTIFICA-PROGRESSIVO"
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "imprese-data",
+                            "label": "FASE-CANTIERI.IMPRESE.IMPRESE",
+                            "fieldSections": [
+                                {
+                                    "type": "FORM-GROUP",
+                                    "code": "imprese-group",
+                                    "label": "",
+                                    "minGroupsNumber": 0,
+                                    "maxGroupsNumber": -1,
+                                    "mappingInput": "imprese",
+                                    "mappingOutput": "imprese",
+                                    "defaultFormGroupFields": [
+                                        {
+                                            "type": "TEXT",
+                                            "code": "nomest",
+                                            "label": "FASE-CANTIERI.IMPRESE.NOMEST",
+                                            "oggettoProtezione": "W9.W9CANTIMP.CODIMP",
+                                            "mnemonico": "W9CICODIMP",
+                                            "mappingInput": "impresa.ragioneSociale",
+                                            "mappingOutput": "codiceImpresa",
+                                            "link": true,
+                                            "modalComponent": "impresa-modal-widget",
+                                            "modalComponentConfig": "impresaModalConfig"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "cipdurc",
+                                            "label": "FASE-CANTIERI.IMPRESE.CIPDURC",
+                                            "oggettoProtezione": "W9.W9CANTIMP.CIPDURC",
+                                            "mnemonico": "W9CICIPDURC",
+                                            "mappingInput": "codiceDurc",
+                                            "mappingOutput": "codiceDurc"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "protdurc",
+                                            "label": "FASE-CANTIERI.IMPRESE.PROTDURC",
+                                            "oggettoProtezione": "W9.W9CANTIMP.PROTDURC",
+                                            "mnemonico": "W9CIPROTDURC",
+                                            "mappingInput": "protocolloDurc",
+                                            "mappingOutput": "protocolloDurc"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "data-durc",
+                                            "label": "FASE-CANTIERI.IMPRESE.DATA-DURC",
+                                            "oggettoProtezione": "W9.W9CANTIMP.DATDURC",
+                                            "mnemonico": "W9CIDATDURC",
+                                            "mappingInput": "dataDurc",
+                                            "mappingOutput": "dataDurc"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

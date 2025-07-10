@@ -1,0 +1,46 @@
+@import "./base/header-base.scss";
+@import "./base/footer-base.scss";
+
+.sdk-layout-root-section.base-layout > div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: stretch;
+}
+
+.sdk-layout-all-section.base-layout > div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: stretch;
+}
+
+.sdk-layout-container-section.base-layout {
+    height: calc(100vh - 100px);
+    overflow: auto;
+    width: calc(100% - 64px);
+}
+
+.sdk-layout-header-menu-section.base-layout {
+    height: calc(100vh - 100px);
+    min-width: 64px;
+    width: auto;
+}
+
+.sdk-layout-container-section-no-scroll.base-layout {
+    width: calc(100% - 64px);
+    overflow: hidden;
+}
+
+.sdk-layout-container3-section {
+    width: 100%;
+    padding: 0 1rem;
+    @extend %layout-side-tabs-body-color;
+    height: calc(100vh - 150px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}

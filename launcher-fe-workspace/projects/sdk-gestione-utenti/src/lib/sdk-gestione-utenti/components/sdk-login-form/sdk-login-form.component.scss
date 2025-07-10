@@ -1,0 +1,66 @@
+.sdk-login-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 3px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
+
+    &.mtoken {
+        max-width: 700px;
+    }
+
+    .sdk-login-form-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .sdk-login-form-field-group {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-content: center;
+        align-items: center;
+        padding: 0.5rem 0;
+
+        &.file {
+            justify-content: flex-start;
+
+            input[type=file] {
+                border: 1px solid #a6a6a6;
+                padding: 0.5rem;
+                border-radius: 3px;
+            }
+        }
+
+        .sdk-login-form-label {
+            padding-right: 1rem;
+            min-width: 150px;
+        }
+
+        p-password {
+            width: 100%;
+        }
+    }
+
+    .sdk-login-form-pulsantiera {
+        text-align: right;
+
+        .reset-button {
+            margin-right: 1rem;
+        }
+
+        // .p-button.p-button-secondary.p-button-outlined {
+        //     color: #000000;
+
+        //     &:enabled:hover {
+        //         color: #696969;
+        //     }
+        // }
+    }
+
+    .sdk-login-form-links {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}

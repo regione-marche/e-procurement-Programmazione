@@ -1,0 +1,25 @@
+{
+    "name": "registrazione-utente",
+    "title": "TITLE.oauth-LOGIN-PAGE",
+    "layout": "login-layout",
+    "appName": "app-programmi",
+    "styleUrls": [],
+    "settings": {
+        "page": "oauth-login"
+    },
+    "sections": [
+        {
+            "id": "oauth-login-content-root-section",
+            "selector": "oauth-login-section",
+            "description": "Componente per la registrazione utente",
+            "classNames": "oauth-login-section",
+            "settings": {
+                "classNames": "oauth-login-section",
+                "sectionTitle": "TITLE.oauth-LOGIN-PAGE",
+                "body": {
+                    "buttonProvider":"APP_PROGRAMMI_LOGOUT"           
+                }
+            }
+        }
+    ]
+}

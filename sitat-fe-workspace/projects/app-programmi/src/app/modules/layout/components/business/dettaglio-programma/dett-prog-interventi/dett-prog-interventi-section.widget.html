@@ -1,0 +1,20 @@
+<div [class]="config.classNames" *ngIf="isReady">
+
+    <div class="messages-box" #infoBox></div>
+
+    <div class="messages-box" #messages></div>
+
+    <div class="dett-prog-interventi-container">
+
+        <div class="dpi-content">
+            <sdk-table [config]="configSub" [reset]="resetTable"></sdk-table>
+            <sdk-modal [config]="modalConfigSubj" (output)="manageModalOutput($event)"></sdk-modal>
+
+            <div class="buttons-row">
+                <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+            </div>
+            <sdk-dialog [config]="dialogConfigObs"></sdk-dialog>
+            
+        </div>
+    </div>
+</div>

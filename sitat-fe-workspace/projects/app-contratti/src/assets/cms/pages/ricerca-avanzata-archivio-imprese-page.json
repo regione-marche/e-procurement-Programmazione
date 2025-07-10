@@ -1,0 +1,144 @@
+{
+    "name": "ricerca-avanzata-archivio-imprese-page",
+    "title": "TITLE.RICERCA-AVANZATA-ARCHIVIO-IMPRESE-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "ricerca-avanzata-archivio-imprese-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-archivio-imprese-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-ARCHIVIO-IMPRESE",
+                "slug": "ricerca-avanzata-archivio-imprese-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "ricerca-avanzata-archivio-imprese-page-content-root-section",
+            "selector": "ricerca-avanzata-archivio-imprese-section",
+            "description": "Pagina ricerca avanzata archivio imprese",
+            "classNames": "ricerca-avanzata-archivio-imprese-section",
+            "settings": {
+                "classNames": "ricerca-avanzata-archivio-imprese-index",
+                "sectionTitle": "TITLE.RICERCA-AVANZATA-ARCHIVIO-IMPRESE-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-button",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_COMMONS_ARCHIVIO_IMPRESE_ADVANCED_SEARCH",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "clean-button",
+                            "label": "BUTTONS.CLEAN",
+                            "provider": "APP_COMMONS_ARCHIVIO_IMPRESE_ADVANCED_SEARCH",
+                            "icon": "mgg-icons-data-unfiltered"
+                        },
+                        {
+                            "code": "search-button",
+                            "label": "BUTTONS.SEARCH",
+                            "provider": "APP_COMMONS_ARCHIVIO_IMPRESE_ADVANCED_SEARCH",
+                            "icon": "mgg-icons-data-search"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "archivio-imprese-data",
+                            "label": "RICERCA-AVANZATA-ARCHIVIO-IMPRESE.ARCHIVIO-IMPRESE-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "stazione-appaltante",
+                                    "label": "RICERCA-AVANZATA-GARE.STAZIONE-APPALTANTE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "noDataLabel": "NO-DATA",
+                                    "itemsProviderCode": "STAZIONE_APPALTANTE_AUTOCOMPLETE",
+                                    "mappingInput": "stazioneAppaltante",
+                                    "mappingOutput": "stazioneAppaltante"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "denominazione",
+                                    "label": "RICERCA-AVANZATA-ARCHIVIO-IMPRESE.DENOMINAZIONE",
+                                    "oggettoProtezione": "GENE.IMPR.NOMEST",
+                                    "mnemonico": "G_NOMIMP",
+                                    "mappingInput": "ragioneSociale",
+                                    "mappingOutput": "ragioneSociale"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "codice-fiscale",
+                                    "label": "RICERCA-AVANZATA-ARCHIVIO-IMPRESE.CODICE-FISCALE",
+                                    "oggettoProtezione": "GENE.IMPR.CFIMP",
+                                    "mnemonico": "CFIMP",
+                                    "mappingInput": "codiceFiscale",
+                                    "mappingOutput": "codiceFiscale"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "partita-iva",
+                                    "label": "RICERCA-AVANZATA-ARCHIVIO-IMPRESE.PARTITA-IVA",
+                                    "oggettoProtezione": "GENE.IMPR.PIVIMP",
+                                    "mnemonico": "PIVIMP",
+                                    "mappingInput": "partitaIva",
+                                    "mappingOutput": "partitaIva"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "provincia",
+                                    "label": "RICERCA-AVANZATA-ARCHIVIO-IMPRESE.PROVINCIA",
+                                    "oggettoProtezione": "GENE.IMPR.PROIMP",
+                                    "mnemonico": "PROIMP",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "Province",
+                                    "mappingInput": "provincia",
+                                    "mappingOutput": "provincia"
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "comune",
+                                    "label": "RICERCA-AVANZATA-ARCHIVIO-IMPRESE.COMUNE",
+                                    "noDataLabel": "NO-DATA",
+                                    "oggettoProtezione": "",
+                                    "mappingInput": "comune",
+                                    "mappingOutput": "comune",
+                                    "itemsProviderCode": "APP_GARE_COMUNI",
+                                    "minSearchCharacters": 2
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "email",
+                                    "label": "RICERCA-AVANZATA-ARCHIVIO-IMPRESE.EMAIL",
+                                    "oggettoProtezione": "GENE.IMPR.EMAIIP",
+                                    "mnemonico": "G_EMAIIP",
+                                    "mappingInput": "email",
+                                    "mappingOutput": "email"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "legale-rappresentante",
+                                    "label": "RICERCA-AVANZATA-ARCHIVIO-IMPRESE.LEGALE-RAPPRESENTANTE",
+                                    "oggettoProtezione": "GENE.TEIM.NOMTIM",
+                                    "mnemonico": "",
+                                    "mappingInput": "legale",
+                                    "mappingOutput": "legale"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

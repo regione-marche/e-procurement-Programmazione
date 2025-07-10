@@ -1,0 +1,17 @@
+{
+    "MNEMONICO-INFO-BOX": {
+        "INFORMAZIONI-CAMPO": "Informazioni Campo",
+        "INFORMAZIONI-ENTITA-APPARTENENZA": "Informazioni entit\u00E0 di appartenenza",
+        "CAMPO": "Campo",
+        "DESCRIZIONE": "Descrizione",
+        "FORMATO": "Formato",
+        "MNEMONICO-COMPOSITORE": "Mnemonico da utilizzare nel compositore",
+        "SCHEMA-APPARTENENZA": "Schema di appartenenza",
+        "DESCRIZIONE-SCHEMA": "Descrizione schema",
+        "ENTITA-APPARTENENZA": "Entit\u00E0 di appartenenza",
+        "DESCRIZIONE-ENTITA": "Descrizione entit\u00E0",
+        "CHIAVE-ENTITA": "Chiave entit\u00E0",
+        "NO-MNEMONICO": "Non \u00E8 stato configurato alcun mnemonico per questo campo",
+        "NO-MNEMONICO-FOUND": "Non \u00E8 stata trovata alcuna informazione per il campo selezionato"
+    }
+}

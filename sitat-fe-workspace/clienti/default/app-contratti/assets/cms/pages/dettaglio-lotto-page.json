@@ -1,0 +1,906 @@
+{
+    "name": "dettaglio-lotto-page",
+    "title": "TITLE.DETTAGLIO-LOTTO-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/pubblica-gara-page.css"
+    ],
+    "settings": {
+        "page": "dettaglio-lotto-page",
+        "pageFeatures": [
+            "docassociati"
+        ],
+        "entity": {
+            "schema": "W9",
+            "name": "W9LOTT",
+            "keys": [
+                "codgara",
+                "codLotto"
+            ]
+        },
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "dettaglio-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "dettaglio-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            }
+        ],
+        "breadcrumbsLS": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.RICERCA-SCHEDE-TRASMESSE-PCP",
+                "slug": "ricerca-schede-trasmesse-pcp-page"
+            },
+            {
+                "code": "lista-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.LISTA-SCHEDE-TRASMESSE-PCP",
+                "slug": "lista-schede-trasmesse-pcp-page"
+            },
+            {
+                "code": "dettaglio-lotto-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "dettaglio-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-lotto-page-content-root-section",
+            "selector": "dettaglio-lotto-section",
+            "description": "Pagina di dettaglio lotto",
+            "classNames": "dettaglio-lotto-section",
+            "settings": {
+                "classNames": "dettaglio-lotto-index",
+                "menuTabs": [
+                    {
+                        "code": "dettaglio-lotto",
+                        "title": "DETTAGLIO-LOTTO.TABS.DATI-GENERALI",
+                        "active": true,
+                        "slug": "dettaglio-lotto-page",
+                        "oggettoProtezione": "W9.W9LOTT-scheda.DATIDET",
+                        "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS"
+                    },
+                    {
+                        "code": "lista-fasi-lotto",
+                        "title": "DETTAGLIO-LOTTO.TABS.FASI-EVENTI",
+                        "slug": "lista-fasi-lotto-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                        "oggettoProtezione": "W9.W9LOTT-scheda.FASI"
+                    },
+                    {
+                        "code": "lista-atti-lotto",
+                        "title": "DETTAGLIO-LOTTO.TABS.LISTA-ATTI-LOTTO",
+                        "slug": "lista-atti-lotto-page",
+                        "oggettoProtezione": "W9.W9LOTT-scheda.PUBBLICAZIONI",
+                        "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS"
+                    },
+                    {
+                        "code": "lista-invii-fasi",
+                        "title": "DETTAGLIO-LOTTO.TABS.LISTA-INVII-FASI",
+                        "slug": "lista-invii-fasi-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                        "oggettoProtezione": "W9.W9LOTT-scheda.FLUSSI",
+                        "visible": "APP_GARE_LISTA_INVII_FASI_VISIBLE"
+                    }
+                ],
+                "menuTabsLS": [
+                    {
+                        "code": "dettaglio-lotto",
+                        "title": "DETTAGLIO-LOTTO.TABS.DATI-GENERALI",
+                        "active": true,
+                        "slug": "dettaglio-lotto-page",
+                        "oggettoProtezione": "W9.W9LOTT-scheda.DATIDET",
+                        "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS"
+                    },
+                    {
+                        "code": "lista-fasi-lotto",
+                        "title": "DETTAGLIO-LOTTO.TABS.FASI-EVENTI",
+                        "slug": "lista-fasi-lotto-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                        "oggettoProtezione": "W9.W9LOTT-scheda.FASI"
+                    },
+                    {
+                        "code": "lista-invii-fasi",
+                        "title": "DETTAGLIO-LOTTO.TABS.LISTA-INVII-FASI",
+                        "slug": "lista-invii-fasi-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                        "oggettoProtezione": "W9.W9LOTT-scheda.FLUSSI",
+                        "visible": "APP_GARE_LISTA_INVII_FASI_VISIBLE"
+                    }
+                ],
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-lotti",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_LOTTI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "report-indicatori",
+                            "label": "BUTTONS.REPORT-INDICATORI",
+                            "provider": "APP_GARE_LISTA_LOTTI",
+                            "type": "functions",
+                            "icon": "mgg-icons-file-download",
+                            "oggettoProtezione":"ALT.W9.REPORTINDICATORI"
+                        },
+                        {
+                            "code": "check-pubblicazione",
+                            "label": "BUTTONS.CHECK-DATA",
+                            "provider": "APP_GARE_PUBBLICA",
+                            "type": "functions",
+                            "icon": "mgg-icons-document-text"
+                        },
+                        {
+                            "code": "altre-azioni",
+                            "label": "BUTTONS.ALTRE-AZIONI",
+                            "icon": "mgg-icons-menu-more",
+                            "dropdown": true,
+                            "dropdownData": [
+                                {
+                                    "code": "dati-contabilita",
+                                    "label": "BUTTONS.DATI-CONTABILITA",
+                                    "provider": "APP_GARE_LISTA_LOTTI",
+                                    "type": "functions",
+                                    "icon": "mgg-icons-finance-wallet",
+                                    "oggettoProtezione": "ALT.W9.AggiornamentoDaSicra"
+                                }
+                            ],
+                            "type": "functions",
+                            "look": "icon"
+                        },
+                        {
+                            "code": "go-to-update-lotto",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_GARE_LISTA_LOTTI",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "buttonsBase": [
+                        {
+                            "code": "back-to-lista-lotti",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_LOTTI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "check-pubblicazione",
+                            "label": "BUTTONS.CHECK-DATA",
+                            "provider": "APP_GARE_PUBBLICA",
+                            "type": "functions",
+                            "icon": "mgg-icons-document-text"
+                        },
+                        {
+                            "code": "altre-azioni",
+                            "label": "BUTTONS.ALTRE-AZIONI",
+                            "icon": "mgg-icons-menu-more",
+                            "dropdown": true,
+                            "dropdownData": [
+                                {
+                                    "code": "dati-contabilita",
+                                    "label": "BUTTONS.DATI-CONTABILITA",
+                                    "provider": "APP_GARE_LISTA_LOTTI",
+                                    "type": "functions",
+                                    "icon": "mgg-icons-finance-wallet",
+                                    "oggettoProtezione": "ALT.W9.AggiornamentoDaSicra"
+                                }
+                            ],
+                            "type": "functions",
+                            "look": "icon"
+                        },
+                        {
+                            "code": "go-to-update-lotto",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_GARE_LISTA_LOTTI",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "buttonsRO": [
+                        {
+                            "code": "back-to-lista-lotti",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_LOTTI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "altre-azioni",
+                            "label": "BUTTONS.ALTRE-AZIONI",
+                            "icon": "mgg-icons-menu-more",
+                            "dropdown": true,
+                            "dropdownData": [
+                                {
+                                    "code": "dati-contabilita",
+                                    "label": "BUTTONS.DATI-CONTABILITA",
+                                    "provider": "APP_GARE_LISTA_LOTTI",
+                                    "type": "functions",
+                                    "icon": "mgg-icons-finance-wallet",
+                                    "oggettoProtezione": "ALT.W9.AggiornamentoDaSicra"
+                                }
+                            ],
+                            "type": "functions",
+                            "look": "icon"
+                        }
+                    ],
+                    "buttonsLS": [
+                        {
+                            "code": "back-to-lista-schede-trasmesse",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "sidebar": {
+                        "code": "sidebar",
+                        "position": "right",
+                        "width": 500,
+                        "classList": [
+                            "check-pubb-sidebar"
+                        ],
+                        "headerImage": "assets/images/app/logo.png",
+                        "component": "check-pubblicazione-widget",
+                        "componentConfig": {}
+                    },
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "LOTTO.GENERAL-DATA.GENERAL-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "cig",
+                                    "label": "LOTTO.GENERAL-DATA.CIG",
+                                    "oggettoProtezione": "W9.W9LOTT.CIG",
+                                    "mnemonico": "W3CIG",
+                                    "mappingInput": "cig",
+                                    "mappingOutput": "cig"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "oggetto-lotto",
+                                    "label": "LOTTO.GENERAL-DATA.OGGETTO-LOTTO",
+                                    "oggettoProtezione": "W9.W9LOTT.OGGETTO",
+                                    "mnemonico": "W3OGGETTO2",
+                                    "mappingInput": "oggetto",
+                                    "mappingOutput": "oggetto"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "url-eproc",
+                                    "label": "LOTTO.GENERAL-DATA.URL-EPROC",
+                                    "oggettoProtezione": "W9.W9LOTT.URL_EPROC",
+                                    "mnemonico": "W9LOURLEPROC",
+                                    "mappingInput": "urlEproc",
+                                    "mappingOutput": "urlEproc",
+                                    "visible": false
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "situazione",
+                                    "label": "LOTTO.GENERAL-DATA.SITUAZIONE",
+                                    "oggettoProtezione": "W9.W9LOTT.SITUAZIONE",
+                                    "mnemonico": "W9LOSITUAZ",
+                                    "mappingInput": "situazione",
+                                    "mappingOutput": "situazione",
+                                    "listCode": "Situazione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "numero-lotto",
+                                    "label": "LOTTO.GENERAL-DATA.NUMERO-LOTTO",
+                                    "oggettoProtezione": "W9.W9LOTT.NLOTTO",
+                                    "mnemonico": "W3NLOTTO",
+                                    "mappingInput": "numLotto",
+                                    "mappingOutput": "numLotto"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "tipo-appalto",
+                                    "label": "LOTTO.GENERAL-DATA.TIPO-APPALTO",
+                                    "oggettoProtezione": "W9.W9LOTT.TIPO_CONTRATTO",
+                                    "mnemonico": "W3TIPO_CON",
+                                    "mappingInput": "tipologia",
+                                    "mappingOutput": "tipologia",
+                                    "listCode": "TipoAppalto"
+                                },
+                                {
+                                    "type": "HIDDEN",
+                                    "code": "tipo-appalto-hidden",
+                                    "label": "LOTTO.GENERAL-DATA.TIPO-APPALTO",
+                                    "mappingInput": "tipologia"
+                                },                               
+                                {
+                                    "type": "TEXT",
+                                    "code": "cup-esente",
+                                    "label": "LOTTO.ECONOMICS-DATA.CUP-ESENTE",
+                                    "oggettoProtezione": "W9.W9LOTT.CUPESENTE",
+                                    "mnemonico": "W9CUPESENTE",
+                                    "mappingInput": "esenteCup",
+                                    "mappingOutput": "esenteCup",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "cup",
+                                    "label": "LOTTO.ECONOMICS-DATA.CUP",
+                                    "oggettoProtezione": "W9.W9LOTT.CUP",
+                                    "mnemonico": "W3CUP",
+                                    "mappingInput": "listaCup",
+                                    "mappingOutput": "listaCup",
+                                    "visibleCondition": {
+                                        "or": {
+                                            "cup-esente": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "cui-programmazione",
+                                    "label": "LOTTO.GENERAL-DATA.CUI-PROGRAMMAZIONE",
+                                    "oggettoProtezione": "W9.W9LOTT.CUIINT",
+                                    "mnemonico": "W9LOCUIINT",
+                                    "mappingInput": "cui",
+                                    "mappingOutput": "cui"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "art-e1",
+                                    "label": "LOTTO.GENERAL-DATA.ART-E1",
+                                    "oggettoProtezione": "W9.W9LOTT.ART_E1",
+                                    "mnemonico": "W3LOARTE1",
+                                    "mappingInput": "contrattoEscluso",
+                                    "mappingOutput": "contrattoEscluso",
+                                    "listCode": "sino",
+                                    "visible": false
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "contratto-escluso-alleggerito",
+                                    "label": "LOTTO.GENERAL-DATA.CONTRATTO-ESCLUSO-ALLEGGERITO",
+                                    "oggettoProtezione": "W9.W9LOTT.CONTRATTO_ESCLUSO_ALLEGGERITO",
+                                    "mnemonico": "W9CONESCAL",
+                                    "mappingInput": "contrattoEsclusoAlleggerito",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "esclusione-regime-speciale",
+                                    "label": "LOTTO.GENERAL-DATA.ESCLUSIONE-REGIME-SPECIALE",
+                                    "oggettoProtezione": "W9.W9LOTT.ESCLUSIONE_REGIME_SPECIALE",
+                                    "mnemonico": "W9ESREGSPE",
+                                    "mappingInput": "esclusioneRegimeSpeciale",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "id-scelta-contraente",
+                                    "label": "LOTTO.GENERAL-DATA.ID-SCELTA-CONTRAENTE",
+                                    "oggettoProtezione": "W9.W9LOTT.ID_SCELTA_CONTRAENTE",
+                                    "mnemonico": "W3ID_SCEL2",
+                                    "mappingInput": "sceltaContraente",
+                                    "mappingOutput": "sceltaContraente",
+                                    "listCode": "SceltaContraente"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "id-scelta-contraente-50",
+                                    "label": "LOTTO.GENERAL-DATA.ID-SCELTA-CONTRAENTE-50",
+                                    "oggettoProtezione": "W9.W9LOTT.ID_SCELTA_CONTRAENTE_50",
+                                    "mnemonico": "W9ID_SCEL50",
+                                    "mappingInput": "sceltaContraenteLgs",
+                                    "mappingOutput": "sceltaContraenteLgs",
+                                    "listCode": "SceltaContraente50",
+                                    "visible": false
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "id-modo-gara",
+                                    "label": "LOTTO.GENERAL-DATA.ID-MODO-GARA",
+                                    "oggettoProtezione": "W9.W9LOTT.ID_MODO_GARA",
+                                    "mnemonico": "W3MOD_GAR",
+                                    "mappingInput": "criteriAggiudicazione",
+                                    "mappingOutput": "criteriAggiudicazione",
+                                    "listCode": "CriterioAggiudicazione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "id-scheda-locale",
+                                    "label": "LOTTO.GENERAL-DATA.ID-SCHEDA-LOCALE",
+                                    "oggettoProtezione": "W9.W9LOTT.ID_SCHEDA_LOCALE",
+                                    "mnemonico": "W9LOSCHLOC",
+                                    "mappingInput": "idSchedalocale",
+                                    "mappingOutput": "idSchedalocale",
+                                    "visible": false
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "prestazione-comprese-appalto",
+                                    "label": "LOTTO.GENERAL-DATA.PRESTAZIONE-COMPRESE-APPALTO",
+                                    "oggettoProtezione": "W9.W9LOTT.ID_TIPO_PRESTAZIONE",
+                                    "mnemonico": "W3ID_TIPO",
+                                    "mappingInput": "prestazioneComprese",
+                                    "mappingOutput": "prestazioneComprese",
+                                    "listCode": "PrestazioniComprese"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "DYNAMIC-FORM-SECTION",
+                            "code": "acquisizione-forniture-servizi-data",
+                            "label": "LOTTO.AQUISIZIONE-FORNITURE-SERVIZI-DATA.AQUISIZIONE-FORNITURE-SERVIZI-DATA",
+                            "mappingInput": "modalitaAcquisizione",
+                            "mappingOutput": "modalitaAcquisizione",
+                            "oggettoProtezione": "W9.W9LOTT-scheda.DATIDET.MODFORN",
+                            "dynamicReadonly": true,
+                            "dynamicMultipleLabel": "LOTTO.AQUISIZIONE-FORNITURE-SERVIZI-DATA.AQUISIZIONE-FORNITURE-SERVIZI-DATA-PROGRESSIVO"
+                        },
+                        {
+                            "type": "DYNAMIC-FORM-SECTION",
+                            "code": "tipologia-lavoro-data",
+                            "label": "LOTTO.TIPOLOGIA-LAVORO-DATA.TIPOLOGIA-LAVORO-DATA",
+                            "mappingInput": "modalitaTipologiaLavoro",
+                            "mappingOutput": "modalitaTipologiaLavoro",
+                            "oggettoProtezione": "W9.W9LOTT-scheda.DATIDET.MODLAV",
+                            "dynamicReadonly": true,
+                            "dynamicMultipleLabel": "LOTTO.TIPOLOGIA-LAVORO-DATA.TIPOLOGIA-LAVORO-DATA-PROGRESSIVO"
+                        },
+                        {
+                            "type": "DYNAMIC-FORM-SECTION",
+                            "code": "condizioni-procedura-negoziata-data",
+                            "label": "LOTTO.CONDIZIONI-PROCEDURA-NEGOZIATA-DATA.CONDIZIONI-PROCEDURA-NEGOZIATA-DATA",
+                            "mappingInput": "condizioniRicorsoProcNeg",
+                            "mappingOutput": "condizioniRicorsoProcNeg",
+                            "oggettoProtezione": "W9.W9LOTT-scheda.DATIDET.CONDIZ",
+                            "dynamicReadonly": true,
+                            "dynamicMultipleLabel": "LOTTO.CONDIZIONI-PROCEDURA-NEGOZIATA-DATA.CONDIZIONI-PROCEDURA-NEGOZIATA-DATA-PROGRESSIVO",
+                            "visible": false,
+                            "visibleCondition": {
+                                "or": {
+                                    "id-scelta-contraente": {
+                                        "values": [
+                                            {
+                                                "value": "4",
+                                                "operation": "="
+                                            },
+                                            {
+                                                "value": "10",
+                                                "operation": "="
+                                            }
+                                        ],
+                                        "visible": false
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "economics-data",
+                            "label": "LOTTO.ECONOMICS-DATA.ECONOMICS-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "importo-lotto",
+                                    "label": "LOTTO.ECONOMICS-DATA.IMPORTO-LOTTO",
+                                    "oggettoProtezione": "W9.W9LOTT.IMPORTO_LOTTO",
+                                    "mnemonico": "W3I_LOTTO",
+                                    "mappingInput": "importoNetto",
+                                    "mappingOutput": "importoNetto",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "importo-attuazione-sicurezza",
+                                    "label": "LOTTO.ECONOMICS-DATA.IMPORTO-ATTUAZIONE-SICUREZZA",
+                                    "oggettoProtezione": "W9.W9LOTT.IMPORTO_ATTUAZIONE_SICUREZZA",
+                                    "mnemonico": "W3I_ATTSIC",
+                                    "mappingInput": "importoSicurezza",
+                                    "mappingOutput": "importoSicurezza",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "importo-totale",
+                                    "label": "LOTTO.ECONOMICS-DATA.IMPORTO-TOTALE",
+                                    "oggettoProtezione": "W9.W9LOTT.IMPORTO_TOT",
+                                    "mnemonico": "W9IMPTOTLO",
+                                    "mappingInput": "importoTotale",
+                                    "mappingOutput": "importoTotale",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "HIDDEN",
+                                    "code": "importo-totale-hidden",
+                                    "label": "LOTTO.ECONOMICS-DATA.IMPORTO-TOTALE",
+                                    "mappingInput": "importoTotale"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "cpv",
+                                    "label": "LOTTO.ECONOMICS-DATA.CPV",
+                                    "oggettoProtezione": "W9.W9LOTT.CPV",
+                                    "mnemonico": "W3CPV",
+                                    "mappingInput": "cpv",
+                                    "mappingOutput": "cpv"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "descrizione-cpv",
+                                    "label": "LOTTO.ECONOMICS-DATA.DESCRIZIONE-CPV",
+                                    "oggettoProtezione": "W9.W9LOTT.CPV",
+                                    "mnemonico": "W3CPV",
+                                    "mappingInput": "descCpv"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "cpv-secondario-data",
+                            "label": "LOTTO.CPV-SECONDARIO-DATA.CPV-SECONDARIO-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "FORM-GROUP",
+                                    "code": "cpv-secondari-group",
+                                    "label": "",
+                                    "minGroupsNumber": 0,
+                                    "maxGroupsNumber": -1,
+                                    "mappingInput": "cpvSecondari",
+                                    "mappingOutput": "cpvSecondari",
+                                    "emptyGroupMessage": "LOTTO.CPV-SECONDARIO-DATA.EMPTY-GROUP",
+                                    "defaultFormGroupFields": [
+                                        {
+                                            "type": "TEXT",
+                                            "code": "cpv-secondario",
+                                            "label": "LOTTO.CPV-SECONDARIO-DATA.CPV-SECONDARIO",
+                                            "oggettoProtezione": "W9.W9LOTT.CPV",
+                                            "mnemonico": "W3CPV",
+                                            "mappingInput": "codCpv",
+                                            "mappingOutput": "codCpv"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "descrizione-cpv-secondario",
+                                            "label": "LOTTO.CPV-SECONDARIO-DATA.DESCRIZIONE-CPV-SECONDARIO",
+                                            "oggettoProtezione": "W9.W9LOTT.CPV",
+                                            "mnemonico": "W3CPV",
+                                            "mappingInput": "descCpv"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "in-opera-manodopera",
+                                    "label": "LOTTO.CPV-SECONDARIO-DATA.IN-OPERA-MANODOPERA",
+                                    "oggettoProtezione": "W9.W9LOTT.MANOD",
+                                    "mnemonico": "W3MANOLO",
+                                    "mappingInput": "manodopera",
+                                    "mappingOutput": "manodopera",
+                                    "listCode": "sino",
+                                    "visible": false
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "categoria-prevalente",
+                                    "label": "LOTTO.CPV-SECONDARIO-DATA.CATEGORIA-PREVALENTE",
+                                    "oggettoProtezione": "W9.W9LOTT.ID_CATEGORIA_PREVALENTE",
+                                    "mnemonico": "W3ID_CATE4",
+                                    "mappingInput": "categoriaPrev",
+                                    "mappingOutput": "categoriaPrev",
+                                    "listCode": "CategorieAll"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "classe-importo-categoria-prevalente",
+                                    "label": "LOTTO.CPV-SECONDARIO-DATA.CLASSE-IMPORTO-CATEGORIA-PREVALENTE",
+                                    "oggettoProtezione": "W9.W9LOTT.CLASCAT",
+                                    "mnemonico": "W3CALSCAT",
+                                    "mappingInput": "classeCategoriaPrev",
+                                    "mappingOutput": "classeCategoriaPrev",
+                                    "listCode": "Classe",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "and": {
+                                            "categoria-prevalente": {
+                                                "values": [
+                                                    {
+                                                        "value": null,
+                                                        "operation": "!="
+                                                    },
+                                                    {
+                                                        "value": "",
+                                                        "operation": "!="
+                                                    },
+                                                    {
+                                                        "value": "FS",
+                                                        "operation": "!="
+                                                    },
+                                                    {
+                                                        "value": "FB",
+                                                        "operation": "!="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "ulteriori-categorie-data",
+                            "label": "LOTTO.ULTERIORI-CATEGORIE-DATA.ULTERIORI-CATEGORIE-DATA",
+                            "visible": false,
+                            "visibleCondition": {
+                                "and": {
+                                    "tipo-appalto-hidden": {
+                                        "values": [
+                                            {
+                                                "value": "L",
+                                                "operation": "="
+                                            }
+                                        ],
+                                        "visible": false
+                                    },
+                                    "exsottosoglia": {
+                                        "values": [
+                                            {
+                                                "value": "2",
+                                                "operation": "="
+                                            },
+                                            {
+                                                "value": null,
+                                                "operation": "="
+                                            }
+                                        ],
+                                        "visible": false,
+                                        "singleVisibleType": "or"
+                                    },
+                                    "importo-totale-hidden": {
+                                        "values": [
+                                            {
+                                                "value": 40000,
+                                                "operation": ">="
+                                            }
+                                        ],
+                                        "visible": false
+                                    }
+                                }
+                            },
+                            "fieldSections": [
+                                {
+                                    "type": "FORM-GROUP",
+                                    "code": "ulteriori-categorie-group",
+                                    "label": "",
+                                    "minGroupsNumber": 0,
+                                    "maxGroupsNumber": -1,
+                                    "mappingInput": "ulterioriCategorie",
+                                    "mappingOutput": "ulterioriCategorie",
+                                    "emptyGroupMessage": "LOTTO.ULTERIORI-CATEGORIE-DATA.EMPTY-GROUP",
+                                    "defaultFormGroupFields": [
+                                        {
+                                            "type": "TEXT",
+                                            "code": "ult-cat-categoria",
+                                            "label": "LOTTO.ULTERIORI-CATEGORIE-DATA.CATEGORIA",
+                                            "mappingInput": "categoria",
+                                            "mappingOutput": "categoria",
+                                            "listCode": "Categorie"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "ult-cat-classe-importo",
+                                            "label": "LOTTO.ULTERIORI-CATEGORIE-DATA.CLASSE-IMPORTO",
+                                            "mappingInput": "classe",
+                                            "mappingOutput": "classe",
+                                            "listCode": "Classe"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "ult-cat-scorporabile",
+                                            "label": "LOTTO.ULTERIORI-CATEGORIE-DATA.SCORPORABILE",
+                                            "mappingInput": "scorporabile",
+                                            "mappingOutput": "scorporabile",
+                                            "listCode": "sino"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "ult-cat-subappaltabile",
+                                            "label": "LOTTO.ULTERIORI-CATEGORIE-DATA.SUBAPPALTABILE",
+                                            "mappingInput": "subappaltabile",
+                                            "mappingOutput": "subappaltabile",
+                                            "listCode": "sino"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "localizzazione-data",
+                            "label": "LOTTO.LOCALIZZAZIONE-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "luogo-istat",
+                                    "label": "LOTTO.LOCALIZZAZIONE-DATA.LUOGO-ISTAT",
+                                    "oggettoProtezione": "W9.W9LOTT.LUOGO_ISTAT",
+                                    "mnemonico": "W3LUOGO_IS",
+                                    "mappingInput": "luogoIstat",
+                                    "mappingOutput": "luogoIstat"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "luogo-nuts",
+                                    "label": "LOTTO.LOCALIZZAZIONE-DATA.LUOGO-NUTS",
+                                    "oggettoProtezione": "W9.W9LOTT.LUOGO_NUTS",
+                                    "mnemonico": "W3LUOGO_NU",
+                                    "mappingInput": "luogoNuts",
+                                    "mappingOutput": "luogoNuts"
+                                },
+                                {
+                                    "type": "HIDDEN",
+                                    "code": "exsottosoglia",
+                                    "label": "",
+                                    "mappingInput": "exsottosoglia"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "altri-dati",
+                            "label": "LOTTO.ALTRI-DATI.TITLE",
+                            "collapse": true,
+                            "initialCollapse": false,
+                            "classes":["altri-dati-collapse"],
+                            "fieldSections": [                                                                    
+                                {
+                                    "type": "TEXT",
+                                    "code": "qualificazioneSa",
+                                    "label": "LOTTO.ALTRI-DATI.QUALIFICAZIONE-SA",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "qualificazioneSa",
+                                    "mappingOutput": "qualificazioneSa",
+                                    "listCode": "DerogaQualificazioneSa"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "categoriaMerceologica",
+                                    "label": "LOTTO.ALTRI-DATI.CATEGORIA-MERCEOLOGICA",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "categoriaMerceologica",
+                                    "mappingOutput": "categoriaMerceologica",
+                                    "listCode": "CategoriaMerc"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "flagPrevedeRip",
+                                    "label": "LOTTO.ALTRI-DATI.FLAG-PREVEDE-RIP",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "flagPrevedeRip",
+                                    "mappingOutput": "flagPrevedeRip",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "durataRinnovi",
+                                    "label": "LOTTO.ALTRI-DATI.DURATA-RINNOVI",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "durataRinnovi",
+                                    "mappingOutput": "durataRinnovi"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "motivoCollegamento",
+                                    "label": "LOTTO.ALTRI-DATI.MOTIVO-COLLEGAMENTO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "motivoCollegamento",
+                                    "mappingOutput": "motivoCollegamento",
+                                    "listCode": "MotivoCollegamento"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "cigOrigineRip",
+                                    "label": "LOTTO.ALTRI-DATI.CIG-ORIGINE-RIP",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "cigOrigineRip",
+                                    "mappingOutput": "cigOrigineRip"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "flagPnrrPnc",
+                                    "label": "LOTTO.ALTRI-DATI.FLAG-PNRR-PNC",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "flagPnrrPnc",
+                                    "mappingOutput": "flagPnrrPnc",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "flagPrevisioneQuota",
+                                    "label": "LOTTO.ALTRI-DATI.FLAG-PREVISIONE-QUOTA",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "flagPrevisioneQuota",
+                                    "mappingOutput": "flagPrevisioneQuota",
+                                    "listCode": "PrevisioneQuota"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "flagMisurePreliminari",
+                                    "label": "LOTTO.ALTRI-DATI.FLAG-MISURE-PRELIMINARI",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "flagMisurePreliminari",
+                                    "mappingOutput": "flagMisurePreliminari",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "dataScadenzaPagamenti",
+                                    "label": "LOTTO.ALTRI-DATI.DATA-SCADENZA-PAGAMENTI",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "dataScadenzaPagamenti",
+                                    "mappingOutput": "dataScadenzaPagamenti"
+                                }                                    
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

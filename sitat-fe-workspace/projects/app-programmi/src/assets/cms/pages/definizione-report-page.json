@@ -1,0 +1,137 @@
+{
+    "name": "definizione-report-page",
+    "title": "TITLE.DEFINIZIONE-REPORT-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "definizione-report-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-report-page",
+                "label": "BREADCRUMB.GESTIONE-REPORT",
+                "slug": "lista-report-page"
+            },
+            {
+                "code": "definizione-report-page",
+                "label": "BREADCRUMB.DEFINIZIONE-REPORT",
+                "slug": "definizione-report-page",
+                "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "definizione-report-page-content-root-section",
+            "selector": "sdk-definizione-report-section",
+            "description": "Pagina di definizione del report",
+            "classNames": "sdk-definizione-report-section",
+            "settings": {
+                "classNames": "definizione-report-index",
+                "sectionTitle": "TITLE.DETTAGLIO-REPORT-PAGE",
+                "menuTabs": [
+                    {
+                        "action": "DETAIL",
+                        "code": "dati-generali-report",
+                        "title": "SDK-DETTAGLIO-REPORT.TABS.DATI-GENERALI",
+                        "slug": "dati-generali-report-page",
+                        "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+                    },
+                    {
+                        "action": "DEFINIZIONE",
+                        "code": "definizione-report",
+                        "title": "SDK-DETTAGLIO-REPORT.TABS.DEFINIZIONE",
+                        "active": true,
+                        "slug": "definizione-report-page",
+                        "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+                    },
+                    {
+                        "action": "PARAMETRI",
+                        "code": "parametri-report",
+                        "title": "SDK-DETTAGLIO-REPORT.TABS.PARAMETRI",
+                        "slug": "parametri-report-page",
+                        "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+                    },
+                    {
+                        "action": "PROFILI",
+                        "code": "profili-report",
+                        "title": "SDK-DETTAGLIO-REPORT.TABS.PROFILI",
+                        "slug": "profili-report-page",
+                        "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS",
+                        "visible": "SDK_GESTIONE_REPORT_PROFILI_MENU_VISIBLE"
+                    },
+                    {
+                        "action": "UFF-INT",
+                        "code": "uff-int-report",
+                        "title": "SDK-DETTAGLIO-REPORT.TABS.UFF-INT",
+                        "slug": "uffici-intestatari-report-page",
+                        "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS",
+                        "visible": "SDK_GESTIONE_REPORT_UFFINT_MENU_VISIBLE"
+                    }
+                ],
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-report",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_REPORT_LISTA_REPORT",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "go-to-modifica-definizione",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "SDK_GESTIONE_REPORT_LISTA_REPORT"
+                        },
+                        {
+                            "code": "esegui-report",
+                            "label": "BUTTONS.ESEGUI",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "SDK_GESTIONE_REPORT_LISTA_REPORT"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "dati-generali-report",
+                            "label": "SDK-DETTAGLIO-REPORT.DEFINIZIONE.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "defSql",
+                                    "label": "SDK-DETTAGLIO-REPORT.DEFINIZIONE.ISTRUZIONE-SQL",
+                                    "mappingInput": "defSql",
+                                    "mappingOutput": "defSql",
+                                    "labelClasses": [
+                                        "defsql-value"
+                                    ],
+                                    "fieldClasses": [
+                                        "defsql-value"
+                                    ]
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "istruzioni-report",
+                                    "label": "SDK-DETTAGLIO-REPORT.DEFINIZIONE.ISTRUZIONI",
+                                    "mappingInput": "istruzioni"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "parametri-report",
+                                    "label": "SDK-DETTAGLIO-REPORT.DEFINIZIONE.USO-PARAMETRI",
+                                    "mappingInput": "params"
+                                }                               
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

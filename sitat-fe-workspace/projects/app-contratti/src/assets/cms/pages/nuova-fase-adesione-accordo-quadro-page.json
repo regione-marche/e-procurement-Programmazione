@@ -1,0 +1,297 @@
+{
+    "name": "nuova-fase-adesione-accordo-quadro-page",
+    "title": "TITLE.NUOVA-FASE-ADESIONE-ACCORDO-QUADRO-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "nuova-fase-adesione-accordo-quadro-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "nuova-fase-page",
+                "label": "BREADCRUMB.NUOVA-FASE",
+                "slug": "nuova-fase-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS"
+            },
+            {
+                "code": "nuova-fase-adesione-accordo-quadro-page",
+                "label": "BREADCRUMB.NUOVA-FASE-ADESIONE-ACCORDO-QUADRO",
+                "slug": "nuova-fase-adesione-accordo-quadro-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "nuova-fase-adesione-accordo-quadro-page-content-root-section",
+            "selector": "nuova-fase-adesione-accordo-quadro-section",
+            "description": "Pagina di inserimento nuova fase di adesione-accordo-quadro",
+            "classNames": "nuova-fase-adesione-accordo-quadro-section",
+            "settings": {
+                "classNames": "nuova-fase-adesione-accordo-quadro-index",
+                "sectionTitle": "TITLE.NUOVA-FASE-ADESIONE-ACCORDO-QUADRO-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "go-to-fasi-visibili",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-fase",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_FASE_ADESIONE_ACCORDO_QUADRO_PROVIDER"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "dati-economici-adesione-data",
+                            "label": "FASE-ADESIONEACCORDOQUADRO.DATI-ECONOMICI-ADESIONE-DATA.DATI-ECONOMICI-ADESIONE",
+                            "fieldSections": [
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "cod-strumento",
+                                    "label": "FASE-ADESIONEACCORDOQUADRO.DATI-ECONOMICI-ADESIONE-DATA.COD-STRUMENTO",
+                                    "oggettoProtezione": "W9.W9APPA.COD_STRUMENTO",
+                                    "mnemonico": "W3COD_STRU",
+                                    "mappingInput": "codStrumento",
+                                    "mappingOutput": "codStrumento",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "CodStrumento"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-lavori",
+                                    "label": "FASE-ADESIONEACCORDOQUADRO.DATI-ECONOMICI-ADESIONE-DATA.IMPORTO-LAVORI",
+                                    "oggettoProtezione": "W9.W9APPA.IMPORTO_LAVORI",
+                                    "mnemonico": "W3I_LAVORI",
+                                    "mappingInput": "importoLavori",
+                                    "mappingOutput": "importoLavori",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-servizi",
+                                    "label": "FASE-ADESIONEACCORDOQUADRO.DATI-ECONOMICI-ADESIONE-DATA.IMPORTO-SERVIZI",
+                                    "oggettoProtezione": "W9.W9APPA.IMPORTO_SERVIZI",
+                                    "mnemonico": "W3I_SERVIZ",
+                                    "mappingInput": "importoServizi",
+                                    "mappingOutput": "importoServizi",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-forniture",
+                                    "label": "FASE-ADESIONEACCORDOQUADRO.DATI-ECONOMICI-ADESIONE-DATA.IMPORTO-FORNITURE",
+                                    "oggettoProtezione": "W9.W9APPA.IMPORTO_FORNITURE",
+                                    "mnemonico": "W3I_FORNIT",
+                                    "mappingInput": "importoForniture",
+                                    "mappingOutput": "importoForniture",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "importo-subtotale",
+                                    "label": "FASE-ADESIONEACCORDOQUADRO.DATI-ECONOMICI-ADESIONE-DATA.IMPORTO-SUBTOTALE",
+                                    "oggettoProtezione": "W9.W9APPA.IMPORTO_SUBTOTALE",
+                                    "mnemonico": "W3I_SUBTOT",
+                                    "mappingInput": "importosubtotale",
+                                    "mappingOutput": "importosubtotale",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-attuazione-sicurezza",
+                                    "label": "FASE-ADESIONEACCORDOQUADRO.DATI-ECONOMICI-ADESIONE-DATA.IMPORTO-ATTUAZIONE-SICUREZZA",
+                                    "oggettoProtezione": "W9.W9APPA.IMPORTO_ATTUAZIONE_SICUREZZA",
+                                    "mnemonico": "W3AP_ATTSI",
+                                    "mappingInput": "importoSicurezza",
+                                    "mappingOutput": "importoSicurezza",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-progettazione",
+                                    "label": "FASE-ADESIONEACCORDOQUADRO.DATI-ECONOMICI-ADESIONE-DATA.IMPORTO-PROGETTAZIONE",
+                                    "oggettoProtezione": "W9.W9APPA.IMPORTO_PROGETTAZIONE",
+                                    "mnemonico": "W3I_PROGETT",
+                                    "mappingInput": "importoProgettazione",
+                                    "mappingOutput": "importoProgettazione",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-non-assog",
+                                    "label": "FASE-ADESIONEACCORDOQUADRO.DATI-ECONOMICI-ADESIONE-DATA.IMPORTO-NON-ASSOG",
+                                    "oggettoProtezione": "W9.W9APPA.IMP_NON_ASSOG",
+                                    "mnemonico": "W3I_NON_AS",
+                                    "mappingInput": "impNonAssog",
+                                    "mappingOutput": "impNonAssog",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "importo-compl-appalto",
+                                    "label": "FASE-ADESIONEACCORDOQUADRO.DATI-ECONOMICI-ADESIONE-DATA.IMPORTO-COMPL-APPALTO",
+                                    "oggettoProtezione": "W9.W9APPA.IMPORTO_COMPL_APPALTO",
+                                    "mnemonico": "W3I_C_APPA",
+                                    "mappingInput": "importoComplAppalto",
+                                    "mappingOutput": "importoComplAppalto",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "HIDDEN",
+                                    "code": "importo-compl-intervento",
+                                    "label": "FASE-ADESIONEACCORDOQUADRO.DATI-ECONOMICI-ADESIONE-DATA.IMPORTO-COMPL-INTERVENTO",
+                                    "oggettoProtezione": "W9.W9APPA.IMPORTO_COMPL_INTERVENTO",
+                                    "mnemonico": "W3I_C_INTE",
+                                    "mappingInput": "importoComplIntervento",
+                                    "mappingOutput": "importoComplIntervento"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "aggiudicazione-affidamento-data",
+                            "label": "FASE-ADESIONEACCORDOQUADRO.AGGIUDICAZIONE-AFFIDAMENTO-DATA.AGGIUDICAZIONE-AFFIDAMENTO",
+                            "fieldSections": [
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "perc-ribasso-agg",
+                                    "label": "FASE-ADESIONEACCORDOQUADRO.AGGIUDICAZIONE-AFFIDAMENTO-DATA.PERC-RIBASSO-AGG",
+                                    "oggettoProtezione": "W9.W9APPA.PERC_RIBASSO_AGG",
+                                    "mnemonico": "W3PERC_RIB",
+                                    "mappingInput": "percentRibassoAgg",
+                                    "mappingOutput": "percentRibassoAgg",
+                                    "decimals": 5,
+                                    "maxLength": 13,
+                                    "percentuale": true
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "perc-off-aumento",
+                                    "label": "FASE-ADESIONEACCORDOQUADRO.AGGIUDICAZIONE-AFFIDAMENTO-DATA.PERC-OFF-AUMENTO",
+                                    "oggettoProtezione": "W9.W9APPA.PERC_RIBASSO_AGG",
+                                    "mnemonico": "W3PERC_RIB",
+                                    "mappingInput": "percOffAumento",
+                                    "mappingOutput": "percOffAumento",
+                                    "decimals": 5,
+                                    "maxLength": 13,
+                                    "percentuale": true
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-aggiudicazione",
+                                    "label": "FASE-ADESIONEACCORDOQUADRO.AGGIUDICAZIONE-AFFIDAMENTO-DATA.IMPORTO-AGGIUDICAZIONE",
+                                    "oggettoProtezione": "W9.W9APPA.IMPORTO_AGGIUDICAZIONE",
+                                    "mnemonico": "W3IMP_AGGI",
+                                    "mappingInput": "importoAggiudicazione",
+                                    "mappingOutput": "importoAggiudicazione",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-verb-aggiudicazione",
+                                    "label": "FASE-ADESIONEACCORDOQUADRO.AGGIUDICAZIONE-AFFIDAMENTO-DATA.DATA-VERB-AGGIUDICAZIONE",
+                                    "oggettoProtezione": "W9.W9APPA.DATA_VERB_AGGIUDICAZIONE",
+                                    "mnemonico": "W3DVERB",
+                                    "mappingInput": "dataVerbAggiudicazione",
+                                    "mappingOutput": "dataVerbAggiudicazione"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "flag-rich-subappalto",
+                                    "label": "FASE-ADESIONEACCORDOQUADRO.AGGIUDICAZIONE-AFFIDAMENTO-DATA.FLAG-RICH-SUBAPPALTO",
+                                    "oggettoProtezione": "W9.W9APPA.FLAG_RICH_SUBAPPALTO",
+                                    "mnemonico": "W3FLAG_RIC",
+                                    "mappingInput": "flagRichSubappalto",
+                                    "mappingOutput": "flagRichSubappalto",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tipo-atto",
+                                    "label": "FASE-ADESIONEACCORDOQUADRO.AGGIUDICAZIONE-AFFIDAMENTO-DATA.TIPO-ATTO",
+                                    "oggettoProtezione": "W9.W9APPA.TIPO_ATTO",
+                                    "mnemonico": "W9APTIPAT",
+                                    "mappingInput": "tipoAtto",
+                                    "mappingOutput": "tipoAtto",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "TipoAtto"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-atto",
+                                    "label": "FASE-ADESIONEACCORDOQUADRO.AGGIUDICAZIONE-AFFIDAMENTO-DATA.DATA-ATTO",
+                                    "oggettoProtezione": "W9.W9APPA.DATA_ATTO",
+                                    "mnemonico": "W9APDATAT",
+                                    "mappingInput": "dataAtto",
+                                    "mappingOutput": "dataAtto"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "numero-atto",
+                                    "label": "FASE-ADESIONEACCORDOQUADRO.AGGIUDICAZIONE-AFFIDAMENTO-DATA.NUMERO-ATTO",
+                                    "oggettoProtezione": "W9.W9APPA.NUMERO_ATTO",
+                                    "mnemonico": "W9APNUMAT",
+                                    "mappingInput": "numeroAtto",
+                                    "mappingOutput": "numeroAtto",
+                                    "maxLength": 50
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,171 @@
+{
+    "name": "importa-smartcig-page",
+    "title": "TITLE.DETTAGLIO-SMARTCIG-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/gestione-smartcig-page.css"
+    ],
+    "settings": {
+        "page": "importa-smartcig-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },           
+            {
+                "code": "gestione-smartcig-page",
+                "label": "BREADCRUMB.GESTIONE-SMARTCIG",
+                "slug": "gestione-smartcig-page"
+            },           
+            {
+                "code": "importa-smartcig-page",
+                "label": "BREADCRUMB.IMPORTA-SMARTCIG",
+                "slug": "importa-smartcig-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "importa-smartcig-page-content-root-section",
+            "selector": "importa-smartcig-section",
+            "description": "Pagina di importa SmartCIG",
+            "classNames": "importa-smartcig-section",
+            "settings": {
+                "classNames": "importa-smartcig-index",                
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-gestione-smartcig",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_SMARTCIG"
+                        },                        
+                        {
+                            "code": "importa-smartcig",
+                            "label": "BUTTONS.IMPORTA",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_SMARTCIG",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "buttonsAfterImport": [
+                        {
+                            "code": "back-to-gestione-smartcig",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_SMARTCIG"
+                        },             
+                        {
+                            "code": "dettaglio",
+                            "label": "BUTTONS.DETTAGLIO",
+                            "provider": "APP_GARE_SMARTCIG"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "SMARTCIG.GENERAL-DATA.IMPORT-TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "codice-smartcig",
+                                    "label": "SMARTCIG.GENERAL-DATA.SMARTCIG",
+                                    "mnemonico": "",
+                                    "mappingInput": "smartCig",
+                                    "mappingOutput": "smartCig",
+                                    "maxLength": 10,
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SMARTCIG.VALIDATORS.CIG-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "validator": "SMARTCIG",
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "VALIDATORS.FORMATO-CIG-NON-VALIDO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },{
+                                "type": "FORM-SECTION",
+                                "code": "informazioni-campo-data",
+                                "label": "SMARTCIG.RUP-DATA.TITLE",
+                                "fieldSections": [{
+                                    "type": "TEXTBOX",
+                                    "code": "username",
+                                    "label": "SMARTCIG.GENERAL-DATA.USERNAME",
+                                    "mappingInput": "username",
+                                    "mappingOutput": "username",
+                                    "maxLength": 100,
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SMARTCIG.VALIDATORS.USERNAME-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "PASSWORD",
+                                    "code": "password",
+                                    "label": "SMARTCIG.GENERAL-DATA.PASSWORD",
+                                    "mappingInput": "password",
+                                    "mappingOutput": "password",
+                                    "maxLength": 100,
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SMARTCIG.VALIDATORS.PASSWORD-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "CHECKBOX",
+                                    "code": "salva-credenziali",
+                                    "label": "SMARTCIG.GENERAL-DATA.SALVA_CREDENZIALI",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingOutput": "salvaCredenziali",
+                                    "items": [
+                                        {
+                                            "code": "1",
+                                            "label": "BUTTONS.SAVE"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

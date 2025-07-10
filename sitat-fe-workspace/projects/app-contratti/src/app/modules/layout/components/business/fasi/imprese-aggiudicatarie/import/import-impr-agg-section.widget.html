@@ -1,0 +1,70 @@
+<div [class]="config.classNames" *ngIf="isReady">
+    <h1 class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</h1>
+    <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+    <div class="messages-box" #infoBox></div>
+
+    <div class="messages-box" #messages></div>
+    <div class="lista-imprese-invitate-partecipanti-container">
+        <div class="lista-imprese-invitate-partecipanti-content">
+            <div class="empty-list"
+                *ngIf="listaImpresePartecipanti !== undefined && listaImpresePartecipanti.length === 0">
+                {{'IMPRESE-PARTECIPANTI.EMPTY-LIST' | translate}}
+            </div>
+
+            <div *ngIf="listaImpresePartecipanti !== undefined && listaImpresePartecipanti.length > 0">
+                <table class="imprese-partecipanti-table" [attr.aria-label]="config.sectionTitle | translate">
+                    <thead>
+                        <th class="imprese-partecipanti-header">
+                            {{ 'IMPRESE-PARTECIPANTI.AZIONE' | translate }}
+                        </th>
+                        <th class="imprese-partecipanti-header">
+                            {{ 'IMPRESE-PARTECIPANTI.ID-IMPRESA' | translate }}
+                        </th>
+                        <th class="imprese-partecipanti-header">
+                            {{ 'IMPRESE-PARTECIPANTI.DESC-TIPO-IMPRESA' | translate }}
+                        </th>
+                        <th class="imprese-partecipanti-header">
+                            {{ 'IMPRESE-PARTECIPANTI.NOME-IMPRESA' | translate }}
+                        </th>
+                        <th class="imprese-partecipanti-header">
+                            {{ 'IMPRESE-PARTECIPANTI.PARTECIPA' | translate }}
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr class="imprese-partecipanti-row"
+                            *ngFor="let impresa of listaImpresePartecipanti; trackBy: trackByCode">
+                            <td class="imprese-partecipanti-cell">
+                                <input type="radio" name="impr" (change)="manageCheckboxes(impresa, $event)">
+                            </td>
+                            <td class="imprese-partecipanti-cell clickable" sdkClick
+                                (aClick)="goToDettaglioImpresa(impresa)" tabindex="0" role="navigation">
+                                <div *ngIf="impresa.imprese.length === 1">
+                                    {{ impresa.imprese[0].codImpresa }}
+                                </div>
+                                <div *ngIf="impresa.imprese.length > 1">
+                                    {{ 'IMPRESE-PARTECIPANTI.RAGGRUPPAMENTO' | translate }}{{ 'PARAMS' |
+                                    translate:{value:impresa.numRagg} }}
+                                </div>
+                            </td>
+                            <td class="imprese-partecipanti-cell">{{getTipoImpresa(impresa)}}</td>
+                            <td class="imprese-partecipanti-cell">
+                                <ul *ngFor="let ruoloImp of impresa.imprese">
+                                    <li>
+                                        {{ruoloImp.impresa?.ragioneSociale}} <span
+                                            *ngIf="ruoloImp.ruolo">({{getRuolo(ruoloImp)}})</span>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td class="imprese-partecipanti-cell">{{getPartecipante(impresa)}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+        <sdk-dialog [config]="dialogConfigObs"></sdk-dialog>
+    </div>
+</div>

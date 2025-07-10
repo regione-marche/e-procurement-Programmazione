@@ -1,0 +1,258 @@
+{
+    "name": "dettaglio-fase-ripresa-prestazione-page",
+    "title": "TITLE.DETTAGLIO-FASE-RIPRESA-PRESTAZIONE-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/pubblica-fase-lotto-page.css"
+    ],
+    "settings": {
+        "page": "dettaglio-fase-ripresa-prestazione-page",
+        "pageFeatures": [
+            "docassociati"
+        ],
+        "entity": {
+            "schema": "W9",
+            "name": "W9FASI",
+            "keys": [
+                "codGara",
+                "codLotto",
+                "codiceFase",
+                "num"
+            ]
+        },
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-ripresa-prestazione-page",
+                "label": "BREADCRUMB.DETTAGLIO-FASE-RIPRESA-PRESTAZIONE",
+                "slug": "dettaglio-fase-ripresa-prestazione-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ],
+        "breadcrumbsLS": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.RICERCA-SCHEDE-TRASMESSE-PCP",
+                "slug": "ricerca-schede-trasmesse-pcp-page"
+            },
+            {
+                "code": "lista-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.LISTA-SCHEDE-TRASMESSE-PCP",
+                "slug": "lista-schede-trasmesse-pcp-page"
+            },
+            {
+                "code": "lista-fasi-lotto-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "dettaglio-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-ripresa-prestazione-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.DETTAGLIO-FASE-RIPRESA-PRESTAZIONE",
+                "slug": "dettaglio-fase-ripresa-prestazione-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-fase-ripresa-prestazione-page-content-root-section",
+            "selector": "dettaglio-fase-ripresa-prestazione-section",
+            "description": "Pagina di dettaglio fase di ripresa prestazione",
+            "classNames": "dettaglio-fase-ripresa-prestazione-section",
+            "settings": {
+                "classNames": "dettaglio-fase-ripresa-prestazione-index",
+                "sectionTitle": "TITLE.DETTAGLIO-FASE-RIPRESA-PRESTAZIONE-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "check-pubblicazione",
+                            "label": "BUTTONS.CHECK-DATA",
+                            "provider": "APP_FASI_LOTTO_PUBBLICA",
+                            "oggettoProtezione": "ALT.W9.FasiDiGara-schede.ControlloDatiInseriti",
+                            "type": "functions",
+                            "icon": "mgg-icons-document-text"
+                        },
+                        {
+                            "code": "go-to-update-fase",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_GARE_FASE_RIPRESA_PRESTAZIONE_PROVIDER",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "buttonsRO": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "buttonsLS": [
+                        {
+                            "code": "back-to-lista-fasi-lotto-schede-trasmesse",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "sidebar": {
+                        "code": "sidebar",
+                        "position": "right",
+                        "width": 500,
+                        "classList": [
+                            "check-pubb-sidebar"
+                        ],
+                        "headerImage": "assets/images/app/logo.png",
+                        "component": "check-pubblicazione-widget",
+                        "componentConfig": {}
+                    },
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "sospensione-data",
+                            "label": "FASE-SOSPENSIONE.SOSPENSIONE.SOSPENSIONE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "sosp-parziale",
+                                    "label": "FASE-SOSPENSIONE.SOSPENSIONE.SOSP_PARZIALE-SOSP",
+                                    "oggettoProtezione": "W9.W9SOSP.SOSP_PARZIALE",
+                                    "mnemonico": "W9SOSP_PARZIALE",
+                                    "mappingInput": "sospParziale",
+                                    "mappingOutput": "sospParziale",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "num-sosp",
+                                    "label": "FASE-SOSPENSIONE.SOSPENSIONE.NUM-SOSP",
+                                    "oggettoProtezione": "W9.W9SOSP.NUM_SOSP",
+                                    "mnemonico": "W3SONUMSOS",
+                                    "mappingInput": "num",
+                                    "mappingOutput": ""
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-verb-sosp",
+                                    "label": "FASE-SOSPENSIONE.SOSPENSIONE.DATA-VERB-SOSP",
+                                    "oggettoProtezione": "W9.W9SOSP.DATA_VERB_SOSP",
+                                    "mnemonico": "W3DVERB_SO",
+                                    "mappingInput": "dataVerbSosp",
+                                    "mappingOutput": "dataVerbSosp"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-verb-ripr",
+                                    "label": "FASE-SOSPENSIONE.SOSPENSIONE.DATA-VERB-RIPR",
+                                    "oggettoProtezione": "W9.W9SOSP.DATA_VERB_RIPR",
+                                    "mnemonico": "W3DVERB_RI",
+                                    "mappingInput": "dataVerbRipr",
+                                    "mappingOutput": "dataVerbRipr"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "inc-crono",
+                                    "label": "FASE-SOSPENSIONE.SOSPENSIONE.INC_CRONO",
+                                    "oggettoProtezione": "W9.W9SOSP.INC_CRONO",
+                                    "mnemonico": "W9SOSP_IMPRIP",
+                                    "mappingInput": "incCrono",
+                                    "mappingOutput": "incCrono"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "motivo-sosp",
+                                    "label": "FASE-SOSPENSIONE.SOSPENSIONE.MOTIVO-SOSP",
+                                    "oggettoProtezione": "W9.W9SOSP.ID_MOTIVO_SOSP",
+                                    "mnemonico": "W3ID_MOTI4",
+                                    "mappingInput": "motivoSosp",
+                                    "mappingOutput": "motivoSosp",
+                                    "listCode": "MotivoSospensione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "flag-supero-tempo",
+                                    "label": "FASE-SOSPENSIONE.SOSPENSIONE.FLAG-SUPERO-TEMPO",
+                                    "oggettoProtezione": "W9.W9SOSP.FLAG_SUPERO_TEMPO",
+                                    "mnemonico": "W3FLAG_SUP",
+                                    "mappingInput": "flagSuperoTempo",
+                                    "mappingOutput": "flagSuperoTempo",
+                                    "showHelp":true,
+                                    "helpDescription":"FASE-SOSPENSIONE.SOSPENSIONE.WARNING-FLAG-SUPERO-TEMPO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "flag-riserve",
+                                    "label": "FASE-SOSPENSIONE.SOSPENSIONE.FLAG-RISERVE",
+                                    "oggettoProtezione": "W9.W9SOSP.FLAG_RISERVE",
+                                    "mnemonico": "W3RISERVE",
+                                    "mappingInput": "flagRiserve",
+                                    "mappingOutput": "flagRiserve",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "flag-verbale",
+                                    "label": "FASE-SOSPENSIONE.SOSPENSIONE.FLAG-VERBALE",
+                                    "oggettoProtezione": "W9.W9SOSP.FLAG_VERBALE",
+                                    "mnemonico": "W3FLAG_VER",
+                                    "mappingInput": "flagVerbale",
+                                    "mappingOutput": "flagVerbale",
+                                    "listCode": "sino"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

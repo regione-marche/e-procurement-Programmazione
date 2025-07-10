@@ -1,0 +1,139 @@
+{
+    "name": "lista-server-posta-page",
+    "title": "TITLE.LISTA-SERVER-POSTA-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "lista-server-posta-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-server-posta-page",
+                "label": "BREADCRUMB.LISTA-SERVER-POSTA",
+                "slug": "lista-server-posta-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "lista-server-posta-page-content-root-section",
+            "selector": "sdk-lista-server-posta-section",
+            "description": "Pagina lista server di posta",
+            "classNames": "lista-server-posta-section",
+            "settings": {
+                "classNames": "lista-server-posta-index",
+                "sectionTitle": "TITLE.LISTA-SERVER-POSTA-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_POSTA_LISTA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "nuovo",
+                            "label": "BUTTONS.NUOVO",
+                            "icon": "mgg-icons-crud-create",
+                            "provider": "SDK_GESTIONE_POSTA_LISTA",
+                            "oggettoProtezione": "INS.*"
+                        }
+                    ],
+                    "grid": {
+                        "showCurrentPageReport": true,
+                        "showCurrentRecordsReport": true,
+                        "navigable": true,
+                        "resizable": false,
+                        "debug": false,
+                        "sortable": {
+                            "allowUnsort": false,
+                            "mode": "single"
+                        },
+                        "sort": [
+                            {
+                                "field": "idCfg",
+                                "dir": "asc"
+                            }
+                        ],
+                        "pageable": false,
+                        "toolbar": {
+                            "position": "top",
+                            "actions": []
+                        },
+                        "columns": [
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_LINK",
+                                    "params": {
+                                        "action": {
+                                            "label": "SDK-SERVER-POSTA.AZIONI.DETTAGLIO",
+                                            "disabled": false,
+                                            "performer": "dettaglio"
+                                        }
+                                    }
+                                },
+                                "title": "SDK-SERVER-POSTA.GENERAL-DATA.CONFIGURAZIONE",
+                                "field": "idCfg",
+                                "width": 150,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-SERVER-POSTA.GENERAL-DATA.SERVER",
+                                "field": "server",
+                                "width": 150,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-SERVER-POSTA.GENERAL-DATA.MITTENTE",
+                                "field": "mailMittente",
+                                "width": 150,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_ACTIONS_ICON",
+                                    "params": {
+                                        "actions": [
+                                            {
+                                                "disabled": false,
+                                                "performer": "delete",
+                                                "icon": "mgg-icons-crud-delete",
+                                                "label": "SDK-SERVER-POSTA.AZIONI.CANCELLA"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "title": "SDK-SERVER-POSTA.AZIONI.TITLE",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

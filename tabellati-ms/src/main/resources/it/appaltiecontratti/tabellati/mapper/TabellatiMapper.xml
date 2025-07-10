@@ -1,0 +1,245 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+	namespace="it.appaltiecontratti.tabellati.mapper.TabellatiMapper">
+
+	<resultMap id="listaregioniMap"
+		type="it.appaltiecontratti.tabellati.entity.TabellatoIstatEntry">
+		<result column="codice" property="codice" />
+		<result column="descrizione" property="descrizione" />
+	</resultMap>
+
+	<select id="getRegioni" resultMap="listaregioniMap">
+		select substring(TABCOD2, 2)
+		codice, TABDESC descrizione from TABSCHE where TABCOD='S2003' AND
+		TABCOD1 = '05' order by TABDESC asc
+	</select>
+
+
+	<resultMap id="tecnicoMap"
+		type="it.appaltiecontratti.tabellati.entity.RupEntry">
+		<result column="codtec" property="codice" />
+		<result column="nometei" property="nome" />
+		<result column="cogtei" property="cognome" />
+		<result column="nomtec" property="nominativo" />
+		<result column="cftec" property="cf" />
+		<result column="cgentei" property="stazioneAppaltante" />
+		<result column="indtec" property="indirizzo" />
+		<result column="ncitec" property="numCivico" />
+		<result column="protec" property="provincia" />
+		<result column="captec" property="cap" />
+		<result column="loctec" property="comune" />
+		<result column="cittec" property="codIstat" />
+		<result column="teltec" property="telefono" />
+		<result column="faxtec" property="fax" />
+		<result column="ematec" property="email" />
+	</resultMap>
+
+
+	<select id="getTecnici" resultMap="tecnicoMap">
+		SELECT codtec, nometei, cogtei, nomtec, cftec, cgentei, indtec,
+		ncitec, protec, captec, loctec, cittec, teltec, faxtec, ematec from
+		tecni where 1=1
+		<include refid="filtroTecnici"></include>
+		order by
+		<if test="sort == 'cf'"> cftec </if>
+		<if test="sort == 'nominativo'"> nomtec </if>
+		<if test="sortDirection == 'asc'"> asc </if>
+		<if test="sortDirection == 'desc'"> desc </if>
+
+	</select>
+
+
+	<select id="countSearchTecnici" resultType="int"
+		parameterType="hashmap">
+		SELECT count(DISTINCT codtec) from tecni where 1=1
+		<include refid="filtroTecnici"></include>
+	</select>
+
+	<sql id="filtroTecnici">
+		<if test="searchString != null"> AND (UPPER( nometei ) like #{searchStringLike} OR UPPER(
+			cogtei ) like #{searchStringLike}) </if>
+			
+		<if test="codiceFiscale != null"> AND (UPPER( cftec ) like #{codiceFiscaleLike} ) </if>	
+			
+		<if test="stazioneAppaltante != null">AND cgentei = #{stazioneAppaltante} </if>	
+	</sql>
+
+	<select id="checkRelazioneString" resultType="java.lang.Long">
+		select count(*) from
+		${table} where ${column} = #{codice}
+	</select>
+
+	<select id="checkRelazioneLong" resultType="java.lang.Long">
+		select count(*) from
+		${table} where ${column} = #{codice}
+	</select>
+
+	<resultMap id="impresaMap"
+		type="it.appaltiecontratti.tabellati.entity.ImpresaBaseEntry">
+		<result column="codimp" property="codiceImpresa" />
+		<result column="nomest" property="ragioneSociale" />
+		<result column="cfimp" property="codiceFiscale" />
+		<result column="pivimp" property="partitaIva" />
+		<result column="locimp" property="comune" />
+		<result column="cgenimp" property="stazioneAppaltante" />
+	</resultMap>
+
+
+	<select id="getImprese" resultMap="impresaMap">
+		select i.codimp, i.nomest, i.cfimp, i.pivimp, i.locimp,i.cgenimp from IMPR i
+		LEFT JOIN impleg l ON i.codimp=l.codimp2 where 1=1
+		<include refid="filtroImprese"></include>
+		order by
+		<if test="sort == 'ragioneSociale'"> i.nomest </if>
+		<if test="sort == 'codiceFiscale'"> i.cfimp </if>
+		<if test="sort == 'partitaIva'"> i.pivimp </if>
+		<if test="sort == 'comune'"> i.locimp </if>
+		<if test="sortDirection == 'asc'"> asc </if>
+		<if test="sortDirection == 'desc'"> desc </if>
+	</select>
+
+	<select id="countSearchImprese" resultType="int"
+		parameterType="hashmap">
+		SELECT count(DISTINCT i.codimp) from IMPR i LEFT JOIN impleg l ON
+		i.codimp=l.codimp2 where 1=1
+		<include refid="filtroImprese"></include>
+	</select>
+
+	<sql id="filtroImprese">
+	    <if test="stazioneAppaltante != null">AND i.cgenimp = #{stazioneAppaltante} </if>
+		<if test="codiceFiscale != null"> AND UPPER(i.cfimp) like #{codiceFiscale} </if>
+		<if test="ragioneSociale != null"> AND UPPER(i.nomest) like #{ragioneSociale} </if>
+		<if test="partitaIva != null"> AND UPPER(i.pivimp) like #{partitaIva} </if>
+		<if test="provincia != null"> AND i.proimp = #{provincia} </if>
+		<if test="comune != null"> AND i.locimp = #{comune} </if>
+		<if test="email != null"> AND UPPER(i.emai2ip) like #{email} </if>
+		<if test="pec != null"> AND UPPER(i.emailpec) like #{pec} </if>
+		<if test="legale != null"> AND UPPER(l.nomleg) like #{legale} </if>
+	</sql>
+
+
+	<resultMap id="centrodiCostoMap"
+		type="it.appaltiecontratti.tabellati.entity.CentroDiCostoEntry">
+		<result column="idcentro" property="id" />
+		<result column="codein" property="stazioneAppaltante" />
+		<result column="codcentro" property="codiceCentro" />
+		<result column="denomcentro" property="denominazione" />
+		<result column="note" property="note" />
+		<result column="tipologia" property="tipologia" />
+	</resultMap>
+
+	<select id="getCentriDiCosto" resultMap="centrodiCostoMap">
+		select idcentro, codein, codcentro, denomcentro, note, tipologia from
+		CENTRICOSTO where 1=1
+		<include refid="filtroCentri"></include>
+		order by
+		<if test="sort == 'stazioneAppaltante'"> codein </if>
+		<if test="sort == 'codiceCentro'"> codcentro </if>
+		<if test="sort == 'denominazione'"> denomcentro </if>
+		<if test="sort == 'tipologia'"> tipologia </if>
+		<if test="sortDirection == 'asc'"> asc </if>
+		<if test="sortDirection == 'desc'"> desc </if>
+	</select>
+
+	<select id="countSearchCentriDiCosto" resultType="int"
+		parameterType="hashmap">
+		SELECT count(DISTINCT idcentro) from CENTRICOSTO where 1=1
+		<include refid="filtroCentri"></include>
+	</select>
+
+	<sql id="filtroCentri">
+		<if test="codiceCentro != null"> AND UPPER(codcentro) like #{codiceCentro} </if>
+		<if test="stazioneAppaltante != null"> AND codein = #{stazioneAppaltante} </if>
+	</sql>
+
+
+
+	<resultMap id="ufficioMap"
+		type="it.appaltiecontratti.tabellati.entity.UffEntry">
+		<result column="id" property="id" />
+		<result column="codein" property="stazioneAppaltante" />
+		<result column="denom" property="denominazione" />
+	</resultMap>
+
+	<select id="getUffici" resultMap="ufficioMap">
+		SELECT id, codein, denom from uffici where codein =
+		#{stazioneAppaltante}
+		<include refid="filtroUffici"></include>
+		order by
+		<if test="sort == 'denominazione'"> denom </if>
+		<if test="sortDirection == 'asc'"> asc </if>
+		<if test="sortDirection == 'desc'"> desc </if>
+	</select>
+
+	<select id="countSearchUffici" resultType="int"
+		parameterType="hashmap">
+		SELECT count(DISTINCT id) from uffici where codein =
+		#{stazioneAppaltante}
+		<include refid="filtroUffici"></include>
+	</select>
+
+	<sql id="filtroUffici">
+		<if test="searchString != null"> AND UPPER(denom) like #{searchStringLike} </if>
+	</sql>
+	
+	
+	
+	
+	
+	<resultMap id="stazioneAppaltanteMap"
+		type="it.appaltiecontratti.tabellati.entity.StazioneAppaltanteListaEntry">
+		<result column="codein" property="codice" />
+		<result column="nomein"  property="denominazione" />
+		<result column="cfein" property="codFisc" />
+	</resultMap>
+	
+	<select id="getStazioniAppaltanti" resultMap="stazioneAppaltanteMap">
+		select codein, nomein, cfein from
+		uffint where 1=1
+		<include refid="filtroSa"></include>
+		order by
+		<if test="sort == 'denominazione'"> nomein </if>
+		<if test="sort == 'codFisc'"> cfein </if>
+		<if test="sort == 'codice'"> codein </if>		
+		<if test="sortDirection == 'asc'"> asc </if>
+		<if test="sortDirection == 'desc'"> desc </if>
+	</select>
+	
+	<select id="countSearchStazioniAppaltanti" resultType="int"
+		parameterType="hashmap">
+		SELECT count(DISTINCT codein) from uffint where 1=1
+		<include refid="filtroSa"></include>
+	</select>
+
+	<sql id="filtroSa">
+		<if test="denominazione != null"> AND UPPER(nomein) like #{denominazione} </if>
+		<if test="codFisc != null"> AND UPPER(cfein) like #{codFisc} </if>
+		<if test="codiceAnagrafico != null"> AND UPPER(codein) = #{codiceAnagrafico} </if>
+		<if test="indirizzo != null"> AND UPPER(viaein) like #{indirizzo} </if>
+		<if test="citta != null"> AND UPPER(citein) like #{citta} </if>
+		<if test="provincia != null"> AND UPPER(proein) = #{provincia} </if>
+		<if test="codAusa != null">AND UPPER(codausa) like #{codAusa}</if>
+	</sql>
+
+	<select id="getCigOptions" resultType="string">
+		SELECT DISTINCT l.cig
+		FROM w9lott l
+		JOIN w9gara g ON g.codgara = l.codgara
+		LEFT OUTER JOIN tecni tec on tec.codtec = g.rup
+		LEFT OUTER JOIN w9deleghe del on del.cfrup = tec.cftec
+		WHERE
+		    1=1 and
+		    UPPER(l.cig) LIKE CONCAT('%', UPPER(#{cigLike}), '%')
+			<if test="stazioneAppaltante != null and stazioneAppaltante != ''">
+				AND g.codein = #{stazioneAppaltante}
+			</if>
+			<if test="cfTecnico != null">and (upper(tec.cftec) = UPPER(#{cfTecnico}) or g.syscon = #{syscon} or
+				del.id_collaboratore = #{syscon})
+			</if>
+			<if test="cfTecnico == null and cfNull">and (g.syscon = #{syscon} or
+				del.id_collaboratore = #{syscon})
+			</if>
+	</select>
+	
+</mapper>

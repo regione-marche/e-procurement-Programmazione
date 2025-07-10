@@ -1,0 +1,42 @@
+<div class="section-title-detail">{{ 'CHECK-PUBB.CHECK-PUBB-TITLE' | translate }}
+    <div style="float:right;"><sdk-basic-button [config]="buttonPopupConfig"
+            (output)="onButtonClick($event)"></sdk-basic-button></div>
+</div>
+<div class="check-panel-row">
+    <i class="mgg-icons-status-error check-pubblicazione-error"></i>&nbsp;<label class="check-panel-label"><b>{{
+            'CHECK-PUBB.CHECK-PUBB-BLOCKING_ERRORS' | translate }}</b></label>
+    {{checkData.blockingErrorNum}}
+</div>
+<div class="check-panel-row">
+    <i class="mgg-icons-status-error check-pubblicazione-warning"></i>&nbsp;<label class="check-panel-label"><b>{{
+            'CHECK-PUBB.CHECK-PUBB-WARNING_ERRORS' | translate }}</b></label>
+    {{checkData.warningErrorNum}}
+</div>
+
+<table class="check-pubb-table" *ngIf="checkPubbErrors" [attr.aria-label]="'CHECK-PUBB.CHECK-PUBB-TITLE' | translate">
+    <thead>
+        <tr>
+            <th scope="col"></th>
+            <th scope="col">{{ 'CHECK-PUBB.CHECK-PUBB-CAMPO' | translate }}</th>
+            <th scope="col">{{ 'CHECK-PUBB.CHECK-PUBB-DESC' | translate }}</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let error of checkData.blockingErrors; let i = index"
+            [ngClass]="{'check-pubb-table-divider': i < checkData.blockingErrors.length - 1 }">
+            <td><i class="mgg-icons-status-error check-pubblicazione-error"></i></td>
+            <td>{{error.title}}</td>
+            <td>{{error.desc}}</td>
+        </tr>
+        <tr *ngFor="let error of checkData.warningErrors; let i = index"
+            [ngClass]="{'check-pubb-table-divider': i < checkData.warningErrors.length - 1 }">
+            <td><i class="mgg-icons-status-error check-pubblicazione-warning"></i></td>
+            <td>{{error.title}}</td>
+            <td>{{error.desc}}</td>
+        </tr>
+    </tbody>
+</table>
+<div *ngIf="!checkPubbErrors" class="alert-success">
+    <span>{{ 'CHECK-PUBB.CHECK-PUBB-SUCCESS' | translate }}</span><span>{{ checkSuccessActionDescr | translate}}</span>
+</div>

@@ -1,0 +1,59 @@
+<div [class]="config.classNames" *ngIf="isReady">
+
+    <div class="messages-box" #infoBox></div>
+
+    <div class="messages-box" #messages></div>
+
+    <div class="dett-prog-dati-generali-container">
+
+        <div class="search-box search-box-programmi">
+            <sdk-combobox [config]="interventoComboboxConfig" (output)="onComboChange($event)" [data]="interventoComboData"></sdk-combobox>
+            <!--<sdk-textbox [config]="searchConfigObs" (output)="debounce.next($event)"></sdk-textbox>-->
+        </div>
+
+        <div class="section-header">
+            <h1 class="title" *ngIf="tipologia === '1'">{{ 'IMPORT-INTERVENTO.TITLE' | translate }}</h1>
+            <h1 class="title" *ngIf="tipologia === '2'">{{ 'IMPORT-INTERVENTO.TITLE2' | translate }}</h1>
+        </div>
+        
+        <table class="import-interventi-table"
+            [attr.aria-label]="'TITLE.IMPORT-INTERVENTI-PAGE' | translate">
+            <th class="import-interventi-header-check">
+                <input 
+                    type="checkbox" 
+                    [checked]="isHeaderChecked"
+                    (change)="manageAllCheck($event)"
+                    [disabled]="interventiFiltered?.length === 0 || interventiFiltered == null || interventiFiltered == undefined"
+                > 
+                {{ 'IMPORT-INTERVENTO.SELEZIONA-DESELEZIONA' | translate }}
+            </th>
+            <th class="import-interventi-header">{{ 'IMPORT-INTERVENTO.ANNO' | translate }}</th>
+            <th class="import-interventi-header">{{ 'IMPORT-INTERVENTO.CUI' | translate }}</th>
+            <th class="import-interventi-header" *ngIf="tipologia === '1'">
+                {{ 'IMPORT-INTERVENTO.DESCRIZIONE' | translate }}</th>
+            <th class="import-interventi-header" *ngIf="tipologia === '2'">
+                {{ 'IMPORT-INTERVENTO.DESCRIZIONE2' | translate }}</th>
+            <th class="import-interventi-header" *ngIf="tipologia === '1'">{{ 'IMPORT-INTERVENTO.IMPORTO' | translate }}
+            </th>
+            <th class="import-interventi-header" *ngIf="tipologia === '2'">
+                {{ 'IMPORT-INTERVENTO.IMPORTO2' | translate }}</th>
+            <tr class="import-interventi-row" *ngFor="let intervento of interventiFiltered">
+                <td class="import-interventi-cell"><input type="checkbox" [disabled]="intervento.disabled === true"
+                        [checked]="intervento.checked === true"
+                        (change)="manageCheckboxes(intervento.idProgramma, intervento.id, $event)"></td>
+                <td class="import-interventi-cell">{{intervento.anno }}</td>
+                <td class="import-interventi-cell">{{intervento.cui }}</td>
+                <td class="import-interventi-cell">{{intervento.descrizione }}</td>
+                <td class="import-interventi-cell">{{intervento.importo | sdkCurrencyFormat:locale:currency }}</td>
+            </tr>
+        </table>
+        <div class="messages-box" *ngIf="showEmptyPanel"
+            style="color: #004085;background-color: #cce5ff;border-color: #b8daff;padding: 1rem;border-radius: 3px;margin: 2px 0;width: fit-content;">
+            {{ 'EMPTY-LIST' | translate}}</div>
+        <div class="buttons-row">
+            <sdk-button-group *ngIf="buttons !== undefined" [config]="buttonsSubj" (output)="onButtonClick($event)">
+            </sdk-button-group>
+        </div>
+        <sdk-modal [config]="modalConfigObs" (output)="onOutput($event)"></sdk-modal>
+    </div>
+</div>

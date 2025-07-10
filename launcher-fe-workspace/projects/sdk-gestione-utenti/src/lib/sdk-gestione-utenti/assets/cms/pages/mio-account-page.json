@@ -1,0 +1,87 @@
+{
+    "name": "mio-utente-page",
+    "title": "TITLE.MIO-ACCOUNT-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "mio-utente-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "mio-utente-page",
+                "label": "BREADCRUMB.MIO-ACCOUNT",
+                "slug": "mio-utente-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "mio-utente-page-content-root-section",
+            "selector": "sdk-mio-utente-section",
+            "description": "Pagina mio utente",
+            "classNames": "mio-utente-section",
+            "settings": {
+                "classNames": "mio-utente-index",
+                "sectionTitle": "TITLE.MIO-ACCOUNT-PAGE",
+                "homeSlug": "home-page",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-home",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "SDK_MIO_UTENTE",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-utente-connesso",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "SDK_MIO_UTENTE"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "SDK-UTENTE-CONNESSO.GENERAL-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "denominazione",
+                                    "label": "SDK-UTENTE-CONNESSO.GENERAL-DATA.DENOMINAZIONE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "denominazione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "username",
+                                    "label": "SDK-UTENTE.GENERAL-DATA.USERNAME",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "username"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "email",
+                                    "label": "SDK-UTENTE.GENERAL-DATA.EMAIL",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "email",
+                                    "mappingOutput": "email",
+                                    "maxLength": 100
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

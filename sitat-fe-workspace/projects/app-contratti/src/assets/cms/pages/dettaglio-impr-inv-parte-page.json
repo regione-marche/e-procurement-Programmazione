@@ -1,0 +1,330 @@
+{
+    "name": "dettaglio-impr-inv-parte-page",
+    "title": "TITLE.DETTAGLIO-IMPR-INV-PARTE-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "dettaglio-impr-inv-parte-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "lista-elenco-impr-inv-parte-page",
+                "label": "BREADCRUMB.LISTA-ELENCO-IMPR-INV-PARTE",
+                "slug": "lista-elenco-impr-inv-parte-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            },
+            {
+                "code": "dettaglio-impr-inv-parte-page",
+                "label": "BREADCRUMB.DETTAGLIO-IMPR-INV-PARTE",
+                "slug": "dettaglio-impr-inv-parte-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_IMPRESA_PARTE_PARAMS"
+            }
+        ],
+        "breadcrumbsSmartCig": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "dettaglio-smartcig-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "dettaglio-smartcig-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            }, {
+                "code": "lista-elenco-impr-inv-parte-smartcig-page",
+                "label": "BREADCRUMB.LISTA-ELENCO-IMPR-INV-PARTE",
+                "slug": "lista-elenco-impr-inv-parte-smartcig-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS"
+            },{
+                "code": "dettaglio-impr-inv-parte-page",
+                "label": "BREADCRUMB.DETTAGLIO-IMPR-INV-PARTE",
+                "slug": "dettaglio-impr-inv-parte-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_IMPRESA_PARTE_PARAMS"
+            }
+        ],
+        "breadcrumbsLS": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.RICERCA-SCHEDE-TRASMESSE-PCP",
+                "slug": "ricerca-schede-trasmesse-pcp-page"
+            },
+            {
+                "code": "lista-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.LISTA-SCHEDE-TRASMESSE-PCP",
+                "slug": "lista-schede-trasmesse-pcp-page"
+            },
+            {
+                "code": "lista-fasi-lotto-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "dettaglio-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "lista-elenco-impr-inv-parte-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.LISTA-ELENCO-IMPR-INV-PARTE",
+                "slug": "lista-elenco-impr-inv-parte-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            },
+            {
+                "code": "dettaglio-impr-inv-parte-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.DETTAGLIO-IMPR-INV-PARTE",
+                "slug": "dettaglio-impr-inv-parte-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_IMPRESA_PARTE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-impr-inv-parte-page-content-root-section",
+            "selector": "dettaglio-impr-inv-parte-section",
+            "description": "Pagina di dettaglio impresa invitata/partecipante",
+            "classNames": "dettaglio-impr-inv-parte-section",
+            "settings": {
+                "classNames": "dettaglio-impr-inv-parte-index",
+                "sectionTitle": "TITLE.DETTAGLIO-IMPR-INV-PARTE-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-impr-inv-parte",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_FASE_ELENCO_IMPR_INV_PARTE_PROVIDER",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "go-to-update-impr-inv-parte",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_GARE_FASE_ELENCO_IMPR_INV_PARTE_PROVIDER",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "buttonsRO": [
+                        {
+                            "code": "back-to-lista-impr-inv-parte",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_FASE_ELENCO_IMPR_INV_PARTE_PROVIDER",
+                            "type": "cancel"
+                        }
+                    ],
+                    "buttonsLS": [
+                        {
+                            "code": "back-to-lista-impr-inv-parte-LS",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_FASE_ELENCO_IMPR_INV_PARTE_PROVIDER",
+                            "type": "cancel"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "IMPRESA-IMPR-INV-PARTE.GENERAL-DATA.GENERAL-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "tipologia-soggetto",
+                                    "label": "IMPRESA-IMPR-INV-PARTE.GENERAL-DATA.TIPOLOGIA-SOGGETTO",
+                                    "oggettoProtezione": "W9.W9IMPRESE.TIPOAGG",
+                                    "mnemonico": "W9IMTIPOA",
+                                    "mappingInput": "tipologiaSoggetto",
+                                    "mappingOutput": "tipologiaSoggetto",
+                                    "listCode": "TipologiaAggiudicatario"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "partecipante",
+                                    "label": "IMPRESA-IMPR-INV-PARTE.GENERAL-DATA.PARTECIPANTE",
+                                    "oggettoProtezione": "W9.W9IMPRESE.PARTECIP",
+                                    "mnemonico": "W9IMPARTEC",
+                                    "mappingInput": "partecipante",
+                                    "mappingOutput": "partecipante",
+                                    "listCode": "ImpresaPartecipante"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "denominazione-impresa-singola",
+                                    "label": "IMPRESA-IMPR-INV-PARTE.GENERAL-DATA.DENOMINAZIONE-IMPRESA",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "",
+                                    "mappingOutput": "",
+                                    "link": true,
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "tipologia-soggetto": {
+                                                "values": [
+                                                    {
+                                                        "value": "3",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    },
+                                    "modalComponent": "impresa-modal-widget",
+                                    "modalComponentConfig": "impresaModalConfig"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "impresa-data",
+                            "label": "IMPRESA-IMPR-INV-PARTE.IMPRESA-DATA.IMPRESA-DATA",
+                            "visible": false,
+                            "visibleCondition": {
+                                "or": {
+                                    "tipologia-soggetto": {
+                                        "values": [
+                                            {
+                                                "value": "2",
+                                                "operation": "="
+                                            },
+                                            {
+                                                "value": "4",
+                                                "operation": "="
+                                            }
+                                        ],
+                                        "visible": false
+                                    }
+                                }
+                            },
+                            "fieldSections": [
+                                {
+                                    "type": "FORM-GROUP",
+                                    "code": "imprese-group",
+                                    "label": "",
+                                    "minGroupsNumber": 0,
+                                    "maxGroupsNumber": -1,
+                                    "mappingInput": "imprese",
+                                    "mappingOutput": "imprese",
+                                    "defaultFormGroupFields": [
+                                        {
+                                            "type": "TEXT",
+                                            "code": "denominazione-impresa",
+                                            "label": "IMPRESA-IMPR-INV-PARTE.IMPRESA-DATA.DENOMINAZIONE-IMPRESA",
+                                            "oggettoProtezione": "W9.W9IMPRESE.CODIMP",
+                                            "mnemonico": "W9IMCODIMP",
+                                            "mappingInput": "impresa.ragioneSociale",
+                                            "mappingOutput": "codImpresa",
+                                            "link": true,
+                                            "modalComponent": "impresa-modal-widget",
+                                            "modalComponentConfig": "impresaModalConfig"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "impresa-data2",
+                            "label": "IMPRESA-IMPR-INV-PARTE.IMPRESA-DATA.IMPRESA-DATA",
+                            "visible": false,
+                            "visibleCondition": {
+                                "or": {
+                                    "tipologia-soggetto": {
+                                        "values": [
+                                            {
+                                                "value": "1",
+                                                "operation": "="
+                                            }
+                                        ],
+                                        "visible": false
+                                    }
+                                }
+                            },
+                            "fieldSections": [
+                                {
+                                    "type": "FORM-GROUP",
+                                    "code": "imprese-group2",
+                                    "label": "",
+                                    "minGroupsNumber": 0,
+                                    "maxGroupsNumber": -1,
+                                    "mappingInput": "imprese",
+                                    "mappingOutput": "imprese",
+                                    "defaultFormGroupFields": [
+                                        {
+                                            "type": "TEXT",
+                                            "code": "denominazione-impresa2",
+                                            "label": "IMPRESA-IMPR-INV-PARTE.IMPRESA-DATA.DENOMINAZIONE-IMPRESA",
+                                            "oggettoProtezione": "W9.W9IMPRESE.CODIMP",
+                                            "mnemonico": "W9IMCODIMP",
+                                            "mappingInput": "impresa.ragioneSociale",
+                                            "mappingOutput": "codImpresa",
+                                            "link": true,
+                                            "modalComponent": "impresa-modal-widget",
+                                            "modalComponentConfig": "impresaModalConfig"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "ruolo",
+                                            "label": "IMPRESA-IMPR-INV-PARTE.IMPRESA-DATA.RUOLO",
+                                            "oggettoProtezione": "W9.W9IMPRESE.RUOLO",
+                                            "mnemonico": "W9IMRUOLO",
+                                            "mappingInput": "ruolo",
+                                            "mappingOutput": "ruolo",
+                                            "listCode": "RuoloAssociazione"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,307 @@
+{
+    "name": "dettaglio-atto-generale-page",
+    "title": "TITLE.DETTAGLIO-ATTO-GENERALE-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "dettaglio-atto-generale-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-atti-generali-page",
+                "label": "BREADCRUMB.LISTA-ATTI-GENERALI",
+                "slug": "lista-atti-generali-page"
+            },
+            {
+                "code": "dettaglio-atto-generale-page",
+                "label": "BREADCRUMB.DETTAGLIO-ATTO-GENERALE",
+                "slug": "dettaglio-atto-generale-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-atto-generale-page-content-root-section",
+            "selector": "dettaglio-atto-generale-section",
+            "description": "Pagina di dettaglio di un atto generale",
+            "classNames": "dettaglio-atto-generale-section",
+            "settings": {
+                "classNames": "dettaglio-atto-generale-index",
+                "sectionTitle": "DETTAGLIO-ATTO-GENERALE.TITLE-SECTION",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-lista-atti",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_CONTRATTI_ATTI_GENERALI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "modifica-atto",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_CONTRATTI_ATTI_GENERALI"
+                        },
+                        {
+                            "code": "pubblica-atto",
+                            "label": "BUTTONS.PUBBLICA",
+                            "icon": "mgg-icons-data-send",
+                            "provider": "APP_CONTRATTI_ATTI_GENERALI",
+                            "splitButton": true,
+                            "look": "outline",
+                            "dropdownData": [                                
+                                {
+                                    "code": "programma-pubblicazione",
+                                    "label": "BUTTONS.PROGRAMMA-PUBBLICAZIONE",
+                                    "provider": "APP_CONTRATTI_ATTI_GENERALI",
+                                    "icon": "mgg-icons-send-progress"
+                                }
+                            ]
+                        }
+                    ],
+                    "buttonsPubblicato": [
+                        {
+                            "code": "back-lista-atti",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_CONTRATTI_ATTI_GENERALI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "modifica-atto",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_CONTRATTI_ATTI_GENERALI"
+                        },
+                        {
+                            "code": "annulla-pubblicazione",
+                            "label": "BUTTONS.ANNULLA-PUBBLICAZIONE",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_CONTRATTI_ATTI_GENERALI"
+                        }
+                    ],
+                    "buttonsAnnullato": [
+                        {
+                            "code": "back-lista-atti",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_CONTRATTI_ATTI_GENERALI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "DETTAGLIO-ATTO-GENERALE.DATI-GENERALI",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "stazione-appaltante",
+                                    "label": "DETTAGLIO-ATTO-GENERALE.GENERAL-DATA.NOMEIN",
+                                    "mappingInput": "stazioneAppaltante",
+                                    "mappingOutput": "stazioneAppaltante",
+                                    "oggettoProtezione": "ALT.GENE.associazioneUffintAbilitata"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "idAtto",
+                                    "label": "DETTAGLIO-ATTO-GENERALE.GENERAL-DATA.IDATTO",
+                                    "disabled": true,
+                                    "mappingInput": "idAtto",
+                                    "mappingOutput": "idAtto"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "rup",
+                                    "label": "DETTAGLIO-ATTO-GENERALE.GENERAL-DATA.RUP",
+				                    "oggettoProtezione": "W9.ATTIGENERALI.RUP",
+                                    "mnemonico": "W9AGRUP",
+                                    "mappingInput": "rup",
+                                    "mappingOutput": "rup",
+                                    "link": true,
+                                    "modalComponent": "rup-rw-modal-widget",
+                                    "modalComponentConfig": "rupModalRWConfig"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "dati-atto",
+                            "label": "DETTAGLIO-ATTO-GENERALE.DATI-ATTO",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "tipoAtto",
+                                    "label": "DETTAGLIO-ATTO-GENERALE.DATI.TIPO-ATTO",
+                                    "mappingInput": "tipoAtto",
+                                    "mappingOutput": "tipoAtto",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "TipoAttoGeneraleCombo"
+                                },
+                                {
+                                    "type": "HIDDEN",
+                                    "code": "tipoAttoKey",
+                                    "mappingInput": "tipoAttoKey",
+                                    "mappingOutput": "tipoAttoKey"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "tipologia",
+                                    "label": "DETTAGLIO-ATTO-GENERALE.DATI.TIPOLOGIA",
+                                    "mappingInput": "tipologia",
+                                    "mappingOutput": "tipologia",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "TipoAttoGenerale"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "descrizione",
+                                    "label": "DETTAGLIO-ATTO-GENERALE.DATI.DESCRIZIONE",
+                                    "mappingInput": "descrizione",
+                                    "mappingOutput": "descrizione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "label": "DETTAGLIO-ATTO-GENERALE.DATI.DATA-ATTO",
+                                    "code": "dataAtto",
+                                    "mappingInput": "dataAtto",
+                                    "mappingOutput": "dataAtto"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "numeroAtto",
+                                    "label": "DETTAGLIO-ATTO-GENERALE.DATI.NUMERO-ATTO",
+                                    "mappingInput": "numeroAtto",
+                                    "mappingOutput": "numeroAtto"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "primaPubb",
+                                    "label": "DETTAGLIO-ATTO-GENERALE.DATI.PRIMA-PUBB",
+                                    "mappingInput": "primaPubb",
+                                    "mappingOutput": "primaPubb",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "label": "DETTAGLIO-ATTO-GENERALE.DATI.DATA-PRIMA-PUBB",
+                                    "code": "dataPrimaPubb",
+                                    "mappingInput": "dataPrimaPubb",
+                                    "mappingOutput": "dataPrimaPubb",
+                                    "visibleCondition": {
+                                        "or": {
+                                            "primaPubb": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "label": "DETTAGLIO-ATTO-GENERALE.DATI.DATA-PUBB-SISTEMA",
+                                    "code": "dataPubbSistema",
+                                    "mappingInput": "dataPubbSistema",
+                                    "mappingOutput": "dataPubbSistema"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "label": "DETTAGLIO-ATTO-GENERALE.DATI.DATA-SCADENZA",
+                                    "code": "dataScadenza",
+                                    "mappingInput": "dataScadenza",
+                                    "mappingOutput": "dataScadenza",
+                                    "visibleCondition": {
+                                        "or": {
+                                            "tipoAttoKey": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "HIDDEN",
+                                    "mappingInput": "annullato",
+                                    "code": "annullato"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "label": "DETTAGLIO-ATTO-GENERALE.DATI.DATA-CANCELLAZIONE",
+                                    "code": "dataCanc",
+                                    "mappingInput": "dataCanc",
+                                    "mappingOutput": "dataCanc",
+                                    "visibleCondition": {
+                                        "or": {
+                                            "annullato": {
+                                                "values": [
+                                                    {
+                                                        "value": true,
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "label": "DETTAGLIO-ATTO-GENERALE.DATI.MOTIVO-CANCELLAZIONE",
+                                    "code": "motivoCanc",
+                                    "mappingInput": "motivoCanc",
+                                    "mappingOutput": "motivoCanc",
+                                    "visibleCondition": {
+                                        "or": {
+                                            "annullato": {
+                                                "values": [
+                                                    {
+                                                        "value": true,
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "documents-data",
+                            "label": "DETTAGLIO-ATTO-GENERALE.DOCUMENTS-DATA.ALLEGATI",
+                            "fieldSections": [
+                                {
+                                    "type": "DOCUMENTS-LIST",
+                                    "code": "documents-list",
+                                    "mappingInput": "existingDocuments",
+                                    "clickable": true,
+                                    "actionsDisabled": true,
+                                    "hideHeaderTitle": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,153 @@
+<div
+	class="componi-parametri-modal"
+	[ngClass]="{'empty-parameters': !parameters?.length}"
+	*ngIf="isReady"
+>
+	<div class="messages-box" #messages></div>
+	<div class="sdk-componi-parametri-container">
+		<div class="sdk-componi-parametri-modal-testata">
+			<div class="modal-title">
+				{{ (parameters?.length > 0 ?
+				"MODELLI-PREDISPOSTI.COMPONI-DOCUMENTO-MODAL" :
+				"MODELLI-PREDISPOSTI.COMPONI-DOCUMENTO-MODAL-NO-PARAMETRI") | translate
+				}}
+			</div>
+			<div class="blue-line"></div>
+		</div>
+		<div class="sdk-componi-parametri-modal-body">
+			<div *ngIf="!parameters?.length" class="info-message-box">
+				{{ informativeLabel }}
+			</div>
+			<div *ngFor="let param of parameters" class="componi-parametri-row">
+				<div class="componi-parametri-label">
+					{{ param.nome }}
+					<div class="mandatory-box" *ngIf="param.obbl === 1">( * )</div>
+				</div>
+
+				<div [ngSwitch]="param.tipo" class="componi-parametri-input">
+					<div
+						*ngSwitchCase="'T'"
+						class="input-wrapper responsive-input responsive-input"
+					>
+						<p-dropdown
+							[options]="param.tabellati"
+							optionLabel="descrizione"
+							optionValue="codice"
+							[(ngModel)]="param.value"
+							[inputId]="param.codice"
+							name="{{param.codice}}"
+							[panelStyle]="{'left': 'auto', 'right': '0'}"
+						></p-dropdown>
+						<div class="componi-parametri-descrizione">{{ param.descr }}</div>
+					</div>
+
+					<div *ngSwitchCase="'D'" class="input-wrapper responsive-input">
+						<div class="input-with-indicator">
+							<p-calendar
+								[(ngModel)]="param.value"
+								[inputId]="param.codice"
+								name="{{param.codice}}"
+								dateFormat="dd/mm/yy"
+								[locale]="it"
+							></p-calendar>
+							<span class="input-indicator">(GG/MM/AAAA)</span>
+						</div>
+						<div class="componi-parametri-descrizione">{{ param.descr }}</div>
+					</div>
+
+					<div *ngSwitchCase="'F'" class="input-wrapper responsive-input">
+						<div class="input-with-indicator">
+							<input
+								pInputText
+								decimalInput
+								[(ngModel)]="param.value"
+								[id]="param.codice"
+								name="{{param.codice}}"
+								maxlength="15"
+							/>
+							<span class="input-indicator">(NNN,NN)</span>
+						</div>
+						<div class="componi-parametri-descrizione">{{ param.descr }}</div>
+					</div>
+
+					<div *ngSwitchCase="'I'" class="input-wrapper responsive-input">
+						<div class="input-with-indicator">
+							<p-inputNumber
+								[(ngModel)]="param.value"
+								[inputId]="param.codice"
+								[mode]="'decimal'"
+								[minFractionDigits]="0"
+								[maxFractionDigits]="0"
+								name="{{param.codice}}"
+								[useGrouping]="false"
+                                [maxlength]="10"
+							></p-inputNumber>
+							<span class="input-indicator">(NNN)</span>
+						</div>
+						<div class="componi-parametri-descrizione">{{ param.descr }}</div>
+					</div>
+
+					<div *ngSwitchCase="'M'" class="input-wrapper responsive-input">
+						<p-dropdown
+							[options]="param.tabellati"
+							optionLabel="descrizione"
+							optionValue="codice"
+							[(ngModel)]="param.value"
+							[inputId]="param.codice"
+							name="{{param.codice}}"
+						></p-dropdown>
+						<div class="componi-parametri-descrizione">{{ param.descr }}</div>
+					</div>
+
+					<div *ngSwitchCase="'S'" class="input-wrapper responsive-input">
+						<input
+							pInputText
+							[(ngModel)]="param.value"
+							[id]="param.codice"
+							name="{{param.codice}}"
+							title="{{param.codice}}"
+						/>
+						<div class="componi-parametri-descrizione">{{ param.descr }}</div>
+					</div>
+
+					<div *ngSwitchCase="'N'" class="input-wrapper responsive-input">
+						<textarea
+							pInputTextarea
+							[rows]="4"
+							[autoResize]="true"
+							[(ngModel)]="param.value"
+							[id]="param.codice"
+							name="{{param.codice}}"
+							title="{{param.codice}}"
+							maxlength="512"
+						></textarea>
+						<div class="componi-parametri-descrizione">{{ param.descr }}</div>
+					</div>
+
+					<div
+						*ngSwitchCase="'U'"
+						class="input-wrapper responsive-input read-only"
+					>
+						<!-- <div class="value">{{ userProfile.nome }} {{ userProfile.cognome }}</div> -->
+						<div class="componi-parametri-descrizione">{{ param.descr }}</div>
+					</div>
+
+					<div
+						*ngSwitchCase="'UI'"
+						class="input-wrapper responsive-input read-only"
+					>
+						<!-- <div class="value">{{ stazioneAppaltanteInfo.nome }}</div> -->
+						<div class="componi-parametri-descrizione">{{ param.descr }}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="buttons-row">
+			<sdk-button-group
+				class="modal-buttons"
+				[config]="buttonsSubj"
+				(output)="onButtonClick($event)"
+			></sdk-button-group>
+		</div>
+	</div>
+</div>

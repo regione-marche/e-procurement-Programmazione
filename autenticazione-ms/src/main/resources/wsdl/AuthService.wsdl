@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.authservice.cedaf.it" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.authservice.cedaf.it" xmlns:intf="http://service.authservice.cedaf.it" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://service.authservice.cedaf.it" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getAuthId">
+    <complexType/>
+   </element>
+   <element name="getAuthIdResponse">
+    <complexType>
+     <sequence>
+      <element name="getAuthIdReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="AuthException">
+    <sequence/>
+   </complexType>
+   <element name="fault" type="impl:AuthException"/>
+   <element name="isUserSignedOut">
+    <complexType>
+     <sequence>
+      <element name="authId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="isUserSignedOutResponse">
+    <complexType>
+     <sequence>
+      <element name="isUserSignedOutReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="retrieveUserData">
+    <complexType>
+     <sequence>
+      <element name="authId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="retrieveUserDataResponse">
+    <complexType>
+     <sequence>
+      <element name="retrieveUserDataReturn" type="impl:AuthData"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="AuthData">
+    <sequence>
+     <element name="authId" nillable="true" type="xsd:string"/>
+     <element name="aziendaDenominazione" nillable="true" type="xsd:string"/>
+     <element name="aziendaPIVA" nillable="true" type="xsd:string"/>
+     <element name="aziendaSedelegale" nillable="true" type="xsd:string"/>
+     <element name="aziendaSedelegaleCitta" nillable="true" type="xsd:string"/>
+     <element name="cellulare" nillable="true" type="xsd:string"/>
+     <element name="codiceFiscale" nillable="true" type="xsd:string"/>
+     <element name="cognome" nillable="true" type="xsd:string"/>
+     <element name="dataInserimento" nillable="true" type="xsd:dateTime"/>
+     <element name="demo" type="xsd:boolean"/>
+     <element name="documentoDataRilascio" nillable="true" type="xsd:dateTime"/>
+     <element name="documentoDataScadenza" nillable="true" type="xsd:dateTime"/>
+     <element name="documentoEnteRilascio" nillable="true" type="xsd:string"/>
+     <element name="documentoNumero" nillable="true" type="xsd:string"/>
+     <element name="documentoTipo" nillable="true" type="xsd:string"/>
+     <element name="domicilioCap" nillable="true" type="xsd:string"/>
+     <element name="domicilioCitta" nillable="true" type="xsd:string"/>
+     <element name="domicilioIndirizzo" nillable="true" type="xsd:string"/>
+     <element name="domicilioProvincia" nillable="true" type="xsd:string"/>
+     <element name="domicilioStato" nillable="true" type="xsd:string"/>
+     <element name="fax" nillable="true" type="xsd:string"/>
+     <element name="idCard" nillable="true" type="xsd:string"/>
+     <element name="lavoro" nillable="true" type="xsd:string"/>
+     <element name="livelloAutenticazione" nillable="true" type="xsd:string"/>
+     <element name="livelloPasswordPolicy" nillable="true" type="xsd:string"/>
+     <element name="mailAddress" nillable="true" type="xsd:string"/>
+     <element name="nascitaData" nillable="true" type="xsd:dateTime"/>
+     <element name="nascitaLuogo" nillable="true" type="xsd:string"/>
+     <element name="nascitaProvincia" nillable="true" type="xsd:string"/>
+     <element name="nome" nillable="true" type="xsd:string"/>
+     <element name="pec" nillable="true" type="xsd:string"/>
+     <element name="professionistaAlbo" nillable="true" type="xsd:string"/>
+     <element name="professionistaEstremiAlbo" nillable="true" type="xsd:string"/>
+     <element name="residenzaCap" nillable="true" type="xsd:string"/>
+     <element name="residenzaCitta" nillable="true" type="xsd:string"/>
+     <element name="residenzaIndirizzo" nillable="true" type="xsd:string"/>
+     <element name="residenzaProvincia" nillable="true" type="xsd:string"/>
+     <element name="residenzaStato" nillable="true" type="xsd:string"/>
+     <element name="sesso" nillable="true" type="xsd:string"/>
+     <element name="telefono" nillable="true" type="xsd:string"/>
+     <element name="tipoSoggetto" nillable="true" type="xsd:string"/>
+     <element name="titolo" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <element name="retrieveUserDataV2">
+    <complexType>
+     <sequence>
+      <element name="authId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="retrieveUserDataV2Response">
+    <complexType>
+     <sequence>
+      <element name="retrieveUserDataReturnV2" type="impl:AuthDataV2"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="AuthDataV2">
+    <sequence>
+     <element name="authId" nillable="true" type="xsd:string"/>
+     <element name="aziendaCodiceFiscale" nillable="true" type="xsd:string"/>
+     <element name="aziendaDenominazione" nillable="true" type="xsd:string"/>
+     <element name="aziendaPIVA" nillable="true" type="xsd:string"/>
+     <element name="aziendaSedelegale" nillable="true" type="xsd:string"/>
+     <element name="aziendaSedelegaleCitta" nillable="true" type="xsd:string"/>
+     <element name="cellulare" nillable="true" type="xsd:string"/>
+     <element name="codiceFiscale" nillable="true" type="xsd:string"/>
+     <element name="cognome" nillable="true" type="xsd:string"/>
+     <element name="dataInserimento" nillable="true" type="xsd:dateTime"/>
+     <element name="demo" type="xsd:boolean"/>
+     <element name="documentoDataRilascio" nillable="true" type="xsd:dateTime"/>
+     <element name="documentoDataScadenza" nillable="true" type="xsd:dateTime"/>
+     <element name="documentoEnteRilascio" nillable="true" type="xsd:string"/>
+     <element name="documentoNumero" nillable="true" type="xsd:string"/>
+     <element name="documentoTipo" nillable="true" type="xsd:string"/>
+     <element name="domicilioCap" nillable="true" type="xsd:string"/>
+     <element name="domicilioCitta" nillable="true" type="xsd:string"/>
+     <element name="domicilioIndirizzo" nillable="true" type="xsd:string"/>
+     <element name="domicilioProvincia" nillable="true" type="xsd:string"/>
+     <element name="domicilioStato" nillable="true" type="xsd:string"/>
+     <element name="fax" nillable="true" type="xsd:string"/>
+     <element name="idCard" nillable="true" type="xsd:string"/>
+     <element name="lavoro" nillable="true" type="xsd:string"/>
+     <element name="livelloAutenticazione" nillable="true" type="xsd:string"/>
+     <element name="livelloPasswordPolicy" nillable="true" type="xsd:string"/>
+     <element name="mailAddress" nillable="true" type="xsd:string"/>
+     <element name="nascitaData" nillable="true" type="xsd:dateTime"/>
+     <element name="nascitaLuogo" nillable="true" type="xsd:string"/>
+     <element name="nascitaProvincia" nillable="true" type="xsd:string"/>
+     <element name="nome" nillable="true" type="xsd:string"/>
+     <element name="pec" nillable="true" type="xsd:string"/>
+     <element name="professionistaAlbo" nillable="true" type="xsd:string"/>
+     <element name="professionistaEstremiAlbo" nillable="true" type="xsd:string"/>
+     <element name="residenzaCap" nillable="true" type="xsd:string"/>
+     <element name="residenzaCitta" nillable="true" type="xsd:string"/>
+     <element name="residenzaIndirizzo" nillable="true" type="xsd:string"/>
+     <element name="residenzaProvincia" nillable="true" type="xsd:string"/>
+     <element name="residenzaStato" nillable="true" type="xsd:string"/>
+     <element name="sesso" nillable="true" type="xsd:string"/>
+     <element name="telefono" nillable="true" type="xsd:string"/>
+     <element name="tipoSoggetto" nillable="true" type="xsd:string"/>
+     <element name="titolo" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <element name="retrieveUserDataV3">
+    <complexType>
+     <sequence>
+      <element name="authId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="retrieveUserDataV3Response">
+    <complexType>
+     <sequence>
+      <element name="retrieveUserDataReturnV3" type="impl:AuthDataV3"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="AuthDataV3">
+    <sequence>
+     <element name="authId" nillable="true" type="xsd:string"/>
+     <element name="aziendaCodiceFiscale" nillable="true" type="xsd:string"/>
+     <element name="aziendaDenominazione" nillable="true" type="xsd:string"/>
+     <element name="aziendaPIVA" nillable="true" type="xsd:string"/>
+     <element name="aziendaSedelegale" nillable="true" type="xsd:string"/>
+     <element name="aziendaSedelegaleCitta" nillable="true" type="xsd:string"/>
+     <element name="cellulare" nillable="true" type="xsd:string"/>
+     <element name="cellulareVerificato" nillable="true" type="xsd:boolean"/>
+     <element name="codiceFiscale" nillable="true" type="xsd:string"/>
+     <element name="cognome" nillable="true" type="xsd:string"/>
+     <element name="dataInserimento" nillable="true" type="xsd:dateTime"/>
+     <element name="demo" type="xsd:boolean"/>
+     <element name="documentoDataRilascio" nillable="true" type="xsd:dateTime"/>
+     <element name="documentoDataScadenza" nillable="true" type="xsd:dateTime"/>
+     <element name="documentoEnteRilascio" nillable="true" type="xsd:string"/>
+     <element name="documentoNumero" nillable="true" type="xsd:string"/>
+     <element name="documentoTipo" nillable="true" type="xsd:string"/>
+     <element name="domicilioCap" nillable="true" type="xsd:string"/>
+     <element name="domicilioCitta" nillable="true" type="xsd:string"/>
+     <element name="domicilioIndirizzo" nillable="true" type="xsd:string"/>
+     <element name="domicilioProvincia" nillable="true" type="xsd:string"/>
+     <element name="domicilioStato" nillable="true" type="xsd:string"/>
+     <element name="fax" nillable="true" type="xsd:string"/>
+     <element name="idCard" nillable="true" type="xsd:string"/>
+     <element name="lavoro" nillable="true" type="xsd:string"/>
+     <element name="livelloAutenticazione" nillable="true" type="xsd:string"/>
+     <element name="livelloPasswordPolicy" nillable="true" type="xsd:string"/>
+     <element name="mailAddress" nillable="true" type="xsd:string"/>
+     <element name="mailAddressVerificata" nillable="true" type="xsd:boolean"/>
+     <element name="nascitaData" nillable="true" type="xsd:dateTime"/>
+     <element name="nascitaLuogo" nillable="true" type="xsd:string"/>
+     <element name="nascitaProvincia" nillable="true" type="xsd:string"/>
+     <element name="nome" nillable="true" type="xsd:string"/>
+     <element name="pec" nillable="true" type="xsd:string"/>
+     <element name="professionistaAlbo" nillable="true" type="xsd:string"/>
+     <element name="professionistaEstremiAlbo" nillable="true" type="xsd:string"/>
+     <element name="residenzaCap" nillable="true" type="xsd:string"/>
+     <element name="residenzaCitta" nillable="true" type="xsd:string"/>
+     <element name="residenzaIndirizzo" nillable="true" type="xsd:string"/>
+     <element name="residenzaProvincia" nillable="true" type="xsd:string"/>
+     <element name="residenzaStato" nillable="true" type="xsd:string"/>
+     <element name="sesso" nillable="true" type="xsd:string"/>
+     <element name="telefono" nillable="true" type="xsd:string"/>
+     <element name="tipoSoggetto" nillable="true" type="xsd:string"/>
+     <element name="titolo" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <element name="revalidateUserData">
+    <complexType>
+     <sequence>
+      <element name="authData" type="impl:AuthData"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="revalidateUserDataResponse">
+    <complexType>
+     <sequence>
+      <element name="revalidateUserDataReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="singleSignOut">
+    <complexType>
+     <sequence>
+      <element name="authId" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="singleSignOutResponse">
+    <complexType>
+     <sequence>
+      <element name="singleSignOutReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="isUserSignedOutResponse">
+
+      <wsdl:part element="impl:isUserSignedOutResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="revalidateUserDataResponse">
+
+      <wsdl:part element="impl:revalidateUserDataResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="retrieveUserDataRequest">
+
+      <wsdl:part element="impl:retrieveUserData" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="retrieveUserDataV2Request">
+
+      <wsdl:part element="impl:retrieveUserDataV2" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="AuthException">
+
+      <wsdl:part element="impl:fault" name="fault"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="retrieveUserDataV3Request">
+
+      <wsdl:part element="impl:retrieveUserDataV3" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAuthIdResponse">
+
+      <wsdl:part element="impl:getAuthIdResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="revalidateUserDataRequest">
+
+      <wsdl:part element="impl:revalidateUserData" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="retrieveUserDataV3Response">
+
+      <wsdl:part element="impl:retrieveUserDataV3Response" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="isUserSignedOutRequest">
+
+      <wsdl:part element="impl:isUserSignedOut" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="singleSignOutRequest">
+
+      <wsdl:part element="impl:singleSignOut" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="getAuthIdRequest">
+
+      <wsdl:part element="impl:getAuthId" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="retrieveUserDataV2Response">
+
+      <wsdl:part element="impl:retrieveUserDataV2Response" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="retrieveUserDataResponse">
+
+      <wsdl:part element="impl:retrieveUserDataResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:message name="singleSignOutResponse">
+
+      <wsdl:part element="impl:singleSignOutResponse" name="parameters"/>
+
+   </wsdl:message>
+
+   <wsdl:portType name="AuthService">
+
+      <wsdl:operation name="getAuthId">
+
+         <wsdl:input message="impl:getAuthIdRequest" name="getAuthIdRequest"/>
+
+         <wsdl:output message="impl:getAuthIdResponse" name="getAuthIdResponse"/>
+
+         <wsdl:fault message="impl:AuthException" name="AuthException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="isUserSignedOut">
+
+         <wsdl:input message="impl:isUserSignedOutRequest" name="isUserSignedOutRequest"/>
+
+         <wsdl:output message="impl:isUserSignedOutResponse" name="isUserSignedOutResponse"/>
+
+         <wsdl:fault message="impl:AuthException" name="AuthException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="retrieveUserData">
+
+         <wsdl:input message="impl:retrieveUserDataRequest" name="retrieveUserDataRequest"/>
+
+         <wsdl:output message="impl:retrieveUserDataResponse" name="retrieveUserDataResponse"/>
+
+         <wsdl:fault message="impl:AuthException" name="AuthException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="retrieveUserDataV2">
+
+         <wsdl:input message="impl:retrieveUserDataV2Request" name="retrieveUserDataV2Request"/>
+
+         <wsdl:output message="impl:retrieveUserDataV2Response" name="retrieveUserDataV2Response"/>
+
+         <wsdl:fault message="impl:AuthException" name="AuthException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="retrieveUserDataV3">
+
+         <wsdl:input message="impl:retrieveUserDataV3Request" name="retrieveUserDataV3Request"/>
+
+         <wsdl:output message="impl:retrieveUserDataV3Response" name="retrieveUserDataV3Response"/>
+
+         <wsdl:fault message="impl:AuthException" name="AuthException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="revalidateUserData">
+
+         <wsdl:input message="impl:revalidateUserDataRequest" name="revalidateUserDataRequest"/>
+
+         <wsdl:output message="impl:revalidateUserDataResponse" name="revalidateUserDataResponse"/>
+
+         <wsdl:fault message="impl:AuthException" name="AuthException"/>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="singleSignOut">
+
+         <wsdl:input message="impl:singleSignOutRequest" name="singleSignOutRequest"/>
+
+         <wsdl:output message="impl:singleSignOutResponse" name="singleSignOutResponse"/>
+
+         <wsdl:fault message="impl:AuthException" name="AuthException"/>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="AuthServiceSoapBinding" type="impl:AuthService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getAuthId">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getAuthIdRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getAuthIdResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="AuthException">
+
+            <wsdlsoap:fault name="AuthException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="isUserSignedOut">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="isUserSignedOutRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="isUserSignedOutResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="AuthException">
+
+            <wsdlsoap:fault name="AuthException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="retrieveUserData">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="retrieveUserDataRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="retrieveUserDataResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="AuthException">
+
+            <wsdlsoap:fault name="AuthException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="retrieveUserDataV2">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="retrieveUserDataV2Request">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="retrieveUserDataV2Response">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="AuthException">
+
+            <wsdlsoap:fault name="AuthException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="retrieveUserDataV3">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="retrieveUserDataV3Request">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="retrieveUserDataV3Response">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="AuthException">
+
+            <wsdlsoap:fault name="AuthException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="revalidateUserData">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="revalidateUserDataRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="revalidateUserDataResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="AuthException">
+
+            <wsdlsoap:fault name="AuthException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="singleSignOut">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="singleSignOutRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="singleSignOutResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+         <wsdl:fault name="AuthException">
+
+            <wsdlsoap:fault name="AuthException" use="literal"/>
+
+         </wsdl:fault>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="AuthServiceService">
+
+      <wsdl:port binding="impl:AuthServiceSoapBinding" name="AuthService">
+
+         <wsdlsoap:address location="https://spid.comune-online.it/AuthServiceSPID/services/AuthService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

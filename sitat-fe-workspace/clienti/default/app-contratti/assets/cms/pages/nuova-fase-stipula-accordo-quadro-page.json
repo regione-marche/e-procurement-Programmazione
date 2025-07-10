@@ -1,0 +1,206 @@
+{
+    "name": "nuova-fase-stipula-accordo-quadro-page",
+    "title": "TITLE.NUOVA-FASE-STIPULA-ACCORDO-QUADRO-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "nuova-fase-stipula-accordo-quadro-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "nuova-fase-page",
+                "label": "BREADCRUMB.NUOVA-FASE",
+                "slug": "nuova-fase-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS"
+            },
+            {
+                "code": "nuova-fase-stipula-accordo-quadro-page",
+                "label": "BREADCRUMB.NUOVA-FASE-STIPULA-ACCORDO-QUADRO",
+                "slug": "nuova-fase-stipula-accordo-quadro-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "nuova-fase-stipula-accordo-quadro-page-content-root-section",
+            "selector": "nuova-fase-stipula-accordo-quadro-section",
+            "description": "Pagina di inserimento nuova fase di stipula-accordo-quadro",
+            "classNames": "nuova-fase-stipula-accordo-quadro-section",
+            "settings": {
+                "classNames": "nuova-fase-stipula-accordo-quadro-index",
+                "sectionTitle": "TITLE.NUOVA-FASE-STIPULA-ACCORDO-QUADRO-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "go-to-fasi-visibili",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-fase",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_FASE_STIPULA_ACCORDO_QUADRO_PROVIDER"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "pubblicazione-esito-selezione-data",
+                            "label": "FASE-STIPULAACCORDOQUADRO.PUBBLICAZIONE-ESITO-SELEZIONE-DATA.PUBBLICAZIONE-ESITO-SELEZIONE",
+                            "fieldSections": [
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-guce",
+                                    "label": "FASE-STIPULAACCORDOQUADRO.PUBBLICAZIONE-ESITO-SELEZIONE-DATA.DATA-GUCE",
+                                    "oggettoProtezione": "W9.W9PUES.DATA_GUCE",
+                                    "mnemonico": "W3GUCE2",
+                                    "mappingInput": "pubblicazioneEsito.dataGuce",
+                                    "mappingOutput": "pubblicazioneEsito.dataGuce"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-guri",
+                                    "label": "FASE-STIPULAACCORDOQUADRO.PUBBLICAZIONE-ESITO-SELEZIONE-DATA.DATA-GURI",
+                                    "oggettoProtezione": "W9.W9PUES.DATA_GURI",
+                                    "mnemonico": "W3GURI2",
+                                    "mappingInput": "pubblicazioneEsito.dataGuri",
+                                    "mappingOutput": "pubblicazioneEsito.dataGuri"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "quotidiani-naz",
+                                    "label": "FASE-STIPULAACCORDOQUADRO.PUBBLICAZIONE-ESITO-SELEZIONE-DATA.QUOTIDIANI-NAZ",
+                                    "oggettoProtezione": "W9.W9PUES.QUOTIDIANI_NAZ",
+                                    "mnemonico": "W3NAZ2",
+                                    "mappingInput": "pubblicazioneEsito.quotidianiNaz",
+                                    "mappingOutput": "pubblicazioneEsito.quotidianiNaz",
+                                    "decimals": 0,
+                                    "maxLength": 5
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "quotidiani-reg",
+                                    "label": "FASE-STIPULAACCORDOQUADRO.PUBBLICAZIONE-ESITO-SELEZIONE-DATA.QUOTIDIANI-REG",
+                                    "oggettoProtezione": "W9.W9PUES.QUOTIDIANI_REG",
+                                    "mnemonico": "W3REG2",
+                                    "mappingInput": "pubblicazioneEsito.quotidianiReg",
+                                    "mappingOutput": "pubblicazioneEsito.quotidianiReg",
+                                    "decimals": 0,
+                                    "maxLength": 5
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "profilo-committente",
+                                    "label": "FASE-STIPULAACCORDOQUADRO.PUBBLICAZIONE-ESITO-SELEZIONE-DATA.PROFILO-COMMITTENTE",
+                                    "oggettoProtezione": "W9.W9PUES.PROFILO_COMMITTENTE",
+                                    "mnemonico": "W3PROFILO2",
+                                    "mappingInput": "pubblicazioneEsito.profiloCommittente",
+                                    "mappingOutput": "pubblicazioneEsito.profiloCommittente",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "sito-ministero-inf-trasp",
+                                    "label": "FASE-STIPULAACCORDOQUADRO.PUBBLICAZIONE-ESITO-SELEZIONE-DATA.SITO-MINISTERO-INF-TRASP",
+                                    "oggettoProtezione": "W9.W9PUES.SITO_MINISTERO_INF_TRASP",
+                                    "mnemonico": "W3MIN2",
+                                    "mappingInput": "pubblicazioneEsito.sitoMinInfTrasp",
+                                    "mappingOutput": "pubblicazioneEsito.sitoMinInfTrasp",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "sito-osservatorio-cp",
+                                    "label": "FASE-STIPULAACCORDOQUADRO.PUBBLICAZIONE-ESITO-SELEZIONE-DATA.SITO-OSSERVATORIO-CP",
+                                    "oggettoProtezione": "W9.W9PUES.SITO_OSSERVATORIO_CP",
+                                    "mnemonico": "W3OSS2",
+                                    "mappingInput": "pubblicazioneEsito.sitoOsservatorio",
+                                    "mappingOutput": "pubblicazioneEsito.sitoOsservatorio",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "accordo-quadro-data",
+                            "label": "FASE-STIPULAACCORDOQUADRO.ACCORDO-QUADRO-DATA.ACCORDO-QUADRO",
+                            "fieldSections": [
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-stipula",
+                                    "label": "FASE-STIPULAACCORDOQUADRO.ACCORDO-QUADRO-DATA.DATA-STIPULA",
+                                    "oggettoProtezione": "W9.W9INIZ.DATA_STIPULA",
+                                    "mnemonico": "W3DATA_STI",
+                                    "mappingInput": "dataStipula",
+                                    "mappingOutput": "dataStipula"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "termine-esecuzione-data",
+                            "label": "FASE-STIPULAACCORDOQUADRO.TERMINE-ESECUZIONE-DATA.TERMINE-ESECUZIONE",
+                            "fieldSections": [
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-decorrenza",
+                                    "label": "FASE-STIPULAACCORDOQUADRO.TERMINE-ESECUZIONE-DATA.DATA-DECORRENZA",
+                                    "oggettoProtezione": "W9.W9INIZ.DATA_DECORRENZA",
+                                    "mnemonico": "W9INDECO",
+                                    "mappingInput": "dataDecorrenza",
+                                    "mappingOutput": "dataDecorrenza"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-scadenza",
+                                    "label": "FASE-STIPULAACCORDOQUADRO.TERMINE-ESECUZIONE-DATA.DATA-VERB-SCADENZA",
+                                    "oggettoProtezione": "W9.W9INIZ.DATA_SCADENZA",
+                                    "mnemonico": "W9INSCAD",
+                                    "mappingInput": "dataScadenza",
+                                    "mappingOutput": "dataScadenza"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,63 @@
+{
+    "name": "modifica-profili-report-page",
+    "title": "TITLE.MODIFICA-PROFILI-REPORT-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "modifica-profili-report-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-report-page",
+                "label": "BREADCRUMB.GESTIONE-REPORT",
+                "slug": "lista-report-page"
+            },
+            {
+                "code": "profili-report-page",
+                "label": "BREADCRUMB.PROFILI-REPORT",
+                "slug": "profili-report-page",
+                "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+            },
+            {
+                "code": "modifica-profili-report-page",
+                "label": "BREADCRUMB.MODIFICA-PROFILI-REPORT",
+                "slug": "modifica-profili-report-page",
+                "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-profili-report-page-content-root-section",
+            "selector": "sdk-modifica-profili-report-section",
+            "description": "Pagina modifica profili report",
+            "classNames": "modifica-profili-report-section",
+            "settings": {
+                "classNames": "modifica-profili-report-index",
+                "sectionTitle": "TITLE.MODIFICA-PROFILI-REPORT-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-profili-report",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "SDK_GESTIONE_REPORT_LISTA_REPORT",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-profili-report",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PROVIDER"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

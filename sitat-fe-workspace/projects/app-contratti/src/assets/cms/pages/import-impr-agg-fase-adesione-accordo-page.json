@@ -1,0 +1,90 @@
+{
+    "name": "import-impr-agg-fase-adesione-accordo-page",
+    "title": "TITLE.IMPORT-IMPR-AGG-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/lista-elenco-impr-inv-parte-page.css"
+    ],
+    "settings": {
+        "page": "import-impr-agg-fase-adesione-accordo-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "lista-impr-agg-fase-agg-page",
+                "label": "BREADCRUMB.LISTA-IMPRESE-AGGIUDICATARIE",
+                "slug": "lista-impr-agg-fase-agg-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            },
+            {
+                "code": "dettaglio-impr-agg-fase-agg-page",
+                "label": "BREADCRUMB.DETTAGLIO-IMPRESA-AGGIUDICATARIA",
+                "slug": "dettaglio-impr-agg-fase-agg-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_IMPRESA_AGGIUDICATARIA_PARAMS"
+            },
+            {
+                "code": "import-impr-agg-fase-adesione-accordo-page",
+                "label": "BREADCRUMB.IMPORT-IMPR-AGG",
+                "slug": "import-impr-agg-fase-adesione-accordo-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_IMPRESA_AGGIUDICATARIA_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "import-impr-agg-fase-adesione-accordo-page-content-root-section",
+            "selector": "import-imprese-aggiudicatarie-section",
+            "description": "Pagina di import impresa aggiudicataria",
+            "classNames": "import-impr-agg-fase-adesione-accordo-section",
+            "settings": {
+                "classNames": "import-impr-agg-fase-adesione-accordo-index",
+                "sectionTitle": "TITLE.IMPORT-IMPR-AGG-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-imprese-aggiudicatarie",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_GARE_LISTA_IMPR_AGG_FASE_ADESIONE_ACCORDO",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "import-impresa",
+                            "label": "BUTTONS.IMPORTA",
+                            "provider": "APP_GARE_LISTA_IMPR_AGG_FASE_ADESIONE_ACCORDO"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,190 @@
+{
+    "name": "lista-archivio-stazioni-appaltanti-page",
+    "title": "TITLE.LISTA-ARCHIVIO-STAZIONI-APPALTANTI-PAGE",
+    "layout": "base-layout",
+    "appName": "app-programmi",
+    "styleUrls": [],
+    "settings": {
+        "page": "lista-archivio-stazioni-appaltanti-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-archivio-stazioni-appaltanti-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-ARCHIVIO-STAZIONI-APPALTANTI",
+                "slug": "ricerca-avanzata-archivio-stazioni-appaltanti-page"
+            },
+            {
+                "code": "lista-archivio-stazioni-appaltanti-page",
+                "label": "BREADCRUMB.LISTA-ARCHIVIO-STAZIONI-APPALTANTI",
+                "slug": "lista-archivio-stazioni-appaltanti-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "lista-archivio-stazioni-appaltanti-page-content-root-section",
+            "selector": "lista-archivio-stazioni-appaltanti-section",
+            "description": "Pagina per la lista delle stazioni appaltanti",
+            "classNames": "lista-archivio-stazioni-appaltanti-section",
+            "settings": {
+                "classNames": "lista-archivio-stazioni-appaltanti-index",
+                "sectionTitle": "TITLE.LISTA-ARCHIVIO-STAZIONI-APPALTANTI-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-search",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_COMMONS_ARCHIVIO_STAZIONI_APPALTANTI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "clean-button",
+                            "label": "BUTTONS.CLEAN",
+                            "provider": "APP_COMMONS_ARCHIVIO_STAZIONI_APPALTANTI",
+                            "icon": "mgg-icons-data-unfiltered"
+                        },
+                        {
+                            "code": "nuovo",
+                            "label": "BUTTONS.NUOVO",
+                            "icon": "mgg-icons-crud-create",
+                            "provider": "APP_COMMONS_ARCHIVIO_STAZIONI_APPALTANTI",
+                            "oggettoProtezione": "INS.*"
+                        }
+                    ],
+                    "buttonsWithoutPermission": [
+                        {
+                            "code": "back-to-search",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_COMMONS_ARCHIVIO_STAZIONI_APPALTANTI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "clean-button",
+                            "label": "BUTTONS.CLEAN",
+                            "provider": "APP_COMMONS_ARCHIVIO_STAZIONI_APPALTANTI",
+                            "icon": "mgg-icons-data-unfiltered"
+                        }
+                    ],
+                    "grid": {
+                        "showCurrentPageReport": true,
+                        "showCurrentRecordsReport": true,
+                        "navigable": true,
+                        "resizable": false,
+                        "debug": false,
+                        "sortable": {
+                            "allowUnsort": false,
+                            "mode": "single"
+                        },
+                        "sort": [
+                            {
+                                "field": "codice",
+                                "dir": "asc"
+                            }
+                        ],
+                        "pageable": {
+                            "buttonCount": 5,
+                            "info": true,
+                            "pageSizes": [
+                                5,
+                                10,
+                                20,
+                                50
+                            ],
+                            "type": "numeric"
+                        },
+                        "toolbar": {
+                            "position": "top",
+                            "actions": []
+                        },
+                        "columns": [
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_LINK",
+                                    "params": {
+                                        "action": {
+                                            "label": "LISTA-ARCHIVIO-STAZIONI-APPALTANTI.AZIONI.DETTAGLIO",
+                                            "disabled": false,
+                                            "performer": "dettaglio"
+                                        }
+                                    }
+                                },
+                                "title": "LISTA-ARCHIVIO-STAZIONI-APPALTANTI.CODEIN",
+                                "field": "codice",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "GENE.UFFINT.CODEIN"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_LINK",
+                                    "params": {
+                                        "action": {
+                                            "label": "LISTA-ARCHIVIO-STAZIONI-APPALTANTI.AZIONI.DETTAGLIO",
+                                            "disabled": false,
+                                            "performer": "dettaglio"
+                                        }
+                                    }
+                                },
+                                "title": "LISTA-ARCHIVIO-STAZIONI-APPALTANTI.DENOMINAZIONE",
+                                "field": "denominazione",
+                                "width": 300,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "GENE.UFFINT.NOMEIN"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-ARCHIVIO-STAZIONI-APPALTANTI.CODICE-FISCALE",
+                                "field": "codFisc",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "GENE.UFFINT.CFEIN"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_ACTIONS_ICON",
+                                    "params": {
+                                        "actions": [
+                                            {
+                                                "disabled": false,
+                                                "performer": "delete",
+                                                "hidden": "deleteHidden",
+                                                "icon": "mgg-icons-crud-delete",
+                                                "label": "LISTA-ARCHIVIO-STAZIONI-APPALTANTI.AZIONI.CANCELLA",
+                                                "oggettoProtezione": "DEL.*"
+                                            },
+                                            {
+                                                "disabled": true,
+                                                "hidden": "deleteNotHidden",
+                                                "icon": "mgg-icons-no-trash",
+                                                "label": "LISTA-ARCHIVIO-STAZIONI-APPALTANTI.AZIONI.NO-CANCELLA"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "title": "LISTA-ARCHIVIO-STAZIONI-APPALTANTI.AZIONI.TITLE",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,161 @@
+{
+    "name": "dettaglio-comunicazione-esito-page",
+    "title": "TITLE.DETTAGLIO-COMUNICAZIONE-ESITO-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/pubblica-fase-lotto-page.css"
+    ],
+    "settings": {
+        "page": "dettaglio-comunicazione-esito-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-comunicazione-esito-page",
+                "label": "BREADCRUMB.DETTAGLIO-COMUNICAZIONE-ESITO",
+                "slug": "dettaglio-comunicazione-esito-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-comunicazione-esito-page-content-root-section",
+            "selector": "dettaglio-comunicazione-esito-section",
+            "description": "Pagina di dettaglio fase di comunicazione esito",
+            "classNames": "dettaglio-comunicazione-esito-section",
+            "settings": {
+                "classNames": "dettaglio-comunicazione-esito-index",
+                "sectionTitle": "TITLE.DETTAGLIO-COMUNICAZIONE-ESITO-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "check-pubblicazione",
+                            "label": "BUTTONS.CHECK-DATA",
+                            "provider": "APP_FASI_LOTTO_PUBBLICA",
+                            "oggettoProtezione": "ALT.W9.FasiDiGara-schede.ControlloDatiInseriti",
+                            "type": "functions",
+                            "icon": "mgg-icons-document-text"
+                        },
+                        {
+                            "code": "go-to-update-fase",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_GARE_COMUNICAZIONE_ESITO_PROVIDER",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "buttonsRO": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "sidebar": {
+                        "code": "sidebar",
+                        "position": "right",
+                        "width": 500,
+                        "classList": [
+                            "check-pubb-sidebar"
+                        ],
+                        "headerImage": "assets/images/app/logo.png",
+                        "component": "check-pubblicazione-widget",
+                        "componentConfig": {}
+                    },
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "stato-attuale-data",
+                            "label": "COMUNICAZIONE-ESITO.STATO-ATTUALE-DATA.STATO-ATTUALE-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "esito-procedura",
+                                    "label": "COMUNICAZIONE-ESITO.STATO-ATTUALE-DATA.ESITO-PROCEDURA",
+                                    "oggettoProtezione": "W9.W9ESITO.ESITO_PROCEDURA",
+                                    "mnemonico": "W9LOESIPROC",
+                                    "mappingInput": "esito.esito",
+                                    "mappingOutput": "esito",
+                                    "listCode": "EsitoProcedura"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "pubblicazione-data",
+                            "label": "COMUNICAZIONE-ESITO.PUBBLICAZIONE-DATA.PUBBLICAZIONE-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-verb-aggiudicazione",
+                                    "label": "COMUNICAZIONE-ESITO.PUBBLICAZIONE-DATA.DATA-VERB-AGGIUDICAZIONE",
+                                    "oggettoProtezione": "W9.W9ESITO.DATA_VERB_AGGIUDICAZIONE",
+                                    "mnemonico": "W3ESDVERB",
+                                    "mappingInput": "esito.dataAggiudicazione",
+                                    "mappingOutput": "dataAggiudicazione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "importo-aggiudicazione",
+                                    "label": "COMUNICAZIONE-ESITO.PUBBLICAZIONE-DATA.IMPORTO-AGGIUDICAZIONE",
+                                    "oggettoProtezione": "W9.W9ESITO.IMPORTO_AGGIUDICAZIONE",
+                                    "mnemonico": "W3ESIMP_AGGI",
+                                    "mappingInput": "esito.importoAggiudicazione",
+                                    "mappingOutput": "importoAggiudicazione",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "DOCUMENTS-LIST",
+                                    "code": "documents-list",
+                                    "label": "COMUNICAZIONE-ESITO.PUBBLICAZIONE-DATA.FILE-ALLEGATO",
+                                    "mappingInput": "esito.binary",
+                                    "clickable": true,
+                                    "actionsDisabled": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,112 @@
+{
+    "name": "lista-pianificazioni-page",
+    "title": "TITLE.LISTA-PIANIFICAZIONI-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "lista-pianificazioni-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-pianificazioni-page",
+                "label": "BREADCRUMB.LISTA-PIANIFICAZIONI",
+                "slug": "lista-pianificazioni-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "lista-pianificazioni-page-content-root-section",
+            "selector": "sdk-lista-pianificazioni-section",
+            "description": "Pagina lista pianificazioni",
+            "classNames": "lista-pianificazioni-section",
+            "settings": {
+                "classNames": "lista-pianificazioni-index",
+                "sectionTitle": "TITLE.LISTA-PIANIFICAZIONI-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_PIANIFICAZIONI_LISTA",
+                            "type": "cancel"
+                        }
+                    ],
+                    "grid": {
+                        "showCurrentPageReport": true,
+                        "showCurrentRecordsReport": true,
+                        "navigable": true,
+                        "resizable": false,
+                        "debug": false,
+                        "sortable": {
+                            "allowUnsort": false,
+                            "mode": "single"
+                        },
+                        "sort": [
+                            {
+                                "field": "beanId",
+                                "dir": "asc"
+                            }
+                        ],
+                        "pageable": false,
+                        "toolbar": {
+                            "position": "top",
+                            "actions": []
+                        },
+                        "columns": [
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_LINK",
+                                    "params": {
+                                        "action": {
+                                            "label": "SDK-PIANIFICAZIONE.AZIONI.DETTAGLIO",
+                                            "disabled": false,
+                                            "performer": "dettaglio"
+                                        }
+                                    }
+                                },
+                                "title": "SDK-PIANIFICAZIONE.GENERAL-DATA.NOME-TRIGGER",
+                                "field": "beanId",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-PIANIFICAZIONE.GENERAL-DATA.DESCRIZIONE",
+                                "field": "descrizione",
+                                "width": 150,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-PIANIFICAZIONE.GENERAL-DATA.PIANIFICAZIONE",
+                                "field": "expression",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

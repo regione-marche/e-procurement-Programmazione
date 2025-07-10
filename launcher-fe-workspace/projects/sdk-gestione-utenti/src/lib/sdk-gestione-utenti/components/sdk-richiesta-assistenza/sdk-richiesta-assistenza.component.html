@@ -1,0 +1,42 @@
+<div [class]="config.classNames" *ngIf="isReady">
+  <h1 class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</h1>
+  <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+  <div class="messages-box" #infoBox></div>
+
+  <div class="messages-box" #messages></div>
+
+  <div class="richiesta-assistenza-container">
+
+    <div class="richiesta-assistenza-content">
+      <div class="richiesta-assistenza-module-container">
+        <div [innerHTML]="'SDK-RICHIESTA-ASSISTENZA.HEADER-DESCRIPTION' | translate"></div>
+      </div>
+      <div>
+        <sdk-form-builder [config]="formBuilderConfigObs" (output)="manageFormOutput($event)">
+        </sdk-form-builder>
+      </div>
+
+      <div class="captcha-container">
+        <div class="captcha-title">
+          {{ 'CAPTCHA.TITLE' | translate }}
+        </div>
+        <div class="captcha-content" *ngIf="serverCaptchaEnabled">
+          <sdk-friendly-captcha [reset]="captchaResetSubject$"
+            (solution)="handleCaptchaSolution($event)"></sdk-friendly-captcha>
+        </div>
+        <div class="captcha-content" *ngIf="!serverCaptchaEnabled">
+          <div class="captcha-error" #errorCaptcha>{{ 'CAPTCHA.ERROR' | translate }}</div>
+          <form id="form-registrazione" #form>
+            <div class="captcha-base" #captcha></div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="buttons-row">
+      <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)">
+      </sdk-button-group>
+    </div>
+  </div>
+  <sdk-dialog [config]="dialogConfigObs"></sdk-dialog>
+</div>

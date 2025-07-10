@@ -1,0 +1,29 @@
+<div class="app-info-modal" *ngIf="isReady">
+    <div class="messages-box" #messages></div>
+
+    <div class="app-info-modal-container">
+        <div class="app-info-modal-testata">
+
+        </div>
+        <div class="app-info-modal-content">
+            <div class="informazioni-sviluppo" *ngIf="showInfoSviluppo" [innerHtml]="appConfig.environment.DEVELOPMENT_INFO | translate">
+            </div>
+            <br>
+            <div><b>{{ 'APP-INFO-MODAL.INFORMAZIONI-TECNICHE' | translate }}:</b></div>
+            <div>{{ 'APP-INFO-MODAL.NOME-PRODOTTO' | translate }}: {{ appTitle }}</div>
+            <div>{{ 'APP-INFO-MODAL.VERSIONE' | translate }}: {{ appVersion }}</div>
+
+            <div>{{ 'APP-INFO-MODAL.NOMECOMPONENTE' | translate }}: {{ nomeComponente }}</div>
+            <div>{{ 'APP-INFO-MODAL.VERSIONE' | translate }}: {{ versioneComponente }}</div>
+            <div>{{ 'APP-INFO-MODAL.NOMEPIATTAFORMA' | translate }}: {{ nomePiattaforma }}</div>
+            <div>{{ 'APP-INFO-MODAL.VERSIONE' | translate }}: {{ versionePiattaforma }}</div>
+
+            <div *ngIf="userProfile != null && userProfile.configurations != null">
+                {{ 'APP-INFO-MODAL.PROFILO-APPLICATIVO' | translate }}: {{ userProfile.configurations.idProfilo }} - {{ userProfile.configurations.nome }}
+            </div>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+</div>

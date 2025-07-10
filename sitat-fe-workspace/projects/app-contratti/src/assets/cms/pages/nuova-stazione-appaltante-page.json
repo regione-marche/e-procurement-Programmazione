@@ -1,0 +1,238 @@
+{
+    "name": "nuova-stazione-appaltante-page",
+    "title": "TITLE.NUOVA-STAZIONE-APPALTANTE-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "nuova-stazione-appaltante-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-archivio-stazioni-appaltanti-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-ARCHIVIO-STAZIONI-APPALTANTI",
+                "slug": "ricerca-avanzata-archivio-stazioni-appaltanti-page"
+            },
+            {
+                "code": "lista-archivio-stazioni-appaltanti-page",
+                "label": "BREADCRUMB.LISTA-ARCHIVIO-STAZIONI-APPALTANTI",
+                "slug": "lista-archivio-stazioni-appaltanti-page"
+            },
+            {
+                "code": "nuova-stazione-appaltante-page",
+                "label": "BREADCRUMB.NUOVA-STAZIONE-APPALTANTE",
+                "slug": "nuova-stazione-appaltante-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "nuova-stazione-appaltante-page-content-root-section",
+            "selector": "nuova-stazione-appaltante-section",
+            "description": "Pagina per la creazione di una nuova stazione appaltante",
+            "classNames": "nuova-stazione-appaltante-section",
+            "settings": {
+                "classNames": "nuova-stazione-appaltante-index",
+                "sectionTitle": "TITLE.NUOVA-STAZIONE-APPALTANTE-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-archivio-stazioni-appaltanti",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_COMMONS_ARCHIVIO_STAZIONI_APPALTANTI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-stazione-appaltante",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_COMMONS_ARCHIVIO_STAZIONI_APPALTANTI"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "sa-data",
+                            "label": "STAZIONE-APPALTANTE.DATI-GENERALI",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "denominazione",
+                                    "label": "STAZIONE-APPALTANTE.DENOMINAZIONE",
+                                    "oggettoProtezione": "GENE.UFFINT.NOMEIN",
+                                    "mnemonico": "NOMEIN",
+                                    "mappingInput": "denominazione",
+                                    "mappingOutput": "denominazione",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "STAZIONE-APPALTANTE.VALIDATORS.DENOMINAZIONE-OBBLIGATORIA"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": 254
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "codice-fiscale",
+                                    "label": "STAZIONE-APPALTANTE.CODICE-FISCALE",
+                                    "oggettoProtezione": "GENE.UFFINT.CFEIN",
+                                    "mnemonico": "CFEIN",
+                                    "mappingInput": "codFisc",
+                                    "mappingOutput": "codFisc",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "STAZIONE-APPALTANTE.VALIDATORS.CODICE-FISCALE-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": 16
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "indirizzo",
+                                    "label": "STAZIONE-APPALTANTE.INDIRIZZO",
+                                    "oggettoProtezione": "GENE.UFFINT.VIAEIN",
+                                    "mnemonico": "VIAEIN",
+                                    "mappingInput": "indirizzo",
+                                    "mappingOutput": "indirizzo",
+                                    "maxLength": 60
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "numero-civico",
+                                    "label": "STAZIONE-APPALTANTE.NUM-CIVICO",
+                                    "oggettoProtezione": "GENE.UFFINT.NCIEIN",
+                                    "mnemonico": "NCIEIN",
+                                    "mappingInput": "nCivico",
+                                    "mappingOutput": "nCivico",
+                                    "maxLength": 10
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "cap",
+                                    "label": "STAZIONE-APPALTANTE.CAP",
+                                    "oggettoProtezione": "GENE.UFFINT.CAPEIN",
+                                    "mnemonico": "CAPEIN",
+                                    "mappingInput": "cap",
+                                    "mappingOutput": "cap",
+                                    "maxLength": 5
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "cod-istat",
+                                    "label": "STAZIONE-APPALTANTE.COD-ISTAT",
+                                    "oggettoProtezione": "GENE.UFFINT.CODCIT",
+                                    "mnemonico": "CODCIT",
+                                    "mappingInput": "codIstat",
+                                    "mappingOutput": "codIstat",
+                                    "noDataLabel": "NO-DATA",
+                                    "itemsProviderCode": "APP_GARE_COMUNI_ISTAT",
+                                    "minSearchCharacters": 2
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "provincia",
+                                    "label": "STAZIONE-APPALTANTE.PROVINCIA",
+                                    "oggettoProtezione": "GENE.UFFINT.PROEIN",
+                                    "mnemonico": "PROEIN",
+                                    "mappingInput": "provincia",
+                                    "mappingOutput": "provincia",
+                                    "maxLength": 2
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "id-ammin",
+                                    "label": "STAZIONE-APPALTANTE.ID-AMMIN",
+                                    "oggettoProtezione": "GENE.UFFINT.IDAMMIN",
+                                    "mnemonico": "G_IDAMMUF",
+                                    "mappingInput": "idAmministrazione",
+                                    "mappingOutput": "idAmministrazione"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "profilo-committente",
+                                    "label": "STAZIONE-APPALTANTE.PROFILO-COMMITTENTE",
+                                    "oggettoProtezione": "GENE.UFFINT.PROFCO",
+                                    "mnemonico": "G_PROFCO",
+                                    "mappingInput": "urlProfiloC",
+                                    "mappingOutput": "urlProfiloC",
+                                    "maxLength": 60
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tipologia",
+                                    "label": "STAZIONE-APPALTANTE.TIPOLOGIA",
+                                    "oggettoProtezione": "GENE.UFFINT.TIPOIN",
+                                    "mnemonico": "G_TIPOIN",
+                                    "mappingInput": "tipologia",
+                                    "mappingOutput": "tipologia",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "TipologiaStazioneAppaltante"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "telefono",
+                                    "label": "STAZIONE-APPALTANTE.TELEFONO",
+                                    "oggettoProtezione": "GENE.UFFINT.TELEIN",
+                                    "mnemonico": "TELEIN",
+                                    "mappingInput": "telefono",
+                                    "mappingOutput": "telefono",
+                                    "maxLength": 50
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "fax",
+                                    "label": "STAZIONE-APPALTANTE.FAX",
+                                    "oggettoProtezione": "GENE.UFFINT.FAXEIN",
+                                    "mnemonico": "FAXEIN",
+                                    "mappingInput": "fax",
+                                    "mappingOutput": "fax",
+                                    "maxLength": 20
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "email",
+                                    "label": "STAZIONE-APPALTANTE.EMAIL",
+                                    "oggettoProtezione": "GENE.UFFINT.EMAIIN",
+                                    "mnemonico": "EMAIIN",
+                                    "mappingInput": "email",
+                                    "mappingOutput": "email",
+                                    "maxLength": 100
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "codausa",
+                                    "label": "STAZIONE-APPALTANTE.CODAUSA",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "codausa",
+                                    "mappingOutput": "codausa",
+                                    "maxLength": 20
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

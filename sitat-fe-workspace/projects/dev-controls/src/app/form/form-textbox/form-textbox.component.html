@@ -1,0 +1,4 @@
+<sdk-textbox [config]="textboxConfig" [data]="textboxData" (output)="onOutput($event)"
+    (outputInfoBox)="onOutputInfoBox($event)"></sdk-textbox>
+<sdk-textbox [config]="textboxConfig2" (output)="onOutput($event)"></sdk-textbox>
+<sdk-textbox [config]="textboxConfig3" (output)="onOutput($event)" (outputActionClick)="manageOutputActionClick($event)"></sdk-textbox>

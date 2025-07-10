@@ -1,0 +1,18 @@
+<div [class]="config.classNames" *ngIf="isReady">
+    <h1 class="edit-page-title">{{ config.sectionTitle | translate }}</h1>
+
+    <div class="messages-box" #infoBox></div>
+
+    <div class="messages-box" #messages></div>
+    <div class="fase-aggiudicazione-container">
+        <div class="fase-aggiudicazione-content">
+            <sdk-form-builder [config]="formBuilderConfigObs" [data]="formBuilderDataSubject"
+                (output)="manageFormOutput($event)" (outputField)="manageOutputField($event)">
+            </sdk-form-builder>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+    <sdk-dialog [config]="dialogConfigObs"></sdk-dialog>
+</div>

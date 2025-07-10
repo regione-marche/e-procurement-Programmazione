@@ -1,0 +1,350 @@
+{
+    "name": "nuova-impr-inv-parte-page",
+    "title": "TITLE.NUOVA-IMPR-INV-PARTE-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "nuova-impr-inv-parte-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "lista-elenco-impr-inv-parte-page",
+                "label": "BREADCRUMB.LISTA-ELENCO-IMPR-INV-PARTE",
+                "slug": "lista-elenco-impr-inv-parte-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            },
+            {
+                "code": "nuova-impr-inv-parte-page",
+                "label": "BREADCRUMB.NUOVA-IMPR-INV-PARTE",
+                "slug": "nuova-impr-inv-parte-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "nuova-impr-inv-parte-page-content-root-section",
+            "selector": "nuova-impr-inv-parte-section",
+            "description": "Pagina di nuova impresa invitata/partecipante",
+            "classNames": "nuova-impr-inv-parte-section",
+            "settings": {
+                "classNames": "nuova-impr-inv-parte-index",
+                "sectionTitle": "TITLE.NUOVA-IMPR-INV-PARTE-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-impr-inv-parte",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_GARE_FASE_ELENCO_IMPR_INV_PARTE_PROVIDER",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-impresa",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_FASE_ELENCO_IMPR_INV_PARTE_PROVIDER"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "IMPRESA-IMPR-INV-PARTE.GENERAL-DATA.GENERAL-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tipologia-soggetto",
+                                    "label": "IMPRESA-IMPR-INV-PARTE.GENERAL-DATA.TIPOLOGIA-SOGGETTO",
+                                    "oggettoProtezione": "W9.W9IMPRESE.TIPOAGG",
+                                    "mnemonico": "W9IMTIPOA",
+                                    "mappingInput": "tipologiaSoggetto",
+                                    "mappingOutput": "tipologiaSoggetto",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "TipologiaAggiudicatario",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "IMPRESA-IMPR-INV-PARTE.VALIDATORS.TIPO-SOGGETTO-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "partecipante",
+                                    "label": "IMPRESA-IMPR-INV-PARTE.GENERAL-DATA.PARTECIPANTE",
+                                    "oggettoProtezione": "W9.W9IMPRESE.PARTECIP",
+                                    "mnemonico": "W9IMPARTEC",
+                                    "mappingInput": "partecipante",
+                                    "mappingOutput": "partecipante",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "ImpresaPartecipante",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "IMPRESA-IMPR-INV-PARTE.VALIDATORS.PARTECIPANTE-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "denominazione-impresa-singola",
+                                    "label": "IMPRESA-IMPR-INV-PARTE.GENERAL-DATA.DENOMINAZIONE-IMPRESA",
+                                    "oggettoProtezione": "W9.W9IMPRESE.CODIMP",
+                                    "mnemonico": "W9IMCODIMP",
+                                    "mappingInput": "impresa",
+                                    "mappingOutput": "codImpresa",
+                                    "itemsProviderCode": "APP_GARE_IMPRESE_AGGIUDICATARIE_AUTOCOMPLETE",
+                                    "noDataLabel": "NO-DATA",
+                                    "newEditAvailable": true,
+                                    "newItemButton": {
+                                        "code": "new",
+                                        "label": "BUTTONS.NUOVO",
+                                        "icon": "mgg-icons-crud-create",
+                                        "oggettoProtezione": "INS.*"
+                                    },
+                                    "editItemButton": {
+                                        "code": "edit",
+                                        "label": "BUTTONS.UPDATE",
+                                        "icon": "mgg-icons-crud-edit",
+                                        "oggettoProtezione": "MOD.*"
+                                    },
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "IMPRESA-IMPR-INV-PARTE.VALIDATORS.DENOMINAZIONE-OBBLIGATORIA"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "tipologia-soggetto": {
+                                                "values": [
+                                                    {
+                                                        "value": "3",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    },
+                                    "modalComponent": "impresa-modal-widget",
+                                    "modalComponentConfig": "impresaRWModalConfig"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "impresa-data",
+                            "label": "IMPRESA-IMPR-INV-PARTE.IMPRESA-DATA.IMPRESA-DATA",
+                            "visible": false,
+                            "visibleCondition": {
+                                "or": {
+                                    "tipologia-soggetto": {
+                                        "values": [
+                                            {
+                                                "value": "2",
+                                                "operation": "="
+                                            },
+                                            {
+                                                "value": "4",
+                                                "operation": "="
+                                            }
+                                        ],
+                                        "visible": false
+                                    }
+                                }
+                            },
+                            "fieldSections": [
+                                {
+                                    "type": "FORM-GROUP",
+                                    "code": "imprese-group",
+                                    "label": "",
+                                    "minGroupsNumber": 1,
+                                    "maxGroupsNumber": 0,
+                                    "mappingInput": "imprese",
+                                    "mappingOutput": "imprese",
+                                    "defaultFormGroupFields": [
+                                        {
+                                            "type": "AUTOCOMPLETE",
+                                            "code": "denominazione-impresa",
+                                            "label": "IMPRESA-IMPR-INV-PARTE.IMPRESA-DATA.DENOMINAZIONE-IMPRESA",
+                                            "oggettoProtezione": "W9.W9IMPRESE.CODIMP",
+                                            "mnemonico": "W9IMCODIMP",
+                                            "mappingInput": "impresa",
+                                            "mappingOutput": "codImpresa",
+                                            "itemsProviderCode": "APP_GARE_IMPRESE_AGGIUDICATARIE_AUTOCOMPLETE",
+                                            "noDataLabel": "NO-DATA",
+                                            "newEditAvailable": true,
+                                            "newItemButton": {
+                                                "code": "new",
+                                                "label": "BUTTONS.NUOVO",
+                                                "icon": "mgg-icons-crud-create",
+                                                "oggettoProtezione": "INS.*"
+                                            },
+                                            "editItemButton": {
+                                                "code": "edit",
+                                                "label": "BUTTONS.UPDATE",
+                                                "icon": "mgg-icons-crud-edit",
+                                                "oggettoProtezione": "MOD.*"
+                                            },
+                                            "validators": [
+                                                {
+                                                    "config": {
+                                                        "required": true
+                                                    },
+                                                    "messages": [
+                                                        {
+                                                            "level": "error",
+                                                            "text": "IMPRESA-IMPR-INV-PARTE.VALIDATORS.DENOMINAZIONE-OBBLIGATORIA"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "modalComponent": "impresa-modal-widget",
+                                            "modalComponentConfig": "impresaRWModalConfig"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "impresa-data2",
+                            "label": "IMPRESA-IMPR-INV-PARTE.IMPRESA-DATA.IMPRESA-DATA",
+                            "visible": false,
+                            "visibleCondition": {
+                                "or": {
+                                    "tipologia-soggetto": {
+                                        "values": [
+                                            {
+                                                "value": "1",
+                                                "operation": "="
+                                            }
+                                        ],
+                                        "visible": false
+                                    }
+                                }
+                            },
+                            "fieldSections": [
+                                {
+                                    "type": "FORM-GROUP",
+                                    "code": "imprese-group2",
+                                    "label": "",
+                                    "minGroupsNumber": 1,
+                                    "maxGroupsNumber": 0,
+                                    "mappingInput": "imprese",
+                                    "mappingOutput": "imprese",
+                                    "defaultFormGroupFields": [
+                                        {
+                                            "type": "AUTOCOMPLETE",
+                                            "code": "denominazione-impresa2",
+                                            "label": "IMPRESA-IMPR-INV-PARTE.IMPRESA-DATA.DENOMINAZIONE-IMPRESA",
+                                            "oggettoProtezione": "W9.W9IMPRESE.CODIMP",
+                                            "mnemonico": "W9IMCODIMP",
+                                            "mappingInput": "impresa",
+                                            "mappingOutput": "codImpresa",
+                                            "itemsProviderCode": "APP_GARE_IMPRESE_AGGIUDICATARIE_AUTOCOMPLETE",
+                                            "noDataLabel": "NO-DATA",
+                                            "newEditAvailable": true,
+                                            "newItemButton": {
+                                                "code": "new",
+                                                "label": "BUTTONS.NUOVO",
+                                                "icon": "mgg-icons-crud-create",
+                                                "oggettoProtezione": "INS.*"
+                                            },
+                                            "editItemButton": {
+                                                "code": "edit",
+                                                "label": "BUTTONS.UPDATE",
+                                                "icon": "mgg-icons-crud-edit",
+                                                "oggettoProtezione": "MOD.*"
+                                            },
+                                            "validators": [
+                                                {
+                                                    "config": {
+                                                        "required": true
+                                                    },
+                                                    "messages": [
+                                                        {
+                                                            "level": "error",
+                                                            "text": "IMPRESA-IMPR-INV-PARTE.VALIDATORS.DENOMINAZIONE-OBBLIGATORIA"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "modalComponent": "impresa-modal-widget",
+                                            "modalComponentConfig": "impresaRWModalConfig"
+                                        },
+                                        {
+                                            "type": "COMBOBOX",
+                                            "code": "ruolo",
+                                            "label": "IMPRESA-IMPR-INV-PARTE.IMPRESA-DATA.RUOLO",
+                                            "oggettoProtezione": "W9.W9IMPRESE.RUOLO",
+                                            "mnemonico": "W9IMRUOLO",
+                                            "mappingInput": "ruolo",
+                                            "mappingOutput": "ruolo",
+                                            "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                            "listCode": "RuoloAssociazione"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

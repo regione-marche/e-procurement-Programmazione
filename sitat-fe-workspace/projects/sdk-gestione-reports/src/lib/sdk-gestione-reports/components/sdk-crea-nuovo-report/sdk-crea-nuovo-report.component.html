@@ -1,0 +1,163 @@
+<div [class]="config.classNames" *ngIf="isReady">
+    <h1 class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</h1>
+    <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+    <div class="messages-box" #infoBox></div>
+    <div class="messages-box" #messages></div>
+
+    <div class="sdk-crea-nuovo-report-container">
+        <div class="sdk-crea-nuovo-report-content">
+            <sdk-form-builder [config]="formBuilderConfigObs" (output)="manageFormOutput($event)">
+            </sdk-form-builder>
+            <div class="examples" *ngIf="schedula == '1'">
+                <table class="quartz" [attr.aria-label]="'HELP.CRON-EXPRESSION' | translate">
+                    <thead>
+                        <tr class="intestazione">
+                            <th colspan="5" scope="colgroup">Formato della pianificazione</th>
+                        </tr>
+                        <tr class="intestazione">
+                            <th scope="col">Posizione</th>
+                            <th scope="col">Nome del campo</th>
+                            <th scope="col">Obbligatorio&nbsp;?</th>
+                            <th scope="col">Valori possibili</th>
+                            <th scope="col">Caratteri speciali disponibili</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Secondi</td>
+                            <td>Si</td>
+                            <td>0-59</td>
+                            <td>, - * /</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Minuti</td>
+                            <td>Si</td>
+                            <td>0-59</td>
+                            <td>, - * /</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Ore</td>
+                            <td>Si</td>
+                            <td>0-23</td>
+                            <td>, - * /</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Giorni del mese</td>
+                            <td>Si</td>
+                            <td>1-31</td>
+                            <td>, - * ? / L W</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Mesi</td>
+                            <td>Si</td>
+                            <td>1-12 oppure JAN-DEC</td>
+                            <td>, - * /</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Giorni della settimana</td>
+                            <td>Si</td>
+                            <td>1-7 oppure SUN-SAT</td>
+                            <td>, - * ? / L #</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Anni</td>
+                            <td>No</td>
+                            <td>vuoto, 1970-2099</td>
+                            <td>, - * /</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="quartz" [attr.aria-label]="'HELP.CRON-EXPRESSION' | translate">
+                    <thead>
+                        <tr class="intestazione">
+                            <th colspan="3" scope="colgroup">Caratteri speciali</th>
+                        </tr>
+                        <tr class="intestazione">
+                            <th scope="col">Carattere</th>
+                            <th scope="col">Descrizione</th>
+                            <th scope="col">Esempio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>*</td>
+                            <td>Tutti i valori, utilizzato per selezionare tutti i valori di un campo</td>
+                            <td>Nel campo dei minuti "*" significa "ogni minuto"</td>
+                        </tr>
+                        <tr>
+                            <td>?</td>
+                            <td>Nessun valore specifico</td>
+                            <td>Se indicato nel campo dei giorni del mese permette di eseguire la pianificazione
+                                ignorando
+                                il giorno del mese</td>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>Intervallo, permette di indicare un intervallo di valori</td>
+                            <td>Nel campo delle ore "10-12" significa "ore 10, 11 e 12"</td>
+                        </tr>
+                        <tr>
+                            <td>,</td>
+                            <td>Lista di valori, permette di specificare una lista di valori distinti </td>
+                            <td>Nel campo dei giorni del mese "5,15" permette l'esecuzione solo nei giorni 5 e 15.</td>
+                        </tr>
+                        <tr>
+                            <td>/</td>
+                            <td>Incrementi, permette di definire un incremento da un valore fisso</td>
+                            <td>Nel campo dei secondi "0/15" significa "secondi 0, 15, 30 e 45"</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="quartz" [attr.aria-label]="'HELP.CRON-EXPRESSION' | translate">
+                    <thead>
+                        <tr class="intestazione">
+                            <th colspan="2" scope="colgroup">Alcuni esempi di pianificazione</th>
+                        </tr>
+                        <tr class="intestazione">
+                            <th scope="col">Pianificazione</th>
+                            <th scope="col">Significato</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>0/30 * * ? * *</td>
+                            <td>Esecuzione ogni trenta secondi di ogni minuto di ogni ora di ogni giorno</td>
+                        <tr>
+                        <tr>
+                            <td>0 0 0 1 * ?</td>
+                            <td>Esecuzione alla mezzanotte del primo giorno del mese</td>
+                        <tr>
+                        <tr>
+                            <td>0 0 * ? * *</td>
+                            <td>Esecuzione ad ogni ora</td>
+                        <tr>
+                        <tr>
+                            <td>0 0/5 * * * ? </td>
+                            <td>Esecuzione ogni 5 minuti di ogni giorno (ore 0.00, 0.05, 0.10, ...) </td>
+                        <tr>
+                        <tr>
+                            <td>0 59 7-20/1 * * ?</td>
+                            <td>Esecuzione ogni giorno, ogni ora dalle 7:59 alle 20:59</td>
+                        <tr>
+                        <tr>
+                            <td>0 0 0 1 1 ? 2099</td>
+                            <td>Esecuzione nel 2099, in pratica la pianificazione non &egrave; abilitata</td>
+                        <tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+    <sdk-dialog [config]="dialogConfigObs"></sdk-dialog>
+</div>

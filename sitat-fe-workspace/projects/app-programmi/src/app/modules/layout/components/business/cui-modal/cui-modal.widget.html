@@ -1,0 +1,14 @@
+<div class="cui-modal" *ngIf="isReady">
+    <div class="messages-box" #messages></div>
+    <div class="cui-container">
+        <sdk-textbox [config]="cuiConfigurationObs" [data]="calculateCuiSubject"></sdk-textbox>
+        <sdk-textbox [config]="cfConfigurationObs" [data]="calculateCfSubject"></sdk-textbox>
+        <sdk-textbox [config]="annoConfigurationObs" (output)="setAnno($event)" [data]="calculateAnnoSubject">
+        </sdk-textbox>
+        <sdk-textbox [config]="counterConfigurationObs" (output)="setCounter($event)" [data]="calculateCounterSubject">
+        </sdk-textbox>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,167 @@
+{
+    "name": "dettaglio-parametro-page",
+    "title": "TITLE.DETTAGLIO-PARAMETRO-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "dettaglio-parametro-page",       
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-modelli-page",
+                "label": "BREADCRUMB.RICERCA-MODELLI",
+                "slug": "ricerca-modelli-page"
+            },
+            {
+                "code": "lista-modelli-page",
+                "label": "BREADCRUMB.LISTA-MODELLI",
+                "slug": "lista-modelli-page"
+            },
+            {
+                "code": "dettaglio-modello-page",
+                "label": "BREADCRUMB.DETTAGLIO-MODELLO",
+                "slug": "dettaglio-modello-page",
+                "additionalParams": "SDK_DETTAGLIO_MODELLO_PARAMS"
+            },
+            {
+                "code": "dettaglio-parametro-page",
+                "label": "BREADCRUMB.DETTAGLIO-PARAMETRO",
+                "slug": "dettaglio-parametro-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-parametro-page-content-root-section",
+            "selector": "sdk-dettaglio-parametro-section",
+            "description": "Pagina dettaglio parametro",
+            "classNames": "dettaglio-parametro-section",
+            "settings": {
+                "classNames": "dettaglio-parametro-index",
+                "sectionTitle": "TITLE.DETTAGLIO-PARAMETRO-PAGE",                
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-parametri",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_MODELLI_LISTA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "go-to-update-parametro",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "SDK_GESTIONE_PARAMETRO"
+                        }
+                    ],
+                    "buttonsReadonly": [
+                        {
+                            "code": "back-to-lista-modelli",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_MODELLI_LISTA",
+                            "type": "cancel"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "SDK-PARAMETRO.GENERAL-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "codice",
+                                    "label": "SDK-PARAMETRO.GENERAL-DATA.CODICE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "codice",
+                                    "listCode": ""
+                                },{
+                                    "type": "TEXT",
+                                    "code": "obbligatorio",
+                                    "label": "SDK-PARAMETRO.GENERAL-DATA.OBBLIGATORIO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "obbl",
+                                    "listCode": "sinoboolean"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "nome",
+                                    "label": "SDK-PARAMETRO.GENERAL-DATA.DESCR-PRINC",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "nome"
+                                },{
+                                    "type": "TEXT",
+                                    "code": "descr",
+                                    "label": "SDK-PARAMETRO.GENERAL-DATA.DESCR",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "descr"
+                                },{
+                                    "type": "TEXT",
+                                    "code": "tipo",
+                                    "label": "SDK-PARAMETRO.GENERAL-DATA.TIPO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "tipo",
+                                    "listCode":"TipoParametroModello"
+                                },{
+                                    "type": "TEXT",
+                                    "code": "menu",
+                                    "label": "SDK-PARAMETRO.GENERAL-DATA.MENU",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "menu",
+                                    "visible":false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "tipo": {
+                                                "values": [
+                                                    {
+                                                        "value": "M",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },{
+                                    "type": "TEXT",
+                                    "code": "tabellato",
+                                    "label": "SDK-PARAMETRO.GENERAL-DATA.TABELLATO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "tab",
+                                    "visible":false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "tipo": {
+                                                "values": [
+                                                    {
+                                                        "value": "T",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

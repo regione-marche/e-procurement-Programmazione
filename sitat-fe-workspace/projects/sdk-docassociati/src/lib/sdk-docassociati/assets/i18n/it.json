@@ -1,0 +1,68 @@
+{
+  "SDK-DOC-ASSOCIATI": {
+    "C0OGGASS-LIST": {
+      "C0ADAT": "Data di inserimento",
+      "ACTION-DETAILS": "Azioni",
+      "C0ANOMOGG": "Nome file",
+      "C0ATIT": "Titolo",
+      "DIGOGG": "File",
+      "DIGOGG_REPLACE": "File (in sostituzione)",
+      "C0ATIPO": "Tipo documento",
+      "C0ASCAD": "Data scadenza documento",
+      "C0ANPROT": "Num. protocollo",
+      "C0ADPROT": "Data protocollo",
+      "C0ANATTO": "Num. atto",
+      "C0ADATTO": "Data atto",
+      "C0ANNOTE": "Annotazioni"
+
+    },
+    "BUTTONS": {
+      "DOC-ASSOCIATI-LIST": "Documenti associati ({{value}})"
+    },
+    "SIGN-MODAL":{
+      "TITLE":"Firmatari",
+      "NOME":"Firmatario",
+      "STATO":"Stato",
+      "DATA":"Data"
+    },
+    "ERRORS":{      
+        "ERROR-UNSIGNED-DOCUMENT": "Documento non firmato",
+        "ERROR-INVALID-SIGNATURE": "Firma non valida",
+        "ERROR-SIGNATURE-ERROR": "Si e' verificato un errore generico durante la valutazione della firma"
+    },
+    "SIGN-SUCCESS":"Firma valida",
+    "TITLE": {
+      "C0OGGASS-CREATE-PAGE": "Inserimento documento associato",
+      "C0OGGASS-DETAILS-PAGE": "Dettaglio documento associato",
+      "C0OGGASS-EDIT-PAGE": "Modifica documento associato",
+      "C0OGGASS-LIST-PAGE": "Lista documenti associati"
+    },
+    "BREADCRUMB": {
+      "C0OGGASS-LIST": "Lista documenti associati",
+      "C0OGGASS-CREATE": "Inserimento documento associato",
+      "C0OGGASS-DETAILS": "Dettaglio documento associato {{value}}",
+      "C0OGGASS-EDIT": "Modifica documento associato"
+    },
+    "C0OGGASS-DETAIL": {
+      "GENERAL-DATA": {
+        "TITLE": "Dati generali"
+      },
+      "C0ATIT": "Titolo",
+      "DIGOGG": "File",
+      "DIGOGG_REPLACE": "File (in sostituzione)",
+      "C0ATIPO": "Tipo documento",
+      "C0ASCAD": "Data scadenza documento",
+      "C0ANPROT": "Numero protocollo",
+      "C0ADPROT": "Data protocollo",
+      "C0ANATTO": "Numero atto",
+      "C0ADATTO": "Data atto",
+      "C0ANNOTE": "Annotazioni",
+      "C0ADAT": "Data di inserimento",
+      "ACTION-DETAILS": "Azioni",
+      "C0ANOMOGG": "Nome file",
+      "VALIDATORS": {
+        "C0ATIT-MANDATORY": "Il campo Titolo è obbligatorio."
+      }
+    }
+  }
+}

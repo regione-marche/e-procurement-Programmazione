@@ -1,0 +1,743 @@
+{
+    "name": "nuovo-lotto-page",
+    "title": "TITLE.NUOVO-LOTTO-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "nuovo-lotto-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "nuovo-lotto-page",
+                "label": "BREADCRUMB.NUOVO-LOTTO",
+                "slug": "nuovo-lotto-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "nuovo-lotto-page-content-root-section",
+            "selector": "nuovo-lotto-section",
+            "description": "Pagina di inserimento lotto",
+            "classNames": "nuovo-lotto-section",
+            "settings": {
+                "classNames": "nuovo-lotto-index",
+                "sectionTitle": "TITLE.NUOVO-LOTTO-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-lotti",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_GARE_LISTA_LOTTI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-lotto",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_LOTTO"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "LOTTO.GENERAL-DATA.GENERAL-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "cig",
+                                    "label": "LOTTO.GENERAL-DATA.CIG",
+                                    "oggettoProtezione": "W9.W9LOTT.CIG",
+                                    "mnemonico": "W3CIG",
+                                    "mappingInput": "cig",
+                                    "mappingOutput": "cig",
+                                    "maxLength": 10
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "oggetto-lotto",
+                                    "label": "LOTTO.GENERAL-DATA.OGGETTO-LOTTO",
+                                    "oggettoProtezione": "W9.W9LOTT.OGGETTO",
+                                    "mnemonico": "W3OGGETTO2",
+                                    "mappingInput": "oggetto",
+                                    "mappingOutput": "oggetto",
+                                    "maxLength": 1024
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "url-eproc",
+                                    "label": "LOTTO.GENERAL-DATA.URL-EPROC",
+                                    "oggettoProtezione": "W9.W9LOTT.URL_EPROC",
+                                    "mnemonico": "W9LOURLEPROC",
+                                    "mappingInput": "urlEproc",
+                                    "mappingOutput": "urlEproc",
+                                    "visible": false,
+                                    "maxLength": 2000
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "situazione",
+                                    "label": "LOTTO.GENERAL-DATA.SITUAZIONE",
+                                    "oggettoProtezione": "W9.W9LOTT.SITUAZIONE",
+                                    "mnemonico": "W9LOSITUAZ",
+                                    "mappingInput": "situazione",
+                                    "mappingOutput": "situazione",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "Situazione",
+                                    "maxLength": 7
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "numero-lotto",
+                                    "label": "LOTTO.GENERAL-DATA.NUMERO-LOTTO",
+                                    "oggettoProtezione": "W9.W9LOTT.NLOTTO",
+                                    "mnemonico": "W3NLOTTO",
+                                    "mappingInput": "numLotto",
+                                    "mappingOutput": "numLotto",
+                                    "decimals": 0,
+                                    "maxLength": 4
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tipo-appalto",
+                                    "label": "LOTTO.GENERAL-DATA.TIPO-APPALTO",
+                                    "oggettoProtezione": "W9.W9LOTT.TIPO_CONTRATTO",
+                                    "mnemonico": "W3TIPO_CON",
+                                    "mappingInput": "tipologia",
+                                    "mappingOutput": "tipologia",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "TipoAppalto",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "LOTTO.VALIDATORS.TIPO-APPALTO-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "cup-esente",
+                                    "label": "LOTTO.ECONOMICS-DATA.CUP-ESENTE",
+                                    "oggettoProtezione": "W9.W9LOTT.CUPESENTE",
+                                    "mnemonico": "W9CUPESENTE",
+                                    "mappingInput": "esenteCup",
+                                    "mappingOutput": "esenteCup",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "cup",
+                                    "label": "LOTTO.ECONOMICS-DATA.CUP",
+                                    "oggettoProtezione": "W9.W9LOTT.CUP",
+                                    "mnemonico": "W3CUP",
+                                    "mappingInput": "cup",
+                                    "mappingOutput": "cup",
+                                    "maxLength": 15,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "cup-esente": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "cui-programmazione",
+                                    "label": "LOTTO.GENERAL-DATA.CUI-PROGRAMMAZIONE",
+                                    "oggettoProtezione": "W9.W9LOTT.CUIINT",
+                                    "mnemonico": "W9LOCUIINT",
+                                    "mappingInput": "cui",
+                                    "mappingOutput": "cui",
+                                    "maxLength": 20
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "art-e1",
+                                    "label": "LOTTO.GENERAL-DATA.ART-E1",
+                                    "oggettoProtezione": "W9.W9LOTT.ART_E1",
+                                    "mnemonico": "W3LOARTE1",
+                                    "mappingInput": "contrattoEscluso",
+                                    "mappingOutput": "contrattoEscluso",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino",
+                                    "visible": false
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "id-scelta-contraente",
+                                    "label": "LOTTO.GENERAL-DATA.ID-SCELTA-CONTRAENTE",
+                                    "oggettoProtezione": "W9.W9LOTT.ID_SCELTA_CONTRAENTE",
+                                    "mnemonico": "W3ID_SCEL2",
+                                    "mappingInput": "sceltaContraente",
+                                    "mappingOutput": "sceltaContraente",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "SceltaContraente"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "id-scelta-contraente-50",
+                                    "label": "LOTTO.GENERAL-DATA.ID-SCELTA-CONTRAENTE-50",
+                                    "oggettoProtezione": "W9.W9LOTT.ID_SCELTA_CONTRAENTE_50",
+                                    "mnemonico": "W9ID_SCEL50",
+                                    "mappingInput": "sceltaContraenteLgs",
+                                    "mappingOutput": "sceltaContraenteLgs",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "SceltaContraente50",
+                                    "visible": false
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "id-modo-gara",
+                                    "label": "LOTTO.GENERAL-DATA.ID-MODO-GARA",
+                                    "oggettoProtezione": "W9.W9LOTT.ID_MODO_GARA",
+                                    "mnemonico": "W3MOD_GAR",
+                                    "mappingInput": "criteriAggiudicazione",
+                                    "mappingOutput": "criteriAggiudicazione",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "CriterioAggiudicazione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "id-scheda-locale",
+                                    "label": "LOTTO.GENERAL-DATA.ID-SCHEDA-LOCALE",
+                                    "oggettoProtezione": "W9.W9LOTT.ID_SCHEDA_LOCALE",
+                                    "mnemonico": "W9LOSCHLOC",
+                                    "mappingInput": "idSchedalocale",
+                                    "mappingOutput": "idSchedalocale",
+                                    "visible": false
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "prestazione-comprese-appalto",
+                                    "label": "LOTTO.GENERAL-DATA.PRESTAZIONE-COMPRESE-APPALTO",
+                                    "oggettoProtezione": "W9.W9LOTT.ID_TIPO_PRESTAZIONE",
+                                    "mnemonico": "W3ID_TIPO",
+                                    "mappingInput": "prestazioneComprese",
+                                    "mappingOutput": "prestazioneComprese",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "PrestazioniComprese"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "DYNAMIC-FORM-SECTION",
+                            "code": "acquisizione-forniture-servizi-data",
+                            "label": "LOTTO.AQUISIZIONE-FORNITURE-SERVIZI-DATA.AQUISIZIONE-FORNITURE-SERVIZI-DATA",
+                            "mappingInput": "modalitaAcquisizione",
+                            "mappingOutput": "modalitaAcquisizione",
+                            "oggettoProtezione": "W9.W9LOTT-scheda.DATIDET.MODFORN",
+                            "dynamicMultipleLabel": "LOTTO.AQUISIZIONE-FORNITURE-SERVIZI-DATA.AQUISIZIONE-FORNITURE-SERVIZI-DATA-PROGRESSIVO"
+                        },
+                        {
+                            "type": "DYNAMIC-FORM-SECTION",
+                            "code": "tipologia-lavoro-data",
+                            "label": "LOTTO.TIPOLOGIA-LAVORO-DATA.TIPOLOGIA-LAVORO-DATA",
+                            "mappingInput": "modalitaTipologiaLavoro",
+                            "mappingOutput": "modalitaTipologiaLavoro",
+                            "oggettoProtezione": "W9.W9LOTT-scheda.DATIDET.MODLAV",
+                            "dynamicMultipleLabel": "LOTTO.TIPOLOGIA-LAVORO-DATA.TIPOLOGIA-LAVORO-DATA-PROGRESSIVO"
+                        },
+                        {
+                            "type": "DYNAMIC-FORM-SECTION",
+                            "code": "condizioni-procedura-negoziata-data",
+                            "label": "LOTTO.CONDIZIONI-PROCEDURA-NEGOZIATA-DATA.CONDIZIONI-PROCEDURA-NEGOZIATA-DATA",
+                            "mappingInput": "condizioniRicorsoProcNeg",
+                            "mappingOutput": "condizioniRicorsoProcNeg",
+                            "oggettoProtezione": "W9.W9LOTT-scheda.DATIDET.CONDIZ",
+                            "dynamicMultipleLabel": "LOTTO.CONDIZIONI-PROCEDURA-NEGOZIATA-DATA.CONDIZIONI-PROCEDURA-NEGOZIATA-DATA-PROGRESSIVO",
+                            "visible": false,
+                            "visibleCondition": {
+                                "or": {
+                                    "id-scelta-contraente": {
+                                        "values": [
+                                            {
+                                                "value": "4",
+                                                "operation": "="
+                                            },
+                                            {
+                                                "value": "10",
+                                                "operation": "="
+                                            }
+                                        ],
+                                        "visible": false
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "economics-data",
+                            "label": "LOTTO.ECONOMICS-DATA.ECONOMICS-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-lotto",
+                                    "label": "LOTTO.ECONOMICS-DATA.IMPORTO-LOTTO",
+                                    "oggettoProtezione": "W9.W9LOTT.IMPORTO_LOTTO",
+                                    "mnemonico": "W3I_LOTTO",
+                                    "mappingInput": "importoNetto",
+                                    "mappingOutput": "importoNetto",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "LOTTO.VALIDATORS.IMPORTO-LOTTO-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-attuazione-sicurezza",
+                                    "label": "LOTTO.ECONOMICS-DATA.IMPORTO-ATTUAZIONE-SICUREZZA",
+                                    "oggettoProtezione": "W9.W9LOTT.IMPORTO_ATTUAZIONE_SICUREZZA",
+                                    "mnemonico": "W3I_ATTSIC",
+                                    "mappingInput": "importoSicurezza",
+                                    "mappingOutput": "importoSicurezza",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-totale",
+                                    "label": "LOTTO.ECONOMICS-DATA.IMPORTO-TOTALE",
+                                    "oggettoProtezione": "W9.W9LOTT.IMPORTO_TOT",
+                                    "mnemonico": "W9IMPTOTLO",
+                                    "mappingInput": "importoTotale",
+                                    "mappingOutput": "importoTotale",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "TEXTMODAL",
+                                    "code": "cpv",
+                                    "label": "LOTTO.ECONOMICS-DATA.CPV",
+                                    "oggettoProtezione": "W9.W9LOTT.CPV",
+                                    "mnemonico": "W3CPV",
+                                    "mappingInput": "cpv",
+                                    "mappingOutput": "cpv",
+                                    "modalComponent": "cpv-modal-widget",
+                                    "modalComponentConfig": {
+                                        "data": {
+                                            "buttons": [
+                                                {
+                                                    "code": "modal-close-button",
+                                                    "label": "BUTTONS.ANNULLA",
+                                                    "icon": "mgg-icons-crud-cancel"
+                                                },
+                                                {
+                                                    "code": "set-button",
+                                                    "label": "BUTTONS.SET",
+                                                    "icon": "mgg-icons-crud-save"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "descrizione-cpv",
+                                    "label": "LOTTO.ECONOMICS-DATA.DESCRIZIONE-CPV",
+                                    "oggettoProtezione": "W9.W9LOTT.CPV",
+                                    "mnemonico": "W3CPV",
+                                    "mappingInput": "descCpv"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "cpv-secondario-data",
+                            "label": "LOTTO.CPV-SECONDARIO-DATA.CPV-SECONDARIO-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "FORM-GROUP",
+                                    "code": "cpv-secondari-group",
+                                    "label": "",
+                                    "minGroupsNumber": 0,
+                                    "maxGroupsNumber": 0,
+                                    "mappingInput": "cpvSecondari",
+                                    "mappingOutput": "cpvSecondari",
+                                    "defaultFormGroupFields": [
+                                        {
+                                            "type": "TEXTMODAL",
+                                            "code": "cpv-secondario",
+                                            "label": "LOTTO.CPV-SECONDARIO-DATA.CPV-SECONDARIO",
+                                            "oggettoProtezione": "W9.W9LOTT.CPV",
+                                            "mnemonico": "W3CPV",
+                                            "mappingInput": "codCpv",
+                                            "mappingOutput": "codCpv",
+                                            "modalComponent": "cpv-modal-widget",
+                                            "modalComponentConfig": {
+                                                "data": {
+                                                    "buttons": [
+                                                        {
+                                                            "code": "modal-close-button",
+                                                            "label": "BUTTONS.ANNULLA",
+                                                            "icon": "mgg-icons-crud-cancel"
+                                                        },
+                                                        {
+                                                            "code": "set-button",
+                                                            "label": "BUTTONS.SET",
+                                                            "icon": "mgg-icons-crud-save"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "descrizione-cpv-secondario",
+                                            "label": "LOTTO.CPV-SECONDARIO-DATA.DESCRIZIONE-CPV-SECONDARIO",
+                                            "oggettoProtezione": "W9.W9LOTT.CPV",
+                                            "mnemonico": "W3CPV",
+                                            "mappingInput": "descCpv"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "in-opera-manodopera",
+                                    "label": "LOTTO.CPV-SECONDARIO-DATA.IN-OPERA-MANODOPERA",
+                                    "oggettoProtezione": "W9.W9LOTT.MANOD",
+                                    "mnemonico": "W3MANOLO",
+                                    "mappingInput": "manodopera",
+                                    "mappingOutput": "manodopera",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino",
+                                    "visible": false,
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "LOTTO.VALIDATORS.IN-OPERA-MANODOPERA-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "categoria-prevalente-lavori",
+                                    "label": "LOTTO.CPV-SECONDARIO-DATA.CATEGORIA-PREVALENTE",
+                                    "oggettoProtezione": "W9.W9LOTT.ID_CATEGORIA_PREVALENTE",
+                                    "mnemonico": "W3ID_CATE4",
+                                    "mappingInput": "categoriaPrev",
+                                    "mappingOutput": "categoriaPrev",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "Categorie",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "and": {
+                                            "tipo-appalto": {
+                                                "values": [
+                                                    {
+                                                        "value": "S",
+                                                        "operation": "!="
+                                                    },
+                                                    {
+                                                        "value": "F",
+                                                        "operation": "!="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "categoria-prevalente-servizi",
+                                    "label": "LOTTO.CPV-SECONDARIO-DATA.CATEGORIA-PREVALENTE",
+                                    "oggettoProtezione": "W9.W9LOTT.ID_CATEGORIA_PREVALENTE",
+                                    "mnemonico": "W3ID_CATE4",
+                                    "mappingInput": "categoriaPrev",
+                                    "mappingOutput": "categoriaPrev",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "CategorieServizi",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "tipo-appalto": {
+                                                "values": [
+                                                    {
+                                                        "value": "S",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "categoria-prevalente-forniture",
+                                    "label": "LOTTO.CPV-SECONDARIO-DATA.CATEGORIA-PREVALENTE",
+                                    "oggettoProtezione": "W9.W9LOTT.ID_CATEGORIA_PREVALENTE",
+                                    "mnemonico": "W3ID_CATE4",
+                                    "mappingInput": "categoriaPrev",
+                                    "mappingOutput": "categoriaPrev",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "CategorieForniture",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "tipo-appalto": {
+                                                "values": [
+                                                    {
+                                                        "value": "F",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "classe-importo-categoria-prevalente",
+                                    "label": "LOTTO.CPV-SECONDARIO-DATA.CLASSE-IMPORTO-CATEGORIA-PREVALENTE",
+                                    "oggettoProtezione": "W9.W9LOTT.CLASCAT",
+                                    "mnemonico": "W3CALSCAT",
+                                    "mappingInput": "classeCategoriaPrev",
+                                    "mappingOutput": "classeCategoriaPrev",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "Classe",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "and": {
+                                            "categoria-prevalente": {
+                                                "values": [
+                                                    {
+                                                        "value": null,
+                                                        "operation": "!="
+                                                    },
+                                                    {
+                                                        "value": "",
+                                                        "operation": "!="
+                                                    },
+                                                    {
+                                                        "value": "FS",
+                                                        "operation": "!="
+                                                    },
+                                                    {
+                                                        "value": "FB",
+                                                        "operation": "!="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "ulteriori-categorie-data",
+                            "label": "LOTTO.ULTERIORI-CATEGORIE-DATA.ULTERIORI-CATEGORIE-DATA",
+                            "visible": false,
+                            "visibleCondition": {
+                                "and": {
+                                    "tipo-appalto": {
+                                        "values": [
+                                            {
+                                                "value": "L",
+                                                "operation": "="
+                                            }
+                                        ],
+                                        "visible": false
+                                    },
+                                    "exsottosoglia": {
+                                        "values": [
+                                            {
+                                                "value": "2",
+                                                "operation": "="
+                                            },
+                                            {
+                                                "value": null,
+                                                "operation": "="
+                                            }
+                                        ],
+                                        "visible": false,
+                                        "singleVisibleType": "or"
+                                    },
+                                    "importo-totale": {
+                                        "values": [
+                                            {
+                                                "value": 40000,
+                                                "operation": ">="
+                                            }
+                                        ],
+                                        "visible": false
+                                    }
+                                }
+                            },
+                            "fieldSections": [
+                                {
+                                    "type": "FORM-GROUP",
+                                    "code": "ulteriori-categorie-group",
+                                    "label": "",
+                                    "minGroupsNumber": 0,
+                                    "maxGroupsNumber": 0,
+                                    "mappingInput": "ulterioriCategorie",
+                                    "mappingOutput": "ulterioriCategorie",
+                                    "defaultFormGroupFields": [
+                                        {
+                                            "type": "COMBOBOX",
+                                            "code": "ult-cat-categoria",
+                                            "label": "LOTTO.ULTERIORI-CATEGORIE-DATA.CATEGORIA",
+                                            "mappingInput": "categoria",
+                                            "mappingOutput": "categoria",
+                                            "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                            "listCode": "Categorie"
+                                        },
+                                        {
+                                            "type": "COMBOBOX",
+                                            "code": "ult-cat-classe-importo",
+                                            "label": "LOTTO.ULTERIORI-CATEGORIE-DATA.CLASSE-IMPORTO",
+                                            "mappingInput": "classe",
+                                            "mappingOutput": "classe",
+                                            "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                            "listCode": "Classe"
+                                        },
+                                        {
+                                            "type": "COMBOBOX",
+                                            "code": "ult-cat-scorporabile",
+                                            "label": "LOTTO.ULTERIORI-CATEGORIE-DATA.SCORPORABILE",
+                                            "mappingInput": "scorporabile",
+                                            "mappingOutput": "scorporabile",
+                                            "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                            "listCode": "sino"
+                                        },
+                                        {
+                                            "type": "COMBOBOX",
+                                            "code": "ult-cat-subappaltabile",
+                                            "label": "LOTTO.ULTERIORI-CATEGORIE-DATA.SUBAPPALTABILE",
+                                            "mappingInput": "subappaltabile",
+                                            "mappingOutput": "subappaltabile",
+                                            "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                            "listCode": "sino"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "localizzazione-data",
+                            "label": "LOTTO.LOCALIZZAZIONE-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "luogo-istat",
+                                    "label": "LOTTO.LOCALIZZAZIONE-DATA.LUOGO-ISTAT",
+                                    "oggettoProtezione": "W9.W9LOTT.LUOGO_ISTAT",
+                                    "mnemonico": "W3LUOGO_IS",
+                                    "mappingInput": "luogoIstat",
+                                    "mappingOutput": "luogoIstat",
+                                    "noDataLabel": "NO-DATA",
+                                    "itemsProviderCode": "APP_GARE_COMUNI_ISTAT",
+                                    "minSearchCharacters": 2
+                                },
+                                {
+                                    "type": "TEXTMODAL",
+                                    "code": "luogo-nuts",
+                                    "label": "LOTTO.LOCALIZZAZIONE-DATA.LUOGO-NUTS",
+                                    "oggettoProtezione": "W9.W9LOTT.LUOGO_NUTS",
+                                    "mnemonico": "W3LUOGO_NU",
+                                    "mappingInput": "luogoNuts",
+                                    "mappingOutput": "luogoNuts",
+                                    "maxLength": 5,
+                                    "modalComponent": "nuts-modal-widget",
+                                    "modalComponentConfig": {
+                                        "data": {
+                                            "buttons": [
+                                                {
+                                                    "code": "modal-close-button",
+                                                    "label": "BUTTONS.ANNULLA",
+                                                    "icon": "mgg-icons-crud-cancel",
+                                                    "provider": "APP_AVVISI_MODAL_WINDOW"
+                                                },
+                                                {
+                                                    "code": "set-button",
+                                                    "label": "BUTTONS.SET",
+                                                    "icon": "mgg-icons-crud-save"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "exsottosoglia",
+                                    "label": "",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "exsottosoglia",
+                                    "mappingOutput": "exsottosoglia",
+                                    "visible": false
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

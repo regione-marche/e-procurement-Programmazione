@@ -1,0 +1,39 @@
+<div class="ma-modal" *ngIf="isReady">
+    <div class="messages-box" #messages></div>
+    <!-- Messaggi in arrivo -->
+    <div class="ma-container">
+        <div class="ma-testata">
+            <h1 class="title">{{ 'MESSAGGI-AVVISI.MESSAGGI-IN-ARRIVO' | translate }}</h1>
+        </div>
+        <div class="ma-content">
+            <div class="messaggi-in-arrivo">
+                <div class="messaggio-item"
+                    *ngFor="let messaggio of messaggiInArrivo; trackBy: trackByCode; let i = index">
+                    <div class="messaggio-content">
+                        <div class="body" sdkClick (aClick)="markReadUnread(messaggio)" tabindex="0" role="article">
+                            <div class="titolo">
+                                <div class="non-letto" *ngIf="messaggio.letto === 0">
+                                    <!-- {{ 'MESSAGGI-AVVISI.NON-LETTO' | translate }} -->
+                                </div>
+                                {{messaggio.oggetto}}
+                            </div>
+                            {{messaggio.corpoMessaggio}}
+                        </div>
+                        <div class="actions">
+                            <div sdkClick (aClick)="deleteCurrentMessaggioInArrivo(messaggio)" tabindex="0"
+                                role="button" [attr.aria-label]="'BUTTONS.ELIMINA' | translate">
+                                <i class="mgg-icons-crud-delete"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider" *ngIf="i < messaggiInArrivo.length - 1"></div>
+                </div>
+                <div class="empty-messages"
+                    *ngIf="messaggiInArrivo === undefined || messaggiInArrivo === null || messaggiInArrivo.length === 0"
+                    [attr.aria-label]="'NO-MESSAGE-DATA' | translate">
+                    {{ 'NO-MESSAGE-DATA' | translate }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

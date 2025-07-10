@@ -1,0 +1,68 @@
+{
+    "name": "modifica-profili-utente-page",
+    "title": "TITLE.MODIFICA-PROFILI-UTENTE-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "modifica-profili-utente-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-utenti-page",
+                "label": "BREADCRUMB.RICERCA-UTENTI",
+                "slug": "ricerca-utenti-page"
+            },
+            {
+                "code": "lista-utenti-page",
+                "label": "BREADCRUMB.LISTA-UTENTI",
+                "slug": "lista-utenti-page"
+            },
+            {
+                "code": "profili-utente-page",
+                "label": "BREADCRUMB.PROFILI-UTENTE",
+                "slug": "profili-utente-page",
+                "additionalParams": "SDK_GESTIONE_UTENTI_DETTAGLIO_UTENTE_PARAMS"
+            },
+            {
+                "code": "modifica-profili-utente-page",
+                "label": "BREADCRUMB.MODIFICA-PROFILI-UTENTE",
+                "slug": "modifica-profili-utente-page",
+                "additionalParams": "SDK_GESTIONE_UTENTI_DETTAGLIO_UTENTE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-profili-utente-page-content-root-section",
+            "selector": "sdk-modifica-profili-utente-section",
+            "description": "Pagina modifica profili utente",
+            "classNames": "modifica-profili-utente-section",
+            "settings": {
+                "classNames": "modifica-profili-utente-index",
+                "sectionTitle": "TITLE.MODIFICA-PROFILI-UTENTE-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-profili-utente",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "SDK_GESTIONE_UTENTI_LISTA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-profili-utente",
+                            "label": "BUTTONS.SET",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "SDK_GESTIONE_UTENTI_PROFILI_UTENTE"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

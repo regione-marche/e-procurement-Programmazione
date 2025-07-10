@@ -1,0 +1,473 @@
+{
+    "name": "modifica-dettaglio-atto-generale-page",
+    "title": "TITLE.MODIFICA-ATTO-GENERALE-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "modifica-dettaglio-atto-generale-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-atti-generali-page",
+                "label": "BREADCRUMB.LISTA-ATTI-GENERALI",
+                "slug": "lista-atti-generali-page"
+            },
+            {
+                "code": "dettaglio-atto-generale-page",
+                "label": "BREADCRUMB.DETTAGLIO-ATTO-GENERALE",
+                "slug": "dettaglio-atto-generale-page"
+            },
+            {
+                "code": "modifica-dettaglio-atto-generale-page",
+                "label": "BREADCRUMB.MODIFICA-ATTO-GENERALE",
+                "slug": "modifica-dettaglio-atto-generale-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-dettaglio-atto-generale-page-content-root-section",
+            "selector": "modifica-dettaglio-atto-generale-section",
+            "description": "Pagina di modifica del dettaglio di un atto generale",
+            "classNames": "modifica-dettaglio-atto-generale-section",
+            "settings": {
+                "classNames": "modifica-dettaglio-atto-generale-index",
+                "sectionTitle": "MODIFICA-ATTO-GENERALE.TITLE-SECTION",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-dettaglio-atto",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_CONTRATTI_ATTI_GENERALI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "salva-atto",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_CONTRATTI_MODIFICA_ATTO_GENERALE"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "MODIFICA-ATTO-GENERALE.DATI-GENERALI",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "stazione-appaltante",
+                                    "label": "MODIFICA-ATTO-GENERALE.GENERAL-DATA.NOMEIN",
+                                    "mappingInput": "stazioneAppaltante",
+                                    "mappingOutput": "stazioneAppaltante",
+                                    "oggettoProtezione": "ALT.GENE.associazioneUffintAbilitata"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "idAtto",
+                                    "label": "MODIFICA-ATTO-GENERALE.GENERAL-DATA.IDATTO",
+                                    "mappingInput": "idAtto",
+                                    "mappingOutput": "idAtto"
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "rup",
+                                    "label": "MODIFICA-ATTO-GENERALE.GENERAL-DATA.RUP",
+				                    "oggettoProtezione": "W9.ATTIGENERALI.RUP",
+                                    "mnemonico": "W9PARUP",
+                                    "itemsProviderCode": "APP_AVVISI_RUP_AVVISO",
+                                    "noDataLabel": "NO-DATA",
+                                    "mappingInput": "rup",
+                                    "mappingOutput": "rup"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "dati-atto",
+                            "label": "MODIFICA-ATTO-GENERALE.DATI-ATTO",
+                            "fieldSections": [
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tipoAtto",
+                                    "label": "MODIFICA-ATTO-GENERALE.DATI.TIPO-ATTO",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "TipoAttoGeneraleCombo",
+                                    "mappingInput": "tipoAtto",
+                                    "mappingOutput": "tipoAtto",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "MODIFICA-ATTO-GENERALE.VALIDATORS.TIPO-ATTO-OBBLIG"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tipologia",
+                                    "label": "NUOVO-ATTO-GENERALE.DATI.TIPOLOGIA",
+                                    "mappingInput": "tipologia",
+                                    "mappingOutput": "tipologia",
+                                    "listCode": "TipoAttoGenerale",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "MODIFICA-ATTO-GENERALE.VALIDATORS.TIPOLOGIA-OBBLIG"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "visibleCondition": {
+                                        "or": {
+                                            "tipoAtto": {
+                                                "values": [
+                                                    {
+                                                        "value": null,
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tipologiaAttiGenerali",
+                                    "label": "NUOVO-ATTO-GENERALE.DATI.TIPOLOGIA",
+                                    "mappingInput": "tipologia",
+                                    "mappingOutput": "tipologia",
+                                    "listCode": "TipoAttoGeneraleAG",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "MODIFICA-ATTO-GENERALE.VALIDATORS.TIPOLOGIA-OBBLIG"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "visibleCondition": {
+                                        "or": {
+                                            "tipoAtto": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tipologiaManifestazione",
+                                    "label": "NUOVO-ATTO-GENERALE.DATI.TIPOLOGIA",
+                                    "mappingInput": "tipologia",
+                                    "mappingOutput": "tipologia",
+                                    "listCode": "TipoAttoGeneraleMA",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "MODIFICA-ATTO-GENERALE.VALIDATORS.TIPOLOGIA-OBBLIG"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "visibleCondition": {
+                                        "or": {
+                                            "tipoAtto": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "descrizione",
+                                    "label": "MODIFICA-ATTO-GENERALE.DATI.DESCRIZIONE",
+                                    "mappingInput": "descrizione",
+                                    "mappingOutput": "descrizione",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "MODIFICA-ATTO-GENERALE.VALIDATORS.DESCRIZIONE-OBBLIG"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "label": "MODIFICA-ATTO-GENERALE.DATI.DATA-ATTO",
+                                    "code": "dataAtto",
+                                    "mappingInput": "dataAtto",
+                                    "mappingOutput": "dataAtto"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "numeroAtto",
+                                    "label": "MODIFICA-ATTO-GENERALE.DATI.NUMERO-ATTO",
+                                    "mappingInput": "numeroAtto",
+                                    "mappingOutput": "numeroAtto"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "primaPubb",
+                                    "label": "MODIFICA-ATTO-GENERALE.DATI.PRIMA-PUBB",
+                                    "listCode": "sino",
+                                    "mappingInput": "primaPubb",
+                                    "mappingOutput": "primaPubb",
+                                    "showClear": false,
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "MODIFICA-ATTO-GENERALE.VALIDATORS.PRIMA-PUBB-OBBLIG"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "label": "MODIFICA-ATTO-GENERALE.DATI.DATA-PRIMA-PUBB",
+                                    "code": "dataPrimaPubb",
+                                    "mappingInput": "dataPrimaPubb",
+                                    "mappingOutput": "dataPrimaPubb",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "primaPubb": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    },
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "MODIFICA-ATTO-GENERALE.VALIDATORS.DATA-PRIMA-PUBB-OBBLIG"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "label": "MODIFICA-ATTO-GENERALE.DATI.DATA-PUBB-SISTEMA",
+                                    "code": "dataPubbSistema",
+                                    "mappingInput": "dataPubbSistema",
+                                    "showTime": true
+                                },
+                                {
+                                    "type": "HIDDEN",
+                                    "label": "MODIFICA-ATTO-GENERALE.DATI.DATA-PUBB-SISTEMA",
+                                    "code": "dateHidden",
+                                    "mappingInput": "dataPubbSistema",
+                                    "mappingOutput": "dataPubbSistema"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "label": "MODIFICA-ATTO-GENERALE.DATI.DATA-SCADENZA",
+                                    "code": "dataScadenza",
+                                    "mappingInput": "dataScadenza",
+                                    "mappingOutput": "dataScadenza",
+                                    "visibleCondition": {
+                                        "or": {
+                                            "tipoAtto": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    },
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "MODIFICA-ATTO-GENERALE.VALIDATORS.DATA-SCADENZA-OBBLIG"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "documenti-data",
+                            "label": "ATTO.DOCUMENTS-DATA.DOCUMENTS-DATA",
+                            "sectionClass": ["styleuploadsection"],
+                            "fieldSections": [
+                                {
+                                    "type": "DOCUMENTS-LIST",
+                                    "code": "documents-list",
+                                    "mnemonico": "W9DGURL",
+                                    "mappingInput": "documents",
+                                    "mappingOutput": "documents",
+                                    "clickable": true,
+                                    "hideHeaderTitle": true
+                                },
+                                {
+                                    "type": "FORM-SECTION",
+                                    "code": "documenti-data-upload",
+                                    "label": "MODIFICA-ATTO-GENERALE.DOCUMENTS-DATA.NEW-DOCUMENTS",
+                                    "sectionClass": ["styleuploader"],
+                                    "visibleCondition": {
+                                        "or": {
+                                            "primaPubb": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    },
+                                    "fieldSections": [
+                                        {
+                                            "type": "FORM-GROUP",
+                                            "code": "documents-data-group",
+                                            "label": "",
+                                            "minGroupsNumber": 0,
+                                            "maxGroupsNumber": 0,
+                                            "defaultFormGroupFields": [
+                                                {
+                                                    "type": "DOCUMENT",
+                                                    "code": "doucment-field",
+                                                    "label": "",
+                                                    "fileInputLabel": "ATTO.CHOOSE-FILE",
+                                                    "titleInputLabel": "ATTO.TITOLO-DOCUMENT",
+                                                    "maxFileSize": "25 MB",
+                                                    "maxFileSizeLabel": "VALIDATORS.MAX-FILE-SIZE",
+                                                    "wrongExtensionLabel": "VALIDATORS.WRONG-EXTENSION",
+                                                    "mnemonico": "W9DGURL",
+                                                    "mappingOutput": "updateDocuments",
+                                                    "mandatory": true,
+                                                    "onlyFile": true,
+                                                    "accept": ".pdf,.p7m,.zip",
+                                                    "maxTitleLength": 250
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "FORM-SECTION",
+                                    "code": "documenti-data-url",
+                                    "label": "MODIFICA-ATTO-GENERALE.DOCUMENTS-DATA.NEW-DOCUMENTS",
+                                    "sectionClass": ["styleuploader"],
+                                    "visibleCondition": {
+                                        "or": {
+                                            "primaPubb": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    },
+                                    "fieldSections": [
+                                        {
+                                            "type": "FORM-GROUP",
+                                            "code": "documents-data-group",
+                                            "label": "",
+                                            "minGroupsNumber": 0,
+                                            "maxGroupsNumber": 0,
+                                            "defaultFormGroupFields": [
+                                                {
+                                                    "type": "DOCUMENT",
+                                                    "code": "doucment-field-url",
+                                                    "label": "",
+                                                    "urlLabel": "ATTO.URL",
+                                                    "titleInputLabel": "ATTO.TITOLO-DOCUMENT",
+                                                    "mnemonico": "W9DGURL",
+                                                    "mappingOutput": "updateDocuments",
+                                                    "mandatory": true,
+                                                    "onlyUrl": true,
+                                                    "maxTitleLength": 250
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                } 
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

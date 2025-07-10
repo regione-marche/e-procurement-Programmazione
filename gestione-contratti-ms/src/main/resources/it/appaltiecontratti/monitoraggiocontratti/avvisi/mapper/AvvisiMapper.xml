@@ -1,0 +1,79 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+	namespace="it.appaltiecontratti.monitoraggiocontratti.avvisi.mapper.AvvisiMapper">
+
+	<resultMap id="listaAvvisiMap"
+		type="it.appaltiecontratti.monitoraggiocontratti.avvisi.entity.AvvisoEntry">
+		<id column="id" property="id" />
+		<result column="codein" property="stazioneAppaltante" />
+		<result column="idavviso" property="numeroAvviso" />
+		<result column="codsistema" property="codSistema" />
+		<result column="tipoavv" property="tipoAvviso" />
+		<result column="dataavv" property="dataAvviso" />
+		<result column="descri" property="descrizione" />
+		<result column="cig" property="cig" />
+		<result column="datascadenza" property="dataScadenza" />
+		<result column="cup" property="cup" />
+		<result column="cuiint" property="cui" />
+		<result column="rup" property="rup" />
+		<result column="id_generato" property="idGenerato" />
+		<result column="id_ricevuto" property="idRicevuto" />
+		<result column="syscon" property="syscon" />
+	</resultMap>
+
+
+	<select id="getAvvisi" resultMap="listaAvvisiMap"
+		parameterType="hashmap">
+		SELECT codein, idavviso, codsistema, tipoavv, dataavv, descri, cig,
+		datascadenza, cup, cuiint, rup, id_generato, id_ricevuto, syscon from avviso
+		WHERE
+		1=1
+		<include refid="filtroAvvisi"></include>
+		order by
+		<if test="sort == 'dataScadenza'"> datascadenza </if>
+		<if test="sort == 'dataAvviso'"> dataavv </if>
+		<if test="sort == 'descrizione'"> descri </if>
+		<if test="sort == 'tipoAvviso'"> tipoavv</if>
+		<if test="sort == 'cig'"> cig </if>
+		<if test="sort == 'numeroAvviso'"> idavviso </if>
+		<if test="sortDirection == 'asc'"> asc </if>
+		<if test="sortDirection == 'desc'"> desc </if>
+	</select>
+
+	<select id="countSearchAvvisi" resultType="int"
+		parameterType="hashmap">
+		SELECT count(DISTINCT idavviso) from avviso
+		where 1 = 1
+		<include refid="filtroAvvisi"></include>
+	</select>
+
+	<sql id="filtroAvvisi">
+		<if test="stazioneAppaltante != null">AND codein = #{stazioneAppaltante} </if>
+		<if test="numeroAvviso != null">AND idavviso = #{numeroAvviso} </if>
+		<if test="tipologia != null">AND tipoavv = #{tipologia} </if>
+		<if test="descrizione != null">AND descri like #{descrizione} </if>
+		<if test="cup != null">AND cup like #{cup} </if>
+		<if test="cig != null">AND cig = #{cig} </if>
+		<if test="dataDa != null">AND <![CDATA[dataavv >= #{dataDa}]]></if>
+		<if test="dataA != null">AND <![CDATA[dataavv <= #{dataA}]]></if>
+		<if test="dataScadenzaDa != null">AND <![CDATA[datascadenza >= #{dataScadenzaDa}]]></if>
+		<if test="dataScadenzaA != null">AND <![CDATA[datascadenza <= #{dataScadenzaA}]]></if>
+		<if test="syscon != null">AND (syscon is null or syscon = #{syscon}) </if>
+	</sql>
+
+	<sql id="filtroAvvisiNonPaginati">
+		<if test="stazioneAppaltante != null">AND codein = #{stazioneAppaltante} </if>
+		<if test="syscon != null">AND (syscon is null or syscon = #{syscon}) </if>
+		<if test="searchStringLike != null">AND (LOWER(descri) like #{searchStringLike}) </if>
+	</sql>
+
+	<select id="getListaAvvisiNonPaginata"
+		resultMap="listaAvvisiMap" parameterType="hashmap">
+		SELECT codein, idavviso, codsistema, tipoavv, dataavv, descri, cig,
+		datascadenza, cup, cuiint, rup, id_generato, id_ricevuto, syscon from avviso
+		WHERE
+		1=1
+		<include refid="filtroAvvisiNonPaginati"></include>
+	</select>
+</mapper>

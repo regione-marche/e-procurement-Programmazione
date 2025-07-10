@@ -1,0 +1,16 @@
+.sdk-risultati-esecuzione-report-content {
+
+  .p-accordion-header-link {
+    .p-accordion-toggle-icon,
+    span{
+      color: #06c;
+    }
+  }
+
+  .p-accordion-header.p-highlight .p-accordion-header-link {
+    .p-accordion-toggle-icon,
+    span {
+      color: white;
+    }
+  }
+}

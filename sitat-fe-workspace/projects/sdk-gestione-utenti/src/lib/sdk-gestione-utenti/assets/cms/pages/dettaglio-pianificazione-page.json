@@ -1,0 +1,155 @@
+{
+    "name": "dettaglio-pianificazione-page",
+    "title": "TITLE.DETTAGLIO-PIANIFICAZIONE-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "dettaglio-pianificazione-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-pianificazioni-page",
+                "label": "BREADCRUMB.LISTA-PIANIFICAZIONI",
+                "slug": "lista-pianificazioni-page"
+            },
+            {
+                "code": "dettaglio-pianificazione-page",
+                "label": "BREADCRUMB.DETTAGLIO-PIANIFICAZIONE",
+                "slug": "dettaglio-pianificazione-page",
+                "additionalParams": "SDK_GESTIONE_UTENTI_DETTAGLIO_PIANIFICAZIONE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-pianificazione-page-content-root-section",
+            "selector": "sdk-dettaglio-pianificazione-section",
+            "description": "Pagina dettaglio pianificazione",
+            "classNames": "dettaglio-pianificazione-section",
+            "settings": {
+                "classNames": "dettaglio-pianificazione-index",
+                "sectionTitle": "TITLE.DETTAGLIO-PIANIFICAZIONE-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-pianificazioni",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_PIANIFICAZIONI_LISTA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "go-to-update-pianificazione",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "SDK_GESTIONE_PIANIFICAZIONI_LISTA"
+                        }
+                    ],
+                    "buttonsReadonly": [
+                        {
+                            "code": "back-to-lista-pianificazioni",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_PIANIFICAZIONI_LISTA",
+                            "type": "cancel"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "SDK-PIANIFICAZIONE.GENERAL-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "nome-trigger",
+                                    "label": "SDK-PIANIFICAZIONE.GENERAL-DATA.NOME-TRIGGER",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "beanId"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "descrizione",
+                                    "label": "SDK-PIANIFICAZIONE.GENERAL-DATA.DESCRIZIONE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "descrizione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "pianificazione",
+                                    "label": "SDK-PIANIFICAZIONE.GENERAL-DATA.PIANIFICAZIONE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "expression"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "secondi",
+                                    "label": "SDK-PIANIFICAZIONE.GENERAL-DATA.SECONDI",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "seconds"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "minuti",
+                                    "label": "SDK-PIANIFICAZIONE.GENERAL-DATA.MINUTI",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "minutes"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "ore",
+                                    "label": "SDK-PIANIFICAZIONE.GENERAL-DATA.ORE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "hours"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "giorni-del-mese",
+                                    "label": "SDK-PIANIFICAZIONE.GENERAL-DATA.GIORNI-DEL-MESE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "dayOfMonth"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "mesi",
+                                    "label": "SDK-PIANIFICAZIONE.GENERAL-DATA.MESI",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "month"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "giorni-della-settimana",
+                                    "label": "SDK-PIANIFICAZIONE.GENERAL-DATA.GIORNI-DELLA-SETTIMANA",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "dayOfWeek"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "anni",
+                                    "label": "SDK-PIANIFICAZIONE.GENERAL-DATA.ANNI",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "year"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+<div [class]="config.classNames" *ngIf="isReady">
+
+    <div class="messages-box" #infoBox></div>
+
+    <div class="messages-box" #messages></div>
+
+    <div class="dett-prog-opere-incompiute-container">
+
+        <div class="dpoi-content">
+            <sdk-table [config]="configSub" [reset]="resetTable"></sdk-table>
+
+            <div class="buttons-row">
+                <sdk-button-group *ngIf="buttons !== undefined" [config]="buttonsSubj" (output)="onButtonClick($event)">
+                </sdk-button-group>
+            </div>
+            <sdk-dialog [config]="dialogConfigObs"></sdk-dialog>
+        </div>
+    </div>
+</div>

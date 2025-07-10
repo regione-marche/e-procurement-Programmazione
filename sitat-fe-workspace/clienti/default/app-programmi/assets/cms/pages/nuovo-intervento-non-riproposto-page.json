@@ -1,0 +1,262 @@
+{
+    "name": "nuovo-intervento-non-riproposto-page",
+    "title": "TITLE.NUOVO-INTERVENTO-NON-RIPROPOSTO-PAGE",
+    "layout": "base-layout",
+    "appName": "app-programmi",
+    "styleUrls": [],
+    "settings": {
+        "page": "nuovo-intervento-non-riproposto-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-programmi-page",
+                "label": "BREADCRUMB.LISTA-PROGRAMMI",
+                "slug": "lista-programmi-page",
+                "additionalParams": "APP_PROGRAMMI_LISTA_PROGRAMMI_PARAMS"
+            },
+            {
+                "code": "dett-prog-interventi-non-riproposti-page",
+                "label": "BREADCRUMB.DETTAGLIO-PROGRAMMA",
+                "slug": "dett-prog-interventi-non-riproposti-page",
+                "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+            },
+            {
+                "code": "nuovo-intervento-non-riproposto-page",
+                "label": "BREADCRUMB.NUOVO-INTERVENTO-NON-RIPROPOSTO",
+                "slug": "nuovo-intervento-non-riproposto-page",
+                "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "nuovo-intervento-non-riproposto-page-content-root-section",
+            "selector": "nuovo-intervento-non-riproposto-section",
+            "description": "Pagina per la creazione di un nuovo intervento non riproposto",
+            "classNames": "nuovo-intervento-non-riproposto-section",
+            "settings": {
+                "classNames": "nuovo-intervento-non-riproposto-index",
+                "sectionTitleInterventi": "TITLE.NUOVO-INTERVENTO-NON-RIPROPOSTO-PAGE",
+                "sectionTitleAcquisti": "TITLE.NUOVO-ACQUISTO-NON-RIPROPOSTO-PAGE",
+                "risorseDiCapitoloProtectionCode": "PIANI.INTTRI-scheda.RISORSEBILANCIO",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_PROGRAMMI_INTERVENTO_NON_RIPROPOSTO_PROVIDER",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-intervento-nr",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_PROGRAMMI_INTERVENTO_NON_RIPROPOSTO_PROVIDER"
+                        }
+                    ],
+                    "interventiFields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "INTERVENTO-NON-RIPROPOSTO.DATI-GENERALI.TITLE-INTERVENTI-INSERIMENTO",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "cui",
+                                    "label": "INTERVENTO-NON-RIPROPOSTO.DATI-GENERALI.CUI",
+                                    "oggettoProtezione": "PIANI.INRTRI.CUIINT",
+                                    "mnemonico": "T2CUIINR",
+                                    "mappingInput": "cui",
+                                    "mappingOutput": "cui",
+                                    "maxLength": 25
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "cup",
+                                    "label": "INTERVENTO-NON-RIPROPOSTO.DATI-GENERALI.CUP",
+                                    "oggettoProtezione": "PIANI.INRTRI.CUPPRG",
+                                    "mnemonico": "T2CUPINR",
+                                    "mappingInput": "cup",
+                                    "mappingOutput": "cup",
+                                    "maxLength": 15,
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "INTERVENTO-NON-RIPROPOSTO.VALIDATORS.CUP-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "TEXTAREA",
+                                    "code": "descrizione",
+                                    "label": "INTERVENTO-NON-RIPROPOSTO.DATI-GENERALI.DESCRIZIONE",
+                                    "oggettoProtezione": "PIANI.INRTRI.DESINT",
+                                    "mnemonico": "T2DESINR",
+                                    "mappingInput": "descrizione",
+                                    "mappingOutput": "descrizione",
+                                    "maxLength": 2000,
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "INTERVENTO-NON-RIPROPOSTO.VALIDATORS.DESCRIZIONE-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-complessivo",
+                                    "label": "INTERVENTO-NON-RIPROPOSTO.DATI-GENERALI.IMPORTO-COMPLESSIVO",
+                                    "oggettoProtezione": "PIANI.INRTRI.TOTINT",
+                                    "mnemonico": "T2DITINR",
+                                    "mappingInput": "importoComplessivo",
+                                    "mappingOutput": "importoComplessivo",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "priorita",
+                                    "label": "INTERVENTO-NON-RIPROPOSTO.DATI-GENERALI.PRIORITA",
+                                    "oggettoProtezione": "PIANI.INRTRI.PRGINT",
+                                    "mnemonico": "T2PRGINR",
+                                    "mappingInput": "priorita",
+                                    "mappingOutput": "priorita",
+                                    "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                    "listCode": "Priorita"
+                                },
+                                {
+                                    "type": "TEXTAREA",
+                                    "code": "motivo",
+                                    "label": "INTERVENTO-NON-RIPROPOSTO.DATI-GENERALI.MOTIVO",
+                                    "oggettoProtezione": "PIANI.INRTRI.MOTIVO",
+                                    "mnemonico": "T2INRNMOT",
+                                    "mappingInput": "motivo",
+                                    "mappingOutput": "motivo",
+                                    "maxLength": 2000
+                                }
+                            ]
+                        }
+                    ],
+                    "acquistiFields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "INTERVENTO-NON-RIPROPOSTO.DATI-GENERALI.TITLE-ACQUISTI-INSERIMENTO",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "cui",
+                                    "label": "INTERVENTO-NON-RIPROPOSTO.DATI-GENERALI.CUI",
+                                    "oggettoProtezione": "PIANI.INRTRI.CUIINT",
+                                    "mnemonico": "T2CUIINR",
+                                    "mappingInput": "cui",
+                                    "mappingOutput": "cui",
+                                    "maxLength": 25
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "cup",
+                                    "label": "INTERVENTO-NON-RIPROPOSTO.DATI-GENERALI.CUP",
+                                    "oggettoProtezione": "PIANI.INRTRI.CUPPRG",
+                                    "mnemonico": "T2CUPINR",
+                                    "mappingInput": "cup",
+                                    "mappingOutput": "cup",
+                                    "maxLength": 15,
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "INTERVENTO-NON-RIPROPOSTO.VALIDATORS.CUP-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "TEXTAREA",
+                                    "code": "descrizione",
+                                    "label": "INTERVENTO-NON-RIPROPOSTO.DATI-GENERALI.DESCRIZIONE",
+                                    "oggettoProtezione": "PIANI.INRTRI.DESINT",
+                                    "mnemonico": "T2DESINR",
+                                    "mappingInput": "descrizione",
+                                    "mappingOutput": "descrizione",
+                                    "maxLength": 2000,
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "INTERVENTO-NON-RIPROPOSTO.VALIDATORS.DESCRIZIONE-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-complessivo",
+                                    "label": "INTERVENTO-NON-RIPROPOSTO.DATI-GENERALI.IMPORTO-COMPLESSIVO",
+                                    "oggettoProtezione": "PIANI.INRTRI.TOTINT",
+                                    "mnemonico": "T2DITINR",
+                                    "mappingInput": "importoComplessivo",
+                                    "mappingOutput": "importoComplessivo",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "priorita",
+                                    "label": "INTERVENTO-NON-RIPROPOSTO.DATI-GENERALI.PRIORITA",
+                                    "oggettoProtezione": "PIANI.INRTRI.PRGINT",
+                                    "mnemonico": "T2PRGINR",
+                                    "mappingInput": "priorita",
+                                    "mappingOutput": "priorita",
+                                    "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                    "listCode": "Priorita"
+                                },
+                                {
+                                    "type": "TEXTAREA",
+                                    "code": "motivo",
+                                    "label": "INTERVENTO-NON-RIPROPOSTO.DATI-GENERALI.MOTIVO",
+                                    "oggettoProtezione": "PIANI.INRTRI.MOTIVO",
+                                    "mnemonico": "T2INRNMOT",
+                                    "mappingInput": "motivo",
+                                    "mappingOutput": "motivo",
+                                    "maxLength": 2000
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

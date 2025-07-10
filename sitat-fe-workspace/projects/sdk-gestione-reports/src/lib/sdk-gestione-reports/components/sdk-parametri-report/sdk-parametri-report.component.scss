@@ -1,0 +1,27 @@
+.sdk-lista-param-cell-container{
+    display: flex;
+    width: 100%;
+    height: 35px;
+    justify-content: center;
+}
+
+.sdk-lista-param-cell-container i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+.mgg-icons-crud-delete,
+.mgg-icons-move-down,
+.mgg-icons-move-up{
+    color: #06c;
+    margin-right: 0.5rem;
+}
+
+.mgg-icons-move-down.disabled,
+.mgg-icons-move-up.disabled{
+    color: rgb(163, 163, 163)
+}

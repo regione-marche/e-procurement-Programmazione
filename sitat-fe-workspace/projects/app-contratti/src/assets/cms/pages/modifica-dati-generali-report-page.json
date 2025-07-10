@@ -1,0 +1,379 @@
+{
+    "name": "modifica-dati-generali-report-page",
+    "title": "TITLE.MODIFICA-DATI-GENERALI-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [
+        "assets/cms/pages/modifica-dati-generali-report-page.css"
+    ],
+    "settings": {
+        "page": "modifica-dati-generali-report-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-report-page",
+                "label": "BREADCRUMB.GESTIONE-REPORT",
+                "slug": "lista-report-page"
+            },
+            {
+                "code": "dati-generali-report-page",
+                "label": "BREADCRUMB.DATI-GENERALI-REPORT",
+                "slug": "dati-generali-report-page",
+                "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+            },
+            {
+                "code": "modifica-dati-generali-report-page",
+                "label": "BREADCRUMB.MODIFICA-DATI-GENERALI",
+                "slug": "modifica-dati-generali-report-page",
+                "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-dati-generali-report-page-content-root-section",
+            "selector": "sdk-modifica-dati-generali-report-page-section",
+            "description": "Pagina per la modifica dei dati generali di un report",
+            "classNames": "sdk-modifica-dati-generali-report-page-section",
+            "settings": {
+                "classNames": "modifica-dati-generali-report-index",
+                "sectionTitle": "TITLE.MODIFICA-DATI-GENERALI-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-dati-generali",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "SDK_GESTIONE_REPORT_LISTA_REPORT",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-dati-generali",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PROVIDER"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.MODIFICA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "id-ricerca",
+                                    "label": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.MODIFICA.ID-REPORT",
+                                    "mappingInput": "idRicerca",
+                                    "mappingOutput": "idRicerca"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "titoloReport",
+                                    "label": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.MODIFICA.TITOLO",
+                                    "mappingInput": "nome",
+                                    "mappingOutput": "nome",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-DETTAGLIO-REPORT.VALIDATORS.TITOLO-REPORT-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "descrEstesa",
+                                    "label": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.MODIFICA.DESCR-ESTESA",
+                                    "mappingInput": "descrizione",
+                                    "mappingOutput": "descrizione"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "pubblicato",
+                                    "label": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.DISP.TITLE",
+                                    "itemsProviderCode": "SDK_GESTIONE_REPORT_TABELLATI_PROVIDER",
+                                    "listCode": "siNo",
+                                    "mappingInput": "pubblicato",
+                                    "mappingOutput": "pubblicato",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-DETTAGLIO-REPORT.VALIDATORS.CAMPO-PUBBLICA-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "ownerReport",
+                                    "label": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.MODIFICA.OWNER",
+                                    "mappingInput": "sysute",
+                                    "mappingOutput": "sysute"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tuttiProfili",
+                                    "label": "SDK-LISTA-REPORT.NUOVO-REPORT.TUTTI-PROFILI",
+                                    "mappingInput": "tuttiProfili",
+                                    "mappingOutput": "tuttiProfili",
+                                    "listCode": "siNo",
+                                    "itemsProviderCode": "SDK_GESTIONE_REPORT_TABELLATI_PROVIDER",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-DETTAGLIO-REPORT.VALIDATORS.CAMPO-TUTTI-PROFILI-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tuttiUffici",
+                                    "label": "SDK-LISTA-REPORT.NUOVO-REPORT.TUTTI-UFFICI",
+                                    "mappingInput": "tuttiUffici",
+                                    "mappingOutput": "tuttiUffici",
+                                    "listCode": "siNo",
+                                    "itemsProviderCode": "SDK_GESTIONE_REPORT_TABELLATI_PROVIDER",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-DETTAGLIO-REPORT.VALIDATORS.CAMPO-TUTTI-UFFICI-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "esponiComeServizio",
+                                    "listCode": "siNo",
+                                    "label": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.ESPONI-COME-SERVIZIO",
+                                    "mappingInput": "esponiComeServizio",
+                                    "mappingOutput": "esponiComeServizio",
+                                    "itemsProviderCode": "SDK_GESTIONE_REPORT_TABELLATI_PROVIDER"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "codReportWs",
+                                    "label": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.COD-REPORT-WS",
+                                    "mappingInput": "codReportWs",
+                                    "mappingOutput": "codReportWs",
+                                    "visibleCondition": {
+                                        "and": {
+                                            "esponiComeServizio": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    },
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-DETTAGLIO-REPORT.VALIDATORS.CAMPO-CODICE-REPORT-SERVIZIO-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "dati-generali-schedulazione",
+                            "label": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.MODIFICA.SCHEDULAZIONE.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "schedula",
+                                    "label": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.MODIFICA.SCHEDULAZIONE.SCHEDULA",
+                                    "mappingInput": "schedula",
+                                    "mappingOutput": "schedula",
+                                    "listCode": "siNo",
+                                    "itemsProviderCode": "SDK_GESTIONE_REPORT_TABELLATI_PROVIDER"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "cronExpression",
+                                    "label": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.MODIFICA.SCHEDULAZIONE.CRON-EXPRESSION",
+                                    "mappingInput": "cronExpression",
+                                    "mappingOutput": "cronExpression",
+                                    "visibleCondition": {
+                                        "and": {
+                                            "schedula": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    },
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-DETTAGLIO-REPORT.VALIDATORS.CAMPO-CRON-EXPRESSION-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "showLabelHelp": true,
+                                    "helpLabelDescription": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.MODIFICA.SCHEDULAZIONE.HELP-CRON-EXPRESSION"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "formatoSchedulazione",                                    
+                                    "label": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.MODIFICA.SCHEDULAZIONE.FORMATO-SCHED",
+                                    "mappingInput": "formatoSchedulazione",
+                                    "mappingOutput": "formatoSchedulazione",
+                                    "listCode": "formatoExportSchedulato",
+                                    "itemsProviderCode": "SDK_GESTIONE_REPORT_TABELLATI_PROVIDER",
+                                    "visibleCondition": {
+                                        "and": {
+                                            "schedula": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    },
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-DETTAGLIO-REPORT.VALIDATORS.FORMATO-EXPORT-RISULTATO-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "emailSchedulazioneRisultato",
+                                    "label": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.MODIFICA.SCHEDULAZIONE.EMAIL-SCHED",
+                                    "mappingInput": "emailSchedulazioneRisultato",
+                                    "mappingOutput": "emailSchedulazioneRisultato",
+                                    "visibleCondition": {
+                                        "and": {
+                                            "schedula": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    },
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-DETTAGLIO-REPORT.VALIDATORS.CAMPO-EMAIL-SCHED-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "showLabelHelp": true,
+                                    "helpLabelDescription": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.MODIFICA.SCHEDULAZIONE.HELP-EMAIL-SCHEDULAZIONE"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "noOutputVuoto",
+                                    "label": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.MODIFICA.SCHEDULAZIONE.NO-OUTPUT-VUOTO",
+                                    "mappingInput": "noOutputVuoto",
+                                    "mappingOutput": "noOutputVuoto",
+                                    "listCode": "siNo",
+                                    "itemsProviderCode": "SDK_GESTIONE_REPORT_TABELLATI_PROVIDER",
+                                    "visibleCondition": {
+                                        "and": {
+                                            "schedula": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    },
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-DETTAGLIO-REPORT.VALIDATORS.OUTPUT-NON-VUOTO-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

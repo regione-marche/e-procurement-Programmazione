@@ -1,0 +1,184 @@
+{
+    "name": "dettaglio-fase-iniziale-semp-page",
+    "title": "TITLE.DETTAGLIO-FASE-INIZIALE-SEMP-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/pubblica-fase-lotto-page.css"
+    ],
+    "settings": {
+        "page": "dettaglio-fase-iniziale-semp-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-iniziale-semp-page",
+                "label": "BREADCRUMB.DETTAGLIO-FASE-INIZIALE-SEMP",
+                "slug": "dettaglio-fase-iniziale-semp-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-fase-iniziale-semp-page-content-root-section",
+            "selector": "dettaglio-fase-iniziale-semp-section",
+            "description": "Pagina di dettaglio fase di iniziale-semp",
+            "classNames": "dettaglio-fase-iniziale-semp-section",
+            "settings": {
+                "classNames": "dettaglio-fase-iniziale-semp-index",
+                "menuTabs": [
+                    {
+                        "code": "dettaglio-fase-iniziale-semp",
+                        "title": "DETTAGLIO-FASE-INIZIALE-SEMP.TABS.DATI-GENERALI",
+                        "active": true,
+                        "slug": "dettaglio-fase-iniziale-semp-page",
+                        "oggettoProtezione": "W9.W9INIZ-scheda.DETTFASE",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+                    },
+                    {
+                        "code": "dettaglio-scheda-sicurezza-fase-ini-semp",
+                        "title": "DETTAGLIO-FASE-INIZIALE-SEMP.TABS.SCHEDA-SICUREZZA",
+                        "slug": "dettaglio-scheda-sicurezza-fase-ini-semp-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS",
+                        "oggettoProtezione": "W9.W9INIZ-scheda.SICUREZZA",
+                        "visible": "APP_GARE_SCHE_SIC_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "dettaglio-mis-agg-sic-fase-ini-semp",
+                        "title": "DETTAGLIO-FASE-INIZIALE-SEMP.TABS.MISURE-AGGIUNTIVE-SICUREZZA",
+                        "slug": "dettaglio-mis-agg-sic-fase-ini-semp-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS",
+                        "oggettoProtezione": "W9.W9INIZ-scheda.CHECKSICUREZZA",
+                        "visible": "APP_GARE_SCHE_SIC_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "dettaglio-inc-prof-fase-ini-semp",
+                        "title": "DETTAGLIO-FASE-INIZIALE-SEMP.TABS.INCARICHI-PROFESSIONALI",
+                        "oggettoProtezione": "W9.W9INIZ-scheda.TECNI",
+                        "slug": "dettaglio-inc-prof-fase-ini-semp-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+                    }
+                ],
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "check-pubblicazione",
+                            "label": "BUTTONS.CHECK-DATA",
+                            "provider": "APP_FASI_LOTTO_PUBBLICA",
+                            "oggettoProtezione": "ALT.W9.FasiDiGara-schede.ControlloDatiInseriti",
+                            "type": "functions",
+                            "icon": "mgg-icons-document-text"
+                        },
+                        {
+                            "code": "go-to-update-fase",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_GARE_FASE_INIZIALE_SEMP_PROVIDER",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "sidebar": {
+                        "code": "sidebar",
+                        "position": "right",
+                        "width": 500,
+                        "classList": [
+                            "check-pubb-sidebar"
+                        ],
+                        "headerImage": "assets/images/app/logo.png",
+                        "component": "check-pubblicazione-widget",
+                        "componentConfig": {}
+                    },
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "contratto-appalto-data",
+                            "label": "FASE-INIZIALE-SEMP.CONTRATTO-APPALTO-DATA.CONTRATTO-APPALTO-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-stipula",
+                                    "label": "FASE-INIZIALE-SEMP.CONTRATTO-APPALTO-DATA.DATA-STIPULA",
+                                    "oggettoProtezione": "W9.W9INIZ.DATA_STIPULA",
+                                    "mnemonico": "W3DATA_STI",
+                                    "mappingInput": "dataStipula",
+                                    "mappingOutput": "dataStipula"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "termine-esecuzione-data",
+                            "label": "FASE-INIZIALE-SEMP.TERMINE-ESECUZIONE-DATA.TERMINE-ESECUZIONE-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "flag-riserva",
+                                    "label": "FASE-INIZIALE-SEMP.TERMINE-ESECUZIONE-DATA.FLAG-RISERVA",
+                                    "oggettoProtezione": "W9.W9INIZ.FLAG_RISERVA",
+                                    "mnemonico": "W3RISERVA",
+                                    "mappingInput": "flagRiserva",
+                                    "mappingOutput": "flagRiserva",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-verb-inizio",
+                                    "label": "FASE-INIZIALE-SEMP.TERMINE-ESECUZIONE-DATA.DATA-VERB-INIZIO",
+                                    "oggettoProtezione": "W9.W9INIZ.DATA_VERB_INIZIO",
+                                    "mnemonico": "W3DVERB_IN",
+                                    "mappingInput": "dataVerbale",
+                                    "mappingOutput": "dataVerbale"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-termine",
+                                    "label": "FASE-INIZIALE-SEMP.TERMINE-ESECUZIONE-DATA.DATA-TERMINE",
+                                    "oggettoProtezione": "W9.W9INIZ.DATA_TERMINE",
+                                    "mnemonico": "W3DTERM1",
+                                    "mappingInput": "dataTermine",
+                                    "mappingOutput": "dataTermine"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

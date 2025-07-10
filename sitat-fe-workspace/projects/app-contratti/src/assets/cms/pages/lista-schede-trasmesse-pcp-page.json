@@ -1,0 +1,154 @@
+{
+    "name": "lista-schede-trasmesse-pcp-page",
+    "title": "TITLE.LISTA-SCHEDE-TRASMESSE-PCP-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "lista-schede-trasmesse-pcp-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.RICERCA-SCHEDE-TRASMESSE-PCP",
+                "slug": "ricerca-schede-trasmesse-pcp-page"
+            },
+            {
+                "code": "lista-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.LISTA-SCHEDE-TRASMESSE-PCP",
+                "slug": "lista-schede-trasmesse-pcp-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "lista-schede-trasmesse-pcp-page-content-root-section",
+            "selector": "lista-schede-trasmesse-pcp-section",
+            "description": "Pagina per visualizzazione schede trasmesse a PCP",
+            "classNames": "lista-schede-trasmesse-pcp-section",
+            "settings": {
+                "classNames": "lista-schede-trasmesse-pcp-index",
+                "sectionTitle": "TITLE.LISTA-SCHEDE-TRASMESSE-PCP-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-ricerca-schede-pcp",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_GARE",
+                            "type": "cancel"
+                        }
+                    ],
+                    "grid": {
+                        "showCurrentPageReport": true,
+                        "showCurrentRecordsReport": true,
+                        "navigable": true,
+                        "resizable": false,
+                        "debug": false,
+                        "sortable": {
+                            "allowUnsort": false,
+                            "mode": "single"
+                        },
+                        "sort": [
+                            {
+                                "field": "datInv",
+                                "dir": "desc"
+                            }
+                        ],
+                        "pageable": {
+                            "buttonCount": 5,
+                            "info": true,
+                            "pageSizes": [
+                                5,
+                                10,
+                                20,
+                                50
+                            ],
+                            "type": "numeric"
+                        },
+                        "columns": [
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-SCHEDE-TRASMESSE-PCP.NOMEIN",
+                                "field": "stazioneAppaltante",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": "ALT.GENE.associazioneUffintAbilitata"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_LINK",
+                                    "params": {
+                                        "action": {
+                                            "label": "LISTA-SCHEDE-TRASMESSE-PCP.AZIONI.DETTAGLIO",
+                                            "disabled": false,
+                                            "performer": "dettaglio"
+                                        }
+                                    }
+                                },
+                                "title": "LISTA-SCHEDE-TRASMESSE-PCP.CIG",
+                                "field": "cigLottoNumber",
+                                "width": 75,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-SCHEDE-TRASMESSE-PCP.FASE-ESECUZIONE",
+                                "field": "faseEsecuzione",
+                                "width": 250,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false
+                            },                            
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-SCHEDE-TRASMESSE-PCP.PROGRESSIVO-SCHEDA",
+                                "field": "progressivoScheda",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_DATE"
+                                },
+                                "title": "LISTA-SCHEDE-TRASMESSE-PCP.DATINV",
+                                "field": "datInv",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-SCHEDE-TRASMESSE-PCP.AUTORE",
+                                "field": "autore",
+                                "width": 75,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

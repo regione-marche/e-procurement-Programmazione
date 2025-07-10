@@ -1,0 +1,146 @@
+{
+    "name": "ricerca-avanzata-avvisi-page",
+    "title": "TITLE.RICERCA-AVANZATA-AVVISI-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/ricerca-avanzata-avvisi-page.css"
+    ],
+    "settings": {
+        "page": "ricerca-avanzata-avvisi-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-avvisi-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-AVVISI",
+                "slug": "ricerca-avanzata-avvisi-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "ricerca-avanzata-avvisi-page-content-root-section",
+            "selector": "ricerca-avanzata-avvisi-section",
+            "description": "Pagina per la creazione di un nuovo avviso",
+            "classNames": "ricerca-avanzata-avvisi-section",
+            "settings": {
+                "classNames": "ricerca-avanzata-avvisi-index",
+                "sectionTitle": "TITLE.RICERCA-AVANZATA-AVVISI-PAGE",
+                "body": {
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "avvisi-data",
+                            "label": "RICERCA-AVANZATA-AVVISI.AVVISI-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "stazione-appaltante",
+                                    "label": "RICERCA-AVANZATA-AVVISI.STAZIONE-APPALTANTE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "noDataLabel": "NO-DATA",
+                                    "itemsProviderCode": "STAZIONE_APPALTANTE_AUTOCOMPLETE",
+                                    "mappingInput": "stazioneAppaltante",
+                                    "mappingOutput": "stazioneAppaltante"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "id-avviso",
+                                    "label": "RICERCA-AVANZATA-AVVISI.NUMERO-PROGRESSIVO-AVVISO",
+                                    "mappingInput": "numeroAvviso",
+                                    "mappingOutput": "numeroAvviso"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tipo-avviso",
+                                    "label": "RICERCA-AVANZATA-AVVISI.TIPOLOGIA-AVVISO",
+                                    "mappingInput": "tipologia",
+                                    "mappingOutput": "tipologia",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "TipoAvviso"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-avviso-da",
+                                    "label": "RICERCA-AVANZATA-AVVISI.DATA-AVVISO-DA",
+                                    "mappingInput": "dataDa",
+                                    "mappingOutput": "dataDa"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-avviso-a",
+                                    "label": "RICERCA-AVANZATA-AVVISI.DATA-AVVISO-A",
+                                    "mappingInput": "dataA",
+                                    "mappingOutput": "dataA"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-scadenza-da",
+                                    "label": "RICERCA-AVANZATA-AVVISI.DATA-SCADENZA-DA",
+                                    "mappingInput": "dataScadenzaDa",
+                                    "mappingOutput": "dataScadenzaDa"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-scadenza-a",
+                                    "label": "RICERCA-AVANZATA-AVVISI.DATA-SCADENZA-A",
+                                    "mappingInput": "dataScadenzaA",
+                                    "mappingOutput": "dataScadenzaA"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "descrizione",
+                                    "label": "RICERCA-AVANZATA-AVVISI.DESCRIZIONE-AVVISO",
+                                    "mappingInput": "descrizione",
+                                    "mappingOutput": "descrizione"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "cig",
+                                    "label": "RICERCA-AVANZATA-AVVISI.CIG",
+                                    "mappingInput": "cig",
+                                    "mappingOutput": "cig",
+                                    "oggettoProtezione": "W9.AVVISO.CIG"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "cup",
+                                    "label": "RICERCA-AVANZATA-AVVISI.CUP",
+                                    "mappingInput": "cup",
+                                    "mappingOutput": "cup",
+                                    "oggettoProtezione": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "buttons": [
+                        {
+                            "code": "back-button",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_AVVISI_ADVANCED_SEARCH",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "clean-button",
+                            "label": "BUTTONS.CLEAN",
+                            "provider": "APP_AVVISI_ADVANCED_SEARCH",
+                            "icon": "mgg-icons-data-unfiltered"
+                        },
+                        {
+                            "code": "search-button",
+                            "label": "BUTTONS.SEARCH",
+                            "provider": "APP_AVVISI_ADVANCED_SEARCH",
+                            "icon": "mgg-icons-data-search"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

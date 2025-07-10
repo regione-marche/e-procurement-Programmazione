@@ -1,0 +1,57 @@
+<div [class]="config.classNames" *ngIf="isReady">
+    <h1 class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</h1>
+    <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+    <div class="messages-box" #infoBox></div>
+
+    <div class="messages-box" #messages></div>
+    <div class="nf-container">
+        <div class="nf-content">
+            <div class="empty-list" *ngIf="fasiVisibili !== undefined && fasiVisibili.length === 0">
+                {{'FASI-VISIBILI.EMPTY-LIST' | translate}}
+            </div>
+
+            <div *ngIf="fasiRilevazioneDati !== undefined && fasiRilevazioneDati.length > 0">
+                <table class="fasi-visibili-table"
+                    [attr.aria-label]="'FASI-VISIBILI.FASI-RILEVAZIONE-DATI' | translate">
+                    <thead>
+                        <th></th>
+                        <th class="fasi-visibili-header">{{ 'FASI-VISIBILI.FASI-RILEVAZIONE-DATI' | translate }}</th>
+                    </thead>
+                    <tbody>
+                        <tr class="fasi-visibili-row" *ngFor="let fase of fasiRilevazioneDati">
+                            <td class="fasi-visibili-cell first"><input type="radio" name="fasi"
+                                    (change)="manageCheckboxes(fase.codice, $event)"
+                                    [disabled]="fase.abilitato !== true">
+                            </td>
+                            <td class="fasi-visibili-cell">{{fase.descrizione}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <table class="fasi-visibili-table"
+                    *ngIf="eventiSignificativi !== undefined && eventiSignificativi.length > 0"
+                    [attr.aria-label]="'FASI-VISIBILI.EVENTI-SIGNIFICATIVI' | translate">
+                    <thead>
+                        <th></th>
+                        <th class="fasi-visibili-header">{{ 'FASI-VISIBILI.EVENTI-SIGNIFICATIVI' | translate }}</th>
+                    </thead>
+                    <tbody>
+                        <tr class="fasi-visibili-row" *ngFor="let fase of eventiSignificativi">
+                            <td class="fasi-visibili-cell first"><input type="radio" name="fasi"
+                                    (change)="manageCheckboxes(fase.codice, $event)"
+                                    [disabled]="fase.abilitato !== true">
+                            </td>
+                            <td class="fasi-visibili-cell">{{fase.descrizione}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+        <sdk-dialog [config]="dialogConfigObs"></sdk-dialog>
+    </div>
+</div>

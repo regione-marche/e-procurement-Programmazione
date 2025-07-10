@@ -1,0 +1,207 @@
+{
+    "name": "dettaglio-utente-stazione-appaltante-page",
+    "title": "TITLE.DETTAGLIO-UTENTE-PAGE",
+    "layout": "base-layout",
+    "appName": "app-programmi",
+    "styleUrls": [],
+    "settings": {
+        "page": "dettaglio-utente-stazione-appaltante-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-archivio-stazioni-appaltanti-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-ARCHIVIO-STAZIONI-APPALTANTI",
+                "slug": "ricerca-avanzata-archivio-stazioni-appaltanti-page"
+            },
+            {
+                "code": "lista-archivio-stazioni-appaltanti-page",
+                "label": "BREADCRUMB.LISTA-ARCHIVIO-STAZIONI-APPALTANTI",
+                "slug": "lista-archivio-stazioni-appaltanti-page"
+            },
+            {
+                "code": "utenti-stazione-appaltante-page",
+                "label": "BREADCRUMB.UTENTI-STAZIONE-APPALTANTE",
+                "slug": "utenti-stazione-appaltante-page",
+                "additionalParams": "APP_COMMONS_STAZIONE_APPALTANTE_PARAMS"
+            },
+            {
+                "code": "dettaglio-utente-stazione-appaltante-page",
+                "label": "BREADCRUMB.DETTAGLIO-UTENTE",
+                "slug": "dettaglio-utente-stazione-appaltante-page",
+                "additionalParams": "APP_COMMONS_UTENTE_STAZIONE_APPALTANTE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-utente-stazione-appaltante-page-content-root-section",
+            "selector": "sdk-dettaglio-utente-section",
+            "description": "Pagina dettaglio utente",
+            "classNames": "dettaglio-utente-stazione-appaltante-section",
+            "settings": {
+                "classNames": "dettaglio-utente-stazione-appaltante-index",
+                "sectionTitle": "TITLE.DETTAGLIO-UTENTE-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-utenti-stazione-appaltante",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_COMMONS_ARCHIVIO_STAZIONI_APPALTANTI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "go-to-update-utente-stazione-appaltante",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_COMMONS_ARCHIVIO_STAZIONI_APPALTANTI"
+                        }
+                    ],
+                    "buttonsReadonly": [
+                        {
+                            "code": "back-to-utenti-stazione-appaltante",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_COMMONS_ARCHIVIO_STAZIONI_APPALTANTI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "SDK-UTENTE.GENERAL-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "denominazione",
+                                    "label": "SDK-UTENTE.GENERAL-DATA.DENOMINAZIONE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "nome"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "username",
+                                    "label": "SDK-UTENTE.GENERAL-DATA.USERNAME",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "username"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "email",
+                                    "label": "SDK-UTENTE.GENERAL-DATA.EMAIL",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "email"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "codice-fiscale",
+                                    "label": "SDK-UTENTE.GENERAL-DATA.CODICE-FISCALE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "codiceFiscale"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "opzioni-data",
+                            "label": "SDK-UTENTE.OPZIONI-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "amministrazione-sistema",
+                                    "label": "SDK-UTENTE.OPZIONI-DATA.AMMINISTRAZIONE-SISTEMA",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "listCode": "sino",
+                                    "mappingInput": "isAmministratore"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "gestione-utenti",
+                                    "label": "SDK-UTENTE.OPZIONI-DATA.GESTIONE-UTENTI",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "listCode": "GestioneUtenti",
+                                    "mappingInput": "gestioneUtenti"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "abilita-modifica-uffici-intestatari",
+                                    "label": "SDK-UTENTE.OPZIONI-DATA.OPZIONI-UTENTE.ABILITA-UTENTE-MODIFICA-UFFICI-INTESTATARI",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "listCode": "sino",
+                                    "mappingInput": "abilitaModificaUfficiIntestatari"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "sicurezza-data",
+                            "label": "SDK-UTENTE.SICUREZZA-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "HIDDEN",
+                                    "code": "scadenza-account-hidden",
+                                    "label": "SDK-UTENTE.SICUREZZA-DATA.SCADENZA-ACCOUNT",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "scadenzaAccount"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "scadenza-account",
+                                    "label": "SDK-UTENTE.SICUREZZA-DATA.SCADENZA-ACCOUNT",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "listCode": "ScadenzaAccount",
+                                    "mappingInput": "scadenzaAccount"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-scadenza-account",
+                                    "label": "SDK-UTENTE.SICUREZZA-DATA.SCADENZA-ACCOUNT-DATA",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "dataScadenzaAccount",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "scadenza-account-hidden": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "controlli-gdpr",
+                                    "label": "SDK-UTENTE.SICUREZZA-DATA.CONTROLLI-GDPR",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "listCode": "ControlliGdpr",
+                                    "mappingInput": "controlliGdpr"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "name": "choose-ente",
+    "title": "TITLE.CHOOSE-ENTE-PAGE",
+    "layout": "choose-ente-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "choose-ente"
+    },
+    "sections": [
+        {
+            "id": "choose-ente-page-content-root-section",
+            "selector": "choose-ente-section",
+            "description": "Pagina di selezione stazione appaltante avvisi",
+            "classNames": "choose-ente-section",
+            "settings": {
+                "classNames": "choose-ente-index",
+                "sectionTitle": "TITLE.CHOOSE-ENTE-PAGE"
+            }
+        }
+    ]
+}

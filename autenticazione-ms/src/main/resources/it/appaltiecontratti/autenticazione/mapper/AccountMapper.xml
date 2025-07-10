@@ -1,0 +1,75 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+	namespace="it.appaltiecontratti.autenticazione.mapper.AccountMapper">
+
+	<resultMap id="listaSABaseEntryMap"
+		type="it.appaltiecontratti.autenticazione.entity.SABaseEntry">
+		<id column="codein" property="codice" />
+		<result column="nomein" property="nome" />
+	</resultMap>
+
+	<sql id="filtroBaseSA">
+		<if test="listaCodein != null">
+			and codein in
+			<foreach item="item" index="index" collection="listaCodein"
+				open="(" separator="," close=")">
+				#{item}
+			</foreach>
+		</if>
+	</sql>
+
+	<select id="getBaseSAInfoList" resultMap="listaSABaseEntryMap"
+		parameterType="hashmap">
+		select codein, nomein from uffint
+		where 1 = 1
+		<include refid="filtroBaseSA"></include>
+	</select>
+
+	<select id="getSAList" resultMap="listaSABaseEntryMap"
+			parameterType="hashmap">
+		select u.codein, u.nomein
+		from usr_ein ue
+		inner join uffint u
+		on ue.codein = u.codein
+		where ue.syscon = #{syscon}
+		<if test="searchUfficioIntestatario != null">
+			and (
+				UPPER(u.codein) like #{searchUfficioIntestatario}
+				or UPPER(u.cfein) like #{searchUfficioIntestatario}
+				or UPPER(u.nomein) like #{searchUfficioIntestatario}
+			)
+		</if>
+		order by u.nomein
+	</select>
+	
+	<select id="getAllBaseSAInfoLimited" resultMap="listaSABaseEntryMap"
+			parameterType="hashmap">
+		select u.codein, u.nomein 
+		from uffint u
+		where 1 = 1
+		<if test="searchUfficioIntestatario != null">
+			and (
+				UPPER(u.codein) like #{searchUfficioIntestatario}
+				or UPPER(u.cfein) like #{searchUfficioIntestatario}
+				or UPPER(u.nomein) like #{searchUfficioIntestatario}
+			)
+		</if>
+		order by nomein
+	</select>
+	
+	<select id="getAllBaseSAInfoLimitedSpid" resultMap="listaSABaseEntryMap"
+			parameterType="hashmap">
+		select u.codein, u.nomein 
+		from uffint u join w_config w on w.chiave = CONCAT('loginMultiEnte.', u.codein)
+		where 1 = 1
+		<if test="searchUfficioIntestatario != null">
+			and (
+				UPPER(u.codein) like #{searchUfficioIntestatario}
+				or UPPER(u.cfein) like #{searchUfficioIntestatario}
+				or UPPER(u.nomein) like #{searchUfficioIntestatario}
+			)
+		</if>
+		order by nomein
+	</select>
+</mapper>

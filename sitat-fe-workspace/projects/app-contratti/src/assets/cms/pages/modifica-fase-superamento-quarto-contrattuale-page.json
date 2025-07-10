@@ -1,0 +1,174 @@
+{
+    "name": "modifica-fase-superamento-quarto-contrattuale-page",
+    "title": "TITLE.MODIFICA-FASE-SUPERAMENTO-QUARTO-CONTRATTUALE-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "modifica-fase-superamento-quarto-contrattuale-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-superamento-quarto-contrattuale-page",
+                "label": "BREADCRUMB.DETTAGLIO-FASE-SUPERAMENTO-QUARTO-CONTRATTUALE",
+                "slug": "dettaglio-fase-superamento-quarto-contrattuale-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            },
+            {
+                "code": "modifica-fase-superamento-quarto-contrattuale-page",
+                "label": "BREADCRUMB.MODIFICA-FASE-SUPERAMENTO-QUARTO-CONTRATTUALE",
+                "slug": "modifica-fase-superamento-quarto-contrattuale-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-fase-superamento-quarto-contrattuale-page-content-root-section",
+            "selector": "modifica-fase-superamento-quarto-contrattuale-section",
+            "description": "Pagina di modifica fase di ripresa prestazione",
+            "classNames": "modifica-fase-superamento-quarto-contrattuale-section",
+            "settings": {
+                "classNames": "modifica-fase-superamento-quarto-contrattuale-index",
+                "sectionTitle": "TITLE.MODIFICA-FASE-SUPERAMENTO-QUARTO-CONTRATTUALE-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-dettaglio-fase",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_GARE_FASE_SOSPENSIONE_PROVIDER",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-fase",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_FASE_SUPERAMENTO_QUARTO_CONTRATTUALE_PROVIDER"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "sospensione-data",
+                            "label": "FASE-SOSPENSIONE.SOSPENSIONE.SOSPENSIONE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "sosp-parziale",
+                                    "label": "FASE-SOSPENSIONE.SOSPENSIONE.SOSP_PARZIALE-SOSP",
+                                    "oggettoProtezione": "W9.W9SOSP.SOSP_PARZIALE",
+                                    "mnemonico": "W9SOSP_PARZIALE",
+                                    "mappingInput": "sospParziale",
+                                    "mappingOutput": "sospParziale",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-verb-sosp",
+                                    "label": "FASE-SOSPENSIONE.SOSPENSIONE.DATA-VERB-SOSP",
+                                    "oggettoProtezione": "W9.W9SOSP.DATA_VERB_SOSP",
+                                    "mnemonico": "W3DVERB_SO",
+                                    "mappingInput": "dataVerbSosp",
+                                    "mappingOutput": "dataVerbSosp"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-verb-ripr",
+                                    "label": "FASE-SOSPENSIONE.SOSPENSIONE.DATA-VERB-RIPR",
+                                    "oggettoProtezione": "W9.W9SOSP.DATA_VERB_RIPR",
+                                    "mnemonico": "W3DVERB_RI",
+                                    "mappingInput": "dataVerbRipr",
+                                    "mappingOutput": "dataVerbRipr"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "motivo-sosp",
+                                    "label": "FASE-SOSPENSIONE.SOSPENSIONE.MOTIVO-SOSP",
+                                    "oggettoProtezione": "W9.W9SOSP.ID_MOTIVO_SOSP",
+                                    "mnemonico": "W3ID_MOTI4",
+                                    "mappingInput": "motivoSosp",
+                                    "mappingOutput": "motivoSosp",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "MotivoSospensione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "flag-supero-tempo",
+                                    "label": "FASE-SOSPENSIONE.SOSPENSIONE.FLAG-SUPERO-TEMPO",
+                                    "oggettoProtezione": "W9.W9SOSP.FLAG_SUPERO_TEMPO",
+                                    "mnemonico": "W3FLAG_SUP",
+                                    "mappingInput": "flagSuperoTempo",
+                                    "mappingOutput": "flagSuperoTempo",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "flag-riserve",
+                                    "label": "FASE-SOSPENSIONE.SOSPENSIONE.FLAG-RISERVE",
+                                    "oggettoProtezione": "W9.W9SOSP.FLAG_RISERVE",
+                                    "mnemonico": "W3RISERVE",
+                                    "mappingInput": "flagRiserve",
+                                    "mappingOutput": "flagRiserve",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "flag-verbale",
+                                    "label": "FASE-SOSPENSIONE.SOSPENSIONE.FLAG-VERBALE",
+                                    "oggettoProtezione": "W9.W9SOSP.FLAG_VERBALE",
+                                    "mnemonico": "W3FLAG_VER",
+                                    "mappingInput": "flagVerbale",
+                                    "mappingOutput": "flagVerbale",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-super-quarto",
+                                    "label": "FASE-SOSPENSIONE.SOSPENSIONE.DATA_SUPER_QUARTO",
+                                    "oggettoProtezione": "W9.W9SOSP.DATA_SUPER_QUARTO",
+                                    "mnemonico": "W9SOSPDATASUPQUA",
+                                    "mappingInput": "dataSuperQuarto",
+                                    "mappingOutput": "dataSuperQuarto"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

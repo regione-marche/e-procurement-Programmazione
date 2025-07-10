@@ -1,0 +1,12 @@
+{
+  "name": "sdk-gestione-modelli",
+  "version": "1.0.7",
+  "peerDependencies": {
+    "@angular/common": "~17.3.8",
+    "@angular/core": "~17.3.8"
+  },
+  "dependencies": {
+    "sdk-gestione-modelli": "file:",
+    "tslib": "^2.0.0"
+  }
+}

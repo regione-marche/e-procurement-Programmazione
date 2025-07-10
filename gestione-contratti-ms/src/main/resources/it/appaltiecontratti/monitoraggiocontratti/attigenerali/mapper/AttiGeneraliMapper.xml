@@ -1,0 +1,242 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="it.appaltiecontratti.monitoraggiocontratti.attigenerali.mapper.AttiGeneraliMapper">
+
+    <!-- LOG EVENTI -->
+    <insert id="insertLogEventi"
+            parameterType="it.appaltiecontratti.monitoraggiocontratti.contratti.entity.entries.LogEventiEntry">
+        insert into w_logeventi (idevento, codapp, cod_profilo,
+                                 syscon, ipevento, dataora,
+                                 oggevento, livevento, codevento,
+                                 descr, errmsg)
+        values (#{idevento,jdbcType=NUMERIC}, #{codapp,jdbcType=VARCHAR}, #{codProfilo,jdbcType=VARCHAR},
+                #{syscon,jdbcType=NUMERIC}, #{ipevento,jdbcType=VARCHAR}, #{dataora,jdbcType=TIMESTAMP},
+                #{oggevento,jdbcType=VARCHAR}, #{livevento,jdbcType=NUMERIC}, #{codevento,jdbcType=VARCHAR},
+                #{descr,jdbcType=VARCHAR}, #{errmsg,jdbcType=VARCHAR})
+    </insert>
+
+    <!-- LISTA ATTI GENERALI -->
+
+    <resultMap id="listaAttiGeneraliMap" type="it.appaltiecontratti.monitoraggiocontratti.attigenerali.entity.entries.AttoGeneraleEntry">
+        <id column="idatto" property="idAtto" jdbcType="BIGINT"/>
+        <result column="nomein" property="stazioneAppaltante" jdbcType="VARCHAR"/>
+        <result column="tipologia" property="tipologia" jdbcType="BIGINT"/>
+        <result column="dataatto" property="dataAtto" jdbcType="DATE"/>
+        <result column="numeroatto" property="numeroAtto" jdbcType="VARCHAR"/>
+        <result column="descri" property="descrizione" jdbcType="VARCHAR"/>
+        <result column="primapubblicazione" property="primaPubb" jdbcType="VARCHAR"/>
+        <result column="dataprimapubb" property="dataPrimaPubb" jdbcType="DATE"/>
+        <result column="datapubbsistema" property="dataPubbSistema" jdbcType="DATE"/>
+        <result column="datapubbsistema" property="dataPubbSistema" jdbcType="TIMESTAMP"/>
+        <result column="rup" property="rup" jdbcType="VARCHAR"/>
+        <result column="utente_prop" property="utenteProp" jdbcType="BIGINT"/>
+        <result column="idufficio" property="idUfficio" jdbcType="BIGINT"/>
+        <result column="utente_canc" property="utenteCanc" jdbcType="VARCHAR"/>
+        <result column="datacanc" property="dataCanc" jdbcType="DATE"/>
+        <result column="motivo_canc" property="motivoCanc" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="getListaAttiGeneraliMap" resultMap="listaAttiGeneraliMap" parameterType="hashmap">
+        SELECT DISTINCT
+        u.nomein,
+        ag.idatto,
+        ag.tipologia,
+        ag.dataatto,
+        ag.numeroatto,
+        ag.descri,
+        ag.primapubblicazione,
+        ag.dataprimapubb,
+        ag.datapubbsistema,
+        ag.datascadenza,
+        tec.cftec as rup,
+        ag.utente_prop,
+        ag.idufficio,
+        ag.utente_canc,
+        ag.motivo_canc,
+        ag.datacanc
+        FROM w9atti_generali ag
+        JOIN uffint u ON u.codein = ag.codein
+        LEFT OUTER JOIN tecni tec on tec.codtec = ag.rup
+        LEFT OUTER JOIN w9deleghe del on del.cfrup = tec.cftec
+        WHERE 1=1
+        <include refid="filtroAttiGenerali"></include>
+        ORDER BY
+        <if test="sort == 'idAtto'">ag.idatto</if>
+        <if test="sort == 'tipologia'">ag.tipologia</if>
+        <if test="sort == 'descrizione'">ag.descri</if>
+        <if test="sort == 'dataPubbSistema'">ag.datapubbsistema</if>
+        <if test="sort == 'dataScadenza'">ag.datascadenza</if>
+        <if test="sortDirection == 'asc'">ASC</if>
+        <if test="sortDirection == 'desc'">DESC</if>
+    </select>
+
+    <select id="countSearchAttiGenerali" resultType="int" parameterType="hashmap">
+        SELECT count(DISTINCT ag.idatto)
+        FROM w9atti_generali ag
+        JOIN uffint u ON u.codein = ag.codein
+        LEFT OUTER JOIN tecni tec ON tec.codtec = ag.rup
+        LEFT OUTER JOIN w9deleghe del ON del.cfrup = tec.cftec
+        WHERE 1 = 1
+        <include refid="filtroAttiGenerali"></include>
+    </select>
+
+    <sql id="filtroAttiGenerali">
+        <if test="stazioneAppaltante != null and stazioneAppaltante != ''">
+            AND UPPER(u.codein) IN
+            <foreach item="item" index="index" collection="stazioneAppaltante.split(',')" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+        <if test="idAtto != null">AND ag.idatto = #{idAtto} </if>
+        <if test="tipologia != null">AND ag.tipologia = #{tipologia}</if>
+        <if test="descrizione != null">AND ag.descri LIKE CONCAT('%', #{descrizione}, '%')</if>
+        <if test="dataPubbSistema != null">AND ag.datapubbsistema = #{dataPubbSistema,jdbcType=DATE} </if>
+        <if test="dataPubbSistemaDa != null">AND ag.datapubbsistema <![CDATA[ > ]]> #{dataPubbSistemaDa,jdbcType=DATE} </if>
+        <if test="dataPubbSistemaA != null">AND ag.datapubbsistema <![CDATA[ < ]]> #{dataPubbSistemaA,jdbcType=DATE} </if>
+        <if test="rup != null and !rup.isEmpty()">
+            AND (
+            <foreach item="codTecRupSingle" collection="rup" separator=" OR " open="(" close=")">
+                upper(tec.codtec) = upper(#{codTecRupSingle})
+                <if test="syscon != null">
+                    OR tec.syscon = #{syscon}
+                    OR del.id_collaboratore = #{syscon}
+                </if>
+            </foreach>
+            )
+        </if>
+        <if test="cfTecnico == null and cfNull">and (tec.syscon = #{syscon} or
+            del.id_collaboratore = #{syscon})
+        </if>
+    </sql>
+
+    <!-- DETTAGLIO ATTO GENERALE -->
+
+    <resultMap
+            id="attoGeneraleMap"
+            type="it.appaltiecontratti.monitoraggiocontratti.attigenerali.entity.entries.AttoGeneraleEntry">
+        <result column="codein" property="stazioneAppaltante"/>
+        <result column="idatto" property="idAtto"/>
+        <result column="rup" property="rup"/>
+        <result column="tipologia" property="tipologia"/>
+        <result column="descri" property="descrizione"/>
+        <result column="dataatto" property="dataAtto"/>
+        <result column="numeroatto" property="numeroAtto"/>
+        <result column="primapubblicazione" property="primaPubb"/>
+        <result column="dataprimapubb" property="dataPrimaPubb"/>
+        <result column="datapubbsistema" property="dataPubbSistema"/>
+        <result column="datascadenza" property="dataScadenza"/>
+        <result column="datacanc" property="dataCanc"/>
+        <result column="motivo_canc" property="motivoCanc"/>
+    </resultMap>
+
+    <select id="getDettaglioAttoGeneraleMap" resultMap="attoGeneraleMap" parameterType="hashmap">
+        SELECT DISTINCT
+            ag.codein,
+            ag.idatto,
+            ag.rup,
+            ag.tipologia,
+            ag.descri,
+            ag.dataatto,
+            ag.numeroatto,
+            ag.primapubblicazione,
+            ag.dataprimapubb,
+            ag.datapubbsistema,
+            ag.datascadenza,
+            ag.motivo_canc,
+            ag.datacanc
+        FROM w9atti_generali ag
+        JOIN uffint u ON u.codein = ag.codein
+        LEFT OUTER JOIN tecni tec on tec.codtec = ag.rup
+        LEFT OUTER JOIN w9deleghe del on del.cfrup = tec.cftec
+        WHERE 1=1
+        <include refid="filtroAttoGenerale"></include>
+        ORDER BY ag.datapubbsistema DESC
+    </select>
+
+    <sql id="filtroAttoGenerale">
+        <if test="idAtto != null">AND ag.idatto = #{idAtto} </if>
+    </sql>
+
+    <update id="updateDettaglioAttoGenerale">
+        UPDATE w9atti_generali
+        <set>
+            <if test="stazioneAppaltante != null">codein = #{stazioneAppaltante},</if>
+            <if test="tipologia != null">tipologia = #{tipologia},</if>
+            <if test="rup != null">rup = #{rup},</if>
+            <if test="descrizione != null">descri = #{descrizione},</if>
+            <if test="dataAtto != null">dataatto = #{dataAtto},</if>
+            <if test="numeroAtto != null">numeroatto = #{numeroAtto},</if>
+            <if test="primaPubb != null">primapubblicazione = #{primaPubb},</if>
+            <if test="dataPrimaPubb != null">dataprimapubb = #{dataPrimaPubb},</if>
+            <if test="dataPubbSistema != null">datapubbsistema = #{dataPubbSistema},</if>
+            <if test="dataScadenza != null">datascadenza = #{dataScadenza},</if>
+        </set>
+        WHERE idatto = #{idAtto}
+    </update>
+
+    <!-- LISTA ALLEGATI PER UN SINGOLO ATTO -->
+
+    <resultMap
+            id="listaAllegatiPerSingoloAttoMap"
+            type="it.appaltiecontratti.monitoraggiocontratti.attigenerali.entity.entries.AllegatoEntry">
+        <result column="idallegato" property="idAllegato"/>
+        <result column="key01" property="key01"/>
+        <result column="key02" property="key02"/>
+        <result column="key03" property="key03"/>
+        <result column="tabella" property="tabella"/>
+        <result column="descri" property="descrizione"/>
+        <result column="file_allegato" property="fileAllegato"/>
+        <result column="url" property="url"/>
+        <result column="tipo_file" property="tipoFile"/>
+        <result column="num_ordine" property="numOrdine"/>
+        <result column="utente_creatore" property="utenteCreatore"/>
+        <result column="dataaggiunta" property="dataAggiunta"/>
+        <result column="utente_canc" property="utenteCanc"/>
+        <result column="datacanc" property="dataCanc"/>
+        <result column="motivo_canc" property="motivoCanc"/>
+    </resultMap>
+
+    <select id="getListaAllegatiAttoGeneraleMap" resultMap="listaAllegatiPerSingoloAttoMap" parameterType="hashmap">
+        SELECT a.idallegato, a.key01, a.key02, a.key03, a.tabella, a.descri, a.file_allegato, a.url, a.tipo_file, a.num_ordine, a.utente_creatore, a.dataaggiunta, a.utente_canc, a.datacanc, a.motivo_canc
+        FROM w9allegati a
+        WHERE 1=1
+        <include refid="filtroAllegatiSingoloAtto"></include>
+        AND a.tabella = 'W9ATTI_GENERALI'
+    </select>
+
+    <sql id="filtroAllegatiSingoloAtto">
+        <if test="idAtto != null">AND a.key01 = #{idAtto} </if>
+    </sql>
+
+    <resultMap
+            id="allegatoSingoloAttoGenerale"
+            type="it.appaltiecontratti.monitoraggiocontratti.attigenerali.entity.entries.AllegatoEntry">
+        <result column="idallegato" property="idAllegato"/>
+        <result column="key01" property="key01"/>
+        <result column="key02" property="key02"/>
+        <result column="key03" property="key03"/>
+        <result column="tabella" property="tabella"/>
+        <result column="descri" property="descrizione"/>
+        <result column="file_allegato" property="fileAllegato"/>
+        <result column="url" property="url"/>
+        <result column="tipo_file" property="tipoFile"/>
+        <result column="num_ordine" property="numOrdine"/>
+        <result column="utente_creatore" property="utenteCreatore"/>
+        <result column="dataaggiunta" property="dataAggiunta"/>
+        <result column="utente_canc" property="utenteCanc"/>
+        <result column="datacanc" property="dataCanc"/>
+        <result column="motivo_canc" property="motivoCanc"/>
+    </resultMap>
+
+    <select id="getAllegatoAttoGenerale" resultMap="allegatoSingoloAttoGenerale" parameterType="hashmap">
+        SELECT idallegato, key01, key02, key03, tabella, descri, file_allegato, url, tipo_file, num_ordine, utente_creatore, dataaggiunta, utente_canc, datacanc, motivo_canc
+        from w9allegati a
+        where 1=1
+        <include refid="filtroAllegatoSingoloAttoGenerale"></include>
+    </select>
+
+    <sql id="filtroAllegatoSingoloAttoGenerale">
+        <if test="idAtto != null">AND a.key01 = #{idAtto} </if>
+        <if test="idAllegato != null">AND a.idallegato = #{idAllegato} </if>
+    </sql>
+</mapper>

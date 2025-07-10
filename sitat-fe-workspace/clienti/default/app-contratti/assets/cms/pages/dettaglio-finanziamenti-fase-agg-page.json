@@ -1,0 +1,241 @@
+{
+    "name": "dettaglio-finanziamenti-fase-agg-page",
+    "title": "TITLE.DETTAGLIO-FINANZIAMENTI-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "dettaglio-finanziamenti-fase-agg-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-finanziamenti-fase-agg-page",
+                "label": "BREADCRUMB.DETTAGLIO-FINANZIAMENTI",
+                "slug": "dettaglio-finanziamenti-fase-agg-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ],
+        "breadcrumbsLS": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.RICERCA-SCHEDE-TRASMESSE-PCP",
+                "slug": "ricerca-schede-trasmesse-pcp-page"
+            },
+            {
+                "code": "lista-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.LISTA-SCHEDE-TRASMESSE-PCP",
+                "slug": "lista-schede-trasmesse-pcp-page"
+            },
+            {
+                "code": "lista-fasi-lotto-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "dettaglio-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "lista-impr-agg-fase-agg-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.LISTA-IMPRESE-AGGIUDICATARIE",
+                "slug": "lista-impr-agg-fase-agg-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            },
+            {
+                "code": "dettaglio-finanziamenti-fase-agg-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.DETTAGLIO-FINANZIAMENTI",
+                "slug": "dettaglio-finanziamenti-fase-agg-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-finanziamenti-fase-agg-page-content-root-section",
+            "selector": "dettaglio-finanziamenti-section",
+            "description": "Pagina di dettaglio finanziamenti",
+            "classNames": "dettaglio-finanziamenti-fase-agg-section",
+            "settings": {
+                "classNames": "dettaglio-finanziamenti-fase-agg-index",
+                "menuTabs": [
+                    {
+                        "code": "dettaglio-fase-aggiudicazione",
+                        "title": "DETTAGLIO-FASE-AGGIUDICAZIONE.TABS.DATI-AGGIUDICAZIONE",
+                        "slug": "dettaglio-fase-aggiudicazione-page",
+                        "oggettoProtezione": "W9.W9APPA-scheda.DETTFASE",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+                    },
+                    {
+                        "code": "lista-impr-agg-fase-agg",
+                        "title": "DETTAGLIO-FASE-AGGIUDICAZIONE.TABS.IMPRESE-AGGIUDICATARIE",
+                        "slug": "lista-impr-agg-fase-agg-page",
+                        "oggettoProtezione": "W9.W9APPA-scheda.IMPR",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+                    },
+                    {
+                        "code": "dettaglio-inc-prof-fase-agg",
+                        "title": "DETTAGLIO-FASE-AGGIUDICAZIONE.TABS.INCARICHI-PROFESSIONALI",
+                        "slug": "dettaglio-inc-prof-fase-agg-page",
+                        "oggettoProtezione": "W9.W9APPA-scheda.TECNI",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+                    },
+                    {
+                        "code": "dettaglio-finanziamenti-fase-agg",
+                        "title": "DETTAGLIO-FASE-AGGIUDICAZIONE.TABS.FINANZIAMENTI",
+                        "active": true,
+                        "slug": "dettaglio-finanziamenti-fase-agg-page",
+                        "oggettoProtezione": "W9.W9APPA-scheda.FINA",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS",
+                        "visible": "APP_GARE_FINANZIAMENTI_TABS_VISIBLE"
+                    }
+                ],
+                "menuTabsLS": [
+                    {
+                        "code": "dettaglio-fase-aggiudicazione",
+                        "title": "DETTAGLIO-FASE-AGGIUDICAZIONE.TABS.DATI-AGGIUDICAZIONE",
+                        "slug": "dettaglio-fase-aggiudicazione-page",
+                        "oggettoProtezione": "W9.W9APPA-scheda.DETTFASE",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+                    },
+                    {
+                        "code": "lista-impr-agg-fase-agg",
+                        "title": "DETTAGLIO-FASE-AGGIUDICAZIONE.TABS.IMPRESE-AGGIUDICATARIE",
+                        "slug": "lista-impr-agg-fase-agg-page",
+                        "oggettoProtezione": "W9.W9APPA-scheda.IMPR",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+                    },
+                    {
+                        "code": "dettaglio-inc-prof-fase-agg",
+                        "title": "DETTAGLIO-FASE-AGGIUDICAZIONE.TABS.INCARICHI-PROFESSIONALI",
+                        "slug": "dettaglio-inc-prof-fase-agg-page",
+                        "oggettoProtezione": "W9.W9APPA-scheda.TECNI",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+                    },
+                    {
+                        "code": "dettaglio-finanziamenti-fase-agg",
+                        "title": "DETTAGLIO-FASE-AGGIUDICAZIONE.TABS.FINANZIAMENTI",
+                        "active": true,
+                        "slug": "dettaglio-finanziamenti-fase-agg-page",
+                        "oggettoProtezione": "W9.W9APPA-scheda.FINA",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS",
+                        "visible": "APP_GARE_FINANZIAMENTI_TABS_VISIBLE"
+                    }
+                ],
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "go-to-update-finanziamenti",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_GARE_FINANZIAMENTI_FASE_AGG",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "buttonsRO": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "buttonsLS": [
+                        {
+                            "code": "back-to-lista-fasi-lotto-schede-trasmesse",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_FINANZIAMENTI_FASE_AGG",
+                            "type": "cancel"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "dati-generali-data",
+                            "label": "FINANZIAMENTI.DATI-GENERALI-DATA.DATI-GENERALI-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "FORM-GROUP",
+                                    "code": "finanziamenti-group",
+                                    "label": "",
+                                    "minGroupsNumber": 0,
+                                    "maxGroupsNumber": -1,
+                                    "mappingInput": "finanziamenti",
+                                    "mappingOutput": "finanziamenti",
+                                    "defaultFormGroupFields": [
+                                        {
+                                            "type": "TEXT",
+                                            "code": "id-finanziamento",
+                                            "label": "FINANZIAMENTI.DATI-GENERALI-DATA.ID-FINANZIAMENTO",
+                                            "oggettoProtezione": "W9.W9FINA.ID_FINANZIAMENTO",
+                                            "mnemonico": "W3ID_FINAN",
+                                            "mappingInput": "idFinanziamento",
+                                            "mappingOutput": "idFinanziamento",
+                                            "listCode": "TipologiaFinanziamento"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "importo-finanziamento",
+                                            "label": "FINANZIAMENTI.DATI-GENERALI-DATA.IMPORTO-FINANZIAMENTO",
+                                            "oggettoProtezione": "W9.W9FINA.IMPORTO_FINANZIAMENTO",
+                                            "mnemonico": "W3I_FINANZ",
+                                            "mappingInput": "importoFinanziamento",
+                                            "mappingOutput": "importoFinanziamento",
+                                            "currency": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

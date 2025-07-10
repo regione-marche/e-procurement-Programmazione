@@ -1,0 +1,22 @@
+{
+    "name": "choose-profile-page",
+    "title": "TITLE.CHOOSE-PROFILE-PAGE",
+    "layout": "choose-profile-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "choose-profile-page"
+    },
+    "sections": [
+        {
+            "id": "choose-profile-page-content-root-section",
+            "selector": "choose-profile-section",
+            "description": "Pagina di selezione stazione appaltante avvisi",
+            "classNames": "choose-profile-section",
+            "settings": {
+                "classNames": "choose-profile-index",
+                "sectionTitle": "TITLE.CHOOSE-PROFILE-PAGE"
+            }
+        }
+    ]
+}

@@ -1,0 +1,224 @@
+{
+    "name": "dettaglio-fase-accordo-bonario-page",
+    "title": "TITLE.DETTAGLIO-FASE-ACCORDO-BONARIO-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/pubblica-fase-lotto-page.css"
+    ],
+    "settings": {
+        "page": "dettaglio-fase-accordo-bonario-page",
+        "pageFeatures": [
+            "docassociati"
+        ],
+        "entity": {
+            "schema": "W9",
+            "name": "W9FASI",
+            "keys": [
+                "codGara",
+                "codLotto",
+                "codiceFase",
+                "num"
+            ]
+        },
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-accordo-bonario-page",
+                "label": "BREADCRUMB.DETTAGLIO-FASE-ACCORDO-BONARIO",
+                "slug": "dettaglio-fase-accordo-bonario-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ],
+        "breadcrumbsLS": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.RICERCA-SCHEDE-TRASMESSE-PCP",
+                "slug": "ricerca-schede-trasmesse-pcp-page"
+            },
+            {
+                "code": "lista-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.LISTA-SCHEDE-TRASMESSE-PCP",
+                "slug": "lista-schede-trasmesse-pcp-page"
+            },
+            {
+                "code": "lista-fasi-lotto-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "dettaglio-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-accordo-bonario-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.DETTAGLIO-FASE-ACCORDO-BONARIO",
+                "slug": "dettaglio-fase-accordo-bonario-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-fase-accordo-bonario-page-content-root-section",
+            "selector": "dettaglio-fase-accordo-bonario-section",
+            "description": "Pagina di dettaglio fase di accordo-bonario",
+            "classNames": "dettaglio-fase-accordo-bonario-section",
+            "settings": {
+                "classNames": "dettaglio-fase-accordo-bonario-index",
+                "sectionTitle": "TITLE.DETTAGLIO-FASE-ACCORDO-BONARIO-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "check-pubblicazione",
+                            "label": "BUTTONS.CHECK-DATA",
+                            "provider": "APP_FASI_LOTTO_PUBBLICA",
+                            "oggettoProtezione": "ALT.W9.FasiDiGara-schede.ControlloDatiInseriti",
+                            "type": "functions",
+                            "icon": "mgg-icons-document-text"
+                        },
+                        {
+                            "code": "go-to-update-fase",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_GARE_FASE_ACCORDO_BONARIO_PROVIDER",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "buttonsRO": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "buttonsLS": [
+                        {
+                            "code": "back-to-lista-fasi-lotto-schede-trasmesse",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "sidebar": {
+                        "code": "sidebar",
+                        "position": "right",
+                        "width": 500,
+                        "classList": [
+                            "check-pubb-sidebar"
+                        ],
+                        "headerImage": "assets/images/app/logo.png",
+                        "component": "check-pubblicazione-widget",
+                        "componentConfig": {}
+                    },
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "accordo-bonario-data",
+                            "label": "FASE-ACCORDO-BONARIO.ACCORDO-BONARIO-DATA.ACCORDO-BONARIO-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "num-acco",
+                                    "label": "FASE-ACCORDO-BONARIO.ACCORDO-BONARIO-DATA.NUM-ACCO",
+                                    "oggettoProtezione": "W9.W9ACCO.NUM_ACCO",
+                                    "mnemonico": "W3ACNUMCON",
+                                    "mappingInput": "num",
+                                    "mappingOutput": ""
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-accordo",
+                                    "label": "FASE-ACCORDO-BONARIO.ACCORDO-BONARIO-DATA.DATA-ACCORDO",
+                                    "oggettoProtezione": "W9.W9ACCO.DATA_ACCORDO",
+                                    "mnemonico": "W3DATA_ACC",
+                                    "mappingInput": "dataAccordo",
+                                    "mappingOutput": "dataAccordo"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "oneri-derivanti",
+                                    "label": "FASE-ACCORDO-BONARIO.ACCORDO-BONARIO-DATA.ONERI-DERIVANTI",
+                                    "oggettoProtezione": "W9.W9ACCO.ONERI_DERIVANTI",
+                                    "mnemonico": "W3ONERI_DE",
+                                    "mappingInput": "oneriDerivanti",
+                                    "mappingOutput": "oneriDerivanti",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "num-riserve",
+                                    "label": "FASE-ACCORDO-BONARIO.ACCORDO-BONARIO-DATA.NUM-RISERVE",
+                                    "oggettoProtezione": "W9.W9ACCO.NUM_RISERVE",
+                                    "mnemonico": "W3NUM_RISE",
+                                    "mappingInput": "numRiserve",
+                                    "mappingOutput": "numRiserve"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-inizio-acc",
+                                    "label": "FASE-ACCORDO-BONARIO.ACCORDO-BONARIO-DATA.DATA-INIZIO-ACC",
+                                    "oggettoProtezione": "W9.W9ACCO.DATA_INIZIO_ACC",
+                                    "mnemonico": "W9ACCODTINAC",
+                                    "mappingInput": "dataInizioAcc",
+                                    "mappingOutput": "dataInizioAcc"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-fine-acc",
+                                    "label": "FASE-ACCORDO-BONARIO.ACCORDO-BONARIO-DATA.DATA-FINE-ACC",
+                                    "oggettoProtezione": "W9.W9ACCO.DATA_FINE_ACC",
+                                    "mnemonico": "W9ACCODTFIAC",
+                                    "mappingInput": "dataFineAcc",
+                                    "mappingOutput": "dataFineAcc"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

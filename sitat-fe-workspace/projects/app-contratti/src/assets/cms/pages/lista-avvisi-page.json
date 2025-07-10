@@ -1,0 +1,231 @@
+{
+    "name": "lista-avvisi-page",
+    "title": "TITLE.LISTA-AVVISI-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "lista-avvisi-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-avvisi-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-AVVISI",
+                "slug": "ricerca-avanzata-avvisi-page",
+                "visible": "BREADCRUMB_RICERCA_AVVISI_VISIBLE"
+            },
+            {
+                "code": "lista-avvisi-page",
+                "label": "BREADCRUMB.LISTA-AVVISI",
+                "slug": "lista-avvisi-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "lista-avvisi-page-content-root-section",
+            "selector": "lista-avvisi-section",
+            "description": "Pagina per la creazione di un nuovo avviso",
+            "classNames": "lista-avvisi-section",
+            "settings": {
+                "classNames": "lista-avvisi-index",
+                "sectionTitle": "TITLE.LISTA-AVVISI-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_AVVISI_LISTA_AVVISI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "pulisciFiltri",
+                            "label": "BUTTONS.SET-FILTERS",
+                            "provider": "APP_AVVISI_LISTA_AVVISI",
+                            "icon": "mgg-icons-data-filtered"
+                        }
+                    ],
+                    "grid": {
+                        "showCurrentPageReport": true,
+                        "showCurrentRecordsReport": true,
+                        "navigable": true,
+                        "resizable": false,
+                        "debug": false,
+                        "sortable": {
+                            "allowUnsort": false,
+                            "mode": "single"
+                        },
+                        "sort": [
+                            {
+                                "field": "numeroAvviso",
+                                "dir": "desc"
+                            }
+                        ],
+                        "pageable": {
+                            "buttonCount": 5,
+                            "info": true,
+                            "pageSizes": [
+                                5,
+                                10,
+                                20,
+                                50
+                            ],
+                            "type": "numeric"
+                        },
+                        "toolbar": {
+                            "position": "top",
+                            "actions": []
+                        },
+                        "columns": [
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-AVVISI.STAZIONE-APPALTANTE",
+                                "field": "nominativoStazioneAppaltante",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-AVVISI.NUMERO-AVVISO",
+                                "field": "numeroAvviso",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "W9.AVVISO.IDAVVISO"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-AVVISI.CIG",
+                                "field": "cig",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": "W9.AVVISO.CIG"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-AVVISI.TIPOLOGIA",
+                                "field": "descrizioneTipoAvviso",
+                                "width": 150,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": "W9.AVVISO.TIPOAVV"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_LINK",
+                                    "params": {
+                                        "action": {
+                                            "label": "LISTA-AVVISI.AZIONI.DETTAGLIO",
+                                            "disabled": false,
+                                            "performer": "dettaglio"
+                                        }
+                                    }
+                                },
+                                "title": "LISTA-AVVISI.DESCRIZIONE",
+                                "field": "descrizione",
+                                "width": 250,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": "W9.AVVISO.DESCRI"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_DATE"
+                                },
+                                "title": "LISTA-AVVISI.DATA-AVVISO",
+                                "field": "dataAvviso",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": "W9.AVVISO.DATAAVV"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_DATE"
+                                },
+                                "title": "LISTA-AVVISI.DATA-SCADENZA",
+                                "field": "dataScadenza",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": "W9.AVVISO.DATASCADENZA"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_BOOLEAN",
+                                    "params": {
+                                        "icon": "fas fa-flag"
+                                    }
+                                },
+                                "title": "LISTA-AVVISI.PUBBLICATO",
+                                "field": "pubblicato",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_ACTIONS_ICON",
+                                    "params": {
+                                        "actions": [
+                                            {
+                                                "label": "LISTA-AVVISI.AZIONI.TRASFERIMENTO-AVVISO",
+                                                "disabled": false,
+                                                "performer": "trasferimentoAvviso",
+                                                "hidden": "trasferimentoAvvisoHidden",
+                                                "icon": "fas fa-user-edit"
+                                            },
+                                            {
+                                                "label": "LISTA-AVVISI.AZIONI.CANCELLA",
+                                                "disabled": false,
+                                                "performer": "delete",
+                                                "hidden": "deleteHidden",
+                                                "icon": "mgg-icons-crud-delete",
+                                                "oggettoProtezione": "DEL.*"
+                                            },
+                                            {
+                                                "label": "LISTA-AVVISI.AZIONI.NO-CANCELLA",
+                                                "disabled": true,
+                                                "hidden": "deleteNotHidden",
+                                                "icon": "mgg-icons-no-trash"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "title": "LISTA-AVVISI.AZIONI.TITLE",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

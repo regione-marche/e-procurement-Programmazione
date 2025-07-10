@@ -1,0 +1,545 @@
+{
+    "name": "dett-prog-dati-generali-page",
+    "title": "TITLE.DETTAGLIO-PROGRAMMA-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "app-programmi",
+    "styleUrls": [
+        "assets/cms/pages/dett-prog-pubblica-page.css"
+    ],
+    "settings": {
+        "page": "dett-prog-dati-generali-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-programmi-page",
+                "label": "BREADCRUMB.LISTA-PROGRAMMI",
+                "slug": "lista-programmi-page",
+                "additionalParams": "APP_PROGRAMMI_LISTA_PROGRAMMI_PARAMS"
+            },
+            {
+                "code": "dett-prog-dati-generali-page",
+                "label": "BREADCRUMB.DETTAGLIO-PROGRAMMA",
+                "slug": "dett-prog-dati-generali-page",
+                "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dett-prog-dati-generali-page-content-root-section",
+            "selector": "dett-prog-dati-generali-section",
+            "description": "Pagina per la creazione di un nuovo avviso",
+            "classNames": "dett-prog-dati-generali-section",
+            "settings": {
+                "classNames": "dett-prog-dati-generali-index",
+                "menuTabs": [
+                    {
+                        "code": "dati-generali",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.DATI-GENERALI",
+                        "active": true,
+                        "slug": "dett-prog-dati-generali-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.DATIGEN",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+                    },
+                    {
+                        "code": "opere-incompiute",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.OPERE-INCOMPIUTE",
+                        "slug": "dett-prog-opere-incompiute-page",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS",
+                        "oggettoProtezione": "W9.PIATRI-scheda.OPEREINCOMPIUTE",
+                        "visible": "APP_PROGRAMMI_DETT_PROG_LAVORI_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "interventi",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.INTERVENTI",
+                        "slug": "dett-prog-interventi-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.INTERVENTI",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS",
+                        "visible": "APP_PROGRAMMI_DETT_PROG_LAVORI_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "interventi-non-riproposti",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.INTERVENTI-NON-RIPROPOSTI",
+                        "slug": "dett-prog-interventi-non-riproposti-page",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS",
+                        "oggettoProtezione": "W9.PIATRI-scheda.INTERVENTINONRIPROPOSTI",
+                        "visible": "APP_PROGRAMMI_DETT_PROG_LAVORI_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "acquisti",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.ACQUISTI",
+                        "slug": "dett-prog-interventi-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.INTERVENTI",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS",
+                        "visible": "APP_PROGRAMMI_DETT_PROG_FORNITURE_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "acquisti-non-riproposti",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.ACQUISTI-NON-RIPROPOSTI",
+                        "slug": "dett-prog-interventi-non-riproposti-page",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS",
+                        "oggettoProtezione": "W9.PIATRI-scheda.INTERVENTINONRIPROPOSTI",
+                        "visible": "APP_PROGRAMMI_DETT_PROG_FORNITURE_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "riepilogo",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.RIEPILOGO",
+                        "slug": "dett-prog-riepilogo-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.RIEPILOGO",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+                    },
+                    {
+                        "code": "pubblica",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.PUBBLICA",
+                        "slug": "dett-prog-pubblica-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.FLUSSIPROGRAMMI",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+                    }
+                ],
+                "menuTabsOI": [
+                    {
+                        "code": "dati-generali",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.DATI-GENERALI",
+                        "active": true,
+                        "slug": "dett-prog-dati-generali-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.DATIGEN",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+                    },
+                    {
+                        "code": "opere-incompiute",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.OPERE-INCOMPIUTE",
+                        "slug": "dett-prog-opere-incompiute-page",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS",
+                        "oggettoProtezione": "W9.PIATRI-scheda.OPEREINCOMPIUTE",
+                        "visible": "APP_PROGRAMMI_DETT_PROG_LAVORI_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "riepilogo",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.RIEPILOGO",
+                        "slug": "dett-prog-riepilogo-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.RIEPILOGO",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+                    },
+                    {
+                        "code": "pubblica",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.PUBBLICA",
+                        "slug": "dett-prog-pubblica-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.FLUSSIPROGRAMMI",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+                    }
+                ],
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "check-pubblicazione",
+                            "label": "BUTTONS.VERIFY",
+                            "provider": "APP_PROGRAMMI_PUBBLICA",
+                            "type": "functions",
+                            "icon": "mgg-icons-document-text"
+                        },
+                        {
+                            "code": "confronto-programmi",
+                            "label": "BUTTONS.CONFRONTO-PROGRAMMI",
+                            "provider": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA",
+                            "type": "functions",
+                            "icon": "mgg-icons-todo_inevaluation_to_others"
+                        },
+                        {
+                            "code": "update",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "readOnlyButtons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "confronto-programmi",
+                            "label": "BUTTONS.CONFRONTO-PROGRAMMI",
+                            "provider": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA",
+                            "type": "functions",
+                            "icon": "mgg-icons-todo_inevaluation_to_others"
+                        },
+                        {
+                            "code": "altre-azioni",
+                            "label": "BUTTONS.ALTRE-AZIONI",
+                            "icon": "mgg-icons-menu-more",
+                            "dropdown": true,
+                            "dropdownData": [
+                                {
+                                    "code": "redirect-link-pubb",
+                                    "label": "BUTTONS.REDIRECT-LINK-SCP",
+                                    "provider": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA",
+                                    "oggettoProtezione": "ALT.W9.W9FLUSSI-VIS_PUBBLICAZIONE"
+                                }
+                            ],
+                            "type": "cancel",
+                            "look": "icon"
+                        }
+                    ],
+                    "sidebar": {
+                        "code": "sidebar",
+                        "position": "right",
+                        "width": 500,
+                        "classList": [
+                            "check-pubb-sidebar"
+                        ],
+                        "headerImage": "assets/images/app/logo.png",
+                        "component": "check-pubblicazione-widget",
+                        "componentConfig": {}
+                    },
+                    "lavoriFields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "PROGRAMMA.GENERAL-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "id-programma",
+                                    "label": "PROGRAMMA.ID-PROGRAMMA",
+                                    "oggettoProtezione": "PIANI.PIATRI.CONTRI",
+                                    "mappingInput": "idProgramma",
+                                    "mappingOutput": "idProgramma"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "stazione-appaltante",
+                                    "label": "PROGRAMMA.STAZIONE-APPALTANTE",
+                                    "oggettoProtezione": "PIANI.PIATRI.CENINT",
+                                    "mappingInput": "stazioneAppaltante",
+                                    "mappingOutput": "stazioneAppaltante",
+                                    "link": true,
+                                    "modalComponent": "stazione-appaltante-modal-widget",
+                                    "modalComponentConfig": "stazioneAppaltanteModalConfig"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "ufficio",
+                                    "label": "PROGRAMMA.UFFICIO",
+                                    "oggettoProtezione": "PIANI.PIATRI.IDUFFICIO",
+                                    "mnemonico": "PIAIDUFF",
+                                    "mappingInput": "idUfficio",
+                                    "mappingOutput": "idUfficio",
+                                    "link": true,
+                                    "modalComponent": "uff-modal-widget",
+                                    "modalComponentConfig": "uffModalConfig"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "tipo-programma",
+                                    "label": "PROGRAMMA.TIPO-PROGRAMMA",
+                                    "oggettoProtezione": "PIANI.PIATRI.TIPROG",
+                                    "mappingInput": "tipoProgramma",
+                                    "mappingOutput": "tipoProgramma"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "norma",
+                                    "label": "PROGRAMMA.NORMA",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "norma",
+                                    "mappingOutput": "norma",
+                                    "listCode": "TipoNorma"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "descrizione-programma",
+                                    "label": "PROGRAMMA.DESCRIZIONE-BREVE",
+                                    "oggettoProtezione": "PIANI.PIATRI.BRETRI",
+                                    "mappingInput": "descrizioneBreve",
+                                    "mappingOutput": "descrizioneBreve"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "annoInizio",
+                                    "label": "PROGRAMMA.ANNO",
+                                    "oggettoProtezione": "PIANI.PIATRI.ANNTRI",
+                                    "mnemonico": "T2ANNTRI",
+                                    "mappingInput": "annoInizio",
+                                    "mappingOutput": "annoInizio"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "responsabile",
+                                    "label": "PROGRAMMA.RESPONSABILE",
+                                    "oggettoProtezione": "PIANI.PIATRI.RESPRO",
+                                    "mnemonico": "T2RESPRO",
+                                    "mappingInput": "responsabile",
+                                    "mappingOutput": "responsabile",
+                                    "link": true,
+                                    "modalComponent": "rup-rw-modal-widget",
+                                    "modalComponentConfig": "rupModalRWConfig"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "adozione",
+                            "label": "PROGRAMMA.ADOZIONE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "numeroAdozione",
+                                    "label": "PROGRAMMA.NUMERO-ADOZIONE",
+                                    "oggettoProtezione": "PIANI.PIATRI.NADOZI",
+                                    "mnemonico": "T2NADOZI",
+                                    "mappingInput": "numeroAtto",
+                                    "mappingOutput": "numeroAtto"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-pubblicazione-adozione",
+                                    "label": "PROGRAMMA.DATA-PUBBLICAZIONE",
+                                    "oggettoProtezione": "PIANI.PIATRI.DPADOZI",
+                                    "mnemonico": "T2DTPUBADOZI",
+                                    "mappingInput": "dataPubblicazioneAdo",
+                                    "mappingOutput": "dataPubblicazioneAdo"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-adozione",
+                                    "label": "PROGRAMMA.DATA-ADOZIONE",
+                                    "oggettoProtezione": "PIANI.PIATRI.DADOZI",
+                                    "mnemonico": "T2DADOZI",
+                                    "mappingInput": "dataAtto",
+                                    "mappingOutput": "dataAtto"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "titoloAdozione",
+                                    "label": "PROGRAMMA.TITOLO",
+                                    "oggettoProtezione": "PIANI.PIATRI.TITADOZI",
+                                    "mnemonico": "T2TITOLOADOZ",
+                                    "mappingInput": "titoloAdozione",
+                                    "mappingOutput": "titoloAdozione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "urlAdozione",
+                                    "label": "PROGRAMMA.URL_ADOZIONE",
+                                    "oggettoProtezione": "PIANI.PIATRI.URLADOZI",
+                                    "mnemonico": "T2URLADOZI",
+                                    "mappingInput": "urlAdozione",
+                                    "mappingOutput": "urlAdozione",
+                                    "link": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "approvazione",
+                            "label": "PROGRAMMA.APPROVAZIONE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "numeroApprovazione",
+                                    "label": "PROGRAMMA.NUMERO-APPROVAZIONE",
+                                    "oggettoProtezione": "PIANI.PIATRI.NAPTRI",
+                                    "mnemonico": "T2NAPTRI",
+                                    "mappingInput": "numeroApprovazione",
+                                    "mappingOutput": "numeroApprovazione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-pubblicazione-approvazione",
+                                    "label": "PROGRAMMA.DATA-PUBBLICAZIONE",
+                                    "oggettoProtezione": "PIANI.PIATRI.DPAPPROV",
+                                    "mnemonico": "T2DTPUBAPP",
+                                    "mappingInput": "dataPubblicazioneAppr",
+                                    "mappingOutput": "dataPubblicazioneAppr"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-approvazione",
+                                    "label": "PROGRAMMA.DATA-APPROVAZIONE",
+                                    "oggettoProtezione": "PIANI.PIATRI.DAPTRI",
+                                    "mnemonico": "T2DAPTRI",
+                                    "mappingInput": "dataApprovazione",
+                                    "mappingOutput": "dataApprovazione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "titoloApprovazione",
+                                    "label": "PROGRAMMA.TITOLO",
+                                    "oggettoProtezione": "PIANI.PIATRI.TITAPPROV",
+                                    "mnemonico": "T2TITOLOAPP",
+                                    "mappingInput": "titoloApprovazione",
+                                    "mappingOutput": "titoloApprovazione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "urlApprovazione",
+                                    "label": "PROGRAMMA.URL_APPROVAZIONE",
+                                    "oggettoProtezione": "PIANI.PIATRI.URLAPPROV",
+                                    "mnemonico": "T2URLAPPROV",
+                                    "mappingInput": "urlApprovazione",
+                                    "mappingOutput": "urlApprovazione",
+                                    "link": true
+                                }
+                            ]
+                        }
+                    ],
+                    "fornitureFields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "PROGRAMMA.GENERAL-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "id-programma",
+                                    "label": "PROGRAMMA.ID-PROGRAMMA",
+                                    "oggettoProtezione": "",
+                                    "mappingInput": "idProgramma",
+                                    "mappingOutput": "idProgramma"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "stazione-appaltante",
+                                    "label": "PROGRAMMA.STAZIONE-APPALTANTE",
+                                    "oggettoProtezione": "",
+                                    "mappingInput": "stazioneAppaltante",
+                                    "mappingOutput": "stazioneAppaltante",
+                                    "link": true,
+                                    "modalComponent": "stazione-appaltante-modal-widget",
+                                    "modalComponentConfig": "stazioneAppaltanteModalConfig"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "ufficio",
+                                    "label": "PROGRAMMA.UFFICIO",
+                                    "oggettoProtezione": "PIANI.PIATRI.IDUFFICIO",
+                                    "mnemonico": "PIAIDUFF",
+                                    "mappingInput": "idUfficio",
+                                    "mappingOutput": "idUfficio",
+                                    "link": true,
+                                    "modalComponent": "uff-modal-widget",
+                                    "modalComponentConfig": "uffModalConfig"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "tipo-programma",
+                                    "label": "PROGRAMMA.TIPO-PROGRAMMA",
+                                    "oggettoProtezione": "PIANI.PIATRI.TIPROG",
+                                    "mappingInput": "tipoProgramma",
+                                    "mappingOutput": "tipoProgramma"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "norma",
+                                    "label": "PROGRAMMA.NORMA",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "norma",
+                                    "mappingOutput": "norma",
+                                    "listCode": "TipoNorma"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "descrizione-programma",
+                                    "label": "PROGRAMMA.DESCRIZIONE-BREVE",
+                                    "oggettoProtezione": "PIANI.PIATRI.BRETRI",
+                                    "mappingInput": "descrizioneBreve",
+                                    "mappingOutput": "descrizioneBreve"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "annoInizio",
+                                    "label": "PROGRAMMA.ANNO",
+                                    "oggettoProtezione": "PIANI.PIATRI.ANNTRI",
+                                    "mnemonico": "T2ANNTRI",
+                                    "mappingInput": "annoInizio",
+                                    "mappingOutput": "annoInizio"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "responsabile",
+                                    "label": "PROGRAMMA.RESPONSABILE",
+                                    "oggettoProtezione": "PIANI.PIATRI.RESPRO",
+                                    "mnemonico": "T2RESPRO",
+                                    "mappingInput": "responsabile",
+                                    "mappingOutput": "responsabile",
+                                    "link": true,
+                                    "modalComponent": "rup-rw-modal-widget",
+                                    "modalComponentConfig": "rupModalRWConfig"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "approvazione",
+                            "label": "PROGRAMMA.APPROVAZIONE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "numeroApprovazione",
+                                    "label": "PROGRAMMA.NUMERO-APPROVAZIONE",
+                                    "oggettoProtezione": "PIANI.PIATRI.NAPTRI",
+                                    "mnemonico": "T2NAPTRI",
+                                    "mappingInput": "numeroApprovazione",
+                                    "mappingOutput": "numeroApprovazione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-pubblicazione-approvazione",
+                                    "label": "PROGRAMMA.DATA-PUBBLICAZIONE",
+                                    "oggettoProtezione": "PIANI.PIATRI.DPAPPROV",
+                                    "mappingInput": "dataPubblicazioneAppr",
+                                    "mappingOutput": "dataPubblicazioneAppr"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-approvazione",
+                                    "label": "PROGRAMMA.DATA-APPROVAZIONE",
+                                    "oggettoProtezione": "PIANI.PIATRI.DAPTRI",
+                                    "mnemonico": "T2DAPTRI",
+                                    "mappingInput": "dataApprovazione",
+                                    "mappingOutput": "dataApprovazione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "titoloApprovazione",
+                                    "label": "PROGRAMMA.TITOLO",
+                                    "oggettoProtezione": "PIANI.PIATRI.TITAPPROV",
+                                    "mnemonico": "T2TITOLOAPP",
+                                    "mappingInput": "titoloApprovazione",
+                                    "mappingOutput": "titoloApprovazione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "urlApprovazione",
+                                    "label": "PROGRAMMA.URL_APPROVAZIONE",
+                                    "oggettoProtezione": "PIANI.PIATRI.URLAPPROV",
+                                    "mnemonico": "T2URLAPPROV",
+                                    "mappingInput": "urlApprovazione",
+                                    "mappingOutput": "urlApprovazione",
+                                    "link": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,170 @@
+{
+    "name": "modifica-configurazione-page",
+    "title": "TITLE.MODIFICA-CONFIGURAZIONE-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "modifica-configurazione-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-configurazioni-page",
+                "label": "BREADCRUMB.RICERCA-CONFIGURAZIONI",
+                "slug": "ricerca-configurazioni-page"
+            },
+            {
+                "code": "lista-configurazioni-page",
+                "label": "BREADCRUMB.LISTA-CONFIGURAZIONI",
+                "slug": "lista-configurazioni-page"
+            },
+            {
+                "code": "dettaglio-configurazione-page",
+                "label": "BREADCRUMB.DETTAGLIO-CONFIGURAZIONE",
+                "slug": "dettaglio-configurazione-page",
+                "additionalParams": "SDK_GESTIONE_UTENTI_DETTAGLIO_CONFIGURAZIONE_PARAMS"
+            },
+            {
+                "code": "modifica-configurazione-page",
+                "label": "BREADCRUMB.MODIFICA-CONFIGURAZIONE",
+                "slug": "modifica-configurazione-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-configurazione-page-content-root-section",
+            "selector": "sdk-modifica-configurazione-section",
+            "description": "Pagina modifica configurazione",
+            "classNames": "modifica-configurazione-section",
+            "settings": {
+                "classNames": "modifica-configurazione-index",
+                "sectionTitle": "TITLE.MODIFICA-CONFIGURAZIONE-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-dettaglio-configurazione",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "SDK_GESTIONE_CONFIGURAZIONI_LISTA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-configurazione",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "SDK_GESTIONE_UTENTI_CONFIGURAZIONE"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "SDK-CONFIGURAZIONE.GENERAL-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "HIDDEN",
+                                    "code": "criptato-hidden",
+                                    "mappingInput": "criptato"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "codapp",
+                                    "label": "SDK-CONFIGURAZIONE.GENERAL-DATA.CODICE-APPLICATIVO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "codApp"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "sezione",
+                                    "label": "SDK-CONFIGURAZIONE.GENERAL-DATA.SEZIONE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "sezione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "configurazione",
+                                    "label": "SDK-CONFIGURAZIONE.GENERAL-DATA.CONFIGURAZIONE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "chiave"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "descrizione",
+                                    "label": "SDK-CONFIGURAZIONE.GENERAL-DATA.DESCRIZIONE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "descrizione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "criptato",
+                                    "label": "SDK-CONFIGURAZIONE.GENERAL-DATA.CRIPTATO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "criptato",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "valore",
+                                    "label": "SDK-CONFIGURAZIONE.GENERAL-DATA.VALORE-EFFETTIVO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "valore",
+                                    "mappingOutput": "valore",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "criptato-hidden": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "!="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    },
+                                    "maxLength": "500"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "valore-blank",
+                                    "label": "SDK-CONFIGURAZIONE.GENERAL-DATA.VALORE-EFFETTIVO",
+                                    "description": "SDK-CONFIGURAZIONE.GENERAL-DATA.VALORE-EFFETTIVO-DESCRIPTION",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingOutput": "valore",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "criptato-hidden": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    },
+                                    "maxLength": "500"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

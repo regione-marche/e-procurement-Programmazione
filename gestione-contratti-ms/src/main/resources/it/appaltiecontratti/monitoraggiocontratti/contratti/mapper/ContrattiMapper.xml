@@ -1,0 +1,507 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="it.appaltiecontratti.monitoraggiocontratti.contratti.mapper.ContrattiMapper">
+
+    <resultMap id="listaGareMap" type="it.appaltiecontratti.monitoraggiocontratti.contratti.entity.entries.GaraEntry">
+        <id column="codgara" property="codgara"/>
+        <result column="oggetto" property="oggetto"/>
+        <result column="situazione" property="situazione"/>
+        <result column="tipo_app" property="tipoApp"/>
+        <result column="importo_gara" property="importoGara"/>
+        <result column="idavgara" property="identificativoGara"/>
+        <result column="rup" property="rup"/>
+        <result column="data_pubblicazione" property="dataPubblicazione"/>
+        <result column="descRup" property="descRup"/>
+        <result column="cig" property="cigLotti"/>
+        <result column="codiceStazioneAppaltante" property="codiceStazioneAppaltante"/>
+        <result column="versioneSimog" property="versioneSimog"/>
+    </resultMap>
+
+    <select id="countSearchGare" resultType="int" parameterType="hashmap">
+        select count (distinct(g.codgara)) from w9gara g
+        LEFT JOIN W9LOTT l on g.codgara = l.codgara
+        LEFT OUTER JOIN tecni tec on tec.codtec = g.rup
+        LEFT OUTER JOIN w9deleghe del on del.cfrup = tec.cftec
+        <if test="dataA != null or dataDa != null">LEFT JOIN W9PUBBLICAZIONI wp on wp.codgara = g.codgara</if>
+        where 1 = 1
+        <if test="stazioneAppaltante != null and stazioneAppaltante != ''">
+            AND g.codein IN
+            <foreach item="item" index="index" collection="stazioneAppaltante.split(',')" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+        <include refid="filtroGare"></include>
+    </select>
+
+
+    <sql id="filtroGare">
+        <if test="cfTecnico != null">and (upper(tec.cftec) = #{cfTecnico} or g.syscon = #{syscon} or
+            del.id_collaboratore = #{syscon})
+        </if>
+        <if test="cfTecnico == null and cfNull">and (g.syscon = #{syscon} or
+            del.id_collaboratore = #{syscon})
+        </if>
+        <if test="oggetto != null">and UPPER(g.oggetto) like #{oggetto}</if>
+        <if test="modalitaRealizzazione != null">and g.tipo_app = #{modalitaRealizzazione}</if>
+        <if test="numGara != null">and g.idavgara like #{numGara}</if>
+        <if test="situazioneGara != null">and g.situazione = #{situazioneGara}</if>
+        <if test="archiviate == false">    <![CDATA[ and g.situazione <= 90 ]]> </if>
+        <if test="cigLotto != null">and UPPER(l.cig) like #{cigLotto}</if>
+        <if test="oggettoLotto != null">and UPPER(l.oggetto) like #{oggettoLotto}</if>
+        <if test="proceduraContraenteLotto != null">and l.ID_SCELTA_CONTRAENTE = #{proceduraContraenteLotto}</if>
+        <if test="tipoAppaltoLotto != null">and l.tipo_contratto = #{tipoAppaltoLotto}</if>
+        <if test="cupLotto != null">and UPPER(l.cup) like #{cupLotto}</if>
+        <if test="searchString != null">and (UPPER(g.oggetto) like #{searchString} or UPPER(l.cig) like #{searchString}
+            or UPPER(g.idavgara) like #{searchString})
+        </if>
+        <if test="rup != null">and g.rup in
+            <foreach item="item" index="index" collection="rup"
+                     open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+        <if test="dataA != null">and least((select min(datapubb) from w9pubblicazioni where codgara =
+            g.codgara),g.data_pubblicazione)<![CDATA[ <= ]]>  #{dataA}
+        </if>
+        <if test="dataDa != null">and least((select min(datapubb) from w9pubblicazioni where codgara =
+            g.codgara),g.data_pubblicazione) <![CDATA[ >= ]]> #{dataDa}
+        </if>
+        <if test="importoGaraDa != null">and g.IMPORTO_GARA  <![CDATA[ >= ]]> #{importoGaraDa}</if>
+        <if test="importoGaraA != null">and g.IMPORTO_GARA  <![CDATA[ <= ]]> #{importoGaraA}</if>
+        <if test="importoLottoDa != null">and l.IMPORTO_TOT <![CDATA[ > ]]>  #{importoLottoDa}</if>
+        <if test="importoLottoA != null">and l.IMPORTO_TOT <![CDATA[ <= ]]>  #{importoLottoA}</if>
+    </sql>
+
+    <select id="searchGare" resultMap="listaGareMap" parameterType="hashmap">
+        select g.idavgara, g.codgara, g.oggetto, g.situazione, g.tipo_app, g.importo_gara, g.rup, g.data_pubblicazione,
+        tec.nomtec as descRup, g.codein as codiceStazioneAppaltante,
+        case when length(string_agg(distinct cig,'-'))<![CDATA[ < ]]> 60 then string_agg(distinct cig,'-') else
+        substr(string_agg(distinct cig,'-'),1,54) || ' (...)' end cig , g.ver_simog as versioneSimog
+        from w9gara g
+        LEFT JOIN W9LOTT l on g.codgara = l.codgara
+        LEFT OUTER JOIN tecni tec on tec.codtec = g.rup
+        LEFT OUTER JOIN w9deleghe del on del.cfrup = tec.cftec
+        <if test="dataA != null or dataDa != null">LEFT JOIN W9PUBBLICAZIONI wp on wp.codgara = g.codgara</if>
+        where 1 = 1
+        <if test="stazioneAppaltante != null and stazioneAppaltante != ''">
+            AND g.codein IN
+            <foreach item="item" index="index" collection="stazioneAppaltante.split(',')" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+        <include refid="filtroGare"></include>
+        group by g.idavgara, g.codgara, g.oggetto, g.situazione, g.tipo_app, g.importo_gara, g.rup,
+        g.data_pubblicazione, tec.nomtec, g.ver_simog
+        order by
+        <if test="sort == 'codgara'">codgara</if>
+        <if test="sort == 'oggetto'">oggetto</if>
+        <if test="sort == 'situazione'">situazione</if>
+        <if test="sort == 'tipoApp'">tipo_app</if>
+        <if test="sort == 'importoGara'">importo_gara</if>
+        <if test="sort == 'identificativoGara'">idavgara</if>
+        <if test="sort == 'descRup'">descRup</if>
+        <if test="sort == 'cigLotti'">cig</if>
+        <if test="sort == 'dataPubblicazione'">data_pubblicazione</if>
+        <if test="sortDirection == 'asc'">asc</if>
+        <if test="sortDirection == 'desc'">desc</if>
+    </select>
+
+    <select id="searchGareOracle" resultMap="listaGareMap" parameterType="hashmap">
+        with tab as (
+        select distinct g.idavgara, g.codgara, g.oggetto, g.situazione, g.tipo_app, g.importo_gara, g.rup,
+        g.data_pubblicazione, tec.nomtec as descRup, g.codein as codiceStazioneAppaltante, cig,
+        g.ver_simog as versioneSimog
+        from w9gara g
+        LEFT JOIN W9LOTT l on g.codgara = l.codgara
+        LEFT OUTER JOIN tecni tec on tec.codtec = g.rup
+        LEFT OUTER JOIN w9deleghe del on del.cfrup = tec.cftec
+        <if test="dataA != null or dataDa != null">LEFT JOIN W9PUBBLICAZIONI wp on wp.codgara = g.codgara</if>
+        where 1 = 1
+        <if test="stazioneAppaltante != null and stazioneAppaltante != ''">
+            AND g.codein IN
+            <foreach item="item" index="index" collection="stazioneAppaltante.split(',')" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+        <include refid="filtroGare"></include>
+        )
+        select idavgara, codgara, oggetto, situazione, tipo_app, importo_gara, rup, data_pubblicazione, descRup,
+        codiceStazioneAppaltante,
+        case when length(LISTAGG(cig,'-') WITHIN GROUP (ORDER BY cig)) <![CDATA[ < ]]>  60 then LISTAGG(cig,'-') WITHIN
+        GROUP (ORDER BY cig) else substr(LISTAGG(cig,'-') WITHIN GROUP (ORDER BY cig) ,1,54) || ' (...)' end cig,
+        versioneSimog from tab
+        group by idavgara, codgara, oggetto, situazione, tipo_app, importo_gara, rup, data_pubblicazione, descRup,
+        codiceStazioneAppaltante, versioneSimog
+        order by
+        <if test="sort == 'codgara'">codgara</if>
+        <if test="sort == 'oggetto'">oggetto</if>
+        <if test="sort == 'situazione'">situazione</if>
+        <if test="sort == 'tipoApp'">tipo_app</if>
+        <if test="sort == 'importoGara'">importo_gara</if>
+        <if test="sort == 'identificativoGara'">idavgara</if>
+        <if test="sort == 'descRup'">descRup</if>
+        <if test="sort == 'cigLotti'">cig</if>
+        <if test="sort == 'dataPubblicazione'">data_pubblicazione</if>
+        <if test="sortDirection == 'asc'">asc</if>
+        <if test="sortDirection == 'desc'">desc</if>
+    </select>
+
+    <select id="searchGareAll" resultMap="listaGareMap" parameterType="hashmap">
+        select g.idavgara, g.codgara, g.oggetto, g.situazione, g.tipo_app, g.importo_gara, g.rup, g.data_pubblicazione,
+        tec.nomtec as descRup,
+        case when length(string_agg(distinct cig,'-'))<![CDATA[ < ]]> 60 then string_agg(distinct cig,'-') else
+        substr(string_agg(distinct cig,'-'),1,54) || ' (...)' end cig, g.codein as codiceStazioneAppaltante, g.ver_simog
+        as versioneSimog
+        from w9gara g
+        LEFT JOIN W9LOTT l on g.codgara = l.codgara
+        LEFT OUTER JOIN tecni tec on tec.codtec = g.rup
+        LEFT OUTER JOIN w9deleghe del on del.cfrup = tec.cftec
+        <if test="dataA != null or dataDa != null">LEFT JOIN W9PUBBLICAZIONI wp on wp.codgara = g.codgara</if>
+        where 1 = 1
+        <if test="stazioneAppaltante != null and stazioneAppaltante != ''">
+            AND g.codein IN
+            <foreach item="item" index="index" collection="stazioneAppaltante.split(',')" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+        <include refid="filtroGare"></include>
+        group by g.idavgara, g.codgara, g.oggetto, g.situazione, g.tipo_app, g.importo_gara, g.rup,
+        g.data_pubblicazione, tec.nomtec , g.ver_simog
+    </select>
+
+
+    <select id="searchGareAllOracle" resultMap="listaGareMap" parameterType="hashmap">
+        with tab as (
+        select distinct g.idavgara, g.codgara, g.oggetto, g.situazione, g.tipo_app, g.importo_gara, g.rup,
+        g.data_pubblicazione, tec.nomtec as descRup, g.codein as codiceStazioneAppaltante, cig,
+        g.ver_simog as versioneSimog
+        from w9gara g
+        LEFT JOIN W9LOTT l on g.codgara = l.codgara
+        LEFT OUTER JOIN tecni tec on tec.codtec = g.rup
+        LEFT OUTER JOIN w9deleghe del on del.cfrup = tec.cftec
+        <if test="dataA != null or dataDa != null">LEFT JOIN W9PUBBLICAZIONI wp on wp.codgara = g.codgara</if>
+        where 1 = 1
+        <if test="stazioneAppaltante != null and stazioneAppaltante != ''">
+            AND g.codein IN
+            <foreach item="item" index="index" collection="stazioneAppaltante.split(',')" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+        <include refid="filtroGare"></include>
+        )
+        select idavgara, codgara, oggetto, situazione, tipo_app, importo_gara, rup, data_pubblicazione, descRup,
+        codiceStazioneAppaltante,
+        case when length(LISTAGG(cig,'-') WITHIN GROUP (ORDER BY cig)) <![CDATA[ < ]]>  60 then LISTAGG(cig,'-') WITHIN
+        GROUP (ORDER BY cig) else substr(LISTAGG(cig,'-') WITHIN GROUP (ORDER BY cig) ,1,54) || ' (...)' end cig,
+        versioneSimog from tab
+        group by idavgara, codgara, oggetto, situazione, tipo_app, importo_gara, rup, data_pubblicazione, descRup,
+        codiceStazioneAppaltante, versioneSimog
+    </select>
+
+    <resultMap id="listalottiMap"
+               type="it.appaltiecontratti.monitoraggiocontratti.contratti.entity.entries.LottoBaseEntry">
+        <result column="codgara" property="codgara"/>
+        <result column="codlott" property="codLotto"/>
+        <result column="cig" property="cig"/>
+        <result column="oggetto" property="oggetto"/>
+        <result column="situazione" property="situazione"/>
+        <result column="tipo_contratto" property="tipologia"/>
+        <result column="importo_tot" property="importoNetto"/>
+        <result column="CIG_MASTER_ML" property="masterCig"/>
+        <result column="nlotto" property="numLotto"/>
+        <result column="numFasi" property="numFasi"/>
+        <result column="numPubblicazioneAtti" property="numPubblicazioneAtti"/>
+    </resultMap>
+
+    <select id="countSearchLotti" resultType="int" parameterType="hashmap">
+        select count(codgara) from W9LOTT where codgara = #{codGara} and (CIG_MASTER_ML is null or CIG_MASTER_ML = cig)
+    </select>
+
+    <select id="searchLotti" resultMap="listalottiMap" parameterType="hashmap">
+        select l.codgara, l.codlott, cig, oggetto, situazione, tipo_contratto, importo_tot, CIG_MASTER_ML, nlotto,
+        case when min (f.codgara) is null then 0 else 1 end as numFasi,
+        case when min (wp.codgara) is null then 0 else 1 end as numPubblicazioneAtti
+        from W9LOTT l
+        left join w9fasi f on f.codgara = l.codgara and f.codlott = l.codlott
+        left join w9publotto wp on wp.codgara = l.codgara and wp.codlott = l.codlott
+        where l.codgara = #{codGara} and (CIG_MASTER_ML is null or CIG_MASTER_ML = cig)
+        group by l.codgara, l.codlott, cig, oggetto, situazione, tipo_contratto, importo_tot, CIG_MASTER_ML, nlotto
+        order by
+        <if test="sort == 'numLotto'">nlotto</if>
+        <if test="sort == 'cig'">cig</if>
+        <if test="sort == 'oggetto'">oggetto</if>
+        <if test="sort == 'situazione'">situazione</if>
+        <if test="sort == 'tipoContratto'">tipo_contratto</if>
+        <if test="sort == 'importoNetto'">importo_lotto</if>
+        <if test="sortDirection == 'asc'">asc</if>
+        <if test="sortDirection == 'desc'">desc</if>
+    </select>
+
+    <sql id="filtroListaGareNonPaginata">
+        <if test="stazioneAppaltante != null and stazioneAppaltante != ''">
+            AND g.codein IN
+            <foreach item="item" index="index" collection="stazioneAppaltante.split(',')" open="(" separator="," close=")">
+                #{item}
+            </foreach>
+        </if>
+        <if test="codiceTecnico == null and syscon != null">and g.syscon = #{syscon}</if>
+        <if test="codiceTecnico != null">and (g.syscon = #{syscon} or g.rup = #{codiceTecnico} or del.id_collaboratore =
+            #{syscon})
+        </if>
+        <if test="searchStringLike != null">and (LOWER(g.oggetto) like #{searchStringLike} or LOWER(l.cig) like
+            #{searchStringLike} or LOWER(g.idavgara) like #{searchStringLike})
+        </if>
+    </sql>
+
+    <select id="getListaGareNonPaginata" resultMap="listaGareMap" parameterType="hashmap">
+        select distinct g.idavgara, g.codgara, g.oggetto, g.situazione, g.tipo_app, g.importo_gara, g.rup,
+        g.data_pubblicazione, g.ver_simog as versioneSimog
+        from w9gara g LEFT JOIN W9LOTT l on g.codgara = l.codgara
+        LEFT OUTER JOIN tecni tec on tec.codtec = g.rup
+        LEFT OUTER JOIN w9deleghe del on del.cfrup = tec.cftec
+        where
+        g.situazione <![CDATA[ <= ]]>90
+        <include refid="filtroListaGareNonPaginata"></include>
+    </select>
+
+
+    <resultMap id="LoadedAppaltoUsrResultMap"
+               type="it.appaltiecontratti.monitoraggiocontratti.contratti.entity.entries.LoaderAppaltoUsrEntry">
+        <id column="syscon" jdbcType="NUMERIC" property="syscon"/>
+        <result column="simoguser" jdbcType="VARCHAR" property="simoguser"/>
+        <result column="simogpass" jdbcType="VARCHAR" property="simogpass"/>
+    </resultMap>
+
+    <select id="getLoaderAppaltoUsrByCfRup" parameterType="hashmap" resultMap="LoadedAppaltoUsrResultMap">
+        select L.syscon, L.simoguser, L.simogpass
+        from W9LOADER_APPALTO_USR AS L
+        inner join USRSYS AS U ON L.syscon = U.syscon
+        where U.SYSCF = #{cfRup}
+    </select>
+
+    <insert id="insertLoaderAppaltoUsr"
+            parameterType="it.appaltiecontratti.monitoraggiocontratti.contratti.entity.entries.W9loaderAppaltoUsr">
+        insert into w9loader_appalto_usr (syscon, simoguser, simogpass)
+        values (#{syscon,jdbcType=NUMERIC}, #{simoguser,jdbcType=VARCHAR}, #{simogpass,jdbcType=VARCHAR})
+    </insert>
+
+    <update id="updateLoaderAppaltoUsr"
+            parameterType="it.appaltiecontratti.monitoraggiocontratti.contratti.entity.entries.W9loaderAppaltoUsr">
+        update w9loader_appalto_usr
+        set simoguser = #{simoguser,jdbcType=VARCHAR},
+        simogpass = #{simogpass,jdbcType=VARCHAR}
+        where syscon = #{syscon,jdbcType=NUMERIC}
+    </update>
+
+    <insert id="insertLogEventi"
+            parameterType="it.appaltiecontratti.monitoraggiocontratti.contratti.entity.entries.LogEventiEntry">
+        insert into w_logeventi (idevento, codapp, cod_profilo,
+        syscon, ipevento, dataora,
+        oggevento, livevento, codevento,
+        descr, errmsg)
+        values (#{idevento,jdbcType=NUMERIC}, #{codapp,jdbcType=VARCHAR}, #{codProfilo,jdbcType=VARCHAR},
+        #{syscon,jdbcType=NUMERIC}, #{ipevento,jdbcType=VARCHAR}, #{dataora,jdbcType=TIMESTAMP},
+        #{oggevento,jdbcType=VARCHAR}, #{livevento,jdbcType=NUMERIC}, #{codevento,jdbcType=VARCHAR},
+        #{descr,jdbcType=VARCHAR}, #{errmsg,jdbcType=VARCHAR})
+    </insert>
+
+    <select id="getNextIdEvento" resultType="java.lang.Long">
+        select COALESCE(max(idevento), 0) + 1
+        FROM w_logeventi
+    </select>
+
+    <resultMap id="listaFlussiFaseMap"
+               type="it.appaltiecontratti.monitoraggiocontratti.contratti.entity.entries.FullFlussiFase">
+        <id column="idflusso" property="idFlusso"/>
+        <result column="tinvio2" property="tipoInvio"/>
+        <result column="key01" property="codGara"/>
+        <result column="key02" property="codLotto"/>
+        <result column="key03" property="numFase"/>
+        <result column="key04" property="num"/>
+        <result column="autore" property="autore"/>
+        <result column="noteinvio" property="noteInvio"/>
+        <result column="datinv" property="dataInvio"/>
+    </resultMap>
+
+    <select id="countListaFlussiFase" resultType="int" parameterType="hashmap">
+        select count(idflusso)
+        from v_W9FLUSSI
+        where area = 1 and key01 = #{codGara} and key02 = #{codLotto}
+    </select>
+
+    <select id="getListaFlussiFase" resultMap="listaFlussiFaseMap" parameterType="hashmap">
+        select idflusso, key01, key02, key03, key04, autore, noteinvio, datinv, tinvio2
+        from v_W9FLUSSI
+        where area = 1 and key01 = #{codGara} and key02 = #{codLotto}
+        order by
+        <if test="orderby != null and orderby == 'dataInvio'">
+            datinv
+            <if test="direction != null and direction == 'asc'">
+                asc,
+            </if>
+            <if test="direction != null and direction == 'desc'">
+                desc,
+            </if>
+        </if>
+        idflusso asc
+    </select>
+
+    <select id="hasAtto" resultType="int" parameterType="hashmap">
+        select count(g.codgara)
+        from w9gara g
+        join w9lott l
+        on g.codgara=l.codgara
+        where
+        g.codgara = #{codiceGara}
+        <if test="whereCondition != null">
+            and ${whereCondition}
+        </if>
+    </select>
+
+    <resultMap
+            id="listaSchedeTrasmesseMap"
+            type="it.appaltiecontratti.monitoraggiocontratti.contratti.entity.entries.RicercaSchedeTrasmessePcpEntry">
+        <result column="nomein" property="stazioneAppaltante"/>
+        <result column="cig" property="cigLottoNumber" jdbcType="VARCHAR"/>
+        <result column="fase_esecuzione" property="faseEsecuzione"/>
+        <result column="num" property="progressivoScheda"/>
+        <result column="datinv" property="datInv"/>
+        <result column="autore" property="autore"/>
+        <result column="codgara" property="codGara"/>
+        <result column="codlott" property="codLotto"/>
+    </resultMap>
+
+    <select id="getListaSchedeTrasmessePcp" resultMap="listaSchedeTrasmesseMap" parameterType="hashmap">
+        SELECT DISTINCT u.nomein, l.cig, f.fase_esecuzione, f.num, i.datinv, i.autore, l.codgara, l.codlott
+        FROM w9reg_invii_pcp i
+        JOIN w9fasi f ON f.id_scheda_simog = i.id_scheda
+        JOIN w9lott l ON l.codgara = f.codgara AND l.codlott = f.codlott
+        JOIN w9gara g ON g.codgara = l.codgara
+        JOIN uffint u ON u.codein = g.codein
+        LEFT OUTER JOIN tecni tec on tec.codtec = g.rup
+        LEFT OUTER JOIN w9deleghe del on del.cfrup = tec.cftec
+        WHERE 1=1
+        <if test="stazioneAppaltante != null">
+            AND UPPER(u.codein) = #{stazioneAppaltante}
+        </if>
+        <include refid="filtroSchedeTrasmessePcp"></include>
+        ORDER BY
+        <if test="sort == 'uffInt'">u.nomein</if>
+        <if test="sort == 'cigLottoNumber'">l.cig</if>
+        <if test="sort == 'faseEsecuzione'">f.fase_esecuzione</if>
+        <if test="sort == 'progressivoScheda'">f.num</if>
+        <if test="sort == 'datInv'">i.datinv</if>
+        <if test="sort == 'autore'">i.autore</if>
+        <if test="sortDirection == 'asc'">ASC</if>
+        <if test="sortDirection == 'desc'">DESC</if>
+    </select>
+
+    <select id="countSearchListaSchedeTrasmessePcp" resultType="int" parameterType="hashmap">
+        SELECT COUNT(DISTINCT CONCAT(u.nomein, l.cig, f.fase_esecuzione, f.num, i.datinv, i.autore, l.codgara, l.codlott))
+        FROM w9reg_invii_pcp i
+        JOIN w9fasi f ON f.id_scheda_simog = i.id_scheda
+        JOIN w9lott l ON l.codgara = f.codgara AND l.codlott = f.codlott
+        JOIN w9gara g ON g.codgara = l.codgara
+        JOIN uffint u ON u.codein = g.codein
+        LEFT OUTER JOIN tecni tec on tec.codtec = g.rup
+        LEFT OUTER JOIN w9deleghe del on del.cfrup = tec.cftec
+        WHERE 1=1
+        <if test="stazioneAppaltante != null">
+            AND UPPER(u.codein) = #{stazioneAppaltante}
+        </if>
+        <include refid="filtroSchedeTrasmessePcp"></include>
+    </select>
+
+    <sql id="filtroSchedeTrasmessePcp">
+        <if test="uffInt != null and uffInt.size() > 0">
+            AND (
+            <foreach item="item" index="index" collection="uffInt" separator=" OR ">
+                UPPER(u.codein) = #{item}
+            </foreach>
+            )
+        </if>
+        <if test="autore != null">AND i.autore = #{autore}</if>
+        <if test="dataTrasmissioneDa != null">AND i.datinv <![CDATA[ > ]]> #{dataTrasmissioneDa} </if>
+        <if test="dataTrasmissioneA != null">AND i.datinv <![CDATA[ < ]]> #{dataTrasmissioneA} </if>
+        <if test="idAppalto != null">AND UPPER(g.idappalto) like UPPER(#{idAppalto})</if>
+        <if test="cigLottoNumber != null">AND UPPER(l.cig) like UPPER(#{cigLottoNumber,jdbcType=VARCHAR})</if>
+        <if test="tipoScheda != null">AND f.fase_esecuzione = #{tipoScheda}</if>
+        <if test="progressivoScheda != null">AND f.num = #{progressivoScheda}</if>
+        <if test="rup != null and rup.size() > 0">
+            AND (
+            <foreach item="cfRupSingle" collection="rup" separator=" OR ">
+                (upper(tec.cftec) = UPPER(#{cfRupSingle}))
+            </foreach>
+            )
+        </if>
+        <if test="cfTecnico == null and cfNull">and (g.syscon = #{syscon} or
+            del.id_collaboratore = #{syscon})
+        </if>
+    </sql>
+
+    <resultMap
+            id="listaAllegatiPerSingoloAttoMap"
+            type="it.appaltiecontratti.monitoraggiocontratti.attigenerali.entity.entries.AllegatoEntry">
+        <result column="idallegato" property="idAllegato"/>
+        <result column="key01" property="key01"/>
+        <result column="key02" property="key02"/>
+        <result column="key03" property="key03"/>
+        <result column="tabella" property="tabella"/>
+        <result column="descri" property="descrizione"/>
+        <result column="file_allegato" property="fileAllegato"/>
+        <result column="url" property="url"/>
+        <result column="tipo_file" property="tipoFile"/>
+        <result column="num_ordine" property="numOrdine"/>
+        <result column="utente_creatore" property="utenteCreatore"/>
+        <result column="dataaggiunta" property="dataAggiunta"/>
+        <result column="utente_canc" property="utenteCanc"/>
+        <result column="datacanc" property="dataCanc"/>
+        <result column="motivo_canc" property="motivoCanc"/>
+    </resultMap>
+
+    <select id="getListaAllegatiEntry" resultMap="listaAllegatiPerSingoloAttoMap" parameterType="hashmap">
+        SELECT a.idallegato, a.key01, a.key02, a.key03, a.tabella, a.descri, a.file_allegato, a.url, a.tipo_file, a.num_ordine, a.utente_creatore, a.dataaggiunta, a.utente_canc, a.datacanc, a.motivo_canc
+        FROM w9allegati a
+        WHERE 1=1
+        <include refid="filtroAllegatiSingoloAtto"></include>
+        AND a.tabella = 'W9PUBBLICAZIONI'
+    </select>
+
+    <sql id="filtroAllegatiSingoloAtto">
+        <if test="codGara != null">AND a.key01 = #{codGara} </if>
+        <if test="numPubb != null">AND a.key02 = #{numPubb} </if>
+    </sql>
+
+    <resultMap
+            id="allegatoSingoloAttoGenerale"
+            type="it.appaltiecontratti.monitoraggiocontratti.attigenerali.entity.entries.AllegatoEntry">
+        <result column="idallegato" property="idAllegato"/>
+        <result column="key01" property="key01"/>
+        <result column="key02" property="key02"/>
+        <result column="key03" property="key03"/>
+        <result column="tabella" property="tabella"/>
+        <result column="descri" property="descrizione"/>
+        <result column="file_allegato" property="fileAllegato"/>
+        <result column="url" property="url"/>
+        <result column="tipo_file" property="tipoFile"/>
+        <result column="num_ordine" property="numOrdine"/>
+        <result column="utente_creatore" property="utenteCreatore"/>
+        <result column="dataaggiunta" property="dataAggiunta"/>
+        <result column="utente_canc" property="utenteCanc"/>
+        <result column="datacanc" property="dataCanc"/>
+        <result column="motivo_canc" property="motivoCanc"/>
+    </resultMap>
+
+    <select id="getAllegatoByCodGaraAndIdAllegato" resultMap="allegatoSingoloAttoGenerale" parameterType="hashmap">
+        SELECT idallegato, key01, key02, key03, tabella, descri, file_allegato, url, tipo_file, num_ordine, utente_creatore, dataaggiunta, utente_canc, datacanc, motivo_canc
+        from w9allegati a
+        where 1=1
+        <include refid="filtroAllegatoSingoloAttoGenerale"></include>
+    </select>
+
+    <sql id="filtroAllegatoSingoloAttoGenerale">
+        <if test="codGara != null">AND a.key01 = #{codGara} </if>
+        <if test="idAllegato != null">AND a.idallegato = #{idAllegato} </if>
+    </sql>
+
+</mapper>

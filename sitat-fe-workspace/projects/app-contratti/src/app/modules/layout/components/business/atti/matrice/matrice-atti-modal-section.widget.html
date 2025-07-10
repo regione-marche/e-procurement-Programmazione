@@ -1,0 +1,42 @@
+<div [class]="config.classNames" *ngIf="isReady">
+    <div class="messages-box" #messages></div>
+    <div class="matrice-atti-container">
+        <div>
+            <h1 class="title">{{ 'LISTA-ATTI.MATRICE-ATTI.TITLE' | translate }}</h1>
+        </div>
+
+        <div *ngIf="collapse" (click)="collassaEspandi(event)" style="cursor: pointer;" class="matrice-legenda">
+            <img src="assets/images/app/collapse.gif" [alt]="'BUTTONS.COLLAPSE' | translate" /> {{
+            'LISTA-ATTI.MATRICE-ATTI.LEGENDA.TITLE' | translate }}
+        </div>
+        <div *ngIf="!collapse" (click)="collassaEspandi(event)" style="cursor: pointer;" class="matrice-legenda">
+            <img src="assets/images/app/expand.gif" [alt]="'BUTTONS.EXPAND' | translate" /> {{
+            'LISTA-ATTI.MATRICE-ATTI.LEGENDA.TITLE' | translate }}
+        </div>
+        <div *ngIf="collapse" class="legenda-atti">
+            <div><i class="fas fa-flag"></i> {{ 'LISTA-ATTI.MATRICE-ATTI.LEGENDA.PUBBLICATO' | translate }}</div>
+            <div><i class="far fa-flag"></i> {{ 'LISTA-ATTI.MATRICE-ATTI.LEGENDA.NON-PUBBLICATO' | translate }}</div>
+        </div>
+
+
+        <table class="matrice-atti-table" [attr.aria-label]="'LISTA-ATTI.MATRICE-ATTI.TITLE' | translate">
+            <thead>
+                <tr>
+                    <th style="width: auto;"></th>
+                    <th *ngFor="let column of columns">{{ column }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let row of rows">
+                    <td class="matrice-atti-row">{{row.cig}}-{{row.oggetto}}</td>
+                    <td *ngFor="let column of columns" class="matrice-atti-row"><i
+                            [class]="checkCigPubblicato(row.cig, column)"></i></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+</div>

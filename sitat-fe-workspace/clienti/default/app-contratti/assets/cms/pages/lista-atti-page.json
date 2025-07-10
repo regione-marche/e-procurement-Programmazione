@@ -1,0 +1,190 @@
+{
+    "name": "lista-atti-page",
+    "title": "TITLE.LISTA-ATTI-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/lista-atti-page.css"
+    ],
+    "settings": {
+        "page": "lista-atti-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-atti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-atti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "lista-atti-page-content-root-section",
+            "selector": "lista-atti-section",
+            "description": "Pagina di lista lotti di una gara",
+            "classNames": "lista-atti-section",
+            "settings": {
+                "classNames": "lista-atti-index",
+                "menuTabs": [
+                    {
+                        "code": "dati-generali",
+                        "title": "DETTAGLIO-GARA.TABS.DATI-GENERALI",
+                        "slug": "dettaglio-gara-page",
+                        "oggettoProtezione": "W9.W9GARA-scheda.DETTGARA",
+                        "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                        "visible": "APP_GARE_GARA_STANDARD_VISIBLE"
+                    },
+                    {
+                        "code": "dati-generali-smartcig",
+                        "title": "DETTAGLIO-GARA.TABS.DATI-GENERALI",
+                        "slug": "dettaglio-smartcig-page",
+                        "oggettoProtezione": "W9.W9GARA-scheda.DETTGARA",
+                        "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                        "visible": "APP_GARE_GARA_SMARTCIG_VISIBLE"
+                    },
+                    {
+                        "code": "imprese-partecipanti",
+                        "title": "DETTAGLIO-GARA.TABS.IMPRESE-PARTECIPANTI",
+                        "slug": "lista-elenco-impr-inv-parte-smartcig-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                        "oggettoProtezione": "W9.SMARTCIG-scheda.IMPRESE",
+                        "visible": "APP_GARE_GARA_SMARTCIG_VISIBLE"                        
+                    },
+                    {
+                        "code": "lista-lotti",
+                        "title": "DETTAGLIO-GARA.TABS.LISTA-LOTTI",
+                        "slug": "lista-lotti-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                        "oggettoProtezione": "W9.W9GARA-scheda.LOTTI",
+                        "visible": "APP_GARE_GARA_STANDARD_VISIBLE"
+                    },
+                    {
+                        "code": "pubblica",
+                        "title": "DETTAGLIO-GARA.TABS.PUBBLICA",
+                        "slug": "pubblica-gara-page",
+                        "oggettoProtezione": "W9.W9GARA-scheda.FLUSSIGARA",
+                        "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                        "visible": "APP_GARE_GARA_STANDARD_VISIBLE"
+                    },
+                    {
+                        "code": "pubblica-smartcig",
+                        "title": "DETTAGLIO-GARA.TABS.PUBBLICA",
+                        "slug": "pubblica-smartcig-page",
+                        "oggettoProtezione": "W9.SMARTCIG-scheda.INVII",
+                        "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                        "visible": "APP_GARE_GARA_SMARTCIG_VISIBLE"
+                    },
+                    {
+                        "code": "lista-atti",
+                        "title": "DETTAGLIO-GARA.TABS.LISTA-ATTI",
+                        "active": true,
+                        "slug": "lista-atti-page",
+                        "oggettoProtezione": "W9.W9GARA-scheda.PUBBLICAZIONI",
+                        "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS"
+                    }                 
+                    
+                ],
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_ATTI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "buttonsMultilotto": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_ATTI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "matrice-atti",
+                            "label": "BUTTONS.MATRICE-ATTI",
+                            "provider": "APP_GARE_LISTA_ATTI",
+                            "icon": "mgg-icons-cards-view",
+                            "oggettoProtezione":"W9.W9PUBBLICAZIONI.MatriceLottiAtti"
+                        }
+                    ],
+                    "buttonsRO": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_ATTI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "buttonsBack": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_ATTI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "nuovoButtonConfig": {
+                        "code": "nuovo",
+                        "label": "BUTTONS.NUOVO",
+                        "icon": "mgg-icons-crud-create",
+                        "oggettoProtezione": "INS.W9.W9PUBBLICAZIONI-scheda.SCHEDANUOVO"
+                    },
+                    "eliminaButtonConfig": {
+                        "code": "elimina",
+                        "label": "BUTTONS.ELIMINA",
+                        "icon": "mgg-icons-crud-delete",
+                        "oggettoProtezione": "DEL.W9.W9PUBBLICAZIONI-scheda.DEL"
+                    }
+                },
+                "modalComponentConfigPubblica": {
+                    "buttons": [                        
+                        {
+                            "code": "modal-close-button",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_AVVISI_MODAL_WINDOW"
+                        },
+                        {
+                            "code": "pubblica-all",
+                            "label": "BUTTONS.SET",
+                            "provider": "APP_GARE_PUBBLICA_ATTO",
+                            "icon": "mgg-icons-crud-save"
+                        }
+                    ]
+                },
+                "modalComponentConfigMatrice": {
+                    "buttons": [                        
+                        {
+                            "code": "modal-close-button",
+                            "label": "BUTTONS.CLOSE",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_AVVISI_MODAL_WINDOW"
+                        }
+                    ]
+                }                
+            }
+        }
+    ]
+}

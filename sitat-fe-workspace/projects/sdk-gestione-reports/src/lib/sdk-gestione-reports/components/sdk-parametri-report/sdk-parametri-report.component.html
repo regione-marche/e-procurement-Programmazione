@@ -1,0 +1,82 @@
+<div [class]="config.classNames" *ngIf="isReady">
+    <h1 class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</h1>
+    <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+    <div class="messages-box" #infoBox></div>
+    <div class="messages-box" #messages></div>
+
+    <div class="sdk-lista-reports-container">
+        <div class="sdk-lista-reports-content">
+            <div class="card">
+                <p-table #dt2 [value]="listaParamsFromWRicParam" dataKey="idRicerca" styleClass="p-datatable-all-reports">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th scope="col">{{ 'SDK-DETTAGLIO-REPORT.PARAMETRI.LISTA-PARAMETRI.CODICE' | translate }}</th>
+                            <th scope="col">{{ 'SDK-DETTAGLIO-REPORT.PARAMETRI.LISTA-PARAMETRI.NOME-PROMPT' | translate }}</th>
+                            <th scope="col">{{ 'SDK-DETTAGLIO-REPORT.PARAMETRI.LISTA-PARAMETRI.DESCRIZIONE' | translate }}</th>
+                            <th scope="col">{{ 'SDK-DETTAGLIO-REPORT.PARAMETRI.LISTA-PARAMETRI.TIPO' | translate }}</th>
+                            <th scope="col">{{ 'SDK-DETTAGLIO-REPORT.PARAMETRI.LISTA-PARAMETRI.OBBLIGATORIO' | translate }}</th>
+                            <th scope="col">{{ 'SDK-DETTAGLIO-REPORT.PARAMETRI.LISTA-PARAMETRI.AZIONI' | translate }}</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-param>
+                        <tr>
+                            <td>
+                                <a (click)="loadDettaglioParamReport(param.codice)" style="cursor: pointer;">
+                                    <u>{{param.codice}}</u>
+                                </a>
+                            </td>
+                            <td>
+                                <a (click)="loadDettaglioParamReport(param.codice)" style="cursor: pointer;">
+                                    <u>{{param.nome}}</u>
+                                </a>
+                            </td>
+                            <td>
+                                {{param.descrizione}}
+                            </td>
+                            <td>
+                                {{ getParamTipo(param.tipo) }}
+                            </td>
+                            <td>
+                                {{param.obbligatorio}}
+                            </td>
+                            <td>
+                                <div class="sdk-lista-param-cell-container">
+                                    <i
+                                        class="mgg-icons-move-up"
+                                        [ngClass]="{'disabled': isFirst(param.progressivo)}"
+                                        (click)="!isFirst(param.progressivo) && moveRowParamUp(param.codice)"
+                                        [style.cursor]="isFirst(param.progressivo) ? 'not-allowed' : 'pointer'"
+                                        title="{{ 'SDK-DETTAGLIO-REPORT.PARAMETRI.LISTA-PARAMETRI.TOOLTIP.SPOSTA-RIGA-SU' | translate }}"
+                                    ></i>
+                                    <i                                    
+                                        class="mgg-icons-move-down"
+                                        (click)="!isLast(param.progressivo) && moveRowParamDown(param.codice)"
+                                        [ngClass]="{'disabled': isLast(param.progressivo)}"
+                                        [style.cursor]="isLast(param.progressivo) ? 'not-allowed': 'pointer'"
+                                        title="{{ 'SDK-DETTAGLIO-REPORT.PARAMETRI.LISTA-PARAMETRI.TOOLTIP.SPOSTA-RIGA-GIU' | translate }}"
+                                    ></i>
+                                    <i 
+                                        class="mgg-icons-crud-delete" 
+                                        style="cursor: pointer;" 
+                                        (click)="performModalOnCancel(param.codice)"
+                                        title="{{ 'SDK-DETTAGLIO-REPORT.PARAMETRI.LISTA-PARAMETRI.TOOLTIP.CANCELLA-RIGA' | translate}}"
+                                    ></i>
+                                </div>
+                            </td>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="emptymessage">
+                        <tr>
+                            <td colspan="6">{{ 'SDK-DETTAGLIO-REPORT.PARAMETRI.LISTA-PARAMETRI.NO-RECORD' | translate }}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+    <sdk-dialog [config]="dialogConfigObjs"></sdk-dialog>
+</div>

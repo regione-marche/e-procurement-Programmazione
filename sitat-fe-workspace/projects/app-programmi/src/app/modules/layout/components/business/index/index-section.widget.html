@@ -1,0 +1,46 @@
+<div [class]="config.classNames" *ngIf="isReady">
+
+    <div class="messages-box" #infoBox></div>
+
+    <div class="messages-box" #messages></div>
+
+    <!-- BEGIN Boxes -->
+    <div class="boxes">
+        <!-- BEGIN Box Ricerca e titolo -->
+        <div class="box-container-ricerca-titolo">
+            <div class="header-title">
+                <h2 class="header-title-content">{{ 'HOME-PAGE.HEADER-TITLE-CONTENT' | translate }}</h2>
+                <p class="header-description">
+                    {{ 'HOME-PAGE.HEADER-DESCRIPTION' | translate }}
+                </p>
+            </div>
+            <div class="box-search">
+                <sdk-mixed-search [config]="searchFieldObs" (output)="onOutput($event)">
+                </sdk-mixed-search>
+            </div>
+        </div>
+        <!-- END Box Ricerca e titolo -->
+
+        <!-- BEGIN Box Programmi -->
+        <div class="box-container-programmi">
+            <div class="header-title">
+                <h2 class="header-title-content">{{ 'HOME-PAGE.CARDS-HEADER' | translate }}</h2>
+            </div>
+            <div class="box-cards">
+                <div class="cards-container">
+                    <div class="item-card" *ngFor="let card of cards" sdkClick (aClick)="manageCardClick(card)"
+                        tabindex="0" role="navigation" [attr.aria-label]="card.label | translate">
+                        <div class="item-card-icon">
+                            <i [ngClass]="getIcons(card)"></i>
+                        </div>
+                        <div class="item-card-title">
+                            {{ card.label | translate }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END Box Programmi -->
+    </div>
+    <!-- END Boxes -->
+</div>

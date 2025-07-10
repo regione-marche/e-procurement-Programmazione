@@ -1,0 +1,40 @@
+<div [class]="config.classNames" *ngIf="isReady">
+
+  <!-- <div class="message-error" *ngIf="isError">{{error | translate}}</div> -->
+
+  <div class="messages-box" #messages></div>
+
+  <h1 *ngIf="config.title != null" [class]="config.title.classNames">{{config.title.label | translate}}</h1>
+
+  <div *ngIf="config.body != null" [class]="config.body.classNames">{{config.body.label | translate}}</div>
+
+  <div class="sso-content">
+
+    <div class="back" *ngIf="isMultiApp" sdkClick (aClick)="goBack()" tabindex="0" role="navigation">
+      <i class="mgg-icons-action-back"></i>
+      <div class="back-text">{{ 'LOGIN-PAGE.BACK-BUTTON' | translate }}</div>
+    </div>
+
+    <div class="body-pulsantiera">
+      <!-- SSO -->
+      <div class="authentication-method" *ngFor="let ssoConfig of ssoConfigurations">
+        <div class="title">{{ getSSOTitle(ssoConfig) | translate }}</div>
+        <div class="divider"></div>
+        <p-button styleClass="button-login body-button" sdkDebounceClick (debounceClick)="loginSSO(ssoConfig)">
+          <span class="p-ml-2 p-text-bold">{{ getSSOButton(ssoConfig) | translate }}</span>
+        </p-button>
+        <div class="description">{{ getSSODescription(ssoConfig) | translate }}</div>
+      </div>
+
+      <!-- Login Interna -->
+      <div class="authentication-method" *ngIf="showInternalAuthentication">
+        <div class="title">{{ 'LOGIN-PAGE.INTERNAL.TITLE' | translate }}</div>
+        <div class="divider"></div>
+        <p-button styleClass="button-login body-button" sdkDebounceClick (debounceClick)="loginInternal()">
+          <span class="p-ml-2 p-text-bold">{{ 'LOGIN-PAGE.INTERNAL.BUTTON' | translate }}</span>
+        </p-button>        
+        <div  class="description" [innerHtml]="internalAuthDescription"></div>
+      </div>
+    </div>
+  </div>
+</div>

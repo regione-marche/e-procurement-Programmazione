@@ -1,0 +1,44 @@
+.mgg-icons-no-trash {
+    color: grey;
+    &:before { content: "\ea90"; }
+}
+
+.icon-invio-flusso-bn {
+    background-image: url('../assets/images/app/invioFlussoBN.png');
+    display: inline-block;
+    height: 20px;
+    width: 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.icon-invio-flusso {
+    background-image: url('../assets/images/app/invioFlusso.png');
+    display: inline-block;
+    height: 20px;
+    width: 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.icon-invio-in-attesa {
+    background-image: url('../assets/images/app/invioFlussoInAttesa.png');
+    display: inline-block;
+    height: 20px;
+    width: 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.icon-rettifica-flusso {
+    background-image: url('../assets/images/app/invioRettificaFlusso.png');
+    display: inline-block;
+    height: 20px;
+    width: 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}

@@ -1,0 +1,709 @@
+{
+    "name": "nuovo-smartcig-page",
+    "title": "TITLE.NUOVO-SMARTCIG-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "nuovo-smartcig-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "gestione-smartcig-page",
+                "label": "BREADCRUMB.GESTIONE-SMARTCIG",
+                "slug": "gestione-smartcig-page"
+            },
+            {
+                "code": "nuovo-smartcig-page",
+                "label": "BREADCRUMB.NUOVO-SMARTCIG",
+                "slug": "nuovo-smartcig-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "nuovo-smartcig-page-content-root-section",
+            "selector": "nuovo-smartcig-section",
+            "description": "Pagina di inserimento SmartCIG",
+            "classNames": "nuovo-smartcig-section",
+            "settings": {
+                "classNames": "nuovo-smartcig-index",
+                "sectionTitle": "TITLE.NUOVO-SMARTCIG-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-gestione-smartcig",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_GARE_SMARTCIG",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-smartcig",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_SMARTCIG",
+                            "oggettoProtezione": "ALT.W9.W9LOTT-SMARTCIG-SALVA"
+                        },
+                        {
+                            "code": "save-and-publish-smartcig",
+                            "label": "BUTTONS.SAVE-AND-PUBLISH",
+                            "oggettoProtezione": "ALT.W9.W9LOTT-SMARTCIG-SALVAINVIA",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_SMARTCIG"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "SMARTCIG.GENERAL-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "codice-smartcig",
+                                    "label": "SMARTCIG.GENERAL-DATA.SMARTCIG",
+                                    "mnemonico": "",
+                                    "mappingInput": "smartCig",
+                                    "mappingOutput": "smartCig",
+                                    "maxLength": 10,
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SMARTCIG.VALIDATORS.CIG-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "validator": "SMARTCIG",
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "VALIDATORS.FORMATO-CIG-NON-VALIDO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "TEXTAREA",
+                                    "code": "oggetto",
+                                    "label": "SMARTCIG.GENERAL-DATA.OGGETTO",
+                                    "mnemonico": "W3OGGETTO1",
+                                    "mappingInput": "oggetto",
+                                    "mappingOutput": "oggetto",
+                                    "maxLength": 1024,
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SMARTCIG.VALIDATORS.OGGETTO-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tipo-appalto",
+                                    "label": "SMARTCIG.GENERAL-DATA.TIPO-APPALTO",
+                                    "mnemonico": "W3TIPO_CON",
+                                    "mappingInput": "tipoAppalto",
+                                    "mappingOutput": "tipoAppalto",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "TipoAppalto",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SMARTCIG.VALIDATORS.TIPO-APPALTO-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "procedura-contraente",
+                                    "label": "SMARTCIG.GENERAL-DATA.PROCEDURA-CONTRAENTE",
+                                    "mnemonico": "W3ID_SCEL2",
+                                    "mappingInput": "sceltaContraente",
+                                    "mappingOutput": "sceltaContraente",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "SceltaContraente"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "criterio-aggiudicazione",
+                                    "label": "SMARTCIG.GENERAL-DATA.CRITERIO-AGGIUDICAZIONE",
+                                    "mnemonico": "W3MOD_GAR",
+                                    "mappingInput": "criteriAggiudicazione",
+                                    "mappingOutput": "criteriAggiudicazione",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "CriterioAggiudicazione"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tipo-settore",
+                                    "label": "SMARTCIG.GENERAL-DATA.TIPO-SETTORE",
+                                    "mnemonico": "W9GAFLAG_ENT",
+                                    "mappingInput": "tipoSettore",
+                                    "mappingOutput": "tipoSettore",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "Settore"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "modalita-realizzazione",
+                                    "label": "SMARTCIG.GENERAL-DATA.MODALITA-REALIZZAZIONE",
+                                    "mnemonico": "W9GNTIPOAPP",
+                                    "mappingInput": "modalitaRealizzazione",
+                                    "mappingOutput": "modalitaRealizzazione",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "TipoRealizzazione"
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "responsabile",
+                                    "label": "SMARTCIG.GENERAL-DATA.RUP",
+                                    "mnemonico": "W9GNRUP",
+                                    "itemsProviderCode": "APP_AVVISI_RUP_AVVISO",
+                                    "mappingOutput": "rup",
+                                    "noDataLabel": "NO-DATA",
+                                    "newEditAvailable": true,
+                                    "newItemButton": {
+                                        "code": "new",
+                                        "label": "BUTTONS.NUOVO",
+                                        "icon": "mgg-icons-crud-create",
+                                        "oggettoProtezione": "INS.*"
+                                    },
+                                    "editItemButton": {
+                                        "code": "edit",
+                                        "label": "BUTTONS.UPDATE",
+                                        "icon": "mgg-icons-crud-edit",
+                                        "oggettoProtezione": "MOD.*"
+                                    },
+                                    "modalComponent": "rup-modal-widget",
+                                    "modalComponentConfig": "rupModalConfig"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "stazione-appaltante-data",
+                            "label": "SMARTCIG.STAZIONE-APPALTANTE-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "stazione-appaltante",
+                                    "label": "SMARTCIG.STAZIONE-APPALTANTE-DATA.STAZIONE-APPALTANTE",
+                                    "mappingInput": "nominativoStazioneAppaltante",
+                                    "mnemonico": "W3PACODEIN",
+                                    "link": true,
+                                    "modalComponent": "stazione-appaltante-modal-widget",
+                                    "modalComponentConfig": "stazioneAppaltanteModalConfig"
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "ufficio",
+                                    "label": "SMARTCIG.STAZIONE-APPALTANTE-DATA.UFFICIO",
+                                    "mnemonico": "W9GAUFF",
+                                    "itemsProviderCode": "APP_GARE_UFFICI",
+                                    "mappingInput": "idUfficio",
+                                    "mappingOutput": "idUfficio",
+                                    "noDataLabel": "NO-DATA",
+                                    "modalComponent": "uff-modal-widget",
+                                    "modalComponentConfig": "uffModalRWConfig",
+                                    "newEditAvailable": true,
+                                    "newItemButton": {
+                                        "code": "new",
+                                        "label": "BUTTONS.NUOVO",
+                                        "icon": "mgg-icons-crud-create",
+                                        "oggettoProtezione": "INS.*"
+                                    },
+                                    "editItemButton": {
+                                        "code": "edit",
+                                        "label": "BUTTONS.UPDATE",
+                                        "icon": "mgg-icons-crud-edit",
+                                        "oggettoProtezione": "MOD.*"
+                                    }
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "indirizzo-sede-gara",
+                                    "label": "SMARTCIG.STAZIONE-APPALTANTE-DATA.INDIRIZZO-SEDE-GARA",
+                                    "mnemonico": "W9GAINDSEDE",
+                                    "mappingInput": "indirizzoSede",
+                                    "mappingOutput": "indirizzoSede",
+                                    "maxLength": 100
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "comune-sede-gara",
+                                    "label": "SMARTCIG.STAZIONE-APPALTANTE-DATA.COMUNE-SEDE-GARA",
+                                    "mnemonico": "W9GACOMSEDE",
+                                    "noDataLabel": "NO-DATA",
+                                    "mappingInput": "comuneSede",
+                                    "mappingOutput": "comuneSede",
+                                    "itemsProviderCode": "APP_GARE_COMUNI",
+                                    "minSearchCharacters": 2
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "provincia-sede-gara",
+                                    "label": "SMARTCIG.STAZIONE-APPALTANTE-DATA.PROVINCIA-SEDE-GARA",
+                                    "mnemonico": "W9GAPROSEDE",
+                                    "mappingInput": "provinciaSede",
+                                    "mappingOutput": "provinciaSede"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "flag-sa-agente",
+                                    "label": "SMARTCIG.STAZIONE-APPALTANTE-DATA.FLAG-SA-AGENTE",
+                                    "mnemonico": "W3FLAG_SA",
+                                    "mappingInput": "flagSaAgente",
+                                    "mappingOutput": "flagSaAgente",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tipologia-sa",
+                                    "label": "SMARTCIG.STAZIONE-APPALTANTE-DATA.TIPOLOGIA-SA",
+                                    "mnemonico": "W3ID_TIPOL",
+                                    "mappingInput": "tipologiaStazioneAppaltante",
+                                    "mappingOutput": "tipologiaStazioneAppaltante",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "TipologiaSA",
+                                    "visibleCondition": {
+                                        "or": {
+                                            "flag-sa-agente": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "denominazione-sa-agente",
+                                    "label": "SMARTCIG.STAZIONE-APPALTANTE-DATA.DENOMINAZIONE-SA-AGENTE",
+                                    "mnemonico": "W3GASAAGENTE",
+                                    "mappingInput": "denomSoggStazioneAppaltante",
+                                    "mappingOutput": "denomSoggStazioneAppaltante",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "flag-sa-agente": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    },
+                                    "maxLength": 254
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "codice-fiscale-sa-agente",
+                                    "label": "SMARTCIG.STAZIONE-APPALTANTE-DATA.CODICE-FISCALE-SA-AGENTE",
+                                    "mnemonico": "W3GACFAGENTE",
+                                    "mappingInput": "cfAgenteStazioneAppaltante",
+                                    "mappingOutput": "cfAgenteStazioneAppaltante",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "flag-sa-agente": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    },
+                                    "maxLength": 16
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tipologia-procedura",
+                                    "label": "SMARTCIG.STAZIONE-APPALTANTE-DATA.TIPOLOGIA-PROCEDURA",
+                                    "mnemonico": "W9GATIPROC",
+                                    "mappingInput": "tipologiaProcedura",
+                                    "mappingOutput": "tipologiaProcedura",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "TipologiaProcedura",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "flag-sa-agente": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "flag-centrale-stipula",
+                                    "label": "SMARTCIG.STAZIONE-APPALTANTE-DATA.FLAG-CENTRALE-STIPULA",
+                                    "mnemonico": "W9GASTIPULA",
+                                    "mappingInput": "flagStipula",
+                                    "mappingOutput": "flagStipula",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino",
+                                    "visibleCondition": {
+                                        "or": {
+                                            "flag-sa-agente": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "dati-economici-data",
+                            "label": "SMARTCIG.DATI-ECONOMICI-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-lotto",
+                                    "label": "SMARTCIG.DATI-ECONOMICI-DATA.IMPORTO-LOTTO",
+                                    "mnemonico": "W3I_LOTTO",
+                                    "mappingInput": "importoNetto",
+                                    "mappingOutput": "importoNetto",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SMARTCIG.VALIDATORS.IMPORTO-LOTTO-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-attuazione-sicurezza",
+                                    "label": "SMARTCIG.DATI-ECONOMICI-DATA.IMPORTO-ATTUAZIONE-SICUREZZA",
+                                    "mnemonico": "W3I_ATTSIC",
+                                    "mappingInput": "importoSicurezza",
+                                    "mappingOutput": "importoSicurezza",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "importo-totale",
+                                    "label": "SMARTCIG.DATI-ECONOMICI-DATA.IMPORTO-TOTALE",
+                                    "mnemonico": "W9IMPTOTLO",
+                                    "mappingInput": "importoTotale",
+                                    "mappingOutput": "importoTotale",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "cup-esente",
+                                    "label": "SMARTCIG.DATI-ECONOMICI-DATA.CUP-ESENTE",
+                                    "mnemonico": "W9CUPESENTE",
+                                    "mappingInput": "esenteCup",
+                                    "mappingOutput": "esenteCup",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "cup",
+                                    "label": "SMARTCIG.DATI-ECONOMICI-DATA.CUP",
+                                    "mnemonico": "W3CUP",
+                                    "mappingInput": "cup",
+                                    "mappingOutput": "cup",
+                                    "maxLength": 15,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "cup-esente": {
+                                                "values": [
+                                                    {
+                                                        "value": null,
+                                                        "operation": "="
+                                                    },
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXTMODAL",
+                                    "code": "cpv",
+                                    "label": "SMARTCIG.DATI-ECONOMICI-DATA.CPV",
+                                    "mnemonico": "W3CPV",
+                                    "mappingInput": "cpv",
+                                    "mappingOutput": "cpv",
+                                    "modalComponent": "cpv-modal-widget",
+                                    "modalComponentConfig": {
+                                        "data": {
+                                            "buttons": [
+                                                {
+                                                    "code": "modal-close-button",
+                                                    "label": "BUTTONS.ANNULLA",
+                                                    "icon": "mgg-icons-crud-cancel"
+                                                },
+                                                {
+                                                    "code": "set-button",
+                                                    "label": "BUTTONS.SET",
+                                                    "icon": "mgg-icons-crud-save"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "descrizione-cpv",
+                                    "label": "SMARTCIG.DATI-ECONOMICI-DATA.DESCRIZIONE-CPV",
+                                    "mnemonico": "W3CPV",
+                                    "mappingInput": "descCpv"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "categoria-prevalente-lavori",
+                                    "label": "LOTTO.CPV-SECONDARIO-DATA.CATEGORIA-PREVALENTE",
+                                    "oggettoProtezione": "W9.W9LOTT.ID_CATEGORIA_PREVALENTE",
+                                    "mnemonico": "W3ID_CATE4",
+                                    "mappingInput": "categoriaPrev",
+                                    "mappingOutput": "categoriaPrev",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "Categorie",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "and": {
+                                            "tipo-appalto": {
+                                                "values": [
+                                                    {
+                                                        "value": "S",
+                                                        "operation": "!="
+                                                    },
+                                                    {
+                                                        "value": "F",
+                                                        "operation": "!="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "categoria-prevalente-servizi",
+                                    "label": "LOTTO.CPV-SECONDARIO-DATA.CATEGORIA-PREVALENTE",
+                                    "oggettoProtezione": "W9.W9LOTT.ID_CATEGORIA_PREVALENTE",
+                                    "mnemonico": "W3ID_CATE4",
+                                    "mappingInput": "categoriaPrev",
+                                    "mappingOutput": "categoriaPrev",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "CategorieServizi",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "tipo-appalto": {
+                                                "values": [
+                                                    {
+                                                        "value": "S",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "categoria-prevalente-forniture",
+                                    "label": "LOTTO.CPV-SECONDARIO-DATA.CATEGORIA-PREVALENTE",
+                                    "oggettoProtezione": "W9.W9LOTT.ID_CATEGORIA_PREVALENTE",
+                                    "mnemonico": "W3ID_CATE4",
+                                    "mappingInput": "categoriaPrev",
+                                    "mappingOutput": "categoriaPrev",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "CategorieForniture",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "tipo-appalto": {
+                                                "values": [
+                                                    {
+                                                        "value": "F",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "classe-importo-categoria-prevalente",
+                                    "label": "SMARTCIG.DATI-ECONOMICI-DATA.CLASSE-IMPORTO-CATEGORIA-PREVALENTE",
+                                    "mnemonico": "W3CALSCAT",
+                                    "mappingInput": "classeCategoriaPrev",
+                                    "mappingOutput": "classeCategoriaPrev",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "Classe",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "and": {
+                                            "tipo-appalto": {
+                                                "values": [
+                                                    {
+                                                        "value": "S",
+                                                        "operation": "!="
+                                                    },
+                                                    {
+                                                        "value": "F",
+                                                        "operation": "!="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "luogo-istat",
+                                    "label": "SMARTCIG.DATI-ECONOMICI-DATA.LUOGO-ISTAT",
+                                    "mnemonico": "W3LUOGO_IS",
+                                    "mappingInput": "luogoIstat",
+                                    "mappingOutput": "luogoIstat",
+                                    "noDataLabel": "NO-DATA",
+                                    "itemsProviderCode": "APP_GARE_COMUNI_ISTAT",
+                                    "minSearchCharacters": 2
+                                },
+                                {
+                                    "type": "TEXTMODAL",
+                                    "code": "luogo-nuts",
+                                    "label": "SMARTCIG.DATI-ECONOMICI-DATA.LUOGO-NUTS",
+                                    "mnemonico": "W3LUOGO_NU",
+                                    "mappingInput": "luogoNuts",
+                                    "mappingOutput": "luogoNuts",
+                                    "maxLength": 5,
+                                    "modalComponent": "nuts-modal-widget",
+                                    "modalComponentConfig": {
+                                        "data": {
+                                            "buttons": [
+                                                {
+                                                    "code": "modal-close-button",
+                                                    "label": "BUTTONS.ANNULLA",
+                                                    "icon": "mgg-icons-crud-cancel",
+                                                    "provider": "APP_AVVISI_MODAL_WINDOW"
+                                                },
+                                                {
+                                                    "code": "set-button",
+                                                    "label": "BUTTONS.SET",
+                                                    "icon": "mgg-icons-crud-save"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            ]
+                        },{
+                            "type": "FORM-SECTION",
+                            "code": "esecuzione-data",
+                            "label": "SMARTCIG.ESECUZIONE-DATA.TITLE",
+                            "oggettoProtezione": "ALT.W9.W9LOTT-SMARTCIG-ESECUZIONE",
+                            "fieldSections": [
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-verbale",
+                                    "label": "SMARTCIG.ESECUZIONE-DATA.DATA-VERB-INIZIO",
+                                    "oggettoProtezione": "W9.W9INIZ.DATA_VERB_INIZIO",
+                                    "mnemonico": "W3DVERB_IN",
+                                    "mappingInput": "dataVerbInizio",
+                                    "mappingOutput": "dataVerbInizio"            
+                                },{
+                                    "type": "DATEPICKER",
+                                    "code": "data-ultimazione",
+                                    "label": "SMARTCIG.ESECUZIONE-DATA.DATA-ULTIMAZIONE",
+                                    "oggettoProtezione": "W9.W9CONC.DATA_ULTIMAZIONE",
+                                    "mnemonico": "W3DATA_ULT",
+                                    "mappingInput": "dataUltimazione",
+                                    "mappingOutput": "dataUltimazione"            
+                                },{
+                                   
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-certificato",
+                                    "label": "SMARTCIG.ESECUZIONE-DATA.IMPORTO-CERTIFICATO",
+                                    "oggettoProtezione": "W9.W9AVAN.IMPORTO_CERTIFICATO",
+                                    "mnemonico": "W3I_CERTIF",
+                                    "mappingInput": "importoCertificato",
+                                    "mappingOutput": "importoCertificato",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24  
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,87 @@
+{
+    "name": "nuovo-ufficio-page",
+    "title": "TITLE.NUOVO-UFFICIO-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "nuovo-ufficio-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-archivio-uffici-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-ARCHIVIO-UFFICI",
+                "slug": "ricerca-avanzata-archivio-uffici-page"
+            },
+            {
+                "code": "lista-archivio-uffici-page",
+                "label": "BREADCRUMB.LISTA-ARCHIVIO-UFFICI",
+                "slug": "lista-archivio-uffici-page"
+            },
+            {
+                "code": "nuovo-ufficio-page",
+                "label": "BREADCRUMB.NUOVO-UFFICIO",
+                "slug": "nuovo-ufficio-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "nuovo-ufficio-page-content-root-section",
+            "selector": "nuovo-ufficio-section",
+            "description": "Pagina per la creazione di un nuovo ufficio",
+            "classNames": "nuovo-ufficio-section",
+            "settings": {
+                "classNames": "nuovo-ufficio-index",
+                "sectionTitle": "TITLE.NUOVO-UFFICIO-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-archivio-uffici",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_COMMONS_UFFICIO",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-ufficio",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_COMMONS_UFFICIO"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "uffici-data",
+                            "label": "UFFICIO.DATI-UFFICIO",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "denominazione",
+                                    "label": "UFFICIO.DENOMINAZIONE",
+                                    "mappingInput": "denominazione",
+                                    "mappingOutput": "denominazione"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "centro-costo",
+                                    "label": "UFFICIO.CENTRO-COSTO",
+                                    "oggettoProtezione": "",     
+                                    "mappingInput": "centroCosto",
+                                    "mappingOutput": "centroCosto",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

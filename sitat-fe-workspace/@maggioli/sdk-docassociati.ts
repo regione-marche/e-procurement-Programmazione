@@ -1,0 +1,1 @@
+export * from '../projects/sdk-docassociati/src/public-api';

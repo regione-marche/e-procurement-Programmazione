@@ -1,0 +1,236 @@
+{
+    "name": "lista-lotti-page",
+    "title": "TITLE.LISTA-LOTTI-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "lista-lotti-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "lista-lotti-page-content-root-section",
+            "selector": "lista-lotti-section",
+            "description": "Pagina di lista lotti di una gara",
+            "classNames": "lista-lotti-section",
+            "settings": {
+                "classNames": "lista-lotti-index",
+                "menuTabs": [
+                    {
+                        "code": "dati-generali",
+                        "title": "DETTAGLIO-GARA.TABS.DATI-GENERALI",
+                        "slug": "dettaglio-gara-page",
+                        "oggettoProtezione": "W9.W9GARA-scheda.DETTGARA",
+                        "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS"
+                    },
+                    {
+                        "code": "lista-lotti",
+                        "title": "DETTAGLIO-GARA.TABS.LISTA-LOTTI",
+                        "active": true,
+                        "slug": "lista-lotti-page",
+                        "oggettoProtezione": "W9.W9GARA-scheda.LOTTI",
+                        "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS"
+                    },
+                    {
+                        "code": "pubblica",
+                        "title": "DETTAGLIO-GARA.TABS.PUBBLICA",
+                        "slug": "pubblica-gara-page",
+                        "oggettoProtezione": "W9.W9GARA-scheda.FLUSSIGARA",
+                        "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS"
+                    },{
+                        "code": "lista-atti",
+                        "title": "DETTAGLIO-GARA.TABS.LISTA-ATTI",
+                        "slug": "lista-atti-page",
+                        "oggettoProtezione": "W9.W9GARA-scheda.PUBBLICAZIONI",
+                        "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS"
+                    }
+                    
+                ],
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_LOTTI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "accorpamento-lotti",
+                            "label": "BUTTONS.ACCORPAMENTO-LOTTI",
+                            "provider": "APP_GARE_LISTA_GARE",
+                            "icon": "mgg-icons-crud-create",
+                            "type":"functions"
+                        }
+                    ],
+                    "buttonsRO": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_LOTTI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "insertLottoButton": {
+                        "code": "nuovo-lotto",
+                        "label": "BUTTONS.NUOVO",
+                        "icon": "mgg-icons-crud-create",
+                        "provider": "APP_GARE_LISTA_LOTTI",
+                        "oggettoProtezione": "INS.*"
+                    },
+                    "grid": {
+                        "navigable": true,
+                        "resizable": false,
+                        "debug": false,
+                        "sortable": {
+                            "allowUnsort": false,
+                            "mode": "single"
+                        },
+                        "sort": [
+                            {
+                                "field": "numLotto",
+                                "dir": "asc"
+                            }
+                        ],
+                        "pageable": false,
+                        "columns": [
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-LOTTI.NUMERO-LOTTO",
+                                "field": "numLotto",
+                                "width": 75,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "W9.W9LOTT.NLOTTO"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_HIERARCHICAL_LINK",
+                                    "params": {
+                                        "action": {
+                                            "label": "LISTA-LOTTI.AZIONI.DETTAGLIO",
+                                            "disabled": false,
+                                            "performer": "dettaglio"
+                                        }
+                                    }
+                                },
+                                "title": "LISTA-LOTTI.CIG",
+                                "field": "cig",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": "W9.W9LOTT.CIG"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-LOTTI.OGGETTO",
+                                "field": "oggetto",
+                                "width": 250,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "W9.W9LOTT.OGGETTO"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-LOTTI.SITUAZIONE",
+                                "field": "situazione",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": "W9.W9LOTT.SITUAZIONE"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-LOTTI.TIPOLOGIA-APPALTO",
+                                "field": "tipologia",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": "W9.W9LOTT.TIPO_CONTRATTO"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_CURRENCY"
+                                },
+                                "title": "LISTA-LOTTI.IMPORTO-TOTALE-LOTTO",
+                                "field": "importoNetto",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "W9.W9LOTT.IMPORTO_LOTTO"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_ACTIONS_ICON",
+                                    "params": {
+                                        "actions": [
+                                            {
+                                                "label": "LISTA-LOTTI.AZIONI.CANCELLA",
+                                                "disabled": false,
+                                                "performer": "delete",
+                                                "hidden": "deleteHidden",
+                                                "icon": "mgg-icons-crud-delete",
+                                                "oggettoProtezione": "DEL.*"
+                                            },
+                                            {
+                                                "label": "LISTA-LOTTI.AZIONI.NO-CANCELLA",
+                                                "disabled": true,
+                                                "hidden": "deleteNotHidden",
+                                                "icon": "mgg-icons-no-trash"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "title": "LISTA-LOTTI.AZIONI.TITLE",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

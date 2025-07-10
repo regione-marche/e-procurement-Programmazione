@@ -1,0 +1,79 @@
+{
+    "name": "utenti-stazione-appaltante-page",
+    "title": "TITLE.UTENTI-STAZIONE-APPALTANTE-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "app-programmi",
+    "styleUrls": [],
+    "settings": {
+        "page": "utenti-stazione-appaltante-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-archivio-stazioni-appaltanti-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-ARCHIVIO-STAZIONI-APPALTANTI",
+                "slug": "ricerca-avanzata-archivio-stazioni-appaltanti-page"
+            },
+            {
+                "code": "lista-archivio-stazioni-appaltanti-page",
+                "label": "BREADCRUMB.LISTA-ARCHIVIO-STAZIONI-APPALTANTI",
+                "slug": "lista-archivio-stazioni-appaltanti-page"
+            },
+            {
+                "code": "utenti-stazione-appaltante-page",
+                "label": "BREADCRUMB.UTENTI-STAZIONE-APPALTANTE",
+                "slug": "utenti-stazione-appaltante-page",
+                "additionalParams": "APP_COMMONS_STAZIONE_APPALTANTE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "utenti-stazione-appaltante-page-content-root-section",
+            "selector": "utenti-stazione-appaltante-section",
+            "description": "Pagina utenti stazione appaltante",
+            "classNames": "utenti-stazione-appaltante-section",
+            "settings": {
+                "classNames": "utenti-stazione-appaltante-index",
+                "sectionTitle": "TITLE.UTENTI-STAZIONE-APPALTANTE-PAGE",
+                "menuTabs": [
+                    {
+                        "code": "dettaglio-stazione-appaltante",
+                        "title": "STAZIONE-APPALTANTE.TABS.DETTAGLIO-STAZIONE-APPALTANTE",
+                        "slug": "dettaglio-stazione-appaltante-page",
+                        "additionalParams": "APP_COMMONS_STAZIONE_APPALTANTE_PARAMS"
+                    },
+                    {
+                        "code": "utenti-stazione-appaltante",
+                        "title": "STAZIONE-APPALTANTE.TABS.UTENTI-STAZIONE-APPALTANTE",
+                        "active": true,
+                        "slug": "utenti-stazione-appaltante-page",
+                        "additionalParams": "APP_COMMONS_STAZIONE_APPALTANTE_PARAMS",
+                        "visible": "APP_COMMONS_STAZIONE_APPALTANTE_UTENTI_VISIBLE"
+                    }
+                ],
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-archivio-stazioni-appaltanti",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_COMMONS_ARCHIVIO_STAZIONI_APPALTANTI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "go-to-update-utenti-stazione-appaltante",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_COMMONS_ARCHIVIO_STAZIONI_APPALTANTI",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

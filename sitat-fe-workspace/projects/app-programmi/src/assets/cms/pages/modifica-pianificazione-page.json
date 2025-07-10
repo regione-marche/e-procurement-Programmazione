@@ -1,0 +1,256 @@
+{
+    "name": "modifica-pianificazione-page",
+    "title": "TITLE.MODIFICA-PIANIFICAZIONE-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "modifica-pianificazione-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-pianificazioni-page",
+                "label": "BREADCRUMB.LISTA-PIANIFICAZIONI",
+                "slug": "lista-pianificazioni-page"
+            },
+            {
+                "code": "dettaglio-pianificazione-page",
+                "label": "BREADCRUMB.DETTAGLIO-PIANIFICAZIONE",
+                "slug": "dettaglio-pianificazione-page",
+                "additionalParams": "SDK_GESTIONE_UTENTI_DETTAGLIO_PIANIFICAZIONE_PARAMS"
+            },
+            {
+                "code": "modifica-pianificazione-page",
+                "label": "BREADCRUMB.MODIFICA-PIANIFICAZIONE",
+                "slug": "modifica-pianificazione-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-pianificazione-page-content-root-section",
+            "selector": "sdk-modifica-pianificazione-section",
+            "description": "Pagina modifica pianificazione",
+            "classNames": "modifica-pianificazione-section",
+            "settings": {
+                "classNames": "modifica-pianificazione-index",
+                "sectionTitle": "TITLE.MODIFICA-PIANIFICAZIONE-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-dettaglio-pianificazione",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "SDK_GESTIONE_PIANIFICAZIONI_LISTA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-pianificazione",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "SDK_GESTIONE_UTENTI_PIANIFICAZIONE"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "SDK-PIANIFICAZIONE.GENERAL-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "nome-trigger",
+                                    "label": "SDK-PIANIFICAZIONE.GENERAL-DATA.NOME-TRIGGER",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "beanId"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "descrizione",
+                                    "label": "SDK-PIANIFICAZIONE.GENERAL-DATA.DESCRIZIONE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "descrizione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "pianificazione",
+                                    "label": "SDK-PIANIFICAZIONE.GENERAL-DATA.PIANIFICAZIONE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "expression"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "secondi",
+                                    "label": "SDK-PIANIFICAZIONE.GENERAL-DATA.SECONDI",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "seconds",
+                                    "mappingOutput": "seconds",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-PIANIFICAZIONE.VALIDATORS.SECONDI-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": "30"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "minuti",
+                                    "label": "SDK-PIANIFICAZIONE.GENERAL-DATA.MINUTI",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "minutes",
+                                    "mappingOutput": "minutes",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-PIANIFICAZIONE.VALIDATORS.MINUTI-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": "30"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "ore",
+                                    "label": "SDK-PIANIFICAZIONE.GENERAL-DATA.ORE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "hours",
+                                    "mappingOutput": "hours",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-PIANIFICAZIONE.VALIDATORS.ORE-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": "30"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "giorni-del-mese",
+                                    "label": "SDK-PIANIFICAZIONE.GENERAL-DATA.GIORNI-DEL-MESE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "dayOfMonth",
+                                    "mappingOutput": "dayOfMonth",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-PIANIFICAZIONE.VALIDATORS.GIORNI-DEL-MESE-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": "30"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "mesi",
+                                    "label": "SDK-PIANIFICAZIONE.GENERAL-DATA.MESI",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "month",
+                                    "mappingOutput": "month",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-PIANIFICAZIONE.VALIDATORS.MESI-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": "30"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "giorni-della-settimana",
+                                    "label": "SDK-PIANIFICAZIONE.GENERAL-DATA.GIORNI-DELLA-SETTIMANA",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "dayOfWeek",
+                                    "mappingOutput": "dayOfWeek",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-PIANIFICAZIONE.VALIDATORS.GIORNI-DELLA-SETTIMANA-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": "30"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "anni",
+                                    "label": "SDK-PIANIFICAZIONE.GENERAL-DATA.ANNI",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "year",
+                                    "mappingOutput": "year",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-PIANIFICAZIONE.VALIDATORS.ANNI-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": "30"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

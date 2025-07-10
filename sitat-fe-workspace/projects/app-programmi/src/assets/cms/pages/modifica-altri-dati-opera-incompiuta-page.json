@@ -1,0 +1,419 @@
+{
+    "name": "modifica-altri-dati-opera-incompiuta-page",
+    "title": "TITLE.MODIFICA-ALTRI-DATI-OPERA-INCOMPIUTA-PAGE",
+    "layout": "base-layout",
+    "appName": "app-programmi",
+    "styleUrls": [
+        "assets/cms/pages/modifica-opera-incompiuta-page.css"
+    ],
+    "settings": {
+        "page": "modifica-altri-dati-opera-incompiuta-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-programmi-page",
+                "label": "BREADCRUMB.LISTA-PROGRAMMI",
+                "slug": "lista-programmi-page",
+                "additionalParams": "APP_PROGRAMMI_LISTA_PROGRAMMI_PARAMS"
+            },
+            {
+                "code": "dett-prog-opere-incompiute-page",
+                "label": "BREADCRUMB.DETTAGLIO-PROGRAMMA",
+                "slug": "dett-prog-opere-incompiute-page",
+                "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+            },
+            {
+                "code": "dett-altri-dati-opera-incompiuta-page",
+                "label": "BREADCRUMB.DETTAGLIO-ALTRI-DATI-OPERE-INCOMPIUTE",
+                "slug": "dett-altri-dati-opera-incompiuta-page",
+                "additionalParams": "APP_PROGRAMMI_DETTAGLIO_OPERA_INCOMPIUTA_PARAMS"
+            },
+            {
+                "code": "modifica-altri-dati-opera-incompiuta-page",
+                "label": "BREADCRUMB.MODIFICA-ALTRI-DATI-OPERA-INCOMPIUTA",
+                "slug": "modifica-altri-dati-opera-incompiuta-page",
+                "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-altri-dati-opera-incompiuta-page-content-root-section",
+            "selector": "modifica-altri-dati-opera-incompiuta-section",
+            "description": "Pagina di modifica di un'opera incompiuta",
+            "classNames": "modifica-altri-dati-opera-incompiuta-section",
+            "settings": {
+                "classNames": "modifica-altri-dati-opera-incompiuta-index",
+                "sectionTitle": "TITLE.MODIFICA-ALTRI-DATI-OPERA-INCOMPIUTA-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-altri-dati",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_PROGRAMMI_MODIFICA_OPERA_INCOMPIUTA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "update-opera-incompiuta",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_PROGRAMMI_OPERA_INCOMPIUTA"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "localizzazione-data",
+                            "label": "OPERE-INCOMPIUTE.ALTRI-DATI.LOCALIZZAZIONE",
+                            "fieldSections": [
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "comune",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.COMUNE",
+                                    "noDataLabel": "NO-DATA",
+                                    "oggettoProtezione": "PIANI.OITRI.ISTAT",
+                                    "mappingInput": "",
+                                    "mappingOutput": "",
+                                    "itemsProviderCode": "APP_PROGRAMMI_COMUNI",
+                                    "minSearchCharacters": 2
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "provincia",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.PROVINCIA",
+                                    "oggettoProtezione": "PIANI.OITRI.ISTAT",
+                                    "mappingInput": "",
+                                    "mappingOutput": ""
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "codice-istat",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.CODICE-ISTAT",
+                                    "oggettoProtezione": "PIANI.OITRI.ISTAT",
+                                    "mnemonico": "ISTATOIT",
+                                    "mappingInput": "codIstat",
+                                    "mappingOutput": "codIstat"
+                                },
+                                {
+                                    "type": "TEXTMODAL",
+                                    "code": "codnuts",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.NUTS",
+                                    "oggettoProtezione": "PIANI.OITRI.NUTS",
+                                    "mnemonico": "NUTCODOI",
+                                    "mappingInput": "codNuts",
+                                    "mappingOutput": "codNuts",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "regexp": "^.{0,5}$"
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "OPERE-INCOMPIUTE.DATI-GENERALI.VALIDATORS.NUTS-NUMERO-CARATTERI-NON-VALIDO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": 5,
+                                    "modalComponent": "nuts-modal-widget",
+                                    "modalComponentConfig": {
+                                        "data": {
+                                            "buttons": [
+                                                {
+                                                    "code": "modal-close-button",
+                                                    "label": "BUTTONS.ANNULLA",
+                                                    "icon": "mgg-icons-crud-cancel",
+                                                    "provider": "APP_PROGRAMMI_MODAL_WINDOW"
+                                                },
+                                                {
+                                                    "code": "set-button",
+                                                    "label": "BUTTONS.SET",
+                                                    "icon": "mgg-icons-crud-save"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "dati-intervento-data",
+                            "label": "OPERE-INCOMPIUTE.ALTRI-DATI.DATI-INTERVENTO",
+                            "fieldSections": [
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "classificazione-intervento-tipologia",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.CLASSIFICAZIONE-INTERVENTO-TIPOLOGIA",
+                                    "oggettoProtezione": "PIANI.OITRI.SEZINT",
+                                    "mnemonico": "T2SEZOIT",
+                                    "mappingInput": "tipologiaIntervento",
+                                    "mappingOutput": "tipologiaIntervento",
+                                    "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                    "listCode": "TipologiaIntervento"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "classificazione-intervento-categoria",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.CLASSIFICAZIONE-INTERVENTO-CATEGORIA",
+                                    "oggettoProtezione": "PIANI.OITRI.INTERV",
+                                    "mnemonico": "T2INTEOI",
+                                    "mappingInput": "categoriaIntervento",
+                                    "mappingOutput": "categoriaIntervento",
+                                    "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                    "listCode": "CategoriaIntervento"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "descrizione-opera-data",
+                            "label": "OPERE-INCOMPIUTE.ALTRI-DATI.DESCRIZIONE-OPERA",
+                            "fieldSections": [
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "opera-rispondente-requisiti-capitolato",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.OPERA-RISPONDENTE-REQUISITI-CAPITOLATO",
+                                    "oggettoProtezione": "PIANI.OITRI.REQ_CAP",
+                                    "mnemonico": "REQCAPOITRI",
+                                    "mappingInput": "requisitiCapitolato",
+                                    "mappingOutput": "requisitiCapitolato",
+                                    "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "opera-rispondente-requisiti-ultimo-progetto-approvato",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.OPERA-RISPONDENTE-REQUISITI-UTLIMO-PROGETTO-APPROVATO",
+                                    "oggettoProtezione": "PIANI.OITRI.REQ_PRGE",
+                                    "mnemonico": "REQPRGOITRI",
+                                    "mappingInput": "requisitiProgetto",
+                                    "mappingOutput": "requisitiProgetto",
+                                    "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "dimensionamento-opera-unita-misura",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.DIMENSIONAMENTO-OPERA-UNITA-MISURA",
+                                    "oggettoProtezione": "PIANI.OITRI.DIM_UM",
+                                    "mnemonico": "DIMUMOITRIP",
+                                    "mappingInput": "dimensionamentoUm",
+                                    "mappingOutput": "dimensionamentoUm",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "regexp": "^.{0,10}$"
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "OPERE-INCOMPIUTE.DATI-GENERALI.VALIDATORS.UN-MIS-NUMERO-CARATTERI-NON-VALIDO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": 10
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "dimensionamento-opera-valore",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.DIMENSIONAMENTO-OPERA-VALORE",
+                                    "oggettoProtezione": "PIANI.OITRI.DIM_QTA",
+                                    "mnemonico": "DIMQTOITRP",
+                                    "mappingInput": "dimensionamentoValore",
+                                    "mappingOutput": "dimensionamentoValore",
+                                    "decimals": 5,
+                                    "format":false,
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "regexp": "^([0-9]{1,19})(\\.[0-9]{1,5}){0,1}$"
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "OPERE-INCOMPIUTE.DATI-GENERALI.VALIDATORS.DIMENSIONAMENTO-OPERA-VALORE-NUMERO-CARATTERI-NON-VALIDO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": 24
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "fonti-finanziamento-data",
+                            "label": "OPERE-INCOMPIUTE.ALTRI-DATI.FONTI-FINANZIAMENTO",
+                            "fieldSections": [
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "sponsorizzazione",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.SPONSORIZZAZIONE",
+                                    "oggettoProtezione": "PIANI.OITRI.SPONSORIZZAZIONE",
+                                    "mnemonico": "SPONSOITRIP",
+                                    "mappingInput": "sponsorizzazione",
+                                    "mappingOutput": "sponsorizzazione",
+                                    "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "finanza-progetto",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.FINANZA-PROGETTO",
+                                    "oggettoProtezione": "PIANI.OITRI.FINANZA_PROGETTO",
+                                    "mnemonico": "FINPRGOITRI",
+                                    "mappingInput": "finanzaProgetto",
+                                    "mappingOutput": "finanzaProgetto",
+                                    "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "costo-progetto",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.COSTO-PROGETTO",
+                                    "oggettoProtezione": "PIANI.OITRI.COSTO",
+                                    "mnemonico": "COSTOOITRP",
+                                    "mappingInput": "costo",
+                                    "mappingOutput": "costo",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "regexp": "^([0-9]{1,22})(\\.[0-9]{1,2}){0,1}$"
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "OPERE-INCOMPIUTE.DATI-GENERALI.VALIDATORS.COSTO-NUMERO-CARATTERI-NON-VALIDO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "finanziamento-assegnato",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.FINANZIAMENTO-ASSEGNATO",
+                                    "oggettoProtezione": "PIANI.OITRI.FINANZIAMENTO",
+                                    "mnemonico": "FINANOITRP",
+                                    "mappingInput": "finanziamento",
+                                    "mappingOutput": "finanziamento",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "regexp": "^([0-9]{1,22})(\\.[0-9]{1,2}){0,1}$"
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "OPERE-INCOMPIUTE.DATI-GENERALI.VALIDATORS.FINANZIAMENTO-NUMERO-CARATTERI-NON-VALIDO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": 24
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "tipologia-copertura-finanziaria-data",
+                            "label": "OPERE-INCOMPIUTE.ALTRI-DATI.TIPOLOGIA-COPERTURA-FINANZIARIA",
+                            "fieldSections": [
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "statale",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.STATALE",
+                                    "oggettoProtezione": "PIANI.OITRI.COP_STATALE",
+                                    "mnemonico": "CPSTOITRI",
+                                    "mappingInput": "copStatale",
+                                    "mappingOutput": "copStatale",
+                                    "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "regionale",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.REGIONALE",
+                                    "oggettoProtezione": "PIANI.OITRI.COP_REGIONALE",
+                                    "mnemonico": "CPREOITRI",
+                                    "mappingInput": "copRegionale",
+                                    "mappingOutput": "copRegionale",
+                                    "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "provinciale",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.PROVINCIALE",
+                                    "oggettoProtezione": "PIANI.OITRI.COP_PROVINCIALE",
+                                    "mnemonico": "CPPROITRI",
+                                    "mappingInput": "copProvinciale",
+                                    "mappingOutput": "copProvinciale",
+                                    "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "comunale",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.COMUNALE",
+                                    "oggettoProtezione": "PIANI.OITRI.COP_COMUNALE",
+                                    "mnemonico": "CPCOOITRI",
+                                    "mappingInput": "copComunale",
+                                    "mappingOutput": "copComunale",
+                                    "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "altra-pubblica",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.ALTRA-PUBBLICA",
+                                    "oggettoProtezione": "PIANI.OITRI.COP_ALTRAPUBBLICA",
+                                    "mnemonico": "CPAPOITRI",
+                                    "mappingInput": "copAltraPubblica",
+                                    "mappingOutput": "copAltraPubblica",
+                                    "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "comunitaria",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.COMUNITARIA",
+                                    "oggettoProtezione": "PIANI.OITRI.COP_COMUNITARIA",
+                                    "mnemonico": "CPCMOITRI",
+                                    "mappingInput": "copComunitaria",
+                                    "mappingOutput": "copComunitaria",
+                                    "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "privata",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.PRIVATA",
+                                    "oggettoProtezione": "PIANI.OITRI.COP_PRIVATA",
+                                    "mnemonico": "CPPVOITRI",
+                                    "mappingInput": "copPrivata",
+                                    "mappingOutput": "copPrivata",
+                                    "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

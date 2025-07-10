@@ -1,0 +1,67 @@
+{
+    "name": "home-page",
+    "title": "TITLE.HOME-PAGE",
+    "layout": "home-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/home-page.css"
+    ],
+    "settings": {
+        "page": "home-page"
+    },
+    "sections": [
+        {
+            "id": "home-page-content-root-section",
+            "selector": "index-section",
+            "description": "Home page di app avvisi",
+            "classNames": "index-section",
+            "settings": {
+                "classNames": "app-contratti-index",
+                "testata": false,                
+                "gareCards": [
+                    {
+                        "code": "genera-url-anac",
+                        "icon": "mgg-icons-crud-edit",
+                        "label": "HOME-ATTI-GENERALI-PAGE.GENERA-URL-ANAC",
+                        "oggettoProtezione": "ALT.W9.GENERAURLANAC"
+                    },
+                    {
+                        "icon": "mgg-icons-file-import",
+                        "label": "HOME-GARE-PAGE.IMPORT-SIMOG",
+                        "slug": "importa-gara-simog-page",
+                        "oggettoProtezione": "ALT.W9.W9HOME.LinkRecuperaDaSIMOG"
+                    },
+                    {
+                        "icon": "mgg-icons-data-view",
+                        "label": "HOME-GARE-PAGE.VISUALIZZA-GARE",
+                        "slug": "lista-gare-page"
+                    },
+                    {
+                        "icon": "mgg-icons-data-search",
+                        "label": "HOME-GARE-PAGE.RICERCA-AVANZATA",
+                        "slug": "ricerca-avanzata-gare-page"
+                    },
+                    {
+                        "label": "HOME-GARE-PAGE.SCHEDE-TRASMESSE-PCP",
+                        "slug": "ricerca-schede-trasmesse-pcp-page",
+                        "icon": "mgg-icons-data-view",
+                        "oggettoProtezione": "ALT.W9.SCHEDETRASMESSEPCP"
+                    },
+                    {
+                        "icon": "mgg-icons-crud-create",
+                        "label": "HOME-GARE-PAGE.NUOVO-SMART-CIG",
+                        "slug": "gestione-smartcig-page",
+                        "oggettoProtezione": "ALT.W9.W9LOTT-SMARTCIG"
+                    },
+                    {
+                        "code": "nuova-gara",
+                        "icon": "mgg-icons-crud-create",
+                        "label": "HOME-GARE-PAGE.NUOVA-GARA",
+                        "slug": "nuova-gara-page",
+                        "oggettoProtezione": "ALT.W9.W9HOME.LinkCreaNuovaGara"
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,510 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+	namespace="it.appaltiecontratti.inbox.mapper.InboxMapper">
+
+	<resultMap id="FlussiMap"
+		type="it.appaltiecontratti.inbox.entity.FlussiListaEntry">
+		<result column="DATRIC" property="dataRicezione" />
+		<result column="KEY03" property="tipologiaFlusso" />
+		<result column="CODOGG" property="codOggetto" />
+		<result column="TINVIO2" property="tipoInvio" />
+		<result column="CFSA" property="codFiscSa" />
+		<result column="NOMEIN" property="denominazione" />
+		<result column="IDCOMUN" property="idComunicazione" />
+		<result column="AREA" property="area" />
+		<result column="STACOM" property="statoComunicazione" />
+		<result column="KEY04" property="numProgFase" />
+	</resultMap>
+
+	<select id="getlistaFlussi" resultMap="FlussiMap">
+		SELECT DATRIC,
+		KEY03,
+		CODOGG,
+		TINVIO2,
+		AREA,
+		CFSA,
+		NOMEIN,
+		IDCOMUN,
+		STACOM,
+		KEY04
+		FROM V_W9INBOX
+		WHERE 1=1
+		<include refid="filtroFlussi"></include>
+		ORDER BY
+
+		<if test="sort == 'dataRicezione'"> DATRIC  </if>
+		<if test="sort == 'tipoInvioDesc'"> TINVIO2  </if>
+		<if test="sort == 'tipologiaFlussoDesc'"> KEY03 </if>
+		<if test="sort == 'codOggetto'"> CODOGG </if>
+		<if test="sort == 'denominazione'"> NOMEIN </if>
+		<if test="sort == 'statoComunicazione'"> STACOM </if>
+		<if test="sort == 'numProgFase'"> KEY04 </if>
+
+		<if test="sortDirection == 'asc'"> asc </if>
+		<if test="sortDirection == 'desc'"> desc </if>
+	</select>
+
+	<select id="countSearchFlussi" resultType="int"
+		parameterType="hashmap">
+		SELECT count(DISTINCT IDCOMUN)
+		FROM V_W9INBOX
+		WHERE 1=1
+		<include refid="filtroFlussi"></include>
+	</select>
+
+	<sql id="filtroFlussi">
+		<if test="codFisc != null"> AND cfsa = #{codFisc} </if>
+		<if test="dataRicezioneA != null"> AND DATRIC  <![CDATA[ < #{dataRicezioneA} ]]></if>
+		<if test="dataRicezioneDa != null"> AND DATRIC  <![CDATA[ > #{dataRicezioneDa} ]]></if>
+		<if test="area != null"> AND AREA = #{area} </if>
+		<if test="faseEsecuzione != null"> AND KEY03 = #{faseEsecuzione} </if>
+		<if test="codOggetto != null"> AND UPPER(CODOGG) like #{codOggetto} </if>
+		<if test="numeroProg != null"> AND KEY04 = #{numeroProg} </if>
+	</sql>
+
+	<resultMap id="FeedbackMap"
+		type="it.appaltiecontratti.inbox.entity.FeedbackListaEntry">
+		<result column="NUMXML" property="numXml" />
+		<result column="NOMEIN" property="denominazione" />
+		<result column="CIG" property="cig" />
+		<result column="FASE_ESECUZIONE" property="faseEsecuzione" />
+		<result column="NLOTTO" property="nLotto" />
+		<result column="DATA_INVIO" property="dataTrasmissione" />
+		<result column="CODGARA" property="codgara" />
+		<result column="CODLOTT" property="codlott" />
+		<result column="NUM" property="numProgressivoFase" />
+		<result column="num_errore" property="numErrore" />
+		<result column="idflusso" property="idFlusso" />
+		<result column="feedback_analisi" property="feedbackAnalisi" />
+	</resultMap>
+
+	<select id="getListaFeedback" resultMap="FeedbackMap">
+		SELECT xm.NUMXML,
+		uf.NOMEIN,
+		l.CIG,
+		xm.FASE_ESECUZIONE,
+		l.NLOTTO,
+		xm.DATA_INVIO,
+		xm.CODGARA,
+		xm.CODLOTT,
+		xm.NUM,
+		xm.num_errore,
+		xm.idflusso,
+		xm.feedback_analisi
+		FROM W9XML xm join W9GARA g ON
+		xm.CODGARA =g.CODGARA
+		JOIN W9LOTT l ON l.CODGARA =xm.CODGARA AND
+		l.CODLOTT =xm.CODLOTT
+		JOIN UFFINT uf ON uf.CODEIN=g.CODEIN
+		WHERE 1=1
+		<include refid="filtroFeedback"></include>
+		ORDER BY
+
+		<if test="sort == 'dataTrasmissione'"> xm.DATA_INVIO  </if>
+		<if test="sort == 'faseEsecuzioneDesc'"> xm.FASE_ESECUZIONE  </if>
+		<if test="sort == 'numProgressivoFase'"> xm.num </if>
+		<if test="sort == 'cig'"> l.CIG </if>
+		<if test="sort == 'denominazione'"> uf.NOMEIN </if>
+
+		<if test="sortDirection == 'asc'"> asc </if>
+		<if test="sortDirection == 'desc'"> desc </if>
+	</select>
+
+	<select id="countSearchFeedback" resultType="int"
+		parameterType="hashmap">
+		SELECT count(1)
+		FROM W9XML xm join W9GARA g ON xm.CODGARA
+		=g.CODGARA
+		JOIN W9LOTT l ON l.CODGARA =xm.CODGARA AND l.CODLOTT
+		=xm.CODLOTT
+		JOIN UFFINT uf ON uf.CODEIN=g.CODEIN
+		WHERE 1=1
+		<include refid="filtroFeedback"></include>
+	</select>
+
+	<sql id="filtroFeedback">
+		<if test="codFisc != null"> AND uf.cfein = #{codFisc} </if>
+		<if test="feedbackAnalisi != null"> AND xm.FEEDBACK_ANALISI = #{feedbackAnalisi} </if>
+		<if test="dataTrasmissioneDa != null">
+			AND xm.DATA_INVIO  <![CDATA[ > #{dataTrasmissioneDa} ]]></if>
+		<if test="dataTrasmissioneA != null">
+			AND xm.DATA_INVIO  <![CDATA[ < #{dataTrasmissioneA} ]]></if>
+		<if test="cig != null"> AND UPPER(l.CIG) like #{cig} </if>
+		<if test="numErrore != null"> AND xm.NUM_ERRORE = #{numErrore} </if>
+		<if test="codiceAnomalia != null"> AND EXISTS (SELECT 1 FROM w9xmlanom xan WHERE xm.codgara = xan.codgara AND xm.codlott = xan.codlott AND xm.numxml = xan.numxml AND xan.codice = #{codiceAnomalia}) </if>
+		<if test="fase != null"> AND xm.FASE_ESECUZIONE = #{fase} </if>
+		<if test="faseNum != null"> AND xm.NUM = #{faseNum} </if>
+		<if test="escludiEliminazioni == true"> AND NOT EXISTS (SELECT 1 FROM w9xmlanom xan WHERE xm.codgara = xan.codgara AND xm.codlott = xan.codlott AND xm.numxml = xan.numxml AND xan.DESCRIZIONE LIKE '%[OP:ELIMINAZIONE]')
+		 <!-- xan.DESCRIZIONE not like '%[OP:ELIMINAZIONE]'  -->
+		</if>
+
+	</sql>
+
+	<resultMap id="ComScpMap"
+		type="it.appaltiecontratti.inbox.entity.ComScpListaEntry">
+		<result column="DATINV" property="dataInvio" />
+		<result column="STATO" property="stato" />
+		<result column="IDCOMUN" property="idComun" />
+		<result column="AREA" property="area" />
+		<result column="KEY01" property="key01" />
+		<result column="KEY02" property="key02" />
+		<result column="KEY03" property="key03" />
+		<result column="KEY04" property="key04" />
+		<result column="CFSA" property="codFisc" />
+	</resultMap>
+	
+	
+	<resultMap id="anomalieMap"
+		type="it.appaltiecontratti.inbox.entity.ReinvioSchedaEntry">
+		<result column="codgara" property="codGara" />
+		<result column="codlott" property="codLotto" />
+		<result column="fase_esecuzione" property="fase" />
+		<result column="num" property="num" />
+	</resultMap>
+	
+	<select id="getlistaComScp" resultMap="ComScpMap">
+	with w9outbox1 as (
+	select o.*, idavgara as codogg from w9outbox o join w9gara g on g.codgara=o.key01 where area=2
+	UNION
+	select o.*, cast (key01 as varchar) as codogg from w9outbox o where area=3
+	UNION
+	select o.*, id as codogg from w9outbox o join piatri p on p.contri=o.key01 where area=4
+	)
+
+		SELECT DATINV,
+		STATO,
+		IDCOMUN,
+		AREA,
+		KEY01,
+		KEY02,
+		KEY03,
+		KEY04,
+		CFSA
+		FROM w9outbox1 
+		WHERE
+		1=1
+		<include refid="filtroComScp"></include>
+		ORDER BY
+
+		<if test="sort == 'dataInvio'"> DATINV  </if>
+		<if test="sort == 'areaInvioDesc'"> AREA  </if>
+		<if test="sort == 'key01'"> KEY01 </if>
+		<if test="sort == 'key02'"> KEY02 </if>
+		<if test="sort == 'idComun'"> IDCOMUN </if>				
+
+		<if test="sortDirection == 'asc'"> asc </if>
+		<if test="sortDirection == 'desc'"> desc </if>
+	</select>
+
+	<select id="countSearchComScp" resultType="int"
+		parameterType="hashmap">
+			with w9outbox1 as (
+			select o.*, idavgara as codogg from w9outbox o join w9gara g on g.codgara=o.key01 where area=2
+			UNION
+			select o.*, cast (key01 as varchar) as codogg from w9outbox o where area=3
+			UNION
+			select o.*, id as codogg from w9outbox o join piatri p on p.contri=o.key01 where area=4
+			)
+		SELECT count(IDCOMUN)
+		FROM w9outbox1
+		WHERE 1=1
+		<include refid="filtroComScp"></include>
+	</select>
+
+	<sql id="filtroComScp">
+		<if test="codFisc != null"> AND cfsa = #{codFisc} </if>
+		<if test="dataInvioA != null">
+			AND DATINV  <![CDATA[ < #{dataInvioA} ]]></if>
+		<if test="dataInvioDa != null">
+			AND DATINV  <![CDATA[ > #{dataInvioDa} ]]></if>
+		<if test="area != null"> AND AREA = #{area} </if>
+		<if test="codice != null"> AND codogg = #{codice} </if>
+		<if test="stato != null"> AND STATO = #{stato} </if>
+	</sql>
+
+	<select id="countSearchRichiesteCancellazione" resultType="int"
+		parameterType="hashmap">
+		select count(*) from V_W9INBOX where STACOM=4 AND
+		(IDCOMUN IN(SELECT IDCOMUN FROM W9FLUSSI WHERE TINVIO2=-1) OR IDCOMUN
+		IN(SELECT IDCOMUN FROM W9FLUSSI_ELIMINATI WHERE TINVIO2=-1))
+	</select>
+
+	<resultMap id="listaRichiesteCancellazioneMap"
+		type="it.appaltiecontratti.inbox.entity.RichiestaCancellazioneEntry">
+		<result column="DATRIC" property="dataRicezione" />
+		<result column="KEY03" property="tipologiaFlusso" />
+		<result column="CODOGG" property="codOggetto" />
+		<result column="TINVIO2" property="tipoInvio" />
+		<result column="CFSA" property="codFiscSa" />
+		<result column="NOMEIN" property="denominazione" />
+		<result column="IDCOMUN" property="idComunicazione" />
+		<result column="AREA" property="area" />
+		<result column="STACOM" property="statoComunicazione" />
+		<result column="KEY04" property="numProgFase" />
+	</resultMap>
+
+	<select id="getListaRichiesteCancellazione"
+		resultMap="listaRichiesteCancellazioneMap" parameterType="hashmap">
+		select DATRIC,
+		KEY03,
+		CODOGG,
+		TINVIO2,
+		AREA,
+		CFSA,
+		NOMEIN,
+		IDCOMUN,
+		STACOM,
+		KEY04
+		from
+		V_W9INBOX where STACOM=4 AND
+		(IDCOMUN
+		IN(SELECT IDCOMUN FROM
+		W9FLUSSI
+		WHERE TINVIO2=-1) OR IDCOMUN
+		IN(SELECT
+		IDCOMUN FROM
+		W9FLUSSI_ELIMINATI
+		WHERE TINVIO2=-1))
+
+		ORDER BY
+		<if test="sort == 'dataRicezione'"> DATRIC  </if>
+		<if test="sort == 'tipoInvioDesc'"> TINVIO2  </if>
+		<if test="sort == 'tipologiaFlussoDesc'"> KEY03 </if>
+		<if test="sort == 'codOggetto'"> CODOGG </if>
+		<if test="sort == 'denominazione'"> NOMEIN </if>
+		<if test="sort == 'statoComunicazione'"> STACOM </if>
+		<if test="sort == 'numProgFase'"> KEY04 </if>
+
+		<if test="sortDirection == 'asc'"> asc </if>
+		<if test="sortDirection == 'desc'"> desc </if>
+	</select>
+	
+	<select id="countFasiSuccessiveDipendenti" resultType="java.lang.Long">
+		select count(*) from W9FASI where CODGARA = #{codGara} and CODLOTT = #{codLotto} and FASE_ESECUZIONE in 
+		<foreach item="item" index="index" collection="listaFasi" open="(" separator="," close=")">
+	    #{item}
+	    </foreach>
+	</select>
+
+	<delete id="deleteW9Inca">
+		delete from W9INCA where codgara = #{codGara} and codlott = #{codLotto} and num = #{numProgressivoFase} and sezione in 
+		<foreach item="item" index="index" collection="listaSezioni" open="(" separator="," close=")">
+	    #{item}
+	    </foreach>
+	</delete>
+	
+	<select id="searchAnomalie" resultMap="anomalieMap" parameterType="hashmap">
+		SELECT DISTINCT xm.codgara, xm.codlott, xm.fase_esecuzione, xm.num 
+	<include refid="fromWhereReinvioAnomalie"></include>
+	</select>
+
+	<select id="countAnomalie" resultType="java.lang.Long" parameterType="hashmap">
+		SELECT count(DISTINCT xm.*)
+		<include refid="fromWhereReinvioAnomalie"></include>
+	</select>
+	
+	<sql id="fromWhereReinvioAnomalie">
+		FROM W9XML xm join W9GARA g ON xm.CODGARA=g.CODGARA
+		JOIN W9LOTT l ON l.CODGARA =xm.CODGARA AND l.CODLOTT=xm.CODLOTT
+		JOIN UFFINT uf ON uf.CODEIN=g.CODEIN
+		LEFT JOIN w9xmlanom xan ON xm.codgara = xan.codgara AND xm.codlott = xan.codlott AND xm.numxml = xan.numxml
+		WHERE not exists (select 1 from w9xml X2 where xm.codgara=X2.codgara and xm.codlott=X2.codlott and xm.fase_esecuzione=X2.fase_esecuzione and xm.num=X2.num and xm.data_feedback <![CDATA[<]]> X2.data_feedback)
+		and not exists (select 1 from w9xml X3 where xm.codgara=X3.codgara and xm.codlott=X3.codlott and xm.fase_esecuzione=X3.fase_esecuzione and xm.num=X3.num and X3.data_invio is null)
+		and xm.num_errore = 1 and xan.livello = 'ERRORE'
+		<if test="stazioneAppaltante != null"> and uf.cfein = #{stazioneAppaltante} </if>
+		<if test="dataInvioDa != null"> AND xm.DATA_INVIO  <![CDATA[ > #{dataInvioDa} ]]></if> 
+		<if test="dataInvioA != null">  AND xm.DATA_INVIO  <![CDATA[ < #{dataInvioA} ]]> </if>
+		<if test="cig != null"> AND l.cig = #{cig} </if>
+		<if test="codiceAnomalia != null"> AND xan.codice = #{codiceAnomalia} </if>
+		<if test="descrizioneAnomalia != null"> AND UPPER(xan.descrizione) like #{descrizioneAnomalia} </if>
+	</sql>
+
+	<update id="updateCui1">
+		Update W9LOTT L SET CODCUI=null,ID_SCHEDA_SIMOG=null where CODCUI is not null and 
+		exists (select 1 from w9xmlanom A join W9XML X on X.CODGARA=A.CODGARA and X.CODLOTT=A.CODLOTT and X.NUMXML=A.NUMXML 
+		where L.CODGARA=X.CODGARA and L.CODLOTT=X.CODLOTT and A.codice='SIMOG_MASSLOADER_186'
+		<if test="dataInvioDa != null"> AND X.DATA_INVIO  <![CDATA[ > #{dataInvioDa} ]]></if> 
+		<if test="dataInvioA != null">  AND X.DATA_INVIO  <![CDATA[ < #{dataInvioA} ]]> </if>
+		)
+	</update>
+	
+	<update id="updateCui2">
+		Update W9APPA L SET CODCUI=null where CODCUI is not null and 
+		exists (select 1 from w9xmlanom A join W9XML X on X.CODGARA=A.CODGARA and X.CODLOTT=A.CODLOTT and X.NUMXML=A.NUMXML 
+		where L.CODGARA=X.CODGARA and L.CODLOTT=X.CODLOTT and A.codice='SIMOG_MASSLOADER_186'
+		<if test="dataInvioDa != null"> AND X.DATA_INVIO  <![CDATA[ > #{dataInvioDa} ]]></if> 
+		<if test="dataInvioA != null">  AND X.DATA_INVIO  <![CDATA[ < #{dataInvioA} ]]> </if>
+		)
+	</update>
+	
+	<select id="selectCui" resultMap="anomalieMap" parameterType="hashmap">
+		select f.codgara, f.codlott, f.fase_esecuzione, f.num from W9FASI f  where exists (select 1 from w9xmlanom A join W9XML X on X.CODGARA=A.CODGARA and X.CODLOTT=A.CODLOTT and X.NUMXML=A.NUMXML 
+		where F.CODGARA=X.CODGARA and F.CODLOTT=X.CODLOTT and A.codice='SIMOG_MASSLOADER_186'
+		<if test="dataInvioDa != null"> AND X.DATA_INVIO  <![CDATA[ > #{dataInvioDa} ]]></if> 
+		<if test="dataInvioA != null">  AND X.DATA_INVIO  <![CDATA[ < #{dataInvioA} ]]> </if>
+		)
+	</select>
+	
+	
+	<update id="updateAggPresente1">
+		update W9LOTT L set CODCUI=CIG || '-1' where exists 
+		(select 1 from w9xmlanom A join W9XML X on X.CODGARA=A.CODGARA and X.CODLOTT=A.CODLOTT and X.NUMXML=A.NUMXML WHERE L.CODGARA=A.CODGARA and L.CODLOTT=A.CODLOTT and 
+		(A.descrizione like 'SIMOG_MASSLOADER_177 - CIG[%] e CUI[] non coerenti, non fanno riferimento allo stesso LOTTO' or A.descrizione like 'SIMOG_MASSLOADER_178 - Scheda " Aggiudicazione " non inseribile, e'' gia presente una Scheda " Aggiudicazione "%') 
+		and CODCUI is null
+		<if test="dataInvioDa != null"> AND X.DATA_INVIO  <![CDATA[ > #{dataInvioDa} ]]></if> 
+		<if test="dataInvioA != null">  AND X.DATA_INVIO  <![CDATA[ < #{dataInvioA} ]]> </if>
+		)
+	</update>
+	
+	<update id="updateAggPresente2">
+		Update W9APPA L SET CODCUI=null where exists 
+		(select 1 from w9xmlanom A join W9XML X on X.CODGARA=A.CODGARA and X.CODLOTT=A.CODLOTT and X.NUMXML=A.NUMXML WHERE L.CODGARA=A.CODGARA and L.CODLOTT=A.CODLOTT and 
+		(A.descrizione like 'SIMOG_MASSLOADER_177 - CIG[%] e CUI[] non coerenti, non fanno riferimento allo stesso LOTTO' or A.descrizione like 'SIMOG_MASSLOADER_178 - Scheda " Aggiudicazione " non inseribile, e'' gia presente una Scheda " Aggiudicazione "%') 
+		and CODCUI is null
+		<if test="dataInvioDa != null"> AND X.DATA_INVIO  <![CDATA[ > #{dataInvioDa} ]]></if> 
+		<if test="dataInvioA != null">  AND X.DATA_INVIO  <![CDATA[ < #{dataInvioA} ]]> </if>
+		)
+	</update>
+	
+	<select id="selectAggPresente" resultMap="anomalieMap" parameterType="hashmap">
+		select f.codgara, f.codlott, f.fase_esecuzione, f.num from W9FASI f where exists 
+		(select 1 from w9xmlanom A join W9XML X on X.CODGARA=A.CODGARA and X.CODLOTT=A.CODLOTT 
+		and X.NUMXML=A.NUMXML where F.CODGARA=X.CODGARA and F.CODLOTT=X.CODLOTT and F.FASE_ESECUZIONE=X.FASE_ESECUZIONE 
+		and F.NUM=X.NUM and (A.descrizione like 'SIMOG_MASSLOADER_177 - CIG[%] e CUI[] non coerenti, non fanno riferimento allo stesso LOTTO' or A.descrizione like 'SIMOG_MASSLOADER_178 - Scheda " Aggiudicazione " non inseribile, e'' gia presente una Scheda " Aggiudicazione "%')
+		<if test="dataInvioDa != null"> AND X.DATA_INVIO  <![CDATA[ > #{dataInvioDa} ]]></if> 
+		<if test="dataInvioA != null">  AND X.DATA_INVIO  <![CDATA[ < #{dataInvioA} ]]> </if>
+		)
+	</select>
+	
+	<select id="selectNoFaseInizConc1" resultMap="anomalieMap" parameterType="hashmap">
+		select f.codgara, f.codlott, f.fase_esecuzione, f.num from W9FASI f where exists 
+		(select 1 from w9xmlanom A join W9XML X on X.CODGARA=A.CODGARA and X.CODLOTT=A.CODLOTT and X.NUMXML=A.NUMXML 
+		where a.codgara=f.codgara and a.codlott=f.codlott and x.fase_esecuzione=f.fase_esecuzione and x.num=f.num and livello='ERRORE' and A.descrizione like 'SIMOG_MASSLOADER_173 - La Scheda FASE_INIZIALE%') and 
+		exists (select 1 from W9XML X where  F.CODGARA=X.CODGARA and F.CODLOTT=X.CODLOTT and X.fase_esecuzione in (2,11) and X.num_errore=0
+		<if test="dataInvioDa != null"> AND X.DATA_INVIO  <![CDATA[ > #{dataInvioDa} ]]></if> 
+		<if test="dataInvioA != null">  AND X.DATA_INVIO  <![CDATA[ < #{dataInvioA} ]]> </if>
+		)
+	</select>
+	
+	<select id="selectNoFaseInizConc2" resultMap="anomalieMap" parameterType="hashmap">
+		select f.codgara, f.codlott, f.fase_esecuzione, f.num from W9FASI f where exists 
+		(select 1 from w9xmlanom A join W9XML X on X.CODGARA=A.CODGARA and X.CODLOTT=A.CODLOTT and X.NUMXML=A.NUMXML 
+		where a.codgara=f.codgara and a.codlott=f.codlott and x.fase_esecuzione=f.fase_esecuzione and x.num=f.num and livello='ERRORE' and A.descrizione like 'SIMOG_MASSLOADER_173 - La Scheda FINE_LAVORI%') and 
+		exists (select 1 from W9XML X where  F.CODGARA=X.CODGARA and F.CODLOTT=X.CODLOTT and X.fase_esecuzione =4 and X.num_errore=0
+		<if test="dataInvioDa != null"> AND X.DATA_INVIO  <![CDATA[ > #{dataInvioDa} ]]></if> 
+		<if test="dataInvioA != null">  AND X.DATA_INVIO  <![CDATA[ < #{dataInvioA} ]]> </if>
+		)
+	</select>
+		
+	<update id="updateNoIdLocale1">
+		Update w9fasi f set id_scheda_locale=(select cig from w9lott L where L.codgara=F.codgara and L.codlott=F.codlott) || '_' || trim(to_char(fase_esecuzione ,'000'))|| '_' || trim(to_char(num ,'000'))
+		where id_scheda_locale is null and
+		exists (select 1 from w9xmlanom A join W9XML X on X.CODGARA=A.CODGARA and X.CODLOTT=A.CODLOTT and X.NUMXML=A.NUMXML where F.CODGARA=X.CODGARA and F.CODLOTT=X.CODLOTT and F.FASE_ESECUZIONE=X.FASE_ESECUZIONE and
+		F.NUM=X.NUM and A.descrizione like 'SIMOG_MASSLOADER_200 - Sono state indicate schede senza identificativo Locale, tutte le schede per il CIG verranno scartate' and livello='ERRORE'
+		<if test="dataInvioDa != null"> AND X.DATA_INVIO  <![CDATA[ > #{dataInvioDa} ]]></if> 
+		<if test="dataInvioA != null">  AND X.DATA_INVIO  <![CDATA[ < #{dataInvioA} ]]> </if>
+		)
+	</update>
+	
+	<update id="updateNoIdLocale2">
+		Update w9lott L set id_scheda_simog=null where id_scheda_locale is not null and
+		exists (select 1 from w9xmlanom A join W9XML X on X.CODGARA=A.CODGARA and X.CODLOTT=A.CODLOTT and X.NUMXML=A.NUMXML where L.CODGARA=A.CODGARA and L.CODLOTT=A.CODLOTT and 
+		A.descrizione = 'SIMOG_MASSLOADER_203 - Se e'' presente il CUI, l''aggiudicazione deve gia'' essere stata inserita, valorizzare l''id simog nella scheda aggiudicazione.' and livello='ERRORE'
+		<if test="dataInvioDa != null"> AND X.DATA_INVIO  <![CDATA[ > #{dataInvioDa} ]]></if> 
+		<if test="dataInvioA != null">  AND X.DATA_INVIO  <![CDATA[ < #{dataInvioA} ]]> </if>
+		)
+	</update>
+	
+	<select id="selectNoIdLocale" resultMap="anomalieMap" parameterType="hashmap">
+		select f.codgara, f.codlott, f.fase_esecuzione, f.num from W9FASI f where exists 
+		(select 1 from w9xmlanom A join W9XML X on X.CODGARA=A.CODGARA and X.CODLOTT=A.CODLOTT and 
+		X.NUMXML=A.NUMXML where F.CODGARA=X.CODGARA and F.CODLOTT=X.CODLOTT and F.FASE_ESECUZIONE=X.FASE_ESECUZIONE and F.NUM=X.NUM and 
+		(A.descrizione like 'SIMOG_MASSLOADER_200 - Sono state indicate schede senza identificativo Locale, tutte le schede per il CIG verranno scartate' or A.descrizione = 'SIMOG_MASSLOADER_203 - Se e'' presente il CUI, l''aggiudicazione deve gia'' essere stata inserita, valorizzare l''id simog nella scheda aggiudicazione.') and livello='ERRORE'	
+		<if test="dataInvioDa != null"> AND X.DATA_INVIO  <![CDATA[ > #{dataInvioDa} ]]></if> 
+		<if test="dataInvioA != null">  AND X.DATA_INVIO  <![CDATA[ < #{dataInvioA} ]]> </if>
+		)
+	</select>
+	
+	<select id="selectErroreSimog1" resultMap="anomalieMap" parameterType="hashmap">
+		Select f.codgara, f.codlott, f.fase_esecuzione, f.num from W9FASI F where exists 
+		(select 1 from w9xmlanom A join W9XML X on X.CODGARA=A.CODGARA and X.CODLOTT=A.CODLOTT and X.NUMXML=A.NUMXML where F.CODGARA=X.CODGARA and F.CODLOTT=X.CODLOTT and F.FASE_ESECUZIONE=X.FASE_ESECUZIONE
+		 and F.NUM=X.NUM and A.codice='SIMOG_MASSLOADER_205'
+ 		<if test="dataInvioDa != null"> AND X.DATA_INVIO  <![CDATA[ > #{dataInvioDa} ]]></if> 
+		<if test="dataInvioA != null">  AND X.DATA_INVIO  <![CDATA[ < #{dataInvioA} ]]> </if>
+		)
+	</select>
+	
+	<select id="selectErroreSimog2" resultMap="anomalieMap" parameterType="hashmap">
+		Select f.codgara, f.codlott, f.fase_esecuzione, f.num from W9FASI F where exists 
+		(select 1 from W9XML X left join w9xmlanom A on X.CODGARA=A.CODGARA and X.CODLOTT=A.CODLOTT and X.NUMXML=A.NUMXML where F.CODGARA=X.CODGARA and F.CODLOTT=X.CODLOTT and F.FASE_ESECUZIONE=X.FASE_ESECUZIONE 
+		and F.NUM=X.NUM and X.NUM_ERRORE>0 AND A.CODGARA is null
+		<if test="dataInvioDa != null"> AND X.DATA_INVIO  <![CDATA[ > #{dataInvioDa} ]]></if> 
+		<if test="dataInvioA != null">  AND X.DATA_INVIO  <![CDATA[ < #{dataInvioA} ]]> </if>
+		)
+	</select>
+	
+	<delete id="cancellaErroriSchedeRitrasmesse">
+		delete from w9xml X where exists (select 1 from w9xml X2 where X.codgara=X2.codgara and X.codlott=X2.codlott and  X.fase_esecuzione=X2.fase_esecuzione and  X.num=X2.num and X.data_feedback<![CDATA[ < ]]>X2.data_feedback) and num_errore>0
+		<if test="dataInvioDa != null"> AND X.DATA_INVIO  <![CDATA[ > #{dataInvioDa} ]]></if> 
+		<if test="dataInvioA != null">  AND X.DATA_INVIO  <![CDATA[ < #{dataInvioA} ]]> </if>
+	</delete>
+	
+	<update id="modificaErroriSchedeRitrasmesse">
+		update w9xml X set feedback_analisi = 1 where exists (select 1 from w9xml X2 where X.codgara=X2.codgara and X.codlott=X2.codlott and  X.fase_esecuzione=X2.fase_esecuzione and  X.num=X2.num and X.data_feedback<![CDATA[ < ]]>X2.data_feedback) and X.num_errore>0
+		<if test="dataInvioDa != null"> AND X.DATA_INVIO  <![CDATA[ > #{dataInvioDa} ]]></if> 
+		<if test="dataInvioA != null">  AND X.DATA_INVIO  <![CDATA[ < #{dataInvioA} ]]> </if>
+	</update>
+	
+	<delete id="cancellaErroriSchedeNonDovute1">
+		delete from w9xml X where exists (select 1 from w9xmlanom A where X.codgara=A.codgara and X.codlott=A.codlott and X.numXML=A.NUMXML and codice='LOADER_APPALTO_001')
+		<if test="dataInvioDa != null"> AND X.DATA_INVIO  <![CDATA[ > #{dataInvioDa} ]]></if> 
+		<if test="dataInvioA != null">  AND X.DATA_INVIO  <![CDATA[ < #{dataInvioA} ]]> </if>
+	</delete>
+	
+	<update id="modificaErroriSchedeNonDovute1">
+		update w9xml X set feedback_analisi = 2 where exists (select 1 from w9xmlanom A where X.codgara=A.codgara and X.codlott=A.codlott and X.numXML=A.NUMXML and codice='LOADER_APPALTO_001')
+		<if test="dataInvioDa != null"> AND X.DATA_INVIO  <![CDATA[ > #{dataInvioDa} ]]></if> 
+		<if test="dataInvioA != null">  AND X.DATA_INVIO  <![CDATA[ < #{dataInvioA} ]]> </if>
+	</update>
+	
+	<delete id="cancellaErroriSchedeNonDovute2">
+		delete from w9xml X where exists 
+		(select 1 from w9xmlanom A where X.codgara=A.codgara and X.codlott=A.codlott and X.numXML=A.NUMXML and descrizione like 'SIMOG_MASSLOADER_207 - Scheda non prevista per questo tipo di contratto ( Contratto ESCLUSO )%' and scheda in ('STATO_AVANZAMENTO','STIPULA','VARIANTE','SUBAPPALTO'))
+		 and exists (select 1 from w9lott L where X.codgara=L.codgara and X.codlott=L.codlott and ART_E1='1')
+		<if test="dataInvioDa != null"> AND X.DATA_INVIO  <![CDATA[ > #{dataInvioDa} ]]></if> 
+		<if test="dataInvioA != null">  AND X.DATA_INVIO  <![CDATA[ < #{dataInvioA} ]]> </if>
+	</delete>
+	
+	<update id="modificaErroriSchedeNonDovute2">
+		update w9xml X set feedback_analisi = 2  where exists 
+		(select 1 from w9xmlanom A where X.codgara=A.codgara and X.codlott=A.codlott and X.numXML=A.NUMXML and descrizione like 'SIMOG_MASSLOADER_207 - Scheda non prevista per questo tipo di contratto ( Contratto ESCLUSO )%' and scheda in ('STATO_AVANZAMENTO','STIPULA','VARIANTE','SUBAPPALTO'))
+		 and exists (select 1 from w9lott L where X.codgara=L.codgara and X.codlott=L.codlott and ART_E1='1')
+		<if test="dataInvioDa != null"> AND X.DATA_INVIO  <![CDATA[ > #{dataInvioDa} ]]></if> 
+		<if test="dataInvioA != null">  AND X.DATA_INVIO  <![CDATA[ < #{dataInvioA} ]]> </if>
+	</update>	
+	
+	<delete id="cancellaErroriSchedeNonDovute3">
+		delete from w9xml X where exists (select 1 from w9xmlanom A where X.codgara=A.codgara and X.codlott=A.codlott and X.numXML=A.NUMXML and descrizione like 'SIMOG_MASSLOADER_207 - Scheda non prevista per questo tipo di contratto ( Contratto SOTTOSOGLIA )%' and scheda in ('STATO_AVANZAMENTO','STIPULA','VARIANTE','SUBAPPALTO')) and exists (select 1 from w9lott L where X.codgara=L.codgara and X.codlott=L.codlott and (EXSOTTOSOGLIA='1'))
+		<if test="dataInvioDa != null"> AND X.DATA_INVIO  <![CDATA[ > #{dataInvioDa} ]]></if> 
+		<if test="dataInvioA != null">  AND X.DATA_INVIO  <![CDATA[ < #{dataInvioA} ]]> </if>
+	</delete>
+	
+	<update id="modificaErroriSchedeNonDovute3">
+		update w9xml X set feedback_analisi = 2 where exists (select 1 from w9xmlanom A where X.codgara=A.codgara and X.codlott=A.codlott and X.numXML=A.NUMXML and descrizione like 'SIMOG_MASSLOADER_207 - Scheda non prevista per questo tipo di contratto ( Contratto SOTTOSOGLIA )%' and scheda in ('STATO_AVANZAMENTO','STIPULA','VARIANTE','SUBAPPALTO')) and exists (select 1 from w9lott L where X.codgara=L.codgara and X.codlott=L.codlott and (EXSOTTOSOGLIA='1'))
+		<if test="dataInvioDa != null"> AND X.DATA_INVIO  <![CDATA[ > #{dataInvioDa} ]]></if> 
+		<if test="dataInvioA != null">  AND X.DATA_INVIO  <![CDATA[ < #{dataInvioA} ]]> </if>
+	</update>
+	
+	<delete id="cancellaErroriSchedeNonDovute4">
+		delete from w9xml X where exists (select 1 from w9xmlanom A where X.codgara=A.codgara and X.codlott=A.codlott and X.numXML=A.NUMXML and descrizione like 'SIMOG_VALIDAZIONE_269 - Per il contratto non e'' prevista la trasmissione di schede avanzamento%')
+		<if test="dataInvioDa != null"> AND X.DATA_INVIO  <![CDATA[ > #{dataInvioDa} ]]></if> 
+		<if test="dataInvioA != null">  AND X.DATA_INVIO  <![CDATA[ < #{dataInvioA} ]]> </if>
+	</delete>
+	
+	<update id="modificaErroriSchedeNonDovute4">
+		update w9xml X set feedback_analisi = 2 where exists (select 1 from w9xmlanom A where X.codgara=A.codgara and X.codlott=A.codlott and X.numXML=A.NUMXML and descrizione like 'SIMOG_VALIDAZIONE_269 - Per il contratto non e'' prevista la trasmissione di schede avanzamento%')
+		<if test="dataInvioDa != null"> AND X.DATA_INVIO  <![CDATA[ > #{dataInvioDa} ]]></if> 
+		<if test="dataInvioA != null">  AND X.DATA_INVIO  <![CDATA[ < #{dataInvioA} ]]> </if>
+	</update>
+</mapper>

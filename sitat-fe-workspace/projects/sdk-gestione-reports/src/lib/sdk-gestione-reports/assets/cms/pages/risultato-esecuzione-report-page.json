@@ -1,0 +1,109 @@
+{
+    "name": "risultato-esecuzione-report-page",
+    "title": "TITLE.RISULTATI-REPORT-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [
+        "assets/cms/pages/risultato-report-page.css"
+    ],
+    "settings": {
+        "page": "risultato-esecuzione-report-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-report-page",
+                "label": "BREADCRUMB.GESTIONE-REPORT",
+                "slug": "lista-report-page"
+            },
+            {
+                "code": "parametri-report-page",
+                "label": "BREADCRUMB.PARAMETRI-REPORT",
+                "slug": "parametri-report-page",
+                "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+            },
+            {
+                "code": "inserisci-parametri-page",
+                "label": "BREADCRUMB.INSERISCI-PARAMETRI",
+                "slug": "inserisci-parametri-page",
+                "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+            },
+            {
+                "code": "risultati-report-page",
+                "label": "BREADCRUMB.RISULTATI-REPORT",
+                "slug": "risultati-report-page",
+                "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS",
+                "labelProvider": "BREADCRUMB_NOME_REPORT_PROVIDER"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "risultato-esecuzione-report-page-content-root-section",
+            "selector": "sdk-risultato-esecuzione-report-page-section",
+            "description": "Pagina per la visualizzazione dei risultati dell'esecuzione di un report",
+            "classNames": "sdk-risultato-esecuzione-report-page-section",
+            "settings": {
+                "classNames": "risultato-esecuzione-report-index",
+                "sectionTitle": "TITLE.RISULTATI-REPORT-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-def-or-param-list",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_REPORT_LISTA_REPORT",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "export-report-result",
+                            "label": "BUTTONS.EXPORT",
+                            "icon": "mgg-icons-data-export",
+                            "dropdown": true,
+                            "look": "icon",
+                            "dropdownData": [                                
+                                {
+                                    "code": "export-report-csv",
+                                    "label": "BUTTONS.CSV",
+                                    "provider": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PROVIDER"
+                                },
+                                {
+                                    "code": "export-report-xlsx",
+                                    "label": "BUTTONS.XLSX",
+                                    "provider": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PROVIDER"
+                                },
+                                {
+                                    "code": "export-report-docx",
+                                    "label": "BUTTONS.DOCX",
+                                    "provider": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PROVIDER"
+                                },
+                                {
+                                    "code": "export-report-pdf",
+                                    "label": "BUTTONS.PDF",
+                                    "provider": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PROVIDER"
+                                },
+                                {
+                                    "code": "export-report-json",
+                                    "label": "BUTTONS.JSON",
+                                    "provider": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PROVIDER"
+                                }
+                            ]
+                        }
+                    ],
+                    "buttonsErr": [
+                        {
+                            "code": "back-def-or-param-list",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_REPORT_LISTA_REPORT",
+                            "type": "cancel"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

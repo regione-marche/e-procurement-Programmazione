@@ -1,0 +1,78 @@
+@import "../app/app-vars.scss";
+@import "../../sdk-flex.scss";
+
+.lfl-container .lfl-content {
+    .empty-list {
+        @extend %e8e8e8-background;
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 3px;
+    }
+
+    .fasi-lotto-table {
+        width: 100%;
+
+        tr.fasi-lotto-row:nth-child(even) {
+            background-color: #f2f2f2
+        }
+
+        th.fasi-lotto-header {
+            padding: 0.5rem;
+        }
+
+        .fasi-lotto-cell {
+            padding: 0.5rem;
+
+            &.clickable {
+                cursor: pointer;
+                text-decoration: underline;
+            }
+
+            &.pubb {
+                text-align: center;
+                min-width: 75px;
+            }
+
+            .azione-eliminazione,
+            .azione-pubblica,
+            .azione-verifica,
+            .azione-dettaglio {
+                &.clickable {
+                    @extend %color-base;
+                    cursor: pointer;
+                    text-decoration: none;
+                }
+            }
+
+            .azione-pubblica {
+                @include grid;
+                @include grid-nowrap;
+                @include grid-center;
+                @include grid-va-center;
+
+                .stato-title {
+                    padding: 0 1rem;
+                }
+            }
+
+            .fasi-lotto-azioni{
+                @include grid;
+                @include grid-nowrap;
+                @include grid-left;
+                padding: 0 25%;
+            }
+
+            .azione-eliminazione {
+                padding-left: 20%;
+            }
+
+            .azione-verifica {
+                padding-left: 20%;
+            }
+
+            .azione-dettaglio {
+                padding-left: 20%;
+            }
+        }
+    }
+}

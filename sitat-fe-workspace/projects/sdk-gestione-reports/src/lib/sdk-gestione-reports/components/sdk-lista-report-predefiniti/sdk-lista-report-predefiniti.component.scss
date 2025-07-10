@@ -1,0 +1,81 @@
+.sdk-lista-reports-predefiniti-container {
+    width: 100%;
+    height: 100%;
+
+    .sdk-lista-reports-predefiniti-item {
+        height: 56px;
+        td {
+            padding: 0 0.5rem;
+        }
+    }
+}
+
+.p-datatable-all-reports {
+    width: 100%; 
+    height: 100%; 
+    display: flex;
+    flex-direction: column; 
+}
+
+.sdk-lista-report-predefiniti-cell-container{
+    display: flex;
+    width: 100%;
+    height: 35px;
+    justify-content: center;
+}
+
+.sdk-lista-report-predefiniti-cell-container i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+.link-icon-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+}
+
+.link-icon-container a {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.link-icon-container i {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.preferito-icon {
+    margin-left: 8px;
+    cursor: pointer;
+    transition: opacity 0.2s, color 0.2s;
+    opacity: 0;
+    color: transparent;
+    align-items: center;
+}
+
+.preferito-icon.visibile {
+    opacity: 1;
+    color: #06c;
+}
+
+.preferito-icon.preferito {
+    opacity: 1;
+    color: #06c;
+}
+
+.mgg-icons-data-like-off {
+    transition: color 0.2s;
+}
+
+.mgg-icons-data-like {
+    transition: color 0.2s;
+}

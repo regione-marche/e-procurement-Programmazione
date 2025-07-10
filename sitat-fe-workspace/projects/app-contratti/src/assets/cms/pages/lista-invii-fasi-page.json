@@ -1,0 +1,328 @@
+{
+    "name": "lista-invii-fasi-page",
+    "title": "TITLE.LISTA-INVII-FASI-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "lista-invii-fasi-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-invii-fasi-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-invii-fasi-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            }
+        ],
+        "breadcrumbsLS": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.RICERCA-SCHEDE-TRASMESSE-PCP",
+                "slug": "ricerca-schede-trasmesse-pcp-page"
+            },
+            {
+                "code": "lista-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.LISTA-SCHEDE-TRASMESSE-PCP",
+                "slug": "lista-schede-trasmesse-pcp-page"
+            },
+            {
+                "code": "lista-invii-fasi-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-invii-fasi-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "lista-invii-fasi-page-content-root-section",
+            "selector": "lista-invii-fasi-section",
+            "description": "Pagina di lista invii fasi di un lotto",
+            "classNames": "lista-invii-fasi-section",
+            "settings": {
+                "classNames": "lista-invii-fasi-index",
+                "menuTabs": [
+                    {
+                        "code": "dettaglio-lotto",
+                        "title": "DETTAGLIO-LOTTO.TABS.DATI-GENERALI",
+                        "slug": "dettaglio-lotto-page",
+                        "oggettoProtezione": "W9.W9LOTT-scheda.DATIDET",
+                        "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS"
+                    },
+                    {
+                        "code": "lista-fasi-lotto",
+                        "title": "DETTAGLIO-LOTTO.TABS.FASI-EVENTI",
+                        "slug": "lista-fasi-lotto-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                        "oggettoProtezione": "W9.W9LOTT-scheda.FASI"
+                    },
+                    {
+                        "code": "lista-atti-lotto",
+                        "title": "DETTAGLIO-LOTTO.TABS.LISTA-ATTI-LOTTO",
+                        "slug": "lista-atti-lotto-page",
+                        "oggettoProtezione": "W9.W9LOTT-scheda.PUBBLICAZIONI",
+                        "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS"
+                    },
+                    {
+                        "code": "lista-invii-fasi",
+                        "title": "DETTAGLIO-LOTTO.TABS.LISTA-INVII-FASI",
+                        "active": true,
+                        "slug": "lista-invii-fasi-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                        "oggettoProtezione": "W9.W9LOTT-scheda.FLUSSI",
+                        "visible": "APP_GARE_LISTA_INVII_FASI_VISIBLE"
+                    }
+                ],
+                "menuTabsLS": [
+                    {
+                        "code": "dettaglio-lotto",
+                        "title": "DETTAGLIO-LOTTO.TABS.DATI-GENERALI",
+                        "slug": "dettaglio-lotto-page",
+                        "oggettoProtezione": "W9.W9LOTT-scheda.DATIDET",
+                        "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS"
+                    },
+                    {
+                        "code": "lista-fasi-lotto",
+                        "title": "DETTAGLIO-LOTTO.TABS.FASI-EVENTI",
+                        "slug": "lista-fasi-lotto-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                        "oggettoProtezione": "W9.W9LOTT-scheda.FASI"
+                    },
+                    {
+                        "code": "lista-invii-fasi",
+                        "title": "DETTAGLIO-LOTTO.TABS.LISTA-INVII-FASI",
+                        "slug": "lista-invii-fasi-page",
+                        "active": true,
+                        "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                        "oggettoProtezione": "W9.W9LOTT-scheda.FLUSSI",
+                        "visible": "APP_GARE_LISTA_INVII_FASI_VISIBLE"
+                    }
+                ],
+                "dettaglioFlussoGara": {
+                    "modalComponent": "dettaglio-pubblicazione-modal-widget",
+                    "modalComponentConfig": {
+                        "dettaglioPubblicazione": {
+                            "fields": [
+                                {
+                                    "type": "FORM-SECTION",
+                                    "code": "dettaglio",
+                                    "label": "FLUSSOFASE.DETTAGLIO.DETTAGLIO",
+                                    "fieldSections": [
+                                        {
+                                            "type": "TEXT",
+                                            "code": "idFlusso",
+                                            "label": "FLUSSOFASE.DETTAGLIO.ID-FLUSSO",
+                                            "oggettoProtezione": "W9.W9FLUSSI.IDFLUSSO",
+                                            "mnemonico": "W9FLID",
+                                            "mappingInput": "idFlusso"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "codice-lotto",
+                                            "label": "FLUSSOFASE.DETTAGLIO.CODLOTTO",
+                                            "oggettoProtezione": "",
+                                            "mnemonico": "",
+                                            "mappingInput": "codLotto"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "num-fase",
+                                            "label": "FLUSSOFASE.DETTAGLIO.NUM-FASE",
+                                            "oggettoProtezione": "",
+                                            "mnemonico": "",
+                                            "mappingInput": "numFase"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "num-progressivo",
+                                            "label": "FLUSSOFASE.DETTAGLIO.NUM-PROGRESSIVO",
+                                            "oggettoProtezione": "",
+                                            "mnemonico": "",
+                                            "mappingInput": "num"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "tipo-invio",
+                                            "label": "FLUSSOFASE.DETTAGLIO.TIPO-INVIO",
+                                            "oggettoProtezione": "W9.W9FLUSSI.TINVIO2",
+                                            "mnemonico": "W9FLTINVIO",
+                                            "mappingInput": "tipoInvio"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "data-invio",
+                                            "label": "FLUSSOFASE.DETTAGLIO.DATA-INVIO",
+                                            "oggettoProtezione": "W9.W9FLUSSI.DATINV",
+                                            "mnemonico": "W9FLDATINV",
+                                            "mappingInput": "dataInvio"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "autore",
+                                            "label": "FLUSSOFASE.DETTAGLIO.AUTORE",
+                                            "oggettoProtezione": "W0.W9FLUSSI.AUTORE",
+                                            "mnemonico": "W9FLAUTORE",
+                                            "mappingInput": "autore"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "xml",
+                                            "label": "FLUSSOFASE.DETTAGLIO.XML-ANAC",
+                                            "oggettoProtezione": "W9.W9FLUSSI.XML",
+                                            "mnemonico": "W9FLXML",
+                                            "mappingInput": "xml",
+                                            "link": true
+                                        }
+                                    ]
+                                }
+                            ],
+                            "buttons": [
+                                {
+                                    "code": "modal-close-button",
+                                    "label": "BUTTONS.CLOSE",
+                                    "icon": "mgg-icons-crud-cancel",
+                                    "provider": "APP_AVVISI_MODAL_WINDOW"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-lotti",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_LOTTI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "buttonsLS": [
+                        {
+                            "code": "back-to-lista-schede-trasmesse",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_LOTTI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "grid": {
+                        "showCurrentPageReport": true,
+                        "showCurrentRecordsReport": true,
+                        "navigable": true,
+                        "resizable": false,
+                        "debug": false,
+                        "sortable": {
+                            "allowUnsort": false,
+                            "mode": "single"
+                        },
+                        "sort": [
+                            {
+                                "field": "datainvio",
+                                "dir": "asc"
+                            }
+                        ],
+                        "pageable": {
+                            "buttonCount": 5,
+                            "info": true,
+                            "pageSizes": [
+                                5,
+                                10,
+                                20,
+                                50
+                            ],
+                            "type": "numeric"
+                        },
+                        "columns": [
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_LINK",
+                                    "params": {
+                                        "action": {
+                                            "label": "LISTA-INVII-FASI.AZIONI.DETTAGLIO",
+                                            "disabled": false,
+                                            "performer": "dettaglio"
+                                        }
+                                    }
+                                },
+                                "title": "LISTA-INVII-FASI.FASE-EVENTO",
+                                "field": "faseEvento",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": "W9.V_W9FLUSSI.KEY03"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-INVII-FASI.PROGRESSIVO",
+                                "field": "num",
+                                "width": 150,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": "W9.V_W9FLUSSI.KEY04"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_DATE"
+                                },
+                                "title": "LISTA-INVII-FASI.DATA-INVIO",
+                                "field": "dataInvio",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "W9.V_W9FLUSSI.DATINV"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-INVII-FASI.TIPO-INVIO",
+                                "field": "tipoInvioString",
+                                "width": 150,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": "W9.V_W9FLUSSI.TINVIO2"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

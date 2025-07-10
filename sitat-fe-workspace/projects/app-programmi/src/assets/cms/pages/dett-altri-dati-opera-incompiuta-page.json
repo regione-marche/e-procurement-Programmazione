@@ -1,0 +1,332 @@
+{
+    "name": "dett-altri-dati-opera-incompiuta-page",
+    "title": "TITLE.DETTAGLIO-ALTRI-DATI-OPERE-INCOMPIUTE-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "app-programmi",
+    "styleUrls": [
+        "assets/cms/pages/dett-opera-incompiuta-page.css"
+    ],
+    "settings": {
+        "page": "dett-altri-dati-opera-incompiuta-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-programmi-page",
+                "label": "BREADCRUMB.LISTA-PROGRAMMI",
+                "slug": "lista-programmi-page",
+                "additionalParams": "APP_PROGRAMMI_LISTA_PROGRAMMI_PARAMS"
+            },
+            {
+                "code": "dett-prog-opere-incompiute-page",
+                "label": "BREADCRUMB.DETTAGLIO-PROGRAMMA",
+                "slug": "dett-prog-opere-incompiute-page",
+                "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+            },
+            {
+                "code": "dett-altri-dati-opera-incompiuta-page",
+                "label": "BREADCRUMB.DETTAGLIO-ALTRI-DATI-OPERE-INCOMPIUTE",
+                "slug": "dett-altri-dati-opera-incompiuta-page",
+                "additionalParams": "APP_PROGRAMMI_DETTAGLIO_OPERA_INCOMPIUTA_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dett-altri-dati-opera-incompiuta-page-content-root-section",
+            "selector": "dett-altri-dati-opera-incompiuta-section",
+            "description": "Pagina di dettaglio altri dati opera incompiuta",
+            "classNames": "dett-altri-dati-opera-incompiuta-section",
+            "settings": {
+                "classNames": "dett-altri-dati-opera-incompiuta-index",
+                "sectionTitle": "TITLE.DETTAGLIO-ALTRI-DATI-OPERE-INCOMPIUTE-PAGE",
+                "menuTabs": [
+                    {
+                        "code": "dati-generali",
+                        "title": "OPERE-INCOMPIUTE.TAB.DATI-GENERALI-TITLE",
+                        "slug": "dett-generale-opera-incompiuta-page",
+                        "oggettoProtezione": "",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_OPERA_INCOMPIUTA_PARAMS"
+                    },
+                    {
+                        "code": "altri-dati",
+                        "title": "OPERE-INCOMPIUTE.TAB.ALTRI-DATI-TITLE",
+                        "slug": "dett-altri-dati-opera-incompiuta-page",
+                        "active": true,
+                        "oggettoProtezione": "",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_OPERA_INCOMPIUTA_PARAMS"
+                    }
+                ],
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_PROGRAMMI_DETTAGLIO_OPERA_INCOMPIUTA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "update-altri-dati",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_PROGRAMMI_DETTAGLIO_OPERA_INCOMPIUTA",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "readOnlyButtons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_PROGRAMMI_DETTAGLIO_OPERA_INCOMPIUTA",
+                            "type": "cancel"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "localizzazione-data",
+                            "label": "OPERE-INCOMPIUTE.ALTRI-DATI.LOCALIZZAZIONE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "comune",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.COMUNE",
+                                    "oggettoProtezione": "PIANI.OITRI.ISTAT",
+                                    "mappingInput": "",
+                                    "mappingOutput": ""
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "provincia",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.PROVINCIA",
+                                    "oggettoProtezione": "PIANI.OITRI.ISTAT",
+                                    "mappingInput": "",
+                                    "mappingOutput": ""
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "codice-istat",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.CODICE-ISTAT",
+                                    "oggettoProtezione": "PIANI.OITRI.ISTAT",
+                                    "mnemonico": "ISTATOIT",
+                                    "mappingInput": "codIstat",
+                                    "mappingOutput": "codIstat"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "nuts",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.NUTS",
+                                    "oggettoProtezione": "PIANI.OITRI.NUTS",
+                                    "mnemonico": "NUTCODOI",
+                                    "mappingInput": "codNuts",
+                                    "mappingOutput": "codNuts"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "dati-intervento-data",
+                            "label": "OPERE-INCOMPIUTE.ALTRI-DATI.DATI-INTERVENTO",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "classificazione-intervento-tipologia",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.CLASSIFICAZIONE-INTERVENTO-TIPOLOGIA",
+                                    "oggettoProtezione": "PIANI.OITRI.SEZINT",
+                                    "mnemonico": "T2SEZOIT",
+                                    "mappingInput": "tipologiaIntervento",
+                                    "mappingOutput": "tipologiaIntervento",
+                                    "listCode": "TipologiaIntervento"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "classificazione-intervento-categoria",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.CLASSIFICAZIONE-INTERVENTO-CATEGORIA",
+                                    "oggettoProtezione": "PIANI.OITRI.INTERV",
+                                    "mnemonico": "T2INTEOI",
+                                    "mappingInput": "categoriaIntervento",
+                                    "mappingOutput": "categoriaIntervento",
+                                    "listCode": "CategoriaIntervento"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "descrizione-opera-data",
+                            "label": "OPERE-INCOMPIUTE.ALTRI-DATI.DESCRIZIONE-OPERA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "opera-rispondente-requisiti-capitolato",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.OPERA-RISPONDENTE-REQUISITI-CAPITOLATO",
+                                    "oggettoProtezione": "PIANI.OITRI.REQ_CAP",
+                                    "mnemonico": "REQCAPOITRI",
+                                    "mappingInput": "requisitiCapitolato",
+                                    "mappingOutput": "requisitiCapitolato",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "opera-rispondente-requisiti-ultimo-progetto-approvato",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.OPERA-RISPONDENTE-REQUISITI-UTLIMO-PROGETTO-APPROVATO",
+                                    "oggettoProtezione": "PIANI.OITRI.REQ_PRGE",
+                                    "mnemonico": "REQPRGOITRI",
+                                    "mappingInput": "requisitiProgetto",
+                                    "mappingOutput": "requisitiProgetto",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "dimensionamento-opera-unita-misura",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.DIMENSIONAMENTO-OPERA-UNITA-MISURA",
+                                    "oggettoProtezione": "PIANI.OITRI.DIM_UM",
+                                    "mnemonico": "DIMUMOITRIP",
+                                    "mappingInput": "dimensionamentoUm",
+                                    "mappingOutput": "dimensionamentoUm"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "dimensionamento-opera-valore",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.DIMENSIONAMENTO-OPERA-VALORE",
+                                    "oggettoProtezione": "PIANI.OITRI.DIM_QTA",
+                                    "mnemonico": "DIMQTOITRP",
+                                    "mappingInput": "dimensionamentoValore",
+                                    "mappingOutput": "dimensionamentoValore"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "fonti-finanziamento-data",
+                            "label": "OPERE-INCOMPIUTE.ALTRI-DATI.FONTI-FINANZIAMENTO",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "sponsorizzazione",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.SPONSORIZZAZIONE",
+                                    "oggettoProtezione": "PIANI.OITRI.SPONSORIZZAZIONE",
+                                    "mnemonico": "SPONSOITRIP",
+                                    "mappingInput": "sponsorizzazione",
+                                    "mappingOutput": "sponsorizzazione",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "finanza-progetto",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.FINANZA-PROGETTO",
+                                    "oggettoProtezione": "PIANI.OITRI.FINANZA_PROGETTO",
+                                    "mnemonico": "FINPRGOITRI",
+                                    "mappingInput": "finanzaProgetto",
+                                    "mappingOutput": "finanzaProgetto",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "costo-progetto",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.COSTO-PROGETTO",
+                                    "oggettoProtezione": "PIANI.OITRI.COSTO",
+                                    "mnemonico": "COSTOOITRP",
+                                    "mappingInput": "costo",
+                                    "mappingOutput": "costo",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "finanziamento-assegnato",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.FINANZIAMENTO-ASSEGNATO",
+                                    "oggettoProtezione": "PIANI.OITRI.FINANZIAMENTO",
+                                    "mnemonico": "FINANOITRP",
+                                    "mappingInput": "finanziamento",
+                                    "mappingOutput": "finanziamento",
+                                    "currency": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "tipologia-copertura-finanziaria-data",
+                            "label": "OPERE-INCOMPIUTE.ALTRI-DATI.TIPOLOGIA-COPERTURA-FINANZIARIA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "statale",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.STATALE",
+                                    "oggettoProtezione": "PIANI.OITRI.COP_STATALE",
+                                    "mnemonico": "CPSTOITRI",
+                                    "mappingInput": "copStatale",
+                                    "mappingOutput": "copStatale",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "regionale",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.REGIONALE",
+                                    "oggettoProtezione": "PIANI.OITRI.COP_REGIONALE",
+                                    "mnemonico": "CPREOITRI",
+                                    "mappingInput": "copRegionale",
+                                    "mappingOutput": "copRegionale",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "provinciale",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.PROVINCIALE",
+                                    "oggettoProtezione": "PIANI.OITRI.COP_PROVINCIALE",
+                                    "mnemonico": "CPPROITRI",
+                                    "mappingInput": "copProvinciale",
+                                    "mappingOutput": "copProvinciale",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "comunale",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.COMUNALE",
+                                    "oggettoProtezione": "PIANI.OITRI.COP_COMUNALE",
+                                    "mnemonico": "CPCOOITRI",
+                                    "mappingInput": "copComunale",
+                                    "mappingOutput": "copComunale",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "altra-pubblica",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.ALTRA-PUBBLICA",
+                                    "oggettoProtezione": "PIANI.OITRI.COP_ALTRAPUBBLICA",
+                                    "mnemonico": "CPAPOITRI",
+                                    "mappingInput": "copAltraPubblica",
+                                    "mappingOutput": "copAltraPubblica",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "comunitaria",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.COMUNITARIA",
+                                    "oggettoProtezione": "PIANI.OITRI.COP_COMUNITARIA",
+                                    "mnemonico": "CPCMOITRI",
+                                    "mappingInput": "copComunitaria",
+                                    "mappingOutput": "copComunitaria",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "privata",
+                                    "label": "OPERE-INCOMPIUTE.ALTRI-DATI.PRIVATA",
+                                    "oggettoProtezione": "PIANI.OITRI.COP_PRIVATA",
+                                    "mnemonico": "CPPVOITRI",
+                                    "mappingInput": "copPrivata",
+                                    "mappingOutput": "copPrivata",
+                                    "listCode": "sino"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

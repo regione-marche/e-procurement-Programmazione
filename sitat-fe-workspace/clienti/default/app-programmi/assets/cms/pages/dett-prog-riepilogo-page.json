@@ -1,0 +1,1295 @@
+{
+    "name": "dett-prog-riepilogo-page",
+    "title": "TITLE.DETTAGLIO-PROGRAMMA-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "app-programmi",
+    "styleUrls": [],
+    "settings": {
+        "page": "dett-prog-riepilogo-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-programmi-page",
+                "label": "BREADCRUMB.LISTA-PROGRAMMI",
+                "slug": "lista-programmi-page",
+                "additionalParams": "APP_PROGRAMMI_LISTA_PROGRAMMI_PARAMS"
+            },
+            {
+                "code": "dett-prog-riepilogo-page",
+                "label": "BREADCRUMB.DETTAGLIO-PROGRAMMA",
+                "slug": "dett-prog-riepilogo-page",
+                "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dett-prog-riepilogo-page-content-root-section",
+            "selector": "dett-prog-riepilogo-section",
+            "description": "Pagina per la creazione di un nuovo avviso",
+            "classNames": "dett-prog-riepilogo-section",
+            "settings": {
+                "classNames": "dett-prog-riepilogo-index",
+                "menuTabs": [
+                    {
+                        "code": "dati-generali",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.DATI-GENERALI",
+                        "slug": "dett-prog-dati-generali-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.DATIGEN",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+                    },
+                    {
+                        "code": "opere-incompiute",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.OPERE-INCOMPIUTE",
+                        "slug": "dett-prog-opere-incompiute-page",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS",
+                        "oggettoProtezione": "W9.PIATRI-scheda.OPEREINCOMPIUTE",
+                        "visible": "APP_PROGRAMMI_DETT_PROG_LAVORI_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "interventi",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.INTERVENTI",
+                        "slug": "dett-prog-interventi-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.INTERVENTI",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS",
+                        "visible": "APP_PROGRAMMI_DETT_PROG_LAVORI_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "interventi-non-riproposti",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.INTERVENTI-NON-RIPROPOSTI",
+                        "slug": "dett-prog-interventi-non-riproposti-page",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS",
+                        "oggettoProtezione": "W9.PIATRI-scheda.INTERVENTINONRIPROPOSTI",
+                        "visible": "APP_PROGRAMMI_DETT_PROG_LAVORI_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "acquisti",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.ACQUISTI",
+                        "slug": "dett-prog-interventi-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.INTERVENTI",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS",
+                        "visible": "APP_PROGRAMMI_DETT_PROG_FORNITURE_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "acquisti-non-riproposti",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.ACQUISTI-NON-RIPROPOSTI",
+                        "slug": "dett-prog-interventi-non-riproposti-page",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS",
+                        "oggettoProtezione": "W9.PIATRI-scheda.INTERVENTINONRIPROPOSTI",
+                        "visible": "APP_PROGRAMMI_DETT_PROG_FORNITURE_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "riepilogo",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.RIEPILOGO",
+                        "active": true,
+                        "slug": "dett-prog-riepilogo-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.RIEPILOGO",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+                    },
+                    {
+                        "code": "pubblica",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.PUBBLICA",
+                        "slug": "dett-prog-pubblica-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.FLUSSIPROGRAMMI",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+                    }
+                ],
+                "menuTabsOI": [
+                    {
+                        "code": "dati-generali",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.DATI-GENERALI",
+                        "slug": "dett-prog-dati-generali-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.DATIGEN",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+                    },
+                    {
+                        "code": "opere-incompiute",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.OPERE-INCOMPIUTE",
+                        "slug": "dett-prog-opere-incompiute-page",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS",
+                        "oggettoProtezione": "W9.PIATRI-scheda.OPEREINCOMPIUTE",
+                        "visible": "APP_PROGRAMMI_DETT_PROG_LAVORI_TABS_VISIBLE"
+                    },              
+                    {
+                        "code": "riepilogo",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.RIEPILOGO",
+                        "slug": "dett-prog-riepilogo-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.RIEPILOGO",
+                        "active": true,
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+                    },
+                    {
+                        "code": "pubblica",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.PUBBLICA",
+                        "slug": "dett-prog-pubblica-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.FLUSSIPROGRAMMI",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+                    }
+                ],
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "download",
+                            "label": "BUTTONS.DOWNLOAD",
+                            "provider": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA",
+                            "icon": "mgg-icons-file-type-pdf"
+                        }
+                    ],
+                    "lavoriFields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "programmi-data",
+                            "label": "RIEPILOGO.PROGRAMMI.RIEPILOGO",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX-MATRIX",
+                                    "code": "id-textbox-matrix",
+                                    "header": [
+                                        {
+                                            "code": "",
+                                            "label": "",
+                                            "cells": [
+                                                {
+                                                    "code": "",
+                                                    "label": "RIEPILOGO.PROGRAMMI.RIEPILOGO",
+                                                    "colspan": 5
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "",
+                                            "cells": [
+                                                {
+                                                    "code": "",
+                                                    "label": "RIEPILOGO.PROGRAMMI.TIPOLOGIA-RISORSE"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "label": "RIEPILOGO.PROGRAMMI.DISP-FIN-PRIMO-ANNO"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "label": "RIEPILOGO.PROGRAMMI.DISP-FIN-SECONDO-ANNO"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "label": "RIEPILOGO.PROGRAMMI.DISP-FIN-TERZO-ANNO"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "label": "RIEPILOGO.PROGRAMMI.TOTALE"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "rows": [
+                                        {
+                                            "code": "",
+                                            "label": "RIEPILOGO.PROGRAMMI.RISORSE-ENTRATE-DESTINAZIONE-VINCOLATA-LEGGE",
+                                            "cells": [
+                                                {
+                                                    "code": "DV1TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoDestVincolo1",
+                                                    "mappingOutput": "importoDestVincolo1",
+                                                    "oggettoProtezione": "PIANI.INTTRI.DV1TRI",
+                                                    "mnemonico": "T2IDV1TRI"
+                                                },
+                                                {
+                                                    "code": "DV2TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoDestVincolo2",
+                                                    "mappingOutput": "importoDestVincolo2",
+                                                    "oggettoProtezione": "PIANI.INTTRI.DV2TRI",
+                                                    "mnemonico": "T2IDV2TRI"
+                                                },
+                                                {
+                                                    "code": "DV3TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoDestVincolo3",
+                                                    "mappingOutput": "importoDestVincolo3",
+                                                    "oggettoProtezione": "PIANI.INTTRI.DV3TRI",
+                                                    "mnemonico": "T2IDV3TRI"
+                                                },
+                                                {
+                                                    "code": "DVnTRI",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}+{2}",
+                                                    "operationParams": [
+                                                        "DV1TRI",
+                                                        "DV2TRI",
+                                                        "DV3TRI"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RIEPILOGO.PROGRAMMI.RISORSE-ENTRATE-CONTRAZIONE-MUTUO",
+                                            "cells": [
+                                                {
+                                                    "code": "MU1TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoAcquistoMutuo1",
+                                                    "mappingOutput": "importoAcquistoMutuo1",
+                                                    "oggettoProtezione": "PIANI.INTTRI.MU1TRI",
+                                                    "mnemonico": "T2IMU1TRI"
+                                                },
+                                                {
+                                                    "code": "MU2TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoAcquistoMutuo2",
+                                                    "mappingOutput": "importoAcquistoMutuo2",
+                                                    "oggettoProtezione": "PIANI.INTTRI.MU2TRI",
+                                                    "mnemonico": "T2IMU2TRI"
+                                                },
+                                                {
+                                                    "code": "MU3TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoAcquistoMutuo3",
+                                                    "mappingOutput": "importoAcquistoMutuo3",
+                                                    "oggettoProtezione": "PIANI.INTTRI.MU3TRI",
+                                                    "mnemonico": "T2IMU3TRI"
+                                                },
+                                                {
+                                                    "code": "MUnTRI",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}+{2}",
+                                                    "operationParams": [
+                                                        "MU1TRI",
+                                                        "MU2TRI",
+                                                        "MU3TRI"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RIEPILOGO.PROGRAMMI.RISORSE-APPORTI-CAPITALE-PRIVATO",
+                                            "cells": [
+                                                {
+                                                    "code": "PR1TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoCapitalePr1",
+                                                    "mappingOutput": "importoCapitalePr1",
+                                                    "oggettoProtezione": "PIANI.INTTRI.PR1TRI",
+                                                    "mnemonico": "T2IPR1TRI"
+                                                },
+                                                {
+                                                    "code": "PR2TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoCapitalePr2",
+                                                    "mappingOutput": "importoCapitalePr2",
+                                                    "oggettoProtezione": "PIANI.INTTRI.PR2TRI",
+                                                    "mnemonico": "T2IPR2TRI"
+                                                },
+                                                {
+                                                    "code": "PR3TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoCapitalePr3",
+                                                    "mappingOutput": "importoCapitalePr3",
+                                                    "oggettoProtezione": "PIANI.INTTRI.PR3TRI",
+                                                    "mnemonico": "T2IPR3TRI"
+                                                },
+                                                {
+                                                    "code": "ICPINT",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}+{2}",
+                                                    "operationParams": [
+                                                        "PR1TRI",
+                                                        "PR2TRI",
+                                                        "PR3TRI"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RIEPILOGO.PROGRAMMI.STANZIAMENTI-BILANCIO",
+                                            "cells": [
+                                                {
+                                                    "code": "BI1TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoStanzBilanciamento1",
+                                                    "mappingOutput": "importoStanzBilanciamento1",
+                                                    "oggettoProtezione": "PIANI.INTTRI.BI1TRI",
+                                                    "mnemonico": "T2IBI1TRI"
+                                                },
+                                                {
+                                                    "code": "BI2TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoStanzBilanciamento2",
+                                                    "mappingOutput": "importoStanzBilanciamento2",
+                                                    "oggettoProtezione": "PIANI.INTTRI.BI2TRI",
+                                                    "mnemonico": "T2IBI2TRI"
+                                                },
+                                                {
+                                                    "code": "BI3TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoStanzBilanciamento3",
+                                                    "mappingOutput": "importoStanzBilanciamento3",
+                                                    "oggettoProtezione": "PIANI.INTTRI.BI3TRI",
+                                                    "mnemonico": "T2IBI3TRI"
+                                                },
+                                                {
+                                                    "code": "BInTRI",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}+{2}",
+                                                    "operationParams": [
+                                                        "BI1TRI",
+                                                        "BI2TRI",
+                                                        "BI3TRI"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RIEPILOGO.PROGRAMMI.FINANZIAMENTI-ART-3",
+                                            "cells": [
+                                                {
+                                                    "code": "AP1TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoFinanz1",
+                                                    "mappingOutput": "importoFinanz1",
+                                                    "oggettoProtezione": "PIANI.INTTRI.AP1TRI",
+                                                    "mnemonico": "T2AP1INT"
+                                                },
+                                                {
+                                                    "code": "AP2TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoFinanz2",
+                                                    "mappingOutput": "importoFinanz2",
+                                                    "oggettoProtezione": "PIANI.INTTRI.AP2TRI",
+                                                    "mnemonico": "T2AP2INT"
+                                                },
+                                                {
+                                                    "code": "AP3TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoFinanz3",
+                                                    "mappingOutput": "importoFinanz3",
+                                                    "oggettoProtezione": "PIANI.INTTRI.AP3TRI",
+                                                    "mnemonico": "T2AP3INT"
+                                                },
+                                                {
+                                                    "code": "APnTRI",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}+{2}",
+                                                    "operationParams": [
+                                                        "AP1TRI",
+                                                        "AP2TRI",
+                                                        "AP3TRI"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RIEPILOGO.PROGRAMMI.RISORSE-TRASFERIMENTO-IMMOBILI",
+                                            "cells": [
+                                                {
+                                                    "code": "IM1TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoTrasfImmobile1",
+                                                    "mappingOutput": "importoTrasfImmobile1",
+                                                    "oggettoProtezione": "PIANI.INTTRI.IM1TRI",
+                                                    "mnemonico": "T2IIM1TRI"
+                                                },
+                                                {
+                                                    "code": "IM2TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoTrasfImmobile2",
+                                                    "mappingOutput": "importoTrasfImmobile2",
+                                                    "oggettoProtezione": "PIANI.INTTRI.IM2TRI",
+                                                    "mnemonico": "T2IIM2TRI"
+                                                },
+                                                {
+                                                    "code": "IM3TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoTrasfImmobile3",
+                                                    "mappingOutput": "importoTrasfImmobile3",
+                                                    "oggettoProtezione": "PIANI.INTTRI.IM3TRI",
+                                                    "mnemonico": "T2IIM3TRI"
+                                                },
+                                                {
+                                                    "code": "IMnTRI",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}+{2}",
+                                                    "operationParams": [
+                                                        "IM1TRI",
+                                                        "IM2TRI",
+                                                        "IM3TRI"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RIEPILOGO.PROGRAMMI.ALTRA-TIPOLOGIA",
+                                            "cells": [
+                                                {
+                                                    "code": "AL1TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoAltreRis1",
+                                                    "mappingOutput": "importoAltreRis1",
+                                                    "oggettoProtezione": "PIANI.INTTRI.AL1TRI",
+                                                    "mnemonico": "T2IAL1TRI"
+                                                },
+                                                {
+                                                    "code": "AL2TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoAltreRis2",
+                                                    "mappingOutput": "importoAltreRis2",
+                                                    "oggettoProtezione": "PIANI.INTTRI.AL2TRI",
+                                                    "mnemonico": "T2IAL2TRI"
+                                                },
+                                                {
+                                                    "code": "AL3TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoAltreRis3",
+                                                    "mappingOutput": "importoAltreRis3",
+                                                    "oggettoProtezione": "PIANI.INTTRI.AL3TRI",
+                                                    "mnemonico": "T2IAL3TRI"
+                                                },
+                                                {
+                                                    "code": "ALnTRI",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}+{2}",
+                                                    "operationParams": [
+                                                        "AL1TRI",
+                                                        "AL2TRI",
+                                                        "AL3TRI"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RIEPILOGO.PROGRAMMI.TOTALE",
+                                            "hidden": true,
+                                            "cells": [
+                                                {
+                                                    "code": "TO1TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "totaleRisDisp1",
+                                                    "mappingOutput": "totaleRisDisp1"
+                                                },
+                                                {
+                                                    "code": "TO2TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "totaleRisDisp2",
+                                                    "mappingOutput": "totaleRisDisp2"
+                                                },
+                                                {
+                                                    "code": "TO3TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "totaleRisDisp3",
+                                                    "mappingOutput": "totaleRisDisp3"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "type": "TEXT"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RIEPILOGO.PROGRAMMI.TOTALE-IMPORTO-DISP-FINANZIARIA",
+                                            "cells": [
+                                                {
+                                                    "code": "TOTDISPFIN1",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}",
+                                                    "operationParams": [
+                                                        "TO1TRI",
+                                                        "PR1TRI"
+                                                    ]
+                                                },
+                                                {
+                                                    "code": "TOTDISPFIN2",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}",
+                                                    "operationParams": [
+                                                        "TO2TRI",
+                                                        "PR2TRI"
+                                                    ]
+                                                },
+                                                {
+                                                    "code": "TOTDISPFIN3",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}",
+                                                    "operationParams": [
+                                                        "TO3TRI",
+                                                        "PR3TRI"
+                                                    ]
+                                                },
+                                                {
+                                                    "code": "TOTDISPFINn",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}+{2}",
+                                                    "operationParams": [
+                                                        "TOTDISPFIN1",
+                                                        "TOTDISPFIN2",
+                                                        "TOTDISPFIN3"
+                                                    ],
+                                                    "oggettoProtezione": "PIANI.INTTRI.DITINT",
+                                                    "mnemonico": "T2DITINT"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "acquistiFields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "programmi-data",
+                            "label": "RIEPILOGO.PROGRAMMI.RIEPILOGO",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX-MATRIX",
+                                    "code": "id-textbox-matrix",
+                                    "header": [
+                                        {
+                                            "code": "",
+                                            "label": "",
+                                            "cells": [
+                                                {
+                                                    "code": "",
+                                                    "label": "RIEPILOGO.PROGRAMMI.RIEPILOGO",
+                                                    "colspan": 4
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "",
+                                            "cells": [
+                                                {
+                                                    "code": "",
+                                                    "label": "RIEPILOGO.PROGRAMMI.TIPOLOGIA-RISORSE"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "label": "RIEPILOGO.PROGRAMMI.DISP-FIN-PRIMO-ANNO"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "label": "RIEPILOGO.PROGRAMMI.DISP-FIN-SECONDO-ANNO"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "label": "RIEPILOGO.PROGRAMMI.TOTALE"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "rows": [
+                                        {
+                                            "code": "",
+                                            "label": "RIEPILOGO.PROGRAMMI.RISORSE-ENTRATE-DESTINAZIONE-VINCOLATA-LEGGE",
+                                            "cells": [
+                                                {
+                                                    "code": "DV1TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoDestVincolo1",
+                                                    "mappingOutput": "importoDestVincolo1",
+                                                    "oggettoProtezione": "PIANI.INTTRI.DV1TRI",
+                                                    "mnemonico": "T2IDV1TRI"
+                                                },
+                                                {
+                                                    "code": "DV2TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoDestVincolo2",
+                                                    "mappingOutput": "importoDestVincolo2",
+                                                    "oggettoProtezione": "PIANI.INTTRI.DV2TRI",
+                                                    "mnemonico": "T2IDV2TRI"
+                                                },
+                                                {
+                                                    "code": "DVnTRI",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}",
+                                                    "operationParams": [
+                                                        "DV1TRI",
+                                                        "DV2TRI"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RIEPILOGO.PROGRAMMI.RISORSE-ENTRATE-CONTRAZIONE-MUTUO",
+                                            "cells": [
+                                                {
+                                                    "code": "MU1TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoAcquistoMutuo1",
+                                                    "mappingOutput": "importoAcquistoMutuo1",
+                                                    "oggettoProtezione": "PIANI.INTTRI.MU1TRI",
+                                                    "mnemonico": "T2IMU1TRI"
+                                                },
+                                                {
+                                                    "code": "MU2TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoAcquistoMutuo2",
+                                                    "mappingOutput": "importoAcquistoMutuo2",
+                                                    "oggettoProtezione": "PIANI.INTTRI.MU2TRI",
+                                                    "mnemonico": "T2IMU2TRI"
+                                                },
+                                                {
+                                                    "code": "MUnTRI",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}",
+                                                    "operationParams": [
+                                                        "MU1TRI",
+                                                        "MU2TRI"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RIEPILOGO.PROGRAMMI.RISORSE-APPORTI-CAPITALE-PRIVATO",
+                                            "cells": [
+                                                {
+                                                    "code": "PR1TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoCapitalePr1",
+                                                    "mappingOutput": "importoCapitalePr1",
+                                                    "oggettoProtezione": "PIANI.INTTRI.PR1TRI",
+                                                    "mnemonico": "T2IPR1TRI"
+                                                },
+                                                {
+                                                    "code": "PR2TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoCapitalePr2",
+                                                    "mappingOutput": "importoCapitalePr2",
+                                                    "oggettoProtezione": "PIANI.INTTRI.PR2TRI",
+                                                    "mnemonico": "T2IPR2TRI"
+                                                },
+                                                {
+                                                    "code": "ICPINT",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}",
+                                                    "operationParams": [
+                                                        "PR1TRI",
+                                                        "PR2TRI"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RIEPILOGO.PROGRAMMI.STANZIAMENTI-BILANCIO",
+                                            "cells": [
+                                                {
+                                                    "code": "BI1TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoStanzBilanciamento1",
+                                                    "mappingOutput": "importoStanzBilanciamento1",
+                                                    "oggettoProtezione": "PIANI.INTTRI.BI1TRI",
+                                                    "mnemonico": "T2IBI1TRI"
+                                                },
+                                                {
+                                                    "code": "BI2TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoStanzBilanciamento2",
+                                                    "mappingOutput": "importoStanzBilanciamento2",
+                                                    "oggettoProtezione": "PIANI.INTTRI.BI2TRI",
+                                                    "mnemonico": "T2IBI2TRI"
+                                                },
+                                                {
+                                                    "code": "BInTRI",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}",
+                                                    "operationParams": [
+                                                        "BI1TRI",
+                                                        "BI2TRI"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RIEPILOGO.PROGRAMMI.FINANZIAMENTI-ART-3",
+                                            "cells": [
+                                                {
+                                                    "code": "AP1TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoFinanz1",
+                                                    "mappingOutput": "importoFinanz1",
+                                                    "oggettoProtezione": "PIANI.INTTRI.AP1TRI",
+                                                    "mnemonico": "T2AP1INT"
+                                                },
+                                                {
+                                                    "code": "AP2TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoFinanz2",
+                                                    "mappingOutput": "importoFinanz2",
+                                                    "oggettoProtezione": "PIANI.INTTRI.AP2TRI",
+                                                    "mnemonico": "T2AP2INT"
+                                                },
+                                                {
+                                                    "code": "APnTRI",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}",
+                                                    "operationParams": [
+                                                        "AP1TRI",
+                                                        "AP2TRI"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RIEPILOGO.PROGRAMMI.RISORSE-TRASFERIMENTO-IMMOBILI",
+                                            "cells": [
+                                                {
+                                                    "code": "IM1TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoTrasfImmobile1",
+                                                    "mappingOutput": "importoTrasfImmobile1",
+                                                    "oggettoProtezione": "PIANI.INTTRI.IM1TRI",
+                                                    "mnemonico": "T2IIM1TRI"
+                                                },
+                                                {
+                                                    "code": "IM2TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoTrasfImmobile2",
+                                                    "mappingOutput": "importoTrasfImmobile2",
+                                                    "oggettoProtezione": "PIANI.INTTRI.IM2TRI",
+                                                    "mnemonico": "T2IIM2TRI"
+                                                },
+                                                {
+                                                    "code": "IMnTRI",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}",
+                                                    "operationParams": [
+                                                        "IM1TRI",
+                                                        "IM2TRI"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RIEPILOGO.PROGRAMMI.ALTRA-TIPOLOGIA",
+                                            "cells": [
+                                                {
+                                                    "code": "AL1TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoAltreRis1",
+                                                    "mappingOutput": "importoAltreRis1",
+                                                    "oggettoProtezione": "PIANI.INTTRI.AL1TRI",
+                                                    "mnemonico": "T2IAL1TRI"
+                                                },
+                                                {
+                                                    "code": "AL2TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoAltreRis2",
+                                                    "mappingOutput": "importoAltreRis2",
+                                                    "oggettoProtezione": "PIANI.INTTRI.AL2TRI",
+                                                    "mnemonico": "T2IAL2TRI"
+                                                },
+                                                {
+                                                    "code": "ALnTRI",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}",
+                                                    "operationParams": [
+                                                        "AL1TRI",
+                                                        "AL2TRI"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RIEPILOGO.PROGRAMMI.TOTALE",
+                                            "hidden": true,
+                                            "cells": [
+                                                {
+                                                    "code": "TO1TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "totaleRisDisp1",
+                                                    "mappingOutput": "totaleRisDisp1"
+                                                },
+                                                {
+                                                    "code": "TO2TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "totaleRisDisp2",
+                                                    "mappingOutput": "totaleRisDisp2"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "type": "TEXT"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RIEPILOGO.PROGRAMMI.TOTALE-IMPORTO-DISP-FINANZIARIA",
+                                            "cells": [
+                                                {
+                                                    "code": "TOTDISPFIN1",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}",
+                                                    "operationParams": [
+                                                        "TO1TRI",
+                                                        "PR1TRI"
+                                                    ]
+                                                },
+                                                {
+                                                    "code": "TOTDISPFIN2",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}",
+                                                    "operationParams": [
+                                                        "TO2TRI",
+                                                        "PR2TRI"
+                                                    ]
+                                                },
+                                                {
+                                                    "code": "TOTDISPFINn",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}",
+                                                    "operationParams": [
+                                                        "TOTDISPFIN1",
+                                                        "TOTDISPFIN2"
+                                                    ],
+                                                    "oggettoProtezione": "PIANI.INTTRI.DITINT",
+                                                    "mnemonico": "T2DITINT"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "acquistiFieldsNorma3": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "programmi-data",
+                            "label": "RIEPILOGO.PROGRAMMI.RIEPILOGO",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX-MATRIX",
+                                    "code": "id-textbox-matrix",
+                                    "header": [
+                                        {
+                                            "code": "",
+                                            "label": "",
+                                            "cells": [
+                                                {
+                                                    "code": "",
+                                                    "label": "RIEPILOGO.PROGRAMMI.RIEPILOGO",
+                                                    "colspan": 5
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "",
+                                            "cells": [
+                                                {
+                                                    "code": "",
+                                                    "label": "RIEPILOGO.PROGRAMMI.TIPOLOGIA-RISORSE"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "label": "RIEPILOGO.PROGRAMMI.DISP-FIN-PRIMO-ANNO"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "label": "RIEPILOGO.PROGRAMMI.DISP-FIN-SECONDO-ANNO"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "label": "RIEPILOGO.PROGRAMMI.DISP-FIN-TERZO-ANNO"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "label": "RIEPILOGO.PROGRAMMI.TOTALE"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "rows": [
+                                        {
+                                            "code": "",
+                                            "label": "RIEPILOGO.PROGRAMMI.RISORSE-ENTRATE-DESTINAZIONE-VINCOLATA-LEGGE",
+                                            "cells": [
+                                                {
+                                                    "code": "DV1TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoDestVincolo1",
+                                                    "mappingOutput": "importoDestVincolo1",
+                                                    "oggettoProtezione": "PIANI.INTTRI.DV1TRI",
+                                                    "mnemonico": "T2IDV1TRI"
+                                                },
+                                                {
+                                                    "code": "DV2TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoDestVincolo2",
+                                                    "mappingOutput": "importoDestVincolo2",
+                                                    "oggettoProtezione": "PIANI.INTTRI.DV2TRI",
+                                                    "mnemonico": "T2IDV2TRI"
+                                                },
+                                                
+                                                {
+                                                    "code": "DV3TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoDestVincolo3",
+                                                    "mappingOutput": "importoDestVincolo3",
+                                                    "oggettoProtezione": "PIANI.INTTRI.DV3TRI",
+                                                    "mnemonico": "T2IDV3TRI"
+                                                },
+                                                {
+                                                    "code": "DVnTRI",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}+{2}",
+                                                    "operationParams": [
+                                                        "DV1TRI",
+                                                        "DV2TRI",
+                                                        "DV3TRI"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RIEPILOGO.PROGRAMMI.RISORSE-ENTRATE-CONTRAZIONE-MUTUO",
+                                            "cells": [
+                                                {
+                                                    "code": "MU1TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoAcquistoMutuo1",
+                                                    "mappingOutput": "importoAcquistoMutuo1",
+                                                    "oggettoProtezione": "PIANI.INTTRI.MU1TRI",
+                                                    "mnemonico": "T2IMU1TRI"
+                                                },
+                                                {
+                                                    "code": "MU2TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoAcquistoMutuo2",
+                                                    "mappingOutput": "importoAcquistoMutuo2",
+                                                    "oggettoProtezione": "PIANI.INTTRI.MU2TRI",
+                                                    "mnemonico": "T2IMU2TRI"
+                                                },
+                                                {
+                                                    "code": "MU3TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoAcquistoMutuo3",
+                                                    "mappingOutput": "importoAcquistoMutuo3",
+                                                    "oggettoProtezione": "PIANI.INTTRI.MU3TRI",
+                                                    "mnemonico": "T2IMU3TRI"
+                                                },
+                                                {
+                                                    "code": "MUnTRI",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}+{2}",
+                                                    "operationParams": [
+                                                        "MU1TRI",
+                                                        "MU2TRI",
+                                                        "MU3TRI"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RIEPILOGO.PROGRAMMI.RISORSE-APPORTI-CAPITALE-PRIVATO",
+                                            "cells": [
+                                                {
+                                                    "code": "PR1TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoCapitalePr1",
+                                                    "mappingOutput": "importoCapitalePr1",
+                                                    "oggettoProtezione": "PIANI.INTTRI.PR1TRI",
+                                                    "mnemonico": "T2IPR1TRI"
+                                                },
+                                                {
+                                                    "code": "PR2TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoCapitalePr2",
+                                                    "mappingOutput": "importoCapitalePr2",
+                                                    "oggettoProtezione": "PIANI.INTTRI.PR2TRI",
+                                                    "mnemonico": "T2IPR2TRI"
+                                                },
+                                                {
+                                                    "code": "PR3TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoCapitalePr3",
+                                                    "mappingOutput": "importoCapitalePr3",
+                                                    "oggettoProtezione": "PIANI.INTTRI.PR3TRI",
+                                                    "mnemonico": "T2IPR3TRI"
+                                                },
+                                                {
+                                                    "code": "ICPINT",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}+{2}",
+                                                    "operationParams": [
+                                                        "PR1TRI",
+                                                        "PR2TRI",
+                                                        "PR3TRI"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RIEPILOGO.PROGRAMMI.STANZIAMENTI-BILANCIO",
+                                            "cells": [
+                                                {
+                                                    "code": "BI1TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoStanzBilanciamento1",
+                                                    "mappingOutput": "importoStanzBilanciamento1",
+                                                    "oggettoProtezione": "PIANI.INTTRI.BI1TRI",
+                                                    "mnemonico": "T2IBI1TRI"
+                                                },
+                                                {
+                                                    "code": "BI2TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoStanzBilanciamento2",
+                                                    "mappingOutput": "importoStanzBilanciamento2",
+                                                    "oggettoProtezione": "PIANI.INTTRI.BI2TRI",
+                                                    "mnemonico": "T2IBI2TRI"
+                                                },
+                                                {
+                                                    "code": "BI3TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoStanzBilanciamento3",
+                                                    "mappingOutput": "importoStanzBilanciamento3",
+                                                    "oggettoProtezione": "PIANI.INTTRI.BI3TRI",
+                                                    "mnemonico": "T2IBI3TRI"
+                                                },
+                                                {
+                                                    "code": "BInTRI",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}+{2}",
+                                                    "operationParams": [
+                                                        "BI1TRI",
+                                                        "BI2TRI",
+                                                        "BI3TRI"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RIEPILOGO.PROGRAMMI.FINANZIAMENTI-ART-3",
+                                            "cells": [
+                                                {
+                                                    "code": "AP1TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoFinanz1",
+                                                    "mappingOutput": "importoFinanz1",
+                                                    "oggettoProtezione": "PIANI.INTTRI.AP1TRI",
+                                                    "mnemonico": "T2AP1INT"
+                                                },
+                                                {
+                                                    "code": "AP2TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoFinanz2",
+                                                    "mappingOutput": "importoFinanz2",
+                                                    "oggettoProtezione": "PIANI.INTTRI.AP2TRI",
+                                                    "mnemonico": "T2AP2INT"
+                                                },
+                                                {
+                                                    "code": "AP3TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoFinanz3",
+                                                    "mappingOutput": "importoFinanz3",
+                                                    "oggettoProtezione": "PIANI.INTTRI.AP3TRI",
+                                                    "mnemonico": "T2AP3INT"
+                                                },
+                                                {
+                                                    "code": "APnTRI",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}+{2}",
+                                                    "operationParams": [
+                                                        "AP1TRI",
+                                                        "AP2TRI",
+                                                        "AP3TRI"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RIEPILOGO.PROGRAMMI.RISORSE-TRASFERIMENTO-IMMOBILI",
+                                            "cells": [
+                                                {
+                                                    "code": "IM1TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoTrasfImmobile1",
+                                                    "mappingOutput": "importoTrasfImmobile1",
+                                                    "oggettoProtezione": "PIANI.INTTRI.IM1TRI",
+                                                    "mnemonico": "T2IIM1TRI"
+                                                },
+                                                {
+                                                    "code": "IM2TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoTrasfImmobile2",
+                                                    "mappingOutput": "importoTrasfImmobile2",
+                                                    "oggettoProtezione": "PIANI.INTTRI.IM2TRI",
+                                                    "mnemonico": "T2IIM2TRI"
+                                                },
+                                                {
+                                                    "code": "IM3TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoTrasfImmobile3",
+                                                    "mappingOutput": "importoTrasfImmobile3",
+                                                    "oggettoProtezione": "PIANI.INTTRI.IM3TRI",
+                                                    "mnemonico": "T2IIM3TRI"
+                                                },
+                                                {
+                                                    "code": "IMnTRI",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}+{2}",
+                                                    "operationParams": [
+                                                        "IM1TRI",
+                                                        "IM2TRI",
+                                                        "IM3TRI"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RIEPILOGO.PROGRAMMI.ALTRA-TIPOLOGIA",
+                                            "cells": [
+                                                {
+                                                    "code": "AL1TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoAltreRis1",
+                                                    "mappingOutput": "importoAltreRis1",
+                                                    "oggettoProtezione": "PIANI.INTTRI.AL1TRI",
+                                                    "mnemonico": "T2IAL1TRI"
+                                                },
+                                                {
+                                                    "code": "AL2TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoAltreRis2",
+                                                    "mappingOutput": "importoAltreRis2",
+                                                    "oggettoProtezione": "PIANI.INTTRI.AL2TRI",
+                                                    "mnemonico": "T2IAL2TRI"
+                                                },
+                                                {
+                                                    "code": "AL3TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoAltreRis3",
+                                                    "mappingOutput": "importoAltreRis3",
+                                                    "oggettoProtezione": "PIANI.INTTRI.AL3TRI",
+                                                    "mnemonico": "T2IAL3TRI"
+                                                },
+                                                {
+                                                    "code": "ALnTRI",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}+{2}",
+                                                    "operationParams": [
+                                                        "AL1TRI",
+                                                        "AL2TRI",
+                                                        "AL3TRI"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RIEPILOGO.PROGRAMMI.TOTALE",
+                                            "hidden": true,
+                                            "cells": [
+                                                {
+                                                    "code": "TO1TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "totaleRisDisp1",
+                                                    "mappingOutput": "totaleRisDisp1"
+                                                },
+                                                {
+                                                    "code": "TO2TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "totaleRisDisp2",
+                                                    "mappingOutput": "totaleRisDisp2"
+                                                },
+                                                {
+                                                    "code": "TO3TRI",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "totaleRisDisp3",
+                                                    "mappingOutput": "totaleRisDisp3"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "type": "TEXT"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RIEPILOGO.PROGRAMMI.TOTALE-IMPORTO-DISP-FINANZIARIA",
+                                            "cells": [
+                                                {
+                                                    "code": "TOTDISPFIN1",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}",
+                                                    "operationParams": [
+                                                        "TO1TRI",
+                                                        "PR1TRI"
+                                                    ]
+                                                },
+                                                {
+                                                    "code": "TOTDISPFIN2",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}",
+                                                    "operationParams": [
+                                                        "TO2TRI",
+                                                        "PR2TRI"
+                                                    ]
+                                                },
+                                                {
+                                                    "code": "TOTDISPFIN3",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}",
+                                                    "operationParams": [
+                                                        "TO3TRI",
+                                                        "PR3TRI"
+                                                    ]
+                                                },
+                                                {
+                                                    "code": "TOTDISPFINn",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}+{2}",
+                                                    "operationParams": [
+                                                        "TOTDISPFIN1",
+                                                        "TOTDISPFIN2",
+                                                        "TOTDISPFIN3"
+                                                    ],
+                                                    "oggettoProtezione": "PIANI.INTTRI.DITINT",
+                                                    "mnemonico": "T2DITINT"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

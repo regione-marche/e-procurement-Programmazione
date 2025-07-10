@@ -1,0 +1,36 @@
+<div [class]="config.classNames" *ngIf="isReady">
+    <h1 class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</h1>
+    <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+    <div class="messages-box" #infoBox></div>
+    <div class="messages-box" #messages></div>
+
+    <div class="sdk-profili-utente-container">
+        <div class="sdk-profili-utente-content">
+            <table class="profili-container" *ngIf="profiliUtente != null && profiliUtente.length > 0"
+                [attr.aria-label]="'TITLE.PROFILI-UTENTE-PAGE' | translate">
+                <thead>
+                    <tr>
+                        <th>{{ 'SDK-PROFILI-UTENTE.CODICE-PROFILO' | translate }}</th>
+                        <th>{{ 'SDK-PROFILI-UTENTE.NOME-PROFILO' | translate }}</th>
+                        <th>{{ 'SDK-PROFILI-UTENTE.DESCRIZIONE-PROFILO' | translate }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="profili-item" *ngFor="let profilo of profiliUtente; trackBy: trackByCode">
+                        <td>{{ profilo.codice }}</td>
+                        <td>{{ profilo.nome }}</td>
+                        <td>{{ profilo.descrizione }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="empty-list"
+                *ngIf="profiliUtente == null || (profiliUtente != null && profiliUtente.length == 0)">
+                {{ 'SDK-PROFILI-UTENTE.EMPTY-PROFILI-UTENTE' | translate }}
+            </div>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+</div>

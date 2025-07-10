@@ -1,0 +1,21 @@
+<div [class]="config.classNames" *ngIf="isReady">
+    <h1 class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</h1>
+    <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+    <div class="messages-box" #infoBox></div>
+
+    <div class="messages-box" #messages></div>
+    <div class="da-container">
+        <div class="da-content">
+            <sdk-form-builder [config]="formBuilderConfigObs" (output)="manageFormOutput($event)">
+            </sdk-form-builder>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+        <sdk-dialog [config]="dialogConfigObs"></sdk-dialog>
+        <sdk-motivazione-dialog [config]="motivazioneDialogConfigObs"></sdk-motivazione-dialog>
+        <sdk-datepicker-dialog [config]="datePickerDialogConfigObs"></sdk-datepicker-dialog>
+    </div>
+    <sdk-sidebar [config]="sidebarConfigObs"></sdk-sidebar>
+</div>

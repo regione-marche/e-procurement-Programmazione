@@ -1,0 +1,538 @@
+{
+    "name": "nuovo-programma-page",
+    "title": "TITLE.NUOVO-PROGRAMMA-PAGE",
+    "layout": "base-layout",
+    "appName": "app-programmi",
+    "styleUrls": [],
+    "settings": {
+        "page": "nuovo-programma-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "nuovo-programma-page",
+                "label": "BREADCRUMB.NUOVO-PROGRAMMA",
+                "slug": "nuovo-programma-page",
+                "additionalParams": "APP_PROGRAMMI_LISTA_PROGRAMMI_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "nuovo-programma-page-content-root-section",
+            "selector": "nuovo-programma-section",
+            "description": "Pagina per la creazione di un nuovo programma",
+            "classNames": "nuovo-programma-section",
+            "settings": {
+                "classNames": "nuovo-programma-index",
+                "sectionTitle": "TITLE.NUOVO-PROGRAMMA-PAGE",
+                "body": {
+                    "lavoriFields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "PROGRAMMA.GENERAL-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "ufficio",
+                                    "label": "PROGRAMMA.UFFICIO",
+                                    "noDataLabel": "NO-DATA",
+                                    "oggettoProtezione": "PIANI.PIATRI.IDUFFICIO",
+                                    "mnemonico": "PIAIDUFF",
+                                    "itemsProviderCode": "APP_PROGRAMMI_UFFICI_PROGRAMMA",
+                                    "mappingInput": "idUfficio",
+                                    "mappingOutput": "idUfficio",
+                                    "newEditAvailable": true,
+                                    "modalComponent": "uff-modal-widget",
+                                    "modalComponentConfig": "uffModalRWConfig"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "ufficio-desc",
+                                    "label": "PROGRAMMA.UFFICIO",
+                                    "oggettoProtezione": "PIANI.PIATRI.IDUFFICIO",
+                                    "visible":false
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "tipo-programma",
+                                    "label": "PROGRAMMA.TIPO-PROGRAMMA",
+                                    "oggettoProtezione": "PIANI.PIATRI.TIPROG",
+                                    "disabled": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "descrizione-programma",
+                                    "label": "PROGRAMMA.DESCRIZIONE-BREVE",
+                                    "oggettoProtezione": "PIANI.PIATRI.BRETRI",
+                                    "disabled": true
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "annoInizio",
+                                    "label": "PROGRAMMA.ANNO",
+                                    "oggettoProtezione": "PIANI.PIATRI.ANNTRI",
+                                    "mnemonico": "T2ANNTRI",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "PROGRAMMA.ANNO-OBBLIGATORIA"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "config": {
+                                                "regexp": "^.{0,3}[0-9]$"
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "PROGRAMMA.NUMERO-ANNO-NON-VALIDO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": 4,
+                                    "mappingInput": "annoInizio",
+                                    "mappingOutput": "annoInizio"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "annoRiferimento",
+                                    "label": "PROGRAMMA.ANNORIFERIMENTO",
+                                    "oggettoProtezione": "PIANI.PIATRI.ANNTRI",
+                                    "visible": false,
+                                    "mnemonico": "T2ANNTRI",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "PROGRAMMA.ANNORIFERIMENTO-OBBLIGATORIA"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "config": {
+                                                "regexp": "^.{0,3}[0-9]$"
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "PROGRAMMA.NUMERO-ANNO-NON-VALIDO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": 4,
+                                    "mappingInput": "annoInizio",
+                                    "mappingOutput": "annoInizio"
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "responsabile",
+                                    "label": "PROGRAMMA.RESPONSABILE",
+                                    "noDataLabel": "NO-DATA",
+                                    "oggettoProtezione": "PIANI.PIATRI.RESPRO",
+                                    "mnemonico": "T2RESPRO",
+                                    "itemsProviderCode": "APP_PROGRAMMI_RUP_PROGRAMMA",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "PROGRAMMA.RUP-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "mappingInput": "responsabile",
+                                    "mappingOutput": "responsabile",
+                                    "newEditAvailable": true,
+                                    "newItemButton": {
+                                        "code": "new",
+                                        "label": "BUTTONS.NUOVO",
+                                        "icon": "mgg-icons-crud-create",
+                                        "oggettoProtezione": "INS.*"
+                                    },
+                                    "editItemButton": {
+                                        "code": "edit",
+                                        "label": "BUTTONS.UPDATE",
+                                        "icon": "mgg-icons-crud-edit",
+                                        "oggettoProtezione": "MOD.*"
+                                    },
+                                    "modalComponent": "rup-modal-widget",
+                                    "modalComponentConfig": "rupModalConfig"
+                                },{
+                                    "type": "CHECKBOX",
+                                    "code": "solo-compilazione-scheda",
+                                    "label": "PROGRAMMA.SOLO-COMPILAZIONE-SCHEDA",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingOutput": "soloScheda",
+                                    "items": [
+                                        {
+                                            "code": "1",
+                                            "label": ""
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "adozione",
+                            "label": "PROGRAMMA.ADOZIONE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "numeroAdozione",
+                                    "label": "PROGRAMMA.NUMERO-ADOZIONE",
+                                    "oggettoProtezione": "PIANI.PIATRI.NADOZI",
+                                    "mnemonico": "T2NADOZI",
+                                    "mappingInput": "numeroAtto",
+                                    "mappingOutput": "numeroAtto",
+                                    "maxLength": 50
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-pubblicazione-adozione",
+                                    "label": "PROGRAMMA.DATA-PUBBLICAZIONE",
+                                    "oggettoProtezione": "PIANI.PIATRI.DPADOZI",
+                                    "mnemonico": "T2DTPUBADOZI",
+                                    "mappingInput": "dataPubblicazioneAdo",
+                                    "mappingOutput": "dataPubblicazioneAdo"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-adozione",
+                                    "label": "PROGRAMMA.DATA-ADOZIONE",
+                                    "oggettoProtezione": "PIANI.PIATRI.DADOZI",
+                                    "mnemonico": "T2DADOZI",
+                                    "mappingInput": "dataAtto",
+                                    "mappingOutput": "dataAtto"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "titoloAdozione",
+                                    "label": "PROGRAMMA.TITOLO",
+                                    "oggettoProtezione": "PIANI.PIATRI.TITADOZI",
+                                    "mnemonico": "T2TITOLOADOZ",
+                                    "mappingInput": "titoloAdozione",
+                                    "mappingOutput": "titoloAdozione",
+                                    "maxLength": 250
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "urlAdozione",
+                                    "label": "PROGRAMMA.URL_ADOZIONE",
+                                    "oggettoProtezione": "PIANI.PIATRI.URLADOZI",
+                                    "mnemonico": "T2URLADOZI",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "regexp": "^$|(http|https):\/\/"
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "PROGRAMMA.URL_PREFIX_INVALID"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "mappingInput": "urlAdozione",
+                                    "mappingOutput": "urlAdozione",
+                                    "maxLength": 2000
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "approvazione",
+                            "label": "PROGRAMMA.APPROVAZIONE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "numeroApprovazione",
+                                    "label": "PROGRAMMA.NUMERO-APPROVAZIONE",
+                                    "oggettoProtezione": "PIANI.PIATRI.NAPTRI",
+                                    "mnemonico": "T2NAPTRI",
+                                    "mappingInput": "numeroApprovazione",
+                                    "mappingOutput": "numeroApprovazione",
+                                    "maxLength": 50
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-pubblicazione-approvazione",
+                                    "label": "PROGRAMMA.DATA-PUBBLICAZIONE",
+                                    "oggettoProtezione": "PIANI.PIATRI.DPAPPROV",
+                                    "mnemonico": "T2DTPUBAPP",
+                                    "mappingInput": "dataPubblicazioneAppr",
+                                    "mappingOutput": "dataPubblicazioneAppr"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-approvazione",
+                                    "label": "PROGRAMMA.DATA-APPROVAZIONE",
+                                    "oggettoProtezione": "PIANI.PIATRI.DAPTRI",
+                                    "mnemonico": "T2DAPTRI",
+                                    "mappingInput": "dataApprovazione",
+                                    "mappingOutput": "dataApprovazione"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "titoloApprovazione",
+                                    "label": "PROGRAMMA.TITOLO",
+                                    "oggettoProtezione": "PIANI.PIATRI.TITAPPROV",
+                                    "mnemonico": "T2TITOLOAPP",
+                                    "mappingInput": "titoloApprovazione",
+                                    "mappingOutput": "titoloApprovazione",
+                                    "maxLength": 250
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "urlApprovazione",
+                                    "label": "PROGRAMMA.URL_APPROVAZIONE",
+                                    "oggettoProtezione": "PIANI.PIATRI.URLAPPROV",
+                                    "mnemonico": "T2URLAPPROV",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "regexp": "^$|(http|https):\/\/"
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "PROGRAMMA.URL_PREFIX_INVALID"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "mappingInput": "urlApprovazione",
+                                    "mappingOutput": "urlApprovazione",
+                                    "maxLength": 2000
+                                }
+                            ]
+                        }
+                    ],
+                    "fornitureFields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "PROGRAMMA.GENERAL-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "ufficio",
+                                    "label": "PROGRAMMA.UFFICIO",
+                                    "noDataLabel": "NO-DATA",
+                                    "oggettoProtezione": "PIANI.PIATRI.IDUFFICIO",
+                                    "mnemonico": "PIAIDUFF",
+                                    "itemsProviderCode": "APP_PROGRAMMI_UFFICI_PROGRAMMA",
+                                    "mappingInput": "idUfficio",
+                                    "mappingOutput": "idUfficio",
+                                    "newEditAvailable": true,                                    
+                                    "modalComponent": "uff-modal-widget",
+                                    "modalComponentConfig": "uffModalConfig"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "ufficio-desc",
+                                    "label": "PROGRAMMA.UFFICIO",
+                                    "oggettoProtezione": "PIANI.PIATRI.IDUFFICIO",
+                                    "visible":false
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "tipo-programma",
+                                    "label": "PROGRAMMA.TIPO-PROGRAMMA",
+                                    "oggettoProtezione": "PIANI.PIATRI.TIPROG",
+                                    "disabled": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "descrizione-programma",
+                                    "label": "PROGRAMMA.DESCRIZIONE-BREVE",
+                                    "oggettoProtezione": "PIANI.PIATRI.BRETRI",
+                                    "disabled": true
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "annoInizio",
+                                    "label": "PROGRAMMA.ANNO",
+                                    "oggettoProtezione": "PIANI.PIATRI.ANNTRI",
+                                    "mnemonico": "T2ANNTRI",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "PROGRAMMA.ANNO-OBBLIGATORIA"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "config": {
+                                                "regexp": "^.{0,3}[0-9]$"
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "PROGRAMMA.NUMERO-ANNO-NON-VALIDO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": 4,
+                                    "mappingInput": "annoInizio",
+                                    "mappingOutput": "annoInizio"
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "responsabile",
+                                    "label": "PROGRAMMA.RESPONSABILE",
+                                    "noDataLabel": "NO-DATA",
+                                    "oggettoProtezione": "PIANI.PIATRI.RESPRO",
+                                    "mnemonico": "T2RESPRO",
+                                    "itemsProviderCode": "APP_PROGRAMMI_RUP_PROGRAMMA",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "PROGRAMMA.RUP-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "mappingInput": "responsabile",
+                                    "mappingOutput": "responsabile",
+                                    "newEditAvailable": true,
+                                    "newItemButton": {
+                                        "code": "new",
+                                        "label": "BUTTONS.NUOVO",
+                                        "icon": "mgg-icons-crud-create",
+                                        "oggettoProtezione": "INS.*"
+                                    },
+                                    "editItemButton": {
+                                        "code": "edit",
+                                        "label": "BUTTONS.UPDATE",
+                                        "icon": "mgg-icons-crud-edit",
+                                        "oggettoProtezione": "MOD.*"
+                                    },
+                                    "modalComponent": "rup-modal-widget",
+                                    "modalComponentConfig": "rupModalConfig"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "approvazione",
+                            "label": "PROGRAMMA.APPROVAZIONE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "numeroApprovazione",
+                                    "label": "PROGRAMMA.NUMERO-APPROVAZIONE",
+                                    "oggettoProtezione": "PIANI.PIATRI.NAPTRI",
+                                    "mnemonico": "T2NAPTRI",
+                                    "mappingInput": "numeroApprovazione",
+                                    "mappingOutput": "numeroApprovazione",
+                                    "maxLength": 50
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-pubblicazione-approvazione",
+                                    "label": "PROGRAMMA.DATA-PUBBLICAZIONE",
+                                    "oggettoProtezione": "PIANI.PIATRI.DPAPPROV",
+                                    "mnemonico": "T2DTPUBAPP",
+                                    "mappingInput": "dataPubblicazioneAppr",
+                                    "mappingOutput": "dataPubblicazioneAppr"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-approvazione",
+                                    "label": "PROGRAMMA.DATA-APPROVAZIONE",
+                                    "oggettoProtezione": "PIANI.PIATRI.DAPTRI",
+                                    "mnemonico": "T2DAPTRI",
+                                    "mappingInput": "dataApprovazione",
+                                    "mappingOutput": "dataApprovazione"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "titoloApprovazione",
+                                    "label": "PROGRAMMA.TITOLO",
+                                    "oggettoProtezione": "PIANI.PIATRI.TITAPPROV",
+                                    "mnemonico": "T2TITOLOAPP",
+                                    "mappingInput": "titoloApprovazione",
+                                    "mappingOutput": "titoloApprovazione",
+                                    "maxLength": 250
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "urlApprovazione",
+                                    "label": "PROGRAMMA.URL_APPROVAZIONE",
+                                    "oggettoProtezione": "PIANI.PIATRI.URLAPPROV",
+                                    "mnemonico": "T2URLAPPROV",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "regexp": "^$|(http|https):\/\/"
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "PROGRAMMA.URL_PREFIX_INVALID"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "mappingInput": "urlApprovazione",
+                                    "mappingOutput": "urlApprovazione",
+                                    "maxLength": 2000
+                                }
+                            ]
+                        }
+                    ],
+                    "buttons": [
+                        {
+                            "code": "back-button",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_PROGRAMMI_NUOVO_PROGRAMMA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-button",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_PROGRAMMI_NUOVO_PROGRAMMA"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

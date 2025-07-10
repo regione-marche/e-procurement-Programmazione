@@ -1,0 +1,75 @@
+{
+    "name": "riepilogo-accorpamento-lotti-page",
+    "title": "TITLE.RIEPILOGO-ACCORPAMENTO-LOTTI-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/riepilogo-accorpamento-lotti-page.css"
+    ],
+    "settings": {
+        "page": "riepilogo-accorpamento-lotti-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "dettaglio-gara-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "dettaglio-gara-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS"
+            },
+            {
+                "code": "riepilogo-accorpamento-lotti-page",
+                "label": "BREADCRUMB.RIEPILOGO-ACCORPAMENTO-LOTTI",
+                "slug": "riepilogo-accorpamento-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "riepilogo-accorpamento-lotti-page-content-root-section",
+            "selector": "riepilogo-accorpamento-lotti-section",
+            "description": "Pagina di riepilogo accorpamento lotti",
+            "classNames": "riepilogo-accorpamento-lotti-section",
+            "settings": {
+                "classNames": "riepilogo-accorpamento-lotti-index",
+                "sectionTitle": "TITLE.RIEPILOGO-ACCORPAMENTO-LOTTI-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "continua",
+                            "label": "BUTTONS.CONTINUA",
+                            "provider": "APP_GARE_ACCORPAMENTO_LOTTI"
+                        },
+                        {
+                            "code": "termina",
+                            "label": "BUTTONS.TERMINA",
+                            "provider": "APP_GARE_ACCORPAMENTO_LOTTI"
+                        }
+                    ],
+                    "buttonsError": [
+                        {
+                            "code": "termina",
+                            "label": "BUTTONS.TERMINA",
+                            "provider": "APP_GARE_ACCORPAMENTO_LOTTI"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,131 @@
+{
+    "name": "dettaglio-parametro-page",
+    "title": "TITLE.DETTAGLIO-PARAMETRO-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "dettaglio-parametro-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-report-page",
+                "label": "BREADCRUMB.GESTIONE-REPORT",
+                "slug": "lista-report-page"
+            },
+            {
+                "code": "parametri-report-page",
+                "label": "BREADCRUMB.PARAMETRI-REPORT",
+                "slug": "parametri-report-page",
+                "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+            },
+            {
+                "code": "dettaglio-parametro-page",
+                "label": "BREADCRUMB.DETTAGLIO-PARAMETRO",
+                "slug": "dettaglio-parametro-page",
+                "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-parametro-page-content-root-section",
+            "selector": "sdk-dettaglio-parametro-page-section",
+            "description": "Pagina di dettaglio di un parametro riferito ad un report",
+            "classNames": "sdk-dettaglio-parametro-page-section",
+            "settings": {
+                "classNames": "dettaglio-parametro-page-index",
+                "sectionTitle": "TITLE.DETTAGLIO-PARAMETRO",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-params",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_REPORT_LISTA_REPORT",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "go-to-modifica-param-dettaglio",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "SDK_GESTIONE_REPORT_LISTA_REPORT"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "dati-generali-report",
+                            "label": "SDK-DETTAGLIO-REPORT.PARAMETRI.DETTAGLIO.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "codice",
+                                    "label": "SDK-DETTAGLIO-REPORT.PARAMETRI.DETTAGLIO.CODICE",
+                                    "mappingInput": "codice",
+                                    "mappingOutput": "codice"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "nome",
+                                    "label": "SDK-DETTAGLIO-REPORT.PARAMETRI.DETTAGLIO.NOME-PROMPT",
+                                    "mappingInput": "nome",
+                                    "mappingOutput": "nome"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "descrizione",
+                                    "label": "SDK-DETTAGLIO-REPORT.PARAMETRI.DETTAGLIO.DESCRIZIONE",
+                                    "mappingInput": "descrizione",
+                                    "mappingOutput": "descrizione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "tipo",
+                                    "label": "SDK-DETTAGLIO-REPORT.PARAMETRI.DETTAGLIO.TIPO",
+                                    "itemsProviderCode": "SDK_GESTIONE_REPORT_TABELLATI_PROVIDER",
+                                    "mappingInput": "tipo",
+                                    "mappingOutput": "tipo",
+                                    "listCode": "tipoParametroReport"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "obbligatorio",
+                                    "label": "SDK-DETTAGLIO-REPORT.PARAMETRI.DETTAGLIO.OBBLIGATORIO",
+                                    "mappingInput": "obbligatorio",
+                                    "mappingOutput": "obbligatorio",
+                                    "itemsProviderCode": "SDK_GESTIONE_REPORT_TABELLATI_PROVIDER",
+                                    "listCode": "siNo"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "menuField",
+                                    "label": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.MODIFICA.SCHEDULAZIONE.MENU",
+                                    "mappingInput": "menuField",
+                                    "mappingOutput": "menuField",
+                                    "visibleCondition": {
+                                        "and": {
+                                            "tipo": {
+                                                "values": [
+                                                    {
+                                                        "value": "Menu",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

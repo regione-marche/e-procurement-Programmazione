@@ -1,0 +1,304 @@
+{
+    "name": "modifica-fase-subappalto-page",
+    "title": "TITLE.MODIFICA-FASE-SUBAPPALTO-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "modifica-fase-subappalto-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-subappalto-page",
+                "label": "BREADCRUMB.DETTAGLIO-FASE-SUBAPPALTO",
+                "slug": "dettaglio-fase-subappalto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            },
+            {
+                "code": "modifica-fase-subappalto-page",
+                "label": "BREADCRUMB.MODIFICA-FASE-SUBAPPALTO",
+                "slug": "modifica-fase-subappalto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-fase-subappalto-page-content-root-section",
+            "selector": "modifica-fase-subappalto-section",
+            "description": "Pagina di modifica fase di subappalto",
+            "classNames": "modifica-fase-subappalto-section",
+            "settings": {
+                "classNames": "modifica-fase-subappalto-index",
+                "sectionTitle": "TITLE.MODIFICA-FASE-SUBAPPALTO-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-dettaglio-fase",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_GARE_FASE_SUBAPPALTO_PROVIDER",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-fase",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_FASE_SUBAPPALTO_PROVIDER"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "subappalto-data",
+                            "label": "FASE-SUBAPPALTO.SUBAPPALTO-DATA.SUBAPPALTO-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "num-suba",
+                                    "label": "FASE-SUBAPPALTO.SUBAPPALTO-DATA.NUM-SUBA",
+                                    "oggettoProtezione": "W9.W9SUBA.NUM_SUBA",
+                                    "mnemonico": "W3SUNUMSUB",
+                                    "mappingInput": "num",
+                                    "mappingOutput": ""
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "oggetto-subappalto",
+                                    "label": "FASE-SUBAPPALTO.SUBAPPALTO-DATA.OGGETTO-SUBAPPALTO",
+                                    "oggettoProtezione": "W9.W9SUBA.OGGETTO_SUBAPPALTO",
+                                    "mnemonico": "W3O_SUBA",
+                                    "mappingInput": "oggetto",
+                                    "mappingOutput": "oggetto",
+                                    "maxLength": 1000
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "nomest-aggiudicatrice",
+                                    "label": "FASE-SUBAPPALTO.SUBAPPALTO-DATA.NOMEST-AGGIUDICATRICE",
+                                    "oggettoProtezione": "W9.W9SUBA.CODIMP_AGGIUDICATRICE",
+                                    "mnemonico": "W9SUIMPAGG",
+                                    "mappingInput": "impresaAggiudicatrice",
+                                    "mappingOutput": "codImpresaAgg",
+                                    "itemsProviderCode": "APP_GARE_IMPRESE_AGGIUDICATARIE_AGGI_AUTOCOMPLETE",
+                                    "noDataLabel": "NO-DATA",
+                                    "newEditAvailable": false,
+                                    "modalComponent": "impresa-modal-widget",
+                                    "modalComponentConfig": "impresaRWModalConfig"
+                                },                                
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-presunto",
+                                    "label": "FASE-SUBAPPALTO.SUBAPPALTO-DATA.IMPORTO-PRESUNTO",
+                                    "oggettoProtezione": "W9.W9SUBA.IMPORTO_PRESUNTO",
+                                    "mnemonico": "W3I_PRESUN",
+                                    "mappingInput": "importoPresunto",
+                                    "mappingOutput": "importoPresunto",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "nomest-subappaltatrice",
+                                    "label": "FASE-SUBAPPALTO.SUBAPPALTO-DATA.NOMEST-SUBAPPALTATRICE",
+                                    "oggettoProtezione": "W9.W9SUBA.CODIMP",
+                                    "mnemonico": "W3SUBCODIM",
+                                    "mappingInput": "impresaSubappaltatrice",
+                                    "mappingOutput": "codImpresa",
+                                    "itemsProviderCode": "APP_GARE_IMPRESE_AGGIUDICATARIE_AUTOCOMPLETE",
+                                    "noDataLabel": "NO-DATA",
+                                    "newEditAvailable": true,
+                                    "newItemButton": {
+                                        "code": "new",
+                                        "label": "BUTTONS.NUOVO",
+                                        "icon": "mgg-icons-crud-create",
+                                        "oggettoProtezione": "INS.*"
+                                    },
+                                    "editItemButton": {
+                                        "code": "edit",
+                                        "label": "BUTTONS.UPDATE",
+                                        "icon": "mgg-icons-crud-edit",
+                                        "oggettoProtezione": "MOD.*"
+                                    },
+                                    "modalComponent": "impresa-modal-widget",
+                                    "modalComponentConfig": "impresaRWModalConfig"
+                                },
+                                {
+                                    "type": "HIDDEN",
+                                    "code": "tipo-impresa",
+                                    "label": "FASE-SUBAPPALTO.SUBAPPALTO-DATA.TIPO-IMPRESA",                                  
+                                    "mappingInput": "tipoImpresaHidden",
+                                    "mappingOutput": "tipoImpresaHidden"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "tipo-impresa-text",
+                                    "label": "FASE-SUBAPPALTO.SUBAPPALTO-DATA.TIPO-IMPRESA",                                  
+                                    "mappingInput": "tipoImpresa",
+                                    "mappingOutput": "tipoImpresa",                                    
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "tipoImpresa",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "tipo-impresa": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible":false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tipo-impresa-combo",
+                                    "label": "FASE-SUBAPPALTO.SUBAPPALTO-DATA.TIPO-IMPRESA",                                  
+                                    "mappingInput": "tipoImpresa",
+                                    "mappingOutput": "tipoImpresa",                                    
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "tipoImpresa",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "tipo-impresa": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible":false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "FORM-GROUP",
+                                    "code": "mandanti-group",
+                                    "label": "",
+                                    "minGroupsNumber": 0,
+                                    "maxGroupsNumber": 0,
+                                    "mappingInput": "mandanti",
+                                    "mappingOutput": "mandanti",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "tipo-impresa-combo": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible":false
+                                            },
+                                            "tipo-impresa-text": {
+                                                "values": [
+                                                    {
+                                                        "value": "Mandataria di un raggruppamento",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible":false
+                                            }
+                                        }
+                                    },
+                                    "defaultFormGroupFields": [
+                                        {
+                                            "type": "AUTOCOMPLETE",
+                                            "code": "nome-impresa",
+                                            "label": "FASE-SUBAPPALTO.SUBAPPALTO-DATA.NOME-IMPRESA",                                         
+                                            "mappingInput": "ragioneSociale",
+                                            "mappingOutput": "nomeMandante",
+                                            "itemsProviderCode": "APP_GARE_IMPRESE_AGGIUDICATARIE_AUTOCOMPLETE",
+                                            "noDataLabel": "NO-DATA",
+                                            "newEditAvailable": false,
+                                            "modalComponent": "impresa-modal-widget",
+                                            "modalComponentConfig": "impresaRWModalConfig"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "id-categoria",
+                                    "label": "FASE-SUBAPPALTO.SUBAPPALTO-DATA.ID-CATEGORIA",
+                                    "oggettoProtezione": "W9.W9SUBA.ID_CATEGORIA",
+                                    "mnemonico": "W3ID_CATE2",
+                                    "mappingInput": "idCategoria",
+                                    "mappingOutput": "idCategoria",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "Categorie"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "cpv",
+                                    "label": "FASE-SUBAPPALTO.SUBAPPALTO-DATA.CPV",
+                                    "oggettoProtezione": "W9.W9SUBA.ID_CPV",
+                                    "mnemonico": "W3ID_CPV",
+                                    "mappingInput": "idCpv",
+                                    "mappingOutput": "idCpv"
+                                   
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-autorizzazione",
+                                    "label": "FASE-SUBAPPALTO.SUBAPPALTO-DATA.DATA-AUTORIZZAZIONE",
+                                    "oggettoProtezione": "W9.W9SUBA.DATA_AUTORIZZAZIONE",
+                                    "mnemonico": "W3DATA_AUT",
+                                    "mappingInput": "dataAuth",
+                                    "mappingOutput": "dataAuth"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-effettivo",
+                                    "label": "FASE-SUBAPPALTO.SUBAPPALTO-DATA.IMPORTO-EFFETTIVO",
+                                    "oggettoProtezione": "W9.W9SUBA.IMPORTO_EFFETTIVO",
+                                    "mnemonico": "W3I_EFFETT",
+                                    "mappingInput": "importoEffettivo",
+                                    "mappingOutput": "importoEffettivo",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

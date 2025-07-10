@@ -1,0 +1,22 @@
+<div [class]="config.classNames" *ngIf="isReady">
+
+    <div class="messages-box" #infoBox></div>
+
+    <div class="messages-box" #messages></div>
+
+    <div class="modifica-itnervento-nr-container">
+
+        <div class="dinr-content">
+            <sdk-form-builder [config]="formBuilderConfigObs" [data]="formBuilderDataSubject"
+            (output)="manageFormOutput($event)" (outputField)="manageOutputField($event)"
+            (outputClick)="manageFormClick($event)">
+            </sdk-form-builder>
+            <sdk-modal [config]="modalConfigObs" (output)="manageModalOutput($event)"></sdk-modal>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group *ngIf="buttons !== undefined" [config]="buttonsSubj" (output)="onButtonClick($event)">
+            </sdk-button-group>
+        </div>
+    </div>
+    <sdk-dialog [config]="dialogConfigObs"></sdk-dialog>
+</div>

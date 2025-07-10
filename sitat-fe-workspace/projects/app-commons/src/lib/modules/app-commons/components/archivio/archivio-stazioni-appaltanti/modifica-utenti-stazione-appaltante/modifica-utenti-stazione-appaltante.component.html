@@ -1,0 +1,67 @@
+<div [class]="config.classNames" *ngIf="isReady">
+    <h1 class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</h1>
+    <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+    <div class="messages-box" #infoBox></div>
+    <div class="messages-box" #messages></div>
+
+    <div class="modifica-utenti-stazione-appaltante-container">
+        <div class="modifica-utenti-stazione-appaltante-content">
+            <div class="card">
+                <p-table #dt2 [value]="listaUtentiEdit" dataKey="codice" [rows]="50" [showCurrentPageReport]="true"
+                    [rowsPerPageOptions]="[50,100,200]" [loading]="loading" styleClass="p-datatable-utenti"
+                    [paginator]="true" [currentPageReportTemplate]="'currentPageReport' | translate"
+                    [globalFilterFields]="['nome','codiceFiscale']" (onFilter)="onFilter($event)">
+                    <ng-template pTemplate="caption">
+                        <div class="p-d-flex">
+                            <span class="p-input-icon-left p-ml-auto">
+                                <i class="pi pi-search"></i>
+                                <input pInputText type="text"
+                                    (input)="dt2.filterGlobal($event.target.value, 'contains')"
+                                    [placeholder]="'STAZIONE-APPALTANTE.UTENTI.CERCA' | translate" />
+                            </span>
+                        </div>
+                    </ng-template>
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th scope="col" style="width: 6rem;">{{ 'STAZIONE-APPALTANTE.UTENTI.ASSOCIATO' | translate }}</th>
+                            <th scope="col">{{ 'STAZIONE-APPALTANTE.UTENTI.DENOMINAZIONE' | translate }}</th>
+                            <th scope="col">{{ 'STAZIONE-APPALTANTE.UTENTI.CODICE-FISCALE' | translate }}</th>
+                        </tr>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">
+                                <p-columnFilter type="text" matchMode="contains" [showMenu]="false" field="nome"></p-columnFilter>
+                            </th>
+                            <th scope="col">
+                                <p-columnFilter type="text" matchMode="contains" [showMenu]="false" field="codiceFiscale"></p-columnFilter>
+                            </th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-utente>
+                        <tr>
+                            <td style="text-align: center;">
+                                <input type="checkbox" class="p-checkbox" (change)="manageCheckboxes(utente.syscon, $event)" [checked]="utente.checked">
+                            </td>
+                            <td>
+                                {{utente.nome}}
+                            </td>
+                            <td>
+                                {{utente.codiceFiscale}}
+                            </td>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="emptymessage">
+                        <tr>
+                            <td colspan="4">{{ 'noRecords' | translate }}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+    <sdk-dialog [config]="dialogConfigObs"></sdk-dialog>
+</div>

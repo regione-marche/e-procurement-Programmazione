@@ -1,0 +1,222 @@
+<div [class]="config.classNames" *ngIf="isReady">
+    <h1 class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</h1>
+    <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+    <div class="messages-box" #infoBox></div>
+    <div class="messages-box" #messages></div>
+
+    <div class="sdk-inserisci-parametri-report-container">
+        <div class="sdk-inserisci-parametri-report-content">
+            <div *ngFor="let param of listaParamsFromWRicParam" class="lista-params-inserimento">
+                <!--Tipo tabellato-->
+                <div class="parametro-container" *ngIf="param.tipo == 'T'">
+                    <div class="nome-parametro-label">
+                        <div class="label-parametri">{{param.nome}}</div>
+                        <div class="mandatory-box" *ngIf="param.obbligatorio === 'Si'">
+                            ( * )
+                        </div>
+                        <i 
+                            *ngIf="param?.descrizione != null"
+                            class="mgg-icons-status-info" 
+                            pTooltip="{{param.descrizione !== '' || param.descrizione !== null ? param.descrizione : 'SDK-DETTAGLIO-REPORT.INSERISCI-PARAMETRI.NESSUNA-DESCRIZIONE' | translate }}"
+                            tooltipPosition="top"
+                        ></i>
+                    </div>
+                    <div class="inserisci-input-parametro">
+                        <p-dropdown 
+                            [options]="valoriTabellati.tipoParametroReport" 
+                            [(ngModel)]="param.value" 
+                            optionLabel="descrizione" 
+                            [placeholder]="'PLACEHOLDERS.CLICCA-INSERT' | translate"
+                            optionValue="codice"
+                            class="inserisci-select-parametro"
+                            [style]="{'width':'100%'}"
+                            [inputId]="param.codice"
+                            [name]="param.codice" 
+                        />
+                    </div>
+                </div>
+                <!--Tipo stringa-->
+                <div class="parametro-container" *ngIf="param.tipo == 'S'">
+                    <div class="nome-parametro-label">
+                        <div class="label-parametri">{{param.nome}}</div>
+                        <div class="mandatory-box" *ngIf="param.obbligatorio === 'Si'">
+                            ( * )
+                        </div>
+                        <i 
+                            *ngIf="param?.descrizione != null"
+                            class="mgg-icons-status-info" 
+                            pTooltip="{{param.descrizione !== '' || param.descrizione !== null ? param.descrizione : 'SDK-DETTAGLIO-REPORT.INSERISCI-PARAMETRI.NESSUNA-DESCRIZIONE' | translate }}"
+                            tooltipPosition="top" 
+                        ></i>
+                    </div>
+                    <div class="inserisci-input-parametro">
+                        <input 
+                            type="text" 
+                            placeholder="{{ 'PLACEHOLDERS.CLICCA-INSERT' | translate}}" 
+                            id="{{param.codice}}" 
+                            [(ngModel)]="param.value"
+                        />
+                    </div>
+                </div>
+                <!--Tipo float-->
+                <div class="parametro-container" *ngIf="param.tipo == 'F'">
+                    <div class="nome-parametro-label">
+                        <div class="label-parametri">{{param.nome}}</div>
+                        <div class="mandatory-box" *ngIf="param.obbligatorio === 'Si'">
+                            ( * )
+                        </div>
+                        <i 
+                            *ngIf="param?.descrizione != null"
+                            class="mgg-icons-status-info" 
+                            pTooltip="{{param.descrizione !== '' || param.descrizione !== null ? param.descrizione : 'SDK-DETTAGLIO-REPORT.INSERISCI-PARAMETRI.NESSUNA-DESCRIZIONE' | translate }}"
+                            tooltipPosition="top" 
+                        ></i>
+                    </div>
+                    <div class="inserisci-input-parametro">
+                        <input 
+                            type="number" 
+                            step="any" 
+                            id="{{param.codice}}" 
+                            [(ngModel)]="param.value"
+                            placeholder="{{'PLACEHOLDERS.CLICCA-INSERT' | translate}}"    
+                        />
+                    </div>
+                </div>
+                <!--Tipo data-->
+                <div class="parametro-container" *ngIf="param.tipo == 'D'">
+                    <div class="nome-parametro-label">
+                        <div class="label-parametri">{{param.nome}}</div>
+                        <div class="mandatory-box" *ngIf="param.obbligatorio === 'Si'">
+                            ( * )
+                        </div>
+                        <i 
+                            *ngIf="param?.descrizione != null"
+                            class="mgg-icons-status-info" 
+                            pTooltip="{{param.descrizione !== '' || param.descrizione !== null ? param.descrizione : 'SDK-DETTAGLIO-REPORT.INSERISCI-PARAMETRI.NESSUNA-DESCRIZIONE' | translate }}"
+                            tooltipPosition="top" 
+                        ></i>
+                    </div>
+                    <div class="inserisci-input-parametro">
+                        <p-calendar 
+                            appendTo="body" 
+                            inputId="{{param.codice}}" 
+                            class="custom-calendar" 
+                            [(ngModel)]="param.value" 
+                            dateFormat="dd/mm/yy"
+                            placeholder="{{ 'PLACEHOLDERS.CLICCA-INSERT' | translate}}"
+                        />
+                    </div>
+                </div>
+                <!--Tipo intero-->
+                <div class="parametro-container" *ngIf="param.tipo == 'I'">
+                    <div class="nome-parametro-label">
+                        <div class="label-parametri">{{param.nome}}</div>
+                        <div class="mandatory-box" *ngIf="param.obbligatorio === 'Si'">
+                            ( * )
+                        </div>
+                        <i 
+                            *ngIf="param?.descrizione != null"
+                            class="mgg-icons-status-info" 
+                            pTooltip="{{param.descrizione !== '' || param.descrizione !== null ? param.descrizione : 'SDK-DETTAGLIO-REPORT.INSERISCI-PARAMETRI.NESSUNA-DESCRIZIONE' | translate }}"
+                            tooltipPosition="top" 
+                        ></i>
+                    </div>
+                    <div class="inserisci-input-parametro">
+                        <input 
+                            type="number" 
+                            id="{{param.codice}}" 
+                            [(ngModel)]="param.value"
+                            placeholder="{{'PLACEHOLDERS.CLICCA-INSERT' | translate}}"    
+                        />
+                    </div>
+                </div>
+                <!--Tipo intero. All'utente mostro nome e cognome, ma a backend invio il syscon (number)-->
+                <div class="parametro-container" *ngIf="param.tipo == 'UC'">
+                    <div class="nome-parametro-label">
+                        <div class="label-parametri">{{param.nome}}</div>
+                        <div class="mandatory-box" *ngIf="param.obbligatorio === 'Si'">
+                            ( * )
+                        </div>
+                        <i 
+                            *ngIf="param?.descrizione != null"
+                            class="mgg-icons-status-info" 
+                            pTooltip="{{param.descrizione !== '' || param.descrizione !== null ? param.descrizione : 'SDK-DETTAGLIO-REPORT.INSERISCI-PARAMETRI.NESSUNA-DESCRIZIONE' | translate }}"
+                            tooltipPosition="top" 
+                        ></i>
+                    </div>
+                    <div class="inserisci-input-parametro">
+                        <input 
+                            type="text" 
+                            id="{{param.codice}}" 
+                            [style.cursor]="'not-allowed'" 
+                            [value]="userProfile?.nome" 
+                            readonly
+                        />
+                    </div>
+                </div>
+                <!--Tipo testo-->
+                <div class="parametro-container" *ngIf="param.tipo == 'UI'">
+                    <div class="nome-parametro-label">
+                        <div class="label-parametri">{{param.nome}}</div>
+                        <div class="mandatory-box" *ngIf="param.obbligatorio === 'Si'">
+                            ( * )
+                        </div>
+                        <i 
+                            *ngIf="param?.descrizione != null"
+                            class="mgg-icons-status-info" 
+                            pTooltip="{{param.descrizione !== '' || param.descrizione !== null ? param.descrizione : 'SDK-DETTAGLIO-REPORT.INSERISCI-PARAMETRI.NESSUNA-DESCRIZIONE' | translate }}"
+                            tooltipPosition="top" 
+                        ></i>
+                    </div>
+                    <div class="inserisci-input-parametro">
+                        <input 
+                            type="text" 
+                            id="{{param.codice}}" 
+                            [style.cursor]="'not-allowed'" 
+                            [value]="stazioneAppaltanteInfo?.nome" 
+                            readonly
+                        />
+                    </div>
+                </div>
+                <!--Tipo menu-->
+                <div class="parametro-container" *ngIf="param.tipo == 'M'">
+                    <div class="nome-parametro-label">
+                        <div class="label-parametri">{{param.nome}}</div>
+                        <div class="mandatory-box" *ngIf="param.obbligatorio === 'Si'">
+                            ( * )
+                        </div>
+                        <i 
+                            *ngIf="param?.descrizione != null"
+                            class="mgg-icons-status-info" 
+                            pTooltip="{{param.descrizione !== '' || param.descrizione !== null ? param.descrizione : 'SDK-DETTAGLIO-REPORT.INSERISCI-PARAMETRI.NESSUNA-DESCRIZIONE' | translate }}"
+                            tooltipPosition="top" 
+                        ></i>
+                    </div>
+                    <div class="inserisci-input-parametro">
+                        <p-dropdown 
+                            [options]="menuFieldTabellato" 
+                            [(ngModel)]="param.value" 
+                            optionLabel="descrizione" 
+                            optionValue="descrizione"
+                            [placeholder]="'PLACEHOLDERS.CLICCA-INSERT' | translate"
+                            [style]="{'width':'100%'}" 
+                            [inputId]="param.codice"
+                            [name]="param.codice"
+                        />
+                    </div>
+                </div>
+                <div class="line-separator"></div>
+            </div>
+            <div *ngIf="listaParamsFromWRicParam?.length === 0">
+                <span style="padding: 1em;">
+                    {{ 'SDK-DETTAGLIO-REPORT.INSERISCI-PARAMETRI.NO-PARAM-INSERTED' | translate }}
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="buttons-row">
+        <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+    </div>
+    <sdk-dialog [config]="dialogConfigObjs"></sdk-dialog>
+</div>

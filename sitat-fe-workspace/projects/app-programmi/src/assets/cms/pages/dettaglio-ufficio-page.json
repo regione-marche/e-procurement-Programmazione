@@ -1,0 +1,85 @@
+{
+    "name": "dettaglio-ufficio-page",
+    "title": "TITLE.DETTAGLIO-UFFICIO-PAGE",
+    "layout": "base-layout",
+    "appName": "app-programmi",
+    "styleUrls": [],
+    "settings": {
+        "page": "dettaglio-ufficio-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-archivio-uffici-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-ARCHIVIO-UFFICI",
+                "slug": "ricerca-avanzata-archivio-uffici-page"
+            },
+            {
+                "code": "lista-archivio-uffici-page",
+                "label": "BREADCRUMB.LISTA-ARCHIVIO-UFFICI",
+                "slug": "lista-archivio-uffici-page"
+            },
+            {
+                "code": "dettaglio-ufficio-page",
+                "label": "BREADCRUMB.DETTAGLIO-UFFICIO",
+                "slug": "dettaglio-ufficio-page",
+                "additionalParams": "APP_COMMONS_UFFICIO_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-ufficio-page-content-root-section",
+            "selector": "dettaglio-ufficio-section",
+            "description": "Pagina di dettaglio di un ufficio",
+            "classNames": "dettaglio-ufficio-section",
+            "settings": {
+                "classNames": "dettaglio-ufficio-index",
+                "sectionTitle": "TITLE.DETTAGLIO-UFFICIO-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-archivio-uffici",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_COMMONS_UFFICIO",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "go-to-update-ufficio",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_COMMONS_UFFICIO",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "uffici-data",
+                            "label": "UFFICIO.DATI-UFFICIO",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "denominazione",
+                                    "label": "UFFICIO.DENOMINAZIONE",
+                                    "mappingInput": "denominazione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "centro-costo",
+                                    "label": "UFFICIO.CENTRO-COSTO",
+                                    "mappingInput": "centroCosto",
+                                    "listCode": "sino"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

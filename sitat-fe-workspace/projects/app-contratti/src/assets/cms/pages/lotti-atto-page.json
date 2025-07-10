@@ -1,0 +1,92 @@
+{
+    "name": "lotti-atto-page",
+    "title": "TITLE.LOTTI-ATTO-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/lotti-atto-page.css"
+    ],
+    "settings": {
+        "page": "lotti-atto-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-atti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-atti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lotti-atto-page",
+                "label": "BREADCRUMB.DETTAGLIO-ATTO",
+                "slug": "lotti-atto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_ATTO_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "lotti-atto-page-content-root-section",
+            "selector": "lotti-atto-section",
+            "description": "Pagina di associazione lotto atto",
+            "classNames": "lotti-atto-section",
+            "settings": {
+                "classNames": "lotti-atto-index",
+                "menuTabs": [
+                    {
+                        "code": "dettaglio-atto",
+                        "title": "DETTAGLIO-ATTO.TABS.DETTAGLIO-ATTO",
+                        "slug": "dettaglio-atto-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_ATTO_PARAMS"
+                    },
+                    {
+                        "code": "lotti-atto",
+                        "title": "DETTAGLIO-ATTO.TABS.LOTTO-ATTO",
+                        "active": true,
+                        "slug": "lotti-atto-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_ATTO_PARAMS"
+                    },
+                    {
+                        "code": "pubblica-atto",
+                        "title": "DETTAGLIO-ATTO.TABS.PUBBLICA-ATTO",
+                        "slug": "pubblica-atto-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_ATTO_PARAMS"
+                    }
+                ],
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-atti",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_ATTI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-lotti-atto",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_LOTTI_ATTO"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

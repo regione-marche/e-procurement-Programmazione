@@ -1,0 +1,22 @@
+<div class="trasferimento-modal" *ngIf="isReady">
+    <div class="page-title modal-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</div>
+    <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+    <div class="messages-box" #messages></div>
+
+    <div class="trasferimento-container">
+        <div class="trasferimento-testata">
+
+        </div>
+        <div class="trasferimento-content">
+            <div class="message" *ngIf="firstPage == true" [innerHtml]="config.avvisoMessage | translate">
+            </div>
+            <sdk-form-builder *ngIf="firstPage == false" [config]="formBuilderConfigObs"
+                (output)="manageFormOutput($event)">
+            </sdk-form-builder>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+</div>

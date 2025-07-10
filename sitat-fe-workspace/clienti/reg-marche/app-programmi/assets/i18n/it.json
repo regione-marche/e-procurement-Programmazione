@@ -1,0 +1,24 @@
+{
+    "LOGO-DESCRIPTION": "Logo della Regione MARCHE",
+    "APP-TITLE": "PROG",
+    "APP-SUBTITLE": "Programmazione di lavori, servizi e forniture",
+    "MODULO": {
+        "TITLE": "Programmazione di lavori, servizi e forniture",
+        "DESCRIPTION": "Accedendo a questo modulo \u00E8 possibile compilare, pubblicare e trasmettere all'osservatorio provinciale dei contratti pubblici e alle banche dati nazionali i programmi di lavori, servizi e forniture."
+    },
+    "FOOTER": {
+        "SITENAME-TITLE": "SUAV",
+        "SITENAME-SUBTITLE": "Regione Marche",
+        "SITENAME-DESCRIPTION": "",
+        "LINK-ANAC": "Anac",
+        "LINK-SERVIZIO-CONTRATTI-PUBBLICI": "Servizio contratti pubblici (MIT)",
+        "LINK-BANDI-AVVISI-ESITI-GARA": "Consultazione Bandi, avvisi ed esiti di procedura",
+        "LINK-PROGRAMMAZIONE-LAVORI-BENI-SERVIZI": "Consultazione Programmazione lavori, beni e servizi",
+        "CONTACTS": {
+            "EMAIL": "Email"
+        }
+    },
+    "APP-INFO-MODAL": {
+        "DEVELOPMENT_INFO": "<div class=\"img-logo\"><img src=\"assets/images/app/logo-black.png\" alt=\"Logo\" /></div>"
+    }
+}

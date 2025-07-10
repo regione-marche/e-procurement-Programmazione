@@ -1,0 +1,282 @@
+{
+    "name": "dati-generali-report-page",
+    "title": "TITLE.DETTAGLIO-REPORT-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "dati-generali-report-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-report-page",
+                "label": "BREADCRUMB.GESTIONE-REPORT",
+                "slug": "lista-report-page"
+            },
+            {
+                "code": "dati-generali-report-page",
+                "label": "BREADCRUMB.DATI-GENERALI-REPORT",
+                "slug": "dati-generali-report-page",
+                "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dati-generali-report-page-content-root-section",
+            "selector": "sdk-dati-generali-report-section",
+            "description": "Pagina di dettaglio dei dati generali del report",
+            "classNames": "sdk-dati-generali-report-section",
+            "settings": {
+                "classNames": "dati-generali-report-index",
+                "sectionTitle": "TITLE.DETTAGLIO-REPORT-PAGE",
+                "menuTabs": [
+                    {
+                        "action": "DETAIL",
+                        "code": "dati-generali-report",
+                        "title": "SDK-DETTAGLIO-REPORT.TABS.DATI-GENERALI",
+                        "active": true,
+                        "slug": "dati-generali-report-page",
+                        "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+                    },
+                    {
+                        "action": "DEFINIZIONE",
+                        "code": "definizione-report",
+                        "title": "SDK-DETTAGLIO-REPORT.TABS.DEFINIZIONE",
+                        "slug": "definizione-report-page",
+                        "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+                    },
+                    {
+                        "action": "PARAMETRI",
+                        "code": "parametri-report",
+                        "title": "SDK-DETTAGLIO-REPORT.TABS.PARAMETRI",
+                        "slug": "parametri-report-page",
+                        "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+                    },
+                    {
+                        "action": "PROFILI",
+                        "code": "profili-report",
+                        "title": "SDK-DETTAGLIO-REPORT.TABS.PROFILI",
+                        "slug": "profili-report-page",
+                        "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS",
+                        "visible": "SDK_GESTIONE_REPORT_PROFILI_MENU_VISIBLE"
+                    },
+                    {
+                        "action": "UFF-INT",
+                        "code": "uff-int-report",
+                        "title": "SDK-DETTAGLIO-REPORT.TABS.UFF-INT",
+                        "slug": "uffici-intestatari-report-page",
+                        "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS",
+                        "visible": "SDK_GESTIONE_REPORT_UFFINT_MENU_VISIBLE"
+                    }
+                ],
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-report",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_REPORT_LISTA_REPORT",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "modifica-dati-generali-report",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "SDK_GESTIONE_REPORT_LISTA_REPORT"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "dati-generali-report",
+                            "label": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "id-ricerca",
+                                    "label": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.ID-RICERCA",
+                                    "mappingInput": "idRicerca"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "nome-report",
+                                    "label": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.NOME",
+                                    "mappingInput": "nome"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "descrizione",
+                                    "label": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.DESCRIZIONE",
+                                    "mappingInput": "descrizione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "pubblicato",
+                                    "label": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.DISP.TITLE",
+                                    "itemsProviderCode": "SDK_GESTIONE_REPORT_TABELLATI_PROVIDER",
+                                    "listCode": "siNo",
+                                    "mappingInput": "pubblicato"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "owner",
+                                    "label": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.OWNER",
+                                    "mappingInput": "sysute"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "tuttiProfili",
+                                    "label": "SDK-LISTA-REPORT.NUOVO-REPORT.TUTTI-PROFILI",
+                                    "mappingInput": "tuttiProfili",
+                                    "mappingOutput": "tuttiProfili",
+                                    "listCode": "siNo",
+                                    "itemsProviderCode": "SDK_GESTIONE_REPORT_TABELLATI_PROVIDER"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "tuttiUffici",
+                                    "label": "SDK-LISTA-REPORT.NUOVO-REPORT.TUTTI-UFFICI",
+                                    "mappingInput": "tuttiUffici",
+                                    "mappingOutput": "tuttiUffici",
+                                    "listCode": "siNo",
+                                    "itemsProviderCode": "SDK_GESTIONE_REPORT_TABELLATI_PROVIDER"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "esponiComeServizio",
+                                    "label": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.ESPONI-COME-SERVIZIO",
+                                    "mappingInput": "esponiComeServizio",
+                                    "mappingOutput": "esponiComeServizio",
+                                    "listCode": "siNo"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "codReportWs",
+                                    "label": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.COD-REPORT-WS",
+                                    "mappingInput": "codReportWs",
+                                    "mappingOutput": "codReportWs",
+                                    "visibleCondition": {
+                                        "or": {
+                                            "esponiComeServizio": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "dati-generali-schedulazione-report",
+                            "label": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.SCHEDULAZIONE.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "schedula",
+                                    "label": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.SCHEDULAZIONE.SCHEDULA",
+                                    "mappingInput": "schedula",
+                                    "mappingOutput": "schedula",
+                                    "listCode": "siNo"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "cronExpression",
+                                    "label": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.SCHEDULAZIONE.CRON-EXPRESSION",
+                                    "mappingInput": "cronExpression",
+                                    "mappingOutput": "cronExpression",
+                                    "visibleCondition": {
+                                        "or": {
+                                            "schedula": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "formatoSchedulazione",
+                                    "label": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.SCHEDULAZIONE.FORMATO-SCHED",
+                                    "mappingInput": "formatoSchedulazione",
+                                    "mappingOutput": "formatoSchedulazione",
+                                    "listCode": "formatoExportSchedulato",
+                                    "itemsProviderCode": "SDK_GESTIONE_REPORT_TABELLATI_PROVIDER",
+                                    "visibleCondition": {
+                                        "and": {
+                                            "schedula": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "emailSchedulazioneRisultato",
+                                    "label": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.SCHEDULAZIONE.EMAIL-SCHED",
+                                    "mappingInput": "emailSchedulazioneRisultato",
+                                    "mappingOutput": "emailSchedulazioneRisultato",
+                                    "visibleCondition": {
+                                        "or": {
+                                            "schedula": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "noOutputVuoto",
+                                    "label": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.SCHEDULAZIONE.NO-OUTPUT-VUOTO",
+                                    "mappingInput": "noOutputVuoto",
+                                    "mappingOutput": "noOutputVuoto",
+                                    "listCode": "siNo",
+                                    "visibleCondition": {
+                                        "and": {
+                                            "schedula": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,73 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "module": "es2020",
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "ES2022",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2020",
+      "dom"
+    ],
+    "paths": {
+      "sdk-commons": [
+        "dist/sdk-commons"
+      ],
+      "sdk-commons/*": [
+        "dist/sdk-commons/*"
+      ],
+      "sdk-controls": [
+        "dist/sdk-controls"
+      ],
+      "sdk-controls/*": [
+        "dist/sdk-controls/*"
+      ],
+      "sdk-widgets": [
+        "dist/sdk-widgets"
+      ],
+      "sdk-widgets/*": [
+        "dist/sdk-widgets/*"
+      ],
+      "app-commons": [
+        "dist/app-commons"
+      ],
+      "sdk-gestione-reports": [
+        "./dist/sdk-gestione-reports"
+      ],
+      "app-commons/*": [
+        "dist/app-commons/*"
+      ],
+      "sdk-table": [
+        "dist/sdk-table"
+      ],
+      "sdk-table/*": [
+        "dist/sdk-table/*"
+      ],
+      "sdk-gestione-utenti": [
+        "dist/sdk-gestione-utenti"
+      ],
+      "sdk-gestione-utenti/*": [
+        "dist/sdk-gestione-utenti/*"
+      ],
+      "sdk-gestione-modelli/*": [
+        "dist/sdk-gestione-modelli/*"
+      ],
+      "sdk-gestione-reports/*": [
+        "dist/sdk-gestione-reports/*"
+      ]
+    },
+    "useDefineForClassFields": false
+  }
+}

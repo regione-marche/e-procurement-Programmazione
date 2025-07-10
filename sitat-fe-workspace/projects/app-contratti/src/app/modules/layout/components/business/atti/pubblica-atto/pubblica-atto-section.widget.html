@@ -1,0 +1,86 @@
+<div [class]="config.classNames" *ngIf="isReady">
+  <h1 class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</h1>
+  <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+  <div class="messages-box" #infoBox></div>
+
+  <div class="messages-box" #messages></div>
+
+  <div class="help-box" *ngIf="showHelpBox">
+    <div *ngIf="collapse" (click)="collassaEspandi(event)" style="cursor: pointer;">
+      <img src="assets/images/app/collapse.gif" [alt]="'BUTTONS.COLLAPSE' | translate"/> Informazioni e avvertenze
+    </div>
+    <div *ngIf="!collapse" (click)="collassaEspandi(event)" style="cursor: pointer;">
+      <img src="assets/images/app/expand.gif" [alt]="'BUTTONS.EXPAND' | translate"/> Informazioni e avvertenze
+    </div>
+  </div>
+  <div *ngIf="collapse" class="help-atti">
+    <div class = "page-title">Visibilit&agrave; degli atti sul sito pubblico nella sezione "Bandi"</div>
+    <div>Sul sito <a href="https://www.serviziocontrattipubblici.it/">https//www.serviziocontrattipubblici.it/</a> vengono pubblicati gli atti nella sezione "Bandi” solo se per la procedura di affidamento &egrave; pubblicato almeno un atto tra quelli di seguito evidenziati e distinti dal Tipo A, B, D, E.</div>
+    <table class="tabella-help" aria-label="Visibilita' degli atti sul sito pubblico nella sezione Bandi">
+      <thead>
+          <tr>
+              <th>ID</th>
+              <th>Tipo atto o provvedimento</th>
+              <th>Tipo</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr><td>1</td><td>Delibera a contrarre o atto equivalente</td>	
+          <tr><td>2</td><td>Avviso per manifestazione di interesse, indagini di mercato (art.36 comma 2b,2c.2d) e avviso contratto di sponsorizzazione (art.19)</td><td>B</td></tr>
+          <tr><td>3</td><td>Bando di gara di appalto, concessione o concorso e documentazione di gara</td><td>B</td></tr>
+          <tr><td>4</td><td>Avviso in merito alla modifica dell'ordine di importanza dei criteri, bando di concessione (art.173)</td><td></td></tr>	
+          <tr><td>5</td><td>Avviso costituzione del privilegio</td><td></td></tr>	
+          <tr><td>6</td><td>Lettera di invito	</td><td></td></tr>
+          <tr><td>7</td><td>Provvedimento che determina le esclusioni dalla procedura di affidamento e le ammissioni all'esito delle valutazioni dei requisiti soggettivi, economico-finanziari, e tecnico-professionali</td><td></td></tr>
+          <tr><td>8</td><td>Provvedimento di nomina commissione di aggiudicazione e Curricula dei componenti della stessa in caso di criterio di aggiudicazione oepv</td><td></td></tr>	
+          <tr><td>9</td><td>Provvedimento per eventuali esclusioni a seguito verifica offerte tecniche</td><td></td></tr>	
+          <tr><td>10</td><td>	Provvedimento per eventuali esclusioni a seguito apertura offerte economiche</td><td></td></tr>	
+          <tr><td>11</td><td>	Provvedimento per formazione Commissione per la valutazione dell'offerta anomala nel caso del criterio del prezzo pi&ugrave; basso</td><td></td></tr>	
+          <tr><td>12</td><td>	Provvedimento per eventuale esclusione offerta anomala</td><td></td></tr>	
+          <tr><td>13</td><td>	Provvedimento di aggiudicazione non efficace con elenco verbali della commissione di gara</td><td></td></tr>	
+          <tr><td>14</td><td>	Provvedimento di adesione</td><td></td></tr>	
+          <tr><td>15</td><td>	Provvedimento di aggiudicazione decreto o ordinativo</td><td></td></tr>	
+          <tr><td>16</td><td>	Provvedimento di revoca dell'aggiudicazione o dell'adesione</td><td></td></tr>	
+          <tr><td>17</td><td>	Provvedimento di gara non aggiudicata o deserta</td><td>D</td></tr>	
+          <tr><td>18</td><td>	Provvedimento di aggiudicazione efficace</td><td></td></tr>	
+          <tr><td>19</td><td>	Decreto o determina di affidamento  di lavori, servizi e forniture di somma urgenza e di protezione civile (art.163)</td><td>E</td></tr>
+          <tr><td>21</td><td>	Testo integrale contratto di acquisto beni e servizi di importo unitario superiore al milione di euro</td><td></td></tr>	
+          <tr><td>20</td><td>	Avviso di aggiudicazione o affidamento (esito di gara)</td><td>A</td></tr>
+          <tr><td>22</td><td>	Provvedimento di autorizzazione subappalto</td><td></td></tr>	
+          <tr><td>23</td><td>	Atto per eventuale scioglimento contratto per eccesso durata sospensione esecuzione</td><td></td></tr>	
+          <tr><td>24</td><td>	Provvedimento di eventuali modifiche al contratto d'appalto</td><td></td></tr>	
+          <tr><td>25</td><td>	Provvedimento di eventuale recesso dal contratto</td><td></td></tr>	
+          <tr><td>26</td><td>	Provvedimento di eventuale risoluzione del contratto</td><td></td></tr>	
+          <tr><td>99</td><td>	Altro documento	</td><td></td></tr>
+      </tbody>
+    </table>
+    <div>Ad esempio, se per una procedura viene pubblicato solo l'atto "Delibera a contrarre o atto equivalente”, questo non sar&agrave; comunque visibile fino a quando non verr&agrave; pubblicato l'atto "Bando di gara di appalto, concessione o concorso e documentazione di gara”.</div>
+    
+  </div>
+  
+  <div class="pa-container">
+    <div class="pa-content">
+      <div *ngIf="!pubblicazioni || pubblicazioni.length === 0" class="empty-list">
+        {{ 'PUBBLICAZIONI.EMPTY-LIST' | translate }}</div>
+      <ng-container *ngIf="pubblicazioni && pubblicazioni.length > 0">
+        <div *ngFor="let pub of pubblicazioni; let i = index" class="row-pubblicazione">
+          <span>{{ getTipoPubblicazione(i) | translate }}: </span>
+          <span>
+            <a class="clickable" sdkClick (aClick)="onFlussoClick(pub, i)" tabindex="0" role="article">
+              <b *ngIf="pub.dataInvio == null">{{ 'PUBBLICAZIONI.DATA-NON-DISPONIBILE' | translate }}</b>
+              <b *ngIf="pub.dataInvio != null">{{ pub.dataInvio | sdkDateFormat: config.locale.fullDateformat }}</b>
+            </a>
+          </span>
+        </div>
+      </ng-container>
+      <sdk-modal [config]="modalConfigObs"></sdk-modal>
+    </div>
+    <div class="buttons-row">
+      <sdk-button-group *ngIf="buttonsSubj != null" [config]="buttonsSubj" (output)="onButtonClick($event)">
+      </sdk-button-group>
+    </div>
+    <sdk-sidebar [config]="sidebarConfigObs"></sdk-sidebar>
+    <sdk-dialog [config]="dialogConfigObs"></sdk-dialog>
+  </div>
+</div>

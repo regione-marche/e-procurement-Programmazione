@@ -1,0 +1,89 @@
+{
+    "name": "invia-test-email-page",
+    "title": "TITLE.INVIA-TEST-EMAIL-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "invia-test-email-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-server-posta-page",
+                "label": "BREADCRUMB.LISTA-SERVER-POSTA",
+                "slug": "lista-server-posta-page"
+            },
+            {
+                "code": "dettaglio-server-posta-page",
+                "label": "BREADCRUMB.DETTAGLIO-SERVER-POSTA",
+                "slug": "dettaglio-server-posta-page",
+                "additionalParams": "SDK_GESTIONE_UTENTI_DETTAGLIO_POSTA_PARAMS"
+            },
+            {
+                "code": "invia-test-email-page",
+                "label": "BREADCRUMB.INVIA-TEST-EMAIL",
+                "slug": "invia-test-email-page",
+                "additionalParams": "SDK_GESTIONE_UTENTI_DETTAGLIO_POSTA_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "invia-test-email-page-content-root-section",
+            "selector": "sdk-invia-test-email-section",
+            "description": "Pagina invio mail di test",
+            "classNames": "invia-test-email-section",
+            "settings": {
+                "classNames": "invia-test-email-index",
+                "sectionTitle": "TITLE.INVIA-TEST-EMAIL-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-dettaglio-server-posta",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "SDK_GESTIONE_POSTA_LISTA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "invia-test-email",
+                            "label": "BUTTONS.SEND",
+                            "provider": "SDK_GESTIONE_UTENTI_INVIA_TEST_EMAIL",
+                            "icon": "mgg-icons-action-send"
+                        }
+                    ],
+                    "buttonsReadonly": [
+                        {
+                            "code": "back-to-dettaglio-server-posta",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_POSTA_LISTA",
+                            "type": "cancel"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "SDK-SERVER-POSTA.GENERAL-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "test-email",
+                                    "label": "SDK-SERVER-POSTA.GENERAL-DATA.TEST-EMAIL",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingOutput": "testEmail"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

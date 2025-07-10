@@ -1,0 +1,177 @@
+{
+    "name": "dettaglio-server-posta-page",
+    "title": "TITLE.DETTAGLIO-SERVER-POSTA-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "dettaglio-server-posta-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-server-posta-page",
+                "label": "BREADCRUMB.LISTA-SERVER-POSTA",
+                "slug": "lista-server-posta-page"
+            },
+            {
+                "code": "dettaglio-server-posta-page",
+                "label": "BREADCRUMB.DETTAGLIO-SERVER-POSTA",
+                "slug": "dettaglio-server-posta-page",
+                "additionalParams": "SDK_GESTIONE_UTENTI_DETTAGLIO_POSTA_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-server-posta-page-content-root-section",
+            "selector": "sdk-dettaglio-server-posta-section",
+            "description": "Pagina dettaglio server di posta",
+            "classNames": "dettaglio-server-posta-section",
+            "settings": {
+                "classNames": "dettaglio-server-posta-index",
+                "sectionTitle": "TITLE.DETTAGLIO-SERVER-POSTA-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-server-posta",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_POSTA_LISTA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "go-to-set-password-posta",
+                            "label": "SDK-SERVER-POSTA.BUTTONS.SET-PASSWORD",
+                            "icon": "mgg-icons-security-password",
+                            "provider": "SDK_GESTIONE_POSTA_LISTA"
+                        },
+                        {
+                            "code": "go-to-send-test-email",
+                            "label": "SDK-SERVER-POSTA.BUTTONS.SEND-TEST-EMAIL",
+                            "icon": "mgg-icons-action-email-send",
+                            "provider": "SDK_GESTIONE_POSTA_LISTA"
+                        },
+                        {
+                            "code": "go-to-update-server-posta",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "SDK_GESTIONE_POSTA_LISTA"
+                        }
+                    ],
+                    "buttonsReadonly": [
+                        {
+                            "code": "back-to-lista-server-posta",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_POSTA_LISTA",
+                            "type": "cancel"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "SDK-SERVER-POSTA.GENERAL-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "configurazione",
+                                    "label": "SDK-SERVER-POSTA.GENERAL-DATA.CONFIGURAZIONE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "idCfgReadonly"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "server",
+                                    "label": "SDK-SERVER-POSTA.GENERAL-DATA.SERVER",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "server"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "porta",
+                                    "label": "SDK-SERVER-POSTA.GENERAL-DATA.PORTA",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "porta"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "protocollo",
+                                    "label": "SDK-SERVER-POSTA.GENERAL-DATA.PROTOCOLLO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "protocollo",
+                                    "listCode": "ProtocolloPosta"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "timeout",
+                                    "label": "SDK-SERVER-POSTA.GENERAL-DATA.TIMEOUT",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "timeout"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "delay",
+                                    "label": "SDK-SERVER-POSTA.GENERAL-DATA.DELAY",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "delay"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "tracciatura",
+                                    "label": "SDK-SERVER-POSTA.GENERAL-DATA.TRACCIATURA",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "tracciaturaMessaggi",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "mittente",
+                                    "label": "SDK-SERVER-POSTA.GENERAL-DATA.MAIL-MITTENTE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "mailMittente"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "password",
+                                    "label": "SDK-SERVER-POSTA.GENERAL-DATA.PASSWORD",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "password"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "id-user",
+                                    "label": "SDK-SERVER-POSTA.GENERAL-DATA.ID-USER",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "idUser"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "dim-totale-allegati",
+                                    "label": "SDK-SERVER-POSTA.GENERAL-DATA.DIM-TOTALE-ALLEGATI",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "dimTotaleAllegati"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

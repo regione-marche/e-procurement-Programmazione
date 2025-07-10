@@ -1,0 +1,47 @@
+<div *ngIf="isReady">
+  <div style="cursor: pointer;" (click)="onButtonClick()"><i class="fas fa-chevron-left"></i> Torna alla home</div>
+  <div class="messages-box" #messages></div>
+  <div *ngIf="!multiente">
+    <h1 style="font-size: 24px;font-weight: bold;text-align: center;">{{'TITLE.SELEZIONE-PROVIDER-SPID-PAGE' |
+      translate}}</h1>
+    <div class="spid-login-content-section">
+      <ul class="spid-button-menu">
+        <li *ngFor="let provider of providers" class="spid-element">
+          <a sdkClick (aClick)="getSpidUrl(provider.id)" href="javascript:(void(0))" tabindex="0" role="navigation">
+            <img class="spid-provider-img" src="{{provider.img}}" [alt]="provider.id" /></a>
+        </li>
+        <li class="spid-support-link" *ngIf="visibleValidator">
+          <a href="javascript:(void(0))" sdkClick (aClick)="getSpidUrl('https://validator.spid.gov.it')">SPID
+            Validator</a>
+        </li>
+        <li class="spid-support-link">
+          <a href="https://www.spid.gov.it" target="blank">Maggiori informazioni</a>
+        </li>
+        <li class="spid-support-link">
+          <a href="https://www.spid.gov.it/richiedi-spid" target="blank">Non hai SPID?</a>
+        </li>
+        <li class="spid-support-link">
+          <a href="https://www.spid.gov.it/serve-aiuto" target="blank">Serve aiuto?</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="spid-multiente" *ngIf="multiente">
+    <h1 style="font-size: 24px;font-weight: bold;text-align: center;">{{'TITLE.CHOOSE-ENTE-SPID-PAGE' | translate}}</h1>
+    <div class="search-form">
+      <label htmlFor="searchSa">{{ 'RICERCA-SA-SPID' | translate }}</label>
+      <span class="p-input-icon-right" style="padding: .2em;">
+        <i class="pi pi-search"></i>
+        <input type="text" (input)="debounce.next($event)" />
+      </span>
+    </div>
+
+    <div class="selectable">
+      <div class="selectable-link-item" *ngFor="let sa of stazioniAppaltantiToshow" sdkClick
+        (aClick)="selezionaEnte(sa.codice, sa.nome)" tabindex="0" role="navigation" [attr.aria-label]="sa.nome">
+        <div class="div-link">{{sa.nome}}</div>
+        <i class="mgg-icons-paginator-next"></i>
+      </div>
+    </div>
+  </div>
+</div>

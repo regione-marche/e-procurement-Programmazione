@@ -1,0 +1,210 @@
+{
+    "name": "dettaglio-stazione-appaltante-page",
+    "title": "TITLE.DETTAGLIO-STAZIONE-APPALTANTE-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "dettaglio-stazione-appaltante-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-archivio-stazioni-appaltanti-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-ARCHIVIO-STAZIONI-APPALTANTI",
+                "slug": "ricerca-avanzata-archivio-stazioni-appaltanti-page"
+            },
+            {
+                "code": "lista-archivio-stazioni-appaltanti-page",
+                "label": "BREADCRUMB.LISTA-ARCHIVIO-STAZIONI-APPALTANTI",
+                "slug": "lista-archivio-stazioni-appaltanti-page"
+            },
+            {
+                "code": "dettaglio-stazione-appaltante-page",
+                "label": "BREADCRUMB.DETTAGLIO-STAZIONE-APPALTANTE",
+                "slug": "dettaglio-stazione-appaltante-page",
+                "additionalParams": "APP_COMMONS_STAZIONE_APPALTANTE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-stazione-appaltante-page-content-root-section",
+            "selector": "dettaglio-stazione-appaltante-section",
+            "description": "Pagina di dettaglio di una stazione appaltante",
+            "classNames": "dettaglio-stazione-appaltante-section",
+            "settings": {
+                "classNames": "dettaglio-stazione-appaltante-index",
+                "sectionTitle": "TITLE.DETTAGLIO-STAZIONE-APPALTANTE-PAGE",
+                "menuTabs": [
+                    {
+                        "code": "dettaglio-stazione-appaltante",
+                        "title": "STAZIONE-APPALTANTE.TABS.DETTAGLIO-STAZIONE-APPALTANTE",
+                        "active": true,
+                        "slug": "dettaglio-stazione-appaltante-page",
+                        "additionalParams": "APP_COMMONS_STAZIONE_APPALTANTE_PARAMS"
+                    },
+                    {
+                        "code": "utenti-stazione-appaltante",
+                        "title": "STAZIONE-APPALTANTE.TABS.UTENTI-STAZIONE-APPALTANTE",
+                        "slug": "utenti-stazione-appaltante-page",
+                        "additionalParams": "APP_COMMONS_STAZIONE_APPALTANTE_PARAMS",
+                        "visible": "APP_COMMONS_STAZIONE_APPALTANTE_UTENTI_VISIBLE"
+                    }
+                ],
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-archivio-stazioni-appaltanti",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_COMMONS_ARCHIVIO_STAZIONI_APPALTANTI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "go-to-update-stazione-appaltante",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_COMMONS_ARCHIVIO_STAZIONI_APPALTANTI",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "buttonsWithoutPermission": [
+                        {
+                            "code": "back-to-archivio-stazioni-appaltanti",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_COMMONS_ARCHIVIO_STAZIONI_APPALTANTI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "sa-data",
+                            "label": "STAZIONE-APPALTANTE.DATI-GENERALI",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "denominazione",
+                                    "label": "STAZIONE-APPALTANTE.DENOMINAZIONE",
+                                    "oggettoProtezione": "GENE.UFFINT.NOMEIN",
+                                    "mnemonico": "NOMEIN",
+                                    "mappingInput": "denominazione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "codice-fiscale",
+                                    "label": "STAZIONE-APPALTANTE.CODICE-FISCALE",
+                                    "oggettoProtezione": "GENE.UFFINT.CFEIN",
+                                    "mnemonico": "CFEIN",
+                                    "mappingInput": "codFisc"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "indirizzo",
+                                    "label": "STAZIONE-APPALTANTE.INDIRIZZO",
+                                    "oggettoProtezione": "GENE.UFFINT.VIAEIN",
+                                    "mnemonico": "VIAEIN",
+                                    "mappingInput": "indirizzo"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "numero-civico",
+                                    "label": "STAZIONE-APPALTANTE.NUM-CIVICO",
+                                    "oggettoProtezione": "GENE.UFFINT.NCIEIN",
+                                    "mnemonico": "NCIEIN",
+                                    "mappingInput": "nCivico"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "cap",
+                                    "label": "STAZIONE-APPALTANTE.CAP",
+                                    "oggettoProtezione": "GENE.UFFINT.CAPEIN",
+                                    "mnemonico": "CAPEIN",
+                                    "mappingInput": "cap"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "cod-istat",
+                                    "label": "STAZIONE-APPALTANTE.COD-ISTAT",
+                                    "oggettoProtezione": "GENE.UFFINT.CODCIT",
+                                    "mnemonico": "CODCIT",
+                                    "mappingInput": "codIstat"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "provincia",
+                                    "label": "STAZIONE-APPALTANTE.PROVINCIA",
+                                    "oggettoProtezione": "GENE.UFFINT.PROEIN",
+                                    "mnemonico": "PROEIN",
+                                    "mappingInput": "provincia"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "id-ammin",
+                                    "label": "STAZIONE-APPALTANTE.ID-AMMIN",
+                                    "oggettoProtezione": "GENE.UFFINT.IDAMMIN",
+                                    "mnemonico": "G_IDAMMUF",
+                                    "mappingInput": "idAmministrazione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "profilo-committente",
+                                    "label": "STAZIONE-APPALTANTE.PROFILO-COMMITTENTE",
+                                    "oggettoProtezione": "GENE.UFFINT.PROFCO",
+                                    "mnemonico": "G_PROFCO",
+                                    "mappingInput": "urlProfiloC"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "tipologia",
+                                    "label": "STAZIONE-APPALTANTE.TIPOLOGIA",
+                                    "oggettoProtezione": "GENE.UFFINT.TIPOIN",
+                                    "mnemonico": "G_TIPOIN",
+                                    "mappingInput": "tipologia",
+                                    "listCode": "TipologiaStazioneAppaltante"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "telefono",
+                                    "label": "STAZIONE-APPALTANTE.TELEFONO",
+                                    "oggettoProtezione": "GENE.UFFINT.TELEIN",
+                                    "mnemonico": "TELEIN",
+                                    "mappingInput": "telefono"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "fax",
+                                    "label": "STAZIONE-APPALTANTE.FAX",
+                                    "oggettoProtezione": "GENE.UFFINT.FAXEIN",
+                                    "mnemonico": "FAXEIN",
+                                    "mappingInput": "fax"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "email",
+                                    "label": "STAZIONE-APPALTANTE.EMAIL",
+                                    "oggettoProtezione": "GENE.UFFINT.EMAIIN",
+                                    "mnemonico": "EMAIIN",
+                                    "mappingInput": "email"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "codausa",
+                                    "label": "STAZIONE-APPALTANTE.CODAUSA",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "codausa"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

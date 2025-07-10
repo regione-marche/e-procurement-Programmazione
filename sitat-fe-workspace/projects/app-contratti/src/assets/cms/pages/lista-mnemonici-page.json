@@ -1,0 +1,187 @@
+{
+    "name": "lista-mnemonici-page",
+    "title": "TITLE.LISTA-MNEMONICI-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "lista-mnemonici-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-mnemonici-page",
+                "label": "BREADCRUMB.LISTA-MNEMONICI",
+                "slug": "lista-mnemonici-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "lista-mnemonici-page-content-root-section",
+            "selector": "sdk-lista-mnemonici-section",
+            "description": "Pagina lista mnemonici",
+            "classNames": "lista-mnemonici-section",
+            "settings": {
+                "classNames": "lista-mnemonici-index",
+                "sectionTitle": "TITLE.LISTA-MNEMONICI-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_MNEMONICI_LISTA",
+                            "type": "cancel"
+                        }
+                    ],
+                    "grid": {
+                        "showCurrentPageReport": true,
+                        "showCurrentRecordsReport": true,
+                        "navigable": true,
+                        "resizable": false,
+                        "debug": false,
+                        "sortable": {
+                            "allowUnsort": false,
+                            "mode": "single"
+                        },
+                        "sort": [
+                            {
+                                "field": "c0c_mne_ber",
+                                "dir": "asc"
+                            }
+                        ],
+                        "pageable": {
+                            "buttonCount": 50,
+                            "info": true,
+                            "pageSizes": [
+                                50,
+                                100,
+                                500
+                            ],
+                            "type": "numeric"
+                        },
+                        "pageSize": 50,
+                        "toolbar": {
+                            "position": "top",
+                            "actions": []
+                        },
+                        "columns": [
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-MNEMONICO.T",
+                                "field": "c0c_tip",
+                                "width": 75,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-MNEMONICO.C",
+                                "field": "c0c_chi",
+                                "width": 75,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-MNEMONICO.ENTITA",
+                                "field": "coc_mne_uni_entita",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-MNEMONICO.CAMPO",
+                                "field": "coc_mne_uni_campo",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-MNEMONICO.MNEMONICO",
+                                "field": "c0c_mne_ber",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-MNEMONICO.DESCRIZIONE",
+                                "field": "coc_des",
+                                "width": 150,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-MNEMONICO.FORM",
+                                "field": "c0c_fs",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-MNEMONICO.TAB",
+                                "field": "c0c_tab1",
+                                "width": 75,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-MNEMONICO.DOM",
+                                "field": "coc_dom",
+                                "width": 75,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

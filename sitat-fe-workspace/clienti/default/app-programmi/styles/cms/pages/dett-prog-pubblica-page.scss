@@ -1,0 +1,55 @@
+@import "../app/app-vars.scss";
+
+.row-pubblicazione {
+    padding: 1rem;
+
+    .clickable {
+        @extend %color-base;
+    }
+}
+
+.check-pubb-sidebar {
+    @extend %check-pubb-sidebar-color;
+    max-width: 500px;
+
+    .check-pubblicazione-section {
+        .section-title-detail {
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            padding: 1rem 0;
+        }
+
+        .check-panel-row {
+            padding: 1rem 0;
+        }
+
+        .check-pubb-table {
+            margin: 1rem 0;
+
+            th {
+                @extend %check-pubb-sidebar-th-color;
+            }
+
+            td {
+                font-size: 18px;
+                padding: 0.5rem;
+            }
+
+            .check-pubb-table-divider {
+                border-bottom: 1px solid grey;
+            }
+
+            tbody tr td {
+                word-break: break-all;
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width: 499px) {
+    .check-pubb-sidebar {
+        width: 100% !important;
+    }
+}

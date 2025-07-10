@@ -1,0 +1,39 @@
+<div [class]="config.classNames" *ngIf="isReady">
+    <h1 class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</h1>
+    <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+    <div class="messages-box" #infoBox></div>
+    <div class="messages-box" #messages></div>
+
+    <div class="sdk-uffint-report-container" style="width: 100%;">
+        <div class="sdk-uffint-report-content" style="width: 100%;">
+            <table class="uffint-report-container" style="width: 100%;"
+                *ngIf="uffIntReport != null && uffIntReport.length > 0"
+                [attr.aria-label]="'TITLE.STAZIONI-APPALTANTI-UTENTE-PAGE' | translate">
+                <thead>
+                    <tr>
+                        <th>{{ 'SDK-GESTIONE-REPORT-UFFINT.CODICE' | translate }}</th>
+                        <th>{{ 'SDK-GESTIONE-REPORT-UFFINT.DENOMINAZIONE' | translate }}</th>
+                        <th>{{ 'SDK-GESTIONE-REPORT-UFFINT.CODICE-FISCALE' | translate }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="uffint-report-item"
+                        *ngFor="let sa of uffIntReport; trackBy: trackByCode">
+                        <td>{{ sa.codice }}</td>
+                        <td>{{ sa.denominazione }}</td>
+                        <td>{{ sa.codiceFiscale }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="empty-list"
+                *ngIf="uffIntReport == null || (uffIntReport != null && uffIntReport.length == 0)">
+                {{ 'SDK-GESTIONE-REPORT-UFFINT.EMPTY' | translate }}
+            </div>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+    <sdk-dialog [config]="dialogConfigObs"></sdk-dialog>
+</div>

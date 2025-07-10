@@ -1,0 +1,133 @@
+{
+    "name": "nuovo-cdc-page",
+    "title": "TITLE.NUOVO-CDC-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "nuovo-cdc-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-archivio-cdc-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-ARCHIVIO-CDC",
+                "slug": "ricerca-avanzata-archivio-cdc-page"
+            },
+            {
+                "code": "lista-archivio-cdc-page",
+                "label": "BREADCRUMB.LISTA-ARCHIVIO-CDC",
+                "slug": "lista-archivio-cdc-page"
+            },
+            {
+                "code": "nuovo-cdc-page",
+                "label": "BREADCRUMB.NUOVO-CDC",
+                "slug": "nuovo-cdc-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "nuovo-cdc-page-content-root-section",
+            "selector": "nuovo-cdc-section",
+            "description": "Pagina di nuovo centro di costo",
+            "classNames": "nuovo-cdc-section",
+            "settings": {
+                "classNames": "nuovo-cdc-index",
+                "sectionTitle": "TITLE.NUOVO-CDC-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-archivio-cdc",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_COMMONS_LISTA_CDC",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-cdc",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_COMMONS_CDC"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "CENTRO-DI-COSTO.GENERAL-DATA.GENERAL-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "codice-centro-costo",
+                                    "label": "CENTRO-DI-COSTO.GENERAL-DATA.CODICE",
+                                    "oggettoProtezione": "W9.CENTRICOSTO.CODCENTRO",
+                                    "mnemonico": "W9CCCODICE",
+                                    "mappingOutput": "codiceCentro",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "CENTRO-DI-COSTO.GENERAL-DATA.VALIDATORS.CODICE-CENTRO-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": 40
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "denominazione-centro-di-costo",
+                                    "label": "CENTRO-DI-COSTO.GENERAL-DATA.DENOMINAZIONE",
+                                    "oggettoProtezione": "W9.CENTRICOSTO.DENOMCENTRO",
+                                    "mnemonico": "W9CCDENOM",
+                                    "mappingOutput": "denominazione",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "CENTRO-DI-COSTO.GENERAL-DATA.VALIDATORS.DENOMINAZIONE-CENTRO-OBBLIGATORIA"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": 250
+                                },
+                                {
+                                    "type": "TEXTAREA",
+                                    "code": "note-cdc",
+                                    "label": "CENTRO-DI-COSTO.GENERAL-DATA.NOTE",
+                                    "oggettoProtezione": "W9.CENTRICOSTO.NOTE",
+                                    "mnemonico": "W9CCNOTE",
+                                    "mappingOutput": "note",
+                                    "maxLength": 2000
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tipologia-cdc",
+                                    "label": "CENTRO-DI-COSTO.GENERAL-DATA.TIPOLOGIA",
+                                    "oggettoProtezione": "W9.CENTRICOSTO.TIPOLOGIA",
+                                    "mnemonico": "W9CCTIPO",
+                                    "mappingOutput": "tipologia",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "TipologiaCC"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,115 @@
+{
+    "name": "lista-elenco-impr-inv-parte-smartcig-page",
+    "title": "TITLE.LISTA-ELENCO-IMPR-INV-PARTE-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/lista-elenco-impr-inv-parte-page.css"
+    ],
+    "settings": {
+        "page": "lista-elenco-impr-inv-parte-smartcig-page",
+        "breadcrumbs": [
+             {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "dettaglio-smartcig-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "dettaglio-smartcig-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            }
+        ],
+        "menuTabs": [
+            {
+                "code": "dati-generali",
+                "title": "DETTAGLIO-GARA.TABS.DATI-GENERALI",
+
+                "slug": "dettaglio-smartcig-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS"
+            },
+            {
+                "code": "imprese-partecipanti",
+                "title": "DETTAGLIO-GARA.TABS.IMPRESE-PARTECIPANTI",
+                "slug": "lista-elenco-impr-inv-parte-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS", 
+                "oggettoProtezione": "W9.SMARTCIG-scheda.IMPRESE",
+                "active": true
+            },
+            {
+                "code": "pubblicazioni",
+                "title": "DETTAGLIO-GARA.TABS.PUBBLICA",
+                "slug": "pubblica-smartcig-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "oggettoProtezione": "W9.SMARTCIG-scheda.INVII"
+            },
+            {
+                "code": "lista-atti",
+                "title": "DETTAGLIO-GARA.TABS.LISTA-ATTI",
+                "slug": "lista-atti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS"
+            }          
+        ]
+    },
+    "sections": [
+        {
+            "id": "lista-elenco-impr-inv-parte-page-content-root-section",
+            "selector": "lista-elenco-impr-inv-parte-section",
+            "description": "Pagina di elenco imprese invitate/partecipanti",
+            "classNames": "lista-elenco-impr-inv-parte-section",
+            "settings": {
+                "classNames": "lista-elenco-impr-inv-parte-index", 
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-dettaglio-smartcig",
+                            "label": "BUTTONS.BACK",
+                            "icon": "fas fa-chevron-left",
+                            "provider": "APP_GARE_LISTA_FASI"
+                        },
+                        {
+                            "code": "go-to-nuova-impresa",
+                            "label": "BUTTONS.NUOVO",
+                            "icon": "fas fa-plus",
+                            "provider": "APP_GARE_FASE_ELENCO_IMPR_INV_PARTE_PROVIDER",
+                            "oggettoProtezione": "INS.*"
+                        }
+                    ],
+                    "buttonsRO": [
+                        {
+                            "code": "back-to-dettaglio-smartcig",
+                            "label": "BUTTONS.BACK",
+                            "icon": "fas fa-chevron-left",
+                            "provider": "APP_GARE_LISTA_FASI"
+                        }
+                    ],
+                    "sidebar": {
+                        "code": "sidebar",
+                        "position": "right",
+                        "width": 500,
+                        "classList": [
+                            "check-pubb-sidebar"
+                        ],
+                        "headerImage": "assets/images/app/logo.png",
+                        "component": "check-pubblicazione-widget",
+                        "componentConfig": {}
+                    },
+                    "provider": "APP_GARE_FASE_ELENCO_IMPR_INV_PARTE_PROVIDER"
+                }
+            }
+        }
+    ]
+}

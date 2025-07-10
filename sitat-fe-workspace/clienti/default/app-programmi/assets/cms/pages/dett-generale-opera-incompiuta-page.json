@@ -1,0 +1,564 @@
+{
+    "name": "dett-generale-opera-incompiuta-page",
+    "title": "TITLE.DETTAGLIO-GENERALE-OPERE-INCOMPIUTE-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "app-programmi",
+    "styleUrls": [
+        "assets/cms/pages/dett-opera-incompiuta-page.css"
+    ],
+    "settings": {
+        "page": "dett-generale-opera-incompiuta-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-programmi-page",
+                "label": "BREADCRUMB.LISTA-PROGRAMMI",
+                "slug": "lista-programmi-page",
+                "additionalParams": "APP_PROGRAMMI_LISTA_PROGRAMMI_PARAMS"
+            },
+            {
+                "code": "dett-prog-opere-incompiute-page",
+                "label": "BREADCRUMB.DETTAGLIO-PROGRAMMA",
+                "slug": "dett-prog-opere-incompiute-page",
+                "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+            },
+            {
+                "code": "dett-generale-opera-incompiuta-page",
+                "label": "BREADCRUMB.DETTAGLIO-GENERALE-OPERE-INCOMPIUTE",
+                "slug": "dett-generale-opera-incompiuta-page",
+                "additionalParams": "APP_PROGRAMMI_DETTAGLIO_OPERA_INCOMPIUTA_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dett-generale-opera-incompiuta-page-content-root-section",
+            "selector": "dett-generale-opera-incompiuta-section",
+            "description": "Pagina di dettaglio dati generali opera incompiuta",
+            "classNames": "dett-generale-opera-incompiuta-section",
+            "settings": {
+                "classNames": "dett-generale-opera-incompiuta-index",
+                "sectionTitle": "TITLE.DETTAGLIO-GENERALE-OPERE-INCOMPIUTE-PAGE",
+                "menuTabs": [
+                    {
+                        "code": "dati-generali",
+                        "title": "OPERE-INCOMPIUTE.TAB.DATI-GENERALI-TITLE",
+                        "active": true,
+                        "slug": "dett-generale-opera-incompiuta-page",
+                        "oggettoProtezione": "",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_OPERA_INCOMPIUTA_PARAMS"
+                    },
+                    {
+                        "code": "altri-dati",
+                        "title": "OPERE-INCOMPIUTE.TAB.ALTRI-DATI-TITLE",
+                        "slug": "dett-altri-dati-opera-incompiuta-page",
+                        "oggettoProtezione": "",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_OPERA_INCOMPIUTA_PARAMS"
+                    }
+                ],
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_PROGRAMMI_DETTAGLIO_OPERA_INCOMPIUTA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "update-generale",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_PROGRAMMI_DETTAGLIO_OPERA_INCOMPIUTA",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "readOnlyButtons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_PROGRAMMI_DETTAGLIO_OPERA_INCOMPIUTA",
+                            "type": "cancel"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "OPERE-INCOMPIUTE.DATI-GENERALI.GENERAL-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "cup",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.CUP",
+                                    "oggettoProtezione": "PIANI.OITRI.CUP",
+                                    "mnemonico": "CUPOITRIPIA",
+                                    "mappingInput": "cup",
+                                    "mappingOutput": "cup"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "descrizione-opera",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.DESCRIZIONE",
+                                    "oggettoProtezione": "PIANI.OITRI.DESCRIZIONE",
+                                    "mnemonico": "DESCROITRIP",
+                                    "mappingInput": "descrizione",
+                                    "mappingOutput": "descrizione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "determinazioni-amministrazione",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.DETERMINAZIONI-AMMINISTRAZIONE",
+                                    "oggettoProtezione": "PIANI.OITRI.DETERMINAZIONI",
+                                    "mnemonico": "DETERMOITRI",
+                                    "mappingInput": "determinazioni",
+                                    "mappingOutput": "determinazioni",
+                                    "listCode": "Determinazioni"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "ambito-interesse",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.AMBITO-INTERESSE",
+                                    "oggettoProtezione": "PIANI.OITRI.AMBITOINT",
+                                    "mnemonico": "AMBIINTOITR",
+                                    "mappingInput": "ambitoInt",
+                                    "mappingOutput": "ambitoInt",
+                                    "listCode": "Ambito"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "importi-data",
+                            "label": "OPERE-INCOMPIUTE.DATI-GENERALI.IMPORTI-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "anno-ultimo-qe",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.ANNO-ULTIMO-QE",
+                                    "oggettoProtezione": "PIANI.OITRI.ANNOULTQE",
+                                    "mnemonico": "ANNULTQEOIT",
+                                    "mappingInput": "annoUltimoQe",
+                                    "mappingOutput": "annoUltimoQe"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "importo-complessivo-intervento",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.IMPORTO-COMPLESSIVO-INTERVENTO",
+                                    "oggettoProtezione": "PIANI.OITRI.IMPORTOINT",
+                                    "mnemonico": "IMPINTOITRP",
+                                    "mappingInput": "importoInt",
+                                    "mappingOutput": "importoInt",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "importo-complessivo-lavori",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.IMPORTO-COMPLESSIVO-LAVORI",
+                                    "oggettoProtezione": "PIANI.OITRI.IMPORTOLAV",
+                                    "mnemonico": "IMPLAVOITRP",
+                                    "mappingInput": "importoLav",
+                                    "mappingOutput": "importoLav",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "importo-ultimo-sal",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.IMPORTO-ULTIMO-SAL",
+                                    "oggettoProtezione": "PIANI.OITRI.IMPORTOSAL",
+                                    "mnemonico": "IMPSALOITRP",
+                                    "mappingInput": "importoSal",
+                                    "mappingOutput": "importoSal",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "oneri-ultimazione-lavori",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.ONERI-ULTIMAZIONE-LAVORI",
+                                    "oggettoProtezione": "PIANI.OITRI.ONERIULTIM",
+                                    "mnemonico": "ONERULTOITR",
+                                    "mappingInput": "oneriUlt",
+                                    "mappingOutput": "oneriUlt",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "percentuale-avanzamento-lavori",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.PERCENTUALE-AVANZAMENTO-LAVORI",
+                                    "oggettoProtezione": "PIANI.OITRI.AVANZAMENTO",
+                                    "mnemonico": "AVANZOITRIP",
+                                    "mappingInput": "avanzamento",
+                                    "mappingOutput": "avanzamento"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "caratteristiche-data",
+                            "label": "OPERE-INCOMPIUTE.DATI-GENERALI.CARATTERISTICHE-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "causa-opera-incompiuta",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.CAUSA-OPERA-INCOMPIUTA",
+                                    "oggettoProtezione": "PIANI.OITRI.CAUSA",
+                                    "mnemonico": "CAUSAOITRIP",
+                                    "mappingInput": "causa",
+                                    "mappingOutput": "causa",
+                                    "listCode": "Causa"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "stato-realizzazione",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.STATO-REALIZZAZIONE",
+                                    "oggettoProtezione": "PIANI.OITRI.STATOREAL",
+                                    "mnemonico": "STATOREALOIT",
+                                    "mappingInput": "statoReal",
+                                    "mappingOutput": "statoReal",
+                                    "listCode": "StatoRealizzazione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "parte-infrastruttura-rete",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.PARTE-INFRASTRUTTURA-RETE",
+                                    "oggettoProtezione": "PIANI.OITRI.INFRASTRUTTURA",
+                                    "mnemonico": "INFRASTROIT",
+                                    "mappingInput": "infrastruttura",
+                                    "mappingOutput": "infrastruttura",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "HIDDEN",
+                                    "code": "parte-infrastruttura-rete-hidden",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.PARTE-INFRASTRUTTURA-RETE",
+                                    "mappingInput": "infrastruttura",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "discontinuitaRete",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.DISCONTINUITA",
+                                    "oggettoProtezione": "PIANI.OITRI.DISCONTINUITA_RETE",
+                                    "mnemonico": "DISCRETEOITRI",
+                                    "listCode": "sino",
+                                    "mappingInput": "discontinuitaRete",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "parte-infrastruttura-rete-hidden": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "fruibile-parzialmente",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.FRUIBILE-PARZIALMENTE",
+                                    "oggettoProtezione": "PIANI.OITRI.FRUIBILE",
+                                    "mnemonico": "FRUIBOITRIP",
+                                    "mappingInput": "fruibile",
+                                    "mappingOutput": "fruibile",
+                                    "listCode": "sino"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "utilizzo-data",
+                            "label": "OPERE-INCOMPIUTE.DATI-GENERALI.UTILIZZO-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "utilizzo-ridimensionato",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.UTILIZZO-RIDIMENSIONATO",
+                                    "oggettoProtezione": "PIANI.OITRI.UTILIZZORID",
+                                    "mnemonico": "UTILRIDOITR",
+                                    "mappingInput": "utilizzoRid",
+                                    "mappingOutput": "utilizzoRid",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "destinazione-uso",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.DESTINAZIONE-USO",
+                                    "oggettoProtezione": "PIANI.OITRI.DESTINAZIONEUSO",
+                                    "mnemonico": "DESTUSOOITR",
+                                    "mappingInput": "destinazioneUso",
+                                    "mappingOutput": "destinazioneUso",
+                                    "listCode": "DestinazioneUso"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "cessione-realizzazione-altra-opera",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.CESSIONE-REALIZZAZIONE-ALTRA-OPERA",
+                                    "oggettoProtezione": "PIANI.OITRI.CESSIONE",
+                                    "mnemonico": "CESSOITRIPI",
+                                    "mappingInput": "cessione",
+                                    "mappingOutput": "cessione",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "prevista-vendita",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.PREVISTA-VENDITA",
+                                    "oggettoProtezione": "PIANI.OITRI.VENDITA",
+                                    "mnemonico": "VENDOITRIPI",
+                                    "mappingInput": "vendita",
+                                    "mappingOutput": "vendita",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "demolizione",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.DEMOLIZIONE",
+                                    "oggettoProtezione": "PIANI.OITRI.DEMOLIZIONE",
+                                    "mnemonico": "DEMOLOITRIP",
+                                    "listCode": "sino",
+                                    "mappingInput": "demolizione",
+                                    "mappingOutput": "demolizione",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "prevista-vendita": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "oneri-sito",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.ONERI-SITO",
+                                    "oggettoProtezione": "PIANI.OITRI.ONERI_SITO",
+                                    "mnemonico": "ONESIOITRP",
+                                    "mappingInput": "oneriSito",
+                                    "mappingOutput": "oneriSito",
+                                    "visibleCondition": {
+                                        "or": {
+                                            "demolizione": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "immobili-data",
+                            "label": "OPERE-INCOMPIUTE.DATI-GENERALI.IMMOBILI-DATA",
+                            "visibleCondition": {
+                                "or": {
+                                    "cessione-realizzazione-altra-opera": {
+                                        "values": [
+                                            {
+                                                "value": "1",
+                                                "operation": "="
+                                            }
+                                        ],
+                                        "visible": false
+                                    },
+                                    "prevista-vendita": {
+                                        "values": [
+                                            {
+                                                "value": "1",
+                                                "operation": "="
+                                            }
+                                        ],
+                                        "visible": false
+                                    }
+                                }
+                            },
+                            "fieldSections": [
+                                {
+                                    "type": "FORM-GROUP",
+                                    "code": "immobili-data-group",
+                                    "label": "",
+                                    "minGroupsNumber": 0,
+                                    "maxGroupsNumber": -1,
+                                    "mappingInput": "immobili",
+                                    "mappingOutput": "immobili",
+                                    "defaultFormGroupFields": [
+                                        {
+                                            "type": "TEXT",
+                                            "code": "id-immobile",
+                                            "label": "OPERE-INCOMPIUTE.DATI-GENERALI.IMMOBILE.PROGRESSIVO-IMMOBILE",
+                                            "mappingInput": "id",
+                                            "mappingOutput": "id"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "cui-immobile",
+                                            "label": "OPERE-INCOMPIUTE.DATI-GENERALI.IMMOBILE.CODICE-UNIVOCO",
+                                            "oggettoProtezione": "PIANI.IMMTRAI.CUIIMM",
+                                            "mnemonico": "T2CUIIMM",
+                                            "mappingInput": "cui",
+                                            "mappingOutput": "cui"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "descrizione-immobile",
+                                            "label": "IMMOBILE.DESCRIZIONE",
+                                            "oggettoProtezione": "PIANI.IMMTRAI.DESIMM",
+                                            "mnemonico": "T2IDESIMM",
+                                            "mappingInput": "descrizione",
+                                            "mappingOutput": "descrizione"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "comune-immobile",
+                                            "label": "IMMOBILE.COMUNE",
+                                            "oggettoProtezione": "PIANI.IMMTRAI.COMIST",
+                                            "mappingInput": "",
+                                            "mappingOutput": ""
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "provincia-immobile",
+                                            "label": "IMMOBILE.PROVINCIA",
+                                            "oggettoProtezione": "PIANI.IMMTRAI.COMIST",
+                                            "mappingInput": "",
+                                            "mappingOutput": ""
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "codice-istat-immobile",
+                                            "label": "IMMOBILE.CODICE-ISTAT",
+                                            "oggettoProtezione": "PIANI.IMMTRAI.COMIST",
+                                            "mnemonico": "T2COMIST",
+                                            "mappingInput": "codIstat",
+                                            "mappingOutput": "codIstat"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "codice-nuts",
+                                            "label": "IMMOBILE.NUTS",
+                                            "oggettoProtezione": "PIANI.IMMTRAI.NUTS",
+                                            "mnemonico": "T2NUTS01",
+                                            "mappingInput": "nuts",
+                                            "mappingOutput": "nuts"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "trasferimento-titolo-corrispettivo",
+                                            "label": "IMMOBILE.TRASFERIMENTO-TITOLO-CORRISPETTIVO",
+                                            "oggettoProtezione": "PIANI.IMMTRAI.TITCOR",
+                                            "mnemonico": "T2TITCOR",
+                                            "mappingInput": "trasfImmCorrisp",
+                                            "mappingOutput": "trasfImmCorrisp",
+                                            "listCode": "TrasferimentoImmobile"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "immobile-disponibile-art-21",
+                                            "label": "OPERE-INCOMPIUTE.DATI-GENERALI.IMMOBILE.IMMOBILE-DISPONIBILE-ART-21",
+                                            "oggettoProtezione": "PIANI.IMMTRAI.IMMDISP",
+                                            "mnemonico": "T2IMMDIS",
+                                            "mappingInput": "dirittoGodimento",
+                                            "mappingOutput": "dirittoGodimento",
+                                            "listCode": "ImmobileDisponibile"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "incluso-programma-dismissione",
+                                            "label": "IMMOBILE.INCLUSO-PROGRAMMA-DISMISSIONE",
+                                            "oggettoProtezione": "PIANI.IMMTRAI.PROGDISM",
+                                            "mnemonico": "T2PROGDI",
+                                            "mappingInput": "progDismiss",
+                                            "mappingOutput": "progDismiss",
+                                            "listCode": "ProgrammaDismissione"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "tipo-disponibilita",
+                                            "label": "IMMOBILE.TIPO-DISPONIBILITA",
+                                            "oggettoProtezione": "PIANI.IMMTRAI.TIPDISP",
+                                            "mnemonico": "T2TIPDIS",
+                                            "mappingInput": "tipoDisp",
+                                            "mappingOutput": "tipoDisp",
+                                            "listCode": "TipoDisponibilita"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "valore-stimato-primo-anno",
+                                            "label": "IMMOBILE.VALORE-STIMATO-PRIMO-ANNO",
+                                            "oggettoProtezione": "PIANI.IMMTRAI.VA1IMM",
+                                            "mnemonico": "T2IVA1INT",
+                                            "mappingInput": "valStimato1",
+                                            "mappingOutput": "valStimato1",
+                                            "currency": true
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "valore-stimato-secondo-anno",
+                                            "label": "IMMOBILE.VALORE-STIMATO-SECONDO-ANNO",
+                                            "oggettoProtezione": "PIANI.IMMTRAI.VA2IMM",
+                                            "mnemonico": "T2IVA2INT",
+                                            "mappingInput": "valStimato2",
+                                            "mappingOutput": "valStimato2",
+                                            "currency": true
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "valore-stimato-terzo-anno",
+                                            "label": "IMMOBILE.VALORE-STIMATO-TERZO-ANNO",
+                                            "oggettoProtezione": "PIANI.IMMTRAI.VA3IMM",
+                                            "mnemonico": "T2IVA3INT",
+                                            "mappingInput": "valStimato3",
+                                            "mappingOutput": "valStimato3",
+                                            "currency": true
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "valore-stimato-annualita-successive",
+                                            "label": "IMMOBILE.VALORE-STIMATO-ANNUALITA-SUCCESSIVE",
+                                            "oggettoProtezione": "PIANI.IMMTRAI.VA9IMM",
+                                            "mnemonico": "T2IVA9INT",
+                                            "mappingInput": "valAnnoSucc",
+                                            "mappingOutput": "valAnnoSucc",
+                                            "currency": true
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "valore-stimato-immobile",
+                                            "label": "IMMOBILE.VALORE-STIMATO-IMMOBILE",
+                                            "oggettoProtezione": "PIANI.IMMTRAI.VALIMM",
+                                            "mnemonico": "T2IVALIMM",
+                                            "mappingInput": "valoreStimato",
+                                            "mappingOutput": "valoreStimato",
+                                            "currency": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

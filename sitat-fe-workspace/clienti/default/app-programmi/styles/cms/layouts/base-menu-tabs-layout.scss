@@ -1,0 +1,116 @@
+@import "../app/app-vars.scss";
+@import "./base/header-base.scss";
+@import "./base/footer-base.scss";
+
+sdk-element-loader.base-layout.sdk-layout-container2-section>div {
+    @include grid;
+    @include grid-nowrap;
+    @include grid-left;
+    @include grid-ca-stretch;
+    @include grid-va-stretch;
+}
+
+.layout-side-menu-tabs-section {
+    @extend %background-menu-tabs-sidebar;
+
+    .layout-side-menu-tabs {
+        height: 100%;
+        display: block;
+
+        .layout-side-menu-tabs-container {
+            height: 100%;
+
+            .layout-side-menu-tabs-content {
+                width: 20rem;
+                padding: 1rem 1rem 0 1rem;
+            }
+
+            .page-details {
+                padding: 1rem;
+                color: #033562;
+                font-weight: 700;
+                text-transform: none;
+                line-height: normal;
+                height: 4rem;
+                display: flex;
+                align-items: center;
+                font-size: 1.5rem;
+            }
+
+            .page-content {
+                @extend %background-sfondo-testo;
+                @extend %border-sfondo-testo;
+                box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+                border-radius: $std-border-radius;
+                height: calc(100% - 6rem);
+            }
+        }
+    }
+
+    a.p-panelmenu-header-link {
+        @extend %color-testo;
+    }
+}
+
+
+.sdk-layout-container3-section {
+    width: 100%;
+    padding: 0 1rem;
+    @extend %layout-side-tabs-body-color;
+    height: calc(100vh - 150px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+.layout-menu-tabs-section .layout-menu-tabs {
+    margin: 0 auto;
+    display: block;
+
+    .sdk-menu-tabs-config {
+        padding-top: 2rem;
+    }
+}
+
+.sdk-layout-root-section.base-layout>div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: stretch;
+}
+
+.sdk-layout-all-section.base-layout>div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: stretch;
+}
+
+.sdk-layout-container-section-no-scroll.base-layout {
+    width: calc(100% - 64px);
+    overflow: hidden;
+}
+
+.sdk-layout-header-menu-section.base-layout {
+    height: calc(100vh - 100px);
+    min-width: 64px;
+    width: auto;
+}
+
+.activator {
+    cursor: pointer;
+    min-width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+    &:hover {
+        @extend %e8e8e8-background;
+    }
+}

@@ -1,0 +1,45 @@
+{
+    "name": "lista-report-predefiniti-page",
+    "title": "TITLE.LISTA-REPORT-PREDEFINITI-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "lista-report-predefiniti-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-report-predefiniti-page",
+                "label": "BREADCRUMB.LISTA-REPORT-PREDEFINITI",
+                "slug": "lista-report-predefiniti-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "lista-report-predefiniti-page-content-root-section",
+            "selector": "sdk-lista-report-predefiniti-section",
+            "description": "Pagina per visualizzazione e ricerca report predefiniti",
+            "classNames": "sdk-lista-report-predefiniti-section",
+            "settings": {
+                "classNames": "lista-report-predefiniti-index",
+                "sectionTitle": "TITLE.LISTA-REPORT-PREDEFINITI-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_REPORT_PREDEFINITI_LISTA_REPORT_PROVIDER",
+                            "type": "cancel"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

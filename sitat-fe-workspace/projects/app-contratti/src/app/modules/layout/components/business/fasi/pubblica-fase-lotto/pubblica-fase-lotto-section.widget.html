@@ -1,0 +1,31 @@
+<div [class]="config.classNames" *ngIf="isReady">
+  <h1 class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</h1>
+  <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+  <div class="messages-box" #infoBox></div>
+
+  <div class="messages-box" #messages></div>
+  <div class="pf-container">
+    <div class="pf-content">
+      <div *ngIf="!pubblicazioni || pubblicazioni.length === 0" class="empty-list">
+        {{ 'FLUSSOFASE.EMPTY-LIST' | translate }}</div>
+      <ng-container *ngIf="pubblicazioni && pubblicazioni.length > 0">
+        <div *ngFor="let pub of pubblicazioni; let i = index" class="row-pubblicazione">
+          <span>{{ getTipoPubblicazione(pub) | translate }}: </span>
+          <span>
+            <a class="clickable" sdkClick (aClick)="onFlussoClick(pub, i)" tabindex="0" role="button">
+              <b *ngIf="pub.dataInvio == null">{{ 'PUBBLICAZIONI.DATA-NON-DISPONIBILE' | translate }}</b>
+              <b *ngIf="pub.dataInvio != null">{{ pub.dataInvio | sdkDateFormat: config.locale.fullDateformat }}</b>
+            </a>
+          </span>
+        </div>
+      </ng-container>
+      <sdk-modal [config]="modalConfigObs"></sdk-modal>
+    </div>
+    <div class="buttons-row">
+      <sdk-button-group *ngIf="buttons !== undefined" [config]="buttonsSubj" (output)="onButtonClick($event)">
+      </sdk-button-group>
+    </div>
+    <sdk-sidebar [config]="sidebarConfigObs"></sdk-sidebar>
+  </div>
+</div>

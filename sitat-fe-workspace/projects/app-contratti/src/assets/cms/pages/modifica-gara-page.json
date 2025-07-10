@@ -1,0 +1,847 @@
+{
+    "name": "modifica-gara-page",
+    "title": "TITLE.MODIFICA-GARA-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "modifica-gara-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "dettaglio-gara-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "dettaglio-gara-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "modifica-gara-page",
+                "label": "BREADCRUMB.MODIFICA-GARA",
+                "slug": "modifica-gara-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-gara-page-content-root-section",
+            "selector": "modifica-gara-section",
+            "description": "Pagina di modifica gara",
+            "classNames": "modifica-gara-section",
+            "settings": {
+                "classNames": "modifica-gara-index",
+                "sectionTitle": "TITLE.MODIFICA-GARA-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-dettaglio-gara",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_GARE_LISTA_GARE",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-gara",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_GARA"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "GARA.GENERAL-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "oggetto",
+                                    "label": "GARA.GENERAL-DATA.OGGETTO",
+                                    "oggettoProtezione": "W9.W9GARA.OGGETTO",
+                                    "mnemonico": "W3OGGETTO1",
+                                    "mappingInput": "oggetto"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "situazione",
+                                    "label": "GARA.GENERAL-DATA.SITUAZIONE",
+                                    "oggettoProtezione": "W9.W9GARA.SITUAZIONE",
+                                    "mnemonico": "W9GASITUAZ",
+                                    "mappingInput": "situazione",
+                                    "listCode": "Situazione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "provenienza-dato",
+                                    "label": "GARA.GENERAL-DATA.PROVENIENZA-DATO",
+                                    "oggettoProtezione": "W9.W9GARA.PROV_DATO",
+                                    "mnemonico": "W9GAPDATO",
+                                    "mappingInput": "provenienzaDato",
+                                    "listCode": "Provenienza"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "id-gara",
+                                    "label": "GARA.GENERAL-DATA.ID-GARA",
+                                    "oggettoProtezione": "W9.W9GARA.IDAVGARA",
+                                    "mnemonico": "W3IDGARA",
+                                    "mappingInput": "identificativoGara"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tipo-settore",
+                                    "label": "GARA.GENERAL-DATA.TIPO-SETTORE",
+                                    "oggettoProtezione": "W9.W9GARA.FLAG_ENTE_SPECIALE",
+                                    "mnemonico": "W9GAFLAG_ENT",
+                                    "mappingInput": "tipoSettore",
+                                    "mappingOutput": "tipoSettore",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "Settore"
+                                },{
+                                    "type": "HIDDEN",
+                                    "code": "versione-simog",
+                                    "mappingInput": "versioneSimog"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "id-modo-indizione",
+                                    "label": "GARA.GENERAL-DATA.ID-MODO-INDIZIONE",
+                                    "oggettoProtezione": "W9.W9GARA.ID_MODO_INDIZIONE",
+                                    "mnemonico": "W9GAMOD_IND",
+                                    "mappingInput": "modalitaIndizione",
+                                    "listCode": "Indizione",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "and": {
+                                            "tipo-settore": {
+                                                "values": [
+                                                    {
+                                                        "value": "S",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            },
+                                            "versione-simog": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "!="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "modalita-indizione-allegato-9",
+                                    "label": "GARA.GENERAL-DATA.ALLEGATO-IX",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "modalitaIndizioneAllegato9",
+                                    "listCode": "ModalitaIndizione9"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "modalita-realizzazione",
+                                    "label": "GARA.GENERAL-DATA.MODALITA-REALIZZAZIONE",
+                                    "oggettoProtezione": "W9.W9GARA.TIPO_APP",
+                                    "mnemonico": "W9GNTIPOAPP",
+                                    "mappingInput": "tipoApp",
+                                    "mappingOutput": "tipoApp",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "TipoRealizzazione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "cig-accquadro",
+                                    "label": "GARA.GENERAL-DATA.CIG-ACCQUADRO",
+                                    "oggettoProtezione": "W9.W9GARA.CIG_ACCQUADRO",
+                                    "mnemonico": "W9GACIGAQ",
+                                    "mappingInput": "cigQuadro",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "modalita-realizzazione": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    },
+                                                    {
+                                                        "value": "11",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "somma-urgenza",
+                                    "label": "GARA.GENERAL-DATA.SOMMA-URGENZA",
+                                    "oggettoProtezione": "W9.W9GARA.SOMMA_URGENZA",
+                                    "mnemonico": "W3GASOMMUR",
+                                    "mappingInput": "sommaUrgenza",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "gara-urgenza",
+                                    "label": "GARA.GENERAL-DATA.GARA-URGENZA",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "motivoSommaUrgenza",
+                                    "listCode": "GaraUrgenza"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-gara",
+                                    "label": "GARA.GENERAL-DATA.IMPORTO-GARA",
+                                    "oggettoProtezione": "W9.W9GARA.IMPORTO_GARA",
+                                    "mnemonico": "W3I_GARA",
+                                    "mappingInput": "importoGara",
+                                    "mappingOutput": "importoGara",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "numero-lotti",
+                                    "label": "GARA.GENERAL-DATA.NUMERO-LOTTI",
+                                    "oggettoProtezione": "W9.W9GARA.NLOTTI",
+                                    "mnemonico": "W3NLOTTI",
+                                    "mappingInput": "numLotti",
+                                    "mappingOutput": "numLotti",
+                                    "maxLength": 4
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-creazione",
+                                    "label": "GARA.GENERAL-DATA.DATA-CREAZIONE",
+                                    "oggettoProtezione": "W9.W9GARA.DATA_CREAZIONE",
+                                    "mnemonico": "W9GARADATACREAZ",
+                                    "mappingInput": "dataCreazione",
+                                    "mappingOutput": "dataCreazione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-pubblicazione",
+                                    "label": "GARA.GENERAL-DATA.DATA-PUBBLICAZIONE",
+                                    "oggettoProtezione": "W9.W9GARA.DATA_PUBBLICAZIONE",
+                                    "mnemonico": "W9GADATPUB",
+                                    "mappingInput": "dataPubblicazione",
+                                    "mappingOutput": "dataPubblicazione"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-lettera-invito",
+                                    "label": "GARA.GENERAL-DATA.DATA-LETTERA-INVITO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "dataLetteraInvito",
+                                    "mappingOutput": "dataLetteraInvito"
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "responsabile",
+                                    "label": "GARA.GENERAL-DATA.RUP",
+                                    "oggettoProtezione": "W9.W9GARA_ENTINAZ.RUP",
+                                    "mnemonico": "W9GNRUP",
+                                    "itemsProviderCode": "APP_AVVISI_RUP_AVVISO",
+                                    "mappingInput": "tecnico",
+                                    "mappingOutput": "codiceTecnico",
+                                    "noDataLabel": "NO-DATA",
+                                    "newEditAvailable": true,
+                                    "newItemButton": {
+                                        "code": "new",
+                                        "label": "BUTTONS.NUOVO",
+                                        "icon": "mgg-icons-crud-create",
+                                        "oggettoProtezione": "INS.*"
+                                    },
+                                    "editItemButton": {
+                                        "code": "edit",
+                                        "label": "BUTTONS.UPDATE",
+                                        "icon": "mgg-icons-crud-edit",
+                                        "oggettoProtezione": "MOD.*"
+                                    },
+                                    "modalComponent": "rup-modal-widget",
+                                    "modalComponentConfig": "rupModalConfig",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "ruolo-utente": {
+                                                "values": [
+                                                    {
+                                                        "value": "A",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "HIDDEN",
+                                    "code": "drp",
+                                    "label": "GARA.GENERAL-DATA.DRP",
+                                    "oggettoProtezione": "W9.W9GARA.DRP",
+                                    "mnemonico": "W9GADRP",
+                                    "itemsProviderCode": "APP_AVVISI_RUP_AVVISO",
+                                    "mappingInput": "delegato",
+                                    "mappingOutput": "drp",
+                                    "noDataLabel": "NO-DATA",
+                                    "newEditAvailable": true,
+                                    "newItemButton": {
+                                        "code": "new",
+                                        "label": "BUTTONS.NUOVO",
+                                        "icon": "mgg-icons-crud-create",
+                                        "oggettoProtezione": "INS.*"
+                                    },
+                                    "editItemButton": {
+                                        "code": "edit",
+                                        "label": "BUTTONS.UPDATE",
+                                        "icon": "mgg-icons-crud-edit",
+                                        "oggettoProtezione": "MOD.*"
+                                    },
+                                    "modalComponent": "rup-modal-widget",
+                                    "modalComponentConfig": "rupModalConfig",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "ruolo-utente": {
+                                                "values": [
+                                                    {
+                                                        "value": "A",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "HIDDEN",
+                                    "code": "ruolo-utente",
+                                    "mappingInput": "ruoloUtente"
+                                },
+                                {
+                                    "type": "HIDDEN",
+                                    "code": "responsabile-hidden",
+                                    "label": "GARA.GENERAL-DATA.RUP",
+                                    "mappingInput": "tecnico.codice",
+                                    "mappingOutput": "codiceTecnico",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "ruolo-utente": {
+                                                "values": [
+                                                    {
+                                                        "value": "A",
+                                                        "operation": "!="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "responsabile-readonly",
+                                    "label": "GARA.GENERAL-DATA.RUP",
+                                    "mappingInput": "tecnico",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "ruolo-utente": {
+                                                "values": [
+                                                    {
+                                                        "value": "A",
+                                                        "operation": "!="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "ricostruzione-alluvione",
+                                    "label": "GARA.GENERAL-DATA.RICOSTRUZIONE-ALLUVIONE",
+                                    "oggettoProtezione": "W9.W9GARA.RIC_ALLUV",
+                                    "mnemonico": "W9GARICALLUV",
+                                    "mappingInput": "ricostruzioneAlluvione",
+                                    "mappingOutput": "ricostruzioneAlluvione",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "versione-simog": {
+                                                "values": [
+                                                    {
+                                                        "value": "6",
+                                                        "operation": "<"
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "cam",
+                                    "label": "GARA.GENERAL-DATA.CAM",
+                                    "oggettoProtezione": "W9.W9GARA.CAM",
+                                    "mnemonico": "W9GACAM",
+                                    "mappingInput": "dispArtDlgs",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "sisma",
+                                    "label": "GARA.GENERAL-DATA.SISMA",
+                                    "oggettoProtezione": "W9.W9GARA.SISMA",
+                                    "mnemonico": "W9GASISMA",
+                                    "mappingInput": "sisma",
+                                    "listCode": "sino"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "stazione-appaltante-data",
+                            "label": "GARA.STAZIONE-APPALTANTE-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "stazione-appaltante",
+                                    "label": "AVVISO.STAZIONE-APPALTANTE",
+                                    "mappingInput": "nominativoStazioneAppaltante",
+                                    "oggettoProtezione": "W9.AVVISO.CODEIN",
+                                    "mnemonico": "W3PACODEIN",
+                                    "link": true,
+                                    "modalComponent": "stazione-appaltante-modal-widget",
+                                    "modalComponentConfig": "stazioneAppaltanteModalConfig"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "codice-centro-costo",
+                                    "label": "GARA.STAZIONE-APPALTANTE-DATA.CODICE-CENTRO-COSTO",
+                                    "oggettoProtezione": "W9.W9GARA.IDCC",
+                                    "mnemonico": "W3GACC",
+                                    "mappingInput": "codiceCentroCosto",
+                                    "link": true,
+                                    "modalComponent": "cdc-modal-widget",
+                                    "modalComponentConfig": "cdcModalConfig"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "denominazione-centro-costo",
+                                    "label": "GARA.STAZIONE-APPALTANTE-DATA.DENOMINAZIONE-CENTRO-COSTO",
+                                    "oggettoProtezione": "W9.W9GARA.IDCC",
+                                    "mnemonico": "W3GACC",
+                                    "mappingInput": "nominativoCentroCosto",
+                                    "link": true,
+                                    "modalComponent": "cdc-modal-widget",
+                                    "modalComponentConfig": "cdcModalConfig"
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "ufficio",
+                                    "label": "GARA.STAZIONE-APPALTANTE-DATA.UFFICIO",
+                                    "oggettoProtezione": "W9.W9GARA.IDUFFICIO",
+                                    "mnemonico": "W9GAUFF",
+                                    "itemsProviderCode": "APP_GARE_UFFICI",
+                                    "mappingInput": "ufficio",
+                                    "mappingOutput": "ufficio",
+                                    "newEditAvailable": true,
+                                    "newItemButton": {
+                                        "code": "new",
+                                        "label": "BUTTONS.NUOVO",
+                                        "icon": "mgg-icons-crud-create",
+                                        "oggettoProtezione": "INS.*"
+                                    },
+                                    "editItemButton": {
+                                        "code": "edit",
+                                        "label": "BUTTONS.UPDATE",
+                                        "icon": "mgg-icons-crud-edit",
+                                        "oggettoProtezione": "MOD.*"
+                                    },
+                                    "modalComponent": "uff-modal-widget",
+                                    "modalComponentConfig": "uffModalRWConfig"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "indirizzo-sede-gara",
+                                    "label": "GARA.STAZIONE-APPALTANTE-DATA.INDIRIZZO-SEDE-GARA",
+                                    "oggettoProtezione": "W9.W9GARA.INDSEDE",
+                                    "mnemonico": "W9GAINDSEDE",
+                                    "mappingInput": "indirizzoSede",
+                                    "mappingOutput": "indirizzoSede",
+                                    "maxLength": 100
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "comune-sede-gara",
+                                    "label": "GARA.STAZIONE-APPALTANTE-DATA.COMUNE-SEDE-GARA",
+                                    "oggettoProtezione": "W9.W9GARA.COMSEDE",
+                                    "mnemonico": "W9GACOMSEDE",
+                                    "noDataLabel": "NO-DATA",
+                                    "mappingInput": "comuneSede",
+                                    "mappingOutput": "comuneSede",
+                                    "itemsProviderCode": "APP_GARE_COMUNI",
+                                    "minSearchCharacters": 2
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "provincia-sede-gara",
+                                    "label": "GARA.STAZIONE-APPALTANTE-DATA.PROVINCIA-SEDE-GARA",
+                                    "oggettoProtezione": "W9.W9GARA.PROSEDE",
+                                    "mnemonico": "W9GAPROSEDE",
+                                    "mappingInput": "provinciaSede",
+                                    "mappingOutput": "provinciaSede"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "durata-accordo-quadro",
+                                    "label": "GARA.STAZIONE-APPALTANTE-DATA.DURATA-ACCORDO-QUADRO",
+                                    "oggettoProtezione": "W9.W9GARA.DURATA_ACCQUADRO",
+                                    "mnemonico": "W9GADURACCQ",
+                                    "mappingInput": "durataAcquadro",
+                                    "mappingOutput": "durataAcquadro",
+                                    "decimals": 0,
+                                    "visible": false,
+                                    "visibleCondition": {                                        
+                                        "and": {
+                                            "modalita-realizzazione": {
+                                                "values": [
+                                                    {
+                                                        "value": "9",
+                                                        "operation": "="
+                                                    },
+                                                    {
+                                                        "value": "17",
+                                                        "operation": "="
+                                                    },
+                                                    {
+                                                        "value": "18",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "singleVisibleType": "or",
+                                                "visible": false
+                                            },
+                                            "versione-simog" :{ 
+                                                "values": [
+                                                {
+                                                    "value": "3",
+                                                    "operation": "<"
+                                                }]
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "flag-sa-agente",
+                                    "label": "GARA.STAZIONE-APPALTANTE-DATA.FLAG-SA-AGENTE",
+                                    "oggettoProtezione": "W9.W9GARA.FLAG_SA_AGENTE",
+                                    "mnemonico": "W3FLAG_SA",
+                                    "mappingInput": "flagSaAgente",
+                                    "mappingOutput": "flagSaAgente",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tipologia-sa",
+                                    "label": "GARA.STAZIONE-APPALTANTE-DATA.TIPOLOGIA-SA",
+                                    "oggettoProtezione": "W9.W9GARA.ID_TIPOLOGIA_SA",
+                                    "mnemonico": "W3ID_TIPOL",
+                                    "mappingInput": "tipologiaStazioneAppaltante",
+                                    "mappingOutput": "tipologiaStazioneAppaltante",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "TipologiaSA",
+                                    "visibleCondition": {
+                                        "and": {
+                                            "flag-sa-agente": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            },
+                                             "versione-simog": {
+                                                "values": [
+                                                    {
+                                                        "value": "5",
+                                                        "operation": "<"
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "denominazione-sa-agente",
+                                    "label": "GARA.STAZIONE-APPALTANTE-DATA.DENOMINAZIONE-SA-AGENTE",
+                                    "oggettoProtezione": "W9.W9GARA.DENOM_SA_AGENTE",
+                                    "mnemonico": "W3GASAAGENTE",
+                                    "mappingInput": "denomSoggStazioneAppaltante",
+                                    "mappingOutput": "denomSoggStazioneAppaltante",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "and": {
+                                            "flag-sa-agente": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    },
+                                    "maxLength": 254
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "codice-fiscale-sa-agente",
+                                    "label": "GARA.STAZIONE-APPALTANTE-DATA.CODICE-FISCALE-SA-AGENTE",
+                                    "oggettoProtezione": "W9.W9GARA.CF_SA_AGENTE",
+                                    "mnemonico": "W3GACFAGENTE",
+                                    "mappingInput": "cfAgenteStazioneAppaltante",
+                                    "mappingOutput": "cfAgenteStazioneAppaltante",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "and": {
+                                            "flag-sa-agente": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    },
+                                    "maxLength": 16
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tipologia-procedura",
+                                    "label": "GARA.STAZIONE-APPALTANTE-DATA.TIPOLOGIA-PROCEDURA",
+                                    "oggettoProtezione": "W9.W9GARA.TIPOLOGIA_PROCEDURA",
+                                    "mnemonico": "W9GATIPROC",
+                                    "mappingInput": "tipologiaProcedura",
+                                    "mappingOutput": "tipologiaProcedura",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "TipologiaProcedura",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "and": {
+                                            "flag-sa-agente": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            },
+                                             "versione-simog": {
+                                                "values": [
+                                                    {
+                                                        "value": "5",
+                                                        "operation": "<"
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "flag-centrale-stipula",
+                                    "label": "GARA.STAZIONE-APPALTANTE-DATA.FLAG-CENTRALE-STIPULA",
+                                    "oggettoProtezione": "W9.W9GARA.FLAG_CENTRALE_STIPULA",
+                                    "mnemonico": "W9GASTIPULA",
+                                    "mappingInput": "flagStipula",
+                                    "mappingOutput": "flagStipula",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino",
+                                    "visibleCondition": {
+                                        "and": {
+                                            "flag-sa-agente": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            },
+                                             "versione-simog": {
+                                                "values": [
+                                                    {
+                                                        "value": "5",
+                                                        "operation": "<"
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "pubblicita-gara-data",
+                            "oggettoProtezione": "W9.W9GARA-scheda.W9PUBB",
+                            "label": "PUBBLICITA-GARA.GENERAL-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "DATA_GUCE",
+                                    "label": "PUBBLICITA-GARA.GENERAL-DATA.DATA-GUCE",
+                                    "oggettoProtezione": "W9.W9PUBB.DATA_GUCE",
+                                    "mnemonico": "W3GUCE1",
+                                    "mappingInput": "pubblicitaGara.gazzettaUffEuropea",
+                                    "mappingOutput": "pubblicitaGara.gazzettaUffEuropea"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "DATA_GURI",
+                                    "label": "PUBBLICITA-GARA.GENERAL-DATA.DATA-GURI",
+                                    "oggettoProtezione": "W9.W9PUBB.DATA_GURI",
+                                    "mnemonico": "W3GURI1",
+                                    "mappingInput": "pubblicitaGara.gazzettaUffItaliana",
+                                    "mappingOutput": "pubblicitaGara.gazzettaUffItaliana"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "DATA_ALBO",
+                                    "label": "PUBBLICITA-GARA.GENERAL-DATA.DATA-ALBO",
+                                    "oggettoProtezione": "W9.W9PUBB.DATA_ALBO",
+                                    "mnemonico": "W3ALBO1",
+                                    "mappingInput": "pubblicitaGara.alboPretorioComuni",
+                                    "mappingOutput": "pubblicitaGara.alboPretorioComuni"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "QUOTIDIANI_NAZ",
+                                    "label": "PUBBLICITA-GARA.GENERAL-DATA.QUOTIDIANI-NAZ",
+                                    "oggettoProtezione": "W9.W9PUBB.QUOTIDIANI_NAZ",
+                                    "mnemonico": "W3NAZ1",
+                                    "decimals": 0,
+                                    "mappingInput": "pubblicitaGara.numQuotidianiNazionali",
+                                    "mappingOutput": "pubblicitaGara.numQuotidianiNazionali",
+                                    "maxLength": 5
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "QUOTIDIANI_REG",
+                                    "label": "PUBBLICITA-GARA.GENERAL-DATA.QUOTIDIANI-REG",
+                                    "oggettoProtezione": "W9.W9PUBB.QUOTIDIANI_REG",
+                                    "mnemonico": "W3REG1",
+                                    "decimals": 0,
+                                    "mappingInput": "pubblicitaGara.numQuotidianiLocali",
+                                    "mappingOutput": "pubblicitaGara.numQuotidianiLocali",
+                                    "maxLength": 5
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "PROFILO_COMMITTENTE",
+                                    "label": "PUBBLICITA-GARA.GENERAL-DATA.PROFILO-COMMITTENTE",
+                                    "oggettoProtezione": "W9.W9PUBB.PROFILO_COMMITTENTE",
+                                    "mnemonico": "W3PROFILO1",
+                                    "mappingInput": "pubblicitaGara.profiloCommittente",
+                                    "mappingOutput": "pubblicitaGara.profiloCommittente",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "SITO_MINISTERO_INF_TRASP",
+                                    "label": "PUBBLICITA-GARA.GENERAL-DATA.SITO-MINISTERO-INF-TRASP",
+                                    "oggettoProtezione": "W9.W9PUBB.SITO_MINISTERO_INF_TRASP",
+                                    "mnemonico": "W3MIN1",
+                                    "mappingInput": "pubblicitaGara.sitoMinisteriInfr",
+                                    "mappingOutput": "pubblicitaGara.sitoMinisteriInfr",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "SITO_OSSERVATORIO_CP",
+                                    "label": "PUBBLICITA-GARA.GENERAL-DATA.SITO-OSSERVATORIO-CP",
+                                    "oggettoProtezione": "W9.W9PUBB.SITO_OSSERVATORIO_CP",
+                                    "mnemonico": "W3OSS1",
+                                    "mappingInput": "pubblicitaGara.sitoOsservatorioContratti",
+                                    "mappingOutput": "pubblicitaGara.sitoOsservatorioContratti",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "DATA_BORE",
+                                    "label": "PUBBLICITA-GARA.GENERAL-DATA.DATA-BORE",
+                                    "oggettoProtezione": "W9.W9PUBB.DATA_BORE",
+                                    "mnemonico": "W3BORE",
+                                    "mappingInput": "pubblicitaGara.dataBollettino",
+                                    "mappingOutput": "pubblicitaGara.dataBollettino"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "PERIODICI",
+                                    "label": "PUBBLICITA-GARA.GENERAL-DATA.PERIODICI",
+                                    "oggettoProtezione": "W9.W9PUBB.PERIODICI",
+                                    "mnemonico": "W3PERIODIC",
+                                    "decimals": 0,
+                                    "mappingInput": "pubblicitaGara.numPeriodici",
+                                    "mappingOutput": "pubblicitaGara.numPeriodici",
+                                    "maxLength": 5
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

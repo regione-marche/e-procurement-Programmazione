@@ -1,0 +1,272 @@
+{
+    "name": "ricerca-utenti-page",
+    "title": "TITLE.RICERCA-UTENTI-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "ricerca-utenti-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-utenti-page",
+                "label": "BREADCRUMB.RICERCA-UTENTI",
+                "slug": "ricerca-utenti-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "ricerca-utenti-page-content-root-section",
+            "selector": "sdk-ricerca-utenti-section",
+            "description": "Pagina ricerca utenti",
+            "classNames": "ricerca-utenti-section",
+            "settings": {
+                "classNames": "ricerca-utenti-index",
+                "sectionTitle": "TITLE.RICERCA-UTENTI-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-button",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_UTENTI_SEARCH",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "clean-button",
+                            "label": "BUTTONS.CLEAN",
+                            "provider": "SDK_GESTIONE_UTENTI_SEARCH",
+                            "icon": "mgg-icons-data-unfiltered"
+                        },
+                        {
+                            "code": "search-button",
+                            "label": "BUTTONS.SEARCH",
+                            "provider": "SDK_GESTIONE_UTENTI_SEARCH",
+                            "icon": "mgg-icons-data-search"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "ricerca-utenti-data",
+                            "label": "SDK-RICERCA-UTENTI.RICERCA-UTENTI-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "HIDDEN",
+                                    "code": "ufficio-appartenenza-visible",
+                                    "label": "",
+                                    "mappingInput": "ufficioAppartenenzaVisible"
+                                },
+                                {
+                                    "type": "HIDDEN",
+                                    "code": "categoria-visible",
+                                    "label": "",
+                                    "mappingInput": "categoriaVisible"
+                                },
+                                {
+                                    "type": "HIDDEN",
+                                    "code": "utente-delegato",
+                                    "label": "",
+                                    "mappingInput": "utenteDelegato"
+                                },
+                                {
+                                    "type": "HIDDEN",
+                                    "code": "registrazione-login-cf",
+                                    "label": "",
+                                    "mappingInput": "registrazioneLoginCF"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "denominazione",
+                                    "label": "SDK-RICERCA-UTENTI.DENOMINAZIONE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingOutput": "denominazione",
+                                    "mappingInput": "denominazione"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "username",
+                                    "label": "SDK-RICERCA-UTENTI.USERNAME",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingOutput": "username",
+                                    "mappingInput": "username",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "registrazione-login-cf": {
+                                                "values": [
+                                                    {
+                                                        "value": null,
+                                                        "operation": "="
+                                                    },
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false,
+                                                "singleVisibleType": "or"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "username-CF",
+                                    "label": "SDK-RICERCA-UTENTI.USERNAME-CF",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingOutput": "usernameCF",
+                                    "mappingInput": "usernameCF",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "registrazione-login-cf": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "abilitato",
+                                    "label": "SDK-RICERCA-UTENTI.ABILITATO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "itemsProviderCode": "SDK_GESTIONE_UTENTI_TABELLATI_COMBO",
+                                    "listCode": "sino",
+                                    "mappingOutput": "abilitato",
+                                    "mappingInput": "abilitato"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "codice-fiscale",
+                                    "label": "SDK-RICERCA-UTENTI.CODICE-FISCALE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingOutput": "codiceFiscale",
+                                    "mappingInput": "codiceFiscale",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "registrazione-login-cf": {
+                                                "values": [
+                                                    {
+                                                        "value": null,
+                                                        "operation": "="
+                                                    },
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false,
+                                                "singleVisibleType": "or"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "email",
+                                    "label": "SDK-RICERCA-UTENTI.EMAIL",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingOutput": "email",
+                                    "mappingInput": "email"
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "ufficio-intestatario",
+                                    "label": "SDK-RICERCA-UTENTI.UFFICIO-INTESTATARIO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "ufficioIntestatario",
+                                    "mappingOutput": "ufficioIntestatarioKey",
+                                    "itemsProviderCode": "SDK_GESTIONE_UTENTI_UFFICIO_INTESTATARIO_AUTOCOMPLETE",
+                                    "noDataLabel": "NO-DATA",
+                                    "newEditAvailable": false
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "gestione-utenti",
+                                    "label": "SDK-RICERCA-UTENTI.GESTIONE-UTENTI",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "itemsProviderCode": "SDK_GESTIONE_UTENTI_TABELLATI_COMBO",
+                                    "listCode": "GestioneUtenti",
+                                    "mappingOutput": "gestioneUtenti",
+                                    "mappingInput": "gestioneUtenti"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "amministratore",
+                                    "label": "SDK-RICERCA-UTENTI.AMMINISTRATORE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "itemsProviderCode": "SDK_GESTIONE_UTENTI_TABELLATI_COMBO",
+                                    "listCode": "sino",
+                                    "mappingOutput": "amministratore",
+                                    "mappingInput": "amministratore",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "utente-delegato": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "profilo",
+                                    "label": "SDK-RICERCA-UTENTI.PROFILO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "profilo",
+                                    "mappingOutput": "profiloKey",
+                                    "itemsProviderCode": "SDK_GESTIONE_UTENTI_PROFILO_AUTOCOMPLETE",
+                                    "noDataLabel": "NO-DATA",
+                                    "newEditAvailable": false,
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "utente-delegato": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

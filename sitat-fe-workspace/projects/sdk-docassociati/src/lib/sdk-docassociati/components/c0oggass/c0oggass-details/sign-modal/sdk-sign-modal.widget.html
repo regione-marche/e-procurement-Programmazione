@@ -1,0 +1,13 @@
+<div class="sign-modal" *ngIf="isReady">
+    <div class="messages-box" #messages></div>
+     <div class="sign-content">
+            <sdk-form-builder [config]="formBuilderConfigObs" (output)="manageFormOutput($event)"
+                (outputInfoBox)="manageOutputInfoBox($event)">
+            </sdk-form-builder>
+            <sdk-modal [config]="modalConfigObs"></sdk-modal>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+    </div>
+   
+</div>

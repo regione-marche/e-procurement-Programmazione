@@ -1,0 +1,16 @@
+<div [class]="config.classNames" *ngIf="isReady">
+
+    <div class="messages-box" #infoBox></div>
+
+    <div class="messages-box" #messages></div>
+    <div class="drdi-container">
+        <div class="drdi-content">
+            <sdk-form-builder [config]="formBuilderConfigObs" (output)="manageFormOutput($event)">
+            </sdk-form-builder>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group *ngIf="buttons !== undefined" [config]="buttonsSubj" (output)="onButtonClick($event)">
+            </sdk-button-group>
+        </div>
+    </div>
+</div>

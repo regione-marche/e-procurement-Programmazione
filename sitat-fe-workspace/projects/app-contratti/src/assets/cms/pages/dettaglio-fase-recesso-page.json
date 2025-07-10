@@ -1,0 +1,309 @@
+{
+    "name": "dettaglio-fase-recesso-page",
+    "title": "TITLE.DETTAGLIO-FASE-RECESSO-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/pubblica-fase-lotto-page.css"
+    ],
+    "settings": {
+        "page": "dettaglio-fase-recesso-page",
+        "pageFeatures": [
+            "docassociati"
+        ],
+        "entity": {
+            "schema": "W9",
+            "name": "W9FASI",
+            "keys": [
+                "codGara",
+                "codLotto",
+                "codiceFase",
+                "num"
+            ]
+        },
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-recesso-page",
+                "label": "BREADCRUMB.DETTAGLIO-FASE-RECESSO",
+                "slug": "dettaglio-fase-recesso-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ],
+        "breadcrumbsLS": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.RICERCA-SCHEDE-TRASMESSE-PCP",
+                "slug": "ricerca-schede-trasmesse-pcp-page"
+            },
+            {
+                "code": "lista-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.LISTA-SCHEDE-TRASMESSE-PCP",
+                "slug": "lista-schede-trasmesse-pcp-page"
+            },
+            {
+                "code": "lista-fasi-lotto-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "dettaglio-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-recesso-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.DETTAGLIO-FASE-RECESSO",
+                "slug": "dettaglio-fase-recesso-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-fase-recesso-page-content-root-section",
+            "selector": "dettaglio-fase-recesso-section",
+            "description": "Pagina di dettaglio fase di recesso",
+            "classNames": "dettaglio-fase-recesso-section",
+            "settings": {
+                "classNames": "dettaglio-fase-recesso-index",
+                "sectionTitle": "TITLE.DETTAGLIO-FASE-RECESSO-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "check-pubblicazione",
+                            "label": "BUTTONS.CHECK-DATA",
+                            "provider": "APP_FASI_LOTTO_PUBBLICA",
+                            "oggettoProtezione": "ALT.W9.FasiDiGara-schede.ControlloDatiInseriti",
+                            "type": "functions",
+                            "icon": "mgg-icons-document-text"
+                        },
+                        {
+                            "code": "go-to-update-fase",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_GARE_FASE_RECESSO_PROVIDER",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "buttonsRO": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "buttonsLS": [
+                        {
+                            "code": "back-to-lista-fasi-lotto-schede-trasmesse",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "sidebar": {
+                        "code": "sidebar",
+                        "position": "right",
+                        "width": 500,
+                        "classList": [
+                            "check-pubb-sidebar"
+                        ],
+                        "headerImage": "assets/images/app/logo.png",
+                        "component": "check-pubblicazione-widget",
+                        "componentConfig": {}
+                    },
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "ritardo-sospensione-data",
+                            "label": "FASE-RECESSO.RITARDO-SOSPENSIONE.RITARDO-SOSPENSIONE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "num-rita",
+                                    "label": "FASE-RECESSO.RITARDO-SOSPENSIONE.NUM-RITA",
+                                    "oggettoProtezione": "W9.W9RITA.NUM_RITA",
+                                    "mnemonico": "W3RINUMRIT",
+                                    "mappingInput": "num",
+                                    "mappingOutput": ""
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-termine",
+                                    "label": "FASE-RECESSO.RITARDO-SOSPENSIONE.DATA-TERMINE",
+                                    "oggettoProtezione": "W9.W9RITA.DATA_TERMINE",
+                                    "mnemonico": "W3DTERM2",
+                                    "mappingInput": "dataTermine",
+                                    "mappingOutput": "dataTermine"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-consegna",
+                                    "label": "FASE-RECESSO.RITARDO-SOSPENSIONE.DATA-CONSEGNA",
+                                    "oggettoProtezione": "W9.W9RITA.DATA_CONSEGNA",
+                                    "mnemonico": "W3DCONS",
+                                    "mappingInput": "dataConsegna",
+                                    "mappingOutput": "dataConsegna"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "tipo-comun",
+                                    "label": "FASE-RECESSO.RITARDO-SOSPENSIONE.TIPO-COMUN",
+                                    "oggettoProtezione": "W9.W9RITA.TIPO_COMUN",
+                                    "mnemonico": "W3TIPO_COM",
+                                    "mappingInput": "tipoComunicazione",
+                                    "mappingOutput": "tipoComunicazione",
+                                    "listCode": "TipologiaComunicazione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "ritardo",
+                                    "label": "FASE-RECESSO.RITARDO-SOSPENSIONE.RITARDO",
+                                    "oggettoProtezione": "W9.W9RITA.RITARDO",
+                                    "mnemonico": "W3RITARDO",
+                                    "mappingInput": "ritardo",
+                                    "mappingOutput": "ritardo"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "durata-sosp",
+                                    "label": "FASE-RECESSO.RITARDO-SOSPENSIONE.DURATA-SOSP",
+                                    "oggettoProtezione": "W9.W9RITA.DURATA_SOSP",
+                                    "mnemonico": "W3DURATA_S",
+                                    "mappingInput": "durataSospensione",
+                                    "mappingOutput": "durataSospensione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "motivo-sosp",
+                                    "label": "FASE-RECESSO.RITARDO-SOSPENSIONE.MOTIVO-SOSP",
+                                    "oggettoProtezione": "W9.W9RITA.MOTIVO_SOSP",
+                                    "mnemonico": "W3MOTIVO_S",
+                                    "mappingInput": "motivoSospensione",
+                                    "mappingOutput": "motivoSospensione"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "recesso-data",
+                            "label": "FASE-RECESSO.RECESSO.RECESSO",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-ist-recesso",
+                                    "label": "FASE-RECESSO.RECESSO.DATA-IST-RECESSO",
+                                    "oggettoProtezione": "W9.W9RITA.DATA_IST_RECESSO",
+                                    "mnemonico": "W3DATA_IST",
+                                    "mappingInput": "dataIstanzaRecesso",
+                                    "mappingOutput": "dataIstanzaRecesso"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "flag-accolta",
+                                    "label": "FASE-RECESSO.RECESSO.FLAG-ACCOLTA",
+                                    "oggettoProtezione": "W9.W9RITA.FLAG_ACCOLTA",
+                                    "mnemonico": "W3ACCOLTA",
+                                    "mappingInput": "flagAccolta",
+                                    "mappingOutput": "flagAccolta",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "flag-tardiva",
+                                    "label": "FASE-RECESSO.RECESSO.FLAG-TARDIVA",
+                                    "oggettoProtezione": "W9.W9RITA.FLAG_TARDIVA",
+                                    "mnemonico": "W3FLAG_TAR",
+                                    "mappingInput": "flagTardiva",
+                                    "mappingOutput": "flagTardiva",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "flag-ripresa",
+                                    "label": "FASE-RECESSO.RECESSO.FLAG-RIPRESA",
+                                    "oggettoProtezione": "W9.W9RITA.FLAG_RIPRESA",
+                                    "mnemonico": "W3FLAG_RIP",
+                                    "mappingInput": "flagRipresa",
+                                    "mappingOutput": "flagRipresa",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "flag-riserva",
+                                    "label": "FASE-RECESSO.RECESSO.FLAG-RISERVA",
+                                    "oggettoProtezione": "W9.W9RITA.FLAG_RISERVA",
+                                    "mnemonico": "W3RISER",
+                                    "mappingInput": "flagRiserva",
+                                    "mappingOutput": "flagRiserva",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "importo-spese",
+                                    "label": "FASE-RECESSO.RECESSO.IMPORTO-SPESE",
+                                    "oggettoProtezione": "W9.W9RITA.IMPORTO_SPESE",
+                                    "mnemonico": "W3I_SPESE",
+                                    "mappingInput": "importoSpese",
+                                    "mappingOutput": "importoSpese",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "importo-oneri",
+                                    "label": "FASE-RECESSO.RECESSO.IMPORTO-ONERI",
+                                    "oggettoProtezione": "W9.W9RITA.IMPORTO_ONERI",
+                                    "mnemonico": "W3I_ONERI",
+                                    "mappingInput": "importoOneri",
+                                    "mappingOutput": "importoOneri",
+                                    "currency": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

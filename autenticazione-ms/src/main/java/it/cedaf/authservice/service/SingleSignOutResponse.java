@@ -1,0 +1,64 @@
+
+package it.cedaf.authservice.service;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
+
+/**
+ * <p>Classe Java per anonymous complex type.
+ * 
+ * <p>Il seguente frammento di schema specifica il contenuto previsto contenuto in questa classe.
+ * 
+ * <pre>
+ * &lt;complexType&gt;
+ *   &lt;complexContent&gt;
+ *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
+ *       &lt;sequence&gt;
+ *         &lt;element name="singleSignOutReturn" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *       &lt;/sequence&gt;
+ *     &lt;/restriction&gt;
+ *   &lt;/complexContent&gt;
+ * &lt;/complexType&gt;
+ * </pre>
+ * 
+ * 
+ */
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "", propOrder = {
+    "singleSignOutReturn"
+})
+@XmlRootElement(name = "singleSignOutResponse")
+public class SingleSignOutResponse {
+
+    @XmlElement(required = true)
+    protected String singleSignOutReturn;
+
+    /**
+     * Recupera il valore della proprietà singleSignOutReturn.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getSingleSignOutReturn() {
+        return singleSignOutReturn;
+    }
+
+    /**
+     * Imposta il valore della proprietà singleSignOutReturn.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setSingleSignOutReturn(String value) {
+        this.singleSignOutReturn = value;
+    }
+
+}

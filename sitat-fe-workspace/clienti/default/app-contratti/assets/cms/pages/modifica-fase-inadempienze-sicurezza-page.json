@@ -1,0 +1,199 @@
+{
+    "name": "modifica-fase-inadempienze-sicurezza-page",
+    "title": "TITLE.MODIFICA-FASE-INADEMPIENZE-SICUREZZA-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "modifica-fase-inadempienze-sicurezza-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-inadempienze-sicurezza-page",
+                "label": "BREADCRUMB.DETTAGLIO-FASE-INADEMPIENZE-SICUREZZA",
+                "slug": "dettaglio-fase-inadempienze-sicurezza-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            },
+            {
+                "code": "modifica-fase-inadempienze-sicurezza-page",
+                "label": "BREADCRUMB.MODIFICA-FASE-INADEMPIENZE-SICUREZZA",
+                "slug": "modifica-fase-inadempienze-sicurezza-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-fase-inadempienze-sicurezza-page-content-root-section",
+            "selector": "modifica-fase-inadempienze-sicurezza-section",
+            "description": "Pagina di modifica fase di inadempienze-sicurezza",
+            "classNames": "modifica-fase-inadempienze-sicurezza-section",
+            "settings": {
+                "classNames": "modifica-fase-inadempienze-sicurezza-index",
+                "sectionTitle": "TITLE.MODIFICA-FASE-INADEMPIENZE-SICUREZZA-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-dettaglio-fase",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_GARE_FASE_INADEMPIENZE_SICUREZZA_PROVIDER",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-fase",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_FASE_INADEMPIENZE_SICUREZZA_PROVIDER"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "inadempienze-sicurezza-data",
+                            "label": "FASE-INADEMPIENZE-SICUREZZA.INADEMPIENZE-SICUREZZA.INADEMPIENZE-SICUREZZA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "num-inad",
+                                    "label": "FASE-INADEMPIENZE-SICUREZZA.INADEMPIENZE-SICUREZZA.NUM-INAD",
+                                    "oggettoProtezione": "W9.W9INASIC.NUM_INAD",
+                                    "mnemonico": "W3ISNUMINA",
+                                    "mappingInput": "num",
+                                    "mappingOutput": ""
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-riscontro-inadempienza",
+                                    "label": "FASE-INADEMPIENZE-SICUREZZA.INADEMPIENZE-SICUREZZA.DATA-RISCONTRO-INADEMPIENZA",
+                                    "oggettoProtezione": "W9.W9INASIC.DAINASIC",
+                                    "mnemonico": "W3DAINASIC",
+                                    "mappingInput": "dataInadempienza",
+                                    "mappingOutput": "dataInadempienza"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "comma3a",
+                                    "label": "FASE-INADEMPIENZE-SICUREZZA.INADEMPIENZE-SICUREZZA.COMMA3A",
+                                    "oggettoProtezione": "W9.W9INASIC.COMMA3A",
+                                    "mnemonico": "W3COMMA3A",
+                                    "mappingInput": "comma3A",
+                                    "mappingOutput": "comma3A",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "comma3b",
+                                    "label": "FASE-INADEMPIENZE-SICUREZZA.INADEMPIENZE-SICUREZZA.COMMA3B",
+                                    "oggettoProtezione": "W9.W9INASIC.COMMA3B",
+                                    "mnemonico": "W3COMMA3B",
+                                    "mappingInput": "comma3B",
+                                    "mappingOutput": "comma3B",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "comma45a",
+                                    "label": "FASE-INADEMPIENZE-SICUREZZA.INADEMPIENZE-SICUREZZA.COMMA45A",
+                                    "oggettoProtezione": "W9.W9INASIC.COMMA45A",
+                                    "mnemonico": "W3COMMA45A",
+                                    "mappingInput": "comma45A",
+                                    "mappingOutput": "comma45A",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "comma5",
+                                    "label": "FASE-INADEMPIENZE-SICUREZZA.INADEMPIENZE-SICUREZZA.COMMA5",
+                                    "oggettoProtezione": "W9.W9INASIC.COMMA5",
+                                    "mnemonico": "W3COMMA5",
+                                    "mappingInput": "comma5",
+                                    "mappingOutput": "comma5",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "comma6",
+                                    "label": "FASE-INADEMPIENZE-SICUREZZA.INADEMPIENZE-SICUREZZA.COMMA6",
+                                    "oggettoProtezione": "W9.W9INASIC.COMMA6",
+                                    "mnemonico": "W3COMMA6",
+                                    "mappingInput": "comma6",
+                                    "mappingOutput": "comma6",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "commaltro",
+                                    "label": "FASE-INADEMPIENZE-SICUREZZA.INADEMPIENZE-SICUREZZA.COMMALTRO",
+                                    "oggettoProtezione": "W9.W9INASIC.COMMALTRO",
+                                    "mnemonico": "W3COMMALTRO",
+                                    "mappingInput": "commaAltro",
+                                    "mappingOutput": "commaAltro",
+                                    "maxLength": 1000
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "descvio",
+                                    "label": "FASE-INADEMPIENZE-SICUREZZA.INADEMPIENZE-SICUREZZA.DESCVIO",
+                                    "oggettoProtezione": "W9.W9INASIC.DESCVIO",
+                                    "mnemonico": "W3DESIC",
+                                    "mappingInput": "descrizione",
+                                    "mappingOutput": "descrizione",
+                                    "maxLength": 1000
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "nomest",
+                                    "label": "FASE-INADEMPIENZE-SICUREZZA.INADEMPIENZE-SICUREZZA.NOMEST",
+                                    "oggettoProtezione": "W9.W9INASIC.CODIMP",
+                                    "mnemonico": "W3ISCODIMP",
+                                    "mappingInput": "impresa",
+                                    "mappingOutput": "codImpresa",
+                                    "itemsProviderCode": "APP_GARE_IMPRESE_AGGIUDICATARIE_AGGI_SUBA_AUTOCOMPLETE",
+                                    "noDataLabel": "NO-DATA",
+                                    "newEditAvailable": false,
+                                    "modalComponent": "impresa-modal-widget",
+                                    "modalComponentConfig": "impresaRWModalConfig"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

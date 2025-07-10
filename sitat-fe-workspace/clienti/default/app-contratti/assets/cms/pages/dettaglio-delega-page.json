@@ -1,0 +1,83 @@
+{
+    "name": "dettaglio-delega-page",
+    "title": "TITLE.DETTAGLIO-DELEGA-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "dettaglio-delega-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-deleghe-page",
+                "label": "BREADCRUMB.LISTA-DELEGHE",
+                "slug": "lista-deleghe-page"
+            },
+            {
+                "code": "dettaglio-delega-page",
+                "label": "BREADCRUMB.DETTAGLIO-DELEGA",
+                "slug": "dettaglio-delega-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-delega-page-content-root-section",
+            "selector": "dettaglio-delega-section",
+            "description": "Pagina di inserimento delega",
+            "classNames": "dettaglio-delega-section",
+            "settings": {
+                "classNames": "dettaglio-delega-index",
+                "sectionTitle": "TITLE.DETTAGLIO-DELEGA-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-deleghe",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_CONTRATTI_LISTA_DELEGHE",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "go-to-update-delega",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_CONTRATTI_LISTA_DELEGHE",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "DELEGA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "idCollaboratore",
+                                    "label": "DELEGA.ID_COLLABORATORE",
+                                    "oggettoProtezione": "W3.W9DELEGHE.SYSCON",
+                                    "mnemonico": "W9DELCOLL",
+                                    "mappingInput": "nomeCollaboratore",
+                                    "mappingOutput": "nomeCollaboratore"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "ruolo",
+                                    "label": "DELEGA.RUOLO",
+                                    "oggettoProtezione": "W3.W9DELEGHE.RUOLO",
+                                    "mnemonico": "W9DELRUOLO",
+                                    "mappingInput": "ruolo"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

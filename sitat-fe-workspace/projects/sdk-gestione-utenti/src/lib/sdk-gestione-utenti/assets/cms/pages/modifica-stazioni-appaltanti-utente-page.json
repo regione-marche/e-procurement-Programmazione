@@ -1,0 +1,80 @@
+{
+    "name": "modifica-stazioni-appaltanti-utente-page",
+    "title": "TITLE.MODIFICA-STAZIONI-APPALTANTI-UTENTE-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "modifica-stazioni-appaltanti-utente-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-utenti-page",
+                "label": "BREADCRUMB.RICERCA-UTENTI",
+                "slug": "ricerca-utenti-page"
+            },
+            {
+                "code": "lista-utenti-page",
+                "label": "BREADCRUMB.LISTA-UTENTI",
+                "slug": "lista-utenti-page"
+            },
+            {
+                "code": "stazioni-appaltanti-utente-page",
+                "label": "BREADCRUMB.STAZIONI-APPALTANTI-UTENTE",
+                "slug": "stazioni-appaltanti-utente-page",
+                "additionalParams": "SDK_GESTIONE_UTENTI_DETTAGLIO_UTENTE_PARAMS"
+            },
+            {
+                "code": "modifica-stazioni-appaltanti-utente-page",
+                "label": "BREADCRUMB.MODIFICA-STAZIONI-APPALTANTI-UTENTE",
+                "slug": "modifica-stazioni-appaltanti-utente-page",
+                "additionalParams": "SDK_GESTIONE_UTENTI_DETTAGLIO_UTENTE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-stazioni-appaltanti-utente-page-content-root-section",
+            "selector": "sdk-modifica-stazioni-appaltanti-utente-section",
+            "description": "Pagina modifica stazioni-appaltanti utente",
+            "classNames": "modifica-stazioni-appaltanti-utente-section",
+            "settings": {
+                "classNames": "modifica-stazioni-appaltanti-utente-index",
+                "sectionTitle": "TITLE.MODIFICA-STAZIONI-APPALTANTI-UTENTE-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-stazioni-appaltanti-utente",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "SDK_GESTIONE_UTENTI_LISTA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "unselect-current-filtered-stazioni-appaltanti",
+                            "label": "SDK-STAZIONI-APPALTANTI-UTENTE.UNSELECT-CURRENT-FILTERED-STAZIONI-APPALTANTI",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "SDK_GESTIONE_UTENTI_STAZIONI_APPALTANTI_UTENTE"
+                        },
+                        {
+                            "code": "select-current-filtered-stazioni-appaltanti",
+                            "label": "SDK-STAZIONI-APPALTANTI-UTENTE.SELECT-CURRENT-FILTERED-STAZIONI-APPALTANTI",
+                            "icon": "mgg-icons-crud-create",
+                            "provider": "SDK_GESTIONE_UTENTI_STAZIONI_APPALTANTI_UTENTE"
+                        },
+                        {
+                            "code": "save-stazioni-appaltanti-utente",
+                            "label": "BUTTONS.SET",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "SDK_GESTIONE_UTENTI_STAZIONI_APPALTANTI_UTENTE"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

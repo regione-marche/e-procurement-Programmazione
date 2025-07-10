@@ -1,0 +1,391 @@
+{
+    "name": "nuova-impresa-page",
+    "title": "TITLE.NUOVA-IMPRESA-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "nuova-impresa-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-archivio-imprese-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-ARCHIVIO-IMPRESE",
+                "slug": "ricerca-avanzata-archivio-imprese-page"
+            },
+            {
+                "code": "lista-archivio-imprese-page",
+                "label": "BREADCRUMB.LISTA-ARCHIVIO-IMPRESE",
+                "slug": "lista-archivio-imprese-page"
+            },
+            {
+                "code": "nuova-impresa-page",
+                "label": "BREADCRUMB.NUOVA-IMPRESA",
+                "slug": "nuova-impresa-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "nuova-impresa-page-content-root-section",
+            "selector": "nuova-impresa-section",
+            "description": "Pagina di nuova impresa",
+            "classNames": "nuova-impresa-section",
+            "settings": {
+                "classNames": "nuova-impresa-index",
+                "sectionTitle": "TITLE.NUOVA-IMPRESA-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-archivio-imprese",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_COMMONS_LISTA_IMPRESE",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-impresa",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_COMMONS_IMPRESA"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "IMPRESA.GENERAL-DATA.GENERAL-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTAREA",
+                                    "code": "regione-sociale",
+                                    "label": "IMPRESA.GENERAL-DATA.RAGIONE-SOCIALE",
+                                    "oggettoProtezione": "GENE.IMPR.NOMEST",
+                                    "mnemonico": "NOMIMP",
+                                    "mappingOutput": "ragioneSociale",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "IMPRESA.GENERAL-DATA.VALIDATORS.RAGIONE-SOCIALE-OBBLIGATORIA"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "forma-giuridica",
+                                    "label": "IMPRESA.GENERAL-DATA.FORMA-GIURIDICA",
+                                    "oggettoProtezione": "GENE.IMPR.NATGIUI",
+                                    "mnemonico": "G_NATGIUI",
+                                    "mappingOutput": "formaGiuridica",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "FormaGiuridica"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "ambito-territoriale",
+                                    "label": "IMPRESA.GENERAL-DATA.AMBITO-TERRITORIALE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingOutput": "",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "ambitoTerritoriale",
+                                    "showClear": false
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "codice-fiscale-impresa",
+                                    "label": "IMPRESA.GENERAL-DATA.CODICE-FISCALE",
+                                    "oggettoProtezione": "GENE.IMPR.CFIMP",
+                                    "mnemonico": "CFIMP",
+                                    "mappingOutput": "codiceFiscale",
+                                    "maxLength": 16,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "ambito-territoriale": {
+                                                "values": [
+                                                    {
+                                                        "value": 1,
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "partita-iva",
+                                    "label": "IMPRESA.GENERAL-DATA.PARTITA-IVA",
+                                    "oggettoProtezione": "GENE.IMPR.PIVIMP",
+                                    "mnemonico": "PIVIMP",
+                                    "mappingOutput": "partitaIva",
+                                    "maxLength": 16,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "ambito-territoriale": {
+                                                "values": [
+                                                    {
+                                                        "value": 1,
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },{
+                                    "type": "TEXTBOX",
+                                    "code": "cf-estero",
+                                    "label": "IMPRESA.GENERAL-DATA.CF-ESTERO",
+                                    "oggettoProtezione": "GENE.IMPR.CFIMP",
+                                    "mnemonico": "CFIMP",
+                                    "mappingOutput": "cf-estero",
+                                    "maxLength": 16,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "ambito-territoriale": {
+                                                "values": [
+                                                    {
+                                                        "value": 2,
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "numero-iscrizione-registro-imprese",
+                                    "label": "IMPRESA.GENERAL-DATA.NUMERO-ISCRIZIONE-REGISTRO-IMPRESE",
+                                    "oggettoProtezione": "GENE.IMPR.NCCIAA",
+                                    "mnemonico": "NCCIAA",
+                                    "mappingOutput": "numeroIscrizione"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "codice-ditta-inail",
+                                    "label": "IMPRESA.GENERAL-DATA.CODICE-DITTA-INAIL",
+                                    "oggettoProtezione": "GENE.IMPR.NINAIL",
+                                    "mnemonico": "NINAIL",
+                                    "mappingOutput": "codiceInail",
+                                    "maxLength": 16
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "numero-iscrizione-albo",
+                                    "label": "IMPRESA.GENERAL-DATA.NUMERO-ISCRIZIONE-ALBO",
+                                    "oggettoProtezione": "GENE.IMPR.ALBTEC",
+                                    "mnemonico": "G_ALBTEC",
+                                    "mappingOutput": "numeroIscrizioneAlbo",
+                                    "maxLength": 50
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "legale-rappresentante-data",
+                            "label": "IMPRESA.LEGALE-RAPPRESENTANTE-DATA.LEGALE-RAPPRESENTANTE-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "cognome-legale",
+                                    "label": "IMPRESA.LEGALE-RAPPRESENTANTE-DATA.COGNOME",
+                                    "oggettoProtezione": "GENE.TEIM.COGTIM",
+                                    "mnemonico": "COGTIM",
+                                    "mappingOutput": "cognome",
+                                    "maxLength": 80
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "nome-legale",
+                                    "label": "IMPRESA.LEGALE-RAPPRESENTANTE-DATA.NOME",
+                                    "oggettoProtezione": "GENE.TEIM.NOMTIM",
+                                    "mnemonico": "NOMTIM",
+                                    "mappingOutput": "nome",
+                                    "maxLength": 80
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "codice-fiscale-legale",
+                                    "label": "IMPRESA.LEGALE-RAPPRESENTANTE-DATA.CODICE-FISCALE",
+                                    "oggettoProtezione": "GENE.TEIM.CFTIM",
+                                    "mnemonico": "CFTIM",
+                                    "mappingOutput": "cf",
+                                    "maxLength": 16
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "indirizzo-data",
+                            "label": "IMPRESA.INDIRIZZO-DATA.INDIRIZZO-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "nazione",
+                                    "label": "IMPRESA.INDIRIZZO-DATA.NAZIONE",
+                                    "oggettoProtezione": "GENE.IMPR.NAZIMP",
+                                    "mnemonico": "G_NAZIMP",
+                                    "mappingOutput": "nazione",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "NazioniEstere",
+                                    "mandatory": true,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "ambito-territoriale": {
+                                                "values": [
+                                                    {
+                                                        "value": 2,
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },{
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "comune",
+                                    "label": "IMPRESA.INDIRIZZO-DATA.COMUNE",
+                                    "noDataLabel": "NO-DATA",
+                                    "oggettoProtezione": "GENE.IMPR.LOCIMP",
+                                    "mnemonico": "LOCIMP",
+                                    "mappingOutput": "comune",
+                                    "itemsProviderCode": "APP_GARE_COMUNI",
+                                    "minSearchCharacters": 2,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "ambito-territoriale": {
+                                                "values": [
+                                                    {
+                                                        "value": 1,
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },{
+                                    "type": "TEXT",
+                                    "code": "provincia",
+                                    "label": "IMPRESA.INDIRIZZO-DATA.PROVINCIA",
+                                    "oggettoProtezione": "GENE.IMPR.PROIMP",
+                                    "mnemonico": "PROIMP",
+                                    "mappingOutput": "provincia",
+                                    "visibleCondition": {
+                                        "or": {
+                                            "ambito-territoriale": {
+                                                "values": [
+                                                    {
+                                                        "value": 1,
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "cap",
+                                    "label": "IMPRESA.INDIRIZZO-DATA.CAP",
+                                    "oggettoProtezione": "GENE.IMPR.CAPIMP",
+                                    "mnemonico": "CAPIMP",
+                                    "mappingOutput": "cap",
+                                    "maxLength":5,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "ambito-territoriale": {
+                                                "values": [
+                                                    {
+                                                        "value": 1,
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "indirizzo",
+                                    "label": "IMPRESA.INDIRIZZO-DATA.INDIRIZZO",
+                                    "oggettoProtezione": "GENE.IMPR.INDIMP",
+                                    "mnemonico": "INDIMP",
+                                    "mappingOutput": "indirizzo",
+                                    "maxLength": 60
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "n-civico",
+                                    "label": "IMPRESA.INDIRIZZO-DATA.N-CIVICO",
+                                    "oggettoProtezione": "GENE.IMPR.NCIIMP",
+                                    "mnemonico": "NCIIMP",
+                                    "mappingOutput": "numeroCivico",
+                                    "maxLength": 10,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "ambito-territoriale": {
+                                                "values": [
+                                                    {
+                                                        "value": 1,
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "telefono",
+                                    "label": "IMPRESA.INDIRIZZO-DATA.TELEFONO",
+                                    "oggettoProtezione": "GENE.IMPR.TELIMP",
+                                    "mnemonico": "TELIMP",
+                                    "mappingOutput": "telefono",
+                                    "maxLength": 50
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "fax",
+                                    "label": "IMPRESA.INDIRIZZO-DATA.FAX",
+                                    "oggettoProtezione": "GENE.IMPR.FAXIMP",
+                                    "mnemonico": "FAXIMP",
+                                    "mappingOutput": "fax",
+                                    "maxLength": 20
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "email",
+                                    "label": "IMPRESA.INDIRIZZO-DATA.EMAIL",
+                                    "oggettoProtezione": "GENE.IMPR.EMAIIP",
+                                    "mnemonico": "G_EMAIIP",
+                                    "mappingOutput": "email",
+                                    "maxLength": 100
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

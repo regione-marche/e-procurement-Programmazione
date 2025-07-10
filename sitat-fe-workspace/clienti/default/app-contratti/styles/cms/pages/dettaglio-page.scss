@@ -1,0 +1,29 @@
+@import "../app/app-vars.scss";
+
+.lista-container {
+    padding: 0 1rem;
+
+    .sdk-panelbar-container {
+        @extend %transparent-background;
+
+        .p-accordion .p-accordion-header a {
+            position: relative;
+            padding-left: 2rem;
+
+            .counter {
+                position: absolute;
+                left: 1rem;
+                top: 0.5rem;
+            }
+        }
+
+
+        .panel-child {
+            background-color: #e2e2e2;
+            @extend %color-testo;
+            padding: 0.5rem;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+}

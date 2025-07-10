@@ -1,0 +1,48 @@
+<div [class]="config.classNames" *ngIf="isReady">
+  <h1 class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</h1>
+  <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+  <div class="messages-box" #infoBox></div>
+
+  <div class="messages-box" #messages></div>
+
+  <div class="registrazione-utente-container">
+
+    <div class="ru-content">
+      <div class="registration-module-container">
+        <div>{{'REGISTRAZIONE-UTENTE.ALLEGA-DOCUMENTI-SECTION.WARNING' | translate}}</div>
+        <div>{{'REGISTRAZIONE-UTENTE.ALLEGA-DOCUMENTI-SECTION.TESTO-DOWNLOAD' | translate}}</div>
+        <div *ngIf="externalLink == false"><a href="javascript:void(0)"
+            (click)="donwloadModulo()">{{'REGISTRAZIONE-UTENTE.ALLEGA-DOCUMENTI-SECTION.AZIONE-DOWNLOAD' |
+            translate}}</a></div>
+        <div *ngIf="externalLink != false"><a
+            [href]="config.body.externalLink">{{'REGISTRAZIONE-UTENTE.ALLEGA-DOCUMENTI-SECTION.AZIONE-LINK' |
+            translate}}</a></div>
+      </div>
+      <div *ngIf="externalLink == false">
+        <sdk-form-builder [config]="formBuilderConfigObs" (output)="manageFormOutput($event)"
+          (outputClick)="manageFormClick($event)" *ngIf="externalLink == false">
+        </sdk-form-builder>
+      </div>
+      <div class="captcha-container" *ngIf="externalLink == false">
+        <div class="captcha-title">
+          {{'CAPTCHA.TITLE' | translate}}
+        </div>
+        <div class="captcha-content" *ngIf="serverCaptchaEnabled">
+          <sdk-friendly-captcha [reset]="captchaResetSubject$"
+            (solution)="handleCaptchaSolution($event)"></sdk-friendly-captcha>
+        </div>
+        <div class="captcha-content" *ngIf="!serverCaptchaEnabled">
+          <div class="captcha-error" #errorCaptcha>{{ 'CAPTCHA.ERROR' | translate }}</div>
+          <form id="form-registrazione" #form>
+            <div class="captcha-base" #captcha></div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="buttons-row">
+      <sdk-button-group [config]="buttons" (output)="onButtonClick($event)">
+      </sdk-button-group>
+    </div>
+  </div>
+</div>

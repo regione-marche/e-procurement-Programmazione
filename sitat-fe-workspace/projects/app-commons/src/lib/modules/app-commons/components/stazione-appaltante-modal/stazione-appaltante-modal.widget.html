@@ -1,0 +1,17 @@
+<div class="stazione-appaltante-modal" *ngIf="isReady">
+
+    <div class="sa-container">
+        <div class="sa-testata">
+
+        <div class="messages-box" #messages></div>
+
+        </div>
+        <div class="sa-content">
+            <sdk-form-builder [config]="formBuilderConfigObs">
+            </sdk-form-builder>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+</div>

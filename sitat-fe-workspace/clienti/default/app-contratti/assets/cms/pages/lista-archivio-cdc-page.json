@@ -1,0 +1,165 @@
+{
+    "name": "lista-archivio-cdc-page",
+    "title": "TITLE.LISTA-ARCHIVIO-CDC-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "lista-archivio-cdc-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-archivio-cdc-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-ARCHIVIO-CDC",
+                "slug": "ricerca-avanzata-archivio-cdc-page"
+            },
+            {
+                "code": "lista-archivio-cdc-page",
+                "label": "BREADCRUMB.LISTA-ARCHIVIO-CDC",
+                "slug": "lista-archivio-cdc-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "lista-archivio-cdc-page-content-root-section",
+            "selector": "lista-archivio-cdc-section",
+            "description": "Pagina per la lista dei centri di costo",
+            "classNames": "lista-archivio-cdc-section",
+            "settings": {
+                "classNames": "lista-archivio-cdc-index",
+                "sectionTitle": "TITLE.LISTA-ARCHIVIO-CDC-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_COMMONS_LISTA_CDC",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "clean-button",
+                            "label": "BUTTONS.CLEAN",
+                            "provider": "APP_COMMONS_LISTA_CDC",
+                            "icon": "mgg-icons-data-unfiltered"
+                        },
+                        {
+                            "code": "nuovo",
+                            "label": "BUTTONS.NUOVO",
+                            "icon": "mgg-icons-crud-create",
+                            "provider": "APP_COMMONS_LISTA_CDC",
+                            "oggettoProtezione": "INS.W9.ListaCentri.LISTANUOVO"
+                        }
+                    ],
+                    "grid": {
+                        "showCurrentPageReport": true,
+                        "showCurrentRecordsReport": true,
+                        "navigable": true,
+                        "resizable": false,
+                        "debug": false,
+                        "sortable": {
+                            "allowUnsort": false,
+                            "mode": "single"
+                        },
+                        "sort": [
+                            {
+                                "field": "codiceCentro",
+                                "dir": "asc"
+                            }
+                        ],
+                        "pageable": {
+                            "buttonCount": 5,
+                            "info": true,
+                            "pageSizes": [
+                                5,
+                                10,
+                                20,
+                                50
+                            ],
+                            "type": "numeric"
+                        },
+                        "toolbar": {
+                            "position": "top",
+                            "actions": []
+                        },
+                        "columns": [
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-ARCHIVIO-CDC.STAZIONE-APPALTANTE",
+                                "field": "nominativoStazioneAppaltante",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_LINK",
+                                    "params": {
+                                        "action": {
+                                            "label": "LISTA-ARCHIVIO-CDC.AZIONI.DETTAGLIO",
+                                            "disabled": false,
+                                            "performer": "dettaglio"
+                                        }
+                                    }
+                                },
+                                "title": "LISTA-ARCHIVIO-CDC.CODICE-CDC",
+                                "field": "codiceCentro",
+                                "width": 300,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "W9.CENTRICOSTO.CODCENTRO"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-ARCHIVIO-CDC.DENOMINAZIONE-CDC",
+                                "field": "denominazione",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "W9.CENTRICOSTO.DENOMCENTRO"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_ACTIONS_ICON",
+                                    "params": {
+                                        "actions": [
+                                            {
+                                                "disabled": false,
+                                                "performer": "delete",
+                                                "hidden": "deleteHidden",
+                                                "icon": "mgg-icons-crud-delete"
+                                            },
+                                            {
+                                                "disabled": true,
+                                                "hidden": "deleteNotHidden",
+                                                "icon": "mgg-icons-no-trash"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "title": "LISTA-ARCHIVIO-CDC.AZIONI.TITLE",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

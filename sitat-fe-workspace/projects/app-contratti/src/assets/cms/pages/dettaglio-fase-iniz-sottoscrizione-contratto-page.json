@@ -1,0 +1,239 @@
+{
+    "name": "dettaglio-fase-iniz-sottoscrizione-contratto-page",
+    "title": "TITLE.DETTAGLIO-FASE-INIZ-SOTTOSCRIZIONE-CONTRATTO-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/pubblica-fase-lotto-page.css"
+    ],
+    "settings": {
+        "page": "dettaglio-fase-iniz-sottoscrizione-contratto-page",
+        "pageFeatures": [
+            "docassociati"
+        ],
+        "entity": {
+            "schema": "W9",
+            "name": "W9FASI",
+            "keys": [
+                "codGara",
+                "codLotto",
+                "codiceFase",
+                "num"
+            ]
+        },
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-iniz-sottoscrizione-contratto-page",
+                "label": "BREADCRUMB.DETTAGLIO-FASE-INIZ-SOTTOSCRIZIONE-CONTRATTO",
+                "slug": "dettaglio-fase-iniz-sottoscrizione-contratto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ],
+        "breadcrumbsLS": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.RICERCA-SCHEDE-TRASMESSE-PCP",
+                "slug": "ricerca-schede-trasmesse-pcp-page"
+            },
+            {
+                "code": "lista-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.LISTA-SCHEDE-TRASMESSE-PCP",
+                "slug": "lista-schede-trasmesse-pcp-page"
+            },
+            {
+                "code": "lista-fasi-lotto-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "dettaglio-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-iniz-sottoscrizione-contratto-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.DETTAGLIO-FASE-INIZ-SOTTOSCRIZIONE-CONTRATTO",
+                "slug": "dettaglio-fase-iniz-sottoscrizione-contratto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-fase-iniz-sottoscrizione-contratto-page-content-root-section",
+            "selector": "dettaglio-fase-iniz-sottoscrizione-contratto-section",
+            "description": "Pagina di dettaglio fase iniziale",
+            "classNames": "dettaglio-fase-iniz-sottoscrizione-contratto-section",
+            "settings": {
+                "classNames": "dettaglio-fase-iniz-sottoscrizione-contratto-index",
+                "menuTabs": [
+                    {
+                        "code": "dettaglio-fase-iniz-sottoscrizione-contratto-page",
+                        "title": "DETTAGLIO-FASE-INIZIALE.TABS.DATI-GENERALI",
+                        "active": true,
+                        "slug": "dettaglio-fase-iniz-sottoscrizione-contratto-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+                    }                   
+                ],
+                "menuTabsLS": [
+                    {
+                        "code": "dettaglio-fase-iniz-sottoscrizione-contratto-page",
+                        "title": "DETTAGLIO-FASE-INIZIALE.TABS.DATI-GENERALI",
+                        "active": true,
+                        "slug": "dettaglio-fase-iniz-sottoscrizione-contratto-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+                    }                   
+                ],
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "check-pubblicazione",
+                            "label": "BUTTONS.CHECK-DATA",
+                            "provider": "APP_FASI_LOTTO_PUBBLICA",
+                            "oggettoProtezione": "ALT.W9.FasiDiGara-schede.ControlloDatiInseriti",
+                            "type": "functions",
+                            "icon": "mgg-icons-document-text"
+                        },
+                        {
+                            "code": "go-to-update-fase",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_GARE_FASE_INIZIALE_SOTTOSCR_CONTR_PROVIDER",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "buttonsRO": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "buttonsLS": [
+                        {
+                            "code": "back-to-lista-fasi-lotto-schede-trasmesse",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "sidebar": {
+                        "code": "sidebar",
+                        "position": "right",
+                        "width": 500,
+                        "classList": [
+                            "check-pubb-sidebar"
+                        ],
+                        "headerImage": "assets/images/app/logo.png",
+                        "component": "check-pubblicazione-widget",
+                        "componentConfig": {}
+                    },
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "contratto-appalto-data",
+                            "label": "FASE-INIZIALE.CONTRATTO-APPALTO-DATA.CONTRATTO-APPALTO-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-stipula",
+                                    "label": "FASE-INIZIALE.CONTRATTO-APPALTO-DATA.DATA-STIPULA",
+                                    "oggettoProtezione": "W9.W9INIZ.DATA_STIPULA",
+                                    "mnemonico": "W3DATA_STI",
+                                    "mappingInput": "dataStipula",
+                                    "mappingOutput": "dataStipula"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "gg-data-agg",
+                                    "label": "FASE-INIZIALE.CONTRATTO-APPALTO-DATA.GG-DATA-AGG",
+                                    "mappingInput": "ggDataAgg",
+                                    "mappingOutput": "ggDataAgg"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-esecutivita",
+                                    "label": "FASE-INIZIALE.CONTRATTO-APPALTO-DATA.DATA-ESECUTIVITA",
+                                    "oggettoProtezione": "W9.W9INIZ.DATA_ESECUTIVITA",
+                                    "mnemonico": "W3DATA_ESE",
+                                    "mappingInput": "dataEsecutivita",
+                                    "mappingOutput": "dataEsecutivita"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-decorrenza",
+                                    "label": "FASE-INIZIALE.CONTRATTO-APPALTO-DATA.DATA-DECORRENZA",
+                                    "oggettoProtezione": "W9.W9INIZ.DATA_DECORRENZA",
+                                    "mnemonico": "W3DATA_ESE",
+                                    "mappingInput": "dataDecorrenza",
+                                    "mappingOutput": "dataDecorrenza"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-scadenza",
+                                    "label": "FASE-INIZIALE.CONTRATTO-APPALTO-DATA.DATA-SCADENZA",
+                                    "oggettoProtezione": "W9.W9INIZ.DATA_SCADENZA",
+                                    "mnemonico": "W3DATA_ESE",
+                                    "mappingInput": "dataScadenza",
+                                    "mappingOutput": "dataScadenza"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "importo-cauzione",
+                                    "label": "FASE-INIZIALE.CONTRATTO-APPALTO-DATA.IMPORTO-CAUZIONE",
+                                    "oggettoProtezione": "W9.W9INIZ.IMPORTO_CAUZIONE",
+                                    "mnemonico": "W3I_CAUZIO",
+                                    "mappingInput": "importoCauzione",
+                                    "mappingOutput": "importoCauzione",
+                                    "currency": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

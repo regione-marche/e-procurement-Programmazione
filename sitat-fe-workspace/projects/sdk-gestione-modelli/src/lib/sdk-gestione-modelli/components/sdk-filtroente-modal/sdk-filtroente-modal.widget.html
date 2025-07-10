@@ -1,0 +1,16 @@
+<div class="rup-modal" *ngIf="isReady">
+    <div class="messages-box" #messages></div>
+    <div class="sdk-filtroente-container">
+        <div class="sdk-filtroente-modal-testata">
+        </div>
+        <div class="sdk-filtroente-modal-body">
+            <div class="sdk-filtroente-calculated-panel">
+                <sdk-textbox [config]="filtroenteConfigurationObs" (output)="onOutput($event)"></sdk-textbox>
+            </div>
+        </div>
+
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+</div>

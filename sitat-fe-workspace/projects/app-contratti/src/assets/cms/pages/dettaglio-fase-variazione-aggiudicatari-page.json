@@ -1,0 +1,235 @@
+{
+    "name": "dettaglio-fase-variazione-aggiudicatari-page",
+    "title": "TITLE.DETTAGLIO-VARIAZIONE-AGGIUDICATARI-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "dettaglio-fase-variazione-aggiudicatari-page",
+        "pageFeatures": [
+            "docassociati"
+        ],
+        "entity": {
+            "schema": "W9",
+            "name": "W9FASI",
+            "keys": [
+                "codGara",
+                "codLotto",
+                "codiceFase",
+                "num"
+            ]
+        },
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-variazione-aggiudicatari-page",
+                "label": "BREADCRUMB.DETTAGLIO-VARIAZIONE-AGGIUDICATARI",
+                "slug": "dettaglio-fase-variazione-aggiudicatari-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ],
+        "breadcrumbsLS": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.RICERCA-SCHEDE-TRASMESSE-PCP",
+                "slug": "ricerca-schede-trasmesse-pcp-page"
+            },
+            {
+                "code": "lista-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.LISTA-SCHEDE-TRASMESSE-PCP",
+                "slug": "lista-schede-trasmesse-pcp-page"
+            },
+            {
+                "code": "lista-fasi-lotto-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "dettaglio-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-variazione-aggiudicatari-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.DETTAGLIO-VARIAZIONE-AGGIUDICATARI",
+                "slug": "dettaglio-fase-variazione-aggiudicatari-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-fase-variazione-aggiudicatari-page-content-root-section",
+            "selector": "dettaglio-fase-variazione-aggiudicatari-section",
+            "description": "Pagina di dettaglio incarichi professionali",
+            "classNames": "dettaglio-fase-variazione-aggiudicatari-section",
+            "settings": {
+                "classNames": "dettaglio-fase-variazione-aggiudicatari-index",
+                "sectionTitle": "TITLE.DETTAGLIO-VARIAZIONE-AGGIUDICATARI-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "go-to-update-fase",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_GARE_FASE_VARIAZIONE_AGGIUDICATARI_PROVIDER",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "buttonsRO": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "buttonsLS": [
+                        {
+                            "code": "back-to-lista-fasi-lotto-schede-trasmesse",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "dati-generali-data",
+                            "label": "FASE-VARIAZIONE-AGGIUDICATARI.DATI-GENERALI-DATA.DATI-GENERALI-DATA",
+                            "fieldSections": [                                                                    
+                                {
+                                    "type": "TEXT",
+                                    "code": "num-varaggi",
+                                    "label": "FASE-VARIAZIONE-AGGIUDICATARI.DATI-GENERALI-DATA.NUM-VARAGGI",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "num",
+                                    "mappingOutput": "num",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "FASE-VARIAZIONE-AGGIUDICATARI.VALIDATORS.NUM-VARAGGI-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "id-partecipante",
+                                    "label": "FASE-VARIAZIONE-AGGIUDICATARI.DATI-GENERALI-DATA.ID-PARTECIPANTE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "partecipante",
+                                    "mappingOutput": "partecipante"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "denominazione-impresa",
+                                   "label": "FASE-VARIAZIONE-AGGIUDICATARI.DATI-GENERALI-DATA.DENOMINAZIONE-IMPRESA",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "impresa.ragioneSociale",
+                                    "mappingOutput": "codImpresa",
+                                    "link": true,
+                                    "modalComponent": "impresa-modal-widget",
+                                    "modalComponentConfig": "impresaModalConfig"
+                                },                                
+                                {
+                                    "type": "TEXT",
+                                    "code": "id-ruolo",
+                                    "label": "FASE-VARIAZIONE-AGGIUDICATARI.DATI-GENERALI-DATA.ID-RUOLO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "idRuolo",
+                                    "mappingOutput": "idRuolo",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "RuoloVaraggi"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "tipo-oe",
+                                    "label": "FASE-VARIAZIONE-AGGIUDICATARI.DATI-GENERALI-DATA.TIPO-OE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "tipoOe",
+                                    "mappingOutput": "tipoOe",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "TipoOperatoreEconomico"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "flag-avvalimento",
+                                    "label": "FASE-VARIAZIONE-AGGIUDICATARI.DATI-GENERALI-DATA.FLAG-AVVALIMENTO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "flagAvvalimento",
+                                    "mappingOutput": "flagAvvalimento",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "FlagAvvalimento"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "motivo-variazione",
+                                    "label": "FASE-VARIAZIONE-AGGIUDICATARI.DATI-GENERALI-DATA.MOTIVO-VARIAZIONE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "motivoVariazione",
+                                    "mappingOutput": "motivoVariazione",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "MotivoVariazione"
+                                }                             
+                            ]                                
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

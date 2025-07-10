@@ -1,0 +1,14 @@
+<div class="import-interventi-modal" *ngIf="isReady">
+    <div class="messages-box" #messages></div>
+    <div class="import-interventi-container">
+        <div>
+            <h1 class="title">{{ 'IMPORT-INTERVENTO.RADIO-TITLE' | translate }}</h1>
+        </div>
+        <div class="radio-container">
+            <sdk-radio [config]="radioConfig" [data]="radioData" (output)="onOutput($event)"></sdk-radio>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+</div>

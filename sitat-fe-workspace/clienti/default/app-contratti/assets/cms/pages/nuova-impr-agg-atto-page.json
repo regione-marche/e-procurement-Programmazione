@@ -1,0 +1,267 @@
+{
+    "name": "nuova-impr-agg-atto-page",
+    "title": "TITLE.NUOVA-IMPRESA-AGGIUDICATARIA-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "nuova-impr-agg-atto-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-atti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-atti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-impr-agg-atto-page",
+                "label": "BREADCRUMB.LISTA-IMPRESE-AGGIUDICATARIE",
+                "slug": "lista-impr-agg-atto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_ATTO_PARAMS"
+            },
+            {
+                "code": "nuova-impr-agg-atto-page",
+                "label": "BREADCRUMB.NUOVA-IMPRESA-AGGIUDICATARIA",
+                "slug": "nuova-impr-agg-atto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_IMPRESA_AGGIUDICATARIA_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "nuova-impr-agg-atto-page-content-root-section",
+            "selector": "nuova-impresa-aggiudicataria-section",
+            "description": "Pagina di inserimento impresa aggiudicataria",
+            "classNames": "nuova-impr-agg-atto-section",
+            "settings": {
+                "classNames": "nuova-impr-agg-atto-index",
+                "sectionTitle": "TITLE.NUOVA-IMPRESA-AGGIUDICATARIA-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-imprese-aggiudicatarie",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_GARE_LISTA_IMPR_AGG_ATTO",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-impresa",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_LISTA_IMPR_AGG_ATTO"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.GENERAL-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "id-tipo-agg",
+                                    "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.ID-TIPO-AGG",
+                                    "oggettoProtezione": "W9.W9AGGI.ID_TIPOAGG",
+                                    "mnemonico": "W3ID_TIPOA",
+                                    "mappingInput": "idTipoAgg",
+                                    "mappingOutput": "idTipoAgg",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "TipologiaAggiudicatario"
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "nomest-singola",
+                                    "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.NOMEST",
+                                    "oggettoProtezione": "W9.W9AGGI.CODIMP",
+                                    "mnemonico": "W3CODIMP",
+                                    "itemsProviderCode": "APP_GARE_IMPRESE_AGGIUDICATARIE_AUTOCOMPLETE",
+                                    "mappingInput": "impresa",
+                                    "mappingOutput": "codImpresa",
+                                    "noDataLabel": "NO-DATA",
+                                    "newEditAvailable": true,
+                                    "newItemButton": {
+                                        "code": "new",
+                                        "label": "BUTTONS.NUOVO",
+                                        "icon": "mgg-icons-crud-create",
+                                        "oggettoProtezione": "INS.*"
+                                    },
+                                    "editItemButton": {
+                                        "code": "edit",
+                                        "label": "BUTTONS.UPDATE",
+                                        "icon": "mgg-icons-crud-edit",
+                                        "oggettoProtezione": "MOD.*"
+                                    },
+                                    "modalComponent": "impresa-modal-widget",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "id-tipo-agg": {
+                                                "values": [
+                                                    {
+                                                        "value": "3",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    },
+                                    "modalComponentConfig": "impresaRWModalConfig"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "impresa-data",
+                            "label": "IMPRESA-AGGIUDICATARIA.IMPRESA-DATA.IMPRESA-DATA",
+                            "visible": false,
+                            "visibleCondition": {
+                                "or": {
+                                    "id-tipo-agg": {
+                                        "values": [
+                                            {
+                                                "value": "2",
+                                                "operation": "="
+                                            },
+                                            {
+                                                "value": "4",
+                                                "operation": "="
+                                            }
+                                        ],
+                                        "visible": false
+                                    }
+                                }
+                            },
+                            "fieldSections": [
+                                {
+                                    "type": "FORM-GROUP",
+                                    "code": "imprese-group",
+                                    "label": "",
+                                    "minGroupsNumber": 1,
+                                    "maxGroupsNumber": 0,
+                                    "mappingInput": "imprese",
+                                    "mappingOutput": "imprese",
+                                    "defaultFormGroupFields": [
+                                        {
+                                            "type": "AUTOCOMPLETE",
+                                            "code": "nomest",
+                                            "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.NOMEST",
+                                            "oggettoProtezione": "W9.W9AGGI.CODIMP",
+                                            "mnemonico": "W3CODIMP",
+                                            "itemsProviderCode": "APP_GARE_IMPRESE_AGGIUDICATARIE_AUTOCOMPLETE",
+                                            "mappingInput": "impresa",
+                                            "mappingOutput": "codImpresa",
+                                            "noDataLabel": "NO-DATA",
+                                            "newEditAvailable": true,
+                                            "newItemButton": {
+                                                "code": "new",
+                                                "label": "BUTTONS.NUOVO",
+                                                "icon": "mgg-icons-crud-create",
+                                                "oggettoProtezione": "INS.*"
+                                            },
+                                            "editItemButton": {
+                                                "code": "edit",
+                                                "label": "BUTTONS.UPDATE",
+                                                "icon": "mgg-icons-crud-edit",
+                                                "oggettoProtezione": "MOD.*"
+                                            },
+                                            "modalComponent": "impresa-modal-widget",
+                                            "modalComponentConfig": "impresaRWModalConfig"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "impresa-data2",
+                            "label": "IMPRESA-AGGIUDICATARIA.IMPRESA-DATA.IMPRESA-DATA",
+                            "visible": false,
+                            "visibleCondition": {
+                                "or": {
+                                    "id-tipo-agg": {
+                                        "values": [
+                                            {
+                                                "value": "1",
+                                                "operation": "="
+                                            }
+                                        ],
+                                        "visible": false
+                                    }
+                                }
+                            },
+                            "fieldSections": [
+                                {
+                                    "type": "FORM-GROUP",
+                                    "code": "imprese-group",
+                                    "label": "",
+                                    "minGroupsNumber": 1,
+                                    "maxGroupsNumber": 0,
+                                    "mappingInput": "imprese",
+                                    "mappingOutput": "imprese",
+                                    "defaultFormGroupFields": [
+                                        {
+                                            "type": "AUTOCOMPLETE",
+                                            "code": "nomest",
+                                            "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.NOMEST",
+                                            "oggettoProtezione": "W9.W9AGGI.CODIMP",
+                                            "mnemonico": "W3CODIMP",
+                                            "itemsProviderCode": "APP_GARE_IMPRESE_AGGIUDICATARIE_AUTOCOMPLETE",
+                                            "mappingInput": "impresa",
+                                            "mappingOutput": "codImpresa",
+                                            "noDataLabel": "NO-DATA",
+                                            "newEditAvailable": true,
+                                            "newItemButton": {
+                                                "code": "new",
+                                                "label": "BUTTONS.NUOVO",
+                                                "icon": "mgg-icons-crud-create",
+                                                "oggettoProtezione": "INS.*"
+                                            },
+                                            "editItemButton": {
+                                                "code": "edit",
+                                                "label": "BUTTONS.UPDATE",
+                                                "icon": "mgg-icons-crud-edit",
+                                                "oggettoProtezione": "MOD.*"
+                                            },
+                                            "modalComponent": "impresa-modal-widget",
+                                            "modalComponentConfig": "impresaRWModalConfig"
+                                        },
+                                        {
+                                            "type": "COMBOBOX",
+                                            "code": "ruolo",
+                                            "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.RUOLO",
+                                            "oggettoProtezione": "W9.W9AGGI.RUOLO",
+                                            "mnemonico": "W3RUOLO",
+                                            "mappingInput": "ruolo",
+                                            "mappingOutput": "ruolo",
+                                            "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                            "listCode": "RuoloAssociazione"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

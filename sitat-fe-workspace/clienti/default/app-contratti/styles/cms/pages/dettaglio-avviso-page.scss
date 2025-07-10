@@ -1,0 +1,9 @@
+@import "../app/app-vars.scss";
+
+.row-pubblicazione {
+    padding: 12rem;
+
+    .clickable {
+        @extend %color-base;
+    }
+}

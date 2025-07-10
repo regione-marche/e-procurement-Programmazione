@@ -1,0 +1,165 @@
+{
+    "name": "lista-atti-lotto-page",
+    "title": "TITLE.LISTA-ATTI-LOTTO-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/lista-atti-page.css"
+    ],
+    "settings": {
+        "page": "lista-atti-lotto-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-atti-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-atti-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "lista-atti-lotto-page-content-root-section",
+            "selector": "lista-atti-lotto-section",
+            "description": "Pagina di lista degli atti associati ad un lotto di una gara",
+            "classNames": "lista-atti-lotto-section",
+            "settings": {
+                "classNames": "lista-atti-lotto-index",
+                "menuTabs": [
+                    {
+                        "code": "dettaglio-lotto",
+                        "title": "DETTAGLIO-LOTTO.TABS.DATI-GENERALI",
+                        "slug": "dettaglio-lotto-page",
+                        "oggettoProtezione": "W9.W9LOTT-scheda.DATIDET",
+                        "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS"
+                    },
+                    {
+                        "code": "lista-fasi-lotto",
+                        "title": "DETTAGLIO-LOTTO.TABS.FASI-EVENTI",
+                        "slug": "lista-fasi-lotto-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                        "oggettoProtezione": "W9.W9LOTT-scheda.FASI"
+                    },
+                    {
+                        "code": "lista-atti-lotto",
+                        "title": "DETTAGLIO-LOTTO.TABS.LISTA-ATTI-LOTTO",
+                        "slug": "lista-atti-lotto-page",
+                        "active": true,
+                        "oggettoProtezione": "W9.W9LOTT-scheda.PUBBLICAZIONI",
+                        "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS"
+                    },
+                    {
+                        "code": "lista-invii-fasi",
+                        "title": "DETTAGLIO-LOTTO.TABS.LISTA-INVII-FASI",
+                        "slug": "lista-invii-fasi-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                        "oggettoProtezione": "W9.W9LOTT-scheda.FLUSSI",
+                        "visible": "APP_GARE_LISTA_INVII_FASI_VISIBLE"
+                    }
+                ],
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-lotti",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_ATTI_LOTTO",
+                            "type": "cancel"
+                        }
+                    ],
+                    "grid": {
+                        "navigable": true,
+                        "resizable": false,
+                        "debug": false,
+                        "sortable": {
+                            "allowUnsort": false,
+                            "mode": "single"
+                        },
+                        "sort": [
+                            {
+                                "field": "tipDoc",
+                                "dir": "desc"
+                            }
+                        ],
+                        "pageable": false,
+                        "columns": [
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-ATTI-LOTTO.NUMPUBB",
+                                "field": "numPubb",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_LINK",
+                                    "params": {
+                                        "action": {
+                                            "label": "LISTA-ATTI-LOTTO.AZIONI.DETTAGLIO",
+                                            "disabled": false,
+                                            "performer": "dettaglio"
+                                        }
+                                    }
+                                },
+                                "title": "LISTA-ATTI-LOTTO.TIPDOC",
+                                "field": "tipDocDesc",
+                                "width": 250,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false
+                            },{
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_ICON",
+                                    "params": {
+                                        "icons": [
+                                            {
+                                                "icon": "fas fa-flag",
+                                                "activationValue": "NOT-NULL",
+                                                "label": "LISTA-ATTI-LOTTO.PUBBLICATO"                                                
+                                            }                                            
+                                        ]
+                                    }
+                                },
+                                "title": "LISTA-ATTI-LOTTO.PUBBLICATO",
+                                "field": "idRicevuto",
+                                "width": 75,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "class": "table-icon-center"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

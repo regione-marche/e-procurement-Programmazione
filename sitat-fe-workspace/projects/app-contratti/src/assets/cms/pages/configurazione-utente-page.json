@@ -1,0 +1,133 @@
+{
+    "name": "configurazione-utente-page",
+    "title": "TITLE.CONFIGURAZIONE-UTENTE-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "configurazione-utente-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-utenti-page",
+                "label": "BREADCRUMB.RICERCA-UTENTI",
+                "slug": "ricerca-utenti-page"
+            },
+            {
+                "code": "lista-utenti-page",
+                "label": "BREADCRUMB.LISTA-UTENTI",
+                "slug": "lista-utenti-page"
+            },
+            {
+                "code": "configurazione-utente-page",
+                "label": "BREADCRUMB.CONFIGURAZIONE-UTENTE",
+                "slug": "configurazione-utente-page",
+                "additionalParams": "SDK_GESTIONE_UTENTI_DETTAGLIO_UTENTE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "configurazione-utente-page-content-root-section",
+            "selector": "configurazione-utente-section-widget",
+            "description": "Pagina configurazione utente",
+            "classNames": "configurazione-utente-section",
+            "settings": {
+                "classNames": "configurazione-utente-index",
+                "sectionTitle": "TITLE.CONFIGURAZIONE-UTENTE-PAGE",
+                "menuTabs": [
+                    {
+                        "code": "dettaglio-utente",
+                        "title": "SDK-UTENTE.TABS.DETTAGLIO-UTENTE",
+                        "slug": "dettaglio-utente-page",
+                        "additionalParams": "SDK_GESTIONE_UTENTI_DETTAGLIO_UTENTE_PARAMS"
+                    },
+                    {
+                        "code": "profili-utente",
+                        "title": "SDK-UTENTE.TABS.PROFILI-UTENTE",
+                        "slug": "profili-utente-page",
+                        "additionalParams": "SDK_GESTIONE_UTENTI_DETTAGLIO_UTENTE_PARAMS",
+                        "visible": "SDK_GESTIONE_UTENTI_GESTORE_PROFILI_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "stazioni-appaltanti-utente",
+                        "title": "SDK-UTENTE.TABS.AMMINISTRAZIONI-UTENTE",
+                        "slug": "stazioni-appaltanti-utente-page",
+                        "additionalParams": "SDK_GESTIONE_UTENTI_DETTAGLIO_UTENTE_PARAMS",
+                        "visible": "SDK_GESTIONE_UTENTI_GESTORE_STAZIONI_APPALTANTI_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "configurazione-utente",
+                        "title": "SDK-UTENTE.TABS.CONFIGURAZIONE-UTENTE",
+                        "slug": "configurazione-utente-page",
+                        "active": true,
+                        "additionalParams": "SDK_GESTIONE_UTENTI_DETTAGLIO_UTENTE_PARAMS"
+                    }
+                ],
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-utenti",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_UTENTI_LISTA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "go-to-update-configurazione",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "SDK_GESTIONE_UTENTI_LISTA"
+                        }
+                    ],
+                    "buttonsReadonly": [
+                        {
+                            "code": "back-to-lista-utenti",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_UTENTI_LISTA",
+                            "type": "cancel"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "contratti-data",
+                            "label": "SDK-UTENTE.CONTRATTI-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "privilegi-utente-contratti",
+                                    "label": "SDK-UTENTE.CONTRATTI-DATA.PRIVILEGI-UTENTE-CONTRATTI",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "listCode": "PrivilegiUtenteContratti",
+                                    "mappingInput": "sysab3"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "programmi-data",
+                            "label": "SDK-UTENTE.PROGRAMMI-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "centro-di-costo",
+                                    "label": "SDK-UTENTE.PROGRAMMI-DATA.CENTRO-DI-COSTO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "centroCosto"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

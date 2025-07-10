@@ -1,0 +1,136 @@
+{
+    "name": "dettaglio-fase-avanzamento-semp-page",
+    "title": "TITLE.DETTAGLIO-FASE-AVANZAMENTO-SEMP-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/pubblica-fase-lotto-page.css"
+    ],
+    "settings": {
+        "page": "dettaglio-fase-avanzamento-semp-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-avanzamento-semp-page",
+                "label": "BREADCRUMB.DETTAGLIO-FASE-AVANZAMENTO-SEMP",
+                "slug": "dettaglio-fase-avanzamento-semp-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-fase-avanzamento-semp-page-content-root-section",
+            "selector": "dettaglio-fase-avanzamento-semp-section",
+            "description": "Pagina di dettaglio fase di avanzamento-semp",
+            "classNames": "dettaglio-fase-avanzamento-semp-section",
+            "settings": {
+                "classNames": "dettaglio-fase-avanzamento-semp-index",
+                "sectionTitle": "TITLE.DETTAGLIO-FASE-AVANZAMENTO-SEMP-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "check-pubblicazione",
+                            "label": "BUTTONS.CHECK-DATA",
+                            "provider": "APP_FASI_LOTTO_PUBBLICA",
+                            "oggettoProtezione": "ALT.W9.FasiDiGara-schede.ControlloDatiInseriti",
+                            "type": "functions",
+                            "icon": "mgg-icons-document-text"
+                        },
+                        {
+                            "code": "go-to-update-fase",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_GARE_FASE_AVANZAMENTO_SEMP_PROVIDER",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "sidebar": {
+                        "code": "sidebar",
+                        "position": "right",
+                        "width": 500,
+                        "classList": [
+                            "check-pubb-sidebar"
+                        ],
+                        "headerImage": "assets/images/app/logo.png",
+                        "component": "check-pubblicazione-widget",
+                        "componentConfig": {}
+                    },
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "stato-avanzamento-semp-data",
+                            "label": "FASE-AVANZAMENTO-SEMP.STATO-AVANZAMENTO-SEMP.STATO-AVANZAMENTO-SEMP",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "num-avan",
+                                    "label": "FASE-AVANZAMENTO-SEMP.STATO-AVANZAMENTO-SEMP.NUM-AVAN",
+                                    "oggettoProtezione": "W9.W9AVAN.NUM_AVAN",
+                                    "mnemonico": "W3AVNUMAVA",
+                                    "mappingInput": "num",
+                                    "mappingOutput": "num"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-certificato",
+                                    "label": "FASE-AVANZAMENTO-SEMP.STATO-AVANZAMENTO-SEMP.DATA-CERTIFICATO",
+                                    "oggettoProtezione": "W9.W9AVAN.DATA_CERTIFICATO",
+                                    "mnemonico": "W3DATA_CER",
+                                    "mappingInput": "dataCertificato",
+                                    "mappingOutput": "dataCertificato"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "importo-certificato",
+                                    "label": "FASE-AVANZAMENTO-SEMP.STATO-AVANZAMENTO-SEMP.IMPORTO-CERTIFICATO",
+                                    "oggettoProtezione": "W9.W9AVAN.IMPORTO_CERTIFICATO",
+                                    "mnemonico": "W3I_CERTIF",
+                                    "mappingInput": "importoCertificato",
+                                    "mappingOutput": "importoCertificato",
+                                    "currency": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

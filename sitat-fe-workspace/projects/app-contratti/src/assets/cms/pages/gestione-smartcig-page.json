@@ -1,0 +1,52 @@
+{
+    "name": "gestione-smartcig-page",
+    "title": "TITLE.DETTAGLIO-SMARTCIG-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/gestione-smartcig-page.css"
+    ],
+    "settings": {
+        "page": "gestione-smartcig-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },           
+            {
+                "code": "gestione-smartcig-page",
+                "label": "BREADCRUMB.GESTIONE-SMARTCIG",
+                "slug": "gestione-smartcig-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "gestione-smartcig-page-content-root-section",
+            "selector": "gestione-smartcig-section",
+            "description": "Pagina di gestione SmartCIG",
+            "classNames": "gestione-smartcig-section",
+            "settings": {
+                "classNames": "gestione-smartcig-index",                
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-home-page",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_SMARTCIG"
+                        },                        
+                        {
+                            "code": "go-to-new-smartcig",
+                            "label": "BUTTONS.SET",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_SMARTCIG",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ]                    
+                }
+            }
+        }
+    ]
+}

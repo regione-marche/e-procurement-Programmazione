@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://services.apkappa.it/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://services.apkappa.it/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://services.apkappa.it/">
+      <s:element name="GetCapitoli">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="en" type="tns:InGetCapitoli" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InGetCapitoli">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Esercizio" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tipologia" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Anno" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Capitolo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceServizio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceSpesa" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetCapitoliResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCapitoliResult" type="tns:ArrayOfOutGetCapitoli" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfOutGetCapitoli">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="OutGetCapitoli" nillable="true" type="tns:OutGetCapitoli" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OutGetCapitoli">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Esercizio" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tipologia" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Anno" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Capitolo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CapitoloDescrizione" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServizioCodice" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServizioDescrizione" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SpesaCodice" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SpesaDescrizione" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodificaBilancio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodificaBilancioDescrizione" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodificaPCFin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodificaPCFinDescrizione" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodificaPCEco" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodificaPCEcoDescrizione" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ImportoIniziale" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ImportoVariazioni" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ImportoAttuale" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ResiduoDaImpegnareAccertare" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AuthenticationDetails" type="tns:AuthenticationDetails" />
+      <s:complexType name="AuthenticationDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetImpegni">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="en" type="tns:InGetImpegni" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InGetImpegni">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Esercizio" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Anno" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Numero" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SubNumero" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Capitolo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodificaBilancio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceServizio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceSpesa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceBeneficiario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceCIG" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetImpegniResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetImpegniResult" type="tns:ArrayOfOutGetImpegni" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfOutGetImpegni">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="OutGetImpegni" nillable="true" type="tns:OutGetImpegni" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OutGetImpegni">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Esercizio" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Anno" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Numero" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Subnumero" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descrizione" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Capitolo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CapitoloDescrizione" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServizioCodice" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServizioDescrizione" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SpesaCodice" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SpesaDescrizione" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodificaBilancio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodificaBilancioDescrizione" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodificaPCFin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodificaPCFinDescrizione" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodificaPCEco" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodificaPCEcoDescrizione" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BeneficiarioCodice" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BeneficiarioNominativo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BeneficiarioCF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BeneficiarioPIVA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AttoTipologia" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AttoNumero" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AttoData" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="AttoDescrizione" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceCIG" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceCUP" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ImportoImpegno" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ImportoLiquidato" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ImportoMandati" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ImportoDaLiquidare" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ImportoMandatiDaEmettere" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMandati">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="en" type="tns:InGetMandati" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="InGetMandati">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Esercizio" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Numero" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="SubNumero" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Capitolo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodificaBilancio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceServizio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceSpesa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceBeneficiario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceCIG" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceCUP" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetMandatiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMandatiResult" type="tns:ArrayOfOutGetMandati" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfOutGetMandati">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="OutGetMandati" nillable="true" type="tns:OutGetMandati" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="OutGetMandati">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Esercizio" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Numero" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Subnumero" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descrizione" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Capitolo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CapitoloDescrizione" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServizioCodice" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServizioDescrizione" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SpesaCodice" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SpesaDescrizione" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodificaBilancio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodificaBilancioDescrizione" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodificaPCFin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodificaPCFinDescrizione" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodificaPCEco" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodificaPCEcoDescrizione" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BeneficiarioCodice" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BeneficiarioNominativo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BeneficiarioCF" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="BeneficiarioPIVA" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AttoTipologia" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="AttoNumero" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AttoData" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="AttoDescrizione" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceCIG" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CodiceCUP" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FinanziamentoCodice" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FinanziamentoDescrizione" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Importo" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ImportoPagato" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="ImportoDaPagare" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetCapitoliSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCapitoli" />
+  </wsdl:message>
+  <wsdl:message name="GetCapitoliSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCapitoliResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCapitoliAuthenticationDetails">
+    <wsdl:part name="AuthenticationDetails" element="tns:AuthenticationDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetImpegniSoapIn">
+    <wsdl:part name="parameters" element="tns:GetImpegni" />
+  </wsdl:message>
+  <wsdl:message name="GetImpegniSoapOut">
+    <wsdl:part name="parameters" element="tns:GetImpegniResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetImpegniAuthenticationDetails">
+    <wsdl:part name="AuthenticationDetails" element="tns:AuthenticationDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetMandatiSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMandati" />
+  </wsdl:message>
+  <wsdl:message name="GetMandatiSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMandatiResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMandatiAuthenticationDetails">
+    <wsdl:part name="AuthenticationDetails" element="tns:AuthenticationDetails" />
+  </wsdl:message>
+  <wsdl:portType name="FinanziariaAPK_serviceSoap">
+    <wsdl:operation name="GetCapitoli">
+      <wsdl:input message="tns:GetCapitoliSoapIn" />
+      <wsdl:output message="tns:GetCapitoliSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImpegni">
+      <wsdl:input message="tns:GetImpegniSoapIn" />
+      <wsdl:output message="tns:GetImpegniSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMandati">
+      <wsdl:input message="tns:GetMandatiSoapIn" />
+      <wsdl:output message="tns:GetMandatiSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FinanziariaAPK_serviceSoap" type="tns:FinanziariaAPK_serviceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCapitoli">
+      <soap:operation soapAction="http://services.apkappa.it/GetCapitoli" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetCapitoliAuthenticationDetails" part="AuthenticationDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImpegni">
+      <soap:operation soapAction="http://services.apkappa.it/GetImpegni" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetImpegniAuthenticationDetails" part="AuthenticationDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMandati">
+      <soap:operation soapAction="http://services.apkappa.it/GetMandati" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetMandatiAuthenticationDetails" part="AuthenticationDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FinanziariaAPK_serviceSoap12" type="tns:FinanziariaAPK_serviceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCapitoli">
+      <soap12:operation soapAction="http://services.apkappa.it/GetCapitoli" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetCapitoliAuthenticationDetails" part="AuthenticationDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImpegni">
+      <soap12:operation soapAction="http://services.apkappa.it/GetImpegni" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetImpegniAuthenticationDetails" part="AuthenticationDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMandati">
+      <soap12:operation soapAction="http://services.apkappa.it/GetMandati" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetMandatiAuthenticationDetails" part="AuthenticationDetails" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FinanziariaAPK_service">
+    <wsdl:port name="FinanziariaAPK_serviceSoap" binding="tns:FinanziariaAPK_serviceSoap">
+      <soap:address location="http://hsrag.apkappa.it/hypersictest/finanziariarconet/FinanziariaAPK_service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FinanziariaAPK_serviceSoap12" binding="tns:FinanziariaAPK_serviceSoap12">
+      <soap12:address location="http://hsrag.apkappa.it/hypersictest/finanziariarconet/FinanziariaAPK_service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

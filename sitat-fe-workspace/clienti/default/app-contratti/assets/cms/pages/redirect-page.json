@@ -1,0 +1,21 @@
+{
+    "name": "redirect-page",
+    "title": "TITLE.REDIRECT-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "redirect-page"
+    },
+    "sections": [
+        {
+            "id": "redirect-page-content-root-section",
+            "selector": "redirect-section",
+            "description": "Pagina di redirect",
+            "classNames": "redirect-section",
+            "settings": {
+                "classNames": "redirect-index"
+            }
+        }
+    ]
+}

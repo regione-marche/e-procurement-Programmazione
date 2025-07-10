@@ -1,0 +1,70 @@
+import { LottoDynamicValue } from '../gare/gare.model';
+
+export interface FaseVarianteEntry {
+    altreMotivazioni?: string;
+    codGara?: number;
+    codLotto?: number;
+    dataAttoAggiuntivo?: Date;
+    dataVerbaleAppr?: Date;
+    flagImporti?: string;
+    flagSicurezza?: string;
+    flagVariante?: string;
+    importoComplAppalto?: number;
+    importoComplIntervento?: number;
+    importoDisposizione?: number;
+    importoNonAssog?: number;
+    importoProgettazione?: number;
+    importoRideterminatoForniture?: number;
+    importoRideterminatoLavori?: number;
+    importoRideterminatoServizi?: number;
+    importoSicurezza?: number;
+    importoSubtotale?: number;
+    motivazioniVariante?: Array<LottoDynamicValue>;
+    countW9moti?: number;
+    num?: number;
+    numGiorniProroga?: number;
+    pubblicata?: boolean;
+    quintoObbligo?: string;
+    cigNuovaProc?: string;
+    urlVariantiCo?: string;
+    motivoRevPrezzi?: number;
+    impFinpa?: number;
+    entrUtenza?: number;
+    intrAttivo?: number;
+    impOpzioni?: number;
+    eform?: string;
+}
+
+export interface FaseVarianteInsertForm {
+    altreMotivazioni?: string;
+    codGara?: number;
+    codLotto?: number;
+    dataAttoAggiuntivo?: Date;
+    dataVerbaleAppr?: Date;
+    flagImporti?: string;
+    flagSicurezza?: string;
+    flagVariante?: string;
+    importoComplAppalto?: number;
+    importoComplIntervento?: number;
+    importoDisposizione?: number;
+    importoNonAssog?: number;
+    importoProgettazione?: number;
+    importoRideterminatoForniture?: number;
+    importoRideterminatoLavori?: number;
+    importoRideterminatoServizi?: number;
+    importoSicurezza?: number;
+    importoSubtotale?: number;
+    motivazioniVariante?: Array<LottoDynamicValue>;
+    num?: number;
+    numGiorniProroga?: number;
+    quintoObbligo?: string;
+    cigNuovaProc?: string;    
+    urlVariantiCo?: string;
+    motivoRevPrezzi?: string;
+    impFinpa?: number;
+    entrUtenza?: number;
+    intrAttivo?: number;
+    impOpzioni?: number;
+    eform?: string;
+    newEform?: string;
+}

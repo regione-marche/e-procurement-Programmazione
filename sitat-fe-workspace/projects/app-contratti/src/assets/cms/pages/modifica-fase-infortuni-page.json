@@ -1,0 +1,159 @@
+{
+    "name": "modifica-fase-infortuni-page",
+    "title": "TITLE.MODIFICA-FASE-INFORTUNI-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "modifica-fase-infortuni-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-infortuni-page",
+                "label": "BREADCRUMB.DETTAGLIO-FASE-INFORTUNI",
+                "slug": "dettaglio-fase-infortuni-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            },
+            {
+                "code": "modifica-fase-infortuni-page",
+                "label": "BREADCRUMB.MODIFICA-FASE-INFORTUNI",
+                "slug": "modifica-fase-infortuni-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-fase-infortuni-page-content-root-section",
+            "selector": "modifica-fase-infortuni-section",
+            "description": "Pagina di modifica fase di infortuni",
+            "classNames": "modifica-fase-infortuni-section",
+            "settings": {
+                "classNames": "modifica-fase-infortuni-index",
+                "sectionTitle": "TITLE.MODIFICA-FASE-INFORTUNI-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-dettaglio-fase",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_GARE_FASE_INFORTUNI_PROVIDER",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-fase",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_FASE_INFORTUNI_PROVIDER"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "infortuni-data",
+                            "label": "FASE-INFORTUNI.INFORTUNI.INFORTUNI",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "num-infor",
+                                    "label": "FASE-INFORTUNI.INFORTUNI.NUM-INFOR",
+                                    "oggettoProtezione": "W9.W9INFOR.NUM_INFOR",
+                                    "mnemonico": "W3IFNUMINF",
+                                    "mappingInput": "num",
+                                    "mappingOutput": ""
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "ninfort",
+                                    "label": "FASE-INFORTUNI.INFORTUNI.NINFORT",
+                                    "oggettoProtezione": "W9.W9INFOR.NINFORT",
+                                    "mnemonico": "W3NINFORT",
+                                    "mappingInput": "totaleInfortuni",
+                                    "mappingOutput": "totaleInfortuni",
+                                    "decimals": 0,
+                                    "maxLength": 4
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "ngiornate",
+                                    "label": "FASE-INFORTUNI.INFORTUNI.NGIORNATE",
+                                    "oggettoProtezione": "W9.W9INFOR.NGIORNATE",
+                                    "mnemonico": "W3NGIORNAT",
+                                    "mappingInput": "giornateRiconosciute",
+                                    "mappingOutput": "giornateRiconosciute",
+                                    "decimals": 0,
+                                    "maxLength": 4
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "imorte",
+                                    "label": "FASE-INFORTUNI.INFORTUNI.IMORTE",
+                                    "oggettoProtezione": "W9.W9INFOR.IMORTE",
+                                    "mnemonico": "W3IMORTE",
+                                    "mappingInput": "infortuniMortali",
+                                    "mappingOutput": "infortuniMortali",
+                                    "decimals": 0,
+                                    "maxLength": 4
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "iperma",
+                                    "label": "FASE-INFORTUNI.INFORTUNI.IPERMA",
+                                    "oggettoProtezione": "W9.W9INFOR.IPERMA",
+                                    "mnemonico": "W3IPERMA",
+                                    "mappingInput": "infortuniPermanenti",
+                                    "mappingOutput": "infortuniPermanenti",
+                                    "decimals": 0,
+                                    "maxLength": 4
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "nomest",
+                                    "label": "FASE-INFORTUNI.INFORTUNI.NOMEST",
+                                    "oggettoProtezione": "W9.W9INFOR.CODIMP",
+                                    "mnemonico": "W3INCODIMP",
+                                    "mappingInput": "impresa",
+                                    "mappingOutput": "codImpresa",
+                                    "itemsProviderCode": "APP_GARE_IMPRESE_AGGIUDICATARIE_AGGI_SUBA_AUTOCOMPLETE",
+                                    "noDataLabel": "NO-DATA",
+                                    "newEditAvailable": false,
+                                    "modalComponent": "impresa-modal-widget",
+                                    "modalComponentConfig": "impresaRWModalConfig"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

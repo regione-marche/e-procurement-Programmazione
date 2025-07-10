@@ -1,0 +1,22 @@
+{
+    "name": "registrazione-utente-completata",
+    "title": "TITLE.REGISTRAZIONE-UTENTE-COMPLETATA-PAGE",
+    "layout": "home-layout",
+    "appName": "app-launcher",
+    "styleUrls": [],
+    "settings": {
+        "page": "registrazione-utente-completata"
+    },
+    "sections": [
+        {
+            "id": "registrazione-utente-completata-content-root-section",
+            "selector": "registrazione-utente-completata-section",
+            "description": "Componente per la registrazione utente completata",
+            "classNames": "registrazione-utente-completata-section",
+            "settings": {
+                "classNames": "registrazione-utente-completata-section",
+                "sectionTitle": "TITLE.REGISTRAZIONE-UTENTE-COMPLETATA-PAGE"
+            }
+        }
+    ]
+}

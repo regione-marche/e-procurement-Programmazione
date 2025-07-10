@@ -1,0 +1,202 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "app-launcher": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/app-launcher",
+      "sourceRoot": "projects/app-launcher/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "allowedCommonJsDependencies": [
+              "hash-sum"
+            ],
+            "outputPath": "dist/app-launcher",
+            "index": "projects/app-launcher/src/index.html",
+            "main": "projects/app-launcher/src/main.ts",
+            "polyfills": "projects/app-launcher/src/polyfills.ts",
+            "tsConfig": "projects/app-launcher/tsconfig.app.json",
+            "assets": [
+              "projects/app-launcher/src/favicon.ico",
+              "projects/app-launcher/src/assets",
+              "projects/app-launcher/src/login.html"
+            ],
+            "styles": [
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/@fortawesome/fontawesome-free/css/all.css",
+              "node_modules/primeng/resources/themes/nova/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/ngx-toastr/toastr.css",
+              "projects/app-launcher/src/base-styles.scss"
+            ],
+            "scripts": [
+              "node_modules/@fortawesome/fontawesome-free/js/all.js"
+            ],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "5mb",
+                  "maximumError": "10mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          },
+          "defaultConfiguration": ""
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "app-launcher:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "app-launcher:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "buildTarget": "app-launcher:build"
+          }
+        }
+      }
+    },
+    "sdk-commons": {
+      "root": "projects/sdk-commons",
+      "sourceRoot": "projects/sdk-commons/src",
+      "projectType": "library",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/sdk-commons/tsconfig.lib.json",
+            "project": "projects/sdk-commons/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/sdk-commons/tsconfig.lib.prod.json"
+            }
+          }
+        }
+      }
+    },
+    "sdk-controls": {
+      "root": "projects/sdk-controls",
+      "sourceRoot": "projects/sdk-controls/src",
+      "projectType": "library",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/sdk-controls/tsconfig.lib.json",
+            "project": "projects/sdk-controls/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/sdk-controls/tsconfig.lib.prod.json"
+            }
+          }
+        }
+      }
+    },
+    "sdk-widgets": {
+      "root": "projects/sdk-widgets",
+      "sourceRoot": "projects/sdk-widgets/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/sdk-widgets/tsconfig.lib.json",
+            "project": "projects/sdk-widgets/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/sdk-widgets/tsconfig.lib.prod.json"
+            }
+          }
+        }
+      }
+    },
+    "sdk-gestione-utenti": {
+      "projectType": "library",
+      "root": "projects/sdk-gestione-utenti",
+      "sourceRoot": "projects/sdk-gestione-utenti/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/sdk-gestione-utenti/tsconfig.lib.json",
+            "project": "projects/sdk-gestione-utenti/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/sdk-gestione-utenti/tsconfig.lib.prod.json"
+            },
+            "development": {}
+          },
+          "defaultConfiguration": "production"
+        }
+      }
+    },
+    "sdk-table": {
+      "root": "projects/sdk-table",
+      "sourceRoot": "projects/sdk-table/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/sdk-table/tsconfig.lib.json",
+            "project": "projects/sdk-table/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/sdk-table/tsconfig.lib.prod.json"
+            },
+            "development": {}
+          },
+          "defaultConfiguration": "production"
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": false
+  }
+}

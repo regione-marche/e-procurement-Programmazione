@@ -1,0 +1,97 @@
+{
+    "name": "profili-report-page",
+    "title": "TITLE.PROFILI-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "profili-report-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-report-page",
+                "label": "BREADCRUMB.GESTIONE-REPORT",
+                "slug": "lista-report-page"
+            },
+            {
+                "code": "profili-report-page",
+                "label": "BREADCRUMB.PROFILI-REPORT",
+                "slug": "profili-report-page",
+                "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "profili-report-page-content-root-section",
+            "selector": "sdk-profili-report-section",
+            "description": "Pagina di dettaglio dei profili del report",
+            "classNames": "sdk-profili-report-section",
+            "settings": {
+                "classNames": "profili-report-index",
+                "sectionTitle": "TITLE.PROFILI-PAGE",
+                "menuTabs": [
+                    {
+                        "action": "DETAIL",
+                        "code": "dati-generali-report",
+                        "title": "SDK-DETTAGLIO-REPORT.TABS.DATI-GENERALI",
+                        "slug": "dati-generali-report-page",
+                        "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+                    },
+                    {
+                        "action": "DEFINIZIONE",
+                        "code": "definizione-report",
+                        "title": "SDK-DETTAGLIO-REPORT.TABS.DEFINIZIONE",
+                        "slug": "definizione-report-page",
+                        "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+                    },
+                    {
+                        "action": "PARAMETRI",
+                        "code": "parametri-report",
+                        "title": "SDK-DETTAGLIO-REPORT.TABS.PARAMETRI",
+                        "slug": "parametri-report-page",
+                        "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+                    },
+                    {
+                        "action": "PROFILI",
+                        "code": "profili-report",
+                        "active": true,
+                        "title": "SDK-DETTAGLIO-REPORT.TABS.PROFILI",
+                        "slug": "profili-report-page",
+                        "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS",
+                        "visible": "SDK_GESTIONE_REPORT_PROFILI_MENU_VISIBLE"
+                    },
+                    {
+                        "action": "UFF-INT",
+                        "code": "uff-int-report",
+                        "title": "SDK-DETTAGLIO-REPORT.TABS.UFF-INT",
+                        "slug": "uffici-intestatari-report-page",
+                        "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS",
+                        "visible": "SDK_GESTIONE_REPORT_UFFINT_MENU_VISIBLE"
+                    }
+                ],
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-report",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_REPORT_LISTA_REPORT",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "modifica-profili-report",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "SDK_GESTIONE_REPORT_LISTA_REPORT"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

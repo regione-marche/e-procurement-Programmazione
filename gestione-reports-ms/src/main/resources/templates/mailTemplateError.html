@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title></title>
+	<style>
+		body {
+			font-family: Helvetica, sans-serif;
+			line-height: 1.6;
+			color: black;
+			width: 95%;
+			max-width: 95%;
+			overflow-x: hidden;
+			margin: 0;
+			padding: 0;
+		}
+		.container {
+			width: 95%;
+			margin: 0;
+			padding: 10px;
+		}
+		.message{
+			white-space: pre-wrap;
+			word-wrap: break-word;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<p class="message" th:text="${testoMail}"></p>
+		<br>
+		<p th:text="${codiceApplicativo}"></p>
+	</div>
+</body>
+</html>

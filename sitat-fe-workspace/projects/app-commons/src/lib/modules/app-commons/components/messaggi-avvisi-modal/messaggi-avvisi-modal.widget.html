@@ -1,0 +1,104 @@
+<div class="ma-modal" *ngIf="isReady">
+    <div class="messages-box" #messages></div>
+    <!-- Messaggi in arrivo -->
+    <div class="ma-container" *ngIf="messaggiInArrivoVisible">
+        <div class="ma-testata">
+            <h1 class="title">{{ 'MESSAGGI-AVVISI.MESSAGGI-IN-ARRIVO' | translate }}</h1>
+        </div>
+        <div class="ma-content">
+            <div class="messaggi-in-arrivo">
+                <div class="messaggio-item"
+                    *ngFor="let messaggio of messaggiInArrivo; trackBy: trackByCode; let i = index">
+                    <div class="messaggio-content">
+                        <div class="body" sdkClick (aClick)="markReadUnread(messaggio)" tabindex="0" role="article">
+                            <div class="titolo">
+                                <div class="non-letto" *ngIf="messaggio.letto === 0">
+                                    <!-- {{ 'MESSAGGI-AVVISI.NON-LETTO' | translate }} -->
+                                </div>
+                                {{messaggio.oggetto}}
+                            </div>
+                            {{messaggio.corpoMessaggio}}
+                        </div>
+                        <div class="actions">
+                            <div sdkClick (aClick)="deleteMessaggioInArrivo(messaggio)" tabindex="0" role="button"
+                                [attr.aria-label]="'BUTTONS.ELIMINA' | translate">
+                                <i class="mgg-icons-crud-delete"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider" *ngIf="i < messaggiInArrivo.length - 1"></div>
+                </div>
+                <div class="empty-messages"
+                    *ngIf="messaggiInArrivo === undefined || messaggiInArrivo === null || messaggiInArrivo.length === 0">
+                    {{ 'NO-MESSAGE-DATA' | translate }}
+                </div>
+            </div>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group *ngIf="isAmministratore" [config]="messaggiInArrivoButtons"
+                (output)="onButtonClick($event)"></sdk-button-group>
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+
+    <!-- Messaggi inviati -->
+    <div class="ma-container" *ngIf="messaggiInviatiVisible">
+        <div class="ma-testata">
+            <h1 class="title">{{ 'MESSAGGI-AVVISI.MESSAGGI-INVIATI' | translate }}</h1>
+        </div>
+        <div class="ma-content">
+            <div class="messaggi-inviati">
+                <div class="messaggio-item"
+                    *ngFor="let messaggio of messaggiInviati; trackBy: trackByCode; let i = index">
+                    <div class="messaggio-content">
+                        <div class="body">
+                            <div class="titolo">
+                                {{messaggio.oggetto}}
+                            </div>
+                            {{messaggio.corpoMessaggio}}
+                        </div>
+                        <div class="actions">
+                            <div sdkClick (aClick)="deleteMessaggioInviato(messaggio)" tabindex="0" role="button"
+                                [attr.aria-label]="'BUTTONS.ELIMINA' | translate">
+                                <i class="mgg-icons-crud-delete"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="divider" *ngIf="i < messaggiInviati.length - 1"></div>
+                </div>
+                <div class="empty-messages"
+                    *ngIf="messaggiInviati === undefined || messaggiInviati === null || messaggiInviati.length === 0">
+                    {{ 'NO-MESSAGE-DATA' | translate }}
+                </div>
+            </div>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="messaggiInviatiButtons" (output)="onButtonClick($event)"></sdk-button-group>
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+
+    <!-- Nuovo messaggio -->
+    <div class="ma-container" *ngIf="nuovoMessaggioVisible">
+        <div class="ma-testata">
+            <h1 class="title">{{ 'MESSAGGI-AVVISI.NUOVO-MESSAGGIO' | translate }}</h1>
+        </div>
+        <div class="ma-content">
+            <div class="invio-messaggio">
+                <sdk-autocomplete [config]="destinatariAutocompleteConfig" (output)="manageDestinatariOutput($event)">
+                </sdk-autocomplete>
+                <sdk-documents-list [config]="destinatariSelezionatiConfig" [data]="destinatariSelezionatiInput"
+                    (output)="manageRemoveDestinatarioSelezionato($event)">
+                </sdk-documents-list>
+                <sdk-textbox [config]="oggettoConfig" [data]="oggettoData" (output)="manageOggettoOutput($event)">
+                </sdk-textbox>
+                <sdk-textarea [config]="bodyConfig" [data]="bodyData" (output)="manageBodyOutput($event)">
+                </sdk-textarea>
+            </div>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="nuovoMessaggioButtons" (output)="onButtonClick($event)"></sdk-button-group>
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+</div>

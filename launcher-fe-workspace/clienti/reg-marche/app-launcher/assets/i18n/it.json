@@ -1,0 +1,42 @@
+{
+    "LOGO-DESCRIPTION": "Logo della Regione Marche",
+    "HEADER-TITLE": "Regione Marche",
+    "APP-TITLE": "PROG",
+    "APP-SUBTITLE": "Programmazione Lavori, Forniture e Servizi",
+    "FOOTER": {
+        "SITENAME-TITLE": "PROG",
+        "SITENAME-SUBTITLE": "Regione Marche",
+        "SITENAME-DESCRIPTION": "Programmazione Lavori, Forniture e Servizi",
+        "LINK-ANAC": "Anac",
+        "LINK-SERVIZIO-CONTRATTI-PUBBLICI": "Servizio contratti pubblici (MIT)",
+        "LINK-BANDI-AVVISI-ESITI-GARA": "Consultazione Bandi, avvisi ed esiti di gara",
+        "LINK-PROGRAMMAZIONE-LAVORI-BENI-SERVIZI": "Consultazione Programmazione lavori, beni e servizi",
+        "CONTACTS": {
+            "EMAIL": "Email"
+        }
+    },
+    "INDEX-PAGE": {
+        "PANELS": {
+            "FIRST": {
+                "IMAGE": "Programmazione Lavori, Forniture e Servizi",
+                "TITLE": "Programmazione Lavori, Forniture e Servizi",
+                "BODY": "Compilazione, pubblicazione e trasmissione all'osservatorio dei contratti pubblici e alle banche dati nazionali di programmi di lavori, servizi e forniture",
+                "LINK": "Accedi al servizio"
+            },
+            "SECOND": {
+                "IMAGE": "A&C Esecuzione",
+                "TITLE": "A&C Esecuzione",
+                "BODY": "Componente della piattaforma software Appalti&Contratti e-Procurement finalizzata alla gestione semplificata ed invio alla BDNCP delle schede della fase di esecuzione dei contratti",
+                "LINK": "Accedi al servizio"
+            }          
+        }
+    },
+    "REGISTRAZIONE-UTENTE": {
+        "ALLEGA-DOCUMENTI-SECTION": {            
+            "WARNING": "ATTENZIONE!",
+            "TESTO-DOWNLOAD": "Prima di procedere con la registrazione \u00E8 necessario compilare il modulo di abilitazione qui accessibile. Il modulo di abilitazione firmato digitalmente deve essere allegato al presente form nella sezione documenti. L'abilitazione all'uso dei servizi sar\u00E0 comunicata sulla email indicata all’atto di registrazione"
+          
+        }
+    }
+
+}

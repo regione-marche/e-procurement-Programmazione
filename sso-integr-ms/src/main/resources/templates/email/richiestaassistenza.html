@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<p>
+		RIFERIMENTI DEL RICHIEDENTE<br>
+		Nominativo ente/amministrazione: <span th:text="${nominativoEnteAmministrazione}"></span><br>
+		Referente da contattare: <span th:text="${referenteDaContattare}"></span><br>
+		Mail: <span th:text="${email}"></span>
+	</p>
+	<p th:if="${showTelefono == true}">
+		Telefono: <span th:text="${telefono}"></span>.
+	</p>
+	<p th:if="${showDescrizione == true}">
+		<br>DESCRIZIONE DELLA RICHIESTA<br>
+		<span th:text="${descrizione}"></span>
+	</p>
+	<p>
+		<br>INFORMAZIONI TECNICHE APPLICATIVO<br>
+		Prodotto: <span th:text="${nomeProdotto}"></span><br>
+		Versione: <span th:text="${versioneProdotto}"></span><br>
+		Registrato da: <span th:text="${acquirenteSW}"></span><br>
+		Sistema operativo: <span th:text="${osName}"></span><br>
+		Database installato: <span th:text="${dbName}"></span><br><br>
+		CLIENT RICHIEDENTE<br>
+		Browser name = <span th:text="${browserName}"></span><br>
+		Full version = <span th:text="${fullVersion}"></span><br>
+		Major version = <span th:text="${majorVersion}"></span><br>
+		navigator.appName = <span th:text="${navigatorAppName}"></span><br>
+		navigator.userAgent = <span th:text="${navigatorUserAgent}"></span><br>
+	</p>
+</body>
+</html>

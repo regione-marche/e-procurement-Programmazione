@@ -1,0 +1,299 @@
+{
+    "name": "dett-prog-opere-incompiute-page",
+    "title": "TITLE.DETTAGLIO-PROGRAMMA-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "app-programmi",
+    "styleUrls": [],
+    "settings": {
+        "page": "dett-prog-opere-incompiute-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-programmi-page",
+                "label": "BREADCRUMB.LISTA-PROGRAMMI",
+                "slug": "lista-programmi-page",
+                "additionalParams": "APP_PROGRAMMI_LISTA_PROGRAMMI_PARAMS"
+            },
+            {
+                "code": "dett-prog-opere-incompiute-page",
+                "label": "BREADCRUMB.DETTAGLIO-PROGRAMMA",
+                "slug": "dett-prog-opere-incompiute-page",
+                "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dett-prog-opere-incompiute-page-content-root-section",
+            "selector": "dett-prog-opere-incompiute-section",
+            "description": "Pagina per la creazione di un nuovo avviso",
+            "classNames": "dett-prog-opere-incompiute-section",
+            "settings": {
+                "classNames": "dett-prog-opere-incompiute-index",
+                "menuTabs": [
+                    {
+                        "code": "dati-generali",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.DATI-GENERALI",
+                        "slug": "dett-prog-dati-generali-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.DATIGEN",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+                    },
+                    {
+                        "code": "opere-incompiute",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.OPERE-INCOMPIUTE",
+                        "active": true,
+                        "slug": "dett-prog-opere-incompiute-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.OPEREINCOMPIUTE",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+                    },
+                    {
+                        "code": "interventi",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.INTERVENTI",
+                        "slug": "dett-prog-interventi-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.INTERVENTI",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS",
+                        "visible": "APP_PROGRAMMI_DETT_PROG_LAVORI_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "interventi-non-riproposti",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.INTERVENTI-NON-RIPROPOSTI",
+                        "slug": "dett-prog-interventi-non-riproposti-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.INTERVENTINONRIPROPOSTI",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS",
+                        "visible": "APP_PROGRAMMI_DETT_PROG_LAVORI_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "acquisti",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.ACQUISTI",
+                        "slug": "dett-prog-interventi-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.INTERVENTI",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS",
+                        "visible": "APP_PROGRAMMI_DETT_PROG_FORNITURE_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "acquisti-non-riproposti",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.ACQUISTI-NON-RIPROPOSTI",
+                        "slug": "dett-prog-interventi-non-riproposti-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.INTERVENTINONRIPROPOSTI",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS",
+                        "visible": "APP_PROGRAMMI_DETT_PROG_FORNITURE_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "riepilogo",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.RIEPILOGO",
+                        "slug": "dett-prog-riepilogo-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.RIEPILOGO",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+                    },
+                    {
+                        "code": "pubblica",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.PUBBLICA",
+                        "slug": "dett-prog-pubblica-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.FLUSSIPROGRAMMI",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+                    }
+                ],
+                "menuTabsOI": [
+                    {
+                        "code": "dati-generali",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.DATI-GENERALI",
+
+                        "slug": "dett-prog-dati-generali-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.DATIGEN",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+                    },
+                    {
+                        "code": "opere-incompiute",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.OPERE-INCOMPIUTE",
+                        "slug": "dett-prog-opere-incompiute-page",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS",
+                        "active": true,
+                        "oggettoProtezione": "W9.PIATRI-scheda.OPEREINCOMPIUTE",
+                        "visible": "APP_PROGRAMMI_DETT_PROG_LAVORI_TABS_VISIBLE"
+                    },              
+                    {
+                        "code": "riepilogo",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.RIEPILOGO",
+                        "slug": "dett-prog-riepilogo-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.RIEPILOGO",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+                    },
+                    {
+                        "code": "pubblica",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.PUBBLICA",
+                        "slug": "dett-prog-pubblica-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.FLUSSIPROGRAMMI",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+                    }
+                ],
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "nuova-opera-incompiuta",
+                            "label": "BUTTONS.NUOVO",
+                            "icon": "mgg-icons-crud-create",
+                            "provider": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA",
+                            "oggettoProtezione": "INS.*"
+                        }
+                    ],
+                    "readOnlyButtons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA",
+                            "type": "cancel"
+                        }
+                    ],
+                    "grid": {
+                        "showCurrentPageReport": true,
+                        "showCurrentRecordsReport": true,
+                        "navigable": true,
+                        "resizable": false,
+                        "debug": false,
+                        "sortable": {
+                            "allowUnsort": false,
+                            "mode": "single"
+                        },
+                        "sort": [
+                            {
+                                "field": "annoUltimoQe",
+                                "dir": "asc"
+                            }
+                        ],
+                        "pageable": {
+                            "buttonCount": 5,
+                            "info": true,
+                            "pageSizes": [
+                                5,
+                                10,
+                                20,
+                                50
+                            ],
+                            "type": "numeric"
+                        },
+                        "toolbar": {
+                            "position": "top",
+                            "actions": []
+                        },
+                        "columns": [
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_LINK",
+                                    "params": {
+                                        "action": {
+                                            "label": "LISTA-OPERE-INCOMPIUTE.AZIONI.DETTAGLIO",
+                                            "disabled": false,
+                                            "performer": "dettaglio"
+                                        }
+                                    }
+                                },
+                                "title": "LISTA-OPERE-INCOMPIUTE.ID",
+                                "field": "id",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": "PIANI.OITRI.NUMOI"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_LINK",
+                                    "params": {
+                                        "action": {
+                                            "label": "LISTA-OPERE-INCOMPIUTE.AZIONI.DETTAGLIO",
+                                            "disabled": false,
+                                            "performer": "dettaglio"
+                                        }
+                                    }
+                                },
+                                "title": "LISTA-OPERE-INCOMPIUTE.CUP",
+                                "field": "cup",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "PIANI.OITRI.CUP"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-OPERE-INCOMPIUTE.DESCIZIONE_OPERA",
+                                "field": "descrizione",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "PIANI.OITRI.DESCRIZIONE"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-OPERE-INCOMPIUTE.ANNO_ULTIMO_QE",
+                                "field": "annoUltimoQe",
+                                "width": 200,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "PIANI.OITRI.ANNOULTQE"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-OPERE-INCOMPIUTE.PERCENTUALE-AVANZAMENTO-LAVORI",
+                                "field": "avanzamento",
+                                "width": 150,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "PIANI.OITRI.AVANZAMENTO"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_ACTIONS_ICON",
+                                    "params": {
+                                        "actions": [
+                                            {
+                                                "label": "LISTA-OPERE-INCOMPIUTE.AZIONI.CANCELLA",
+                                                "disabled": false,
+                                                "performer": "delete",
+                                                "hidden": "deleteHidden",
+                                                "icon": "mgg-icons-crud-delete",
+                                                "oggettoProtezione": "DEL.*"
+                                            },
+                                            {
+                                                "label": "LISTA-OPERE-INCOMPIUTE.AZIONI.NO-CANCELLA",
+                                                "disabled": true,
+                                                "hidden": "deleteNotHidden",
+                                                "icon": "mgg-icons-no-trash"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "title": "LISTA-OPERE-INCOMPIUTE.AZIONI.TITLE",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

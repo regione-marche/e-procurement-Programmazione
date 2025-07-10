@@ -1,0 +1,16 @@
+<div class="uff-modal" *ngIf="isReady">
+    <div class="messages-box" #messages></div>
+
+    <div class="uff-container">
+        <div class="uff-testata">
+
+        </div>
+        <div class="uff-content">
+            <sdk-form-builder [config]="formBuilderConfigObs" (output)="manageFormOutput($event)">
+            </sdk-form-builder>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,246 @@
+{
+    "name": "modifica-fase-recesso-page",
+    "title": "TITLE.MODIFICA-FASE-RECESSO-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "modifica-fase-recesso-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-recesso-page",
+                "label": "BREADCRUMB.DETTAGLIO-FASE-RECESSO",
+                "slug": "dettaglio-fase-recesso-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            },
+            {
+                "code": "modifica-fase-recesso-page",
+                "label": "BREADCRUMB.MODIFICA-FASE-RECESSO",
+                "slug": "modifica-fase-recesso-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-fase-recesso-page-content-root-section",
+            "selector": "modifica-fase-recesso-section",
+            "description": "Pagina di modifica fase di recesso",
+            "classNames": "modifica-fase-recesso-section",
+            "settings": {
+                "classNames": "modifica-fase-recesso-index",
+                "sectionTitle": "TITLE.MODIFICA-FASE-RECESSO-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-dettaglio-fase",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_GARE_FASE_RECESSO_PROVIDER",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-fase",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_FASE_RECESSO_PROVIDER"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "ritardo-sospensione-data",
+                            "label": "FASE-RECESSO.RITARDO-SOSPENSIONE.RITARDO-SOSPENSIONE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "num-rita",
+                                    "label": "FASE-RECESSO.RITARDO-SOSPENSIONE.NUM-RITA",
+                                    "oggettoProtezione": "W9.W9RITA.NUM_RITA",
+                                    "mnemonico": "W3RINUMRIT",
+                                    "mappingInput": "num",
+                                    "mappingOutput": ""
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-termine",
+                                    "label": "FASE-RECESSO.RITARDO-SOSPENSIONE.DATA-TERMINE",
+                                    "oggettoProtezione": "W9.W9RITA.DATA_TERMINE",
+                                    "mnemonico": "W3DTERM2",
+                                    "mappingInput": "dataTermine",
+                                    "mappingOutput": "dataTermine"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-consegna",
+                                    "label": "FASE-RECESSO.RITARDO-SOSPENSIONE.DATA-CONSEGNA",
+                                    "oggettoProtezione": "W9.W9RITA.DATA_CONSEGNA",
+                                    "mnemonico": "W3DCONS",
+                                    "mappingInput": "dataConsegna",
+                                    "mappingOutput": "dataConsegna"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tipo-comun",
+                                    "label": "FASE-RECESSO.RITARDO-SOSPENSIONE.TIPO-COMUN",
+                                    "oggettoProtezione": "W9.W9RITA.TIPO_COMUN",
+                                    "mnemonico": "W3TIPO_COM",
+                                    "mappingInput": "tipoComunicazione",
+                                    "mappingOutput": "tipoComunicazione",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "TipologiaComunicazione"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "ritardo",
+                                    "label": "FASE-RECESSO.RITARDO-SOSPENSIONE.RITARDO",
+                                    "oggettoProtezione": "W9.W9RITA.RITARDO",
+                                    "mnemonico": "W3RITARDO",
+                                    "mappingInput": "ritardo",
+                                    "mappingOutput": "ritardo",
+                                    "decimals": 0,
+                                    "maxLength": 5
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "durata-sosp",
+                                    "label": "FASE-RECESSO.RITARDO-SOSPENSIONE.DURATA-SOSP",
+                                    "oggettoProtezione": "W9.W9RITA.DURATA_SOSP",
+                                    "mnemonico": "W3DURATA_S",
+                                    "mappingInput": "durataSospensione",
+                                    "mappingOutput": "durataSospensione",
+                                    "decimals": 0,
+                                    "maxLength": 5
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "motivo-sosp",
+                                    "label": "FASE-RECESSO.RITARDO-SOSPENSIONE.MOTIVO-SOSP",
+                                    "oggettoProtezione": "W9.W9RITA.MOTIVO_SOSP",
+                                    "mnemonico": "W3MOTIVO_S",
+                                    "mappingInput": "motivoSospensione",
+                                    "mappingOutput": "motivoSospensione",
+                                    "maxLength": 1000
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "recesso-data",
+                            "label": "FASE-RECESSO.RECESSO.RECESSO",
+                            "fieldSections": [
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-ist-recesso",
+                                    "label": "FASE-RECESSO.RECESSO.DATA-IST-RECESSO",
+                                    "oggettoProtezione": "W9.W9RITA.DATA_IST_RECESSO",
+                                    "mnemonico": "W3DATA_IST",
+                                    "mappingInput": "dataIstanzaRecesso",
+                                    "mappingOutput": "dataIstanzaRecesso"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "flag-accolta",
+                                    "label": "FASE-RECESSO.RECESSO.FLAG-ACCOLTA",
+                                    "oggettoProtezione": "W9.W9RITA.FLAG_ACCOLTA",
+                                    "mnemonico": "W3ACCOLTA",
+                                    "mappingInput": "flagAccolta",
+                                    "mappingOutput": "flagAccolta",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "flag-tardiva",
+                                    "label": "FASE-RECESSO.RECESSO.FLAG-TARDIVA",
+                                    "oggettoProtezione": "W9.W9RITA.FLAG_TARDIVA",
+                                    "mnemonico": "W3FLAG_TAR",
+                                    "mappingInput": "flagTardiva",
+                                    "mappingOutput": "flagTardiva",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "flag-ripresa",
+                                    "label": "FASE-RECESSO.RECESSO.FLAG-RIPRESA",
+                                    "oggettoProtezione": "W9.W9RITA.FLAG_RIPRESA",
+                                    "mnemonico": "W3FLAG_RIP",
+                                    "mappingInput": "flagRipresa",
+                                    "mappingOutput": "flagRipresa",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "flag-riserva",
+                                    "label": "FASE-RECESSO.RECESSO.FLAG-RISERVA",
+                                    "oggettoProtezione": "W3RISER",
+                                    "mnemonico": "W9.W9RITA.FLAG_RISERVA",
+                                    "mappingInput": "flagRiserva",
+                                    "mappingOutput": "flagRiserva",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-spese",
+                                    "label": "FASE-RECESSO.RECESSO.IMPORTO-SPESE",
+                                    "oggettoProtezione": "W9.W9RITA.IMPORTO_SPESE",
+                                    "mnemonico": "W3I_SPESE",
+                                    "mappingInput": "importoSpese",
+                                    "mappingOutput": "importoSpese",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-oneri",
+                                    "label": "FASE-RECESSO.RECESSO.IMPORTO-ONERI",
+                                    "oggettoProtezione": "W9.W9RITA.IMPORTO_ONERI",
+                                    "mnemonico": "W3I_ONERI",
+                                    "mappingInput": "importoOneri",
+                                    "mappingOutput": "importoOneri",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,94 @@
+{
+    "name": "modifica-ufficio-page",
+    "title": "TITLE.MODIFICA-UFFICIO-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "modifica-ufficio-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-archivio-uffici-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-ARCHIVIO-UFFICI",
+                "slug": "ricerca-avanzata-archivio-uffici-page"
+            },
+            {
+                "code": "lista-archivio-uffici-page",
+                "label": "BREADCRUMB.LISTA-ARCHIVIO-UFFICI",
+                "slug": "lista-archivio-uffici-page"
+            },
+            {
+                "code": "dettaglio-ufficio-page",
+                "label": "BREADCRUMB.DETTAGLIO-UFFICIO",
+                "slug": "dettaglio-ufficio-page",
+                "additionalParams": "APP_COMMONS_UFFICIO_PARAMS"
+            },
+            {
+                "code": "modifica-ufficio-page",
+                "label": "BREADCRUMB.MODIFICA-UFFICIO",
+                "slug": "modifica-ufficio-page",
+                "additionalParams": "APP_COMMONS_UFFICIO_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-ufficio-page-content-root-section",
+            "selector": "modifica-ufficio-section",
+            "description": "Pagina per la modifica di un ufficio",
+            "classNames": "modifica-ufficio-section",
+            "settings": {
+                "classNames": "modifica-ufficio-index",
+                "sectionTitle": "TITLE.MODIFICA-UFFICIO-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-dettaglio-ufficio",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_COMMONS_UFFICIO",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-ufficio",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_COMMONS_UFFICIO"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "uffici-data",
+                            "label": "UFFICIO.DATI-UFFICIO",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "denominazione",
+                                    "label": "UFFICIO.DENOMINAZIONE",
+                                    "mappingInput": "denominazione",
+                                    "mappingOutput": "denominazione"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "centro-costo",
+                                    "label": "UFFICIO.CENTRO-COSTO",
+                                    "oggettoProtezione": "",     
+                                    "mappingInput": "centroCosto",
+                                    "mappingOutput": "centroCosto",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

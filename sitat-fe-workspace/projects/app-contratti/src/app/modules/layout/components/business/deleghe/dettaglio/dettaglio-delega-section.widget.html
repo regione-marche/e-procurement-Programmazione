@@ -1,0 +1,19 @@
+<div [class]="config.classNames" *ngIf="isReady">
+    <div class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</div>
+    <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+    <div class="messages-box" #infoBox></div>
+
+    <div class="messages-box" #messages></div>
+    <div class="dd-container">
+        <div class="dd-content">
+            <sdk-form-builder [config]="formBuilderConfigObs" [data]="formBuilderDataSubject"
+                (output)="manageFormOutput($event)" (outputField)="manageOutputField($event)">
+            </sdk-form-builder>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+    <sdk-sidebar [config]="sidebarConfigObs"></sdk-sidebar>
+</div>

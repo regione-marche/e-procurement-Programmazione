@@ -1,0 +1,41 @@
+<div [class]="config.classNames" *ngIf="isReady">
+
+  <!-- <div class="message-error" *ngIf="isError">{{error | translate}}</div> -->
+
+  <div class="messages-box" #messages></div>
+
+  <h1 *ngIf="config.title != null" [class]="config.title.classNames">{{config.title.label | translate}}</h1>
+
+  <div *ngIf="config.body != null" [class]="config.body.classNames">{{config.body.label | translate}}</div>
+
+  <div [class]="config.panels.classNames">
+
+    <div [class]="panel.classNames" *ngFor="let panel of config.panels.items; trackBy: track">
+      <img *ngIf="panel.image != null" [class]="panel.image.classNames" [alt]="panel.image.alt | translate"
+        [src]="panel.image.url">
+      <div *ngIf="panel.icon != null" [class]="panel.icon.classNames">
+        <i [class]="panel.icon.icon"></i>
+      </div>
+      <!-- Titolo attivo -->
+      <div *ngIf="panel.disabled !== true" [class]="panel.title.classNames" sdkClick (aClick)="navigate(panel)"
+        tabindex="0" role="navigation" [attr.aria-label]="panel.title.label | translate">
+        {{panel.title.label | translate}}</div>
+      <!-- Titolo disattivato -->
+      <div *ngIf="panel.disabled === true" [ngClass]="{'disabled': true}" [class]="panel.title.classNames"
+        [attr.aria-label]="panel.title.label | translate">
+        {{panel.title.label | translate}}</div>
+      <!-- Body -->
+      <div [class]="panel.body.classNames" [innerHTML]="panel.body.label | translate"></div>
+      <div class="home-page-links">
+        <div *ngIf="panel.disabled !== true" [class]="panel.link.classNames" sdkClick (aClick)="navigate(panel)"
+          tabindex="0" role="navigation" [attr.aria-label]="getLinkAriaLabel(panel.link.label, panel.title.label)">
+          {{panel.link.label | translate}} <i class="mgg-icons-action-forward home-icon"></i></div>
+        <div [class]="panel.link.classNames" *ngIf="panel.disabled !== true && showRichiestaAssistenza" sdkClick
+          (aClick)="navigateRichiestaAssistenza()" tabindex="0" role="navigation"
+          [attr.aria-label]="getLinkAriaLabel('INDEX-PAGE.RICHIESTA-ASSISTENZA', panel.title.label)">{{
+          'INDEX-PAGE.RICHIESTA-ASSISTENZA' | translate }}<i class="mgg-icons-action-forward home-icon"></i></div>
+      </div>
+    </div>
+
+  </div>
+</div>

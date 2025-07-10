@@ -1,0 +1,360 @@
+{
+    "name": "dett-prog-interventi-page",
+    "title": "TITLE.DETTAGLIO-PROGRAMMA-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "app-programmi",
+    "styleUrls": [],
+    "settings": {
+        "page": "dett-prog-interventi-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-programmi-page",
+                "label": "BREADCRUMB.LISTA-PROGRAMMI",
+                "slug": "lista-programmi-page",
+                "additionalParams": "APP_PROGRAMMI_LISTA_PROGRAMMI_PARAMS"
+            },
+            {
+                "code": "dett-prog-interventi-page",
+                "label": "BREADCRUMB.DETTAGLIO-PROGRAMMA",
+                "slug": "dett-prog-interventi-page",
+                "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dett-prog-interventi-page-content-root-section",
+            "selector": "dett-prog-interventi-section",
+            "description": "Pagina per la creazione di un nuovo avviso",
+            "classNames": "dett-prog-interventi-section",
+            "settings": {
+                "classNames": "dett-prog-interventi-index",
+                "menuTabs": [
+                    {
+                        "code": "dati-generali",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.DATI-GENERALI",
+                        "slug": "dett-prog-dati-generali-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.DATIGEN",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+                    },
+                    {
+                        "code": "opere-incompiute",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.OPERE-INCOMPIUTE",
+                        "slug": "dett-prog-opere-incompiute-page",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS",
+                        "oggettoProtezione": "W9.PIATRI-scheda.OPEREINCOMPIUTE",
+                        "visible": "APP_PROGRAMMI_DETT_PROG_LAVORI_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "interventi",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.INTERVENTI",
+                        "active": true,
+                        "slug": "dett-prog-interventi-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.INTERVENTI",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS",
+                        "visible": "APP_PROGRAMMI_DETT_PROG_LAVORI_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "interventi-non-riproposti",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.INTERVENTI-NON-RIPROPOSTI",
+                        "slug": "dett-prog-interventi-non-riproposti-page",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS",
+                        "oggettoProtezione": "W9.PIATRI-scheda.INTERVENTINONRIPROPOSTI",
+                        "visible": "APP_PROGRAMMI_DETT_PROG_LAVORI_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "acquisti",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.ACQUISTI",
+                        "active": true,
+                        "slug": "dett-prog-interventi-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.INTERVENTI",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS",
+                        "visible": "APP_PROGRAMMI_DETT_PROG_FORNITURE_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "acquisti-non-riproposti",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.ACQUISTI-NON-RIPROPOSTI",
+                        "slug": "dett-prog-interventi-non-riproposti-page",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS",
+                        "oggettoProtezione": "W9.PIATRI-scheda.INTERVENTINONRIPROPOSTI",
+                        "visible": "APP_PROGRAMMI_DETT_PROG_FORNITURE_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "riepilogo",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.RIEPILOGO",
+                        "slug": "dett-prog-riepilogo-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.RIEPILOGO",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+                    },
+                    {
+                        "code": "pubblica",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.PUBBLICA",
+                        "slug": "dett-prog-pubblica-page",
+                        "oggettoProtezione": "W9.PIATRI-scheda.FLUSSIPROGRAMMI",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+                    }
+                ],
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "altre-azioni",
+                            "label": "BUTTONS.ALTRE-AZIONI",
+                            "icon": "mgg-icons-menu-more",
+                            "dropdown": true,
+                            "dropdownData": [                                
+                                {
+                                    "code": "import",
+                                    "label": "BUTTONS.IMPORT",
+                                    "provider": "APP_PROGRAMMI_LISTA_INTERVENTI",
+                                    "icon": "mgg-icons-import"
+                                },
+                                {
+                                    "code": "export",
+                                    "label": "BUTTONS.EXPORT-INTERVENTI-ACQUISTI",
+                                    "icon": "mgg-icons-action-export"
+                                }
+                            ],
+                            "type": "cancel",
+                            "look": "icon"
+                        },          
+                        {
+                            "code": "report-sogg",
+                            "label": "BUTTONS.REPORT",
+                            "provider": "APP_PROGRAMMI_LISTA_INTERVENTI",
+                            "icon": "mgg-icons-import"
+                        },              
+                        {
+                            "code": "nuovo",
+                            "label": "BUTTONS.NUOVO",
+                            "icon": "mgg-icons-crud-create",
+                            "provider": "APP_PROGRAMMI_LISTA_INTERVENTI",
+                            "oggettoProtezione": "INS.*"
+                        }
+                    ],
+                    "readOnlyButtons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "report-sogg",
+                            "label": "BUTTONS.REPORT",
+                            "provider": "APP_PROGRAMMI_LISTA_INTERVENTI",
+                            "icon": "mgg-icons-import"
+                        }
+                    ],
+                    "grid": {
+                        "showCurrentPageReport": true,
+                        "showCurrentRecordsReport": true,
+                        "navigable": true,
+                        "resizable": false,
+                        "debug": false,
+                        "sortable": {
+                            "allowUnsort": false,
+                            "mode": "single"
+                        },
+                        "sort": [
+                            {
+                                "field": "numeroCui",
+                                "dir": "asc"
+                            }
+                        ],
+                        "pageable": false,
+                        "filterable": true,
+                        "filter": {
+                            "filterLabel": "LISTA-INTERVENTI.FILTRO.TITOLO",
+                            "activeFiltersLabel": "LISTA-INTERVENTI.FILTRO.TITOLO-FILTRI-ATTIVI",
+                            "fields": [
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "cui",
+                                    "label": "LISTA-INTERVENTI.FILTRO.CUI",
+                                    "oggettoProtezione": "PIANI.INTTRI.CUICOLL",
+                                    "mnemonico": "T2CUICO",
+                                    "mappingOutput": "numeroCui"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "codice-attribuito-amministrazione",
+                                    "label": "LISTA-INTERVENTI.FILTRO.CODICE-ATTRIBUITO-AMMINISTRAZIONE",
+                                    "oggettoProtezione": "PIANI.INTTRI.CODINT",
+                                    "mnemonico": "T2CODINT",
+                                    "mappingOutput": "codInterno"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "descrizione",
+                                    "label": "LISTA-INTERVENTI.FILTRO.DESCRIZIONE",
+                                    "oggettoProtezione": "PIANI.INTTRI.DESINT",
+                                    "mnemonico": "T2DESINT",
+                                    "mappingOutput": "descrizione"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "annualita",
+                                    "label": "LISTA-INTERVENTI.FILTRO.ANNUALITA",
+                                    "oggettoProtezione": "PIANI.INTTRI.ANNRIF",
+                                    "mnemonico": "T2ANNRIF",
+                                    "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                    "listCode": "annoriferimento",
+                                    "mappingOutput": "annualita"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "cup",
+                                    "label": "LISTA-INTERVENTI.FILTRO.CUP",
+                                    "oggettoProtezione": "PIANI.INTTRI.CUPPRG",
+                                    "mnemonico": "T2CUPPRG",
+                                    "mappingOutput": "codiceCUP"
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "rup",
+                                    "label": "LISTA-INTERVENTI.FILTRO.RUP",
+                                    "noDataLabel": "NO-DATA",
+                                    "oggettoProtezione": "PIANI.INTTRI.CODRUP",
+                                    "mnemonico": "T2CODRUP",
+                                    "itemsProviderCode": "APP_PROGRAMMI_RUP_PROGRAMMA",
+                                    "mappingOutput": "rup",
+                                    "newEditAvailable": false
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-totale-da",
+                                    "label": "LISTA-INTERVENTI.FILTRO.IMPORTO-TOTALE-DA",
+                                    "oggettoProtezione": "PIANI.INTTRI.TOTINT",
+                                    "mnemonico": "T2TOTINT",
+                                    "mappingOutput": "importoTotaleDa",
+                                    "decimals": 2,
+                                    "currency": true
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-totale-a",
+                                    "label": "LISTA-INTERVENTI.FILTRO.IMPORTO-TOTALE-A",
+                                    "oggettoProtezione": "PIANI.INTTRI.TOTINT",
+                                    "mnemonico": "T2TOTINT",
+                                    "mappingOutput": "importoTotaleA",
+                                    "decimals": 2,
+                                    "currency": true
+                                }
+                            ]
+                        },
+                        "columns": [
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-INTERVENTI.ANNUALITA",
+                                "field": "descrizioneAnnualita",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "PIANI.INTTRI.ANNRIF"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-INTERVENTI.NR",
+                                "field": "id",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "PIANI.INTTRI.CONINT"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_LINK",
+                                    "params": {
+                                        "action": {
+                                            "label": "LISTA-INTERVENTI.AZIONI.DETTAGLIO",
+                                            "disabled": false,
+                                            "performer": "dettaglio"
+                                        }
+                                    }
+                                },
+                                "title": "LISTA-INTERVENTI.CUI",
+                                "field": "numeroCui",
+                                "width": 250,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "PIANI.INTTRI.CUIINT"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-INTERVENTI.DESCRIZIONE",
+                                "field": "descrizione",
+                                "width": 150,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "PIANI.INTTRI.DESINT"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_CURRENCY"
+                                },
+                                "title": "LISTA-INTERVENTI.IMPORTO-TOTALE-INTERVENTO",
+                                "field": "importoTotale",
+                                "width": 150,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "PIANI.INTTRI.TOTINT"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_ACTIONS_ICON",
+                                    "params": {
+                                        "actions": [
+                                            {
+                                                "label": "LISTA-INTERVENTI.AZIONI.CANCELLA",
+                                                "disabled": false,
+                                                "performer": "delete",
+                                                "hidden": "deleteHidden",
+                                                "icon": "mgg-icons-crud-delete",
+                                                "oggettoProtezione": "DEL.*"
+                                            },
+                                            {
+                                                "label": "LISTA-INTERVENTI.AZIONI.NO-CANCELLA",
+                                                "disabled": true,
+                                                "hidden": "deleteNotHidden",
+                                                "icon": "mgg-icons-no-trash"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "title": "LISTA-INTERVENTI.AZIONI.TITLE",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

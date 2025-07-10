@@ -1,0 +1,210 @@
+{
+    "name": "modifica-fase-inidoneita-tecnico-prof-page",
+    "title": "TITLE.MODIFICA-FASE-INIDONEITA-TECNICO-PROF-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "modifica-fase-inidoneita-tecnico-prof-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-inidoneita-tecnico-prof-page",
+                "label": "BREADCRUMB.DETTAGLIO-FASE-INIDONEITA-TECNICO-PROF",
+                "slug": "dettaglio-fase-inidoneita-tecnico-prof-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            },
+            {
+                "code": "modifica-fase-inidoneita-tecnico-prof-page",
+                "label": "BREADCRUMB.MODIFICA-FASE-INIDONEITA-TECNICO-PROF",
+                "slug": "modifica-fase-inidoneita-tecnico-prof-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-fase-inidoneita-tecnico-prof-page-content-root-section",
+            "selector": "modifica-fase-inidoneita-tecnico-prof-section",
+            "description": "Pagina di modifica fase di inidoneita-tecnico-prof",
+            "classNames": "modifica-fase-inidoneita-tecnico-prof-section",
+            "settings": {
+                "classNames": "modifica-fase-inidoneita-tecnico-prof-index",
+                "sectionTitle": "TITLE.MODIFICA-FASE-INIDONEITA-TECNICO-PROF-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-dettaglio-fase",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_GARE_FASE_INIDONEITA_TECNICO_PROF_PROVIDER",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-fase",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_FASE_INIDONEITA_TECNICO_PROF_PROVIDER"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "inidoneita-tecnico-prof-data",
+                            "label": "FASE-INIDONEITA-TECNICO-PROF.INIDONEITA.INIDONEITA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "num-tpro",
+                                    "label": "FASE-INIDONEITA-TECNICO-PROF.INIDONEITA.NUM-TPRO",
+                                    "oggettoProtezione": "W9.W9TECPRO.NUM_TPRO",
+                                    "mnemonico": "W3TPNUMTPR",
+                                    "mappingInput": "num",
+                                    "mappingOutput": ""
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "descare",
+                                    "label": "FASE-INIDONEITA-TECNICO-PROF.INIDONEITA.DESCARE",
+                                    "oggettoProtezione": "W9.W9TECPRO.DESCARE",
+                                    "mnemonico": "W3TPDESCARE",
+                                    "mappingInput": "descrizione",
+                                    "mappingOutput": "descrizione",
+                                    "maxLength": 1000
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "nomest",
+                                    "label": "FASE-INIDONEITA-TECNICO-PROF.INIDONEITA.NOMEST",
+                                    "oggettoProtezione": "W9.W9TECPRO.CODIMP",
+                                    "mnemonico": "W3TPCODIMP",
+                                    "mappingInput": "impresa",
+                                    "mappingOutput": "codImpresa",
+                                    "itemsProviderCode": "APP_GARE_IMPRESE_AGGIUDICATARIE_AGGI_SUBA_AUTOCOMPLETE",
+                                    "noDataLabel": "NO-DATA",
+                                    "newEditAvailable": false,
+                                    "modalComponent": "impresa-modal-widget",
+                                    "modalComponentConfig": "impresaRWModalConfig"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-uni",
+                                    "label": "FASE-INIDONEITA-TECNICO-PROF.INIDONEITA.DATA-UNI",
+                                    "oggettoProtezione": "W9.W9TECPRO.DATAUNI",
+                                    "mnemonico": "W3TPDATAUNI",
+                                    "mappingInput": "dataUni",
+                                    "mappingOutput": "dataUni"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "inido1",
+                                    "label": "FASE-INIDONEITA-TECNICO-PROF.INIDONEITA.INIDO1",
+                                    "oggettoProtezione": "W9.W9TECPRO.INIDO1",
+                                    "mnemonico": "W3TPINIDO1",
+                                    "mappingInput": "nonIdoneitaVerificaIscrizione",
+                                    "mappingOutput": "nonIdoneitaVerificaIscrizione",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "inido2",
+                                    "label": "FASE-INIDONEITA-TECNICO-PROF.INIDONEITA.INIDO2",
+                                    "oggettoProtezione": "W9.W9TECPRO.INIDO2",
+                                    "mnemonico": "W3TPINIDO2",
+                                    "mappingInput": "nonIndicatiContratti",
+                                    "mappingOutput": "nonIndicatiContratti",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "inido3",
+                                    "label": "FASE-INIDONEITA-TECNICO-PROF.INIDONEITA.INIDO3",
+                                    "oggettoProtezione": "W9.W9TECPRO.INIDO3",
+                                    "mnemonico": "W3TPINIDO3",
+                                    "mappingInput": "mancataNominaResp",
+                                    "mappingOutput": "mancataNominaResp",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "inido4",
+                                    "label": "FASE-INIDONEITA-TECNICO-PROF.INIDONEITA.INIDO4",
+                                    "oggettoProtezione": "W9.W9TECPRO.INIDO4",
+                                    "mnemonico": "W3TPINIDO4",
+                                    "mappingInput": "mancataNominaMedico",
+                                    "mappingOutput": "mancataNominaMedico",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "inido5",
+                                    "label": "FASE-INIDONEITA-TECNICO-PROF.INIDONEITA.INIDO5",
+                                    "oggettoProtezione": "W9.W9TECPRO.INIDO5",
+                                    "mnemonico": "W3TPINIDO5",
+                                    "mappingInput": "mancatoDocValutazioneRischi",
+                                    "mappingOutput": "mancatoDocValutazioneRischi",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "inido6",
+                                    "label": "FASE-INIDONEITA-TECNICO-PROF.INIDONEITA.INIDO6",
+                                    "oggettoProtezione": "W9.W9TECPRO.INIDO6",
+                                    "mnemonico": "W3TPINIDO6",
+                                    "mappingInput": "inadeguataFormazioneSicurezza",
+                                    "mappingOutput": "inadeguataFormazioneSicurezza",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "inido7",
+                                    "label": "FASE-INIDONEITA-TECNICO-PROF.INIDONEITA.INIDO7",
+                                    "oggettoProtezione": "W9.W9TECPRO.INIDO7",
+                                    "mnemonico": "W3TPINIDO7",
+                                    "mappingInput": "altreCause",
+                                    "mappingOutput": "altreCause",
+                                    "maxLength": 1000
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

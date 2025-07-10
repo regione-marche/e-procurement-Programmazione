@@ -1,0 +1,103 @@
+{
+    "name": "modifica-comunicazione-esito-page",
+    "title": "TITLE.MODIFICA-COMUNICAZIONE-ESITO-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "modifica-comunicazione-esito-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-comunicazione-esito-page",
+                "label": "BREADCRUMB.DETTAGLIO-COMUNICAZIONE-ESITO",
+                "slug": "dettaglio-comunicazione-esito-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            },
+            {
+                "code": "modifica-comunicazione-esito-page",
+                "label": "BREADCRUMB.MODIFICA-COMUNICAZIONE-ESITO",
+                "slug": "modifica-comunicazione-esito-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-comunicazione-esito-page-content-root-section",
+            "selector": "modifica-comunicazione-esito-section",
+            "description": "Pagina di modifica fase di comunicazione esito",
+            "classNames": "modifica-comunicazione-esito-section",
+            "settings": {
+                "classNames": "modifica-comunicazione-esito-index",
+                "sectionTitle": "TITLE.MODIFICA-COMUNICAZIONE-ESITO-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-dettaglio-fase",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_GARE_COMUNICAZIONE_ESITO_PROVIDER",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-fase",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_COMUNICAZIONE_ESITO_PROVIDER"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "stato-attuale-data",
+                            "label": "COMUNICAZIONE-ESITO.STATO-ATTUALE-DATA.STATO-ATTUALE-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "esito-procedura",
+                                    "label": "COMUNICAZIONE-ESITO.STATO-ATTUALE-DATA.ESITO-PROCEDURA",
+                                    "oggettoProtezione": "W9.W9ESITO.ESITO_PROCEDURA",
+                                    "mnemonico": "W9LOESIPROC",
+                                    "mappingInput": "esito.esito",
+                                    "mappingOutput": "esito",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "EsitoProcedura"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,57 @@
+<div class="export-interventi-acquisti-modal" *ngIf="isReady">
+    <div class="messages-box" #messages></div>
+    <div class="export-interventi-acquisti-container">
+
+        <!-- Interventi -->
+        <div class="interventi-container" *ngIf="config.tipologia == '1'">
+            <h2>{{ 'EXPORT-INTERVENTI-ACQUISTI.COLUMNS' | translate }}</h2>
+            <form [formGroup]="interventiForm">
+                <p-checkbox [label]="'EXPORT-INTERVENTI.COLONNA-CUI' | translate" [binary]="true" [formControl]="interventiForm.controls['showCUI']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-INTERVENTI.COLONNA-CODINT' | translate" [binary]="true" [formControl]="interventiForm.controls['showCodInt']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-INTERVENTI.COLONNA-CUP' | translate" [binary]="true" [formControl]="interventiForm.controls['showCup']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-INTERVENTI.COLONNA-ANNUALITA' | translate" [binary]="true" [formControl]="interventiForm.controls['showAnnualita']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-INTERVENTI.COLONNA-RUP' | translate" [binary]="true" [formControl]="interventiForm.controls['showRup']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-INTERVENTI.COLONNA-LOTTOF' | translate" [binary]="true" [formControl]="interventiForm.controls['showLottoF']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-INTERVENTI.COLONNA-LAVOROC' | translate" [binary]="true" [formControl]="interventiForm.controls['showLavoroC']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-INTERVENTI.COLONNA-CODISTAT' | translate" [binary]="true" [formControl]="interventiForm.controls['showCodIstat']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-INTERVENTI.COLONNA-NUTS' | translate" [binary]="true" [formControl]="interventiForm.controls['showNuts']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-INTERVENTI.COLONNA-TIPOLOGIA' | translate" [binary]="true" [formControl]="interventiForm.controls['showTipologia']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-INTERVENTI.COLONNA-CATEGORIA' | translate" [binary]="true" [formControl]="interventiForm.controls['showCategoria']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-INTERVENTI.COLONNA-DESCRIZIONE' | translate" [binary]="true" [formControl]="interventiForm.controls['showDescrizione']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-INTERVENTI.COLONNA-PRIORITA' | translate" [binary]="true" [formControl]="interventiForm.controls['showPriorita']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-INTERVENTI.COLONNA-IMPORTI-ANNUALITA' | translate" [binary]="true" [formControl]="interventiForm.controls['showImportiAnnualita']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-INTERVENTI.COLONNA-IMMOBILI' | translate" [binary]="true" [formControl]="interventiForm.controls['showImmobili']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-INTERVENTI.COLONNA-SCADENZA' | translate" [binary]="true" [formControl]="interventiForm.controls['showScadenza']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-INTERVENTI.COLONNA-APPORTO-CAPITALE-PRIVATO' | translate" [binary]="true" [formControl]="interventiForm.controls['showApportoCapitalePrivato']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-INTERVENTI.COLONNA-VARIATO' | translate" [binary]="true" [formControl]="interventiForm.controls['showVariato']"></p-checkbox>
+            </form>
+        </div>
+        <!-- Acquisti -->
+        <div class="acquisti-container" *ngIf="config.tipologia != '1'">
+            <h2>{{ 'EXPORT-INTERVENTI-ACQUISTI.COLUMNS' | translate }}</h2>
+            <form [formGroup]="acquistiForm">
+                <p-checkbox [label]="'EXPORT-ACQUISTI.COLONNA-CUI' | translate" [binary]="true" [formControl]="acquistiForm.controls['showCUI']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-ACQUISTI.COLONNA-ANNUALITA' | translate" [binary]="true" [formControl]="acquistiForm.controls['showAnnualita']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-ACQUISTI.COLONNA-CUP' | translate" [binary]="true" [formControl]="acquistiForm.controls['showCup']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-ACQUISTI.COLONNA-ACQUISTO-RICOMPRESO' | translate" [binary]="true" [formControl]="acquistiForm.controls['showAcquistoRicompreso']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-ACQUISTI.COLONNA-CODCUI-LAVORO-COLLEGATO' | translate" [binary]="true" [formControl]="acquistiForm.controls['showCodCuiLavoroCollegato']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-ACQUISTI.COLONNA-LOTTOF' | translate" [binary]="true" [formControl]="acquistiForm.controls['showLottoF']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-ACQUISTI.COLONNA-AMBITO-GEOGRAFICO' | translate" [binary]="true" [formControl]="acquistiForm.controls['showAmbitoGeografico']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-ACQUISTI.COLONNA-SETTORE' | translate" [binary]="true" [formControl]="acquistiForm.controls['showSettore']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-ACQUISTI.COLONNA-CPV' | translate" [binary]="true" [formControl]="acquistiForm.controls['showCpv']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-ACQUISTI.COLONNA-DESCRIZIONE' | translate" [binary]="true" [formControl]="acquistiForm.controls['showDescrizione']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-ACQUISTI.COLONNA-PRIORITA' | translate" [binary]="true" [formControl]="acquistiForm.controls['showPriorita']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-ACQUISTI.COLONNA-RUP' | translate" [binary]="true" [formControl]="acquistiForm.controls['showRup']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-ACQUISTI.COLONNA-DURATA-CONTRATTO' | translate" [binary]="true" [formControl]="acquistiForm.controls['showDurataContratto']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-ACQUISTI.COLONNA-CONTRATTO-ESSERE' | translate" [binary]="true" [formControl]="acquistiForm.controls['showContrattoEssere']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-ACQUISTI.COLONNA-IMPORTI-ANNUALITA' | translate" [binary]="true" [formControl]="acquistiForm.controls['showImportiAnnualita']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-ACQUISTI.COLONNA-APPORTO-CAPITALE-PRIVATO' | translate" [binary]="true" [formControl]="acquistiForm.controls['showApportoCapitalePrivato']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-ACQUISTI.COLONNA-AUSA' | translate" [binary]="true" [formControl]="acquistiForm.controls['showAusa']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-ACQUISTI.COLONNA-VARIATO' | translate" [binary]="true" [formControl]="acquistiForm.controls['showVariato']"></p-checkbox>
+            </form>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+</div>

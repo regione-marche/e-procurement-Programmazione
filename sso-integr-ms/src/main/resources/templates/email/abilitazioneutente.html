@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<p>
+		Gent.le <span th:text="${intestazione}"></span>,
+	</p>
+	<p>
+		l'abilitazione al sistema <span th:text="${nomeMittente}"></span> &egrave; stata effettuata con successo,<br>
+		il suo utente (login) <span th:text="${login}"></span> &egrave; adesso attivo.<br>
+		<span th:text="${nomeMittente}"></span><br>
+	</p>
+	<p>
+		-------<br>
+		La presente comunicazione &egrave; inviata da un sistema automatico, si prega di non rispondere.
+	</p>
+</body>
+</html>

@@ -1,0 +1,297 @@
+{
+    "name": "dettaglio-impresa-page",
+    "title": "TITLE.DETTAGLIO-IMPRESA-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "dettaglio-impresa-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-archivio-imprese-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-ARCHIVIO-IMPRESE",
+                "slug": "ricerca-avanzata-archivio-imprese-page"
+            },
+            {
+                "code": "lista-archivio-imprese-page",
+                "label": "BREADCRUMB.LISTA-ARCHIVIO-IMPRESE",
+                "slug": "lista-archivio-imprese-page"
+            },
+            {
+                "code": "dettaglio-impresa-page",
+                "label": "BREADCRUMB.DETTAGLIO-IMPRESA",
+                "slug": "dettaglio-impresa-page",
+                "additionalParams": "APP_COMMONS_IMPRESA_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-impresa-page-content-root-section",
+            "selector": "dettaglio-impresa-section",
+            "description": "Pagina di dettaglio impresa",
+            "classNames": "dettaglio-impresa-section",
+            "settings": {
+                "classNames": "dettaglio-impresa-index",
+                "sectionTitle": "TITLE.DETTAGLIO-IMPRESA-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-archivio-imprese",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_COMMONS_LISTA_IMPRESE",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "go-to-update-imprese",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_COMMONS_LISTA_IMPRESE",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "IMPRESA.GENERAL-DATA.GENERAL-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "regione-sociale",
+                                    "label": "IMPRESA.GENERAL-DATA.RAGIONE-SOCIALE",
+                                    "oggettoProtezione": "GENE.IMPR.NOMEST",
+                                    "mnemonico": "NOMIMP",
+                                    "mappingInput": "ragioneSociale"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "forma-giuridica",
+                                    "label": "IMPRESA.GENERAL-DATA.FORMA-GIURIDICA",
+                                    "oggettoProtezione": "GENE.IMPR.NATGIUI",
+                                    "mnemonico": "G_NATGIUI",
+                                    "mappingInput": "formaGiuridica",
+                                    "listCode": "FormaGiuridica"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "codice-fiscale-impresa",
+                                    "label": "IMPRESA.GENERAL-DATA.CODICE-FISCALE",
+                                    "oggettoProtezione": "GENE.IMPR.CFIMP",
+                                    "mnemonico": "CFIMP",
+                                    "mappingInput": "codiceFiscale"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "cf-estero",
+                                    "label": "IMPRESA.GENERAL-DATA.CF-ESTERO",
+                                    "oggettoProtezione": "GENE.IMPR.CFIMP",
+                                    "mnemonico": "CFIMP",
+                                    "mappingInput": "codiceFiscale"                                    
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "partita-iva",
+                                    "label": "IMPRESA.GENERAL-DATA.PARTITA-IVA",
+                                    "oggettoProtezione": "GENE.IMPR.PIVIMP",
+                                    "mnemonico": "PIVIMP",
+                                    "mappingInput": "partitaIva"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "numero-iscrizione-registro-imprese",
+                                    "label": "IMPRESA.GENERAL-DATA.NUMERO-ISCRIZIONE-REGISTRO-IMPRESE",
+                                    "oggettoProtezione": "GENE.IMPR.NCCIAA",
+                                    "mnemonico": "NCCIAA",
+                                    "mappingInput": "numeroIscrizione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "codice-ditta-inail",
+                                    "label": "IMPRESA.GENERAL-DATA.CODICE-DITTA-INAIL",
+                                    "oggettoProtezione": "GENE.IMPR.NINAIL",
+                                    "mnemonico": "NINAIL",
+                                    "mappingInput": "codiceInail"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "numero-iscrizione-albo",
+                                    "label": "IMPRESA.GENERAL-DATA.NUMERO-ISCRIZIONE-ALBO",
+                                    "oggettoProtezione": "GENE.IMPR.ALBTEC",
+                                    "mnemonico": "G_ALBTEC",
+                                    "mappingInput": "numeroIscrizioneAlbo"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "legale-rappresentante-data",
+                            "label": "IMPRESA.LEGALE-RAPPRESENTANTE-DATA.LEGALE-RAPPRESENTANTE-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "cognome-legale",
+                                    "label": "IMPRESA.LEGALE-RAPPRESENTANTE-DATA.COGNOME",
+                                    "oggettoProtezione": "GENE.TEIM.COGTIM",
+                                    "mnemonico": "COGTIM",
+                                    "mappingInput": "cognome"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "nome-legale",
+                                    "label": "IMPRESA.LEGALE-RAPPRESENTANTE-DATA.NOME",
+                                    "oggettoProtezione": "GENE.TEIM.NOMTIM",
+                                    "mnemonico": "NOMTIM",
+                                    "mappingInput": "nome"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "codice-fiscale-legale",
+                                    "label": "IMPRESA.LEGALE-RAPPRESENTANTE-DATA.CODICE-FISCALE",
+                                    "oggettoProtezione": "GENE.TEIM.CFTIM",
+                                    "mnemonico": "CFTIM",
+                                    "mappingInput": "cf"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "indirizzo-data",
+                            "label": "IMPRESA.INDIRIZZO-DATA.INDIRIZZO-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "nazione",
+                                    "label": "IMPRESA.INDIRIZZO-DATA.NAZIONE",
+                                    "oggettoProtezione": "GENE.IMPR.NAZIMP",
+                                    "mnemonico": "G_NAZIMP",
+                                    "mappingInput": "nazione",
+                                    "listCode": "Nazioni"
+                                },{
+                                    "type": "TEXT",
+                                    "code": "comune",
+                                    "label": "IMPRESA.INDIRIZZO-DATA.COMUNE",
+                                    "oggettoProtezione": "GENE.IMPR.LOCIMP",
+                                    "mnemonico": "LOCIMP",
+                                    "mappingInput": "comune",  "visibleCondition": {
+                                        "or": {
+                                            "nazione": {
+                                                "values": [
+                                                    {
+                                                        "value": 1,
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },{
+                                    "type": "TEXT",
+                                    "code": "provincia",
+                                    "label": "IMPRESA.INDIRIZZO-DATA.PROVINCIA",
+                                    "oggettoProtezione": "GENE.IMPR.PROIMP",
+                                    "mnemonico": "PROIMP",
+                                    "mappingInput": "provincia",
+                                    "listCode": "Province",
+                                    "visibleCondition": {
+                                        "or": {
+                                            "nazione": {
+                                                "values": [
+                                                    {
+                                                        "value": 1,
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },{
+                                    "type": "TEXT",
+                                    "code": "cap",
+                                    "label": "IMPRESA.INDIRIZZO-DATA.CAP",
+                                    "oggettoProtezione": "GENE.IMPR.CAPIMP",
+                                    "mnemonico": "CAPIMP",
+                                    "mappingInput": "cap",
+                                    "visibleCondition": {
+                                        "or": {
+                                            "nazione": {
+                                                "values": [
+                                                    {
+                                                        "value": 1,
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "indirizzo",
+                                    "label": "IMPRESA.INDIRIZZO-DATA.INDIRIZZO",
+                                    "oggettoProtezione": "GENE.IMPR.INDIMP",
+                                    "mnemonico": "INDIMP",
+                                    "mappingInput": "indirizzo"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "n-civico",
+                                    "label": "IMPRESA.INDIRIZZO-DATA.N-CIVICO",
+                                    "oggettoProtezione": "GENE.IMPR.NCIIMP",
+                                    "mnemonico": "NCIIMP",
+                                    "mappingInput": "numeroCivico",
+                                    "visibleCondition": {
+                                        "or": {
+                                            "nazione": {
+                                                "values": [
+                                                    {
+                                                        "value": 1,
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "telefono",
+                                    "label": "IMPRESA.INDIRIZZO-DATA.TELEFONO",
+                                    "oggettoProtezione": "GENE.IMPR.TELIMP",
+                                    "mnemonico": "TELIMP",
+                                    "mappingInput": "telefono"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "fax",
+                                    "label": "IMPRESA.INDIRIZZO-DATA.FAX",
+                                    "oggettoProtezione": "GENE.IMPR.FAXIMP",
+                                    "mnemonico": "FAXIMP",
+                                    "mappingInput": "fax"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "email",
+                                    "label": "IMPRESA.INDIRIZZO-DATA.EMAIL",
+                                    "oggettoProtezione": "GENE.IMPR.EMAIIP",
+                                    "mnemonico": "G_EMAIIP",
+                                    "mappingInput": "email"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

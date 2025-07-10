@@ -1,0 +1,279 @@
+{
+    "name": "nuovo-parametro-page",
+    "title": "TITLE.NUOVO-PARAMETRO-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "nuovo-parametro-page",       
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-modelli-page",
+                "label": "BREADCRUMB.RICERCA-MODELLI",
+                "slug": "ricerca-modelli-page"
+            },
+            {
+                "code": "lista-modelli-page",
+                "label": "BREADCRUMB.LISTA-MODELLI",
+                "slug": "lista-modelli-page"
+            },
+            {
+                "code": "dettaglio-modelli-page",
+                "label": "BREADCRUMB.DETTAGLIO-MODELLO",
+                "slug": "dettaglio-modelli-page"
+            },
+            {
+                "code": "nuovo-parametro-page",
+                "label": "BREADCRUMB.NUOVO-PARAMETRO",
+                "slug": "nuovo-parametro-page",
+                "additionalParams": "SDK_DETTAGLIO_MODELLO_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "nuovo-parametro-page-content-root-section",
+            "selector": "sdk-nuovo-parametro-section",
+            "description": "Pagina nuovo parametro",
+            "classNames": "nuovo-parametro-section",
+            "settings": {
+                "classNames": "nuovo-parametro-index",
+                "sectionTitle": "TITLE.DETTAGLIO-PARAMETRO-PAGE",                
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-parametri",
+                            "label": "BUTTONS.ANNULLA",
+							"icon": "mgg-icons-crud-cancel",
+                            "provider": "SDK_GESTIONE_MODELLI_LISTA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-parametro",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "SDK_GESTIONE_PARAMETRO"
+                        }
+                    ],
+                    "buttonsReadonly": [
+                        {
+                            "code": "back-to-lista-modelli",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_MODELLI_LISTA",
+                            "type": "cancel"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "SDK-PARAMETRO.GENERAL-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "codice",
+                                    "label": "SDK-PARAMETRO.GENERAL-DATA.CODICE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "codice",
+                                    "mappingOutput": "codice",
+                                    "mandatory": true,
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-PARAMETRO.VALIDATORS.CODICE-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]                              
+                                },{
+                                    "type": "COMBOBOX",
+                                    "code": "obbligatorio",
+                                    "label": "SDK-PARAMETRO.GENERAL-DATA.OBBLIGATORIO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "obbl",
+                                    "mappingOutput": "obbl",
+                                    "listCode": "sinoboolean",
+                                    "itemsProviderCode": "SDK_GESTIONE_MODELLI_TABELLATI_COMBO",
+                                    "mandatory":true,
+                                    "showClear": false,
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-PARAMETRO.VALIDATORS.OBBL-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]                  
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "nome",
+                                    "label": "SDK-PARAMETRO.GENERAL-DATA.DESCR-PRINC",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "nome",
+                                    "mappingOutput": "nome",
+                                    "mandatory": true,
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-PARAMETRO.VALIDATORS.NOME-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]                  
+                                },{
+                                    "type": "TEXTAREA",
+                                    "code": "descr",
+                                    "label": "SDK-PARAMETRO.GENERAL-DATA.DESCR",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "descr",
+                                    "mappingOutput": "descr",
+                                    "mandatory":true,
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-PARAMETRO.VALIDATORS.DESCR-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]                  
+                                },{
+                                    "type": "COMBOBOX",
+                                    "code": "tipo",
+                                    "label": "SDK-PARAMETRO.GENERAL-DATA.TIPO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "tipo",
+                                    "listCode":"TipoParametroModello",
+                                    "mappingOutput": "tipo",
+                                    "itemsProviderCode": "SDK_GESTIONE_MODELLI_TABELLATI_COMBO" ,
+                                    "mandatory": true,
+                                    "showClear": false,
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-PARAMETRO.VALIDATORS.TIPO-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]                  
+                                },{
+                                    "type": "TEXTBOX",
+                                    "code": "menu",
+                                    "label": "SDK-PARAMETRO.GENERAL-DATA.MENU",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "menu",
+                                    "mappingOutput": "menu",
+                                    "visible":false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "tipo": {
+                                                "values": [
+                                                    {
+                                                        "value": "M",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    },
+                                    "validators": [
+                                    {
+                                        "config": {
+                                            "required": true
+                                        },
+                                        "messages": [
+                                            {
+                                                "level": "error",
+                                                "text": "SDK-PARAMETRO.VALIDATORS.VOCI_MENU_MANDATORY"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                    
+                                    "fieldClasses": "help-text",
+                                    "showHelp":true,
+                                    "helpDescription":"SDK-MODELLO.HELP.MENU"
+                                },{
+                                    "type": "COMBOBOX",
+                                    "code": "tabellato",
+                                    "label": "SDK-PARAMETRO.GENERAL-DATA.TABELLATO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "tab",
+                                    "listCode":"ListaTabellatoParametro",
+                                    "mappingOutput": "tab",
+                                    "itemsProviderCode": "SDK_GESTIONE_MODELLI_TABELLATI_COMBO",
+                                    "visible":false,
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-PARAMETRO.VALIDATORS.TABELLATO_MANDATORY"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "visibleCondition": {
+                                        "or": {
+                                            "tipo": {
+                                                "values": [
+                                                    {
+                                                        "value": "T",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

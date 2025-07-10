@@ -1,0 +1,189 @@
+{
+    "name": "dettaglio-tecnico-page",
+    "title": "TITLE.DETTAGLIO-TECNICO-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "dettaglio-tecnico-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-archivio-tecnici-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-ARCHIVIO-TECNICI",
+                "slug": "ricerca-avanzata-archivio-tecnici-page"
+            },
+            {
+                "code": "lista-archivio-tecnici-page",
+                "label": "BREADCRUMB.LISTA-ARCHIVIO-TECNICI",
+                "slug": "lista-archivio-tecnici-page"
+            },
+            {
+                "code": "dettaglio-tecnico-page",
+                "label": "BREADCRUMB.DETTAGLIO-TECNICO",
+                "slug": "dettaglio-tecnico-page",
+                "additionalParams": "APP_COMMONS_TECNICO_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-tecnico-page-content-root-section",
+            "selector": "dettaglio-tecnico-section",
+            "description": "Pagina di dettaglio tecnico",
+            "classNames": "dettaglio-tecnico-section",
+            "settings": {
+                "classNames": "dettaglio-tecnico-index",
+                "sectionTitle": "TITLE.DETTAGLIO-TECNICO-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-archivio-tecnici",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_COMMONS_LISTA_TECNICI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "go-to-update-tecnico",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_COMMONS_LISTA_TECNICI",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "rup-data",
+                            "label": "AVVISO.DATI-RUP",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "cognome",
+                                    "label": "RUP.COGNOME",
+                                    "oggettoProtezione": "GENE.TECNI.COGTEI",
+                                    "mnemonico": "COGTEI",
+                                    "mappingInput": "cognome",
+                                    "mappingOutput": "cognome"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "nome",
+                                    "label": "RUP.NOME",
+                                    "oggettoProtezione": "GENE.TECNI.NOMETEI",
+                                    "mnemonico": "NOMETEI",
+                                    "mappingInput": "nome",
+                                    "mappingOutput": "nome"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "intestazione",
+                                    "label": "RUP.INTESTAZIONE",
+                                    "mappingInput": "nominativo",
+                                    "mappingOutput": "nominativo",
+                                    "oggettoProtezione": "GENE.TECNI.NOMTEC",
+                                    "mnemonico": "NOMTEC1"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "codice-fiscale",
+                                    "label": "RUP.CODICE-FISCALE",
+                                    "oggettoProtezione": "GENE.TECNI.CFTEC",
+                                    "mnemonico": "CFTEC1",
+                                    "mappingInput": "cf",
+                                    "mappingOutput": "cf"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "indirizzo",
+                                    "label": "RUP.INDIRIZZO",
+                                    "oggettoProtezione": "GENE.TECNI.INDTEC",
+                                    "mnemonico": "INDTEC1",
+                                    "mappingInput": "indirizzo",
+                                    "mappingOutput": "indirizzo"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "num-civico",
+                                    "label": "RUP.NUM-CIVICO",
+                                    "oggettoProtezione": "GENE.TECNI.NCITEC",
+                                    "mnemonico": "NCITEC1",
+                                    "mappingInput": "numCivico",
+                                    "mappingOutput": "numCivico"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "comune",
+                                    "label": "RUP.COMUNE",
+                                    "oggettoProtezione": "GENE.TECNI.LOCTEC",
+                                    "mnemonico": "LOCTEC1",
+                                    "mappingInput": "comune",
+                                    "mappingOutput": "comune"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "provincia",
+                                    "label": "RUP.PROVINCIA",
+                                    "oggettoProtezione": "GENE.TECNI.PROTEC",
+                                    "mnemonico": "PROTEC1",
+                                    "mappingInput": "provincia",
+                                    "mappingOutput": "provincia"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "cap",
+                                    "label": "RUP.CAP",
+                                    "oggettoProtezione": "GENE.TECNI.CAPTEC",
+                                    "mnemonico": "CAPTEC1",
+                                    "mappingInput": "cap",
+                                    "mappingOutput": "cap"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "cod-istat",
+                                    "label": "RUP.COD-ISTAT",
+                                    "oggettoProtezione": "GENE.TECNI.CITTEC",
+                                    "mnemonico": "G_CITTECI",
+                                    "mappingInput": "codIstat",
+                                    "mappingOutput": "codIstat"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "telefono",
+                                    "label": "RUP.TELEFONO",
+                                    "oggettoProtezione": "GENE.TECNI.TELTEC",
+                                    "mnemonico": "TELTEC1",
+                                    "mappingInput": "telefono",
+                                    "mappingOutput": "telefono"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "fax",
+                                    "label": "RUP.FAX",
+                                    "oggettoProtezione": "GENE.TECNI.FAXTEC",
+                                    "mnemonico": "FAXTEC1",
+                                    "mappingInput": "fax",
+                                    "mappingOutput": "fax"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "email",
+                                    "label": "RUP.EMAIL",
+                                    "oggettoProtezione": "GENE.TECNI.EMATEC",
+                                    "mnemonico": "G_EMATECI",
+                                    "mappingInput": "email",
+                                    "mappingOutput": "email"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

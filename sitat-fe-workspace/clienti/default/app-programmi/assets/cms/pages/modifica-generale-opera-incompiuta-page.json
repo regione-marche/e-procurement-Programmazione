@@ -1,0 +1,810 @@
+{
+    "name": "modifica-generale-opera-incompiuta-page",
+    "title": "TITLE.MODIFICA-GENERALE-OPERA-INCOMPIUTA-PAGE",
+    "layout": "base-layout",
+    "appName": "app-programmi",
+    "styleUrls": [
+        "assets/cms/pages/modifica-opera-incompiuta-page.css"
+    ],
+    "settings": {
+        "page": "modifica-generale-opera-incompiuta-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-programmi-page",
+                "label": "BREADCRUMB.LISTA-PROGRAMMI",
+                "slug": "lista-programmi-page",
+                "additionalParams": "APP_PROGRAMMI_LISTA_PROGRAMMI_PARAMS"
+            },
+            {
+                "code": "dett-prog-opere-incompiute-page",
+                "label": "BREADCRUMB.DETTAGLIO-PROGRAMMA",
+                "slug": "dett-prog-opere-incompiute-page",
+                "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+            },
+            {
+                "code": "dett-generale-opera-incompiuta-page",
+                "label": "BREADCRUMB.DETTAGLIO-GENERALE-OPERE-INCOMPIUTE",
+                "slug": "dett-generale-opera-incompiuta-page",
+                "additionalParams": "APP_PROGRAMMI_DETTAGLIO_OPERA_INCOMPIUTA_PARAMS"
+            },
+            {
+                "code": "modifica-generale-opera-incompiuta-page",
+                "label": "BREADCRUMB.MODIFICA-GENERALE-OPERA-INCOMPIUTA",
+                "slug": "modifica-generale-opera-incompiuta-page",
+                "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-generale-opera-incompiuta-page-content-root-section",
+            "selector": "modifica-generale-opera-incompiuta-section",
+            "description": "Pagina di modifica di un'opera incompiuta",
+            "classNames": "modifica-generale-opera-incompiuta-section",
+            "settings": {
+                "classNames": "modifica-generale-opera-incompiuta-index",
+                "sectionTitle": "TITLE.MODIFICA-GENERALE-OPERA-INCOMPIUTA-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-generale",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_PROGRAMMI_MODIFICA_OPERA_INCOMPIUTA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "update-opera-incompiuta",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_PROGRAMMI_OPERA_INCOMPIUTA"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "OPERE-INCOMPIUTE.DATI-GENERALI.GENERAL-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "cup",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.CUP",
+                                    "oggettoProtezione": "PIANI.OITRI.CUP",
+                                    "mnemonico": "CUPOITRIPIA",
+                                    "mappingInput": "cup",
+                                    "mappingOutput": "cup",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "regexp": "^.{0,15}$"
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "OPERE-INCOMPIUTE.DATI-GENERALI.VALIDATORS.CUP-NUMERO-CARATTERI-NON-VALIDO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": 15
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "descrizione-opera",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.DESCRIZIONE",
+                                    "oggettoProtezione": "PIANI.OITRI.DESCRIZIONE",
+                                    "mnemonico": "DESCROITRIP",
+                                    "mappingInput": "descrizione",
+                                    "mappingOutput": "descrizione",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "regexp": "^.{0,2000}$"
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "OPERE-INCOMPIUTE.DATI-GENERALI.VALIDATORS.DESCRIZIONE-NUMERO-CARATTERI-NON-VALIDO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": 2000
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "determinazioni-amministrazione",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.DETERMINAZIONI-AMMINISTRAZIONE",
+                                    "oggettoProtezione": "PIANI.OITRI.DETERMINAZIONI",
+                                    "mnemonico": "DETERMOITRI",
+                                    "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                    "listCode": "Determinazioni",
+                                    "mappingInput": "determinazioni",
+                                    "mappingOutput": "determinazioni"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "ambito-interesse",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.AMBITO-INTERESSE",
+                                    "oggettoProtezione": "PIANI.OITRI.AMBITOINT",
+                                    "mnemonico": "AMBIINTOITR",
+                                    "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                    "listCode": "Ambito",
+                                    "mappingInput": "ambitoInt",
+                                    "mappingOutput": "ambitoInt"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "importi-data",
+                            "label": "OPERE-INCOMPIUTE.DATI-GENERALI.IMPORTI-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "anno-ultimo-qe",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.ANNO-ULTIMO-QE",
+                                    "oggettoProtezione": "PIANI.OITRI.ANNOULTQE",
+                                    "mnemonico": "ANNULTQEOIT",
+                                    "mappingInput": "annoUltimoQe",
+                                    "mappingOutput": "annoUltimoQe",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "regexp": "^([0-9]{4})$"
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "OPERE-INCOMPIUTE.DATI-GENERALI.VALIDATORS.ANNO-ULTIMO-QE-NUMERO-CARATTERI-NON-VALIDO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": 4
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-complessivo-intervento",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.IMPORTO-COMPLESSIVO-INTERVENTO",
+                                    "oggettoProtezione": "PIANI.OITRI.IMPORTOINT",
+                                    "mnemonico": "IMPINTOITRP",
+                                    "mappingInput": "importoInt",
+                                    "mappingOutput": "importoInt",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "regexp": "^([0-9]{1,22})(\\.[0-9]{1,2}){0,1}$"
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "OPERE-INCOMPIUTE.DATI-GENERALI.VALIDATORS.IMPORTO-COMPLESSIVO-INTERVENTO-NUMERO-CARATTERI-NON-VALIDO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-complessivo-lavori",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.IMPORTO-COMPLESSIVO-LAVORI",
+                                    "oggettoProtezione": "PIANI.OITRI.IMPORTOLAV",
+                                    "mnemonico": "IMPLAVOITRP",
+                                    "mappingInput": "importoLav",
+                                    "mappingOutput": "importoLav",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "regexp": "^([0-9]{1,22})(\\.[0-9]{1,2}){0,1}$"
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "OPERE-INCOMPIUTE.DATI-GENERALI.VALIDATORS.IMPORTO-COMPLESSIVO-LAVORI-NUMERO-CARATTERI-NON-VALIDO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-ultimo-sal",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.IMPORTO-ULTIMO-SAL",
+                                    "oggettoProtezione": "PIANI.OITRI.IMPORTOSAL",
+                                    "mnemonico": "IMPSALOITRP",
+                                    "mappingInput": "importoSal",
+                                    "mappingOutput": "importoSal",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "regexp": "^([0-9]{1,22})(\\.[0-9]{1,2}){0,1}$"
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "OPERE-INCOMPIUTE.DATI-GENERALI.VALIDATORS.IMPORTO-ULTIMO-SAL-NUMERO-CARATTERI-NON-VALIDO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "oneri-ultimazione-lavori",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.ONERI-ULTIMAZIONE-LAVORI",
+                                    "oggettoProtezione": "PIANI.OITRI.ONERIULTIM",
+                                    "mnemonico": "ONERULTOITR",
+                                    "mappingInput": "oneriUlt",
+                                    "mappingOutput": "oneriUlt",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "regexp": "^([0-9]{1,22})(\\.[0-9]{1,2}){0,1}$"
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "OPERE-INCOMPIUTE.DATI-GENERALI.VALIDATORS.ONERI-ULTIMAZIONE-LAVORI-NUMERO-CARATTERI-NON-VALIDO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "percentuale-avanzamento-lavori",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.PERCENTUALE-AVANZAMENTO-LAVORI",
+                                    "oggettoProtezione": "PIANI.OITRI.AVANZAMENTO",
+                                    "mnemonico": "AVANZOITRIP",
+                                    "mappingInput": "avanzamento",
+                                    "mappingOutput": "avanzamento",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "regexp": "^([0-9]{1,4})(\\.[0-9]{1,2}){0,1}$"
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "OPERE-INCOMPIUTE.DATI-GENERALI.VALIDATORS.PERCENTUALE-AVANZAMENTO-LAVORI-NUMERO-CARATTERI-NON-VALIDO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "caratteristiche-data",
+                            "label": "OPERE-INCOMPIUTE.DATI-GENERALI.CARATTERISTICHE-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "causa-opera-incompiuta",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.CAUSA-OPERA-INCOMPIUTA",
+                                    "oggettoProtezione": "PIANI.OITRI.CAUSA",
+                                    "mnemonico": "CAUSAOITRIP",
+                                    "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                    "listCode": "Causa",
+                                    "mappingInput": "causa",
+                                    "mappingOutput": "causa"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "stato-realizzazione",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.STATO-REALIZZAZIONE",
+                                    "oggettoProtezione": "PIANI.OITRI.STATOREAL",
+                                    "mnemonico": "STATREALOIT",
+                                    "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                    "listCode": "StatoRealizzazione",
+                                    "mappingInput": "statoReal",
+                                    "mappingOutput": "statoReal"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "parte-infrastruttura-rete",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.PARTE-INFRASTRUTTURA-RETE",
+                                    "oggettoProtezione": "PIANI.OITRI.INFRASTRUTTURA",
+                                    "mnemonico": "INFRASTROIT",
+                                    "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                    "listCode": "sino",
+                                    "mappingInput": "infrastruttura",
+                                    "mappingOutput": "infrastruttura"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "discontinuitaRete",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.DISCONTINUITA",
+                                    "oggettoProtezione": "PIANI.OITRI.DISCONTINUITA_RETE",
+                                    "mnemonico": "DISCRETEOITRI",
+                                    "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                    "listCode": "sino",
+                                    "mappingInput": "discontinuitaRete",
+                                    "mappingOutput": "discontinuitaRete",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "parte-infrastruttura-rete": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "fruibile-parzialmente",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.FRUIBILE-PARZIALMENTE",
+                                    "oggettoProtezione": "PIANI.OITRI.FRUIBILE",
+                                    "mnemonico": "FRUIBOITRIP",
+                                    "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                    "listCode": "sino",
+                                    "mappingInput": "fruibile",
+                                    "mappingOutput": "fruibile"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "utilizzo-data",
+                            "label": "OPERE-INCOMPIUTE.DATI-GENERALI.UTILIZZO-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "utilizzo-ridimensionato",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.UTILIZZO-RIDIMENSIONATO",
+                                    "oggettoProtezione": "PIANI.OITRI.UTILIZZORID",
+                                    "mnemonico": "UTILRIDOITR",
+                                    "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                    "listCode": "sino",
+                                    "mappingInput": "utilizzoRid",
+                                    "mappingOutput": "utilizzoRid"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "destinazione-uso",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.DESTINAZIONE-USO",
+                                    "oggettoProtezione": "PIANI.OITRI.DESTINAZIONEUSO",
+                                    "mnemonico": "DESTUSOOITR",
+                                    "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                    "listCode": "DestinazioneUso",
+                                    "mappingInput": "destinazioneUso",
+                                    "mappingOutput": "destinazioneUso"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "cessione-realizzazione-altra-opera",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.CESSIONE-REALIZZAZIONE-ALTRA-OPERA",
+                                    "oggettoProtezione": "PIANI.OITRI.CESSIONE",
+                                    "mnemonico": "CESSOITRIPI",
+                                    "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                    "listCode": "sino",
+                                    "mappingInput": "cessione",
+                                    "mappingOutput": "cessione"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "prevista-vendita",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.PREVISTA-VENDITA",
+                                    "oggettoProtezione": "PIANI.OITRI.VENDITA",
+                                    "mnemonico": "VENDOITRIPI",
+                                    "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                    "listCode": "sino",
+                                    "mappingInput": "vendita",
+                                    "mappingOutput": "vendita"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "demolizione",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.DEMOLIZIONE",
+                                    "oggettoProtezione": "PIANI.OITRI.DEMOLIZIONE",
+                                    "mnemonico": "DEMOLOITRIP",
+                                    "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                    "listCode": "sino",
+                                    "mappingInput": "demolizione",
+                                    "mappingOutput": "demolizione",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "prevista-vendita": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "oneri-sito",
+                                    "label": "OPERE-INCOMPIUTE.DATI-GENERALI.ONERI-SITO",
+                                    "oggettoProtezione": "PIANI.OITRI.ONERI_SITO",
+                                    "mnemonico": "ONESIOITRP",
+                                    "mappingInput": "oneriSito",
+                                    "mappingOutput": "oneriSito",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "demolizione": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    },
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "regexp": "^([0-9]{1,22})(\\.[0-9]{1,2}){0,1}$"
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "OPERE-INCOMPIUTE.DATI-GENERALI.VALIDATORS.ONERI-SITO-NUMERO-CARATTERI-NON-VALIDO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "immobili-data",
+                            "label": "OPERE-INCOMPIUTE.DATI-GENERALI.IMMOBILI-DATA",
+                            "visible": false,
+                            "visibleCondition": {
+                                "or": {
+                                    "cessione-realizzazione-altra-opera": {
+                                        "values": [
+                                            {
+                                                "value": "1",
+                                                "operation": "="
+                                            }
+                                        ],
+                                        "visible": false
+                                    },
+                                    "prevista-vendita": {
+                                        "values": [
+                                            {
+                                                "value": "1",
+                                                "operation": "="
+                                            }
+                                        ],
+                                        "visible": false
+                                    }
+                                }
+                            },
+                            "fieldSections": [
+                                {
+                                    "type": "FORM-GROUP",
+                                    "code": "immobili-data-group",
+                                    "label": "",
+                                    "minGroupsNumber": 0,
+                                    "maxGroupsNumber": 0,
+                                    "mappingInput": "immobili",
+                                    "mappingOutput": "immobili",
+                                    "defaultFormGroupFields": [
+                                        {
+                                            "type": "TEXT",
+                                            "code": "id-immobile",
+                                            "label": "OPERE-INCOMPIUTE.DATI-GENERALI.IMMOBILE.PROGRESSIVO-IMMOBILE",
+                                            "mappingInput": "id",
+                                            "mappingOutput": "id"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "cui-immobile",
+                                            "label": "OPERE-INCOMPIUTE.DATI-GENERALI.IMMOBILE.CODICE-UNIVOCO",
+                                            "oggettoProtezione": "PIANI.IMMTRAI.CUIIMM",
+                                            "mnemonico": "T2CUIIMM",
+                                            "mappingInput": "cui",
+                                            "mappingOutput": "cui",
+                                            "modalComponent": "cui-modal-widget",
+                                            "clean": false,
+                                            "modalComponentConfig": {
+                                                "data": {
+                                                    "buttons": [
+                                                        {
+                                                            "code": "modal-close-button",
+                                                            "label": "BUTTONS.ANNULLA",
+                                                            "icon": "mgg-icons-crud-cancel",
+                                                            "provider": "APP_PROGRAMMI_MODAL_WINDOW"
+                                                        },
+                                                        {
+                                                            "code": "set-button",
+                                                            "label": "BUTTONS.SET",
+                                                            "icon": "mgg-icons-crud-save"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "TEXTBOX",
+                                            "code": "descrizione-immobile",
+                                            "label": "OPERE-INCOMPIUTE.DATI-GENERALI.IMMOBILE.DESCRIZIONE",
+                                            "oggettoProtezione": "PIANI.IMMTRAI.DESIMM",
+                                            "mnemonico": "T2IDESIMM",
+                                            "mappingInput": "descrizione",
+                                            "mappingOutput": "descrizione",
+                                            "validators": [
+                                                {
+                                                    "config": {
+                                                        "regexp": "^.{0,400}$"
+                                                    },
+                                                    "messages": [
+                                                        {
+                                                            "level": "error",
+                                                            "text": "OPERE-INCOMPIUTE.IMMOBILE.VALIDATORS.DESCRIZIONE-NUMERO-CARATTERI-NON-VALIDO"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "maxLength": 400
+                                        },
+                                        {
+                                            "type": "AUTOCOMPLETE",
+                                            "code": "comune-immobile",
+                                            "label": "OPERE-INCOMPIUTE.DATI-GENERALI.IMMOBILE.COMUNE",
+                                            "noDataLabel": "NO-DATA",
+                                            "oggettoProtezione": "PIANI.IMMTRAI.COMIST",
+                                            "mappingInput": "",
+                                            "mappingOutput": "",
+                                            "itemsProviderCode": "APP_PROGRAMMI_COMUNI",
+                                            "minSearchCharacters": 2
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "provincia-immobile",
+                                            "label": "OPERE-INCOMPIUTE.DATI-GENERALI.IMMOBILE.PROVINCIA",
+                                            "oggettoProtezione": "PIANI.IMMTRAI.COMIST",
+                                            "mappingInput": "",
+                                            "mappingOutput": ""
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "codice-istat-immobile",
+                                            "label": "OPERE-INCOMPIUTE.DATI-GENERALI.IMMOBILE.CODICE-ISTAT",
+                                            "oggettoProtezione": "PIANI.IMMTRAI.COMIST",
+                                            "mnemonico": "T2COMIST",
+                                            "mappingInput": "codIstat",
+                                            "mappingOutput": "codIstat"
+                                        },
+                                        {
+                                            "type": "TEXTMODAL",
+                                            "code": "codnuts-immobile",
+                                            "label": "INTERVENTO.IMMOBILE.NUTS",
+                                            "oggettoProtezione": "PIANI.IMMTRAI.NUTS",
+                                            "mnemonico": "T2NUTS01",
+                                            "mappingInput": "nuts",
+                                            "mappingOutput": "nuts",
+                                            "validators": [
+                                                {
+                                                    "config": {
+                                                        "regexp": "^.{0,5}$"
+                                                    },
+                                                    "messages": [
+                                                        {
+                                                            "level": "error",
+                                                            "text": "INTERVENTO.IMMOBILE.VALIDATORS.NUTS-NUMERO-CARATTERI-NON-VALIDO"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "maxLength": 5,
+                                            "modalComponent": "nuts-modal-widget",
+                                            "modalComponentConfig": {
+                                                "data": {
+                                                    "buttons": [
+                                                        {
+                                                            "code": "modal-close-button",
+                                                            "label": "BUTTONS.ANNULLA",
+                                                            "icon": "mgg-icons-crud-cancel",
+                                                            "provider": "APP_PROGRAMMI_MODAL_WINDOW"
+                                                        },
+                                                        {
+                                                            "code": "set-button",
+                                                            "label": "BUTTONS.SET",
+                                                            "icon": "mgg-icons-crud-save"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "COMBOBOX",
+                                            "code": "trasferimento-titolo-corrispettivo",
+                                            "label": "OPERE-INCOMPIUTE.DATI-GENERALI.IMMOBILE.TRASFERIMENTO-TITOLO-CORRISPETTIVO",
+                                            "oggettoProtezione": "PIANI.IMMTRAI.TITCOR",
+                                            "mnemonico": "T2TITCOR",
+                                            "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                            "listCode": "TrasferimentoImmobile",
+                                            "mappingInput": "trasfImmCorrisp",
+                                            "mappingOutput": "trasfImmCorrisp"
+                                        },
+                                        {
+                                            "type": "COMBOBOX",
+                                            "code": "immobile-disponibile-art-21",
+                                            "label": "OPERE-INCOMPIUTE.DATI-GENERALI.IMMOBILE.IMMOBILE-DISPONIBILE-ART-21",
+                                            "oggettoProtezione": "PIANI.IMMTRAI.IMMDISP",
+                                            "mnemonico": "T2IMMDIS",
+                                            "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                            "listCode": "ImmobileDisponibile",
+                                            "mappingInput": "dirittoGodimento",
+                                            "mappingOutput": "dirittoGodimento"
+                                        },
+                                        {
+                                            "type": "COMBOBOX",
+                                            "code": "incluso-programma-dismissione",
+                                            "label": "OPERE-INCOMPIUTE.DATI-GENERALI.IMMOBILE.INCLUSO-PROGRAMMA-DISMISSIONE",
+                                            "oggettoProtezione": "PIANI.IMMTRAI.PROGDISM",
+                                            "mnemonico": "T2PROGDI",
+                                            "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                            "listCode": "ProgrammaDismissione",
+                                            "mappingInput": "progDismiss",
+                                            "mappingOutput": "progDismiss"
+                                        },
+                                        {
+                                            "type": "COMBOBOX",
+                                            "code": "tipo-disponibilita",
+                                            "label": "OPERE-INCOMPIUTE.DATI-GENERALI.IMMOBILE.TIPO-DISPONIBILITA",
+                                            "oggettoProtezione": "PIANI.IMMTRAI.TIPDISP",
+                                            "mnemonico": "T2TIPDIS",
+                                            "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                            "listCode": "TipoDisponibilita",
+                                            "mappingInput": "tipoDisp",
+                                            "mappingOutput": "tipoDisp"
+                                        },
+                                        {
+                                            "type": "NUMERIC-TEXTBOX",
+                                            "code": "valore-stimato-primo-anno",
+                                            "label": "OPERE-INCOMPIUTE.DATI-GENERALI.IMMOBILE.VALORE-STIMATO-PRIMO-ANNO",
+                                            "oggettoProtezione": "PIANI.IMMTRAI.VA1IMM",
+                                            "mnemonico": "T2IVA1INT",
+                                            "spinners": false,
+                                            "mappingInput": "valStimato1",
+                                            "mappingOutput": "valStimato1",
+                                            "decimals": 2,
+                                            "currency": true,
+                                            "validators": [
+                                                {
+                                                    "config": {
+                                                        "regexp": "^([0-9]{1,22})(\\.[0-9]{1,2}){0,1}$"
+                                                    },
+                                                    "messages": [
+                                                        {
+                                                            "level": "error",
+                                                            "text": "OPERE-INCOMPIUTE.IMMOBILE.VALIDATORS.VALORE-STIMATO-NUMERO-CARATTERI-NON-VALIDO"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "NUMERIC-TEXTBOX",
+                                            "code": "valore-stimato-secondo-anno",
+                                            "label": "OPERE-INCOMPIUTE.DATI-GENERALI.IMMOBILE.VALORE-STIMATO-SECONDO-ANNO",
+                                            "oggettoProtezione": "PIANI.IMMTRAI.VA2IMM",
+                                            "mnemonico": "T2IVA2INT",
+                                            "spinners": false,
+                                            "mappingInput": "valStimato2",
+                                            "mappingOutput": "valStimato2",
+                                            "decimals": 2,
+                                            "currency": true,
+                                            "validators": [
+                                                {
+                                                    "config": {
+                                                        "regexp": "^([0-9]{1,22})(\\.[0-9]{1,2}){0,1}$"
+                                                    },
+                                                    "messages": [
+                                                        {
+                                                            "level": "error",
+                                                            "text": "OPERE-INCOMPIUTE.IMMOBILE.VALIDATORS.VALORE-STIMATO2-NUMERO-CARATTERI-NON-VALIDO"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "NUMERIC-TEXTBOX",
+                                            "code": "valore-stimato-terzo-anno",
+                                            "label": "OPERE-INCOMPIUTE.DATI-GENERALI.IMMOBILE.VALORE-STIMATO-TERZO-ANNO",
+                                            "oggettoProtezione": "PIANI.IMMTRAI.VA3IMM",
+                                            "mnemonico": "T2IVA3INT",
+                                            "spinners": false,
+                                            "mappingInput": "valStimato3",
+                                            "mappingOutput": "valStimato3",
+                                            "decimals": 2,
+                                            "currency": true,
+                                            "validators": [
+                                                {
+                                                    "config": {
+                                                        "regexp": "^([0-9]{1,22})(\\.[0-9]{1,2}){0,1}$"
+                                                    },
+                                                    "messages": [
+                                                        {
+                                                            "level": "error",
+                                                            "text": "OPERE-INCOMPIUTE.IMMOBILE.VALIDATORS.VALORE-STIMATO3-NUMERO-CARATTERI-NON-VALIDO"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "maxLength": 24
+                                        },
+                                        {
+                                            "type": "NUMERIC-TEXTBOX",
+                                            "code": "valore-stimato-annualita-successive",
+                                            "label": "OPERE-INCOMPIUTE.DATI-GENERALI.IMMOBILE.VALORE-STIMATO-ANNUALITA-SUCCESSIVE",
+                                            "oggettoProtezione": "PIANI.IMMTRAI.VA9IMM",
+                                            "mnemonico": "T2IVA9INT",
+                                            "spinners": false,
+                                            "mappingInput": "valAnnoSucc",
+                                            "mappingOutput": "valAnnoSucc",
+                                            "decimals": 2,
+                                            "currency": true,
+                                            "validators": [
+                                                {
+                                                    "config": {
+                                                        "regexp": "^([0-9]{1,22})(\\.[0-9]{1,2}){0,1}$"
+                                                    },
+                                                    "messages": [
+                                                        {
+                                                            "level": "error",
+                                                            "text": "OPERE-INCOMPIUTE.IMMOBILE.VALIDATORS.VALORE-STIMATO-SUCC-NUMERO-CARATTERI-NON-VALIDO"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "maxLength": 24
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "valore-stimato-immobile",
+                                            "label": "OPERE-INCOMPIUTE.DATI-GENERALI.IMMOBILE.VALORE-STIMATO-IMMOBILE",
+                                            "oggettoProtezione": "PIANI.IMMTRAI.VALIMM",
+                                            "mnemonico": "T2IVALIMM",
+                                            "mappingInput": "valoreStimato",
+                                            "mappingOutput": "valoreStimato",
+                                            "currency": true,
+                                            "maxLength": 24
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

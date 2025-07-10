@@ -1,0 +1,32 @@
+@import "../app/app-vars.scss";
+@import "../../sdk-flex.scss";
+
+.accorpamento-lotti-container .al-content {
+    .empty-list {
+        @extend %e8e8e8-background;
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 3px;
+    }
+
+    .lotti-accorpabli-table {
+        width: 100%;
+
+        th.lotti-accorpabli-header.cig {
+            width: 1rem;
+        }
+
+        tr.lotti-accorpabli-row:nth-child(even) {
+            background-color: #f2f2f2
+        }
+
+        .lotti-accorpabli-cell {
+            padding: 1rem;
+
+            &.first {
+                width: 1rem;
+                text-align: center;
+            }
+        }
+    }
+}

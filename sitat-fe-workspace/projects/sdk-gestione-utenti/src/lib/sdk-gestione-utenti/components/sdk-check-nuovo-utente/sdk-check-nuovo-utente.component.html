@@ -1,0 +1,18 @@
+<div [class]="config.classNames" *ngIf="isReady">
+    <h1 class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</h1>
+    <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+    <div class="messages-box" #infoBox></div>
+    <div class="messages-box" #messages></div>
+
+    <div class="sdk-check-nuovo-utente-container">
+        <div class="sdk-check-nuovo-utente-content">
+            <div class="sdk-form-builder">
+                <sdk-radio [config]="selezioneUtenteConfigSubject" (output)="manageRadioOutput($event)"></sdk-radio>
+            </div>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,184 @@
+{
+	"name": "ricerca-modelli-page",
+	"title": "TITLE.RICERCA-MODELLI-PAGE",
+	"layout": "base-layout",
+	"appName": "<APP-NAME>",
+	"styleUrls": [],
+	"settings": {
+		"page": "ricerca-modelli-page",
+		"breadcrumbs": [
+			{
+				"code": "home-page",
+				"label": "BREADCRUMB.HOME",
+				"slug": "home-page"
+			},
+			{
+				"code": "ricerca-modelli-page",
+				"label": "BREADCRUMB.RICERCA-MODELLI",
+				"slug": "ricerca-modelli-page"
+			}
+		]
+	},
+	"sections": [
+		{
+			"id": "ricerca-modelli-page-content-root-section",
+			"selector": "sdk-ricerca-modelli-section",
+			"description": "Pagina ricerca modelli",
+			"classNames": "ricerca-modelli-section",
+			"settings": {
+				"classNames": "ricerca-modelli-index",
+				"sectionTitle": "TITLE.RICERCA-MODELLI-PAGE",
+				"body": {
+					"buttons": [
+						{
+							"code": "back-button",
+							"label": "BUTTONS.BACK",
+							"icon": "mgg-icons-paginator-previous",
+							"provider": "SDK_GESTIONE_MODELLI_SEARCH",
+							"type": "cancel"
+						},
+						{
+							"code": "clean-button",
+							"label": "BUTTONS.CLEAN",
+							"provider": "SDK_GESTIONE_MODELLI_SEARCH",
+							"icon": "mgg-icons-data-unfiltered"
+						},
+						{
+							"code": "search-button",
+							"label": "BUTTONS.SEARCH",
+							"provider": "SDK_GESTIONE_MODELLI_SEARCH",
+							"icon": "mgg-icons-data-search"
+						}
+					],
+					"fields": [
+						{
+							"type": "FORM-SECTION",
+							"code": "ricerca-modelli-data",
+							"label": "SDK-RICERCA-MODELLI.RICERCA-MODELLI-DATA",
+							"fieldSections": [
+								{
+									"type": "HIDDEN",
+									"code": "isOU50",
+									"label": "",
+									"mappingInput": "isOU50"
+								},
+								{
+									"type": "COMBOBOX",
+									"code": "tipo-documento",
+									"label": "SDK-RICERCA-MODELLI.TIPO-DOCUMENTO",
+									"oggettoProtezione": "",
+									"mnemonico": "",
+									"itemsProviderCode": "SDK_GESTIONE_MODELLI_TABELLATI_COMBO",
+									"listCode": "TipoDocumentoModello",
+									"mappingOutput": "tipoDocumento",
+									"mappingInput": "tipoDocumento"
+								},
+								{
+									"type": "TEXTBOX",
+									"code": "nome",
+									"label": "SDK-RICERCA-MODELLI.NOME",
+									"oggettoProtezione": "",
+									"mnemonico": "",
+									"mappingOutput": "nome",
+									"mappingInput": "nome"
+								},
+								{
+									"type": "TEXTBOX",
+									"code": "descrizione",
+									"label": "SDK-RICERCA-MODELLI.DESCRIZIONE",
+									"oggettoProtezione": "",
+									"mnemonico": "",
+									"mappingOutput": "descrizione",
+									"mappingInput": "descrizione"
+								},
+								{
+									"type": "TEXTBOX",
+									"code": "file",
+									"label": "SDK-RICERCA-MODELLI.FILE",
+									"oggettoProtezione": "",
+									"mnemonico": "",
+									"mappingOutput": "file",
+									"mappingInput": "file"
+								},
+								{
+									"type": "COMBOBOX",
+									"code": "modello-personale",
+									"label": "SDK-RICERCA-MODELLI.MODELLO-PERSONALE",
+									"oggettoProtezione": "",
+									"mnemonico": "",
+									"itemsProviderCode": "SDK_GESTIONE_MODELLI_TABELLATI_COMBO",
+									"listCode": "sinoboolean",
+									"mappingOutput": "modelloPersonale",
+									"mappingInput": "modelloPersonale",
+									"visibleCondition": {
+										"and": {
+											"isOU50": {
+												"values": [
+													{
+														"value": "1",
+														"operation": "="
+													}
+												],
+												"visible": false
+											}
+										}
+									}
+								},
+								{
+									"type": "COMBOBOX",
+									"code": "modelli-predisposti",
+									"label": "SDK-RICERCA-MODELLI.MODELLI-PREDISPOSTI",
+									"oggettoProtezione": "",
+									"mnemonico": "",
+									"itemsProviderCode": "SDK_GESTIONE_MODELLI_TABELLATI_COMBO",
+									"listCode": "sinoboolean",
+									"mappingOutput": "presenteModelliPredisposti",
+									"mappingInput": "presenteModelliPredisposti",
+									"visibleCondition": {
+										"and": {
+											"isOU50": {
+												"values": [
+													{
+														"value": "1",
+														"operation": "="
+													}
+												],
+												"visible": false
+											}
+										}
+									}
+								},
+								{
+									"type": "COMBOBOX",
+									"code": "utente-creatore",
+									"label": "SDK-RICERCA-MODELLI.UTENTE-CREATORE",
+									"oggettoProtezione": "",
+									"mnemonico": "",
+                                    "listCode" : "dropdownUtentiOptions",
+									"mappingInput": "utenteCreatore",
+									"mappingOutput": "utenteCreatore",
+									"itemsProviderCode": "SDK_GESTIONE_MODELLI_TABELLATI_COMBO",
+									"noDataLabel": "NO-DATA",
+									"newEditAvailable": false,
+									"visibleCondition": {
+										"and": {
+											"isOU50": {
+												"values": [
+													{
+														"value": "1",
+														"operation": "="
+													}
+												],
+												"visible": false
+											}
+										}
+									}
+								}
+							]
+						}
+					]
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,19 @@
+<div class="mne-modal" *ngIf="isReady">
+    <div class="messages-box" #messages></div>
+
+    <div class="mne-container">
+        <div class="mne-content">
+            <sdk-form-builder *ngIf="mnemonico != null" [config]="formBuilderConfigObs">
+            </sdk-form-builder>
+            <div *ngIf="mnemonico == null" class="empty-mnemonico">
+                {{ 'MNEMONICO-INFO-BOX.NO-MNEMONICO' | translate }}
+            </div>
+            <div *ngIf="mnemonico != null && infoCampo == null" class="empty-mnemonico">
+                {{ 'MNEMONICO-INFO-BOX.NO-MNEMONICO-FOUND' | translate }}
+            </div>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+</div>

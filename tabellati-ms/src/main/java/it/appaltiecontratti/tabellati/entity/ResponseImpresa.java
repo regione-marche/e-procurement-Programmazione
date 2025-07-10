@@ -1,0 +1,43 @@
+package it.appaltiecontratti.tabellati.entity;
+
+import java.io.Serializable;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+@ApiModel(description = "Contenitore per il risultato dell'operazione di reperimento del dettaglio di un impresa")
+public class ResponseImpresa extends BaseResponse implements Serializable{
+
+	private static final long serialVersionUID = -6611269573839884401L;
+
+	/** Codice indicante un errore inaspettato. */
+	public static final String ERROR_UNEXPECTED = "unexpected-error";
+
+	@ApiModelProperty(value = "Risultato operazione di lettura")
+	private boolean esito;
+
+
+	@JsonInclude(JsonInclude.Include.NON_NULL)
+	@ApiModelProperty(value = "Dati dell'impresa")
+	private ImpresaEntry data;
+
+	
+
+	public void setEsito(boolean esito) {
+		this.esito = esito;
+	}
+
+	public boolean isEsito() {
+		return esito;
+	}
+
+	public ImpresaEntry getData() {
+		return data;
+	}
+
+	public void setData(ImpresaEntry entry) {
+		this.data = entry;
+	}
+}

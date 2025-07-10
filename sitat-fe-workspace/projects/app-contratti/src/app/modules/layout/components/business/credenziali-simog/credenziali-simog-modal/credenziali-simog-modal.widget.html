@@ -1,0 +1,16 @@
+<div class="credenziali-simog-modal" *ngIf="isReady">
+    <div class="messages-box" #messages></div>
+
+    <div class="credenziali-simog-container">
+        <div class="credenziali-simog-testata">
+
+        </div>
+        <div class="credenziali-simog-content">
+            <sdk-form-builder [config]="formBuilderConfigObs" (output)="manageFormOutput($event)">
+            </sdk-form-builder>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+</div>

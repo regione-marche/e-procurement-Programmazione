@@ -1,0 +1,80 @@
+{
+    "name": "grafica-message-panel-page",
+    "title": "TITLE.GRAFICA-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/grafica-page.css",
+        "assets/cms/layouts/base-menu-tabs-layout.css"
+    ],
+    "settings": {
+        "page": "grafica-message-panel-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "grafica-page",
+                "label": "Grafica",
+                "slug": "grafica-page"
+            },
+            {
+                "code": "grafica-page",
+                "label": "Esempio 1",
+                "slug": "grafica-page"
+            },
+            {
+                "code": "grafica-page",
+                "label": "Esempio 2",
+                "slug": "grafica-page"
+            }            
+        ]
+    },
+    "sections": [
+        {
+            "id": "grafica-message-panel-page-content-root-section",
+            "selector": "grafica-message-panel-section",
+            "description": "Pagina di dettaglio grafica",
+            "classNames": "grafica-message-panel-section",
+            "settings": {
+                "classNames": "grafica-message-panel-index",
+                "sectionTitle": "grafica-message-panel",
+                "menuTabs": [
+                    {
+                        "code": "menu-tabs-1",
+                        "title": "Componenti form",                        
+                        "slug": "grafica-page"
+                    },
+                    {
+                        "code": "menu-tabs-2",
+                        "title": "Lista dati",
+                        "slug": "grafica-lista-page"
+                    },
+                    {
+                        "code": "menu-tabs-3",
+                        "title": "Tabella",
+                        "slug": "grafica-tabella-page"
+                    },
+                    {
+                        "code": "menu-tabs-4",
+                        "title": "Form group",
+                        "slug": "grafica-form-group-page"
+                    },
+                    {
+                        "code": "menu-tabs-5",
+                        "title": "Document panel",
+                        "slug": "grafica-document-panel-page"
+                    },
+                    {
+                        "code": "menu-tabs-6",
+                        "title": "Message panel",
+                        "active": true,
+                        "slug": "grafica-message-panel-page"
+                    }
+                ]               
+            }
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+<div [class]="config.classNames" *ngIf="isReady">
+    <h1 class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</h1>
+    <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+    <div class="messages-box" #infoBox></div>
+
+    <div class="messages-box" #messages></div>
+
+    <div class="lista-atti-container">
+        <sdk-panelbar *ngIf="(isSceltaContrVal && garaEntry != null && !garaEntry.pcp) || (garaEntry != null && garaEntry.pcp)" [config]="listaAttiSubject" (output)="manageItemClick($event)"></sdk-panelbar>
+        <sdk-modal [config]="modalConfigObs" (output)="manageModalOutput($event)"></sdk-modal>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+        <sdk-dialog [config]="dialogConfigSubj"></sdk-dialog>
+    </div>
+</div>

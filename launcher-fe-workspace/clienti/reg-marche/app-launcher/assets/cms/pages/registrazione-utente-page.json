@@ -1,0 +1,611 @@
+{
+    "name": "registrazione-utente-page",
+    "title": "TITLE.REGISTRAZIONE-UTENTE-PAGE",
+    "layout": "base-layout",
+    "appName": "app-launcher",
+    "styleUrls": [
+        "assets/cms/pages/registrazione-utente-page.css"
+    ],
+    "settings": {
+        "page": "registrazione-utente-page"
+    },
+    "sections": [
+        {
+            "id": "registrazione-utente-content-root-section",
+            "selector": "registrazione-utente-section",
+            "description": "Componente per la registrazione utente",
+            "classNames": "registrazione-utente-section anag-page",
+            "settings": {
+                "classNames": "registrazione-utente-section",
+                "sectionTitle": "TITLE.REGISTRAZIONE-UTENTE-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-home-page",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "LAUNCHER_REGISTRAZIONE_UTENTE",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-utente",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "LAUNCHER_REGISTRAZIONE_UTENTE"
+                        }
+                    ],
+                    "W9-PT": {
+                        "modelloAccreditamento": "Richiesta_Utenza_Modulo_Esecuzione.docx",
+                        "form": [
+                            {
+                                "type": "FORM-SECTION",
+                                "code": "anagrafica-section",
+                                "label": "REGISTRAZIONE-UTENTE.ANAGRAFICA-SECTION.TITLE",
+                                "fieldSections": [
+                                    {
+                                        "type": "HIDDEN",
+                                        "code": "registrazione-pubblica",
+                                        "label": "REGISTRAZIONE-UTENTE.ANAGRAFICA-SECTION.REGISTRAZIONE-PUBBLICA",
+                                        "oggettoProtezione": "",
+                                        "mnemonico": "",
+                                        "mappingInput": "registrazionePubblica"
+                                    },
+                                    {
+                                        "type": "TEXTBOX",
+                                        "code": "nome",
+                                        "label": "REGISTRAZIONE-UTENTE.ANAGRAFICA-SECTION.NOME",
+                                        "oggettoProtezione": "",
+                                        "mnemonico": "",
+                                        "mappingInput": "nome",
+                                        "mappingOutput": "nome"
+                                    },
+                                    {
+                                        "type": "TEXTBOX",
+                                        "code": "cognome",
+                                        "label": "REGISTRAZIONE-UTENTE.ANAGRAFICA-SECTION.COGNOME",
+                                        "oggettoProtezione": "",
+                                        "mnemonico": "",
+                                        "mappingInput": "cognome",
+                                        "mappingOutput": "cognome"
+                                    },
+                                    {
+                                        "type": "TEXT",
+                                        "code": "codice-fiscale",
+                                        "label": "REGISTRAZIONE-UTENTE.ANAGRAFICA-SECTION.COD-FISCALE",
+                                        "oggettoProtezione": "",
+                                        "mnemonico": "",
+                                        "mappingInput": "codiceFiscale",
+                                        "mappingOutput": "codiceFiscale",
+                                        "visible": false,
+                                        "visibleCondition": {
+                                            "or": {
+                                                "registrazione-pubblica": {
+                                                    "values": [
+                                                        {
+                                                            "value": "NO",
+                                                            "operation": "="
+                                                        }
+                                                    ],
+                                                    "visible": false
+                                                }
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "TEXTBOX",
+                                        "code": "telefono",
+                                        "label": "REGISTRAZIONE-UTENTE.ANAGRAFICA-SECTION.TELEFONO",
+                                        "oggettoProtezione": "",
+                                        "mnemonico": "",
+                                        "mappingOutput": "telefono"
+                                    },
+                                    {
+                                        "type": "TEXTBOX",
+                                        "code": "email",
+                                        "label": "REGISTRAZIONE-UTENTE.ANAGRAFICA-SECTION.EMAIL",
+                                        "oggettoProtezione": "",
+                                        "mnemonico": "",
+                                        "mappingOutput": "email",
+                                        "validators": [
+                                            {
+                                                "config": {
+                                                    "required": true
+                                                },
+                                                "messages": [
+                                                    {
+                                                        "level": "error",
+                                                        "text": "REGISTRAZIONE-UTENTE.VALIDATORS.EMAIL-OBBLIGATORIA"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "FORM-SECTION",
+                                "code": "registrazione-section",
+                                "label": "REGISTRAZIONE-UTENTE.REGISTRAZIONE-SECTION.TITLE",
+                                "visible": false,
+                                "visibleCondition": {
+                                    "or": {
+                                        "registrazione-pubblica": {
+                                            "values": [
+                                                {
+                                                    "value": "SI",
+                                                    "operation": "="
+                                                }
+                                            ],
+                                            "visible": false
+                                        }
+                                    }
+                                },
+                                "fieldSections": [
+                                    {
+                                        "type": "TEXTBOX",
+                                        "code": "codice-fiscale-login",
+                                        "label": "REGISTRAZIONE-UTENTE.REGISTRAZIONE-SECTION.CODICE-FISCALE-LOGIN",
+                                        "oggettoProtezione": "",
+                                        "mnemonico": "",
+                                        "mappingOutput": "codiceFiscaleLogin",
+                                        "maxLength": 16,
+                                        "validators": [
+                                            {
+                                                "config": {
+                                                    "required": true
+                                                },
+                                                "messages": [
+                                                    {
+                                                        "level": "error",
+                                                        "text": "REGISTRAZIONE-UTENTE.VALIDATORS.CODICE-FISCALE-LOGIN-OBBLIGATORIO"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "PASSWORD",
+                                        "code": "password",
+                                        "label": "REGISTRAZIONE-UTENTE.REGISTRAZIONE-SECTION.PASSWORD",
+                                        "oggettoProtezione": "",
+                                        "mnemonico": "",
+                                        "mappingOutput": "password",
+                                        "maxLength": 30,
+                                        "validators": [
+                                            {
+                                                "config": {
+                                                    "required": true
+                                                },
+                                                "messages": [
+                                                    {
+                                                        "level": "error",
+                                                        "text": "REGISTRAZIONE-UTENTE.VALIDATORS.PASSWORD-OBBLIGATORIA"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "PASSWORD",
+                                        "code": "conferma-password",
+                                        "label": "REGISTRAZIONE-UTENTE.REGISTRAZIONE-SECTION.CONFERMA-PASSWORD",
+                                        "oggettoProtezione": "",
+                                        "mnemonico": "",
+                                        "mappingOutput": "confermaPassword",
+                                        "maxLength": 30,
+                                        "validators": [
+                                            {
+                                                "config": {
+                                                    "required": true
+                                                },
+                                                "messages": [
+                                                    {
+                                                        "level": "error",
+                                                        "text": "REGISTRAZIONE-UTENTE.VALIDATORS.CONFERMA-PASSWORD-OBBLIGATORIA"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "FORM-SECTION",
+                                "code": "ulteriori-indicazioni-section",
+                                "label": "REGISTRAZIONE-UTENTE.ULTERIORI-INDICAZIONI-SECTION.TITLE",
+                                "fieldSections": [
+                                    {
+                                        "type": "TEXTAREA",
+                                        "code": "messaggio-amministratore",
+                                        "label": "REGISTRAZIONE-UTENTE.ULTERIORI-INDICAZIONI-SECTION.MESSAGGIO-AMMINISTRATORE",
+                                        "oggettoProtezione": "",
+                                        "mnemonico": "",
+                                        "mappingInput": "messaggioAmministratore",
+                                        "mappingOutput": "messaggioAmministratore"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "FORM-SECTION",
+                                "code": "ente-section",
+                                "label": "REGISTRAZIONE-UTENTE.ENTE-SECTION.TITLE",
+                                "fieldSections": [
+                                    {
+                                        "type": "AUTOCOMPLETE",
+                                        "code": "ente",
+                                        "label": "REGISTRAZIONE-UTENTE.ENTE-SECTION.ENTE",
+                                        "oggettoProtezione": "",
+                                        "mnemonico": "",
+                                        "mappingInput": "stazioneAppaltante",
+                                        "mappingOutput": "stazioneAppaltante",
+                                        "itemsProviderCode": "LAUNCHER_STAZIONE_APPALTANTE_AUTOCOMPLETE",
+                                        "noDataLabel": "NO-DATA",
+                                        "validators": [
+                                            {
+                                                "config": {
+                                                    "required": true
+                                                },
+                                                "messages": [
+                                                    {
+                                                        "level": "error",
+                                                        "text": "REGISTRAZIONE-UTENTE.VALIDATORS.ENTE-OBBLIGATORIO"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "FORM-SECTION",
+                                "code": "documenti-section",
+                                "label": "REGISTRAZIONE-UTENTE.DOCUMENTI-SECTION.TITLE",
+                                "fieldSections": [
+                                    {
+                                        "type": "DOCUMENT",
+                                        "code": "upload-documento",
+                                        "label": "REGISTRAZIONE-UTENTE.DOCUMENTI-SECTION.UPLOAD-DOCUMENTO",
+                                        "oggettoProtezione": "",
+                                        "mnemonico": "",
+                                        "mappingOutput": "documentoFirmato",
+                                        "maxFileSize": "25 MB",
+                                        "maxFileSizeLabel": "VALIDATORS.MAX-FILE-SIZE",
+                                        "wrongExtensionLabel": "VALIDATORS.WRONG-EXTENSION",
+                                        "onlyFile": true,
+                                        "mandatory": true,
+                                        "withTitle": false
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "FORM-SECTION",
+                                "code": "trattamento-dati-personali-section",
+                                "label": "REGISTRAZIONE-UTENTE.TRATTAMENTO-DATI-PERSONALI-SECTION.TITLE",
+                                "fieldSections": [
+                                    {
+                                        "type": "CHECKBOX",
+                                        "code": "trattamento-dati-personali",
+                                        "label": "REGISTRAZIONE-UTENTE.TRATTAMENTO-DATI-PERSONALI-SECTION.TRATTAMENTO-DATI-PERSONALI",
+                                        "oggettoProtezione": "",
+                                        "mnemonico": "",
+                                        "mappingOutput": "trattamentoDatiPersonali",
+                                        "items": [
+                                            {
+                                                "code": 1,
+                                                "label": "REGISTRAZIONE-UTENTE.TRATTAMENTO-DATI-PERSONALI-SECTION.ACCETTO"
+                                            }
+                                        ],
+                                        "labelClasses": [
+                                            "trattamento-dati-personali-label"
+                                        ],
+                                        "fieldClasses": [
+                                            "trattamento-dati-personali-field"
+                                        ],
+                                        "validators": [
+                                            {
+                                                "config": {
+                                                    "required": true
+                                                },
+                                                "messages": [
+                                                    {
+                                                        "level": "error",
+                                                        "text": "REGISTRAZIONE-UTENTE.VALIDATORS.TRATTAMENTO-DATI-PERSONALI-OBBLIGATORIO"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "W9-AEC": {
+                        "modelloAccreditamento": "Richiesta_Utenza_Modulo_Esecuzione.docx",
+                        "form": [
+                            {
+                                "type": "FORM-SECTION",
+                                "code": "anagrafica-section",
+                                "label": "REGISTRAZIONE-UTENTE.ANAGRAFICA-SECTION.TITLE",
+                                "fieldSections": [
+                                    {
+                                        "type": "HIDDEN",
+                                        "code": "registrazione-pubblica",
+                                        "label": "REGISTRAZIONE-UTENTE.ANAGRAFICA-SECTION.REGISTRAZIONE-PUBBLICA",
+                                        "oggettoProtezione": "",
+                                        "mnemonico": "",
+                                        "mappingInput": "registrazionePubblica"
+                                    },
+                                    {
+                                        "type": "TEXTBOX",
+                                        "code": "nome",
+                                        "label": "REGISTRAZIONE-UTENTE.ANAGRAFICA-SECTION.NOME",
+                                        "oggettoProtezione": "",
+                                        "mnemonico": "",
+                                        "mappingInput": "nome",
+                                        "mappingOutput": "nome"
+                                    },
+                                    {
+                                        "type": "TEXTBOX",
+                                        "code": "cognome",
+                                        "label": "REGISTRAZIONE-UTENTE.ANAGRAFICA-SECTION.COGNOME",
+                                        "oggettoProtezione": "",
+                                        "mnemonico": "",
+                                        "mappingInput": "cognome",
+                                        "mappingOutput": "cognome"
+                                    },
+                                    {
+                                        "type": "TEXT",
+                                        "code": "codice-fiscale",
+                                        "label": "REGISTRAZIONE-UTENTE.ANAGRAFICA-SECTION.COD-FISCALE",
+                                        "oggettoProtezione": "",
+                                        "mnemonico": "",
+                                        "mappingInput": "codiceFiscale",
+                                        "mappingOutput": "codiceFiscale",
+                                        "visible": false,
+                                        "visibleCondition": {
+                                            "or": {
+                                                "registrazione-pubblica": {
+                                                    "values": [
+                                                        {
+                                                            "value": "NO",
+                                                            "operation": "="
+                                                        }
+                                                    ],
+                                                    "visible": false
+                                                }
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "type": "TEXTBOX",
+                                        "code": "telefono",
+                                        "label": "REGISTRAZIONE-UTENTE.ANAGRAFICA-SECTION.TELEFONO",
+                                        "oggettoProtezione": "",
+                                        "mnemonico": "",
+                                        "mappingOutput": "telefono"
+                                    },
+                                    {
+                                        "type": "TEXTBOX",
+                                        "code": "email",
+                                        "label": "REGISTRAZIONE-UTENTE.ANAGRAFICA-SECTION.EMAIL",
+                                        "oggettoProtezione": "",
+                                        "mnemonico": "",
+                                        "mappingOutput": "email",
+                                        "validators": [
+                                            {
+                                                "config": {
+                                                    "required": true
+                                                },
+                                                "messages": [
+                                                    {
+                                                        "level": "error",
+                                                        "text": "REGISTRAZIONE-UTENTE.VALIDATORS.EMAIL-OBBLIGATORIA"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "FORM-SECTION",
+                                "code": "registrazione-section",
+                                "label": "REGISTRAZIONE-UTENTE.REGISTRAZIONE-SECTION.TITLE",
+                                "visible": false,
+                                "visibleCondition": {
+                                    "or": {
+                                        "registrazione-pubblica": {
+                                            "values": [
+                                                {
+                                                    "value": "SI",
+                                                    "operation": "="
+                                                }
+                                            ],
+                                            "visible": false
+                                        }
+                                    }
+                                },
+                                "fieldSections": [
+                                    {
+                                        "type": "TEXTBOX",
+                                        "code": "codice-fiscale-login",
+                                        "label": "REGISTRAZIONE-UTENTE.REGISTRAZIONE-SECTION.CODICE-FISCALE-LOGIN",
+                                        "oggettoProtezione": "",
+                                        "mnemonico": "",
+                                        "mappingOutput": "codiceFiscaleLogin",
+                                        "maxLength": 16,
+                                        "validators": [
+                                            {
+                                                "config": {
+                                                    "required": true
+                                                },
+                                                "messages": [
+                                                    {
+                                                        "level": "error",
+                                                        "text": "REGISTRAZIONE-UTENTE.VALIDATORS.CODICE-FISCALE-LOGIN-OBBLIGATORIO"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "PASSWORD",
+                                        "code": "password",
+                                        "label": "REGISTRAZIONE-UTENTE.REGISTRAZIONE-SECTION.PASSWORD",
+                                        "oggettoProtezione": "",
+                                        "mnemonico": "",
+                                        "mappingOutput": "password",
+                                        "maxLength": 30,
+                                        "validators": [
+                                            {
+                                                "config": {
+                                                    "required": true
+                                                },
+                                                "messages": [
+                                                    {
+                                                        "level": "error",
+                                                        "text": "REGISTRAZIONE-UTENTE.VALIDATORS.PASSWORD-OBBLIGATORIA"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "PASSWORD",
+                                        "code": "conferma-password",
+                                        "label": "REGISTRAZIONE-UTENTE.REGISTRAZIONE-SECTION.CONFERMA-PASSWORD",
+                                        "oggettoProtezione": "",
+                                        "mnemonico": "",
+                                        "mappingOutput": "confermaPassword",
+                                        "maxLength": 30,
+                                        "validators": [
+                                            {
+                                                "config": {
+                                                    "required": true
+                                                },
+                                                "messages": [
+                                                    {
+                                                        "level": "error",
+                                                        "text": "REGISTRAZIONE-UTENTE.VALIDATORS.CONFERMA-PASSWORD-OBBLIGATORIA"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "FORM-SECTION",
+                                "code": "ulteriori-indicazioni-section",
+                                "label": "REGISTRAZIONE-UTENTE.ULTERIORI-INDICAZIONI-SECTION.TITLE",
+                                "fieldSections": [
+                                    {
+                                        "type": "TEXTAREA",
+                                        "code": "messaggio-amministratore",
+                                        "label": "REGISTRAZIONE-UTENTE.ULTERIORI-INDICAZIONI-SECTION.MESSAGGIO-AMMINISTRATORE",
+                                        "oggettoProtezione": "",
+                                        "mnemonico": "",
+                                        "mappingInput": "messaggioAmministratore",
+                                        "mappingOutput": "messaggioAmministratore"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "FORM-SECTION",
+                                "code": "ente-section",
+                                "label": "REGISTRAZIONE-UTENTE.ENTE-SECTION.TITLE",
+                                "fieldSections": [
+                                    {
+                                        "type": "AUTOCOMPLETE",
+                                        "code": "ente",
+                                        "label": "REGISTRAZIONE-UTENTE.ENTE-SECTION.ENTE",
+                                        "oggettoProtezione": "",
+                                        "mnemonico": "",
+                                        "mappingInput": "stazioneAppaltante",
+                                        "mappingOutput": "stazioneAppaltante",
+                                        "itemsProviderCode": "LAUNCHER_STAZIONE_APPALTANTE_AUTOCOMPLETE",
+                                        "noDataLabel": "NO-DATA",
+                                        "validators": [
+                                            {
+                                                "config": {
+                                                    "required": true
+                                                },
+                                                "messages": [
+                                                    {
+                                                        "level": "error",
+                                                        "text": "REGISTRAZIONE-UTENTE.VALIDATORS.ENTE-OBBLIGATORIO"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "FORM-SECTION",
+                                "code": "documenti-section",
+                                "label": "REGISTRAZIONE-UTENTE.DOCUMENTI-SECTION.TITLE",
+                                "fieldSections": [
+                                    {
+                                        "type": "DOCUMENT",
+                                        "code": "upload-documento",
+                                        "label": "REGISTRAZIONE-UTENTE.DOCUMENTI-SECTION.UPLOAD-DOCUMENTO",
+                                        "oggettoProtezione": "",
+                                        "mnemonico": "",
+                                        "mappingOutput": "documentoFirmato",
+                                        "maxFileSize": "25 MB",
+                                        "maxFileSizeLabel": "VALIDATORS.MAX-FILE-SIZE",
+                                        "wrongExtensionLabel": "VALIDATORS.WRONG-EXTENSION",
+                                        "onlyFile": true,
+                                        "mandatory": true,
+                                        "withTitle": false
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "FORM-SECTION",
+                                "code": "trattamento-dati-personali-section",
+                                "label": "REGISTRAZIONE-UTENTE.TRATTAMENTO-DATI-PERSONALI-SECTION.TITLE",
+                                "fieldSections": [
+                                    {
+                                        "type": "CHECKBOX",
+                                        "code": "trattamento-dati-personali",
+                                        "label": "REGISTRAZIONE-UTENTE.TRATTAMENTO-DATI-PERSONALI-SECTION.TRATTAMENTO-DATI-PERSONALI",
+                                        "oggettoProtezione": "",
+                                        "mnemonico": "",
+                                        "mappingOutput": "trattamentoDatiPersonali",
+                                        "items": [
+                                            {
+                                                "code": 1,
+                                                "label": "REGISTRAZIONE-UTENTE.TRATTAMENTO-DATI-PERSONALI-SECTION.ACCETTO"
+                                            }
+                                        ],
+                                        "labelClasses": [
+                                            "trattamento-dati-personali-label"
+                                        ],
+                                        "fieldClasses": [
+                                            "trattamento-dati-personali-field"
+                                        ],
+                                        "validators": [
+                                            {
+                                                "config": {
+                                                    "required": true
+                                                },
+                                                "messages": [
+                                                    {
+                                                        "level": "error",
+                                                        "text": "REGISTRAZIONE-UTENTE.VALIDATORS.TRATTAMENTO-DATI-PERSONALI-OBBLIGATORIO"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

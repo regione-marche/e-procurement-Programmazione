@@ -1,0 +1,109 @@
+{
+    "name": "modifica-configurazione-utente-page",
+    "title": "TITLE.MODIFICA-CONFIGURAZIONE-UTENTE-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "modifica-configurazione-utente-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-utenti-page",
+                "label": "BREADCRUMB.RICERCA-UTENTI",
+                "slug": "ricerca-utenti-page"
+            },
+            {
+                "code": "lista-utenti-page",
+                "label": "BREADCRUMB.LISTA-UTENTI",
+                "slug": "lista-utenti-page"
+            },
+            {
+                "code": "configurazione-utente-page",
+                "label": "BREADCRUMB.CONFIGURAZIONE-UTENTE",
+                "slug": "configurazione-utente-page",
+                "additionalParams": "SDK_GESTIONE_UTENTI_DETTAGLIO_UTENTE_PARAMS"
+            },
+            {
+                "code": "modifica-configurazione-utente-page",
+                "label": "BREADCRUMB.MODIFICA-CONFIGURAZIONE-UTENTE",
+                "slug": "modifica-configurazione-utente-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-configurazione-utente-page-content-root-section",
+            "selector": "modifica-configurazione-utente-section-widget",
+            "description": "Pagina modifica utente",
+            "classNames": "modifica-configurazione-utente-section",
+            "settings": {
+                "classNames": "modifica-configurazione-utente-index",
+                "sectionTitle": "TITLE.MODIFICA-UTENTE-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-configurazione-utente",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-configurazione",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "contratti-data",
+                            "label": "SDK-UTENTE.CONTRATTI-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "privilegi-utente-contratti",
+                                    "label": "SDK-UTENTE.CONTRATTI-DATA.PRIVILEGI-UTENTE-CONTRATTI",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "itemsProviderCode": "SDK_GESTIONE_UTENTI_TABELLATI_COMBO",
+                                    "listCode": "PrivilegiUtenteContratti",
+                                    "mappingInput": "sysab3",
+                                    "mappingOutput": "sysab3"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "programmi-data",
+                            "label": "SDK-UTENTE.PROGRAMMI-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "centro-di-costo-text",
+                                    "label": "SDK-UTENTE.PROGRAMMI-DATA.CENTRO-DI-COSTO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": ""
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "centro-di-costo",
+                                    "label": "SDK-UTENTE.PROGRAMMI-DATA.CENTRO-DI-COSTO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "centroCosto",
+                                    "mappingOutput": "centroCosto"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,98 @@
+{
+  "name": "login-layout",
+  "styleUrls": [
+    "assets/cms/layouts/login-layout.css"
+  ],
+  "settings": {
+    "layout": "login-layout"
+  },
+  "sections": [
+    {
+      "id": "login-layout-root-section",
+      "selector": "sdk-layout-section",
+      "description": "Contenitore radice di tutte le sezioni del layout",
+      "classNames": "sdk-layout-root-section",
+      "settings": {
+        "section": "login-layout-root-section"
+      }
+    },
+    {
+      "id": "login-layout-header-section",
+      "parentId": "login-layout-root-section",
+      "selector": "sdk-layout-section",
+      "description": "Contenitore per le sezioni dell'header",
+      "classNames": "sdk-layout-header-section",
+      "settings": {
+        "section": "login-layout-header-section"
+      }
+    },
+    {
+      "id": "login-layout-header-top-section",
+      "parentId": "login-layout-header-section",
+      "selector": "sdk-layout-header-top",
+      "description": "Sezione di layout per la parte alta dell'intestazione",
+      "classNames": "sdk-layout-header-top-section",
+      "settings": {
+        "logo": "assets/images/app/logo-white.png",
+        "titoloApplicativo": "APP-TITLE",
+        "titoloModulo": "HOME-PAGE.HEADER-TITLE-CONTENT",
+        "profileDropdownButton": {
+          "code": "profile-dropdown-button",
+          "label": "PARAMS",
+          "labelParams": {
+            "value": ""
+          },
+          "look": "outline",
+          "primary": true,
+          "dropdownData": [
+            {
+              "code": "cambio-modulo-button",
+              "label": "CAMBIO-MODULO-BUTTON",
+              "provider": "APP_AVVISI_CAMBIO_MODULO",
+              "look": "flat",
+              "visible": "APP_CONTRATTI_APPLICAZIONI_VISIBLE"
+            },
+            {
+              "code": "logout-button",
+              "label": "LOGOUT-BUTTON",
+              "provider": "APP_AVVISI_LOGOUT",
+              "look": "flat"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "login-layout-body-section",
+      "parentId": "login-layout-root-section",
+      "selector": "sdk-layout-body",
+      "description": "Contenitore per il titolo e body",
+      "classNames": "sdk-layout-body-section",
+      "settings": {
+        "section": "login-layout-body-section"
+      }
+    },
+    {
+      "id": "login-layout-title-section",
+      "parentId": "login-layout-body-section",
+      "selector": "sdk-layout-title",
+      "description": "Sezione di layout per il titolo dell'applicazione",
+      "classNames": "sdk-layout-title-section",
+      "settings": {
+        "section": "login-layout-title-section",
+        "title": "HOME-PAGE.HEADER-TITLE-CONTENT",
+        "body": "HOME-PAGE.HEADER-DESCRIPTION"
+      }
+    },
+    {
+      "id": "login-layout-content-section",
+      "parentId": "login-layout-body-section",
+      "selector": "sdk-layout-content",
+      "description": "Contenitore per il contenuto di pagina",
+      "classNames": "sdk-layout-container4-section sdk-layout-content-section element-container main-content",
+      "settings": {
+        "section": "login-layout-content-section"
+      }
+    }
+  ]
+}

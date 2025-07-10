@@ -1,0 +1,269 @@
+$modal-padding: 0 1rem 1rem 1rem;
+$label-color: #06c;
+$mandatory-color: #06c;
+$hover-background: #f8fafb;
+$input-border: #25262649;
+$input-focus: #2196f3;
+
+.componi-parametri-modal {
+	position: relative;
+	font-size: 18px;
+
+	&.empty-parameters {
+		.sdk-componi-parametri-modal-testata {
+			border-bottom: none !important;
+		}
+	}
+
+	.sdk-componi-parametri-container {
+		width: 100%;
+		max-width: 1200px;
+		margin: 0 auto;
+
+		.messages-box {
+			margin-bottom: 16px;
+		}
+
+		.sdk-componi-parametri-modal-testata {
+			padding: 0 1rem;
+
+			.modal-title {
+				font-size: 1.2rem;
+				margin: 1rem;
+				letter-spacing: 0.01em;
+				font-weight: 700;
+			}
+		}
+
+		.sdk-componi-parametri-modal-body {
+			padding: $modal-padding;
+			max-height: 60vh;
+			overflow: auto;
+			.componi-parametri-row {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				align-items: flex-start;
+				padding: 1rem;
+				border-bottom: 1px solid #1e202070;
+
+				.componi-parametri-label {
+					font-weight: 700;
+					margin: 0 1rem 0 0;
+					padding: 0;
+					width: calc(40% - 1rem);
+					color: $label-color;
+					align-self: center;
+					.mandatory-box {
+						display: inline;
+						color: $mandatory-color;
+						margin-left: 4px;
+						white-space: nowrap;
+						@media (max-width: 768px) {
+							width: 100%;
+							margin-bottom: 0.5rem;
+						}
+					}
+				}
+
+				.componi-parametri-input {
+					flex: 1;
+					min-width: 250px;
+					@media (max-width: 768px) {
+						width: 100%;
+					}
+
+					.input-wrapper {
+						width: 100%;
+
+						.input-with-indicator {
+							display: flex !important;
+							align-items: center;
+							gap: 8px;
+							width: 100%;
+							flex-wrap: nowrap !important;
+
+							p-inputNumber {
+								flex: 1;
+								min-width: 0;
+
+								::ng-deep .p-component {
+									width: 100%;
+								}
+							}
+
+							.input-indicator {
+								color: rgba(0, 0, 0, 0.6);
+								font-size: 0.9em;
+								white-space: nowrap;
+								flex-shrink: 0;
+								margin-left: auto;
+							}
+
+							@media (max-width: 576px) {
+								flex-direction: column;
+								align-items: flex-start;
+
+								.input-indicator {
+									margin-left: 0;
+									margin-top: 4px;
+								}
+							}
+						}
+
+						input,
+						textarea,
+						p-dropdown,
+						p-calendar,
+						p-inputNumber {
+							width: auto;
+						}
+
+						&.read-only {
+							.value {
+								padding: 8px 12px;
+								background-color: $hover-background;
+								border-radius: 4px;
+								color: rgba(0, 0, 0, 0.6);
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.buttons-row {
+			display: flex;
+			justify-content: flex-end;
+			margin-top: 24px;
+			padding-top: 16px;
+			border-top: 1px solid rgba(0, 0, 0, 0.12);
+
+			.modal-buttons {
+				display: flex;
+				flex-direction: row-reverse;
+				gap: 8px;
+			}
+		}
+	}
+	:host ::ng-deep p-dropdown {
+		width: 100% !important;
+	}
+
+	:host ::ng-deep {
+		p-dropdown,
+		.p-dropdown,
+		p-calendar,
+		.p-calendar,
+		p-inputNumber,
+		.p-inputnumber,
+		input,
+		textarea {
+			width: 100% !important;
+			max-width: 100%;
+		}
+
+		.p-dropdown-panel {
+			width: auto !important;
+			min-width: 100%;
+		}
+
+		@media (max-width: 768px) {
+			.p-dropdown .p-dropdown-trigger,
+			.p-calendar .p-datepicker-trigger {
+				min-width: 2.5rem;
+			}
+		}
+	}
+}
+
+:host ::ng-deep {
+	.input-with-indicator {
+		.p-calendar,
+		.p-inputnumber {
+			width: 100% !important;
+			flex: 1;
+
+			.p-inputtext {
+				width: 100% !important;
+			}
+		}
+	}
+}
+
+:host ::ng-deep {
+	.p-dropdown {
+		width: 100% !important;
+	}
+
+	.p-dropdown-panel {
+		max-width: 90vw !important;
+
+		.p-dropdown-items .p-dropdown-item {
+			white-space: normal;
+			word-break: break-word;
+			padding: 0.75rem 1rem;
+			line-height: 1.5;
+		}
+	}
+
+	body .p-dropdown-panel {
+		max-width: 400px !important;
+		min-width: 250px !important;
+
+		.p-dropdown-items {
+			padding: 0.5rem 0;
+		}
+	}
+
+	.p-calendar .p-datepicker {
+		min-width: 280px;
+	}
+}
+
+.componi-parametri-descrizione {
+	width: 100%;
+	margin-top: 4px;
+	font-size: 0.85rem;
+	color: rgba(0, 0, 0, 1);
+	background-color: #b8e2f3;
+	padding: 8px 12px;
+	border-radius: 0 0 4px 4px;
+	box-sizing: border-box;
+}
+
+.input-wrapper {
+	width: 100%;
+
+	p-dropdown,
+	p-calendar,
+	p-inputNumber,
+	input,
+	textarea,
+	.p-dropdown,
+	.p-calendar,
+	.p-inputnumber {
+		width: 100% !important;
+	}
+}
+
+.input-with-indicator {
+	width: 100%;
+}
+
+:host {
+	&::ng-deep {
+		.sdk-modal-content {
+			margin: 0 auto !important;
+		}
+	}
+
+	.componi-parametri-modal {
+		&.empty-parameters {
+
+			.sdk-filtroente-modal-body {
+				padding: 1rem;
+			}
+		}
+	}
+}

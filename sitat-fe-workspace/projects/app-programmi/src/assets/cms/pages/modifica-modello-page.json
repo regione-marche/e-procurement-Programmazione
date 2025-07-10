@@ -1,0 +1,302 @@
+{
+	"name": "modifica-modello-page",
+	"title": "TITLE.MODIFICA-MODELLO-PAGE",
+	"layout": "base-layout",
+	"appName": "<APP-NAME>",
+	"styleUrls": [],
+	"settings": {
+		"page": "modifica-modello-page",
+		"breadcrumbs": [
+			{
+				"code": "home-page",
+				"label": "BREADCRUMB.HOME",
+				"slug": "home-page"
+			},
+			{
+				"code": "ricerca-modelli-page",
+				"label": "BREADCRUMB.RICERCA-MODELLI",
+				"slug": "ricerca-modelli-page"
+			},
+			{
+				"code": "lista-modelli-page",
+				"label": "BREADCRUMB.LISTA-MODELLI",
+				"slug": "lista-modelli-page"
+			},
+			{
+				"code": "modifica-modello-page",
+				"label": "BREADCRUMB.DETTAGLIO-MODELLO",
+				"slug": "dettaglio-modello-page"
+			},
+			{
+				"code": "modifica-modello-page",
+				"label": "BREADCRUMB.MODIFICA-MODELLO",
+				"slug": "modifica-modello-page"
+			}
+		]
+	},
+	"sections": [
+		{
+			"id": "modifica-modello-page-content-root-section",
+			"selector": "sdk-modifica-modello-section",
+			"description": "Pagina modifica modello",
+			"classNames": "sdk-modifica-modello-section",
+			"settings": {
+				"classNames": "modifica-modello-index",
+				"sectionTitle": "TITLE.MODIFICA-MODELLO-PAGE",
+				"body": {
+					"buttons": [
+						{
+							"code": "back-to-dettaglio",
+							"label": "BUTTONS.ANNULLA",
+							"icon": "mgg-icons-crud-cancel",
+							"provider": "SDK_GESTIONE_MODELLI_LISTA",
+							"type": "cancel"
+						},
+						{
+							"code": "save-modello",
+							"label": "BUTTONS.SAVE",
+							"provider": "SDK_GESTIONE_MODELLI_MODELLO",
+							"icon": "mgg-icons-crud-save"
+						}
+					],
+					"fields": [
+						{
+							"type": "FORM-SECTION",
+							"code": "general-data",
+							"label": "SDK-MODELLO.GENERAL-DATA.TITLE",
+							"fieldSections": [
+								{
+									"type": "HIDDEN",
+									"code": "isOU50",
+									"label": "",
+									"mappingInput": "isOU50"
+								},
+								{
+									"type": "COMBOBOX",
+									"code": "tipoDocumento",
+									"label": "SDK-MODELLO.GENERAL-DATA.TIPO-DOCUMENTO",
+									"mappingOutput": "tipoDocumento",
+									"mappingInput": "tipoDocumento",
+									"listCode": "TipoDocumentoModello",
+									"oggettoProtezione": "",
+									"visible": true,
+									"showClear" : false,
+									"mnemonico": "",
+									"itemsProviderCode": "SDK_GESTIONE_MODELLI_TABELLATI_COMBO",
+									"validators": [
+										{
+											"config": {
+												"required": true
+											},
+											"messages": [
+												{
+													"level": "error",
+													"text": "SDK-MODELLO.VALIDATORS.TIPO-DOCUMENTO-OBBLIGATORIO"
+												}
+											]
+										}
+									]
+								},
+								{
+									"type": "TEXTBOX",
+									"code": "nome",
+									"label": "SDK-MODELLO.GENERAL-DATA.NOME",
+									"oggettoProtezione": "",
+									"mnemonico": "",
+									"mappingInput": "nome",
+									"mappingOutput": "nome",
+									"validators": [
+										{
+											"config": {
+												"required": true
+											},
+											"messages": [
+												{
+													"level": "error",
+													"text": "SDK-MODELLO.VALIDATORS.NOME-OBBLIGATORIO"
+												}
+											]
+										}
+									]
+								},
+								{
+									"type": "TEXTBOX",
+									"code": "descrizione",
+									"label": "SDK-MODELLO.GENERAL-DATA.DESCRIZIONE",
+									"oggettoProtezione": "",
+									"mnemonico": "",
+									"mappingInput": "descr",
+									"mappingOutput": "descrizione"
+								},
+								{
+									"type": "COMBOBOX",
+									"code": "pdf",
+									"label": "SDK-MODELLO.GENERAL-DATA.COMPONI-PDF",
+									"oggettoProtezione": "",
+									"mnemonico": "",
+									"mappingInput": "pdf",
+									"mappingOutput": "formatoPdf",
+									"listCode": "sinoboolean",
+									"itemsProviderCode": "SDK_GESTIONE_MODELLI_TABELLATI_COMBO",
+									"showClear": false,
+									"validators": [
+										{
+											"config": {
+												"required": true
+											},
+											"messages": [
+												{
+													"level": "error",
+													"text": "SDK-MODELLO.VALIDATORS.PDF-MANDATORY"
+												}
+											]
+										}
+									]
+								},
+								{
+									"type": "COMBOBOX",
+									"code": "personale",
+									"mappingInput": "personale",
+									"label": "SDK-MODELLO.GENERAL-DATA.MODELLO-PERSONALE",
+									"oggettoProtezione": "",
+									"mnemonico": "",
+									"mappingOutput": "modelloPersonale",
+									"listCode": "sinoboolean",
+									"itemsProviderCode": "SDK_GESTIONE_MODELLI_TABELLATI_COMBO",
+									"showClear": false,
+									"visibleCondition": {
+										"and": {
+											"isOU50": {
+												"values": [
+													{
+														"value": "1",
+														"operation": "="
+													}
+												],
+												"visible": false
+											}
+										}
+									},
+									"validators": [
+										{
+											"config": {
+												"required": true
+											}
+										}
+									]
+								},
+								{
+									"type": "COMBOBOX",
+									"code": "predisposto",
+									"mappingInput": "disp",
+									"label": "SDK-MODELLO.GENERAL-DATA.MODELLI-PREDISPOSTI",
+									"oggettoProtezione": "",
+									"mnemonico": "",
+									"mappingOutput": "mostraModelliPredisposti",
+									"listCode": "sinoboolean",
+									"itemsProviderCode": "SDK_GESTIONE_MODELLI_TABELLATI_COMBO",
+									"showClear": false,
+									"visibleCondition": {
+										"and": {
+											"isOU50": {
+												"values": [
+													{
+														"value": "1",
+														"operation": "="
+													}
+												],
+												"visible": false
+											}
+										}
+									},
+									"validators": [
+										{
+											"config": {
+												"required": true
+											}
+										}
+									]
+
+								},
+								{
+									"type": "COMBOBOX",
+									"code": "schema",
+									"label": "SDK-MODELLO.GENERAL-DATA.SCHEMA-PRINCIPALE",
+									"oggettoProtezione": "",
+									"mnemonico": "",
+									"mappingInput": "schema",
+									"mappingOutput": "schema",
+									"showClear": false,
+									"validators": [
+										{
+											"config": {
+												"required": true
+											},
+											"messages": [
+												{
+													"level": "error",
+													"text": "SDK-MODELLO.VALIDATORS.SCHEMA-OBBLIGATORIO"
+												}
+											]
+										}
+									]
+								},
+								{
+									"type": "COMBOBOX",
+									"code": "argomento",
+									"label": "SDK-MODELLO.GENERAL-DATA.ARGOMENTO-PRINCIPALE",
+									"oggettoProtezione": "",
+									"mnemonico": "",
+									"mappingInput": "entprinc",
+									"mappingOutput": "argomentoPrincipale",
+									"validators": [
+										{
+											"config": {
+												"required": true
+											},
+											"messages": [
+												{
+													"level": "error",
+													"text": "SDK-MODELLO.VALIDATORS.ARGOMENTO-OBBLIGATORIO"
+												}
+											]
+										}
+									]
+								},
+								{
+									"type": "DOCUMENTS-LIST",
+									"code": "documents-list",
+									"label": "SDK-MODELLO.GENERAL-DATA.EXISTING-DOCUMENTS",
+									"oggettoProtezione": "",
+									"mnemonico": "",
+									"mappingInput": "existingDocument",
+									"mappingOutput": "existingDocument",
+									"clickable": true,
+									"actionsDisabled": true
+								},
+								{
+									"type": "DOCUMENT",
+									"code": "document-field-insert",
+									"label": "SDK-MODELLO.GENERAL-DATA.SOSTITUISCI-FILE",
+									"maxFileSize": "5 MB",
+									"maxFileSizeLabel": "VALIDATORS.MAX-FILE-SIZE",
+									"wrongExtensionLabel": "VALIDATORS.WRONG-EXTENSION",
+									"oggettoProtezione": "",
+									"mnemonico": "",
+									"onlyFile": true,
+									"mappingInput": "file",
+									"mappingOutput": "file",
+									"accept": ".docx,.doc,.odt",
+									"maxTitleLength": 250,
+									"withTitle": false,
+									"mandatory": false,
+									"labelClasses": ["document-label-underline"]
+								}
+							]
+						}
+					]
+				}
+			}
+		}
+	]
+}

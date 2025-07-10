@@ -1,0 +1,488 @@
+{
+    "name": "modifica-utente-page",
+    "title": "TITLE.MODIFICA-UTENTE-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "modifica-utente-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-utenti-page",
+                "label": "BREADCRUMB.RICERCA-UTENTI",
+                "slug": "ricerca-utenti-page"
+            },
+            {
+                "code": "lista-utenti-page",
+                "label": "BREADCRUMB.LISTA-UTENTI",
+                "slug": "lista-utenti-page"
+            },
+            {
+                "code": "dettaglio-utente-page",
+                "label": "BREADCRUMB.DETTAGLIO-UTENTE",
+                "slug": "dettaglio-utente-page",
+                "additionalParams": "SDK_GESTIONE_UTENTI_DETTAGLIO_UTENTE_PARAMS"
+            },
+            {
+                "code": "modifica-utente-page",
+                "label": "BREADCRUMB.MODIFICA-UTENTE",
+                "slug": "modifica-utente-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-utente-page-content-root-section",
+            "selector": "sdk-modifica-utente-section",
+            "description": "Pagina modifica utente",
+            "classNames": "modifica-utente-section",
+            "settings": {
+                "classNames": "modifica-utente-index",
+                "sectionTitle": "TITLE.MODIFICA-UTENTE-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-dettaglio-utente",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "SDK_GESTIONE_UTENTI_LISTA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-utente",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "SDK_GESTIONE_UTENTI_UTENTE"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "SDK-UTENTE.GENERAL-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "HIDDEN",
+                                    "code": "abilitaModificaUsername",
+                                    "label": "",
+                                    "mappingInput": "abilitaModificaUsername"
+                                },
+                                {
+                                    "type": "HIDDEN",
+                                    "code": "utente-delegato",
+                                    "label": "",
+                                    "mappingInput": "utenteDelegato"
+                                },
+                                {
+                                    "type": "HIDDEN",
+                                    "code": "registrazione-login-cf",
+                                    "label": "",
+                                    "mappingInput": "registrazioneLoginCF"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "denominazione",
+                                    "label": "SDK-UTENTE.GENERAL-DATA.DENOMINAZIONE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "nome",
+                                    "mappingOutput": "denominazione",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-UTENTE.VALIDATORS.DESCRIZIONE-OBBLIGATORIA"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": 161
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "username",
+                                    "label": "SDK-UTENTE.GENERAL-DATA.USERNAME",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "username",
+                                    "mappingOutput": "username",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "and": {
+                                            "abilitaModificaUsername": {
+                                                "values": [
+                                                    {
+                                                        "value": null,
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            },
+                                            "registrazione-login-cf": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "username-editabile",
+                                    "label": "SDK-UTENTE.GENERAL-DATA.USERNAME",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "username",
+                                    "mappingOutput": "username",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "and": {
+                                            "abilitaModificaUsername": {
+                                                "values": [
+                                                    {
+                                                        "value": null,
+                                                        "operation": "!="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            },
+                                            "registrazione-login-cf": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    },
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-UTENTE.VALIDATORS.NOME-UTENTE-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": 60
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "username-CF",
+                                    "label": "SDK-UTENTE.GENERAL-DATA.USERNAME-CF",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "username",
+                                    "mappingOutput": "username",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "registrazione-login-cf": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "email",
+                                    "label": "SDK-UTENTE.GENERAL-DATA.EMAIL",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "email",
+                                    "mappingOutput": "email",
+                                    "maxLength": 100
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "codice-fiscale",
+                                    "label": "SDK-UTENTE.GENERAL-DATA.CODICE-FISCALE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "codiceFiscale",
+                                    "mappingOutput": "codiceFiscale",
+                                    "maxLength": 16,
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "registrazione-login-cf": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "opzioni-data",
+                            "label": "SDK-UTENTE.OPZIONI-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "HIDDEN",
+                                    "code": "isCurrentUserAmministratore",
+                                    "label": "",
+                                    "mappingInput": "isCurrentUserAmministratore"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "amministrazione-sistema",
+                                    "label": "SDK-UTENTE.OPZIONI-DATA.AMMINISTRAZIONE-SISTEMA",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "itemsProviderCode": "SDK_GESTIONE_UTENTI_TABELLATI_COMBO",
+                                    "listCode": "sino",
+                                    "mappingInput": "amministratore",
+                                    "mappingOutput": "amministratore",
+                                    "showClear": false,
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "and": {
+                                            "isCurrentUserAmministratore": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            },
+                                            "utente-delegato": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "amministrazione-sistema-readonly",
+                                    "label": "SDK-UTENTE.OPZIONI-DATA.AMMINISTRAZIONE-SISTEMA",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "listCode": "sino",
+                                    "mappingInput": "amministratoreReadonly",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "and": {
+                                            "isCurrentUserAmministratore": {
+                                                "values": [
+                                                    {
+                                                        "value": null,
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            },
+                                            "utente-delegato": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "gestione-utenti",
+                                    "label": "SDK-UTENTE.OPZIONI-DATA.GESTIONE-UTENTI",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "itemsProviderCode": "SDK_GESTIONE_UTENTI_TABELLATI_COMBO",
+                                    "listCode": "GestioneUtenti",
+                                    "mappingInput": "gestioneUtenti",
+                                    "mappingOutput": "gestioneUtenti",
+                                    "showClear": false
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "abilita-modifica-uffici-intestatari",
+                                    "label": "SDK-UTENTE.OPZIONI-DATA.OPZIONI-UTENTE.ABILITA-UTENTE-MODIFICA-UFFICI-INTESTATARI",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "itemsProviderCode": "SDK_GESTIONE_UTENTI_TABELLATI_COMBO",
+                                    "listCode": "sino",
+                                    "mappingInput": "abilitaModificaUfficiIntestatari",
+                                    "mappingOutput": "abilitaModificaUfficiIntestatari",
+                                    "showClear": false,
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "utente-delegato": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "abilita-tutti-uffici-intestatari",
+                                    "label": "SDK-UTENTE.OPZIONI-DATA.OPZIONI-UTENTE.ABILITA-UTENTE-TUTTI-UFFICI-INTESTATARI",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "itemsProviderCode": "SDK_GESTIONE_UTENTI_TABELLATI_COMBO",
+                                    "listCode": "sino",
+                                    "mappingInput": "abilitaTuttiUfficiIntestatari",
+                                    "mappingOutput": "abilitaTuttiUfficiIntestatari",
+                                    "showClear": false,
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "utente-delegato": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "gestione-modelli",
+                                    "label": "SDK-UTENTE.OPZIONI-DATA.OPZIONI-UTENTE.GESTIONE-MODELLI",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "itemsProviderCode": "SDK_GESTIONE_UTENTI_TABELLATI_COMBO",
+                                    "listCode": "GestioneModelliCombo",
+                                    "mappingInput": "gestioneModelli",
+                                    "mappingOutput": "gestioneModelli",
+                                    "showClear": false,
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "utente-delegato": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "sicurezza-data",
+                            "label": "SDK-UTENTE.SICUREZZA-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "scadenza-account",
+                                    "label": "SDK-UTENTE.SICUREZZA-DATA.SCADENZA-ACCOUNT",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "itemsProviderCode": "SDK_GESTIONE_UTENTI_TABELLATI_COMBO",
+                                    "listCode": "ScadenzaAccount",
+                                    "mappingInput": "scadenzaAccount",
+                                    "mappingOutput": "scadenzaAccount"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-scadenza-account",
+                                    "label": "SDK-UTENTE.SICUREZZA-DATA.SCADENZA-ACCOUNT-DATA",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "dataScadenzaAccount",
+                                    "mappingOutput": "dataScadenzaAccount",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "scadenza-account": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "controlli-gdpr",
+                                    "label": "SDK-UTENTE.SICUREZZA-DATA.CONTROLLI-GDPR",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "itemsProviderCode": "SDK_GESTIONE_UTENTI_TABELLATI_COMBO",
+                                    "listCode": "ControlliGdpr",
+                                    "mappingInput": "controlliGdpr",
+                                    "mappingOutput": "controlliGdpr",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "utente-delegato": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

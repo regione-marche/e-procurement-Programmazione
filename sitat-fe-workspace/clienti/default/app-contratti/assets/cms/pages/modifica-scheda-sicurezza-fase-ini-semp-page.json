@@ -1,0 +1,131 @@
+{
+    "name": "modifica-scheda-sicurezza-fase-ini-semp-page",
+    "title": "TITLE.MODIFICA-SCHEDA-SICUREZZA-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "modifica-scheda-sicurezza-fase-ini-semp-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-scheda-sicurezza-fase-ini-semp-page",
+                "label": "BREADCRUMB.DETTAGLIO-SCHEDA-SICUREZZA",
+                "slug": "dettaglio-scheda-sicurezza-fase-ini-semp-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            },
+            {
+                "code": "modifica-scheda-sicurezza-fase-ini-semp-page",
+                "label": "BREADCRUMB.MODIFICA-SCHEDA-SICUREZZA",
+                "slug": "modifica-scheda-sicurezza-fase-ini-semp-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-scheda-sicurezza-fase-ini-semp-page-content-root-section",
+            "selector": "modifica-scheda-sicurezza-section",
+            "description": "Pagina di modifica scheda sicurezza",
+            "classNames": "modifica-scheda-sicurezza-fase-ini-semp-section",
+            "settings": {
+                "classNames": "modifica-scheda-sicurezza-fase-ini-semp-index",
+                "sectionTitle": "TITLE.MODIFICA-SCHEDA-SICUREZZA-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-dettaglio-scheda-sicurezza",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_GARE_SCHE_SIC_FASE_INI_SEMP",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-scheda-sicurezza",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_SCHE_SIC_FASE_INI_SEMP"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "dati-generali-data",
+                            "label": "SCHEDA-SICUREZZA.DATI-GENERALI-DATA.DATI-GENERALI-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "pianscic",
+                                    "label": "SCHEDA-SICUREZZA.DATI-GENERALI-DATA.PIANSCIC",
+                                    "oggettoProtezione": "W9.W9SIC.PIANSCIC",
+                                    "mnemonico": "W3PIANSCIC",
+                                    "mappingInput": "pianoSicurezza",
+                                    "mappingOutput": "pianoSicurezza",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "dirope",
+                                    "label": "SCHEDA-SICUREZZA.DATI-GENERALI-DATA.DIROPE",
+                                    "oggettoProtezione": "W9.W9SIC.DIROPE",
+                                    "mnemonico": "W3DIROPE",
+                                    "mappingInput": "direttoreOperativo",
+                                    "mappingOutput": "direttoreOperativo",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino",
+                                    "data": {
+                                        "key": "2"
+                                    }
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tutor",
+                                    "label": "SCHEDA-SICUREZZA.DATI-GENERALI-DATA.TUTOR",
+                                    "oggettoProtezione": "W9.W9SIC.TUTOR",
+                                    "mnemonico": "W9SITUTOR",
+                                    "mappingInput": "tutor",
+                                    "mappingOutput": "tutor",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino",
+                                    "data": {
+                                        "key": "2"
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,8 @@
+<label for="file">Upload file</label>
+<input type="file" name="file" id="file" multiple="false" (change)="manageFileSelect($event)">
+<br>
+<sdk-form-builder [config]="formBuilderConfigSubject" [data]="dataSubject" (output)="manageFormOutput($event)">
+</sdk-form-builder>
+
+<sdk-form-builder [config]="formBuilderConfigSubject2" [data]="dataSubject2" (output)="manageFormOutput2($event)" (outputField)="manageOutputField($event)">
+</sdk-form-builder>

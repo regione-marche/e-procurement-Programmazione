@@ -1,0 +1,78 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+	namespace="it.appaltiecontratti.monitoraggiocontratti.contratti.mapper.DelegheMapper">
+
+    <resultMap id="listadelegheMap" type="it.appaltiecontratti.monitoraggiocontratti.contratti.entity.entries.DelegaBaseEntry">
+    	<id column="id" jdbcType="NUMERIC" property="id" />
+    	<result column="sysute" jdbcType="VARCHAR" property="sysute" />
+	    <result column="cfrup" jdbcType="VARCHAR" property="cfrup" />
+	    <result column="codtec" jdbcType="VARCHAR" property="codtec" />
+	    <result column="id_collaboratore" jdbcType="NUMERIC" property="idCollaboratore" />
+	    <result column="ruolo" jdbcType="NUMERIC" property="ruolo" />
+    </resultMap> 
+
+    <select id="countSearchDeleghe" resultType="int" parameterType="hashmap">
+		select count(*)
+		from w9deleghe
+		where  upper(cfrup) = #{cfrup}
+		  and codein = #{stazioneAppaltante} 	
+	</select>
+
+	<select id="searchDeleghe" resultMap="listadelegheMap" parameterType="hashmap">
+		select d.id, d.cfrup, collab.sysute,d.codtec, d.id_collaboratore, d.ruolo
+		from w9deleghe d
+		inner join usrsys collab on d.id_collaboratore = collab.syscon
+		where  upper(cfrup) = #{cfrup}
+		  and codein = #{stazioneAppaltante} 			
+		  
+		order by
+		<if test="sort == 'sysute'"> collab.sysute </if>
+		<if test="sort == 'desRuolo'"> d.ruolo </if>
+		<if test="sortDirection == 'asc'"> asc </if>
+		<if test="sortDirection == 'desc'"> desc </if>
+	</select>
+	
+	<select id="getMaxId" resultType="int">
+		select COALESCE(max(id), 0) from w9deleghe
+	</select>
+	
+	<select id="getDelega" parameterType="hashmap" resultMap="w9DelegheMap">
+	    select id, cfrup, codtec, id_collaboratore, ruolo
+	    from w9deleghe
+	    where id = #{id}      
+	</select>
+		
+  	<resultMap id="w9DelegheMap" type="it.appaltiecontratti.monitoraggiocontratti.contratti.entity.entries.DelegaEntry">
+	    <id column="id" jdbcType="NUMERIC" property="id" />
+	    <result column="cfrup" jdbcType="VARCHAR" property="cfrup" />
+	    <result column="codtec" jdbcType="VARCHAR" property="codtec" />
+	    <result column="id_collaboratore" jdbcType="NUMERIC" property="idCollaboratore" />
+	    <result column="ruolo" jdbcType="NUMERIC" property="ruolo" />
+	</resultMap>
+	  
+	<insert id="insertDelega" parameterType="it.appaltiecontratti.monitoraggiocontratti.contratti.entity.forms.DelegaInsertForm">
+	     insert into w9deleghe (id, cfrup, id_collaboratore, ruolo, codein)
+    	values (#{id,jdbcType=NUMERIC}, #{cfrup,jdbcType=VARCHAR}, 
+      			#{idCollaboratore,jdbcType=NUMERIC}, #{ruolo,jdbcType=NUMERIC}, #{stazioneAppaltante,jdbcType=VARCHAR})
+	</insert>
+	
+	<update id="updateDelega" parameterType="it.appaltiecontratti.monitoraggiocontratti.contratti.entity.forms.DelegaInsertForm">
+	  update w9deleghe
+      set ruolo = #{ruolo,jdbcType=NUMERIC}
+      where id = #{id}      
+  	</update>		
+  	
+  	<delete id="deleteDelega" parameterType="hashmap">
+    	delete from w9deleghe
+    	where id = #{id}
+  	</delete>
+  	
+  	<select id="getDelegheByCfRup" resultMap="listadelegheMap" parameterType="hashmap">
+		select id codrup, codtec, id_collaboratore, ruolo,cfrup
+		from w9deleghe 
+		where cfrup = #{cfrup}
+		  and codein = #{stazioneAppaltante} 		
+	</select>
+	
+</mapper>

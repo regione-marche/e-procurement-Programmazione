@@ -1,0 +1,97 @@
+{
+    "name": "nuovo-delega-page",
+    "title": "TITLE.NUOVO-DELEGA-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "nuovo-delega-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-deleghe-page",
+                "label": "BREADCRUMB.LISTA-DELEGHE",
+                "slug": "lista-deleghe-page"
+            },
+            {
+                "code": "nuovo-delega-page",
+                "label": "BREADCRUMB.NUOVO-DELEGA",
+                "slug": "nuovo-delega-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "nuovo-delega-page-content-root-section",
+            "selector": "nuovo-delega-section",
+            "description": "Pagina di inserimento delega",
+            "classNames": "nuovo-delega-section",
+            "settings": {
+                "classNames": "nuovo-delega-index",
+                "sectionTitle": "TITLE.NUOVO-DELEGA-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-deleghe",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_CONTRATTI_LISTA_DELEGHE",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-delega",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_CONTRATTI_DELEGA"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "DELEGA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "idCollaboratore",
+                                    "label": "DELEGA.ID_COLLABORATORE",
+                                    "oggettoProtezione": "W3.W9DELEGHE.SYSCON",
+                                    "mnemonico": "W9DELCOLL",
+                                    "mappingInput": "idCollaboratore",
+                                    "mappingOutput": "idCollaboratore",
+                                    "noDataLabel": "NO-DATA",
+                                    "itemsProviderCode": "APP_USER_OPTIONS_AUTOCOMPLETE",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "DELEGA.VALIDATORS.ID_COLLABORATORE-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },                                
+                                {
+                                    "type": "TEXT",
+                                    "code": "ruolo",
+                                    "label": "DELEGA.RUOLO",
+                                    "oggettoProtezione": "W3.W9DELEGHE.RUOLO",
+                                    "mnemonico": "W9DELRUOLO",
+                                    "mappingInput": "ruolo"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

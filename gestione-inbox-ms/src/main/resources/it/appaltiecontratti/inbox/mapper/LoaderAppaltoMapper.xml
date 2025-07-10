@@ -1,0 +1,47 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+	namespace="it.appaltiecontratti.inbox.mapper.LoaderAppaltoMapper">
+
+	<update id="updateW9Xml"
+		parameterType="it.appaltiecontratti.inbox.entity.form.W9XmlForm"
+		flushCache="true" statementType="PREPARED">
+		update W9XML
+		set DATA_INVIO =
+		#{dataInvio},
+		XML = #{xml}, IDFLUSSO = #{idFlusso}
+		where CODGARA =
+		#{codGara} and CODLOTT = #{codLotto} and NUMXML = #{numXml}
+		<if test="faseEsecuzione == null"> and FASE_ESECUZIONE is null </if>
+		<if test="faseEsecuzione != null"> and FASE_ESECUZIONE = #{faseEsecuzione} </if>
+		<if test="numProgressivoFase == null"> and NUM is null </if>
+		<if test="numProgressivoFase != null"> and NUM = #{numProgressivoFase} </if>
+	</update>
+	
+	<update id="updateIdScheda"
+		parameterType="it.appaltiecontratti.inbox.entity.form.AggiornamentoIdSchedaForm"
+		flushCache="true" statementType="PREPARED">
+		update
+		<if test="scheda == 'DATI_COMUNI'"> W9LOTT </if>
+		<if test="scheda != 'DATI_COMUNI'"> W9FASI </if>
+		set
+		<if test="idSchedaLocale != null and idSchedaLocale != ''"> ID_SCHEDA_LOCALE = #{idSchedaLocale}, </if>
+		<if test="idSchedaSimog == null or idSchedaSimog == ''"> ID_SCHEDA_SIMOG = null </if>
+		<if test="idSchedaSimog != null and idSchedaSimog != ''"> ID_SCHEDA_SIMOG = #{idSchedaSimog} </if>
+		WHERE CODGARA = #{codGara} and CODLOTT = #{codLotto}
+		<if test="scheda != 'DATI_COMUNI'"> and FASE_ESECUZIONE = #{faseEsecuzione} </if>
+		<if test="scheda != 'DATI_COMUNI' and numProgressivoFase != null"> and NUM = #{numProgressivoFase} </if>
+	</update>
+	
+	<update id="updateIdSchedaCancellazioneFase"
+		parameterType="it.appaltiecontratti.inbox.entity.form.AggiornamentoIdSchedaForm"
+		flushCache="true" statementType="PREPARED">
+		update W9FASI set
+		<if test="idSchedaLocale != null and idSchedaLocale != ''"> ID_SCHEDA_LOCALE = #{idSchedaLocale}, </if>
+		<if test="idSchedaSimog == null or idSchedaSimog == ''"> ID_SCHEDA_SIMOG = null </if>
+		<if test="idSchedaSimog != null and idSchedaSimog != ''"> ID_SCHEDA_SIMOG = #{idSchedaSimog} </if>
+		WHERE CODGARA = #{codGara} and CODLOTT = #{codLotto} and FASE_ESECUZIONE = #{faseEsecuzione}
+		<if test="numProgressivoFase != null"> and NUM = #{numProgressivoFase} </if>
+	</update>
+
+</mapper>

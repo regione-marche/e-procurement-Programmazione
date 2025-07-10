@@ -1,0 +1,22 @@
+@import "../app/app-vars.scss";
+
+.lotti-atto-cell {
+    padding: 1rem;
+}
+
+tr.lotti-atto-row:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+.la-container .la-content {
+    .empty-list {
+        @extend %e8e8e8-background;
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 3px;
+    }
+
+    .lotti-atto-table {
+        width: 100%;
+    }
+}

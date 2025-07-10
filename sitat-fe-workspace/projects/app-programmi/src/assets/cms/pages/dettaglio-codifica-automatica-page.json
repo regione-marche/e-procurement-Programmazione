@@ -1,0 +1,144 @@
+{
+    "name": "dettaglio-codifica-automatica-page",
+    "title": "TITLE.DETTAGLIO-CODIFICA-AUTOMATICA-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "dettaglio-codifica-automatica-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-codifica-automatica-page",
+                "label": "BREADCRUMB.LISTA-CODIFICA-AUTOMATICA",
+                "slug": "lista-codifica-automatica-page"
+            },
+            {
+                "code": "dettaglio-codifica-automatica-page",
+                "label": "BREADCRUMB.DETTAGLIO-CODIFICA-AUTOMATICA",
+                "slug": "dettaglio-codifica-automatica-page",
+                "additionalParams": "SDK_GESTIONE_UTENTI_DETTAGLIO_CODIFICA_AUTOMATICA_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-codifica-automatica-page-content-root-section",
+            "selector": "sdk-dettaglio-codifica-automatica-section",
+            "description": "Pagina dettaglio codifica automatica",
+            "classNames": "dettaglio-codifica-automatica-section",
+            "settings": {
+                "classNames": "dettaglio-codifica-automatica-index",
+                "sectionTitle": "TITLE.DETTAGLIO-CODIFICA-AUTOMATICA-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-codifica-automatica",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_CODIFICA_AUTOMATICA_LISTA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "go-to-update-codifica-automatica",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "SDK_GESTIONE_CODIFICA_AUTOMATICA_LISTA"
+                        }
+                    ],
+                    "buttonsReadonly": [
+                        {
+                            "code": "back-to-lista-codifica-automatica",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_CODIFICA_AUTOMATICA_LISTA",
+                            "type": "cancel"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "SDK-CODIFICA-AUTOMATICA.GENERAL-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "oggetto-codifica",
+                                    "label": "SDK-CODIFICA-AUTOMATICA.GENERAL-DATA.OGGETTO-CODIFICA",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "desCam"
+                                },
+                                {
+                                    "type": "HIDDEN",
+                                    "code": "codifica-automatica-attiva-hidden",
+                                    "label": "SDK-CODIFICA-AUTOMATICA.GENERAL-DATA.CODIFICA-AUTOMATICA-ATTIVA",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "codificaAutomaticaAttiva"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "codifica-automatica-attiva",
+                                    "label": "SDK-CODIFICA-AUTOMATICA.GENERAL-DATA.CODIFICA-AUTOMATICA-ATTIVA",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "codificaAutomaticaAttiva",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "criterio-calcolo",
+                                    "label": "SDK-CODIFICA-AUTOMATICA.GENERAL-DATA.CRITERIO-CALCOLO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "codCal",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "codifica-automatica-attiva-hidden": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "contatore",
+                                    "label": "SDK-CODIFICA-AUTOMATICA.GENERAL-DATA.CONTATORE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "contat",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "codifica-automatica-attiva-hidden": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

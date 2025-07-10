@@ -1,0 +1,24 @@
+{
+    "name": "internal-login-page",
+    "title": "TITLE.INTERNAL-LOGIN-PAGE",
+    "layout": "login-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/sdk-login-page.css"
+    ],
+    "settings": {
+        "page": "internal-login-page"
+    },
+    "sections": [
+        {
+            "id": "internal-login-content-root-section",
+            "selector": "sdk-login-form",
+            "description": "Componente per l'autenticazione interna",
+            "classNames": "internal-login2-section",
+            "settings": {
+                "classNames": "internal-login-section",
+                "sectionTitle": "TITLE.INTERNAL-LOGIN-PAGE"
+            }
+        }
+    ]
+}

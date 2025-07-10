@@ -1,0 +1,993 @@
+{
+    "name": "nuova-impr-agg-fase-agg-page",
+    "title": "TITLE.NUOVA-IMPRESA-AGGIUDICATARIA-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "nuova-impr-agg-fase-agg-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "lista-impr-agg-fase-agg-page",
+                "label": "BREADCRUMB.LISTA-IMPRESE-AGGIUDICATARIE",
+                "slug": "lista-impr-agg-fase-agg-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            },
+            {
+                "code": "nuova-impr-agg-fase-agg-page",
+                "label": "BREADCRUMB.NUOVA-IMPRESA-AGGIUDICATARIA",
+                "slug": "nuova-impr-agg-fase-agg-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_IMPRESA_AGGIUDICATARIA_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "nuova-impr-agg-fase-agg-page-content-root-section",
+            "selector": "nuova-impresa-aggiudicataria-section",
+            "description": "Pagina di inserimento impresa aggiudicataria",
+            "classNames": "nuova-impr-agg-fase-agg-section",
+            "settings": {
+                "classNames": "nuova-impr-agg-fase-agg-index",
+                "sectionTitle": "TITLE.NUOVA-IMPRESA-AGGIUDICATARIA-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-imprese-aggiudicatarie",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_GARE_LISTA_IMPR_AGG_FASE_AGG",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-impresa",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_LISTA_IMPR_AGG_FASE_AGG"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.GENERAL-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "HIDDEN",
+                                    "code": "tipo-app-singola",
+                                    "label": "tipoApp",
+                                    "mappingInput": "tipoApp"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "id-tipo-agg",
+                                    "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.ID-TIPO-AGG",
+                                    "oggettoProtezione": "W9.W9AGGI.ID_TIPOAGG",
+                                    "mnemonico": "W3ID_TIPOA",
+                                    "mappingInput": "idTipoAgg",
+                                    "mappingOutput": "idTipoAgg",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "TipologiaAggiudicatario"
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "nomest-singola",
+                                    "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.NOMEST",
+                                    "oggettoProtezione": "W9.W9AGGI.CODIMP",
+                                    "mnemonico": "W3CODIMP",
+                                    "itemsProviderCode": "APP_GARE_IMPRESE_AGGIUDICATARIE_AUTOCOMPLETE",
+                                    "mappingInput": "impresa",
+                                    "mappingOutput": "codImpresa",
+                                    "noDataLabel": "NO-DATA",
+                                    "newEditAvailable": true,
+                                    "newItemButton": {
+                                        "code": "new",
+                                        "label": "BUTTONS.NUOVO",
+                                        "icon": "mgg-icons-crud-create",
+                                        "oggettoProtezione": "INS.*"
+                                    },
+                                    "editItemButton": {
+                                        "code": "edit",
+                                        "label": "BUTTONS.UPDATE",
+                                        "icon": "mgg-icons-crud-edit",
+                                        "oggettoProtezione": "MOD.*"
+                                    },
+                                    "modalComponent": "impresa-modal-widget",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "id-tipo-agg": {
+                                                "values": [
+                                                    {
+                                                        "value": "3",
+                                                        "operation": "="
+                                                    },
+                                                    {
+                                                        "value": "5",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false,
+                                                "singleVisibleType": "or"
+                                            }
+                                        }
+                                    },
+                                    "modalComponentConfig": "impresaRWModalConfig"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "nome-legale-rappr-singola",
+                                    "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.NOME-LEGALE-RAPPR",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "nomeLegRap",
+                                    "mappingOutput": "nomeLegRap" ,
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "id-tipo-agg": {
+                                                "values": [
+                                                    {
+                                                        "value": "3",
+                                                        "operation": "="
+                                                    },
+                                                    {
+                                                        "value": "5",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false,
+                                                "singleVisibleType": "or"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "cognome-legale-rappr-singola",
+                                    "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.COGNOME-LEGALE-RAPPR",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "cognomeLegRap",
+                                    "mappingOutput": "cognomeLegRap",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "id-tipo-agg": {
+                                                "values": [
+                                                    {
+                                                        "value": "3",
+                                                        "operation": "="
+                                                    },
+                                                    {
+                                                        "value": "5",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false,
+                                                "singleVisibleType": "or"
+                                            }
+                                        }
+                                    }                             
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "cf-legale-rappr-singola",
+                                    "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.CF-LEGALE-RAPPR",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "cfLegRap",
+                                    "mappingOutput": "cfLegRap",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "id-tipo-agg": {
+                                                "values": [
+                                                    {
+                                                        "value": "3",
+                                                        "operation": "="
+                                                    },
+                                                    {
+                                                        "value": "5",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false,
+                                                "singleVisibleType": "or"
+                                            }
+                                        }
+                                    }                                   
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "flag-avvalimento-singolo",
+                                    "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.FLAG-AVVALIMENTO",
+                                    "oggettoProtezione": "W9.W9AGGI.FLAG_AVVALIMENTO",
+                                    "mnemonico": "W3FLAG_AVV",
+                                    "mappingInput": "flagAvvallamento",
+                                    "mappingOutput": "flagAvvallamento",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "Avvalimento",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "id-tipo-agg": {
+                                                "values": [
+                                                    {
+                                                        "value": "3",
+                                                        "operation": "="
+                                                    },
+                                                    {
+                                                        "value": "5",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false,
+                                                "singleVisibleType": "or"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "nomest-ausiliaria-singola",
+                                    "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.NOMEST-AUSILIARIA",
+                                    "oggettoProtezione": "W9.W9AGGI.CODIMP_AUSILIARIA",
+                                    "mnemonico": "W3CODIMPAU",
+                                    "itemsProviderCode": "APP_GARE_IMPRESE_AGGIUDICATARIE_AUTOCOMPLETE",
+                                    "mappingInput": "impresaAusiliaria",
+                                    "mappingOutput": "codImpAus",
+                                    "noDataLabel": "NO-DATA",
+                                    "newEditAvailable": true,
+                                    "newItemButton": {
+                                        "code": "new",
+                                        "label": "BUTTONS.NUOVO",
+                                        "icon": "mgg-icons-crud-create",
+                                        "oggettoProtezione": "INS.*"
+                                    },
+                                    "editItemButton": {
+                                        "code": "edit",
+                                        "label": "BUTTONS.UPDATE",
+                                        "icon": "mgg-icons-crud-edit",
+                                        "oggettoProtezione": "MOD.*"
+                                    },
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "and": {
+                                            "id-tipo-agg": {
+                                                "values": [
+                                                    {
+                                                        "value": "3",
+                                                        "operation": "="
+                                                    },
+                                                    {
+                                                        "value": "5",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false,
+                                                "singleVisibleType": "or"
+                                            },
+                                            "flag-avvalimento-singolo": {
+                                                "values": [
+                                                    {
+                                                        "value": "0",
+                                                        "operation": ">"
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    },
+                                    "modalComponent": "impresa-modal-widget",
+                                    "modalComponentConfig": "impresaRWModalConfig"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-aggiudicazione-singola",
+                                    "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.IMPORTO-AGGIUDICAZIONE",
+                                    "oggettoProtezione": "W9.W9AGGI.IMPORTO_AGGIUDICAZIONE",
+                                    "mnemonico": "",
+                                    "mappingInput": "importoAggiudicazione",
+                                    "mappingOutput": "importoAggiudicazione",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "and": {
+                                            "id-tipo-agg": {
+                                                "values": [
+                                                    {
+                                                        "value": "3",
+                                                        "operation": "="
+                                                    },
+                                                    {
+                                                        "value": "5",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false,
+                                                "singleVisibleType": "or"
+                                            },
+                                            "tipo-app-singola": {
+                                                "values": [
+                                                    {
+                                                        "value": "9",
+                                                        "operation": "="
+                                                    },
+                                                    {
+                                                        "value": "17",
+                                                        "operation": "="
+                                                    },
+                                                    {
+                                                        "value": "18",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false,
+                                                "singleVisibleType": "or"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "ribasso-aggiudicazione-singola",
+                                    "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.RIBASSO-AGGIUDICAZIONE",
+                                    "oggettoProtezione": "W9.W9AGGI.PERC_RIBASSO_AGG",
+                                    "mnemonico": "",
+                                    "mappingInput": "ribassoAggiudicazione",
+                                    "mappingOutput": "ribassoAggiudicazione",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "and": {
+                                            "id-tipo-agg": {
+                                                "values": [
+                                                    {
+                                                        "value": "3",
+                                                        "operation": "="
+                                                    },
+                                                    {
+                                                        "value": "5",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false,
+                                                "singleVisibleType": "or"
+                                            },
+                                            "tipo-app-singola": {
+                                                "values": [
+                                                    {
+                                                        "value": "9",
+                                                        "operation": "="
+                                                    },
+                                                    {
+                                                        "value": "17",
+                                                        "operation": "="
+                                                    },
+                                                    {
+                                                        "value": "18",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false,
+                                                "singleVisibleType": "or"
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "offerta-aumento-singola",
+                                    "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.OFFERTA-AUMENTO",
+                                    "oggettoProtezione": "W9.W9AGGI.PERC_OFF_AUMENTO",
+                                    "mnemonico": "",
+                                    "mappingInput": "offertaAumento",
+                                    "mappingOutput": "offertaAumento",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "and": {
+                                            "id-tipo-agg": {
+                                                "values": [
+                                                    {
+                                                        "value": "3",
+                                                        "operation": "="
+                                                    },
+                                                    {
+                                                        "value": "5",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false,
+                                                "singleVisibleType": "or"
+                                            },
+                                            "tipo-app-singola": {
+                                                "values": [
+                                                    {
+                                                        "value": "9",
+                                                        "operation": "="
+                                                    },
+                                                    {
+                                                        "value": "17",
+                                                        "operation": "="
+                                                    },
+                                                    {
+                                                        "value": "18",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false,
+                                                "singleVisibleType": "or"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "impresa-data",
+                            "label": "IMPRESA-AGGIUDICATARIA.IMPRESA-DATA.IMPRESA-DATA",
+                            "visible": false,
+                            "visibleCondition": {
+                                "or": {
+                                    "id-tipo-agg": {
+                                        "values": [
+                                            {
+                                                "value": "2",
+                                                "operation": "="
+                                            },
+                                            {
+                                                "value": "4",
+                                                "operation": "="
+                                            }
+                                        ],
+                                        "visible": false
+                                    }
+                                }
+                            },
+                            "fieldSections": [
+                                {
+                                    "type": "FORM-GROUP",
+                                    "code": "imprese-group",
+                                    "label": "",
+                                    "minGroupsNumber": 1,
+                                    "maxGroupsNumber": 0,
+                                    "mappingInput": "imprese",
+                                    "mappingOutput": "imprese",
+                                    "defaultFormGroupFields": [
+                                        {
+                                            "type": "AUTOCOMPLETE",
+                                            "code": "nomest",
+                                            "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.NOMEST",
+                                            "oggettoProtezione": "W9.W9AGGI.CODIMP",
+                                            "mnemonico": "W3CODIMP",
+                                            "itemsProviderCode": "APP_GARE_IMPRESE_AGGIUDICATARIE_AUTOCOMPLETE",
+                                            "mappingInput": "impresa",
+                                            "mappingOutput": "codImpresa",
+                                            "noDataLabel": "NO-DATA",
+                                            "newEditAvailable": true,
+                                            "newItemButton": {
+                                                "code": "new",
+                                                "label": "BUTTONS.NUOVO",
+                                                "icon": "mgg-icons-crud-create",
+                                                "oggettoProtezione": "INS.*"
+                                            },
+                                            "editItemButton": {
+                                                "code": "edit",
+                                                "label": "BUTTONS.UPDATE",
+                                                "icon": "mgg-icons-crud-edit",
+                                                "oggettoProtezione": "MOD.*"
+                                            },
+                                            "modalComponent": "impresa-modal-widget",
+                                            "modalComponentConfig": "impresaRWModalConfig"
+                                        },
+                                        {
+                                            "type": "TEXTBOX",
+                                            "code": "nome-legale-rappr",
+                                            "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.NOME-LEGALE-RAPPR",
+                                            "oggettoProtezione": "",
+                                            "mnemonico": "",
+                                            "mappingInput": "nomeLegRap",
+                                            "mappingOutput": "nomeLegRap"                                   
+                                        },
+                                        {
+                                            "type": "TEXTBOX",
+                                            "code": "cognome-legale-rappr",
+                                            "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.COGNOME-LEGALE-RAPPR",
+                                            "oggettoProtezione": "",
+                                            "mnemonico": "",
+                                            "mappingInput": "cognomeLegRap",
+                                            "mappingOutput": "cognomeLegRap"                                   
+                                        },
+                                        {
+                                            "type": "TEXTBOX",
+                                            "code": "cf-legale-rappr",
+                                            "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.CF-LEGALE-RAPPR",
+                                            "oggettoProtezione": "",
+                                            "mnemonico": "",
+                                            "mappingInput": "cfLegRap",
+                                            "mappingOutput": "cfLegRap"                                   
+                                        },
+                                        {
+                                            "type": "COMBOBOX",
+                                            "code": "flag-avvalimento",
+                                            "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.FLAG-AVVALIMENTO",
+                                            "oggettoProtezione": "W9.W9AGGI.FLAG_AVVALIMENTO",
+                                            "mnemonico": "W3FLAG_AVV",
+                                            "mappingInput": "flagAvvallamento",
+                                            "mappingOutput": "flagAvvallamento",
+                                            "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                            "listCode": "Avvalimento"
+                                        },
+                                        {
+                                            "type": "AUTOCOMPLETE",
+                                            "code": "nomest-ausiliaria",
+                                            "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.NOMEST-AUSILIARIA",
+                                            "oggettoProtezione": "W9.W9AGGI.CODIMP_AUSILIARIA",
+                                            "mnemonico": "W3CODIMPAU",
+                                            "itemsProviderCode": "APP_GARE_IMPRESE_AGGIUDICATARIE_AUTOCOMPLETE",
+                                            "mappingInput": "impresaAusiliaria",
+                                            "mappingOutput": "codImpAus",
+                                            "noDataLabel": "NO-DATA",
+                                            "newEditAvailable": true,
+                                            "newItemButton": {
+                                                "code": "new",
+                                                "label": "BUTTONS.NUOVO",
+                                                "icon": "mgg-icons-crud-create",
+                                                "oggettoProtezione": "INS.*"
+                                            },
+                                            "editItemButton": {
+                                                "code": "edit",
+                                                "label": "BUTTONS.UPDATE",
+                                                "icon": "mgg-icons-crud-edit",
+                                                "oggettoProtezione": "MOD.*"
+                                            },
+                                            "visible": false,
+                                            "visibleCondition": {
+                                                "or": {
+                                                    "flag-avvalimento": {
+                                                        "values": [
+                                                            {
+                                                                "value": "0",
+                                                                "operation": ">"
+                                                            }
+                                                        ],
+                                                        "visible": false
+                                                    }
+                                                }
+                                            },
+                                            "modalComponent": "impresa-modal-widget",
+                                            "modalComponentConfig": "impresaRWModalConfig"
+                                        },
+                                        {
+                                            "type": "HIDDEN",
+                                            "code": "tipo-app",
+                                            "label": "tipoApp",
+                                            "mappingInput": "tipoApp"
+                                        },
+                                        {
+                                            "type": "NUMERIC-TEXTBOX",
+                                            "code": "importo-aggiudicazione",
+                                            "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.IMPORTO-AGGIUDICAZIONE",
+                                            "oggettoProtezione": "W9.W9AGGI.IMPORTO_AGGIUDICAZIONE",
+                                            "mnemonico": "",
+                                            "mappingInput": "importoAggiudicazione",
+                                            "mappingOutput": "importoAggiudicazione",
+                                            "visible": false,
+                                            "visibleCondition": {
+                                                "and": {
+                                                    "tipo-app": {
+                                                        "values": [
+                                                            {
+                                                                "value": "9",
+                                                                "operation": "="
+                                                            },
+                                                            {
+                                                                "value": "17",
+                                                                "operation": "="
+                                                            },
+                                                            {
+                                                                "value": "18",
+                                                                "operation": "="
+                                                            }
+                                                        ],
+                                                        "visible": false,
+                                                        "singleVisibleType": "or"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "NUMERIC-TEXTBOX",
+                                            "code": "ribasso-aggiudicazione",
+                                            "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.RIBASSO-AGGIUDICAZIONE",
+                                            "oggettoProtezione": "W9.W9AGGI.PERC_RIBASSO_AGG",
+                                            "mnemonico": "",
+                                            "mappingInput": "ribassoAggiudicazione",
+                                            "mappingOutput": "ribassoAggiudicazione",
+                                            "visible": false,
+                                            "visibleCondition": {
+                                                "and": {
+                                                    "tipo-app": {
+                                                        "values": [
+                                                            {
+                                                                "value": "9",
+                                                                "operation": "="
+                                                            },
+                                                            {
+                                                                "value": "17",
+                                                                "operation": "="
+                                                            },
+                                                            {
+                                                                "value": "18",
+                                                                "operation": "="
+                                                            }
+                                                        ],
+                                                        "visible": false,
+                                                        "singleVisibleType": "or"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "NUMERIC-TEXTBOX",
+                                            "code": "offerta-aumento",
+                                            "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.OFFERTA-AUMENTO",
+                                            "oggettoProtezione": "W9.W9AGGI.PERC_OFF_AUMENTO",
+                                            "mnemonico": "",
+                                            "mappingInput": "offertaAumento",
+                                            "mappingOutput": "offertaAumento",
+                                            "visible": false,
+                                            "visibleCondition": {
+                                                "and": {
+                                                    "tipo-app": {
+                                                        "values": [
+                                                            {
+                                                                "value": "9",
+                                                                "operation": "="
+                                                            },
+                                                            {
+                                                                "value": "17",
+                                                                "operation": "="
+                                                            },
+                                                            {
+                                                                "value": "18",
+                                                                "operation": "="
+                                                            }
+                                                        ],
+                                                        "visible": false,
+                                                        "singleVisibleType": "or"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "impresa-data2",
+                            "label": "IMPRESA-AGGIUDICATARIA.IMPRESA-DATA.IMPRESA-DATA",
+                            "visible": false,
+                            "visibleCondition": {
+                                "or": {
+                                    "id-tipo-agg": {
+                                        "values": [
+                                            {
+                                                "value": "1",
+                                                "operation": "="
+                                            }
+                                        ],
+                                        "visible": false
+                                    }
+                                }
+                            },
+                            "fieldSections": [
+                                {
+                                    "type": "FORM-GROUP",
+                                    "code": "imprese-group",
+                                    "label": "",
+                                    "minGroupsNumber": 1,
+                                    "maxGroupsNumber": 0,
+                                    "mappingInput": "imprese",
+                                    "mappingOutput": "imprese",
+                                    "defaultFormGroupFields": [
+                                        {
+                                            "type": "AUTOCOMPLETE",
+                                            "code": "nomest",
+                                            "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.NOMEST",
+                                            "oggettoProtezione": "W9.W9AGGI.CODIMP",
+                                            "mnemonico": "W3CODIMP",
+                                            "itemsProviderCode": "APP_GARE_IMPRESE_AGGIUDICATARIE_AUTOCOMPLETE",
+                                            "mappingInput": "impresa",
+                                            "mappingOutput": "codImpresa",
+                                            "noDataLabel": "NO-DATA",
+                                            "newEditAvailable": true,
+                                            "newItemButton": {
+                                                "code": "new",
+                                                "label": "BUTTONS.NUOVO",
+                                                "icon": "mgg-icons-crud-create",
+                                                "oggettoProtezione": "INS.*"
+                                            },
+                                            "editItemButton": {
+                                                "code": "edit",
+                                                "label": "BUTTONS.UPDATE",
+                                                "icon": "mgg-icons-crud-edit",
+                                                "oggettoProtezione": "MOD.*"
+                                            },
+                                            "modalComponent": "impresa-modal-widget",
+                                            "modalComponentConfig": "impresaRWModalConfig"
+                                        },
+                                        {
+                                            "type": "TEXTBOX",
+                                            "code": "nome-legale-rappr",
+                                            "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.NOME-LEGALE-RAPPR",
+                                            "oggettoProtezione": "",
+                                            "mnemonico": "",
+                                            "mappingInput": "nomeLegRap",
+                                            "mappingOutput": "nomeLegRap"                                   
+                                        },
+                                        {
+                                            "type": "TEXTBOX",
+                                            "code": "cognome-legale-rappr",
+                                            "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.COGNOME-LEGALE-RAPPR",
+                                            "oggettoProtezione": "",
+                                            "mnemonico": "",
+                                            "mappingInput": "cognomeLegRap",
+                                            "mappingOutput": "cognomeLegRap"                                   
+                                        },
+                                        {
+                                            "type": "TEXTBOX",
+                                            "code": "cf-legale-rappr",
+                                            "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.CF-LEGALE-RAPPR",
+                                            "oggettoProtezione": "",
+                                            "mnemonico": "",
+                                            "mappingInput": "cfLegRap",
+                                            "mappingOutput": "cfLegRap"                                   
+                                        },
+                                        {
+                                            "type": "COMBOBOX",
+                                            "code": "ruolo",
+                                            "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.RUOLO",
+                                            "oggettoProtezione": "W9.W9AGGI.RUOLO",
+                                            "mnemonico": "W3RUOLO",
+                                            "mappingInput": "ruolo",
+                                            "mappingOutput": "ruolo",
+                                            "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                            "listCode": "RuoloAssociazione"
+                                        },
+                                        {
+                                            "type": "COMBOBOX",
+                                            "code": "flag-avvalimento",
+                                            "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.FLAG-AVVALIMENTO",
+                                            "oggettoProtezione": "W9.W9AGGI.FLAG_AVVALIMENTO",
+                                            "mnemonico": "W3FLAG_AVV",
+                                            "mappingInput": "flagAvvallamento",
+                                            "mappingOutput": "flagAvvallamento",
+                                            "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                            "listCode": "Avvalimento"
+                                        },
+                                        {
+                                            "type": "AUTOCOMPLETE",
+                                            "code": "nomest-ausiliaria",
+                                            "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.NOMEST-AUSILIARIA",
+                                            "oggettoProtezione": "W9.W9AGGI.CODIMP_AUSILIARIA",
+                                            "mnemonico": "W3CODIMPAU",
+                                            "itemsProviderCode": "APP_GARE_IMPRESE_AGGIUDICATARIE_AUTOCOMPLETE",
+                                            "mappingInput": "impresaAusiliaria",
+                                            "mappingOutput": "codImpAus",
+                                            "noDataLabel": "NO-DATA",
+                                            "newEditAvailable": true,
+                                            "newItemButton": {
+                                                "code": "new",
+                                                "label": "BUTTONS.NUOVO",
+                                                "icon": "mgg-icons-crud-create",
+                                                "oggettoProtezione": "INS.*"
+                                            },
+                                            "editItemButton": {
+                                                "code": "edit",
+                                                "label": "BUTTONS.UPDATE",
+                                                "icon": "mgg-icons-crud-edit",
+                                                "oggettoProtezione": "MOD.*"
+                                            },
+                                            "visible": false,
+                                            "visibleCondition": {
+                                                "or": {
+                                                    "flag-avvalimento": {
+                                                        "values": [
+                                                            {
+                                                                "value": "0",
+                                                                "operation": ">"
+                                                            }
+                                                        ],
+                                                        "visible": false
+                                                    }
+                                                }
+                                            },
+                                            "modalComponent": "impresa-modal-widget",
+                                            "modalComponentConfig": "impresaRWModalConfig"
+                                        },
+                                        {
+                                            "type": "HIDDEN",
+                                            "code": "tipo-app",
+                                            "label": "tipoApp",
+                                            "mappingInput": "tipoApp"
+                                        },
+                                        {
+                                            "type": "NUMERIC-TEXTBOX",
+                                            "code": "importo-aggiudicazione",
+                                            "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.IMPORTO-AGGIUDICAZIONE",
+                                            "oggettoProtezione": "W9.W9AGGI.IMPORTO_AGGIUDICAZIONE",
+                                            "mnemonico": "",
+                                            "mappingInput": "importoAggiudicazione",
+                                            "mappingOutput": "importoAggiudicazione",
+                                            "visible": false,
+                                            "visibleCondition": {
+                                                "and": {
+                                                    "tipo-app": {
+                                                        "values": [
+                                                            {
+                                                                "value": "9",
+                                                                "operation": "="
+                                                            },
+                                                            {
+                                                                "value": "17",
+                                                                "operation": "="
+                                                            },
+                                                            {
+                                                                "value": "18",
+                                                                "operation": "="
+                                                            }
+                                                        ],
+                                                        "visible": false,
+                                                        "singleVisibleType": "or"
+                                                    },
+                                                    "ruolo": {
+                                                        "values": [
+                                                            {
+                                                                "value": "1",
+                                                                "operation": "="
+                                                            },
+                                                            {
+                                                                "value": null,
+                                                                "operation": "="
+                                                            }
+                                                        ],
+                                                        "visible": false,
+                                                        "singleVisibleType": "or"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "NUMERIC-TEXTBOX",
+                                            "code": "ribasso-aggiudicazione",
+                                            "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.RIBASSO-AGGIUDICAZIONE",
+                                            "oggettoProtezione": "W9.W9AGGI.PERC_RIBASSO_AGG",
+                                            "mnemonico": "",
+                                            "mappingInput": "ribassoAggiudicazione",
+                                            "mappingOutput": "ribassoAggiudicazione",
+                                            "visible": false,
+                                            "visibleCondition": {
+                                                "and": {
+                                                    "tipo-app": {
+                                                        "values": [
+                                                            {
+                                                                "value": "9",
+                                                                "operation": "="
+                                                            },
+                                                            {
+                                                                "value": "17",
+                                                                "operation": "="
+                                                            },
+                                                            {
+                                                                "value": "18",
+                                                                "operation": "="
+                                                            }
+                                                        ],
+                                                        "visible": false,
+                                                        "singleVisibleType": "or"
+                                                    },
+                                                    "ruolo": {
+                                                        "values": [
+                                                            {
+                                                                "value": "1",
+                                                                "operation": "="
+                                                            },
+                                                            {
+                                                                "value": null,
+                                                                "operation": "="
+                                                            }
+                                                        ],
+                                                        "visible": false,
+                                                        "singleVisibleType": "or"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": "NUMERIC-TEXTBOX",
+                                            "code": "offerta-aumento",
+                                            "label": "IMPRESA-AGGIUDICATARIA.GENERAL-DATA.OFFERTA-AUMENTO",
+                                            "oggettoProtezione": "W9.W9AGGI.PERC_OFF_AUMENTO",
+                                            "mnemonico": "",
+                                            "mappingInput": "offertaAumento",
+                                            "mappingOutput": "offertaAumento",
+                                            "visible": false,
+                                            "visibleCondition": {
+                                                "and": {
+                                                    "tipo-app": {
+                                                        "values": [
+                                                            {
+                                                                "value": "9",
+                                                                "operation": "="
+                                                            },
+                                                            {
+                                                                "value": "17",
+                                                                "operation": "="
+                                                            },
+                                                            {
+                                                                "value": "18",
+                                                                "operation": "="
+                                                            }
+                                                        ],
+                                                        "visible": false,
+                                                        "singleVisibleType": "or"
+                                                    },
+                                                    "ruolo": {
+                                                        "values": [
+                                                            {
+                                                                "value": "1",
+                                                                "operation": "="
+                                                            },
+                                                            {
+                                                                "value": null,
+                                                                "operation": "="
+                                                            }
+                                                        ],
+                                                        "visible": false,
+                                                        "singleVisibleType": "or"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,144 @@
+{
+    "name": "lista-archivio-uffici-page",
+    "title": "TITLE.LISTA-ARCHIVIO-UFFICI-PAGE",
+    "layout": "base-layout",
+    "appName": "app-programmi",
+    "styleUrls": [],
+    "settings": {
+        "page": "lista-archivio-uffici-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-archivio-uffici-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-ARCHIVIO-UFFICI",
+                "slug": "ricerca-avanzata-archivio-uffici-page"
+            },
+            {
+                "code": "lista-archivio-uffici-page",
+                "label": "BREADCRUMB.LISTA-ARCHIVIO-UFFICI",
+                "slug": "lista-archivio-uffici-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "lista-archivio-uffici-page-content-root-section",
+            "selector": "lista-archivio-uffici-section",
+            "description": "Pagina per la lista degli uffici",
+            "classNames": "lista-archivio-uffici-section",
+            "settings": {
+                "classNames": "lista-archivio-uffici-index",
+                "sectionTitle": "TITLE.LISTA-ARCHIVIO-UFFICI-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_COMMONS_UFFICIO",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "clean-button",
+                            "label": "BUTTONS.CLEAN",
+                            "provider": "APP_COMMONS_UFFICIO",
+                            "icon": "mgg-icons-data-unfiltered"
+                        },
+                        {
+                            "code": "nuovo",
+                            "label": "BUTTONS.NUOVO",
+                            "icon": "mgg-icons-crud-create",
+                            "provider": "APP_COMMONS_UFFICIO",
+                            "oggettoProtezione": "INS.*"
+                        }
+                    ],
+                    "grid": {
+                        "showCurrentPageReport": true,
+                        "showCurrentRecordsReport": true,
+                        "navigable": true,
+                        "resizable": false,
+                        "debug": false,
+                        "sortable": {
+                            "allowUnsort": false,
+                            "mode": "single"
+                        },
+                        "sort": [
+                            {
+                                "field": "denominazione",
+                                "dir": "asc"
+                            }
+                        ],
+                        "pageable": {
+                            "buttonCount": 5,
+                            "info": true,
+                            "pageSizes": [
+                                5,
+                                10,
+                                20,
+                                50
+                            ],
+                            "type": "numeric"
+                        },
+                        "toolbar": {
+                            "position": "top",
+                            "actions": []
+                        },
+                        "columns": [
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_LINK",
+                                    "params": {
+                                        "action": {
+                                            "label": "LISTA-ARCHIVIO-UFFICI.AZIONI.DETTAGLIO",
+                                            "disabled": false,
+                                            "performer": "dettaglio"
+                                        }
+                                    }
+                                },
+                                "title": "LISTA-ARCHIVIO-UFFICI.DENOMINAZIONE",
+                                "field": "denominazione",
+                                "width": 300,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "W9.UFFICI.DENOM"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_ACTIONS_ICON",
+                                    "params": {
+                                        "actions": [
+                                            {
+                                                "label": "LISTA-ARCHIVIO-UFFICI.AZIONI.CANCELLA",
+                                                "disabled": false,
+                                                "performer": "delete",
+                                                "hidden": "deleteHidden",
+                                                "icon": "mgg-icons-crud-delete",
+                                                "oggettoProtezione": "DEL.*"
+                                            },
+                                            {
+                                                "label": "LISTA-ARCHIVIO-UFFICI.AZIONI.NO-CANCELLA",
+                                                "disabled": true,
+                                                "hidden": "deleteNotHidden",
+                                                "icon": "mgg-icons-no-trash"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "title": "LISTA-ARCHIVIO-UFFICI.AZIONI.TITLE",
+                                "width": 125,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

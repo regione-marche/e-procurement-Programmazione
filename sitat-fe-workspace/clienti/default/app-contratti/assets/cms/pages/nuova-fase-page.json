@@ -1,0 +1,123 @@
+{
+    "name": "nuova-fase-page",
+    "title": "TITLE.NUOVA-FASE-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/nuova-fase-page.css"
+    ],
+    "settings": {
+        "page": "nuova-fase-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "nuova-fase-page",
+                "label": "BREADCRUMB.NUOVA-FASE",
+                "slug": "nuova-fase-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "nuova-fase-page-content-root-section",
+            "selector": "nuova-fase-section",
+            "description": "Pagina di aggiunta fase",
+            "classNames": "nuova-fase-section",
+            "settings": {
+                "classNames": "nuova-fase-index",
+                "sectionTitle": "TITLE.NUOVA-FASE-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "go-to-nuova-fase",
+                            "label": "BUTTONS.SET",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_LISTA_FASI"
+                        }
+                    ],
+                    "buttonsEmpty": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "fasiSlugMap": {
+                        "988": "",
+                        "101": "lista-elenco-impr-inv-parte-page",
+                        "984": "nuova-comunicazione-esito-page",
+                        "1": "nuova-fase-aggiudicazione-page",
+                        "987": "nuova-fase-aggiudicazione-semp-page",
+                        "12": "nuova-fase-adesione-accordo-quadro-page",
+                        "2": "nuova-fase-iniziale-page",
+                        "986": "nuova-fase-iniziale-semp-page",
+                        "11": "nuova-fase-stipula-accordo-quadro-page",
+                        "3": "nuova-fase-avanzamento-page",
+                        "102": "nuova-fase-avanzamento-semp-page",
+                        "4": "nuova-fase-conclusione-page",
+                        "985": "nuova-fase-conclusione-semp-page",
+                        "5": "nuova-fase-collaudo-page",
+                        "6": "nuova-fase-sospensione-page",
+                        "7": "nuova-fase-modifica-contrattuale-page",
+                        "8": "nuova-fase-accordo-bonario-page",
+                        "9": "nuova-fase-subappalto-page",
+                        "10": "nuova-fase-recesso-page",
+                        "997": "nuova-fase-inidoneita-tecnico-prof-page",
+                        "996": "nuova-fase-inidoneita-contributiva-page",
+                        "995": "nuova-fase-inadempienze-sicurezza-page",
+                        "994": "nuova-fase-infortuni-page",
+                        "998": "nuova-fase-cantieri-page",
+                        "13": "nuova-fase-iniz-sottoscrizione-contratto-page",
+                        "14": "nuova-fase-superamento-quarto-contrattuale-page",
+                        "15": "nuova-fase-ripresa-prestazione-page",
+                        "16": "nuova-fase-richiesta-subappalto-page",
+                        "17": "nuova-fase-esito-subappalto-page",
+                        "18": "nuova-fase-conclusione-subappalto-page",
+                        "19": "nuova-fase-conclusione-affidamenti-diretti-page",
+                        "20": "nuova-fase-incarichi-professionali-page",
+                        "21": "nuova-fase-variazione-aggiudicatari-page"
+                    }
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,104 @@
+{
+    "name": "ricerca-configurazioni-page",
+    "title": "TITLE.RICERCA-CONFIGURAZIONI-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "ricerca-configurazioni-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-configurazioni-page",
+                "label": "BREADCRUMB.RICERCA-CONFIGURAZIONI",
+                "slug": "ricerca-configurazioni-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "ricerca-configurazioni-page-content-root-section",
+            "selector": "sdk-ricerca-configurazioni-section",
+            "description": "Pagina ricerca configurazioni",
+            "classNames": "ricerca-configurazioni-section",
+            "settings": {
+                "classNames": "ricerca-configurazioni-index",
+                "sectionTitle": "TITLE.RICERCA-CONFIGURAZIONI-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-button",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_CONFIGURAZIONI_SEARCH",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "clean-button",
+                            "label": "BUTTONS.CLEAN",
+                            "provider": "SDK_GESTIONE_CONFIGURAZIONI_SEARCH",
+                            "icon": "mgg-icons-data-unfiltered"
+                        },
+                        {
+                            "code": "search-button",
+                            "label": "BUTTONS.SEARCH",
+                            "provider": "SDK_GESTIONE_CONFIGURAZIONI_SEARCH",
+                            "icon": "mgg-icons-data-search"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "ricerca-configurazioni-data",
+                            "label": "SDK-CONFIGURAZIONE.RICERCA-CONFIGURAZIONI-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "sezione",
+                                    "label": "SDK-CONFIGURAZIONE.GENERAL-DATA.SEZIONE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "itemsProviderCode": "SDK_GESTIONE_UTENTI_TABELLATI_COMBO",
+                                    "listCode": "SezioniConfigurazioni",
+                                    "mappingOutput": "sezione",
+                                    "mappingInput": "sezione"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "configurazione",
+                                    "label": "SDK-CONFIGURAZIONE.GENERAL-DATA.CONFIGURAZIONE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingOutput": "chiave",
+                                    "mappingInput": "chiave"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "valore",
+                                    "label": "SDK-CONFIGURAZIONE.GENERAL-DATA.VALORE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingOutput": "valore",
+                                    "mappingInput": "valore"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "descrizione",
+                                    "label": "SDK-CONFIGURAZIONE.GENERAL-DATA.DESCRIZIONE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingOutput": "descrizione",
+                                    "mappingInput": "descrizione"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,72 @@
+<div [class]="config.classNames" *ngIf="isReady">
+    <h1 class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</h1>
+    <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+    <div class="messages-box" #infoBox></div>
+
+    <div class="messages-box" #messages></div>
+    <div class="lia-container">
+        <div class="lia-content">
+            <div class="empty-list"
+                *ngIf="listaImpreseAggiudicatarie !== undefined && listaImpreseAggiudicatarie.length === 0">
+                {{'IMPRESE-AGGIUDICATARIE.EMPTY-LIST' | translate}}
+            </div>
+
+            <div *ngIf="listaImpreseAggiudicatarie !== undefined && listaImpreseAggiudicatarie.length > 0">
+                <table class="imprese-aggiudicatarie-table" [attr.aria-label]="config.sectionTitle | translate">
+                    <thead>
+                        <th class="imprese-aggiudicatarie-header">
+                            {{ 'IMPRESE-AGGIUDICATARIE.ID-IMPRESA' | translate }}
+                        </th>
+                        <th class="imprese-aggiudicatarie-header">
+                            {{ 'IMPRESE-AGGIUDICATARIE.DESC-TIPO-IMPRESA' | translate }}
+                        </th>
+                        <th class="imprese-aggiudicatarie-header">
+                            {{ 'IMPRESE-AGGIUDICATARIE.NOME-IMPRESA' | translate }}
+                        </th>
+                        <th class="imprese-aggiudicatarie-header"
+                            *ngIf="!((atto == null || atto === false) && current === false)">
+                            {{ 'IMPRESE-AGGIUDICATARIE.AZIONE' | translate }}
+                        </th>
+                    </thead>
+                    <tbody>
+                        <tr class="imprese-aggiudicatarie-row"
+                            *ngFor="let impresa of listaImpreseAggiudicatarie; trackBy: trackByCode">
+                            <td class="imprese-aggiudicatarie-cell clickable" sdkClick
+                                (aClick)="goToDettaglioImpresa(impresa)" tabindex="0" role="navigation">
+                                <div *ngIf="impresa.imprese.length === 1">
+                                    {{ impresa.imprese[0].codImpresa }}
+                                </div>
+                                <div *ngIf="impresa.imprese.length > 1">
+                                    {{ 'IMPRESE-PARTECIPANTI.RAGGRUPPAMENTO' | translate }}{{ 'PARAMS' |
+                                    translate:{value:impresa.idGruppo} }}
+                                </div>
+                            </td>
+                            <td class="imprese-aggiudicatarie-cell">{{getTipoImpresa(impresa)}}</td>
+                            <td class="imprese-aggiudicatarie-cell">
+                                <ul *ngFor="let ruoloImp of impresa.imprese">
+                                    <li>
+                                        {{ruoloImp.impresa?.ragioneSociale}} <span
+                                            *ngIf="ruoloImp.ruolo">({{getRuolo(ruoloImp)}})</span>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td class="imprese-aggiudicatarie-cell clickable"
+                                *ngIf="!((atto == null || atto === false) && current === false)">
+                                <div *ngIf="!gara.readOnly && (!gara.pcp || (gara.pcp && atto))" sdkClick (aClick)="delete(impresa)"
+                                    title="{{ 'IMPRESE-AGGIUDICATARIE.ELIMINA-IMPRESA' | translate }}" tabindex="0"
+                                    role="button">
+                                    <i class="pi pi-times"></i>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <sdk-dialog [config]="dialogConfigObs"></sdk-dialog>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,449 @@
+{
+    "name": "dettaglio-fase-iniziale-page",
+    "title": "TITLE.DETTAGLIO-FASE-INIZIALE-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/pubblica-fase-lotto-page.css"
+    ],
+    "settings": {
+        "page": "dettaglio-fase-iniziale-page",
+        "pageFeatures": [
+            "docassociati"
+        ],
+        "entity": {
+            "schema": "W9",
+            "name": "W9FASI",
+            "keys": [
+                "codGara",
+                "codLotto",
+                "codiceFase",
+                "num"
+            ]
+        },
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-iniziale-page",
+                "label": "BREADCRUMB.DETTAGLIO-FASE-INIZIALE",
+                "slug": "dettaglio-fase-iniziale-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ],
+        "breadcrumbsLS": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.RICERCA-SCHEDE-TRASMESSE-PCP",
+                "slug": "ricerca-schede-trasmesse-pcp-page"
+            },
+            {
+                "code": "lista-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.LISTA-SCHEDE-TRASMESSE-PCP",
+                "slug": "lista-schede-trasmesse-pcp-page"
+            },
+            {
+                "code": "lista-fasi-lotto-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "dettaglio-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-iniziale-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.DETTAGLIO-FASE-INIZIALE",
+                "slug": "dettaglio-fase-iniziale-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-fase-iniziale-page-content-root-section",
+            "selector": "dettaglio-fase-iniziale-section",
+            "description": "Pagina di dettaglio fase iniziale",
+            "classNames": "dettaglio-fase-iniziale-section",
+            "settings": {
+                "classNames": "dettaglio-fase-iniziale-index",
+                "menuTabs": [
+                    {
+                        "code": "dettaglio-fase-iniziale",
+                        "title": "DETTAGLIO-FASE-INIZIALE.TABS.DATI-GENERALI",
+                        "active": true,
+                        "slug": "dettaglio-fase-iniziale-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+                    },
+                    {
+                        "code": "dettaglio-scheda-sicurezza-fase-ini",
+                        "title": "DETTAGLIO-FASE-INIZIALE.TABS.SCHEDA-SICUREZZA",
+                        "slug": "dettaglio-scheda-sicurezza-fase-ini-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS",
+                        "oggettoProtezione": "W9.W9INIZ-scheda.SICUREZZA",
+                        "visible": "APP_GARE_SCHE_SIC_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "dettaglio-mis-agg-sic-fase-ini",
+                        "title": "DETTAGLIO-FASE-INIZIALE.TABS.MISURE-AGGIUNTIVE-SICUREZZA",
+                        "slug": "dettaglio-mis-agg-sic-fase-ini-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS",
+                        "oggettoProtezione": "W9.W9INIZ-scheda.CHECKSICUREZZA",
+                        "visible": "APP_GARE_SCHE_SIC_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "dettaglio-inc-prof-fase-ini",
+                        "title": "DETTAGLIO-FASE-INIZIALE.TABS.INCARICHI-PROFESSIONALI",
+                        "slug": "dettaglio-inc-prof-fase-ini-page",
+                        "oggettoProtezione": "W9.W9INIZ-scheda.TECNI",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+                    }
+                ],
+                "menuTabsLS": [
+                    {
+                        "code": "dettaglio-fase-iniziale",
+                        "title": "DETTAGLIO-FASE-INIZIALE.TABS.DATI-GENERALI",
+                        "active": true,
+                        "slug": "dettaglio-fase-iniziale-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+                    },
+                    {
+                        "code": "dettaglio-scheda-sicurezza-fase-ini",
+                        "title": "DETTAGLIO-FASE-INIZIALE.TABS.SCHEDA-SICUREZZA",
+                        "slug": "dettaglio-scheda-sicurezza-fase-ini-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS",
+                        "oggettoProtezione": "W9.W9INIZ-scheda.SICUREZZA",
+                        "visible": "APP_GARE_SCHE_SIC_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "dettaglio-mis-agg-sic-fase-ini",
+                        "title": "DETTAGLIO-FASE-INIZIALE.TABS.MISURE-AGGIUNTIVE-SICUREZZA",
+                        "slug": "dettaglio-mis-agg-sic-fase-ini-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS",
+                        "oggettoProtezione": "W9.W9INIZ-scheda.CHECKSICUREZZA",
+                        "visible": "APP_GARE_SCHE_SIC_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "dettaglio-inc-prof-fase-ini",
+                        "title": "DETTAGLIO-FASE-INIZIALE.TABS.INCARICHI-PROFESSIONALI",
+                        "slug": "dettaglio-inc-prof-fase-ini-page",
+                        "oggettoProtezione": "W9.W9INIZ-scheda.TECNI",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+                    }
+                ],
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "check-pubblicazione",
+                            "label": "BUTTONS.CHECK-DATA",
+                            "provider": "APP_FASI_LOTTO_PUBBLICA",
+                            "oggettoProtezione": "ALT.W9.FasiDiGara-schede.ControlloDatiInseriti",
+                            "type": "functions",
+                            "icon": "mgg-icons-document-text"
+                        },
+                        {
+                            "code": "go-to-update-fase",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_GARE_FASE_INIZIALE_PROVIDER",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "buttonsRO": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "buttonsLS": [
+                        {
+                            "code": "back-to-lista-fasi-lotto-schede-trasmesse",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "sidebar": {
+                        "code": "sidebar",
+                        "position": "right",
+                        "width": 500,
+                        "classList": [
+                            "check-pubb-sidebar"
+                        ],
+                        "headerImage": "assets/images/app/logo.png",
+                        "component": "check-pubblicazione-widget",
+                        "componentConfig": {}
+                    },
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "contratto-appalto-data",
+                            "label": "FASE-INIZIALE.CONTRATTO-APPALTO-DATA.CONTRATTO-APPALTO-DATA",
+                            "fieldSections": [                                                                
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-stipula",
+                                    "label": "FASE-INIZIALE.CONTRATTO-APPALTO-DATA.DATA-STIPULA",
+                                    "oggettoProtezione": "W9.W9INIZ.DATA_STIPULA",
+                                    "mnemonico": "W3DATA_STI",
+                                    "mappingInput": "dataStipula",
+                                    "mappingOutput": "dataStipula"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-esecutivita",
+                                    "label": "FASE-INIZIALE.CONTRATTO-APPALTO-DATA.DATA-ESECUTIVITA",
+                                    "oggettoProtezione": "W9.W9INIZ.DATA_ESECUTIVITA",
+                                    "mnemonico": "W3DATA_ESE",
+                                    "mappingInput": "dataEsecutivita",
+                                    "mappingOutput": "dataEsecutivita"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "importo-cauzione",
+                                    "label": "FASE-INIZIALE.CONTRATTO-APPALTO-DATA.IMPORTO-CAUZIONE",
+                                    "oggettoProtezione": "W9.W9INIZ.IMPORTO_CAUZIONE",
+                                    "mnemonico": "W3I_CAUZIO",
+                                    "mappingInput": "importoCauzione",
+                                    "mappingOutput": "importoCauzione",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "incontri-vigil",
+                                    "label": "FASE-INIZIALE.CONTRATTO-APPALTO-DATA.INCONTRI-VIGIL",
+                                    "oggettoProtezione": "W9.W9INIZ.INCONTRI_VIGIL",
+                                    "mnemonico": "W9ININCVIGIL",
+                                    "mappingInput": "incontriVigil",
+                                    "mappingOutput": "incontriVigil",
+                                    "listCode": "IncontriOrganiVigilanza"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "termine-esecuzione-data",
+                            "label": "FASE-INIZIALE.TERMINE-ESECUZIONE-DATA.TERMINE-ESECUZIONE-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "codcontratto",
+                                    "label": "FASE-INIZIALE.CONTRATTO-APPALTO-DATA.COD-CONTRATTO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "codContratto",
+                                    "mappingOutput": "codContratto"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-ini-prog-esec",
+                                    "label": "FASE-INIZIALE.TERMINE-ESECUZIONE-DATA.DATA-INI-PROG-ESEC",
+                                    "oggettoProtezione": "W9.W9INIZ.DATA_INI_PROG_ESEC",
+                                    "mnemonico": "W3DPROG_ES",
+                                    "mappingInput": "dataInizioProg",
+                                    "mappingOutput": "dataInizioProg"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "gg-data-stipula",
+                                    "label": "FASE-INIZIALE.TERMINE-ESECUZIONE-DATA.GG-DATA-STIPULA",
+                                    "mappingInput": "ggDataStipula",
+                                    "mappingOutput": "ggDataStipula"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-app-prog-esec",
+                                    "label": "FASE-INIZIALE.TERMINE-ESECUZIONE-DATA.DATA-APP-PROG-ESEC",
+                                    "oggettoProtezione": "W9.W9INIZ.DATA_APP_PROG_ESEC",
+                                    "mnemonico": "W3DATA_APP",
+                                    "mappingInput": "dataApprovazioneProg",
+                                    "mappingOutput": "dataApprovazioneProg"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "flag-frazionata",
+                                    "label": "FASE-INIZIALE.TERMINE-ESECUZIONE-DATA.FLAG-FRAZIONATA",
+                                    "oggettoProtezione": "W9.W9INIZ.FLAG_FRAZIONATA",
+                                    "mnemonico": "W3FLAG_FRA",
+                                    "mappingInput": "frazionata",
+                                    "mappingOutput": "frazionata",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-verbale-cons",
+                                    "label": "FASE-INIZIALE.TERMINE-ESECUZIONE-DATA.DATA-VERBALE-CONS",
+                                    "oggettoProtezione": "W9.W9INIZ.DATA_VERBALE_CONS",
+                                    "mnemonico": "W3DVERB_CO",
+                                    "mappingInput": "dataVerbaleCons",
+                                    "mappingOutput": "dataVerbaleCons"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-verbale-def",
+                                    "label": "FASE-INIZIALE.TERMINE-ESECUZIONE-DATA.DATA-VERBALE-DEF",
+                                    "oggettoProtezione": "W9.W9INIZ.DATA_VERBALE_DEF",
+                                    "mnemonico": "W3DVERB_DE",
+                                    "mappingInput": "dataVerbaleDef",
+                                    "mappingOutput": "dataVerbaleDef"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "flag-riserva",
+                                    "label": "FASE-INIZIALE.TERMINE-ESECUZIONE-DATA.FLAG-RISERVA",
+                                    "oggettoProtezione": "W9.W9INIZ.FLAG_RISERVA",
+                                    "mnemonico": "W3RISERVA",
+                                    "mappingInput": "riserva",
+                                    "mappingOutput": "riserva",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-verb-inizio",
+                                    "label": "FASE-INIZIALE.TERMINE-ESECUZIONE-DATA.DATA-VERB-INIZIO",
+                                    "oggettoProtezione": "W9.W9INIZ.DATA_VERB_INIZIO",
+                                    "mnemonico": "W3DVERB_IN",
+                                    "mappingInput": "dataVerbInizio",
+                                    "mappingOutput": "dataVerbInizio"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-termine",
+                                    "label": "FASE-INIZIALE.TERMINE-ESECUZIONE-DATA.DATA-TERMINE",
+                                    "oggettoProtezione": "W9.W9INIZ.DATA_TERMINE",
+                                    "mnemonico": "W3DTERM1",
+                                    "mappingInput": "dataTermine",
+                                    "mappingOutput": "dataTermine"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "pubblicazione-esito-data",
+                            "label": "FASE-INIZIALE.PUBBLICAZIONE-ESITO-DATA.PUBBLICAZIONE-ESITO-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-guce",
+                                    "label": "FASE-INIZIALE.PUBBLICAZIONE-ESITO-DATA.DATA-GUCE",
+                                    "oggettoProtezione": "W9.W9PUES.DATA_GUCE",
+                                    "mnemonico": "W3GUCE2",
+                                    "mappingInput": "pubblicazioneEsito.dataGuce",
+                                    "mappingOutput": "pubblicazioneEsito.dataGuce"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-guri",
+                                    "label": "FASE-INIZIALE.PUBBLICAZIONE-ESITO-DATA.DATA-GURI",
+                                    "oggettoProtezione": "W9.W9PUES.DATA_GURI",
+                                    "mnemonico": "W3GURI2",
+                                    "mappingInput": "pubblicazioneEsito.dataGuri",
+                                    "mappingOutput": "pubblicazioneEsito.dataGuri"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-albo",
+                                    "label": "FASE-INIZIALE.PUBBLICAZIONE-ESITO-DATA.DATA-ALBO",
+                                    "oggettoProtezione": "W9.W9PUES.DATA_ALBO",
+                                    "mnemonico": "W3ALBO2",
+                                    "mappingInput": "pubblicazioneEsito.dataAlbo",
+                                    "mappingOutput": "pubblicazioneEsito.dataAlbo"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "quotidiani-naz",
+                                    "label": "FASE-INIZIALE.PUBBLICAZIONE-ESITO-DATA.QUOTIDIANI-NAZ",
+                                    "oggettoProtezione": "W9.W9PUES.QUOTIDIANI_NAZ",
+                                    "mnemonico": "W3NAZ2",
+                                    "mappingInput": "pubblicazioneEsito.quotidianiNaz",
+                                    "mappingOutput": "pubblicazioneEsito.quotidianiNaz"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "quotidiani-reg",
+                                    "label": "FASE-INIZIALE.PUBBLICAZIONE-ESITO-DATA.QUOTIDIANI-REG",
+                                    "oggettoProtezione": "W9.W9PUES.QUOTIDIANI_REG",
+                                    "mnemonico": "W3REG2",
+                                    "mappingInput": "pubblicazioneEsito.quotidianiReg",
+                                    "mappingOutput": "pubblicazioneEsito.quotidianiReg"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "profilo-committente",
+                                    "label": "FASE-INIZIALE.PUBBLICAZIONE-ESITO-DATA.PROFILO-COMMITTENTE",
+                                    "oggettoProtezione": "W9.W9PUES.PROFILO_COMMITTENTE",
+                                    "mnemonico": "W3PROFILO2",
+                                    "mappingInput": "pubblicazioneEsito.profiloCommittente",
+                                    "mappingOutput": "pubblicazioneEsito.profiloCommittente",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "sito-ministero-inf-trasp",
+                                    "label": "FASE-INIZIALE.PUBBLICAZIONE-ESITO-DATA.SITO-MINISTERO-INF-TRASP",
+                                    "oggettoProtezione": "W9.W9PUES.SITO_MINISTERO_INF_TRASP",
+                                    "mnemonico": "W3MIN2",
+                                    "mappingInput": "pubblicazioneEsito.sitoMinInfTrasp",
+                                    "mappingOutput": "pubblicazioneEsito.sitoMinInfTrasp",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "sito-osservatorio-cp",
+                                    "label": "FASE-INIZIALE.PUBBLICAZIONE-ESITO-DATA.SITO-OSSERVATORIO-CP",
+                                    "oggettoProtezione": "W9.W9PUES.SITO_OSSERVATORIO_CP",
+                                    "mnemonico": "W3OSS2",
+                                    "mappingInput": "pubblicazioneEsito.sitoOsservatorio",
+                                    "mappingOutput": "pubblicazioneEsito.sitoOsservatorio",
+                                    "listCode": "sino"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+.utenti-container {
+    width: 100%;
+
+    .utenti-item {
+        height: 40px;
+        td {
+            padding: 0 0.5rem;
+        }
+    }
+
+    tr:nth-child(odd) {
+        background-color: #f4f4f4;
+    }
+}

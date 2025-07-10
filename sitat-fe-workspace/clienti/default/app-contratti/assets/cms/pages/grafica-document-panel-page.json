@@ -1,0 +1,141 @@
+{
+    "name": "grafica-document-panel-page",
+    "title": "TITLE.GRAFICA-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/grafica-page.css",
+        "assets/cms/layouts/base-menu-tabs-layout.css"
+    ],
+    "settings": {
+        "page": "grafica-document-panel-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "grafica-page",
+                "label": "Grafica",
+                "slug": "grafica-page"
+            },
+            {
+                "code": "grafica-page",
+                "label": "Esempio 1",
+                "slug": "grafica-page"
+            },
+            {
+                "code": "grafica-page",
+                "label": "Esempio 2",
+                "slug": "grafica-page"
+            }
+            
+
+        ]
+    },
+    "sections": [
+        {
+            "id": "grafica-document-panel-page-content-root-section",
+            "selector": "grafica-document-panel-section",
+            "description": "Pagina di dettaglio grafica",
+            "classNames": "grafica-document-panel-section",
+            "settings": {
+                "classNames": "grafica-document-panel-index",
+                "sectionTitle": "grafica-document-panel",
+                "menuTabs": [
+                    {
+                        "code": "menu-tabs-1",
+                        "title": "Componenti form",                        
+                        "slug": "grafica-page"
+                    },
+                    {
+                        "code": "menu-tabs-2",
+                        "title": "Lista dati",
+                        "slug": "grafica-lista-page"
+                    },
+                    {
+                        "code": "menu-tabs-3",
+                        "title": "Tabella",
+                        "slug": "grafica-tabella-page"
+                    },
+                    {
+                        "code": "menu-tabs-4",
+                        "title": "Form group",
+                        "slug": "grafica-form-group-page"
+                    },
+                    {
+                        "code": "menu-tabs-5",
+                        "title": "Document panel",
+                        "active": true,
+                        "slug": "grafica-document-panel-page"
+                    },
+                    {
+                        "code": "menu-tabs-6",
+                        "title": "Message panel",
+                        "slug": "grafica-message-panel-page"
+                    }
+                ],
+                "body": {                    
+                    "buttons": [
+                        {
+                            "code": "annulla",
+                            "label": "Annulla",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": ""
+                        },
+                        {
+                            "code": "save",
+                            "label": "Salva",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": ""
+                        },
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "",
+                            "type": "cancel"
+                        }
+                    ],
+                    "sidebar": {
+                        "code": "sidebar",
+                        "position": "right",
+                        "width": 500,
+                        "classList": [
+                            "check-pubb-sidebar"
+                        ],
+                        "headerImage": "assets/images/app/logo.png",
+                        "component": "check-pubblicazione-widget",
+                        "componentConfig": {}
+                    },
+                    "fields": [                                                                
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "form-group",
+                            "label": "Esempio document panel",
+                            "fieldSections": [
+                                {                                
+                                    "type": "DOCUMENT",
+                                    "code": "doucment-field",
+                                    "label": "Esempio di document panel",
+                                    "switchFileLabel": "Upload File",
+                                    "switchUrlLabel": "Inserire URL",
+                                    "urlLabel": "AVVISO.URL",
+                                    "fileInputLabel": "AVVISO.CHOOSE-FILE",
+                                    "titleInputLabel": "AVVISO.TITOLO-DOCUMENT",
+                                    "maxFileSize": "25 MB",
+                                    "maxFileSizeLabel": "VALIDATORS.MAX-FILE-SIZE",
+                                    "wrongExtensionLabel": "VALIDATORS.WRONG-EXTENSION",
+                                    "mappingInput": "documents",
+                                    "mappingOutput": "documents",
+                                    "mandatory": true
+                                }  
+                            ]
+                        }                                                                                                  
+                    ]                    
+                }                
+            }
+        }
+    ]
+}

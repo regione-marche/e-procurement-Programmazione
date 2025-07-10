@@ -1,0 +1,101 @@
+@import "../app/app-vars.scss";
+@import "../../sdk-flex.scss";
+
+/* sdk-index-section */
+
+.app-launcher-index {
+
+    .app-launcher-index-panels {
+
+        @include grid;
+        @include grid-row;
+        justify-content: center;
+        // sdk-flex-row sdk-flex-center sdk-flex-nowrap
+
+        @include mq(small-and-medium) {
+            @include grid-column;
+            @include grid-nowrap;
+        }
+
+        .app-launcher-index-panel {
+
+            //flex: 1 1 100%;
+            margin: 1rem;
+            padding: 1rem 2rem;
+            border: 1px solid;
+            flex: 0 1 calc(33% - 6rem);
+            border: none;
+            @extend %background-sfondo-testo;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            @include grid;
+            @include grid-column;
+            @include grid-nowrap;
+            @include grid-between;
+            @include grid-ca-stretch;
+            @include grid-va-stretch;
+
+            @include mq(small-and-medium) {
+                width: calc(100% - 4rem);
+            }
+
+            .app-launcher-index-panel-title,
+            .app-launcher-index-panel-body,
+            .app-launcher-index-panel-link {
+                margin: 1rem 0;
+            }
+
+            .app-launcher-index-panel-image {
+                margin: 0 auto;
+                width: 100%;
+                max-width: 100%;
+                border-radius: 5px;
+            }
+
+            .app-launcher-index-panel-icon {
+                margin: 2rem 0;
+                i {
+                    font-size: 4rem;
+                    @extend %color-base;
+                }
+            }
+
+            .app-launcher-index-panel-title {
+                font-weight: bold;
+                font-size: 2rem;
+                @extend %color-titolo;
+            }
+
+            .app-launcher-index-panel-body {
+                font-weight: normal;
+                font-size: 1rem;
+                @extend %color-testo;
+            }
+
+            .app-launcher-index-panel-link {
+                font-weight: bold;
+                font-size: 1rem;
+                cursor: pointer;
+                text-decoration: underline;
+                @extend %color-base;
+            }
+
+            .app-launcher-index-title-link {
+                font-weight: bold;
+                cursor: pointer;
+                text-decoration: underline;
+                line-height: 2rem;
+
+                &.disabled {
+                    cursor: unset;
+                }
+            }
+
+            .app-launcher-index-panel-link:hover {
+                text-decoration: none;
+            }
+
+        }
+
+    }
+
+}

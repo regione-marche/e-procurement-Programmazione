@@ -1,0 +1,33 @@
+<div class="export-interventi-acquisti-nr-modal" *ngIf="isReady">
+    <div class="messages-box" #messages></div>
+    <div class="export-interventi-acquisti-nr-container">
+
+        <!-- Interventi -->
+        <div class="interventi-nr-container" *ngIf="config.tipologia == '1'">
+            <h2>{{ 'EXPORT-INTERVENTI-ACQUISTI.COLUMNS' | translate }}</h2>
+            <form [formGroup]="interventiAcquistiNrForm">
+                <p-checkbox [label]="'EXPORT-INTERVENTI-NR.COLONNA-CUI' | translate" [binary]="true" [formControl]="interventiAcquistiNrForm.controls['showCui']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-INTERVENTI-NR.COLONNA-CUP' | translate" [binary]="true" [formControl]="interventiAcquistiNrForm.controls['showCup']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-INTERVENTI-NR.COLONNA-DESCRIZIONE' | translate" [binary]="true" [formControl]="interventiAcquistiNrForm.controls['showDescrizione']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-INTERVENTI-NR.COLONNA-IMPORTO' | translate" [binary]="true" [formControl]="interventiAcquistiNrForm.controls['showImporto']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-INTERVENTI-NR.COLONNA-PRIORITA' | translate" [binary]="true" [formControl]="interventiAcquistiNrForm.controls['showPriorita']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-INTERVENTI-NR.COLONNA-MOTIVO' | translate" [binary]="true" [formControl]="interventiAcquistiNrForm.controls['showMotivo']"></p-checkbox>
+            </form>
+        </div>
+        <!-- Acquisti -->
+        <div class="acquisti-nr-container" *ngIf="config.tipologia != '1'">
+            <h2>{{ 'EXPORT-INTERVENTI-ACQUISTI.COLUMNS' | translate }}</h2>
+            <form [formGroup]="interventiAcquistiNrForm">
+                <p-checkbox [label]="'EXPORT-ACQUISTI-NR.COLONNA-CUI' | translate" [binary]="true" [formControl]="interventiAcquistiNrForm.controls['showCui']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-ACQUISTI-NR.COLONNA-CUP' | translate" [binary]="true" [formControl]="interventiAcquistiNrForm.controls['showCup']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-ACQUISTI-NR.COLONNA-DESCRIZIONE' | translate" [binary]="true" [formControl]="interventiAcquistiNrForm.controls['showDescrizione']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-ACQUISTI-NR.COLONNA-IMPORTO' | translate" [binary]="true" [formControl]="interventiAcquistiNrForm.controls['showImporto']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-ACQUISTI-NR.COLONNA-PRIORITA' | translate" [binary]="true" [formControl]="interventiAcquistiNrForm.controls['showPriorita']"></p-checkbox>
+                <p-checkbox [label]="'EXPORT-ACQUISTI-NR.COLONNA-MOTIVO' | translate" [binary]="true" [formControl]="interventiAcquistiNrForm.controls['showMotivo']"></p-checkbox>
+            </form>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+</div>

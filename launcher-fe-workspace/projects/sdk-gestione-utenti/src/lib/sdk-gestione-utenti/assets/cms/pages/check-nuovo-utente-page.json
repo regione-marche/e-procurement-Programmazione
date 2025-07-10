@@ -1,0 +1,79 @@
+{
+    "name": "check-nuovo-utente-page",
+    "title": "TITLE.CHECK-NUOVO-UTENTE-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "check-nuovo-utente-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-utenti-page",
+                "label": "BREADCRUMB.RICERCA-UTENTI",
+                "slug": "ricerca-utenti-page"
+            },
+            {
+                "code": "lista-utenti-page",
+                "label": "BREADCRUMB.LISTA-UTENTI",
+                "slug": "lista-utenti-page"
+            },
+            {
+                "code": "check-nuovo-utente-page",
+                "label": "BREADCRUMB.CHECK-NUOVO-UTENTE",
+                "slug": "check-nuovo-utente-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "check-nuovo-utente-page-content-root-section",
+            "selector": "sdk-check-nuovo-utente-section",
+            "description": "Pagina di check nuovo utente",
+            "classNames": "check-nuovo-utente-section",
+            "settings": {
+                "classNames": "check-nuovo-utente-index",
+                "sectionTitle": "TITLE.CHECK-NUOVO-UTENTE-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-utenti",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_UTENTI_LISTA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "conferma",
+                            "label": "BUTTONS.SET",
+                            "provider": "SDK_GESTIONE_UTENTI_CHECK_NUOVO_UTENTE",
+                            "icon": "mgg-icons-crud-save"
+                        }
+                    ],
+                    "selezioneUtente": {
+                        "code": "azione",
+                        "label": "",
+                        "oggettoProtezione": "",
+                        "mnemonico": "",
+                        "choices": [
+                            {
+                                "code": "1",
+                                "label": "SDK-CHECK-NUOVO-UTENTE.UTENTE-AZIENDALE",
+                                "checked": false
+                            },
+                            {
+                                "code": "2",
+                                "label": "SDK-CHECK-NUOVO-UTENTE.NUOVO-UTENTE",
+                                "checked": true
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

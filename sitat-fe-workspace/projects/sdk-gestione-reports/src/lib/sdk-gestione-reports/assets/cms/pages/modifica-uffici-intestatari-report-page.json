@@ -1,0 +1,75 @@
+{
+    "name": "modifica-uffici-intestatari-report-page",
+    "title": "TITLE.MODIFICA-UFFICI-INTESTATARI-REPORT-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "modifica-uffici-intestatari-report-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-report-page",
+                "label": "BREADCRUMB.GESTIONE-REPORT",
+                "slug": "lista-report-page"
+            },
+            {
+                "code": "uffici-intestatari-report-page",
+                "label": "BREADCRUMB.UFFICI-INTESTATARI",
+                "slug": "uffici-intestatari-report-page",
+                "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+            },
+            {
+                "code": "modifica-uffici-intestatari-report-page",
+                "label": "BREADCRUMB.MODIFICA-UFFICI-INTESTATARI-REPORT",
+                "slug": "modifica-uffici-intestatari-report-page",
+                "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-uffici-intestatari-report-page-content-root-section",
+            "selector": "sdk-modifica-uffici-intestatari-report-section",
+            "description": "Pagina modifica uffici intestatari report",
+            "classNames": "modifica-uffici-intestatari-report-section",
+            "settings": {
+                "classNames": "modifica-uffici-intestatari-report-index",
+                "sectionTitle": "TITLE.MODIFICA-UFFICI-INTESTATARI-REPORT-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-uffici-intestatari-report",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "SDK_GESTIONE_REPORT_LISTA_REPORT",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "unselect-current-filtered-uffici-intestatari",
+                            "label": "SDK-STAZIONI-APPALTANTI-UTENTE.UNSELECT-CURRENT-FILTERED-STAZIONI-APPALTANTI",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PROVIDER"
+                        },
+                        {
+                            "code": "select-current-filtered-uffici-intestatari",
+                            "label": "SDK-STAZIONI-APPALTANTI-UTENTE.SELECT-CURRENT-FILTERED-STAZIONI-APPALTANTI",
+                            "icon": "mgg-icons-crud-create",
+                            "provider": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PROVIDER"
+                        },
+                        {
+                            "code": "save-uffici-intestatari-report",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PROVIDER"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

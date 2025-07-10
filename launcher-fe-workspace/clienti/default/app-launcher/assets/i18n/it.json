@@ -1,0 +1,290 @@
+{
+    "PARAMS": "{{value}}",
+    "LOGO-DESCRIPTION": "Logo di Appalti e Contratti",
+    "BLOCCO-ACCESSIBILITA-CONTENT": "Vai al contenuto principale",
+    "HEADER-TITLE": "Appalti e Contratti",
+    "APP-TITLE": "Appalti e Contratti",
+    "APP-SUBTITLE": "Appalti e Contratti",
+    "LOGOUT-BUTTON": "Logout",
+    "PROFILE": "Profilo",
+    "HOME-PAGE": "Home Page",
+    "TITLE": {
+        "HOME-PAGE": "Home Page",
+        "LOGIN-PAGE": "Login Page",
+        "SSO-LOGIN-PAGE": "Accesso Maggioli Authservice",
+        "REGISTRAZIONE-UTENTE-PAGE": "Registrazione utente",
+        "REGISTRAZIONE-UTENTE-COMPLETATA-PAGE": "Registrazione utente completata",
+        "RICHIESTA-ASSISTENZA-PAGE": "Richiesta assistenza"
+    },
+    "MENU": {
+        "HOME": "Home"
+    },
+    "FOOTER": {
+        "SITENAME-TITLE": "Appalti e Contratti",
+        "SITENAME-SUBTITLE": "Appalti e Contratti",
+        "SITENAME-DESCRIPTION": "",
+        "LINK-PRIVACY": "Privacy policy",
+        "LINK-NOTE": "Note legali",
+        "LINK-CONTATTI": "Contatti",
+        "CONTACTS": {
+            "PHONE": "Telefono:",
+            "CODICE-FISCALE": "Codice Fiscale:",
+            "PEC": "PEC:",
+            "CONTATTI-STAMPA": "Contatti Stampa:"
+        },
+        "CONTACTS-TITLE": "Contatti",
+        "VERTICAL-LINKS-TITLE": "Links"
+    },
+    "INDEX-PAGE": {
+        "TITLE": "Servizi Disponibili",
+        "BODY": "Da questo modulo applicativo \u00E8 possibile selezionare l'applicativo di accesso",
+        "PANELS": {
+            "FIRST": {
+                "IMAGE": "Gestione Vendor Rating",
+                "TITLE": "Gestione Vendor Rating",
+                "BODY": "Gestione Vendor Rating",
+                "LINK": "Accedi al servizio"
+            },
+            "SECOND": {
+                "IMAGE": "Espropri",
+                "TITLE": "Espropri",
+                "BODY": "Espropri",
+                "LINK": "Accedi al servizio"
+            }
+        },
+        "INTERNAL-AUTHENTICATION": "Autenticazione Interna",
+        "RICHIESTA-ASSISTENZA": "Richiesta assistenza"
+    },
+    "ERRORS": {
+        "HTTP_GET_TOKEN_FAILURE": "Si \u00E8 verificato un problema nel contattare il servizio di autenticazione. Si prega di riprovare.",
+        "SESSION_EXPIRED": "La sessione utente \u00E8 scaduta. Ti invitiamo ad effettuare nuovamente l'autenticazione.",
+        "UNEXPECTED-ERROR": "Si \u00E8 verificato un errore durante l'operazione.",
+        "unexpected-error": "Si \u00E8 verificato un errore durante l'operazione."
+    },
+    "BUTTONS": {
+        "BACK": "Indietro",
+        "ANNULLA": "Annulla",
+        "CLEAN": "Reimposta",
+        "CLEAN-FILTERS": "Reimposta tutti i filtri",
+        "SEARCH": "Cerca",
+        "VERIFY": "Verifica pubblicazione",
+        "PUBLISH": "Pubblica",
+        "UPDATE": "Modifica",
+        "SAVE": "Salva",
+        "CLOSE": "Chiudi",
+        "NUOVO": "Nuovo",
+        "ELIMINA": "Elimina",
+        "SET": "Conferma",
+        "DETTAGLIO": "Dettaglio",
+        "IMPORTA": "Importa",
+        "MESSAGGI-INVIATI": "Messaggi inviati",
+        "MESSAGGI-IN-ARRIVO": "Messaggi in arrivo",
+        "NUOVO-MESSAGGIO": "Nuovo Messaggio",
+        "INVIA-MESSAGGIO": "Invia Messaggio",
+        "MENU": "Men\u00F9",
+        "CHECK-DATA": "Controlla dati inseriti",
+        "ACCEDI": "Accedi",
+        "SEND": "Invia",
+        "ULTERIORI-OPZIONI": "Ulteriori opzioni"
+    },
+    "NO-DATA": "Nessun dato trovato",
+    "primeng": {
+        "startsWith": "Inizia con",
+        "contains": "Contiene",
+        "notContains": "Non contiene",
+        "endsWith": "Finisce con",
+        "equals": "Uguale",
+        "notEquals": "Non uguale",
+        "noFilter": "Nessun filtro",
+        "lt": "Minore di",
+        "lte": "Minore o uguale di",
+        "gt": "Maggiore di",
+        "gte": "Maggiore o uguale di",
+        "is": "\u00C8",
+        "isNot": "Non \u00E8",
+        "before": "Prima",
+        "after": "Dopo",
+        "clear": "Reimposta",
+        "apply": "Applica",
+        "matchAll": "Match All",
+        "matchAny": "Match Any",
+        "addRule": "Aggiungi regola",
+        "removeRule": "Rimuovi regola",
+        "accept": "Si",
+        "reject": "No",
+        "choose": "Scegli",
+        "upload": "Upload",
+        "cancel": "Annulla",
+        "dayNames": ["Domenica", "Luned\u00EC", "Marted\u00EC", "Mercoled\u00EC", "Gioved\u00EC", "Venerd\u00EC", "Sabato"],
+        "dayNamesShort": ["Dom", "Lun", "Mar", "Mer", "Gio", "Ven", "Sab"],
+        "dayNamesMin": ["Do", "Lu", "Ma", "Me", "Gi", "Ve", "Sa"],
+        "monthNames": ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"],
+        "monthNamesShort": ["Gen", "Feb", "Mar", "Apr", "Mag", "Giu", "Lug", "Ago", "Set", "Ott", "Nov", "Dic"],
+        "today": "Oggi",
+        "weekHeader": "St",
+        "openCalendar": "Apri Calendario"
+    },
+    "DIALOG": {
+        "CANCEL-ACTION": "NO",
+        "CONFIRM-ACTION": "SI",
+        "BACK-TITLE": "Torna alla pagina precedente",
+        "BACK-TEXT": "Sei sicuro di voler tornare alla pagina precedente? Se abbandoni questa pagina perderai i dati non salvati."
+    },
+    "LOGIN-PAGE": {
+        "TITLE": "Sistema di accesso",
+        "BODY": "Scegli il sistema di autenticazione pi\u00F9 adatto alle esigenze.",
+        "BACK-BUTTON": "Torna alla pagina iniziale",
+        "SSO-BACK-BUTTON": "Torna ai servizi disponibili",
+        "SSO-LOADING-MESSAGE": "Caricamento della pagina di accesso in corso ...",
+        "SSO-SSO": {
+            "TITLE": "Autenticazione con Single Sign On",
+            "DESCRIPTION": "Autenticazione con Single Sign On",
+            "BUTTON": "Entra con SSO"
+        },
+        "SSO-SPID-CIE": {
+            "TITLE": "Accedi mediante SPID o CIE",
+            "DESCRIPTION": "Accedi mediante i sistemi pubblici di identità SPID o CIE",
+            "BUTTON": "Accedi mediante SPID o CIE"
+        },
+        "SSO-SIRAC": {
+            "TITLE": "Accedi con le credenziali interne",
+            "DESCRIPTION": "Accedi con le credenziali interne dell'Amministrazione mediante il sistema SIRAC",
+            "BUTTON": "Accedi con le credenziali interne"
+        },
+        "SSO-IDP": {
+            "TITLE": "Accedi mediante IDP Ente",
+            "DESCRIPTION": "Cliccando sul pulsante puoi entrare mediante le tue credenziali",
+            "BUTTON": "Accedi mediante IDP Ente"
+        },
+        "SSO-RAI365": {
+            "TITLE": "Accedi mediante RAI365",
+            "DESCRIPTION": "Cliccare sul pulsante blu qui sotto per accedere al sistema mediante credenziali di dominio RAI",
+            "BUTTON": "Accedi mediante RAI365"
+        },
+        "INTERNAL": {
+            "TITLE": "Autenticazione con Username e Password",
+            "DESCRIPTION": "Accedi tramite le credenziali utente Username e Password",
+            "BUTTON": "Entra con l'Autenticazione Interna"            
+        },
+        "SSO-SPID":{
+            "TITLE": "Accedi con SPID",
+            "DESCRIPTION": "Se possiedi un account SPID, il Sistema Pubblico di Identità Digitale, puoi accedere cliccando il bottone 'Accedi con SPID'",
+            "BUTTON": "Accedi con SPID"
+        },
+        "SSO-CIE":{
+            "TITLE": "Accedi con CIE",
+            "DESCRIPTION": "Se possiedi una carta d'identità elettronica e un cellulare con supporto nfc puoi autenticarti cliccando sul bottone 'Accedi con CIE'",
+            "BUTTON": "Accedi con CIE"
+        },
+        "SSO-CNS":{
+            "TITLE": "Accedi con CNS",
+            "DESCRIPTION": "Se possiedi un Certificato Digitale (CNS), inserisci il supporto nel tuo dispositivo (Smart Card o Token USB) e clicca sul bottone 'Accedi con CNS'.",
+            "BUTTON": "Accedi con CNS"
+        },
+        "SSO-DOMINIO": {
+            "TITLE": "Accedi mediante credenziali di dominio",
+            "DESCRIPTION": "Cliccando sul pulsante puoi entrare mediante le tue credenziali",
+            "BUTTON": "Accedi mediante credenziali di dominio"
+        }
+    },
+    "REGISTRAZIONE-UTENTE": {
+        "ALLEGA-DOCUMENTI-SECTION": {
+            "TITLE": "Modulo abilitazioni",
+            "DOWNLOAD-DOCUMENTO": "Scarica il modello di abilitazione al servizio",
+            "WARNING": "ATTENZIONE!",
+            "TESTO-DOWNLOAD": "Prima di procedere con la registrazione \u00E8 necessario compilare il modulo di abilitazione qui accessibile. Il modulo di abilitazione firmato digitalmente deve essere allegato al presente form nella sezione documenti. L'abilitazione all'uso dei servizi SICOPAT sar\u00E0 rilasciata dall'Osservatorio provinciale dei contratti pubblici a seguito della verifica della presente richiesta di registrazione. L'abilitazione all'uso dei servizi sar\u00E0 comunicata sulla email indicata all’atto di registrazione",
+            "AZIONE-DOWNLOAD": "Cliccare qui per scaricare il documento",
+            "AZIONE-LINK": "Vai"
+        },
+        "ANAGRAFICA-SECTION": {
+            "TITLE": "Dati anagrafici dell'utente",
+            "NOME": "Nome",
+            "COGNOME": "Cognome",
+            "TELEFONO": "Telefono",
+            "EMAIL": "E-mail",
+            "COD-FISCALE": "Codice Fiscale"
+        },
+        "REGISTRAZIONE-SECTION": {
+            "TITLE": "Registrazione",
+            "CODICE-FISCALE-LOGIN": "Codice Fiscale/Login",
+            "PASSWORD": "Password",
+            "CONFERMA-PASSWORD": "Conferma Password"
+        },
+        "APPLICATIVI-SECTION": {
+            "TITLE": "Applicativi disponibili",
+            "APPLICATIVI-DISPONIBILI": "Applicativi",
+            "W9-AEC": "Comunicazioni di eventi di contratti di lavori, forniture e servizi e pubblicazione atti ex art. 29",
+            "W9-PT": "Comunicazioni di programmi<br><i>Comunicazioni di eventi di programmi triennali/annuali di lavori, forniture e servizi</i>"
+        },
+        "ULTERIORI-INDICAZIONI-SECTION": {
+            "TITLE": "Ulteriori indicazioni",
+            "MESSAGGIO-AMMINISTRATORE": "Messaggio per l'amministratore"
+        },
+        "DIRIGENTE-SECTION": {
+            "TITLE": "Sezione riservata al Dirigente",
+            "NOME-COGNOME-DIRIGENTE": "Nome e cognome del Dirigente",
+            "SERVIZIO-DIRIGENTE": "del servizio"
+        },
+        "ENTE-SECTION": {
+            "TITLE": "Ente",
+            "ENTE": "Denominazione o Codice fiscale"
+        },
+        "DOCUMENTI-SECTION": {
+            "TITLE": "Documenti",
+            "UPLOAD-DOCUMENTO": "Allega modulo"
+        },
+        "TRATTAMENTO-DATI-PERSONALI-SECTION": {
+            "TITLE": "Informativa trattamento dati personali ai sensi del D.Lgs. n. 196/2003",
+            "TRATTAMENTO-DATI-PERSONALI": "Ai sensi dell'art. 13 del D. Lgs. n. 196/2003 (ex art. 10 della legge n. 675/96), si informa che i dati personali forniti ed acquisiti contestualmente alla registrazione ai servizi scelti, nonch\u00E9 i dati necessari all'erogazione di tali servizi, saranno trattati, nel rispetto delle garanzie di riservatezza e delle misure di sicurezza previste dalla normativa vigente attraverso strumenti informatici, telematici e manuali, con logiche strettamente correlate alle finalit\u00E0 del trattamento.",
+            "ACCETTO": "Accetto"
+        },
+        "VALIDATORS": {
+            "EMAIL-OBBLIGATORIA": "Il campo Email \u00E8 obbligatorio.",
+            "APPLICATIVO-OBBLIGATORIO": "\u00C8 necessario selezionare almeno un applicativo dalla lista degli applicativi disponibili.",
+            "NOMECOGNOMEDIR-OBBLIGATORIO": "Il campo Nome Cognome dirigente \u00E8 obbligatorio.",
+            "NOMECOGNOMESER-OBBLIGATORIO": "Il campo Servizio \u00E8 obbligatorio.",
+            "ENTE-OBBLIGATORIO": "Il campo Codice Fiscale della stazione appaltante \u00E8 obbligatorio.",
+            "TRATTAMENTO-DATI-PERSONALI-OBBLIGATORIO": "\u00C8 necessario accettare l'informativa sul trattamento dei dati personali.",
+            "CODICE-FISCALE-LOGIN-OBBLIGATORIO": "Il campo Codice Fiscale/Login \u00E8 obbligatorio.",
+            "PASSWORD-OBBLIGATORIA": "Il campo Password \u00E8 obbligatorio.",
+            "CONFERMA-PASSWORD-OBBLIGATORIA": "Il campo Conferma Password \u00E8 obbligatorio."
+        },
+        "ERRORS": {
+            "CODICE_FISCALE_LOGIN_NULL": "Codice Fiscale/Login non valorizzato.",
+            "PASSWORD_NULL": "Password non valorizzata.",
+            "CONFERMA_PASSWORD_NULL": "Conferma Password non valorizzata.",
+            "PASSWORD_CONFIRM_PASSWORD_MISMATCH": "La nuova password inserita e la conferma non combaciano.",
+            "PASSWORD_LENGTH": "La lunghezza della password inserita non \u00E8 valida, inserire almeno 8 caratteri.",
+            "PASSWORD_COMPLEXITY_ALLOWED_CHARACTERS": "I caratteri inseriti per la nuova password non sono validi oppure la complessit\u00E0 non \u00E8 sufficiente.",
+            "PASSWORD_COMPLEXITY_LOWER_CASE_CHARACTERS": "Non sono stati inseriti caratteri minuscoli.",
+            "PASSWORD_COMPLEXITY_UPPER_CASE_CHARACTERS": "Non sono stati inseriti caratteri maiuscoli.",
+            "PASSWORD_COMPLEXITY_NUMBERS_CHARACTERS": "Non sono stati inseriti caratteri numerici.",
+            "PASSWORD_COMPLEXITY_SPECIAL_CHARACTERS": "Non sono stati inseriti caratteri speciali.",
+            "PASSWORD_CONTENT_FOLLOWING_CHARACTERS": "Sono stati inseriti 4 o pi\u00F9 caratteri presenti nello username. Si prega di verificare."
+        }
+    },
+    "CAPTCHA": {
+        "TITLE": "Dimostra di non essere un robot",
+        "ERROR": "Errore! Si chiede di risolvere il captcha.",
+        "ERROR-SOLUTION": "Errore durante la verifica del captcha."
+    },
+    "VALIDATORS": {
+        "MAX-FILE-SIZE": "Il file selezionato supera la dimensione massima consentita.",
+        "DOCUMENTS-MANDATORY": "Per il campo documento \u00E8 obbligatorio inserire il FILE.",
+        "FORM-NON-COMPILATA": "\u00C8 necessario compilare la form",
+        "WRONG-EXTENSION": "L'estensione del file selezionato non \u00E8 ammessa. Si prega di selezionare un file corretto",
+        "CAMPO-OBBLIGATORIO-PARAMS": "Il campo \"{{ campo }}\" \u00E8 obbligatorio"
+    },
+    "TEMPLATE_REGISTRAZIONE": {
+        "TITLE": "<h3>RICHIESTA ABILITAZIONE REFERENTE AMMINISTRAZIONE AL SERVIZIO CONTRATTI PUBBLICI</h3>",
+        "DESCRIZIONE": "<h4>AL SERVIZIO SCP DEL MINISTERO DELLE INFRASTRUTTURE - DIPARTIMENTO PER LE INFRASTRUTTURE, I SISTEMI INFORMATIVI E STATISTICI - DIREZIONE GENERALE PER LA REGOLAZIONE E I CONTRATTI PUBBLICI</h4>"
+    },
+    "REGISTRAZIONE-UTENTE-COMPLETATA": "Registrazione avvenuta con successo. Ti verr\u00E0 inviata una mail non appena sarai abilitato ad accedere all'applicativo.",
+    "UTENTE-DISABILITATO": "L'utente {{utente}} \u00E8 accreditato ma non \u00E8 abilitato per accedere all'applicativo.",
+    "REGISTRAZIONE-UTENTE-DISABILITATA-SSO": "L'utente {{utente}} non \u00E8 accreditato per accedere all'applicativo.",
+    "REGISTRAZIONE-UTENTE-DISABILITATA": "La registrazione utente \u00E8 disabilitata.",
+    "REGISTRAZIONE-UTENTE-SCADUTO":"L'utente {{utente}} risulta scaduto per inattivit\u00E0.",
+    "MAX-FILE-SIZE": "Massima dimensione consentita",
+    "go-to-top": "Torna su",
+    "go-to-bottom": "Vai gi\u00F9"
+}

@@ -1,0 +1,31 @@
+@import "../app/app-vars.scss";
+
+.nf-container .nf-content {
+    .empty-list {
+        @extend %e8e8e8-background;
+        margin: 1rem;
+        padding: 1rem;
+        border-radius: 3px;
+    }
+
+    .fasi-visibili-table {
+        width: 100%;
+
+        tr.fasi-visibili-row:nth-child(even) {
+            background-color: #f2f2f2
+        }
+
+        .fasi-visibili-cell {
+            padding: 1rem;
+
+            &.first {
+                width: 1rem;
+            }
+        }
+
+        .fasi-visibili-header{
+            text-align: left;
+            padding-left: 16px;
+        }
+    }
+}

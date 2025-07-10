@@ -1,0 +1,160 @@
+{
+    "name": "importa-gara-simog-page",
+    "title": "TITLE.IMPORTA-GARA-SIMOG-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/importa-gara-simog-page.css"
+    ],
+    "settings": {
+        "page": "importa-gara-simog-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "importa-gara-simog-page",
+                "label": "BREADCRUMB.IMPORTA-GARA-SIMOG",
+                "slug": "importa-gara-simog-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "importa-gara-simog-page-content-root-section",
+            "selector": "importa-gara-simog-section",
+            "description": "Pagina di import gara da simog",
+            "classNames": "importa-gara-simog-section",
+            "settings": {
+                "classNames": "importa-gara-simog-index",
+                "sectionTitle": "TITLE.IMPORTA-GARA-SIMOG-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-home-page-gare",
+                            "label": "BUTTONS.CLOSE",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_GARE_IMPORTA_GARA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "importa-gara",
+                            "label": "BUTTONS.IMPORTA",
+                            "provider": "APP_GARE_IMPORTA_GARA",
+                            "icon": "mgg-icons-import"
+                        }
+                    ],
+                    "buttonsAfterImport": [
+                        {
+                            "code": "back-to-home-page-gare",
+                            "label": "BUTTONS.CLOSE",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_GARE_IMPORTA_GARA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "go-to-dettaglio-gara",
+                            "label": "BUTTONS.PROSEGUI",
+                            "provider": "APP_GARE_IMPORTA_GARA"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "carica-lotto-simog",
+                            "label": "IMPORTA-GARA.CARICA-LOTTO-SIMOG.CARICA-LOTTO-SIMOG",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "cig-idavgara",
+                                    "label": "IMPORTA-GARA.CARICA-LOTTO-SIMOG.CIG-IDAVGARA",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingOutput": "cigIdAvGara",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "IMPORTA-GARA.CIG-IDAVGARA-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "listaTecniciData": {
+                        "fields": [
+                            {
+                                "type": "FORM-SECTION",
+                                "code": "general-data",
+                                "label": "IMPORTA-GARA.LISTA-TECNICI-MODAL.GENERAL-DATA.TITLE",
+                                "fieldSections": [
+                                    {
+                                        "type": "COMBOBOX",
+                                        "code": "lista-tecnici",
+                                        "label": "IMPORTA-GARA.LISTA-TECNICI-MODAL.GENERAL-DATA.LISTA-TECNICI",
+                                        "mappingOutput": "tecnico"
+                                    }
+                                ]
+                            }
+                        ],
+                        "buttons": [
+                            {
+                                "code": "modal-close-button",
+                                "label": "BUTTONS.ANNULLA",
+                                "icon": "mgg-icons-crud-cancel",
+                                "provider": "APP_AVVISI_MODAL_WINDOW"
+                            },
+                            {
+                                "code": "choose-tecnico",
+                                "label": "BUTTONS.SAVE",
+                                "icon": "mgg-icons-crud-save",
+                                "provider": "APP_GARE_LISTA_TECNICI_MODAL"
+                            }
+                        ]
+                    },
+                    "listaCollaborazioniData": {
+                        "fields": [
+                            {
+                                "type": "FORM-SECTION",
+                                "code": "general-data",
+                                "label": "IMPORTA-GARA.LISTA-COLLABORAZIONI-MODAL.GENERAL-DATA.TITLE",
+                                "fieldSections": [
+                                    {
+                                        "type": "COMBOBOX",
+                                        "code": "lista-collaborazioni",
+                                        "label": "IMPORTA-GARA.LISTA-COLLABORAZIONI-MODAL.GENERAL-DATA.LISTA-COLLABORAZIONI",
+                                        "mappingOutput": "collaborazione"
+                                    }
+                                ]
+                            }
+                        ],
+                        "buttons": [
+                            {
+                                "code": "modal-close-button",
+                                "label": "BUTTONS.ANNULLA",
+                                "icon": "mgg-icons-crud-cancel",
+                                "provider": "APP_AVVISI_MODAL_WINDOW"
+                            },
+                            {
+                                "code": "choose-collaborazione",
+                                "label": "BUTTONS.SAVE",
+                                "icon": "mgg-icons-crud-save",
+                                "provider": "APP_GARE_LISTA_COLLABORAZIONI_MODAL"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

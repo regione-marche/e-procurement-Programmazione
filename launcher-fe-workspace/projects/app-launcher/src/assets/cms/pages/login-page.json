@@ -1,0 +1,21 @@
+{
+    "name": "login-page",
+    "title": "TITLE.LOGIN-PAGE",
+    "layout": "login-layout",
+    "appName": "app-launcher",
+    "styleUrls": [],
+    "settings": {
+        "page": "login-page"
+    },
+    "sections": [
+        {
+            "id": "login-page-content-root-section",
+            "selector": "login-section",
+            "description": "Componente per il rendering dei link di autenticazione per prodotto",
+            "classNames": "login-section",
+            "settings": {
+                "classNames": "login-section"
+            }
+        }
+    ]
+}

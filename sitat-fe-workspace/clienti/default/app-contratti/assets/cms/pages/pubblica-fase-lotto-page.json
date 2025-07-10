@@ -1,0 +1,253 @@
+{
+    "name": "pubblica-fase-lotto-page",
+    "title": "TITLE.PUBBLICA-FASE-LOTTO-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/pubblica-fase-lotto-page.css"
+    ],
+    "settings": {
+        "page": "pubblica-fase-lotto-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "pubblica-fase-lotto-page",
+                "label": "BREADCRUMB.PUBBLICA-FASE",
+                "slug": "pubblica-fase-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ],
+        "breadcrumbsLS": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.RICERCA-SCHEDE-TRASMESSE-PCP",
+                "slug": "ricerca-schede-trasmesse-pcp-page"
+            },
+            {
+                "code": "lista-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.LISTA-SCHEDE-TRASMESSE-PCP",
+                "slug": "lista-schede-trasmesse-pcp-page"
+            },
+            {
+                "code": "lista-fasi-lotto-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "dettaglio-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "pubblica-fase-lotto-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.PUBBLICA-FASE",
+                "slug": "pubblica-fase-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "pubblica-fase-lotto-page-content-root-section",
+            "selector": "pubblica-fase-lotto-section",
+            "description": "Pagina di pubblicazione della fase",
+            "classNames": "pubblica-fase-lotto-section",
+            "settings": {
+                "classNames": "pubblica-fase-lotto-index",
+                "sectionTitle": "PUBBLICAZIONI.PUBLISH-DATA",
+                "dettaglioFlussoFase": {
+                    "modalComponent": "dettaglio-pubblicazione-modal-widget",
+                    "modalComponentConfig": {
+                        "dettaglioPubblicazione": {
+                            "fields": [
+                                {
+                                    "type": "FORM-SECTION",
+                                    "code": "dettaglio",
+                                    "label": "FLUSSOFASE.DETTAGLIO.DETTAGLIO",
+                                    "fieldSections": [
+                                        {
+                                            "type": "TEXT",
+                                            "code": "idFlusso",
+                                            "label": "FLUSSOFASE.DETTAGLIO.ID-FLUSSO",
+                                            "oggettoProtezione": "",
+                                            "mnemonico": "",
+                                            "mappingInput": "idFlusso"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "codice-lotto",
+                                            "label": "FLUSSOFASE.DETTAGLIO.CODLOTTO",
+                                            "oggettoProtezione": "",
+                                            "mnemonico": "",
+                                            "mappingInput": "codLotto"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "num-fase",
+                                            "label": "FLUSSOFASE.DETTAGLIO.NUM-FASE",
+                                            "oggettoProtezione": "",
+                                            "mnemonico": "",
+                                            "mappingInput": "numFase"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "num-progressivo",
+                                            "label": "FLUSSOFASE.DETTAGLIO.NUM-PROGRESSIVO",
+                                            "oggettoProtezione": "",
+                                            "mnemonico": "",
+                                            "mappingInput": "num"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "tipo-invio",
+                                            "label": "FLUSSOFASE.DETTAGLIO.TIPO-INVIO",
+                                            "oggettoProtezione": "W9.W9FLUSSI.TINVIO2",
+                                            "mnemonico": "W9FLTINVIO",
+                                            "mappingInput": "tipoInvio"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "data-invio",
+                                            "label": "FLUSSOFASE.DETTAGLIO.DATA-INVIO",
+                                            "oggettoProtezione": "W9.W9FLUSSI.DATINV",
+                                            "mnemonico": "W9FLDATINV",
+                                            "mappingInput": "dataInvio"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "note-invio",
+                                            "label": "FLUSSOFASE.DETTAGLIO.NOTE-INVIO",
+                                            "oggettoProtezione": "W9.W9FLUSSI.NOTEINVIO",
+                                            "mnemonico": "W9NOTINVIO",
+                                            "mappingInput": "noteInvio"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "autore",
+                                            "label": "FLUSSOFASE.DETTAGLIO.AUTORE",
+                                            "oggettoProtezione": "W0.W9FLUSSI.AUTORE",
+                                            "mnemonico": "W9FLAUTORE",
+                                            "mappingInput": "autore"
+                                        },
+                                        {
+                                            "type": "TEXT",
+                                            "code": "xml",
+                                            "label": "FLUSSOFASE.DETTAGLIO.XML",
+                                            "oggettoProtezione": "W9.W9FLUSSI.XML",
+                                            "mnemonico": "W9FLXML",
+                                            "link": true
+                                        }
+                                    ]
+                                }
+                            ],
+                            "buttons": [
+                                {
+                                    "code": "modal-close-button",
+                                    "label": "BUTTONS.ANNULLA",
+                                    "icon": "mgg-icons-crud-cancel",
+                                    "provider": "APP_AVVISI_MODAL_WINDOW"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "check-pubblicazione",
+                            "label": "BUTTONS.VERIFY",
+                            "provider": "APP_FASI_LOTTO_PUBBLICA",
+                            "oggettoProtezione": "ALT.W9.FasiDiGara-schede.ControlloDatiInseriti",
+                            "type": "functions",
+                            "icon": "mgg-icons-document-text"
+                        },
+                        {
+                            "code": "pubblica-fase",
+                            "label": "BUTTONS.TRANSMIT",
+                            "provider": "APP_FASI_LOTTO_PUBBLICA",
+                            "icon": "mgg-icons-action-send"
+                        }
+                    ],
+                    "buttonsLocked": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "buttonsRO": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "buttonsLS": [
+                        {
+                            "code": "back-to-lista-fasi-lotto-schede-trasmesse",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "sidebar": {
+                        "code": "sidebar",
+                        "position": "right",
+                        "width": 500,
+                        "classList": [
+                            "check-pubb-sidebar"
+                        ],
+                        "headerImage": "assets/images/app/logo.png",
+                        "component": "check-pubblicazione-widget",
+                        "componentConfig": {
+                            "checkSuccessActionDescr": "PUBBLICAZIONI.CHECK-SUCCESS.PUBBLICA-FASE"
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

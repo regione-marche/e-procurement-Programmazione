@@ -1,0 +1,15 @@
+<div [class]="config.classNames" *ngIf="isReady">
+    <h1 class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</h1>
+    <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+    <div class="messages-box" #infoBox></div>
+
+    <div class="messages-box" #messages></div>
+
+    <sdk-table [config]="configSub" [reset]="resetTable"></sdk-table>
+    <sdk-modal [config]="modalConfigObs"></sdk-modal>
+
+    <div class="buttons-row">
+        <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+    </div>
+</div>

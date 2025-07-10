@@ -1,0 +1,224 @@
+{
+    "name": "lista-fasi-lotto-page",
+    "title": "TITLE.FASI-EVENTI-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/lista-fasi-lotto-page.css"
+    ],
+    "settings": {
+        "page": "lista-fasi-lotto-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            }
+        ],
+        "breadcrumbsLS": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.RICERCA-SCHEDE-TRASMESSE-PCP",
+                "slug": "ricerca-schede-trasmesse-pcp-page"
+            },
+            {
+                "code": "lista-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.LISTA-SCHEDE-TRASMESSE-PCP",
+                "slug": "lista-schede-trasmesse-pcp-page"
+            },
+            {
+                "code": "lista-fasi-lotto-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "dettaglio-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "lista-fasi-lotto-page-content-root-section",
+            "selector": "lista-fasi-lotto-section",
+            "description": "Pagina di lista fasi di un lotto",
+            "classNames": "lista-fasi-lotto-section",
+            "settings": {
+                "classNames": "lista-fasi-lotto-index",
+                "menuTabs": [
+                    {
+                        "code": "dettaglio-lotto",
+                        "title": "DETTAGLIO-LOTTO.TABS.DATI-GENERALI",
+                        "slug": "dettaglio-lotto-page",
+                        "oggettoProtezione": "W9.W9LOTT-scheda.DATIDET",
+                        "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS"
+                    },
+                    {
+                        "code": "lista-fasi-lotto",
+                        "title": "DETTAGLIO-LOTTO.TABS.FASI-EVENTI",
+                        "active": true,
+                        "slug": "lista-fasi-lotto-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                        "oggettoProtezione": "W9.W9LOTT-scheda.FASI"
+                    },
+                    {
+                        "code": "lista-atti-lotto",
+                        "title": "DETTAGLIO-LOTTO.TABS.LISTA-ATTI-LOTTO",
+                        "slug": "lista-atti-lotto-page",
+                        "oggettoProtezione": "W9.W9LOTT-scheda.PUBBLICAZIONI",
+                        "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS"
+                    },
+                    {
+                        "code": "lista-invii-fasi",
+                        "title": "DETTAGLIO-LOTTO.TABS.LISTA-INVII-FASI",
+                        "slug": "lista-invii-fasi-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                        "oggettoProtezione": "W9.W9LOTT-scheda.FLUSSI",
+                        "visible": "APP_GARE_LISTA_INVII_FASI_VISIBLE"
+                    }
+                ],
+                "menuTabsLS": [
+                    {
+                        "code": "dettaglio-lotto",
+                        "title": "DETTAGLIO-LOTTO.TABS.DATI-GENERALI",
+                        "slug": "dettaglio-lotto-page",
+                        "oggettoProtezione": "W9.W9LOTT-scheda.DATIDET",
+                        "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS"
+                    },
+                    {
+                        "code": "lista-fasi-lotto",
+                        "title": "DETTAGLIO-LOTTO.TABS.FASI-EVENTI",
+                        "slug": "lista-fasi-lotto-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                        "oggettoProtezione": "W9.W9LOTT-scheda.FASI",
+                        "active": true
+                    },
+                    {
+                        "code": "lista-invii-fasi",
+                        "title": "DETTAGLIO-LOTTO.TABS.LISTA-INVII-FASI",
+                        "slug": "lista-invii-fasi-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                        "oggettoProtezione": "W9.W9LOTT-scheda.FLUSSI",
+                        "visible": "APP_GARE_LISTA_INVII_FASI_VISIBLE"
+                    }
+                ],
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-lotti",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_LOTTI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "riaggiudicazione",
+                            "label": "BUTTONS.RIAGGIUDICAZIONE",
+                            "provider": "APP_GARE_LISTA_FASI"
+                        },
+                        {
+                            "code": "go-to-fasi-visibili",
+                            "label": "BUTTONS.NUOVO",
+                            "icon": "mgg-icons-crud-create",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "oggettoProtezione": "INS.*"
+                        }
+                    ],
+                    "buttonsLocked": [
+                        {
+                            "code": "back-to-lista-lotti",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_LOTTI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "buttonsLS": [
+                        {
+                            "code": "back-to-lista-schede-trasmesse",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_LOTTI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "fasiSlugMap": {
+                        "988": "",
+                        "101": "lista-elenco-impr-inv-parte-page",
+                        "984": "dettaglio-comunicazione-esito-page",
+                        "1": "dettaglio-fase-aggiudicazione-page",
+                        "987": "dettaglio-fase-aggiudicazione-semp-page",
+                        "12": "dettaglio-fase-adesione-accordo-quadro-page",
+                        "2": "dettaglio-fase-iniziale-page",
+                        "986": "dettaglio-fase-iniziale-semp-page",
+                        "11": "dettaglio-fase-stipula-accordo-quadro-page",
+                        "3": "dettaglio-fase-avanzamento-page",
+                        "102": "dettaglio-fase-avanzamento-semp-page",
+                        "4": "dettaglio-fase-conclusione-page",
+                        "985": "dettaglio-fase-conclusione-semp-page",
+                        "5": "dettaglio-fase-collaudo-page",
+                        "6": "dettaglio-fase-sospensione-page",
+                        "7": "dettaglio-fase-modifica-contrattuale-page",
+                        "8": "dettaglio-fase-accordo-bonario-page",
+                        "9": "dettaglio-fase-subappalto-page",
+                        "10": "dettaglio-fase-recesso-page",
+                        "997": "dettaglio-fase-inidoneita-tecnico-prof-page",
+                        "996": "dettaglio-fase-inidoneita-contributiva-page",
+                        "995": "dettaglio-fase-inadempienze-sicurezza-page",
+                        "994": "dettaglio-fase-infortuni-page",
+                        "998": "dettaglio-fase-cantieri-page",
+                        "13": "dettaglio-fase-iniz-sottoscrizione-contratto-page",
+                        "14": "dettaglio-fase-superamento-quarto-contrattuale-page",
+                        "15": "dettaglio-fase-ripresa-prestazione-page",
+                        "16": "dettaglio-fase-richiesta-subappalto-page",
+                        "17": "dettaglio-fase-esito-subappalto-page",
+                        "18": "dettaglio-fase-conclusione-subappalto-page",
+                        "19": "dettaglio-fase-conclusione-affidamenti-diretti-page",
+                        "20": "dettaglio-fase-incarichi-professionali-page",
+                        "21": "dettaglio-fase-variazione-aggiudicatari-page"                   
+                    },
+                    "statoIcons": {
+                        "invioFlusso": "assets/images/app/invioFlusso.png",
+                        "invioFlussoBN": "assets/images/app/invioFlussoBN.png",
+                        "invioFlussoInAttesa": "assets/images/app/invioFlussoInAttesa.png",
+                        "invioRettificaFlusso": "assets/images/app/invioRettificaFlusso.png"
+                    },
+                    "comboStorico": {
+                        "code": "combo-storico",
+                        "label": "FASI-LOTTO.COMBO-STORICO"
+                    },
+                    "nuovaFaseAggiudicazioneCode": 1,
+                    "nuovaFaseAggiudicazioneSlug": "nuova-fase-aggiudicazione-page"
+                }
+            }
+        }
+    ]
+}

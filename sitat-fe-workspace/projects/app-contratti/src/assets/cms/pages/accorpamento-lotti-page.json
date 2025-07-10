@@ -1,0 +1,79 @@
+{
+    "name": "accorpamento-lotti-page",
+    "title": "TITLE.ACCORPAMENTO-LOTTI-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/accorpamento-lotti-page.css"
+    ],
+    "settings": {
+        "page": "accorpamento-lotti-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "dettaglio-gara-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "dettaglio-gara-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS"
+            },
+            {
+                "code": "accorpamento-lotti-page",
+                "label": "BREADCRUMB.ACCORPAMENTO-LOTTI",
+                "slug": "accorpamento-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "accorpamento-lotti-page-content-root-section",
+            "selector": "accorpamento-lotti-section",
+            "description": "Pagina di accorpamento lotti",
+            "classNames": "accorpamento-lotti-section",
+            "settings": {
+                "classNames": "accorpamento-lotti-index",
+                "sectionTitle": "TITLE.ACCORPAMENTO-LOTTI-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-lotti",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_LOTTI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "conferma",
+                            "label": "BUTTONS.SET",
+                            "provider": "APP_GARE_ACCORPAMENTO_LOTTI"
+                        }
+                    ],
+                    "buttonsError": [
+                        {
+                            "code": "back-to-lista-lotti",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_LOTTI",
+                            "type": "cancel"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

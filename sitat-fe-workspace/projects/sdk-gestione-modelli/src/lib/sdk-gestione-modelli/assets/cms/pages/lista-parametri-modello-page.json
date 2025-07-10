@@ -1,0 +1,218 @@
+{
+	"name": "lista-parametri-page",
+	"title": "TITLE.LISTA-PARAMETRI-PAGE",
+	"layout": "base-menu-tabs-layout",
+	"appName": "<APP-NAME>",
+	"styleUrls": [],
+	"settings": {
+		"page": "lista-parametri-page",
+		"menuTabs": [
+			{
+				"code": "dettaglio-modello",
+				"title": "SDK-MODELLO.TABS.DETTAGLIO-MODELLO",
+				"slug": "dettaglio-modello-page",
+				"additionalParams": "SDK_MODELLO_PARAMS"
+			},
+			{
+				"code": "lista-parametri",
+				"title": "SDK-MODELLO.TABS.PARAMETRI-MODELLO",
+				"active": true,
+				"slug": "lista-parametri-modello-page",
+				"additionalParams": "SDK_MODELLO_PARAMS"
+			}
+		],
+		"breadcrumbs": [
+			{
+				"code": "home-page",
+				"label": "BREADCRUMB.HOME",
+				"slug": "home-page"
+			},
+			{
+				"code": "ricerca-parametri-page",
+				"label": "BREADCRUMB.RICERCA-MODELLI",
+				"slug": "ricerca-modelli-page"
+			},
+			{
+				"code": "lista-modelli-page",
+				"label": "BREADCRUMB.LISTA-MODELLI",
+				"slug": "lista-modelli-page"
+			},
+			{
+				"code": "dettaglio-modello-page",
+				"label": "BREADCRUMB.DETTAGLIO-MODELLO",
+				"slug": "dettaglio-modello-page",
+				"additionalParams": "SDK_DETTAGLIO_MODELLO_PARAMS"
+			}
+		]
+	},
+	"sections": [
+		{
+			"id": "lista-parametri-page-content-root-section",
+			"selector": "sdk-lista-parametri-section",
+			"description": "Pagina lista parametri",
+			"classNames": "lista-parametri-section",
+			"settings": {
+				"classNames": "lista-parametri-index",
+				"sectionTitle": "TITLE.LISTA-PARAMETRI-PAGE",
+				"body": {
+					"buttons": [
+						{
+							"code": "back-to-lista-modelli",
+							"label": "BUTTONS.BACK",
+							"icon": "mgg-icons-paginator-previous",
+							"provider": "SDK_GESTIONE_MODELLI_LISTA",
+							"type": "cancel"
+						},
+						{
+							"code": "nuovo-parametro",
+							"label": "BUTTONS.NUOVO",
+							"icon": "mgg-icons-crud-create",
+							"provider": "SDK_GESTIONE_MODELLI_LISTA",
+							"oggettoProtezione": "INS.*"
+						}
+					],
+					"grid": {
+						"showCurrentPageReport": false,
+						"showCurrentRecordsReport": false,
+						"navigable": false,
+						"resizable": false,
+						"pageable": false,
+						"debug": false,
+						"sortable": {
+							"allowUnsort": false,
+							"mode": "single"
+						},
+						"sort": [
+							{
+								"field": "nome",
+								"dir": "asc"
+							}
+						],
+
+						"toolbar": {
+							"position": "top",
+							"actions": []
+						},
+
+						"columns": [
+							{
+								"viewer": {
+									"type": "SDK_GRID_VIEW_CELL_STRING"
+								},
+								"title": "SDK-PARAMETRO.GENERAL-DATA.CODICE",
+								"field": "codice",
+								"width": 100,
+								"hidden": false,
+								"sortable": false,
+								"resizable": false,
+								"oggettoProtezione": ""
+							},
+							{
+								"viewer": {
+									"type": "SDK_GRID_VIEW_CELL_STRING"
+								},
+								"title": "SDK-PARAMETRO.GENERAL-DATA.OBBLIGATORIO",
+								"field": "obblDesc",
+								"width": 100,
+								"hidden": false,
+								"sortable": false,
+								"resizable": false,
+								"oggettoProtezione": ""
+							},
+							{
+								"viewer": {
+									"type": "SDK_GRID_VIEW_CELL_LINK",
+									"params": {
+										"action": {
+											"label": "SDK-LISTA-PARAMETRI.AZIONI.DETTAGLIO",
+											"disabled": false,
+											"performer": "dettaglio"
+										}
+									}
+								},
+								"title": "SDK-PARAMETRO.GENERAL-DATA.DESCR-PRINC",
+								"field": "nome",
+								"width": 50,
+								"hidden": false,
+								"sortable": false,
+								"resizable": false,
+								"oggettoProtezione": ""
+							},
+							{
+								"viewer": {
+									"type": "SDK_GRID_VIEW_CELL_STRING"
+								},
+								"title": "SDK-PARAMETRO.GENERAL-DATA.DESCR",
+								"field": "descr",
+								"width": 100,
+								"hidden": false,
+								"sortable": false,
+								"resizable": false,
+								"oggettoProtezione": ""
+							},
+							{
+								"viewer": {
+									"type": "SDK_GRID_VIEW_CELL_STRING"
+								},
+								"title": "SDK-PARAMETRO.GENERAL-DATA.TIPO",
+								"field": "tipoDesc",
+								"width": 125,
+								"hidden": false,
+								"sortable": false,
+								"resizable": false,
+								"oggettoProtezione": ""
+							},
+							{
+								"viewer": {
+									"type": "SDK_GRID_VIEW_CELL_STRING"
+								},
+								"title": "SDK-PARAMETRO.GENERAL-DATA.MENU",
+								"field": "menu",
+								"width": 125,
+								"hidden": false,
+								"sortable": false,
+								"resizable": false,
+								"oggettoProtezione": ""
+							},
+							{
+								"viewer": {
+									"type": "SDK_GRID_VIEW_CELL_ACTIONS_ICON",
+									"params": {
+										"actions": [
+											{
+												"disabled": false,
+												"performer": "delete",
+												"icon": "mgg-icons-crud-delete",
+												"label": "SDK-LISTA-PARAMETRI.AZIONI.CANCELLA"
+											},
+											{
+												"disabled": false,
+												"performer": "spostaSu",
+												"icon": "mgg-icons-navigation-hide",
+                                                "hidden": "spostaSuHidden",
+												"label": "SDK-LISTA-PARAMETRI.AZIONI.SPOSTA-SU"
+											},
+											{
+												"disabled": false,
+												"performer": "spostaGiu",
+                                                "hidden": "spostaGiuHidden",
+												"icon": "mgg-icons-navigation-show",
+												"label": "SDK-LISTA-PARAMETRI.AZIONI.SPOSTA-GIU",
+												"classNames": "sposta-giu"
+											}
+										]
+									}
+								},
+								"title": "SDK-LISTA-PARAMETRI.AZIONI.TITLE",
+								"width": 125,
+								"hidden": false,
+								"sortable": false,
+								"resizable": false
+							}
+						]
+					}
+				}
+			}
+		}
+	]
+}

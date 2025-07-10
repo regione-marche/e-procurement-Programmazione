@@ -1,0 +1,141 @@
+<div class="dati-contabilita-modal" *ngIf="isReady">
+
+    <h1 class="page-title" style="margin-left: 8px;">{{'TITLE.DATI-CONTABILITA-PAGE' | translate}}</h1>
+    <!-- <div class="blue-line"></div> -->
+
+    <div class="messages-box" #messages></div>
+
+
+    <div class="dati-contabilita-container">
+        <div class="dati-contabilita-content scrollable-table-container">            
+
+            <div class="section-header ng-star-inserted" >
+
+                <div class="empty-list" *ngIf="datiContabilita === undefined">
+                    {{'DATI-CONTABILITA.LOADING-LIST' | translate}}
+                </div>
+
+                <div *ngIf="datiContabilita !== undefined" > 
+
+                    <p-tabMenu [model]="menuItems" [activeItem]="activeMenuItem"></p-tabMenu>
+
+                    <div *ngIf="pagamenti !== undefined && selectedMenu === 'pagamenti'">
+
+                        <div class="empty-list" *ngIf="pagamenti !== undefined && pagamenti.length === 0" >
+                            {{'DATI-CONTABILITA.PAGAMENTI.EMPTY-LIST' | translate}}
+                        </div>
+    
+                        <table class="dati-contabilita-table" *ngIf="pagamenti !== undefined && pagamenti.length > 0"
+                            [attr.aria-label]="'DATI-CONTABILITA.PAGAMENTI.LIST-TITLE' | translate">
+                            <thead>
+                                <tr>
+                                    <th *ngIf="isSelection" class="dati-contabilita-table-header" style="text-wrap: nowrap;">
+                                        <input type="image"src="assets/images/app/select-all.svg" (click)="selectAll()"
+                                        [alt]="'BUTTONS.SELECT-ALL' | translate">
+                                        <input type="image"
+                                        src="assets/images/app/deselect-all.svg" (click)="deselectAll()"
+                                        [alt]="'BUTTONS.UNSELECT-ALL' | translate">
+                                    </th>
+                                    <th class="dati-contabilita-table-header">{{ 'DATI-CONTABILITA.PAGAMENTI.CODICE-PAGAMENTO' | translate }}</th>
+                                    <th class="dati-contabilita-table-header">{{ 'DATI-CONTABILITA.PAGAMENTI.OGGETTO' | translate }}</th>
+                                    <th class="dati-contabilita-table-header">{{ 'DATI-CONTABILITA.PAGAMENTI.DATA-PAGAMENTO' | translate }}</th>
+                                    <th class="dati-contabilita-table-header">{{ 'DATI-CONTABILITA.PAGAMENTI.IMPRESA' | translate }}</th>
+                                    <th class="dati-contabilita-table-header">{{ 'DATI-CONTABILITA.PAGAMENTI.IMPORTO' | translate }}</th>
+                                    <th class="dati-contabilita-table-header">{{ 'DATI-CONTABILITA.PAGAMENTI.UTILIZZATO' | translate }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <ng-container *ngFor="let pagamento of pagamenti; let idx = index">
+                                    <tr class="dati-contabilita-table-row">
+                                        <td *ngIf="isSelection" class="dati-contabilita-table-cell" style="min-width: 1em; text-align: center;">
+                                            <input id=check_{{pagamento.idx}} type="checkbox" class="p-checkbox"
+                                            (change)="manageCheckboxes(pagamento.idx, $event)" 
+                                            [checked]="pagamento.selected">
+                                        </td>
+                                        <td class="dati-contabilita-table-cell" style="min-width: 6em;">
+                                            {{pagamento.codicePagamento}}
+                                        </td>
+                                        <td class="aggiorna-pianocosti-cell agg-pianocosti-cell-2" style="min-width: 5em;">
+                                            {{pagamento.oggetto}} 
+                                        </td>
+                                        <td class="dati-contabilita-table-cell" style="min-width: 6em; text-align: center;">
+                                            {{sdkDateHelper.format(pagamento.dataPagamento, 'dd/MM/yyyy')}}
+                                        </td>
+                                        <td class="aggiorna-pianocosti-cell agg-pianocosti-cell-2" style="min-width: 5em;">
+                                            {{pagamento.impresa}}
+                                        </td>
+                                        <td class="dati-contabilita-table-cell" style="min-width: 6em; text-align: right;">
+                                            {{sdkNumberFormatService.formatCurrencyNumber(pagamento.importo, sdkLocaleService.locale)}}
+                                        </td>
+                                        <td class="aggiorna-pianocosti-cell agg-pianocosti-cell-2" style="min-width: 5em;">
+                                            {{pagamento.utilizzato}}
+                                        </td>
+                                    </tr>
+                                </ng-container>
+                                
+                            </tbody>
+                        </table>
+    
+                    </div>
+
+                    <div *ngIf="impegni !== undefined && selectedMenu === 'impegni'">
+
+                        <div class="empty-list" *ngIf="impegni !== undefined && impegni.length === 0" >
+                            {{'DATI-CONTABILITA.IMPEGNI.EMPTY-LIST' | translate}}
+                        </div>
+    
+                        <table class="dati-contabilita-table" *ngIf="impegni !== undefined && impegni.length > 0"
+                            [attr.aria-label]="'DATI-CONTABILITA.IMPEGNI.LIST-TITLE' | translate">
+                            <thead>
+                                <tr>
+                                    <th class="dati-contabilita-table-header">{{ 'DATI-CONTABILITA.IMPEGNI.CODICE-IMPEGNO' | translate }}</th>
+                                    <th class="dati-contabilita-table-header">{{ 'DATI-CONTABILITA.IMPEGNI.DESCRIZIONE' | translate }}</th>
+                                    <th class="dati-contabilita-table-header">{{ 'DATI-CONTABILITA.IMPEGNI.DATA-IMPEGNO' | translate }}</th>
+                                    <th class="dati-contabilita-table-header">{{ 'DATI-CONTABILITA.IMPEGNI.ATTO' | translate }}</th>
+                                    <th class="dati-contabilita-table-header">{{ 'DATI-CONTABILITA.IMPEGNI.IMPRESA' | translate }}</th>
+                                    <th class="dati-contabilita-table-header">{{ 'DATI-CONTABILITA.IMPEGNI.IMPORTO' | translate }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <ng-container *ngFor="let impegno of impegni; let idx = index">
+                                    <tr class="dati-contabilita-table-row">
+                                        <td class="dati-contabilita-table-cell" style="min-width: 6em;">
+                                            {{impegno.codiceImpegno}}
+                                        </td>
+                                        <td class="aggiorna-pianocosti-cell agg-pianocosti-cell-2" style="min-width: 5em;">
+                                            {{impegno.descrizione}} 
+                                        </td>
+                                        <td class="dati-contabilita-table-cell" style="min-width: 6em; text-align: center;">
+                                            {{sdkDateHelper.format(impegno.dataImpegno, 'dd/MM/yyyy')}}
+                                        </td>
+                                        <td class="aggiorna-pianocosti-cell agg-pianocosti-cell-2" style="min-width: 5em;">
+                                            {{impegno.atto}}
+                                        </td>
+                                        <td class="aggiorna-pianocosti-cell agg-pianocosti-cell-2" style="min-width: 5em;">
+                                            {{impegno.impresa}}
+                                        </td>
+                                        <td class="dati-contabilita-table-cell" style="min-width: 6em; text-align: right;">
+                                            {{sdkNumberFormatService.formatCurrencyNumber(impegno.importo, sdkLocaleService.locale)}}
+                                        </td>
+                                    </tr>
+                                </ng-container>
+                                
+                            </tbody>
+                        </table>
+    
+                    </div>
+
+                </div>                
+
+            </div>
+            
+            
+        </div>
+
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+
+    </div>
+
+</div>

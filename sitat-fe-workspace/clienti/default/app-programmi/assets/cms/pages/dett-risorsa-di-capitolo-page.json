@@ -1,0 +1,1194 @@
+{
+    "name": "dett-risorsa-di-capitolo-page",
+    "title": "TITLE.DETTAGLIO-RISORSA-DI-CAPITOLO-PAGE",
+    "layout": "base-layout",
+    "appName": "app-programmi",
+    "styleUrls": [],
+    "settings": {
+        "page": "dett-risorsa-di-capitolo-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-programmi-page",
+                "label": "BREADCRUMB.LISTA-PROGRAMMI",
+                "slug": "lista-programmi-page",
+                "additionalParams": "APP_PROGRAMMI_LISTA_PROGRAMMI_PARAMS"
+            },
+            {
+                "code": "dett-prog-interventi-page",
+                "label": "BREADCRUMB.DETTAGLIO-PROGRAMMA",
+                "slug": "dett-prog-interventi-page",
+                "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+            },
+            {
+                "code": "risorse-di-capitolo-page",
+                "label": "BREADCRUMB.DETTAGLIO-INTERVENTO",
+                "slug": "risorse-di-capitolo-page",
+                "additionalParams": "APP_PROGRAMMI_DETTAGLIO_INTERVENTO_PARAMS"
+            },
+            {
+                "code": "dett-risorsa-di-capitolo-page",
+                "label": "BREADCRUMB.DETTAGLIO-RISORSA-DI-CAPITOLO",
+                "slug": "dett-risorsa-di-capitolo-page",
+                "additionalParams": "APP_PROGRAMMI_DETTAGLIO_RISORSA_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dett-risorsa-di-capitolo-page-content-root-section",
+            "selector": "dett-risorsa-di-capitolo-section",
+            "description": "Pagina per la creazione di un nuovo avviso",
+            "classNames": "dett-risorsa-di-capitolo-section",
+            "settings": {
+                "classNames": "dett-risorsa-di-capitolo-index",
+                "sectionTitle": "TITLE.DETTAGLIO-RISORSA-DI-CAPITOLO-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-risorse-di-capitolo",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_PROGRAMMI_LISTA_RISORSE_DI_CAPITOLO",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "update",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_PROGRAMMI_LISTA_RISORSE_DI_CAPITOLO",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "readOnlyButtons": [
+                        {
+                            "code": "back-to-risorse-di-capitolo",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_PROGRAMMI_LISTA_RISORSE_DI_CAPITOLO",
+                            "type": "cancel"
+                        }
+                    ],
+                    "lavoriFields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "RISORSE-DI-CAPITOLO.RISORSE-DI-CAPITOLO.RISORSE-DI-CAPITOLO",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "numero-capitolo-bilancio",
+                                    "label": "RISORSE-DI-CAPITOLO.RISORSE-DI-CAPITOLO.NUMERO-CAPITOLO-BILANCIO",
+                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.NCAPBIL",
+                                    "mnemonico": "T2NCAPBILCB",
+                                    "mappingInput": "numCapBilancio",
+                                    "mappingOutput": "numCapBilancio"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "impegni-spesa-capitolo",
+                                    "label": "RISORSE-DI-CAPITOLO.RISORSE-DI-CAPITOLO.IMPEGNI-SPESA-CAPITOLO",
+                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.IMPSPE",
+                                    "mnemonico": "T2IMPSPECB",
+                                    "mappingInput": "impegniSpesa",
+                                    "mappingOutput": "impegniSpesa"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "quadro-risorse-data",
+                            "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.QUADRO-RISORSE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX-MATRIX",
+                                    "code": "id-textbox-matrix",
+                                    "header": [
+                                        {
+                                            "code": "",
+                                            "label": "",
+                                            "cells": [
+                                                {
+                                                    "code": "",
+                                                    "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.QUADRO-RISORSE",
+                                                    "colspan": 6
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "",
+                                            "cells": [
+                                                {
+                                                    "code": "",
+                                                    "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.TIPOLOGIA-RISORSE",
+                                                    "rowspan": 2
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.STIMA-COSTI",
+                                                    "colspan": 5
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "",
+                                            "cells": [
+                                                {
+                                                    "code": "",
+                                                    "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.PRIMO-ANNO"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.SECONDO-ANNO"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.TERZO-ANNO"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.ANNUALITA-SUCCESSIVE"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.TOTALE"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "rows": [
+                                        {
+                                            "code": "",
+                                            "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.RISORSE-ENTRATE-DESTINAZIONE-VINCOLATA-LEGGE",
+                                            "cells": [
+                                                {
+                                                    "code": "DV1CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "entrateDestVincLegge1",
+                                                    "mappingOutput": "entrateDestVincLegge1",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.DV1CB",
+                                                    "mnemonico": "T2IDV1CB"
+                                                },
+                                                {
+                                                    "code": "DV2CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "entrateDestVincLegge2",
+                                                    "mappingOutput": "entrateDestVincLegge2",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.DV2CB",
+                                                    "mnemonico": "T2IDV2CB"
+                                                },
+                                                {
+                                                    "code": "DV3CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "entrateDestVincLegge3",
+                                                    "mappingOutput": "entrateDestVincLegge3",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.DV3CB",
+                                                    "mnemonico": "T2IDV3CB"
+                                                },
+                                                {
+                                                    "code": "DV9CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "entrateDestVincLeggeSucc",
+                                                    "mappingOutput": "entrateDestVincLeggeSucc",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.DV9CB",
+                                                    "mnemonico": "T2DV9CB"
+                                                },
+                                                {
+                                                    "code": "DVnCB",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}+{2}+{3}",
+                                                    "operationParams": [
+                                                        "DV1CB",
+                                                        "DV2CB",
+                                                        "DV3CB",
+                                                        "DV9CB"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.RISORSE-ENTRATE-CONTRAZIONE-MUTUO",
+                                            "cells": [
+                                                {
+                                                    "code": "MU1CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "entrateContrMutuo1",
+                                                    "mappingOutput": "entrateContrMutuo1",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.MU1CB",
+                                                    "mnemonico": "T2IMU1CB"
+                                                },
+                                                {
+                                                    "code": "MU2CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "entrateContrMutuo2",
+                                                    "mappingOutput": "entrateContrMutuo2",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.MU2CB",
+                                                    "mnemonico": "T2IMU2CB"
+                                                },
+                                                {
+                                                    "code": "MU3CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "entrateContrMutuo3",
+                                                    "mappingOutput": "entrateContrMutuo3",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.MU3CB",
+                                                    "mnemonico": "T2IMU3CB"
+                                                },
+                                                {
+                                                    "code": "MU9CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "entrateContrMutuoSucc",
+                                                    "mappingOutput": "entrateContrMutuoSucc",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.MU9CB",
+                                                    "mnemonico": "T2MU9CB"
+                                                },
+                                                {
+                                                    "code": "MUnCB",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}+{2}+{3}",
+                                                    "operationParams": [
+                                                        "MU1CB",
+                                                        "MU2CB",
+                                                        "MU3CB",
+                                                        "MU9CB"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.STANZIAMENTI-BILANCIO",
+                                            "cells": [
+                                                {
+                                                    "code": "BI1CB",
+                                                    "type": "TEXT",
+                                                    "decimals": 2,
+                                                    "mappingInput": "stanziamentiBilancio1",
+                                                    "mappingOutput": "stanziamentiBilancio1",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.BI1CB",
+                                                    "mnemonico": "T2IBI1CB"
+                                                },
+                                                {
+                                                    "code": "BI2CB",
+                                                    "type": "TEXT",
+                                                    "decimals": 2,
+                                                    "mappingInput": "stanziamentiBilancio2",
+                                                    "mappingOutput": "stanziamentiBilancio2",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.BI2CB",
+                                                    "mnemonico": "T2IBI2CB"
+                                                },
+                                                {
+                                                    "code": "BI3CB",
+                                                    "type": "TEXT",
+                                                    "decimals": 2,
+                                                    "mappingInput": "stanziamentiBilancio3",
+                                                    "mappingOutput": "stanziamentiBilancio3",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.BI3CB",
+                                                    "mnemonico": "T2IBI3CB"
+                                                },
+                                                {
+                                                    "code": "BI9CB",
+                                                    "type": "TEXT",
+                                                    "decimals": 2,
+                                                    "mappingInput": "stanziamentiBilancioSucc",
+                                                    "mappingOutput": "stanziamentiBilancioSucc",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.BI9CB",
+                                                    "mnemonico": "T2BI9CB"
+                                                },
+                                                {
+                                                    "code": "BInCB",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}+{2}+{3}",
+                                                    "operationParams": [
+                                                        "BI1CB",
+                                                        "BI2CB",
+                                                        "BI3CB",
+                                                        "BI9CB"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.FINANZIAMENTI-ART-3",
+                                            "cells": [
+                                                {
+                                                    "code": "AP1CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "impFinanz1",
+                                                    "mappingOutput": "impFinanz1",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.AP1CB",
+                                                    "mnemonico": "T2AP1CB"
+                                                },
+                                                {
+                                                    "code": "AP2CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "impFinanz2",
+                                                    "mappingOutput": "impFinanz2",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.AP2CB",
+                                                    "mnemonico": "T2AP2CB"
+                                                },
+                                                {
+                                                    "code": "AP3CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "impFinanz3",
+                                                    "mappingOutput": "impFinanz3",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.AP3CB",
+                                                    "mnemonico": "T2AP3CB"
+                                                },
+                                                {
+                                                    "code": "AP9CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "impFinanzSucc",
+                                                    "mappingOutput": "impFinanzSucc",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.AP9CB",
+                                                    "mnemonico": "T2AP9CB"
+                                                },
+                                                {
+                                                    "code": "APnCB",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}+{2}+{3}",
+                                                    "operationParams": [
+                                                        "AP1CB",
+                                                        "AP2CB",
+                                                        "AP3CB",
+                                                        "AP9CB"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.ALTRA-TIPOLOGIA",
+                                            "cells": [
+                                                {
+                                                    "code": "AL1CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "altreRisDisp1",
+                                                    "mappingOutput": "altreRisDisp1",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.AL1CB",
+                                                    "mnemonico": "T2IAL1CB"
+                                                },
+                                                {
+                                                    "code": "AL2CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "altreRisDisp2",
+                                                    "mappingOutput": "altreRisDisp2",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.AL2CB",
+                                                    "mnemonico": "T2IAL2CB"
+                                                },
+                                                {
+                                                    "code": "AL3CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "altreRisDisp3",
+                                                    "mappingOutput": "altreRisDisp3",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.AL3CB",
+                                                    "mnemonico": "T2IAL3CB"
+                                                },
+                                                {
+                                                    "code": "AL9CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "altreRisDispSucc",
+                                                    "mappingOutput": "altreRisDispSucc",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.AL9CB",
+                                                    "mnemonico": "T2AL9CB"
+                                                },
+                                                {
+                                                    "code": "ALnCB",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}+{2}+{3}",
+                                                    "operationParams": [
+                                                        "AL1CB",
+                                                        "AL2CB",
+                                                        "AL3CB",
+                                                        "AL9CB"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.IMPORTO-COMPLESSIVO",
+                                            "cells": [
+                                                {
+                                                    "code": "TO1CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoComplessivo1",
+                                                    "mappingOutput": "importoComplessivo1",
+                                                    "operation": "{0}+{1}+{2}+{3}+{4}",
+                                                    "operationParams": [
+                                                        "DV1CB",
+                                                        "MU1CB",
+                                                        "BI1CB",
+                                                        "AP1CB",
+                                                        "AL1CB"
+                                                    ]
+                                                },
+                                                {
+                                                    "code": "TO2CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoComplessivo2",
+                                                    "mappingOutput": "importoComplessivo2",
+                                                    "operation": "{0}+{1}+{2}+{3}+{4}",
+                                                    "operationParams": [
+                                                        "DV2CB",
+                                                        "MU2CB",
+                                                        "BI2CB",
+                                                        "AP2CB",
+                                                        "AL2CB"
+                                                    ]
+                                                },
+                                                {
+                                                    "code": "TO3CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoComplessivo3",
+                                                    "mappingOutput": "importoComplessivo3",
+                                                    "operation": "{0}+{1}+{2}+{3}+{4}",
+                                                    "operationParams": [
+                                                        "DV3CB",
+                                                        "MU3CB",
+                                                        "BI3CB",
+                                                        "AP3CB",
+                                                        "AL3CB"
+                                                    ]
+                                                },
+                                                {
+                                                    "code": "TO9CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoComplessivoSucc",
+                                                    "mappingOutput": "importoComplessivoSucc",
+                                                    "operation": "{0}+{1}+{2}+{3}+{4}",
+                                                    "operationParams": [
+                                                        "DV9CB",
+                                                        "MU9CB",
+                                                        "BI9CB",
+                                                        "AP9CB",
+                                                        "AL9CB"
+                                                    ]
+                                                },
+                                                {
+                                                    "code": "TOnCB",
+                                                    "type": "TEXT"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.SPESE-GIA-SOSTENUTE",
+                                            "cells": [
+                                                {
+                                                    "code": "",
+                                                    "type": "TEXT"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "type": "TEXT"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "type": "TEXT"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "type": "TEXT"
+                                                },
+                                                {
+                                                    "code": "SPESESOST",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "speseSostenute",
+                                                    "mappingOutput": "speseSostenute",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.SPESESOST",
+                                                    "mnemonico": "T2SPESECB"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.TOTALE",
+                                            "cells": [
+                                                {
+                                                    "code": "",
+                                                    "type": "TEXT"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "type": "TEXT"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "type": "TEXT"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "type": "TEXT"
+                                                },
+                                                {
+                                                    "code": "TOT",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}+{2}+{3}+{4}",
+                                                    "operationParams": [
+                                                        "TO1CB",
+                                                        "TO2CB",
+                                                        "TO3CB",
+                                                        "TO9CB",
+                                                        "SPESESOST"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "altri-dati-data",
+                            "label": "RISORSE-DI-CAPITOLO.ALTRI-DATI.ALTRI-DATI",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "note",
+                                    "label": "RISORSE-DI-CAPITOLO.ALTRI-DATI.NOTE",
+                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.CBNOTE",
+                                    "mnemonico": "T2NOTEECB",
+                                    "mappingInput": "note",
+                                    "mappingOutput": "note"
+                                }
+                            ]
+                        }
+                    ],
+                    "acquistiFields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "RISORSE-DI-CAPITOLO.RISORSE-DI-CAPITOLO.RISORSE-DI-CAPITOLO",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "numero-capitolo-bilancio",
+                                    "label": "RISORSE-DI-CAPITOLO.RISORSE-DI-CAPITOLO.NUMERO-CAPITOLO-BILANCIO",
+                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.NCAPBIL",
+                                    "mnemonico": "T2NCAPBILCB",
+                                    "mappingInput": "numCapBilancio",
+                                    "mappingOutput": "numCapBilancio"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "importo-risorse-finanziarie-regionali",
+                                    "label": "RISORSE-DI-CAPITOLO.RISORSE-DI-CAPITOLO.IMPORTO-RISORSE-FINANZIARIE-REGIONALI",
+                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.RG1CB",
+                                    "mnemonico": "RG1CB",
+                                    "mappingInput": "importoRisFinanz",
+                                    "mappingOutput": "importoRisFinanz",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "importo-risorse-finanziarie-stato-ue",
+                                    "label": "RISORSE-DI-CAPITOLO.RISORSE-DI-CAPITOLO.IMPORTO-RISORSE-FINANZIARIE-STATO-UE",
+                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.IMPRFSCB",
+                                    "mnemonico": "T2IMPRFSCB",
+                                    "mappingInput": "importoRisFinanzStato",
+                                    "mappingOutput": "importoRisFinanzStato",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "importo-risorse-finanziarie-altro",
+                                    "label": "RISORSE-DI-CAPITOLO.RISORSE-DI-CAPITOLO.IMPORTO-RISORSE-FINANZIARIE-ALTRO",
+                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.IMPALTCB",
+                                    "mnemonico": "T2IMPALTCB",
+                                    "mappingInput": "importoRisFinanzAltro",
+                                    "mappingOutput": "importoRisFinanzAltro",
+                                    "currency": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "esito-positivo-verifica",
+                                    "label": "RISORSE-DI-CAPITOLO.RISORSE-DI-CAPITOLO.ESITO-POSITIVO-VERIFICA",
+                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.VERIFBIL",
+                                    "mnemonico": "T2VERBILCB",
+                                    "listCode": "sino",
+                                    "mappingInput": "verificaCoerenza",
+                                    "mappingOutput": "verificaCoerenza"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "quadro-risorse-data",
+                            "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.QUADRO-RISORSE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX-MATRIX",
+                                    "code": "id-textbox-matrix",
+                                    "header": [
+                                        {
+                                            "code": "",
+                                            "label": "",
+                                            "cells": [
+                                                {
+                                                    "code": "",
+                                                    "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.QUADRO-RISORSE",
+                                                    "colspan": 6
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "",
+                                            "cells": [
+                                                {
+                                                    "code": "",
+                                                    "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.TIPOLOGIA-RISORSE",
+                                                    "rowspan": 2
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.STIMA-COSTI",
+                                                    "colspan": 5
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "",
+                                            "cells": [
+                                                {
+                                                    "code": "",
+                                                    "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.PRIMO-ANNO"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.SECONDO-ANNO"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.TERZO-ANNO"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.ANNUALITA-SUCCESSIVE"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.TOTALE"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "rows": [
+                                        {
+                                            "code": "",
+                                            "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.RISORSE-ENTRATE-DESTINAZIONE-VINCOLATA-LEGGE",
+                                            "cells": [
+                                                {
+                                                    "code": "DV1CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "entrateDestVincLegge1",
+                                                    "mappingOutput": "entrateDestVincLegge1",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.DV1CB",
+                                                    "mnemonico": "T2IDV1CB"
+                                                },
+                                                {
+                                                    "code": "DV2CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "entrateDestVincLegge2",
+                                                    "mappingOutput": "entrateDestVincLegge2",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.DV2CB",
+                                                    "mnemonico": "T2IDV2CB"
+                                                },
+                                                {
+                                                    "code": "DV3CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "entrateDestVincLegge3",
+                                                    "mappingOutput": "entrateDestVincLegge3",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.DV3CB",
+                                                    "mnemonico": "T2IDV3CB"
+                                                },
+                                                {
+                                                    "code": "DV9CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "entrateDestVincLeggeSucc",
+                                                    "mappingOutput": "entrateDestVincLeggeSucc",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.DV9CB",
+                                                    "mnemonico": "T2IDV3CB"
+                                                },
+                                                {
+                                                    "code": "DVnCB",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}+{2}+{3}",
+                                                    "operationParams": [
+                                                        "DV1CB",
+                                                        "DV2CB",
+                                                        "DV3CB",
+                                                        "DV9CB"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.RISORSE-ENTRATE-CONTRAZIONE-MUTUO",
+                                            "cells": [
+                                                {
+                                                    "code": "MU1CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "entrateContrMutuo1",
+                                                    "mappingOutput": "entrateContrMutuo1",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.MU1CB",
+                                                    "mnemonico": "T2IMU1CB"
+                                                },
+                                                {
+                                                    "code": "MU2CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "entrateContrMutuo2",
+                                                    "mappingOutput": "entrateContrMutuo2",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.MU2CB",
+                                                    "mnemonico": "T2IMU2CB"
+                                                },
+                                                {
+                                                    "code": "MU3CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "entrateContrMutuo3",
+                                                    "mappingOutput": "entrateContrMutuo3",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.MU3CB",
+                                                    "mnemonico": "T2IMU3CB"
+                                                },
+                                                {
+                                                    "code": "MU9CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "entrateContrMutuoSucc",
+                                                    "mappingOutput": "entrateContrMutuoSucc",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.MU9CB",
+                                                    "mnemonico": "T2MU9CB"
+                                                },
+                                                {
+                                                    "code": "MUnCB",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}+{2}+{3}",
+                                                    "operationParams": [
+                                                        "MU1CB",
+                                                        "MU2CB",
+                                                        "MU3CB",
+                                                        "MU9CB"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.STANZIAMENTI-BILANCIO",
+                                            "cells": [
+                                                {
+                                                    "code": "BI1CB",
+                                                    "type": "TEXT",
+                                                    "decimals": 2,
+                                                    "mappingInput": "stanziamentiBilancio1",
+                                                    "mappingOutput": "stanziamentiBilancio1",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.BI1CB",
+                                                    "mnemonico": "T2IBI1CB"
+                                                },
+                                                {
+                                                    "code": "BI2CB",
+                                                    "type": "TEXT",
+                                                    "decimals": 2,
+                                                    "mappingInput": "stanziamentiBilancio2",
+                                                    "mappingOutput": "stanziamentiBilancio2",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.BI2CB",
+                                                    "mnemonico": "T2IBI2CB"
+                                                },
+                                                {
+                                                    "code": "BI3CB",
+                                                    "type": "TEXT",
+                                                    "decimals": 2,
+                                                    "mappingInput": "stanziamentiBilancio3",
+                                                    "mappingOutput": "stanziamentiBilancio3",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.BI3CB",
+                                                    "mnemonico": "T2IBI3CB"
+                                                },
+                                                {
+                                                    "code": "BI9CB",
+                                                    "type": "TEXT",
+                                                    "decimals": 2,
+                                                    "mappingInput": "stanziamentiBilancioSucc",
+                                                    "mappingOutput": "stanziamentiBilancioSucc",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.BI9CB",
+                                                    "mnemonico": "T2BI9CB"
+                                                },
+                                                {
+                                                    "code": "BInCB",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}+{2}+{3}",
+                                                    "operationParams": [
+                                                        "BI1CB",
+                                                        "BI2CB",
+                                                        "BI3CB",
+                                                        "BI9CB"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.FINANZIAMENTI-ART-3",
+                                            "cells": [
+                                                {
+                                                    "code": "AP1CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "impFinanz1",
+                                                    "mappingOutput": "impFinanz1",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.AP1CB",
+                                                    "mnemonico": "T2AP1CB"
+                                                },
+                                                {
+                                                    "code": "AP2CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "impFinanz2",
+                                                    "mappingOutput": "impFinanz2",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.AP2CB",
+                                                    "mnemonico": "T2AP2CB"
+                                                },
+                                                {
+                                                    "code": "AP3CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "impFinanz3",
+                                                    "mappingOutput": "impFinanz3",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.AP3CB",
+                                                    "mnemonico": "T2AP3CB"
+                                                },
+                                                {
+                                                    "code": "AP9CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "impFinanzSucc",
+                                                    "mappingOutput": "impFinanzSucc",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.AP9CB",
+                                                    "mnemonico": "T2AP9CB"
+                                                },
+                                                {
+                                                    "code": "APnCB",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}+{2}+{3}",
+                                                    "operationParams": [
+                                                        "AP1CB",
+                                                        "AP2CB",
+                                                        "AP3CB",
+                                                        "AP9CB"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.ALTRA-TIPOLOGIA",
+                                            "cells": [
+                                                {
+                                                    "code": "AL1CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "altreRisDisp1",
+                                                    "mappingOutput": "altreRisDisp1",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.AL1CB",
+                                                    "mnemonico": "T2IAL1CB"
+                                                },
+                                                {
+                                                    "code": "AL2CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "altreRisDisp2",
+                                                    "mappingOutput": "altreRisDisp2",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.AL2CB",
+                                                    "mnemonico": "T2IAL2CB"
+                                                },
+                                                {
+                                                    "code": "AL3CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "altreRisDisp3",
+                                                    "mappingOutput": "altreRisDisp3",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.AL3CB",
+                                                    "mnemonico": "T2IAL3CB"
+                                                },
+                                                {
+                                                    "code": "AL9CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "altreRisDispSucc",
+                                                    "mappingOutput": "altreRisDispSucc",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.AL9CB",
+                                                    "mnemonico": "T2IAL9CB"
+                                                },
+                                                {
+                                                    "code": "ALnCB",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}+{2}+{3}",
+                                                    "operationParams": [
+                                                        "AL1CB",
+                                                        "AL2CB",
+                                                        "AL3CB",
+                                                        "AL9CB"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.IMPORTO-COMPLESSIVO",
+                                            "cells": [
+                                                {
+                                                    "code": "TO1CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoComplessivo1",
+                                                    "mappingOutput": "importoComplessivo1",
+                                                    "operation": "{0}+{1}+{2}+{3}+{4}",
+                                                    "operationParams": [
+                                                        "DV1CB",
+                                                        "MU1CB",
+                                                        "BI1CB",
+                                                        "AP1CB",
+                                                        "AL1CB"
+                                                    ]
+                                                },
+                                                {
+                                                    "code": "TO2CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoComplessivo2",
+                                                    "mappingOutput": "importoComplessivo2",
+                                                    "operation": "{0}+{1}+{2}+{3}+{4}",
+                                                    "operationParams": [
+                                                        "DV2CB",
+                                                        "MU2CB",
+                                                        "BI2CB",
+                                                        "AP2CB",
+                                                        "AL2CB"
+                                                    ]
+                                                },
+                                                {
+                                                    "code": "TO3CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoComplessivo3",
+                                                    "mappingOutput": "importoComplessivo3",
+                                                    "operation": "{0}+{1}+{2}+{3}+{4}",
+                                                    "operationParams": [
+                                                        "DV3CB",
+                                                        "MU3CB",
+                                                        "BI3CB",
+                                                        "AP3CB",
+                                                        "AL3CB"
+                                                    ]
+                                                },
+                                                {
+                                                    "code": "TO9CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoComplessivoSucc",
+                                                    "mappingOutput": "importoComplessivoSucc",
+                                                    "operation": "{0}+{1}+{2}+{3}+{4}",
+                                                    "operationParams": [
+                                                        "DV9CB",
+                                                        "MU9CB",
+                                                        "BI9CB",
+                                                        "AP9CB",
+                                                        "AL9CB"
+                                                    ]
+                                                },
+                                                {
+                                                    "code": "TOnCB",
+                                                    "type": "TEXT"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.SPESE-GIA-SOSTENUTE",
+                                            "cells": [
+                                                {
+                                                    "code": "",
+                                                    "type": "TEXT"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "type": "TEXT"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "type": "TEXT"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "type": "TEXT"
+                                                },
+                                                {
+                                                    "code": "SPESESOST",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "speseSostenute",
+                                                    "mappingOutput": "speseSostenute",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.SPESESOST",
+                                                    "mnemonico": "T2SPESECB"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.TOTALE",
+                                            "cells": [
+                                                {
+                                                    "code": "",
+                                                    "type": "TEXT"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "type": "TEXT"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "type": "TEXT"
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "type": "TEXT"
+                                                },
+                                                {
+                                                    "code": "TOT",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}+{2}+{3}+{4}",
+                                                    "operationParams": [
+                                                        "TO1CB",
+                                                        "TO2CB",
+                                                        "TO3CB",
+                                                        "TO9CB",
+                                                        "SPESESOST"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.DI-CUI-IVA",
+                                            "cells": [
+                                                {
+                                                    "code": "IV1CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoIva1",
+                                                    "mappingOutput": "importoIva1",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.IV1CB",
+                                                    "mnemonico": "T2IV1CB"
+                                                },
+                                                {
+                                                    "code": "IV2CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoIva2",
+                                                    "mappingOutput": "importoIva2",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.IV2CB",
+                                                    "mnemonico": "T2IV1CB"
+                                                },
+                                                {
+                                                    "code": "IV3CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoIva3",
+                                                    "mappingOutput": "importoIva3",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.IV3CB",
+                                                    "mnemonico": "T2IV1CB"
+                                                },
+                                                {
+                                                    "code": "IV9CB",
+                                                    "type": "TEXT",
+                                                    "mappingInput": "importoIvaSucc",
+                                                    "mappingOutput": "importoIvaSucc",
+                                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.IV9CB",
+                                                    "mnemonico": "T2IV9CB"
+                                                },
+                                                {
+                                                    "code": "IVnCB",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}+{2}+{3}",
+                                                    "operationParams": [
+                                                        "IV1CB",
+                                                        "IV2CB",
+                                                        "IV3CB",
+                                                        "IV9CB"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "code": "",
+                                            "label": "RISORSE-DI-CAPITOLO.QUADRO-RISORSE.NETTO-IVA",
+                                            "cells": [
+                                                {
+                                                    "code": "",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}-{1}",
+                                                    "operationParams": [
+                                                        "TO1CB",
+                                                        "IV1CB"
+                                                    ]
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}-{1}",
+                                                    "operationParams": [
+                                                        "TO2CB",
+                                                        "IV2CB"
+                                                    ]
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}-{1}",
+                                                    "operationParams": [
+                                                        "TO3CB",
+                                                        "IV3CB"
+                                                    ]
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}-{1}",
+                                                    "operationParams": [
+                                                        "TO9CB",
+                                                        "IV9CB"
+                                                    ]
+                                                },
+                                                {
+                                                    "code": "",
+                                                    "type": "TEXT",
+                                                    "operation": "{0}+{1}+{2}+{3}-{4}",
+                                                    "operationParams": [
+                                                        "TO1CB",
+                                                        "TO2CB",
+                                                        "TO3CB",
+                                                        "TO9CB",
+                                                        "IVnCB"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "altri-dati-data",
+                            "label": "RISORSE-DI-CAPITOLO.ALTRI-DATI.ALTRI-DATI",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "note",
+                                    "label": "RISORSE-DI-CAPITOLO.ALTRI-DATI.NOTE",
+                                    "oggettoProtezione": "PIANI.RIS_CAPITOLO.CBNOTE",
+                                    "mnemonico": "T2NOTEECB",
+                                    "mappingInput": "note",
+                                    "mappingOutput": "note"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

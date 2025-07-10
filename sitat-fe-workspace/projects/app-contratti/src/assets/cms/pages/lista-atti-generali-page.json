@@ -1,0 +1,234 @@
+{
+    "name": "lista-atti-generali-page",
+    "title": "TITLE.LISTA-ATTI-GENERALI-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "lista-atti-generali-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-atti-generali-page",
+                "label": "BREADCRUMB.LISTA-ATTI-GENERALI",
+                "slug": "lista-atti-generali-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "lista-atti-generali-page-content-root-section",
+            "selector": "lista-atti-generali-section",
+            "description": "Pagina per visualizzazione degli atti generali",
+            "classNames": "lista-atti-generali-section",
+            "settings": {
+                "classNames": "lista-atti-generali-index",
+                "sectionTitle": "TITLE.LISTA-ATTI-GENERALI-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-home",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_CONTRATTI_ATTI_GENERALI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "grid": {
+                        "showCurrentPageReport": true,
+                        "showCurrentRecordsReport": true,
+                        "navigable": true,
+                        "resizable": false,
+                        "debug": false,
+                        "sortable": {
+                            "allowUnsort": false,
+                            "mode": "single"
+                        },
+                        "sort": [
+                            {
+                                "field": "idAtto",
+                                "dir": "desc"
+                            }
+                        ],
+                        "pageable": {
+                            "buttonCount": 5,
+                            "info": true,
+                            "pageSizes": [
+                                5,
+                                10,
+                                20,
+                                50
+                            ],
+                            "type": "numeric"
+                        },
+                        "columns": [
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_ACTIONS_ICON",
+                                    "params": {
+                                        "actions": [
+                                            {
+                                                "label": "LISTA-ATTI-GENERALI.AZIONI.PUBBLICATO",
+                                                "disabled": true,
+                                                "disablePointer": true,
+                                                "performer": "",
+                                                "icon": "fas fa-flag",
+                                                "hidden": "pubblicatoHidden"
+                                            },
+                                            {
+                                                "label": "LISTA-ATTI-GENERALI.AZIONI.PROGRAMMATO",
+                                                "disabled": true,
+                                                "disablePointer": true,
+                                                "performer": "",
+                                                "icon": "mgg-icons-calendar-clock",
+                                                "hidden": "programmatoHidden"
+                                            },
+                                            {
+                                                "label": "LISTA-ATTI-GENERALI.AZIONI.ANNULLATO",
+                                                "disabled": true,
+                                                "disablePointer": true,
+                                                "performer": "",
+                                                "icon": "mgg-icons-close-circle",
+                                                "hidden": "annullatoHidden"
+                                            },
+                                            {
+                                                "label": "LISTA-ATTI-GENERALI.AZIONI.IN-COMPILAZIONE",
+                                                "disabled": true,
+                                                "disablePointer": true,
+                                                "performer": "",
+                                                "icon": "mgg-icons-crud-edit",
+                                                "hidden": "compilazioneHidden"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "title": "LISTA-ATTI-GENERALI.STATO",
+                                "field": "pubblicato",
+                                "width": 75,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-ATTI-GENERALI.NOMEIN",
+                                "field": "stazioneAppaltante",
+                                "width": 50,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": "ALT.GENE.associazioneUffintAbilitata"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_LINK",
+                                    "params": {
+                                        "action": {
+                                            "label": "LISTA-ATTI-GENERALI.AZIONI.DETTAGLIO",
+                                            "disabled": false,
+                                            "performer": "dettaglio"
+                                        }
+                                    }
+                                },
+                                "title": "LISTA-ATTI-GENERALI.IDATTO",
+                                "field": "idAtto",
+                                "width": 75,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-ATTI-GENERALI.TIPOLOGIA",
+                                "field": "tipologia",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false
+                            },                            
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-ATTI-GENERALI.DESCRIZIONE",
+                                "field": "descrizione",
+                                "width": 150,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_DATE"
+                                },
+                                "title": "LISTA-ATTI-GENERALI.DATAPUBB-SISTEMA",
+                                "field": "dataPubbSistema",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_DATE"
+                                },
+                                "title": "LISTA-ATTI-GENERALI.DATA-SCADENZA",
+                                "field": "dataScadenza",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_ACTIONS_ICON",
+                                    "params": {
+                                        "actions": [
+                                            {
+                                                "label": "LISTA-ATTI-GENERALI.AZIONI.CANCELLA",
+                                                "disabled": false,
+                                                "performer": "delete",
+                                                "icon": "mgg-icons-crud-delete",
+                                                "oggettoProtezione": "DEL.*",
+                                                "hidden": "deleteAttoHidden"
+                                            },
+                                            {
+                                                "label": "LISTA-ATTI-GENERALI.AZIONI.ANNULLA-PUBBLICAZIONE",
+                                                "disabled": false,
+                                                "performer": "deleteAttoFutura",
+                                                "icon": "mgg-icons-action-undo",
+                                                "oggettoProtezione": "DEL.*",
+                                                "hidden": "deleteFuturaHidden"
+                                            },
+                                            {
+                                                "label": "LISTA-ATTI-GENERALI.AZIONI.ANNULLA-PUBBLICAZIONE",
+                                                "disabled": false,
+                                                "performer": "deleteAttoPassata",
+                                                "icon": "mgg-icons-action-undo",
+                                                "oggettoProtezione": "DEL.*",
+                                                "hidden": "deletePassataHidden"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "title": "LISTA-ATTI-GENERALI.AZIONI.TITLE",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

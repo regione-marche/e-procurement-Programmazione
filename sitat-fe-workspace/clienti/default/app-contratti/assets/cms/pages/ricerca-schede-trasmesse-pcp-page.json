@@ -1,0 +1,132 @@
+{
+    "name": "ricerca-schede-trasmesse-pcp-page",
+    "title": "TITLE.RICERCA-SCHEDE-TRASMESSE-PCP-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "ricerca-schede-trasmesse-pcp-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-schede-trasmesse-pcp-page",
+                "label": "BREADCRUMB.RICERCA-SCHEDE-TRASMESSE-PCP",
+                "slug": "ricerca-schede-trasmesse-pcp-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "ricerca-schede-trasmesse-pcp-page-content-root-section",
+            "selector": "ricerca-schede-trasmesse-pcp-section",
+            "description": "Pagina per la ricerca delle schede trasmesse a PCP",
+            "classNames": "ricerca-schede-trasmesse-pcp-section",
+            "settings": {
+                "classNames": "ricerca-schede-trasmesse-pcp-index",
+                "sectionTitle": "RICERCA-SCHEDE-PCP.TITLE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_GARE",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "pulisciFiltriSchedeTrasmessePcp",
+                            "label": "BUTTONS.CLEAN",
+                            "provider": "APP_GARE_LISTA_GARE",
+                            "icon": "mgg-icons-data-filtered"
+                        },
+                        {
+                            "code": "search-button",
+                            "label": "BUTTONS.SEARCH",
+                            "provider": "APP_GARE_LISTA_GARE",
+                            "icon": "mgg-icons-data-search"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "ricerca-schede-trasmesse-pcp",
+                            "label": "TITLE.RICERCA-SCHEDE-TRASMESSE-PCP-FILTRO",
+                            "fieldSections": [
+                                {
+                                    "type": "MULTIPLE-AUTOCOMPLETE",
+                                    "code": "uffInt",
+                                    "label": "RICERCA-SCHEDE-PCP.UFFINT",
+                                    "mappingInput": "uffInt",
+                                    "mappingOutput": "uffInt",
+                                    "oggettoProtezione": "ALT.GENE.associazioneUffintAbilitata",
+                                    "noDataLabel": "NO-DATA",
+                                    "itemsProviderCode": "STAZIONE_APPALTANTE_AUTOCOMPLETE"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "autore",
+                                    "label": "RICERCA-SCHEDE-PCP.AUTORE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "autore",
+                                    "mappingOutput": "autore"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "dataTrasmissioneDa",
+                                    "label": "RICERCA-SCHEDE-PCP.DATA-TRASMISSIONE-DA",
+                                    "mappingInput": "dataTrasmissioneDa",
+                                    "mappingOutput": "dataTrasmissioneDa"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "dataTrasmissioneA",
+                                    "label": "RICERCA-SCHEDE-PCP.DATA-TRASMISSIONE-A",
+                                    "mappingInput": "dataTrasmissioneA",
+                                    "mappingOutput": "dataTrasmissioneA"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "idAppalto",
+                                    "label": "RICERCA-SCHEDE-PCP.ID-APPALTO",
+                                    "mappingInput": "idAppalto",
+                                    "mappingOutput": "idAppalto"
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "cig",
+                                    "label": "RICERCA-SCHEDE-PCP.CIG",
+                                    "noDataLabel": "NO-DATA",
+                                    "mappingInput": "cig",
+                                    "mappingOutput": "cig",
+                                    "itemsProviderCode": "APP_CONTRATTI_LISTA_CIG",
+                                    "minSearchCharacters": 2
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tipo-scheda",
+                                    "label": "RICERCA-SCHEDE-PCP.TIPO-SCHEDA",
+                                    "mappingInput": "tipoScheda",
+                                    "mappingOutput": "tipoScheda",
+                                    "listCode": "Fase",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "progressivoScheda",
+                                    "label": "RICERCA-SCHEDE-PCP.ID-SCHEDA",
+                                    "mappingInput": "progressivoScheda",
+                                    "mappingOutput": "progressivoScheda"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

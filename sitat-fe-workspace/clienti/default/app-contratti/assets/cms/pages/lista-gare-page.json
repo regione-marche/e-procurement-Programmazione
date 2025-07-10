@@ -1,0 +1,233 @@
+{
+    "name": "lista-gare-page",
+    "title": "TITLE.LISTA-GARE-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "lista-gare-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "lista-gare-page-content-root-section",
+            "selector": "lista-gare-section",
+            "description": "Pagina lista gare",
+            "classNames": "lista-gare-section",
+            "settings": {
+                "classNames": "lista-gare-index",
+                "sectionTitle": "TITLE.LISTA-GARE-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_GARE",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "pulisciFiltri",
+                            "label": "BUTTONS.SET-FILTERS",
+                            "provider": "APP_GARE_LISTA_GARE",
+                            "icon": "mgg-icons-data-filtered"
+                        },
+                        {
+                            "code": "exportCsv",
+                            "label": "BUTTONS.EXPORT-CSV",
+                            "provider": "APP_GARE_LISTA_GARE",
+                            "icon": "mgg-icons-data-export",
+                            "oggettoProtezione":"W9.W9GARA-lista.ExpCSV"
+                        }
+                    ],
+                    "grid": {
+                        "showCurrentPageReport": true,
+                        "showCurrentRecordsReport": true,
+                        "navigable": true,
+                        "resizable": false,
+                        "debug": false,
+                        "sortable": {
+                            "allowUnsort": false,
+                            "mode": "single"
+                        },
+                        "sort": [
+                            {
+                                "field": "codgara",
+                                "dir": "desc"
+                            }
+                        ],
+                        "pageable": {
+                            "buttonCount": 5,
+                            "info": true,
+                            "pageSizes": [
+                                5,
+                                10,
+                                20,
+                                50
+                            ],
+                            "type": "numeric"
+                        },
+                        "columns": [
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-GARE.STAZIONE-APPALTANTE",
+                                "field": "nominativoStazioneAppaltante",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_LINK",
+                                    "params": {
+                                        "action": {
+                                            "label": "LISTA-GARE.AZIONI.DETTAGLIO",
+                                            "disabled": false,
+                                            "performer": "dettaglio"
+                                        }
+                                    }
+                                },
+                                "title": "LISTA-GARE.IDENTIFICATIVO_GARA",
+                                "field": "identificativoGara",
+                                "width": 75,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "W9.W9GARA.IDAVGARA"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_LINK",
+                                    "params": {
+                                        "action": {
+                                            "label": "LISTA-GARE.AZIONI.DETTAGLIO",
+                                            "disabled": false,
+                                            "performer": "dettaglio"
+                                        }
+                                    }
+                                },
+                                "title": "LISTA-GARE.OGGETTO-GARA",
+                                "field": "oggetto",
+                                "width": 250,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "W9.W9GARA.OGGETTO"
+                            },                            
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-GARE.SITUAZIONE",
+                                "field": "situazione",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "W9.W9GARA.SITUAZIONE"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_CURRENCY"
+                                },
+                                "title": "LISTA-GARE.IMPORTO-TOTALE-GARA",
+                                "field": "importoGara",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false,
+                                "oggettoProtezione": "W9.W9GARA.IMPORTO_GARA"
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_LINK",
+                                    "params": {
+                                        "action": {
+                                            "label": "LISTA-GARE.AZIONI.DETTAGLIO",
+                                            "disabled": false,
+                                            "performer": "dettaglioLotto"
+                                        }
+                                    }
+                                },
+                                "title": "LISTA-GARE.CIG_LOTTI",
+                                "field": "cigLotti",
+                                "width": 75,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "LISTA-GARE.RUP_GARA",
+                                "field": "descRup",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": true,
+                                "resizable": false
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_ACTIONS_ICON",
+                                    "params": {
+                                        "actions": [
+                                            {
+                                                "label": "LISTA-GARE.AZIONI.TRASFERIMENTO-RUP",
+                                                "disabled": false,
+                                                "performer": "cambioRup",
+                                                "hidden": "cambioRupHidden",
+                                                "icon": "fas fa-user-edit",
+                                                "oggettoProtezione":"MOD.W9.W9GARA-lista.TRASFERISCIRUP"
+                                            },
+                                            {
+                                                "label": "LISTA-GARE.AZIONI.CANCELLA",
+                                                "disabled": false,
+                                                "performer": "delete",
+                                                "hidden": "deleteHidden",
+                                                "icon": "mgg-icons-crud-delete",
+                                                "oggettoProtezione": "DEL.*"
+                                            },
+                                            {
+                                                "label": "LISTA-GARE.AZIONI.NO-CANCELLA",
+                                                "disabled": true,
+                                                "hidden": "deleteNotHidden",
+                                                "icon": "mgg-icons-no-trash"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "title": "LISTA-GARE.AZIONI.TITLE",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

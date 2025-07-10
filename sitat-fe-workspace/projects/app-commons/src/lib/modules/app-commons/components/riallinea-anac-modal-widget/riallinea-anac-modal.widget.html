@@ -1,0 +1,11 @@
+<div class="riallinea-anac-container">
+
+    <div class="acd-content">
+        <div class="messages-box" #messages></div>
+        <sdk-radio [config]="radioConfig" [data]="radioData" (output)="onOutputRadio($event)"></sdk-radio>
+    </div>  
+        <div class="buttons-row">
+            <sdk-button-group *ngIf="buttonsSubj != null" [config]="buttonsSubj" (output)="onButtonClick($event)">
+            </sdk-button-group>
+        </div>
+    </div>

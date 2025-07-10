@@ -1,0 +1,69 @@
+{
+    "name": "modifica-definizione-report-page",
+    "title": "TITLE.MODIFICA-DEFINIZIONE-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "modifica-definizione-report-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-report-page",
+                "label": "BREADCRUMB.GESTIONE-REPORT",
+                "slug": "lista-report-page"
+            },
+            {
+                "code": "definizione-report-page",
+                "label": "BREADCRUMB.DEFINIZIONE-REPORT",
+                "slug": "definizione-report-page",
+                "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+            },
+            {
+                "code": "modifica-definizione-report-page",
+                "label": "BREADCRUMB.MODIFICA-DEFINIZIONE",
+                "slug": "modifica-definizione-report-page",
+                "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-definizione-report-page-content-root-section",
+            "selector": "sdk-modifica-definizione-report-section",
+            "description": "Pagina di definizione del report",
+            "classNames": "sdk-modifica-definizione-report-section",
+            "settings": {
+                "classNames": "modifica-definizione-report-index",
+                "sectionTitle": "TITLE.MODIFICA-DEFINIZIONE-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-definizione",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "SDK_GESTIONE_REPORT_LISTA_REPORT",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "formatta-query",
+                            "label": "BUTTONS.FORMATTA",
+                            "icon": "mgg-icons-text-extract",
+                            "provider": "SDK_GESTIONE_REPORT_LISTA_REPORT"
+                        },
+                        {
+                            "code": "conferma-definizione-report",
+                            "label": "BUTTONS.CONFIRM",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PROVIDER"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

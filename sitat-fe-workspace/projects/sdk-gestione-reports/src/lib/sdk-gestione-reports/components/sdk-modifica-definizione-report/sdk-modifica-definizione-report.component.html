@@ -1,0 +1,28 @@
+<div [class]="config.classNames" *ngIf="isReady">
+    <h1 class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</h1>
+    <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+    <div class="messages-box" #infoBox></div>
+    <div class="messages-box" #messages></div>
+
+    <div class="sdk-modifica-definizione-report-container">
+        <div class="sdk-modifica-definizione-report-content">
+            <div class="sdk-modifica-definizione-report-titolo">
+                {{ 'SDK-DETTAGLIO-REPORT.DEFINIZIONE.MODIFICA.DEFSQL' | translate }}
+            </div>
+            <hr class="white-line" />
+            <div class="sdk-modifica-definizione-report-defsql-textbox">
+                <textarea
+                    class="text-area-definizione"
+                    type="text"
+                    [(ngModel)]="defSql"
+                    spellcheck="false"
+                ></textarea>
+            </div>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+    <sdk-dialog [config]="dialogConfigObjs"></sdk-dialog>
+</div>

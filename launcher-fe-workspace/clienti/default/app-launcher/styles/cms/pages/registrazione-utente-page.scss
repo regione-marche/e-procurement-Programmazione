@@ -1,0 +1,44 @@
+.sdk-layout-content .form-row {
+    .trattamento-dati-personali-label {
+        width: initial !important;
+    }
+
+    .trattamento-dati-personali-field {
+        width: initial !important;
+        margin: 0 !important;
+    }
+
+    .document-file {
+        padding: 0;
+    }
+}
+
+.ru-content {
+    .sdk-form-builder {
+        border: 1px solid #c8c8c8;
+        border-bottom: none;
+        box-shadow: none;
+    }
+    .registration-module-container{
+        padding: 1rem 2rem;
+    }
+    .captcha-container {
+        border: 1px solid #c8c8c8;
+        border-top: none;
+
+        .captcha-title {
+            font-weight: bold;
+            padding: 2rem 1rem 0.5rem 1rem;
+            margin: 0 1rem 1rem 1rem;
+            border-bottom: 1px solid #dddddd;
+            font-size: 1rem !important;
+            text-transform: uppercase;
+            color: #000000;
+        }
+
+        .captcha-content {
+            padding: 0 2rem 1rem 2rem;
+        }
+    }
+}
+

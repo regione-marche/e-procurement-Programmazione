@@ -1,0 +1,235 @@
+{
+    "name": "modifica-stazione-appaltante-page",
+    "title": "TITLE.MODIFICA-STAZIONE-APPALTANTE-PAGE",
+    "layout": "base-layout",
+    "appName": "app-programmi",
+    "styleUrls": [],
+    "settings": {
+        "page": "modifica-stazione-appaltante-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-archivio-stazioni-appaltanti-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-ARCHIVIO-STAZIONI-APPALTANTI",
+                "slug": "ricerca-avanzata-archivio-stazioni-appaltanti-page"
+            },
+            {
+                "code": "lista-archivio-stazioni-appaltanti-page",
+                "label": "BREADCRUMB.LISTA-ARCHIVIO-STAZIONI-APPALTANTI",
+                "slug": "lista-archivio-stazioni-appaltanti-page"
+            },
+            {
+                "code": "dettaglio-stazione-appaltante-page",
+                "label": "BREADCRUMB.DETTAGLIO-STAZIONE-APPALTANTE",
+                "slug": "dettaglio-stazione-appaltante-page",
+                "additionalParams": "APP_COMMONS_STAZIONE_APPALTANTE_PARAMS"
+            },
+            {
+                "code": "modifica-stazione-appaltante-page",
+                "label": "BREADCRUMB.MODIFICA-STAZIONE-APPALTANTE",
+                "slug": "modifica-stazione-appaltante-page",
+                "additionalParams": "APP_COMMONS_STAZIONE_APPALTANTE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-stazione-appaltante-page-content-root-section",
+            "selector": "modifica-stazione-appaltante-section",
+            "description": "Pagina per la modifica stazione appaltante",
+            "classNames": "modifica-stazione-appaltante-section",
+            "settings": {
+                "classNames": "modifica-stazione-appaltante-index",
+                "sectionTitle": "TITLE.MODIFICA-STAZIONE-APPALTANTE-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-dettaglio-stazione-appaltante",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_COMMONS_ARCHIVIO_STAZIONI_APPALTANTI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-stazione-appaltante",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_COMMONS_ARCHIVIO_STAZIONI_APPALTANTI"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "sa-data",
+                            "label": "STAZIONE-APPALTANTE.DATI-GENERALI",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "denominazione",
+                                    "label": "STAZIONE-APPALTANTE.DENOMINAZIONE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "denominazione",
+                                    "mappingOutput": "denominazione",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "STAZIONE-APPALTANTE.VALIDATORS.DENOMINAZIONE-OBBLIGATORIA"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": 254
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "codice-fiscale",
+                                    "label": "STAZIONE-APPALTANTE.CODICE-FISCALE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "codFisc",
+                                    "mappingOutput": "codFisc",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "STAZIONE-APPALTANTE.VALIDATORS.CODICE-FISCALE-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": 16
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "indirizzo",
+                                    "label": "STAZIONE-APPALTANTE.INDIRIZZO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "indirizzo",
+                                    "mappingOutput": "indirizzo",
+                                    "maxLength": 60
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "numero-civico",
+                                    "label": "STAZIONE-APPALTANTE.NUM-CIVICO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "nCivico",
+                                    "mappingOutput": "nCivico",
+                                    "maxLength": 10
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "cap",
+                                    "label": "STAZIONE-APPALTANTE.CAP",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "cap",
+                                    "mappingOutput": "cap",
+                                    "maxLength": 5
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "cod-istat",
+                                    "label": "STAZIONE-APPALTANTE.COD-ISTAT",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "codIstat",
+                                    "mappingOutput": "codIstat",
+                                    "noDataLabel": "NO-DATA",
+                                    "itemsProviderCode": "APP_PROGRAMMI_COMUNI_ISTAT",
+                                    "minSearchCharacters": 2
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "provincia",
+                                    "label": "STAZIONE-APPALTANTE.PROVINCIA",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "provincia",
+                                    "mappingOutput": "provincia",
+                                    "maxLength": 2
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "id-ammin",
+                                    "label": "STAZIONE-APPALTANTE.ID-AMMIN",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "idAmministrazione",
+                                    "mappingOutput": "idAmministrazione"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "profilo-committente",
+                                    "label": "STAZIONE-APPALTANTE.PROFILO-COMMITTENTE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "urlProfiloC",
+                                    "mappingOutput": "urlProfiloC",
+                                    "maxLength": 60
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tipologia",
+                                    "label": "STAZIONE-APPALTANTE.TIPOLOGIA",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "tipologia",
+                                    "mappingOutput": "tipologia",
+                                    "itemsProviderCode": "APP_PROGRAMMI_TABELLATI_COMBO",
+                                    "listCode": "TipologiaStazioneAppaltante"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "telefono",
+                                    "label": "STAZIONE-APPALTANTE.TELEFONO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "telefono",
+                                    "mappingOutput": "telefono",
+                                    "maxLength": 50
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "fax",
+                                    "label": "STAZIONE-APPALTANTE.FAX",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "fax",
+                                    "mappingOutput": "fax",
+                                    "maxLength": 20
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "email",
+                                    "label": "STAZIONE-APPALTANTE.EMAIL",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "email",
+                                    "mappingOutput": "email",
+                                    "maxLength": 100
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

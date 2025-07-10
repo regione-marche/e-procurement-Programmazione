@@ -1,0 +1,1 @@
+export * from '../projects/sdk-appaltiecontratti-base/src/public-api';

@@ -1,0 +1,75 @@
+{
+    "name": "ricerca-avanzata-archivio-uffici-page",
+    "title": "TITLE.RICERCA-AVANZATA-ARCHIVIO-UFFICI-PAGE",
+    "layout": "base-layout",
+    "appName": "app-programmi",
+    "styleUrls": [],
+    "settings": {
+        "page": "ricerca-avanzata-archivio-uffici-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-archivio-uffici-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-ARCHIVIO-UFFICI",
+                "slug": "ricerca-avanzata-archivio-uffici-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "ricerca-avanzata-archivio-uffici-page-content-root-section",
+            "selector": "ricerca-avanzata-archivio-uffici-section",
+            "description": "Pagina ricerca avanzata archivio uffici",
+            "classNames": "ricerca-avanzata-archivio-uffici-section",
+            "settings": {
+                "classNames": "ricerca-avanzata-archivio-uffici-index",
+                "sectionTitle": "TITLE.RICERCA-AVANZATA-ARCHIVIO-UFFICI-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-button",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_COMMONS_ARCHIVIO_UFFICI_ADVANCED_SEARCH",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "clean-button",
+                            "label": "BUTTONS.CLEAN",
+                            "provider": "APP_COMMONS_ARCHIVIO_UFFICI_ADVANCED_SEARCH",
+                            "icon": "mgg-icons-data-unfiltered"
+                        },
+                        {
+                            "code": "search-button",
+                            "label": "BUTTONS.SEARCH",
+                            "provider": "APP_COMMONS_ARCHIVIO_UFFICI_ADVANCED_SEARCH",
+                            "icon": "mgg-icons-data-search"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "archivio-uffici-data",
+                            "label": "RICERCA-AVANZATA-ARCHIVIO-UFFICI.ARCHIVIO-UFFICI-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "descrizione",
+                                    "label": "RICERCA-AVANZATA-ARCHIVIO-UFFICI.DESCRIZIONE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "descrizione",
+                                    "mappingOutput": "descrizione"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

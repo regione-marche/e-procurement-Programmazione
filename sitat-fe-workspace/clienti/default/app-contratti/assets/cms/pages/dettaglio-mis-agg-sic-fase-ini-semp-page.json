@@ -1,0 +1,189 @@
+{
+    "name": "dettaglio-mis-agg-sic-fase-ini-semp-page",
+    "title": "TITLE.DETTAGLIO-MISURE-AGGIUNTIVE-SICUREZZA-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "dettaglio-mis-agg-sic-fase-ini-semp-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-mis-agg-sic-fase-ini-semp-page",
+                "label": "BREADCRUMB.DETTAGLIO-MISURE-AGGIUNTIVE-SICUREZZA",
+                "slug": "dettaglio-mis-agg-sic-fase-ini-semp-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-mis-agg-sic-fase-ini-semp-page-content-root-section",
+            "selector": "dettaglio-misure-aggiuntive-sicurezza-section",
+            "description": "Pagina di dettaglio misure aggiuntive sicurezza",
+            "classNames": "dettaglio-mis-agg-sic-fase-ini-semp-section",
+            "settings": {
+                "classNames": "dettaglio-mis-agg-sic-fase-ini-semp-index",
+                "menuTabs": [
+                    {
+                        "code": "dettaglio-fase-iniziale-semp",
+                        "title": "DETTAGLIO-FASE-INIZIALE-SEMP.TABS.DATI-GENERALI",
+                        "slug": "dettaglio-fase-iniziale-semp-page",
+                        "oggettoProtezione" :"W9.W9INIZ-scheda.DETTFASE",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+                    },
+                    {
+                        "code": "dettaglio-scheda-sicurezza-fase-ini-semp",
+                        "title": "DETTAGLIO-FASE-INIZIALE-SEMP.TABS.SCHEDA-SICUREZZA",
+                        "slug": "dettaglio-scheda-sicurezza-fase-ini-semp-page",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS",
+                        "oggettoProtezione" :"W9.W9INIZ-scheda.SICUREZZA",
+                        "visible": "APP_GARE_SCHE_SIC_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "dettaglio-mis-agg-sic-fase-ini-semp",
+                        "title": "DETTAGLIO-FASE-INIZIALE-SEMP.TABS.MISURE-AGGIUNTIVE-SICUREZZA",
+                        "slug": "dettaglio-mis-agg-sic-fase-ini-semp-page",
+                        "active": true,
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS",
+                        "oggettoProtezione" :"W9.W9INIZ-scheda.CHECKSICUREZZA",
+                        "visible": "APP_GARE_SCHE_SIC_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "dettaglio-inc-prof-fase-ini-semp",
+                        "title": "DETTAGLIO-FASE-INIZIALE-SEMP.TABS.INCARICHI-PROFESSIONALI",
+                        "slug": "dettaglio-inc-prof-fase-ini-semp-page",
+                        "oggettoProtezione" :"W9.W9INIZ-scheda.TECNI",
+                        "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+                    }
+                ],
+                "body": {
+                    "buttonsErr": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        }
+                    ],
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "delete-misure-aggiuntive-sicurezza",
+                            "label": "BUTTONS.ELIMINA",
+                            "provider": "APP_GARE_MIS_AGG_SIC_FASE_INI_SEMP",
+                            "icon": "mgg-icons-crud-delete",
+                            "oggettoProtezione": "DEL.*"
+                        },
+                        {
+                            "code": "go-to-update-misure-aggiuntive-sicurezza",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_GARE_MIS_AGG_SIC_FASE_INI_SEMP",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "buttonsWithoutDettaglio": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "go-to-nuove-misure-aggiuntive-sicurezza",
+                            "label": "BUTTONS.NUOVO",
+                            "icon": "mgg-icons-crud-create",
+                            "provider": "APP_GARE_MIS_AGG_SIC_FASE_INI_SEMP",
+                            "oggettoProtezione": "INS.*"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "MISURE-AGGIUNTIVE-SICUREZZA.GENERAL-DATA.GENERAL-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "descmis",
+                                    "label": "MISURE-AGGIUNTIVE-SICUREZZA.GENERAL-DATA.DESCMIS",
+                                    "oggettoProtezione": "W9.W9MISSIC.DESCMIS",
+                                    "mnemonico": "W3MSDESCMI",
+                                    "mappingInput": "descrizione",
+                                    "mappingOutput": "descrizione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "nomest",
+                                    "label": "MISURE-AGGIUNTIVE-SICUREZZA.GENERAL-DATA.NOMEST",
+                                    "oggettoProtezione": "W9.W9MISSIC.CODIMP",
+                                    "mnemonico": "W3MSCODIMP",
+                                    "mappingInput": "impresa.ragioneSociale",
+                                    "mappingOutput": "codiceImpresa",
+                                    "link": true,
+                                    "modalComponent": "impresa-modal-widget",
+                                    "modalComponentConfig": "impresaModalConfig"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "docuemntazione-data",
+                            "label": "MISURE-AGGIUNTIVE-SICUREZZA.DOCUMENTAZIONE-DATA.DOCUMENTAZIONE-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "DOCUMENTS-LIST",
+                                    "code": "documents-list",
+                                    "label": "MISURE-AGGIUNTIVE-SICUREZZA.DOCUMENTAZIONE-DATA.EXISTING-DOCUMENTS",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "existingDocuments",
+                                    "clickable": true,
+                                    "actionsDisabled": true
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

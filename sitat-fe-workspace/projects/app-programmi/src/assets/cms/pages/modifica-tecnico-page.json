@@ -1,0 +1,274 @@
+{
+    "name": "modifica-tecnico-page",
+    "title": "TITLE.MODIFICA-TECNICO-PAGE",
+    "layout": "base-layout",
+    "appName": "app-programmi",
+    "styleUrls": [],
+    "settings": {
+        "page": "modifica-tecnico-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-archivio-tecnici-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-ARCHIVIO-TECNICI",
+                "slug": "ricerca-avanzata-archivio-tecnici-page"
+            },
+            {
+                "code": "lista-archivio-tecnici-page",
+                "label": "BREADCRUMB.LISTA-ARCHIVIO-TECNICI",
+                "slug": "lista-archivio-tecnici-page"
+            },
+            {
+                "code": "dettaglio-tecnico-page",
+                "label": "BREADCRUMB.DETTAGLIO-TECNICO",
+                "slug": "dettaglio-tecnico-page",
+                "additionalParams": "APP_COMMONS_TECNICO_PARAMS"
+            },
+            {
+                "code": "modifica-tecnico-page",
+                "label": "BREADCRUMB.MODIFICA-TECNICO",
+                "slug": "modifica-tecnico-page",
+                "additionalParams": "APP_COMMONS_TECNICO_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-tecnico-page-content-root-section",
+            "selector": "modifica-tecnico-section",
+            "description": "Pagina per la creazione di un nuovo avviso",
+            "classNames": "modifica-tecnico-section",
+            "settings": {
+                "classNames": "modifica-tecnico-index",
+                "sectionTitle": "TITLE.MODIFICA-TECNICO-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-dettaglio-tecnico",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_COMMONS_LISTA_TECNICI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-tecnico",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_COMMONS_TECNICO"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "rup-data",
+                            "label": "PROGRAMMA.DATI-RUP",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "cognome",
+                                    "label": "RUP.COGNOME",
+                                    "oggettoProtezione": "GENE.TECNI.COGTEI",
+                                    "mnemonico": "COGTEI",
+                                    "mappingInput": "cognome",
+                                    "mappingOutput": "cognome",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "RUP.COGNOME-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": 80
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "nome",
+                                    "label": "RUP.NOME",
+                                    "oggettoProtezione": "GENE.TECNI.NOMETEI",
+                                    "mnemonico": "NOMETEI",
+                                    "mappingInput": "nome",
+                                    "mappingOutput": "nome",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "RUP.NOME-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": 80
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "intestazione",
+                                    "label": "RUP.INTESTAZIONE",
+                                    "mappingInput": "nominativo",
+                                    "mappingOutput": "nominativo",
+                                    "oggettoProtezione": "GENE.TECNI.NOMTEC",
+                                    "mnemonico": "NOMTEC1",
+                                    "maxLength": 161
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "codice-fiscale",
+                                    "label": "RUP.CODICE-FISCALE",
+                                    "oggettoProtezione": "GENE.TECNI.CFTEC",
+                                    "mnemonico": "CFTEC1",
+                                    "mappingInput": "cf",
+                                    "mappingOutput": "cf",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "RUP.CODICE-FISCALE-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": 16
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "indirizzo",
+                                    "label": "RUP.INDIRIZZO",
+                                    "oggettoProtezione": "GENE.TECNI.INDTEC",
+                                    "mnemonico": "INDTEC1",
+                                    "mappingInput": "indirizzo",
+                                    "mappingOutput": "indirizzo",
+                                    "maxLength": 60
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "num-civico",
+                                    "label": "RUP.NUM-CIVICO",
+                                    "oggettoProtezione": "GENE.TECNI.NCITEC",
+                                    "mnemonico": "NCITEC1",
+                                    "mappingInput": "numCivico",
+                                    "mappingOutput": "numCivico",
+                                    "maxLength": 10
+                                },
+                                {
+                                    "type": "AUTOCOMPLETE",
+                                    "code": "comune",
+                                    "label": "RUP.COMUNE",
+                                    "oggettoProtezione": "GENE.TECNI.LOCTEC",
+                                    "mnemonico": "LOCTEC1",
+                                    "mappingInput": "comune",
+                                    "mappingOutput": "comune",
+                                    "noDataLabel": "NO-DATA",
+                                    "itemsProviderCode": "APP_PROGRAMMI_COMUNI_DESCRIZIONE",
+                                    "minSearchCharacters": 2
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "provincia",
+                                    "label": "RUP.PROVINCIA",
+                                    "oggettoProtezione": "GENE.TECNI.PROTEC",
+                                    "mnemonico": "PROTEC1",
+                                    "mappingInput": "provincia",
+                                    "mappingOutput": "provincia",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "regexp": "^.{0,2}$"
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "RUP.PROVINCIA-ERRATA"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": 2
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "cap",
+                                    "label": "RUP.CAP",
+                                    "oggettoProtezione": "GENE.TECNI.CAPTEC",
+                                    "mnemonico": "CAPTEC1",
+                                    "mappingInput": "cap",
+                                    "mappingOutput": "cap",
+                                    "maxLength": 5
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "cod-istat",
+                                    "label": "RUP.COD-ISTAT",
+                                    "oggettoProtezione": "GENE.TECNI.CITTEC",
+                                    "mnemonico": "G_CITTECI",
+                                    "mappingInput": "codIstat",
+                                    "mappingOutput": "codIstat",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "regexp": "^.{0,9}$"
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "RUP.ISTAT-ERRATO"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": 9
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "telefono",
+                                    "label": "RUP.TELEFONO",
+                                    "oggettoProtezione": "GENE.TECNI.TELTEC",
+                                    "mnemonico": "TELTEC1",
+                                    "mappingInput": "telefono",
+                                    "mappingOutput": "telefono",
+                                    "maxLength": 50
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "fax",
+                                    "label": "RUP.FAX",
+                                    "oggettoProtezione": "GENE.TECNI.FAXTEC",
+                                    "mnemonico": "FAXTEC1",
+                                    "mappingInput": "fax",
+                                    "mappingOutput": "fax",
+                                    "maxLength": 20
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "email",
+                                    "label": "RUP.EMAIL",
+                                    "oggettoProtezione": "GENE.TECNI.EMATEC",
+                                    "mnemonico": "G_EMATECI",
+                                    "mappingInput": "email",
+                                    "mappingOutput": "email",
+                                    "maxLength": 100
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

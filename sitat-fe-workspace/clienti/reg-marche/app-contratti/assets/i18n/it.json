@@ -1,0 +1,24 @@
+{
+    "LOGO-DESCRIPTION": "Logo della Regione MARCHE",
+    "APP-TITLE": "",
+    "APP-SUBTITLE": "",
+    "HOME-GARE-PAGE": {
+        "HEADER-TITLE-CONTENT": "Schede fase esecuzione",
+        "HEADER-DESCRIPTION": "Compilazione e trasmissione a BDNCP delle schede della fase di esecuzione del contratto"
+    },
+    "FOOTER": {
+        "SITENAME-TITLE": "A&C Esecuzione",
+        "SITENAME-SUBTITLE": "Appalti e Contratti",
+        "SITENAME-DESCRIPTION": "",
+        "LINK-ANAC": "Anac",
+        "LINK-SERVIZIO-CONTRATTI-PUBBLICI": "Servizio contratti pubblici (MIT)",
+        "LINK-BANDI-AVVISI-ESITI-GARA": "Consultazione Bandi, avvisi ed esiti di procedura",
+        "LINK-PROGRAMMAZIONE-LAVORI-BENI-SERVIZI": "Consultazione Programmazione lavori, beni e servizi",
+        "CONTACTS": {
+            "EMAIL": "Email"
+        }
+    },   
+    "APP-INFO-MODAL": {
+        "DEVELOPMENT_INFO": "<div class=\"img-logo\"><img src=\"assets/images/app/logo-black.png\" alt=\"Logo\" /></div>"
+    }
+}

@@ -1,0 +1,36 @@
+<div [class]="config.classNames" *ngIf="isReady">
+    <h1 class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }}</h1>
+    <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+    <div class="messages-box" #infoBox></div>
+    <div class="messages-box" #messages></div>
+
+    <div class="utenti-stazione-appaltante-container">
+        <div class="utenti-stazione-appaltante-content">
+            <table class="utenti-container"
+                *ngIf="utentiStazioneAppaltante != null && utentiStazioneAppaltante.length > 0"
+                [attr.aria-label]="config.sectionTitle | translate">
+                <thead>
+                    <tr>
+                        <th scope="col">{{ 'STAZIONE-APPALTANTE.UTENTI.DENOMINAZIONE' | translate }}</th>
+                        <th scope="col">{{ 'STAZIONE-APPALTANTE.UTENTI.CODICE-FISCALE' | translate }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="utenti-item" *ngFor="let ut of utentiStazioneAppaltante; trackBy: trackByCode">
+                        <td class="clickable" sdkClick (aClick)="loadUtente(ut)" tabindex="0" role="cell">{{ ut.nome }}
+                        </td>
+                        <td>{{ ut.cf }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="empty-list"
+                *ngIf="utentiStazioneAppaltante == null || (utentiStazioneAppaltante != null && utentiStazioneAppaltante.length == 0)">
+                {{ 'STAZIONE-APPALTANTE.UTENTI.EMPTY-UTENTI-STAZIONE-APPALTANTE' | translate }}
+            </div>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+# SdkGestioneUtenti
+
+## Installazione
+- Clonare il repository all'interno del progetto come per le altre librerie di SDK
+- Definire un file di nome "sdk-gestione-utenti.ts" all'interno della cartella "@maggioli" nella root del progetto esportando il contenuto di "public-api.ts" in maniera analoga alle altre librerie di SDK
+- Importare il modulo "SdkGestioneUtentiModule" nel modulo del progetto
+- Definire all'interno del file "app.elements.ts" i web component necessari
+- Aggiornare i files "tsconfig.json", "tsconfig-es5.json" e "angular.json" con le relative informazioni della libreria (prendere da esempio le configurazioni di Sitat)
+- Definire all'interno del file app.reducers.ts il reducer per la form di ricerca utenti
+- Definire i seguenti providers:
+  - "SDK_INTERNAL_LOGIN" per l'esecuzione dell'autenticazione (in ingresso arriveranno due parametri: token e refreshToken)
+  - "SDK_GESTIONE_UTENTI_TABELLATI_COMBO" a SdkGestioneUtentiTabellatiComboProvider per la gestione dei tabellati
+  - "SDK_GESTIONE_UTENTI_SEARCH" a SdkGestioneUtentiSearchProvider per la gestione della ricerca degli utenti
+  - "SDK_GESTIONE_UTENTI_LISTA" a SdkListaUtentiProvider per la gestione della lista degli utenti
+  - "SDK_GESTIONE_UTENTI_CHECK_NUOVO_UTENTE" a SdkCheckNuovoUtenteProvider per la gestione del controllo creazione utente
+  - "SDK_GESTIONE_UTENTI_UTENTE" a SdkUtenteProvider per la gestione dell'utente
+  - "SDK_GESTIONE_UTENTI_DETTAGLIO_UTENTE_PARAMS" a SdkDettaglioUtenteParamsProvider per la gestione dei parametri nella breadcrumb per il dettaglio utente
+  - "SDK_GESTIONE_UTENTI_UFFICIO_INTESTATARIO_AUTOCOMPLETE" a SdkUfficioIntestatarioAutocompleteProvider per l'autocomplete dell'ufficio intestatario
+  - "SDK_GESTIONE_UTENTI_PROFILO_AUTOCOMPLETE" a SdkProfiloAutocompleteProvider per l'autocomplete del profilo
+  - "SDK_GESTIONE_UTENTI_MENU_VISIBLE" a SdkGestioneUtentiMenuVisibleProvider per la gestione della visibilità dell'icona del modulo di gestione utenti nel menù
+  - "SDK_GESTIONE_UTENTI_PROFILI_UTENTE" a SdkProfiliUtenteProvider per la gestione dei profili utente
+  - "SDK_GESTIONE_UTENTI_STAZIONI_APPALTANTI_UTENTE" a SdkStazioniAppaltantiUtenteProvider per la gestione delle stazioni appaltanti/uffici intestatari dell'utente
+  - "SDK_GESTIONE_UTENTI_CAMBIA_PASSWORD_ADMIN_UTENTE" a SdkCambiaPasswordAdminUtenteProvider per la gestione del cambio password/reset dell'utente da parte dell'admin
+- Includere il contenuto del file "assets/it-example.json" alle traduzioni dell'applicativo (merge)
+- Questi sono gli errori previsti e gestiti in fase di autenticazione e cambio password:
+  - **LOGIN_UNAUTHORIZED**: Se l'utente non e' stato trovato oppure la vecchia password e' errata
+  - **LOGIN_MAX_TENTATIVI**: per indicare che la nuova password e la conferma password non corrispondono
+  - **LOGIN_ACCOUNT_EXPIRED**: Se l'account utente e' scaduto
+  - **LOGIN_PASSWORD_EXPIRED**: Se la password e' scaduta
+  - **LOGIN_FIRST_ACCESS**: Se e' il primo accesso
+  - **CHANGE_PASSWORD_SUCCESS**: Se il cambio password e' avvenuto con successo
+  - **CHANGE_PASSWORD_CONFIRM_PASSWORD_MISMATCH**: Per indicare che la nuova password e la conferma password non corrispondono
+  - **CHANGE_PASSWORD_LENGTH**: Se la lunghezza della nuova password inserita non corrisponde alla minima richiesta per utente
+  - **CHANGE_PASSWORD_LENGTH_ADMIN**: Se la lunghezza della nuova password inserita non corrisponde alla minima richiesta per amministratore
+  - **CHANGE_PASSWORD_COMPLEXITY_ALLOWED_CHARACTERS**: Sono stati inseriti nella nuova password dei caratteri non consentiti oppure non e' presente la tipologia di caratteri minimi richiesti
+  - **CHANGE_PASSWORD_COMPLEXITY_LOWER_CASE_CHARACTERS**: Nella nuova password non sono presenti caratteri in minuscolo
+  - **CHANGE_PASSWORD_COMPLEXITY_UPPER_CASE_CHARACTERS**: Nella nuova password non sono presenti caratteri in maiuscolo
+  - **CHANGE_PASSWORD_COMPLEXITY_NUMBERS_CHARACTERS**: Nella nuova password non sono presenti caratteri numerici
+  - **CHANGE_PASSWORD_COMPLEXITY_SPECIAL_CHARACTERS**: Nella nuova password non sono presenti caratteri speciali
+  - **CHANGE_PASSWORD_CONTENT_FOLLOWING_CHARACTERS**: La nuova password contiene 4 o piu' caratteri consecutivi che appartengono al nome utente
+  - **CHANGE_PASSWORD_ALREADY_USED**: La nuova password e' gia' stata utilizzata precedentemente
+  - **CHANGE_PASSWORD_CANNOT_CHANGE_TIME**: La password e' gia' stata cambiata di recente, e' necessario attendere un po' di tempo

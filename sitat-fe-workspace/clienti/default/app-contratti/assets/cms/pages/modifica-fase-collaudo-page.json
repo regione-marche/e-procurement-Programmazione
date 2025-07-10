@@ -1,0 +1,790 @@
+{
+    "name": "modifica-fase-collaudo-page",
+    "title": "TITLE.MODIFICA-FASE-COLLAUDO-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "modifica-fase-collaudo-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-collaudo-page",
+                "label": "BREADCRUMB.DETTAGLIO-FASE-COLLAUDO",
+                "slug": "dettaglio-fase-collaudo-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            },
+            {
+                "code": "modifica-fase-collaudo-page",
+                "label": "BREADCRUMB.MODIFICA-FASE-COLLAUDO",
+                "slug": "modifica-fase-collaudo-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-fase-collaudo-page-content-root-section",
+            "selector": "modifica-fase-collaudo-section",
+            "description": "Pagina di modifica fase di collaudo",
+            "classNames": "modifica-fase-collaudo-section",
+            "settings": {
+                "classNames": "modifica-fase-collaudo-index",
+                "sectionTitle": "TITLE.MODIFICA-FASE-COLLAUDO-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-dettaglio-fase",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_GARE_FASE_COLLAUDO_QUADRO_PROVIDER",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-fase",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_FASE_COLLAUDO_QUADRO_PROVIDER"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "collaudo-conformita-prestazioni-data",
+                            "label": "FASE-COLLAUDO.COLLAUDO-CONFORMITA-PRESTAZIONI.COLLAUDO-CONFORMITA-PRESTAZIONI-ESEGUITE",
+                                "fieldSections": [{
+                                    "type": "COMBOBOX",
+                                    "code": "tipo-collaudo",
+                                    "label": "FASE-COLLAUDO.COLLAUDO-CONFORMITA-PRESTAZIONI.TIPO-COLLAUDO",
+                                    "oggettoProtezione": "W9.W9COLL.TIPO_COLLAUDO",
+                                    "mnemonico": "W9COLLTIPOCOL",
+                                    "mappingInput": "tipoCollaudo",
+                                    "mappingOutput": "tipoCollaudo",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "TipoCollaudo",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "FASE-COLLAUDO.VALIDATORS.TIPO-COLLAUDO-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-regolare-esec",
+                                    "label": "FASE-COLLAUDO.COLLAUDO-CONFORMITA-PRESTAZIONI.DATA-REGOLARE-ESEC",
+                                    "oggettoProtezione": "W9.W9COLL.DATA_REGOLARE_ESEC",
+                                    "mnemonico": "W3DATA_REG",
+                                    "mappingInput": "dataCertEsecuzione",
+                                    "mappingOutput": "dataCertEsecuzione",
+                                    "visibleCondition": {
+                                        "or": {
+                                            "tipo-collaudo": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "!="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-collaudo-stat",
+                                    "label": "FASE-COLLAUDO.COLLAUDO-CONFORMITA-PRESTAZIONI.DATA-COLLAUDO-STAT",
+                                    "oggettoProtezione": "W9.W9COLL.DATA_COLLAUDO_STAT",
+                                    "mnemonico": "W3DATA_COL",
+                                    "mappingInput": "dataCollaudoStatico",
+                                    "mappingOutput": "dataCollaudoStatico"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "modo-collaudo",
+                                    "label": "FASE-COLLAUDO.COLLAUDO-CONFORMITA-PRESTAZIONI.MODO-COLLAUDO",
+                                    "oggettoProtezione": "W9.W9COLL.MODO_COLLAUDO",
+                                    "mnemonico": "W3MODO_COL",
+                                    "mappingInput": "modalitaCollaudo",
+                                    "mappingOutput": "modalitaCollaudo",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "ModoCollaudo",
+                                    "visibleCondition": {
+                                        "or": {
+                                            "tipo-collaudo": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "!="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-nomina-coll",
+                                    "label": "FASE-COLLAUDO.COLLAUDO-CONFORMITA-PRESTAZIONI.DATA-NOMINA-COLL",
+                                    "oggettoProtezione": "W9.W9COLL.DATA_NOMINA_COLL",
+                                    "mnemonico": "W3DATA_NOM",
+                                    "mappingInput": "dataNomina",
+                                    "mappingOutput": "dataNomina"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-iniz-oper",
+                                    "label": "FASE-COLLAUDO.COLLAUDO-CONFORMITA-PRESTAZIONI.DATA-INIZ-OPER",
+                                    "oggettoProtezione": "W9.W9COLL.DATA_INIZIO_OPER",
+                                    "mnemonico": "W3DINIZ_OP",
+                                    "mappingInput": "dataInizioOperazioni",
+                                    "mappingOutput": "dataInizioOperazioni"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-cert-collaudo",
+                                    "label": "FASE-COLLAUDO.COLLAUDO-CONFORMITA-PRESTAZIONI.DATA-CERT-COLLAUDO",
+                                    "oggettoProtezione": "W9.W9COLL.DATA_CERT_COLLAUDO",
+                                    "mnemonico": "W3DCERT_CO",
+                                    "mappingInput": "dataRedazioneCertificato",
+                                    "mappingOutput": "dataRedazioneCertificato",
+                                    "visibleCondition": {
+                                        "or": {
+                                            "tipo-collaudo": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "!="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-delibera",
+                                    "label": "FASE-COLLAUDO.COLLAUDO-CONFORMITA-PRESTAZIONI.DATA-DELIBERA",
+                                    "oggettoProtezione": "W9.W9COLL.DATA_DELIBERA",
+                                    "mnemonico": "W3DATA_DEL",
+                                    "mappingInput": "dataDelibera",
+                                    "mappingOutput": "dataDelibera"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "esito-collaudo",
+                                    "label": "FASE-COLLAUDO.COLLAUDO-CONFORMITA-PRESTAZIONI.ESITO-COLLAUDO",
+                                    "oggettoProtezione": "W9.W9COLL.ESITO_COLLAUDO",
+                                    "mnemonico": "W3ESITO_CO",
+                                    "mappingInput": "esitoCollaudo",
+                                    "mappingOutput": "esitoCollaudo",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "EsitoCollaudo"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "imp-finale-lavori",
+                                    "label": "FASE-COLLAUDO.COLLAUDO-CONFORMITA-PRESTAZIONI.IMP-FINALE-LAVORI",
+                                    "actionButtonLabel": "BUTTONS.ESEGUI-AZIONE",
+                                    "nomeCampo": "IMP_FINALE_LAVORI.W9COLL.W9",
+                                    "oggettoProtezione": "W9.W9COLL.IMP_FINALE_LAVORI",
+                                    "mnemonico": "W3IF_LAVOR",
+                                    "mappingInput": "importoFinaleLavori",
+                                    "mappingOutput": "importoFinaleLavori",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "imp-final-servizi",
+                                    "label": "FASE-COLLAUDO.COLLAUDO-CONFORMITA-PRESTAZIONI.IMP-FINAL-SERVIZI",
+                                    "actionButtonLabel": "BUTTONS.ESEGUI-AZIONE",
+                                    "nomeCampo": "IMP_FINALE_SERVIZI.W9COLL.W9",
+                                    "oggettoProtezione": "W9.W9COLL.IMP_FINALE_SERVIZI",
+                                    "mnemonico": "W3IF_SERVI",
+                                    "mappingInput": "importoFinaleServizi",
+                                    "mappingOutput": "importoFinaleServizi",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "imp-finale-forniture",
+                                    "label": "FASE-COLLAUDO.COLLAUDO-CONFORMITA-PRESTAZIONI.IMP-FINALE-FORNITURE",
+                                    "actionButtonLabel": "BUTTONS.ESEGUI-AZIONE",
+                                    "nomeCampo": "IMP_FINALE_FORNIT.W9COLL.W9",
+                                    "oggettoProtezione": "W9.W9COLL.IMP_FINALE_FORNIT",
+                                    "mnemonico": "W3IF_FORNI",
+                                    "mappingInput": "importoFinaleForniture",
+                                    "mappingOutput": "importoFinaleForniture",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "imp-subtotale",
+                                    "label": "FASE-COLLAUDO.COLLAUDO-CONFORMITA-PRESTAZIONI.IMP-SUBTOTALE",
+                                    "oggettoProtezione": "W9.W9COLL.IMP_SUBTOTALE",
+                                    "mnemonico": "W3IMPSUBT2",
+                                    "mappingInput": "importoSubtotale",
+                                    "mappingOutput": "importoSubtotale",
+                                    "decimals": 2,
+                                    "currency": true
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "imp-finale-secur",
+                                    "label": "FASE-COLLAUDO.COLLAUDO-CONFORMITA-PRESTAZIONI.IMP-FINALE-SECUR",
+                                    "actionButtonLabel": "BUTTONS.ESEGUI-AZIONE",
+                                    "nomeCampo": "IMP_FINALE_SECUR.W9COLL.W9",
+                                    "oggettoProtezione": "W9.W9COLL.IMP_FINALE_SECUR",
+                                    "mnemonico": "W3IF_SECUR",
+                                    "mappingInput": "importoFinaleSicurezza",
+                                    "mappingOutput": "importoFinaleSicurezza",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "imp-progettazione",
+                                    "label": "FASE-COLLAUDO.COLLAUDO-CONFORMITA-PRESTAZIONI.IMP-PROGETTAZIONE",
+                                    "actionButtonLabel": "BUTTONS.ESEGUI-AZIONE",
+                                    "nomeCampo": "IMP_PROGETTAZIONE.W9COLL.W9",
+                                    "oggettoProtezione": "W9.W9COLL.IMP_PROGETTAZIONE",
+                                    "mnemonico": "W3IMP_PROG",
+                                    "mappingInput": "importoProgettazione",
+                                    "mappingOutput": "importoProgettazione",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "imp-non-assog",
+                                    "label": "FASE-COLLAUDO.COLLAUDO-CONFORMITA-PRESTAZIONI.IMP-NON-ASSOG",
+                                    "actionButtonLabel": "BUTTONS.ESEGUI-AZIONE",
+                                    "nomeCampo": "IMP_NON_ASSOG.W9COLL.W9",
+                                    "oggettoProtezione": "W9.W9COLL.IMP_NON_ASSOG",
+                                    "mnemonico": "W9COLL_IMPNONAS",
+                                    "mappingInput": "impNonAssog",
+                                    "mappingOutput": "impNonAssog",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "imp-compl-appalto",
+                                    "label": "FASE-COLLAUDO.COLLAUDO-CONFORMITA-PRESTAZIONI.IMP-COMPL-APPALTO",
+                                    "oggettoProtezione": "W9.W9COLL.IMP_COMPL_APPALTO",
+                                    "mnemonico": "W3IMPCOMA2",
+                                    "mappingInput": "importoComplessivoAppalto",
+                                    "mappingOutput": "importoComplessivoAppalto",
+                                    "decimals": 2,
+                                    "currency": true
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "imp-disposizione",
+                                    "label": "FASE-COLLAUDO.COLLAUDO-CONFORMITA-PRESTAZIONI.IMP-DISPOSIZIONE",
+                                    "actionButtonLabel": "BUTTONS.ESEGUI-AZIONE",
+                                    "nomeCampo": "IMP_DISPOSIZIONE.W9COLL.W9",
+                                    "oggettoProtezione": "W9.W9COLL.IMP_DISPOSIZIONE",
+                                    "mnemonico": "W3IMP_DIS2",
+                                    "mappingInput": "importoDisposizione",
+                                    "mappingOutput": "importoDisposizione",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "imp-finale-opzioni",
+                                    "label": "FASE-COLLAUDO.COLLAUDO-CONFORMITA-PRESTAZIONI.IMP-FINALE-OPZIONI",
+                                    "actionButtonLabel": "BUTTONS.ESEGUI-AZIONE",
+                                    "nomeCampo": "IMP_FINALE_OPZIONI.W9COLL.W9",
+                                    "oggettoProtezione": "W9.W9COLL.IMP_FINALE_OPZIONI",
+                                    "mnemonico": "W9COLL_IMPOPZ",
+                                    "mappingInput": "impFinaleOpzioni",
+                                    "mappingOutput": "impFinaleOpzioni",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "imp-finale-ripetizioni",
+                                    "label": "FASE-COLLAUDO.COLLAUDO-CONFORMITA-PRESTAZIONI.IMP-FINALE-RIPETIZIONI",
+                                    "actionButtonLabel": "BUTTONS.ESEGUI-AZIONE",
+                                    "nomeCampo": "IMP_FINALE_RIPETIZIONI.W9COLL.W9",
+                                    "oggettoProtezione": "W9.W9COLL.IMP_FINALE_RIPETIZIONI",
+                                    "mnemonico": "W9COLL_IMPRIP",
+                                    "mappingInput": "impFinaleRipetizioni",
+                                    "mappingOutput": "impFinaleRipetizioni",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "imp-compl-intervento",
+                                    "label": "FASE-COLLAUDO.COLLAUDO-CONFORMITA-PRESTAZIONI.IMP-COMPL-INTERVENTO",
+                                    "oggettoProtezione": "W9.W9COLL.IMP_COMPL_INTERVENTO",
+                                    "mnemonico": "W3IMPCOMI2",
+                                    "mappingInput": "importoComplessivoIntervento",
+                                    "mappingOutput": "importoComplessivoIntervento",
+                                    "decimals": 2,
+                                    "currency": true
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "lavori-estesi",
+                                    "label": "FASE-COLLAUDO.COLLAUDO-CONFORMITA-PRESTAZIONI.LAVORI-ESTESI",
+                                    "oggettoProtezione": "W9.W9COLL.LAVORI_ESTESI",
+                                    "mnemonico": "W3COLLLEST",
+                                    "mappingInput": "lavoriEstesi",
+                                    "mappingOutput": "lavoriEstesi",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "contenzioso-data",
+                            "label": "FASE-COLLAUDO.CONTENZIOSO.CONTENZIOSO",
+                            "fieldSections": [
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "num-riserve",
+                                    "label": "FASE-COLLAUDO.CONTENZIOSO.NUM-RISERVE",
+                                    "oggettoProtezione": "W9.W9COLL.",
+                                    "mnemonico": "",
+                                    "mappingInput": "numRiserve",
+                                    "mappingOutput": "numRiserve"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "oneri-derivanti",
+                                    "label": "FASE-COLLAUDO.CONTENZIOSO.ONERI-DERIVANTI",
+                                    "actionButtonLabel": "BUTTONS.ESEGUI-AZIONE",
+                                    "nomeCampo": "ONERI_DERIVANTI.W9COLL.W9",
+                                    "oggettoProtezione": "W9.W9COLL.",
+                                    "mnemonico": "",
+                                    "mappingInput": "oneriDerivanti",
+                                    "mappingOutput": "oneriDerivanti",
+                                    "decimals": 2,
+                                    "currency": true
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "ulteriori-riserve-in-via-amministrativa-data",
+                            "label": "FASE-COLLAUDO.ULTERIORI-RISERVE-IN-VIA-AMMINISTRATIVA.ULTERIORI-RISERVE-IN-VIA-AMMINISTRATIVA",
+                            "fieldSections": [
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "amm-importo-def",
+                                    "label": "FASE-COLLAUDO.ULTERIORI-RISERVE-IN-VIA-AMMINISTRATIVA.AMM-IMPORTO-DEF",
+                                    "actionButtonLabel": "BUTTONS.ESEGUI-AZIONE",
+                                    "nomeCampo": "AMM_IMPORTO_DEF.W9COLL.W9",
+                                    "oggettoProtezione": "W9.W9COLL.AMM_IMPORTO_DEF",
+                                    "mnemonico": "W3AMM_IDEF",
+                                    "mappingInput": "importoEventualeDefAmm",
+                                    "mappingOutput": "importoEventualeDefAmm",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "amm-num-definitive",
+                                    "label": "FASE-COLLAUDO.ULTERIORI-RISERVE-IN-VIA-AMMINISTRATIVA.AMM-NUM-DEFINITIVE",
+                                    "oggettoProtezione": "W9.W9COLL.AMM_NUM_DEFINITE",
+                                    "mnemonico": "W3AMM_DEF",
+                                    "mappingInput": "numeroRiserveDefiniteAmm",
+                                    "mappingOutput": "numeroRiserveDefiniteAmm",
+                                    "decimals": 2,
+                                    "maxLength": 5
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "amm-num-dadef",
+                                    "label": "FASE-COLLAUDO.ULTERIORI-RISERVE-IN-VIA-AMMINISTRATIVA.AMM-NUM-DADEF",
+                                    "oggettoProtezione": "W9.W9COLL.AMM_NUM_DADEF",
+                                    "mnemonico": "W3AMM_DADE",
+                                    "mappingInput": "numeroRiserveDaDefinireAmm",
+                                    "mappingOutput": "numeroRiserveDaDefinireAmm",
+                                    "decimals": 2,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "amm-imp-richiesto",
+                                    "label": "FASE-COLLAUDO.ULTERIORI-RISERVE-IN-VIA-AMMINISTRATIVA.AMM-IMP-RICHIESTO",
+                                    "actionButtonLabel": "BUTTONS.ESEGUI-AZIONE",
+                                    "nomeCampo": "AMM_IMPORTO_RICH.W9COLL.W9",
+                                    "oggettoProtezione": "W9.W9COLL.AMM_IMPORTO_RICH",
+                                    "mnemonico": "W3AMM_IRIC",
+                                    "mappingInput": "importoTotaleRichiestoAmm",
+                                    "mappingOutput": "importoTotaleRichiestoAmm",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "ulteriori-riserve-in-via-arbitrale-data",
+                            "label": "FASE-COLLAUDO.ULTERIORI-RISERVE-IN-VIA-ARBITRALE.ULTERIORI-RISERVE-IN-VIA-ARBITRALE",
+                            "fieldSections": [
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "arb-importo-def",
+                                    "label": "FASE-COLLAUDO.ULTERIORI-RISERVE-IN-VIA-ARBITRALE.ARB-IMPORTO-DEF",
+                                    "actionButtonLabel": "BUTTONS.ESEGUI-AZIONE",
+                                    "nomeCampo": "ARB_IMPORTO_DEF.W9COLL.W9",
+                                    "oggettoProtezione": "W9.W9COLL.ARB_IMPORTO_DEF",
+                                    "mnemonico": "W3ARB_IDEF",
+                                    "mappingInput": "importoEventualeDefArb",
+                                    "mappingOutput": "importoEventualeDefArb",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "arb-num-definitive",
+                                    "label": "FASE-COLLAUDO.ULTERIORI-RISERVE-IN-VIA-ARBITRALE.ARB-NUM-DEFINITIVE",
+                                    "oggettoProtezione": "W9.W9COLL.ARB_NUM_DEFINITE",
+                                    "mnemonico": "W3ARB_DEF",
+                                    "mappingInput": "numeroRiserveDefiniteArb",
+                                    "mappingOutput": "numeroRiserveDefiniteArb",
+                                    "decimals": 2,
+                                    "maxLength": 5
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "arb-num-dadef",
+                                    "label": "FASE-COLLAUDO.ULTERIORI-RISERVE-IN-VIA-ARBITRALE.ARB-NUM-DADEF",
+                                    "oggettoProtezione": "W9.W9COLL.ARB_NUM_DADEF",
+                                    "mnemonico": "W3ARB_DADE",
+                                    "mappingInput": "numeroRiserveDaDefinireArb",
+                                    "mappingOutput": "numeroRiserveDaDefinireArb",
+                                    "decimals": 2,
+                                    "maxLength": 5
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "arb-imp-richiesto",
+                                    "label": "FASE-COLLAUDO.ULTERIORI-RISERVE-IN-VIA-ARBITRALE.ARB-IMP-RICHIESTO",
+                                    "actionButtonLabel": "BUTTONS.ESEGUI-AZIONE",
+                                    "nomeCampo": "ARB_IMPORTO_RICH.W9COLL.W9",
+                                    "oggettoProtezione": "W9.W9COLL.ARB_IMPORTO_RICH",
+                                    "mnemonico": "W3ARB_IRIC",
+                                    "mappingInput": "importoTotaleRichiestoArb",
+                                    "mappingOutput": "importoTotaleRichiestoArb",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "ulteriori-riserve-in-via-giudiziale-data",
+                            "label": "FASE-COLLAUDO.ULTERIORI-RISERVE-IN-VIA-GIUDIZIALE.ULTERIORI-RISERVE-IN-VIA-GIUDIZIALE",
+                            "fieldSections": [
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "giu-importo-def",
+                                    "label": "FASE-COLLAUDO.ULTERIORI-RISERVE-IN-VIA-GIUDIZIALE.GIU-IMPORTO-DEF",
+                                    "actionButtonLabel": "BUTTONS.ESEGUI-AZIONE",
+                                    "nomeCampo": "GIU_IMPORTO_DEF.W9COLL.W9",
+                                    "oggettoProtezione": "W9.W9COLL.GIU_IMPORTO_DEF",
+                                    "mnemonico": "W3GIU_IDEF",
+                                    "mappingInput": "importoEventualeDefGiu",
+                                    "mappingOutput": "importoEventualeDefGiu",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "giu-num-definitive",
+                                    "label": "FASE-COLLAUDO.ULTERIORI-RISERVE-IN-VIA-GIUDIZIALE.GIU-NUM-DEFINITIVE",
+                                    "oggettoProtezione": "W9.W9COLL.GIU_NUM_DEFINITE",
+                                    "mnemonico": "W3GIU_DEF",
+                                    "mappingInput": "numeroRiserveDefiniteGiu",
+                                    "mappingOutput": "numeroRiserveDefiniteGiu",
+                                    "decimals": 2,
+                                    "maxLength": 5
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "giu-num-dadef",
+                                    "label": "FASE-COLLAUDO.ULTERIORI-RISERVE-IN-VIA-GIUDIZIALE.GIU-NUM-DADEF",
+                                    "oggettoProtezione": "W9.W9COLL.GIU_NUM_DADEF",
+                                    "mnemonico": "W3GIU_DADE",
+                                    "mappingInput": "numeroRiserveDaDefinireGiu",
+                                    "mappingOutput": "numeroRiserveDaDefinireGiu",
+                                    "decimals": 2,
+                                    "maxLength": 5
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "giu-imp-richiesto",
+                                    "label": "FASE-COLLAUDO.ULTERIORI-RISERVE-IN-VIA-GIUDIZIALE.GIU-IMP-RICHIESTO",
+                                    "actionButtonLabel": "BUTTONS.ESEGUI-AZIONE",
+                                    "nomeCampo": "GIU_IMPORTO_RICH.W9COLL.W9",
+                                    "oggettoProtezione": "W9.W9COLL.GIU_IMPORTO_RICH",
+                                    "mnemonico": "W3GIU_IRIC",
+                                    "mappingInput": "importoTotaleRichiestoGiu",
+                                    "mappingOutput": "importoTotaleRichiestoGiu",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "ulteriori-riserve-in-via-transattiva-data",
+                            "label": "FASE-COLLAUDO.ULTERIORI-RISERVE-IN-VIA-TRANSATTIVA.ULTERIORI-RISERVE-IN-VIA-TRANSATTIVA",
+                            "fieldSections": [
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "tra-importo-def",
+                                    "label": "FASE-COLLAUDO.ULTERIORI-RISERVE-IN-VIA-TRANSATTIVA.TRA-IMPORTO-DEF",
+                                    "actionButtonLabel": "BUTTONS.ESEGUI-AZIONE",
+                                    "nomeCampo": "TRA_IMPORTO_DEF.W9COLL.W9",
+                                    "oggettoProtezione": "W9.W9COLL.TRA_IMPORTO_DEF",
+                                    "mnemonico": "W3TRA_IDEF",
+                                    "mappingInput": "importoEventualeDefTra",
+                                    "mappingOutput": "importoEventualeDefTra",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "tra-num-definitive",
+                                    "label": "FASE-COLLAUDO.ULTERIORI-RISERVE-IN-VIA-TRANSATTIVA.TRA-NUM-DEFINITIVE",
+                                    "oggettoProtezione": "W9.W9COLL.TRA_NUM_DEFINITE",
+                                    "mnemonico": "W3TRA_DEF",
+                                    "mappingInput": "numeroRiserveDefiniteTra",
+                                    "mappingOutput": "numeroRiserveDefiniteTra",
+                                    "decimals": 2,
+                                    "maxLength": 5
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "tra-num-dadef",
+                                    "label": "FASE-COLLAUDO.ULTERIORI-RISERVE-IN-VIA-TRANSATTIVA.TRA-NUM-DADEF",
+                                    "oggettoProtezione": "W9.W9COLL.TRA_NUM_DADEF",
+                                    "mnemonico": "W3TRA_DADE",
+                                    "mappingInput": "numeroRiserveDaDefinireTra",
+                                    "mappingOutput": "numeroRiserveDaDefinireTra",
+                                    "decimals": 2,
+                                    "maxLength": 5
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "tra-imp-richiesto",
+                                    "label": "FASE-COLLAUDO.ULTERIORI-RISERVE-IN-VIA-TRANSATTIVA.TRA-IMP-RICHIESTO",
+                                    "actionButtonLabel": "BUTTONS.ESEGUI-AZIONE",
+                                    "nomeCampo": "TRA_IMPORTO_RICH.W9COLL.W9",
+                                    "oggettoProtezione": "W9.W9COLL.TRA_IMPORTO_RICH",
+                                    "mnemonico": "W3TRA_IRIC",
+                                    "mappingInput": "importoTotaleRichiestoTra",
+                                    "mappingOutput": "importoTotaleRichiestoTra",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "altri-dati-data",
+                            "label": "FASE-COLLAUDO.ALTRI-DATI.ALTRI-DATI",
+                            "visible": false,
+                            "fieldSections": [
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "flag-singolo-commissione",
+                                    "label": "FASE-COLLAUDO.ALTRI-DATI.FLAG-SINGOLO-COMMISSIONE",
+                                    "oggettoProtezione": "W9.W9COLL.FLAG_SINGOLO_COMMISSIONE",
+                                    "mnemonico": "W9COLLFLSIC",
+                                    "mappingInput": "flagSingoloCommissione",
+                                    "mappingOutput": "flagSingoloCommissione",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "FlagSingoloCommissione"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-approvazione",
+                                    "label": "FASE-COLLAUDO.ALTRI-DATI.DATA-APPROVAZIONE",
+                                    "oggettoProtezione": "W9.W9COLL.DATA_APPROVAZIONE",
+                                    "mnemonico": "W9COLLDTAPPROV",
+                                    "mappingInput": "dataApprovazione",
+                                    "mappingOutput": "dataApprovazione"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "flag-importi",
+                                    "label": "FASE-COLLAUDO.ALTRI-DATI.FLAG-IMPORTI",
+                                    "oggettoProtezione": "W9.W9COLL.FLAG_IMPORTI",
+                                    "mnemonico": "W9COLLFLIMP",
+                                    "mappingInput": "flagImporti",
+                                    "mappingOutput": "flagImporti",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "FlagImporti"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "flag-sicurezza",
+                                    "label": "FASE-COLLAUDO.ALTRI-DATI.FLAG-SICUREZZA",
+                                    "oggettoProtezione": "W9.W9COLL.FLAG_SICUREZZA",
+                                    "mnemonico": "W9COLLFLSICUR",
+                                    "mappingInput": "flagSicurezza",
+                                    "mappingOutput": "flagSicurezza",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "FlagImporti"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "flag-subappaltatori",
+                                    "label": "FASE-COLLAUDO.ALTRI-DATI.FLAG-SUBAPPALTATORI",
+                                    "oggettoProtezione": "W9.W9COLL.FLAG_SUBAPPALTATORI",
+                                    "mnemonico": "W9COLLFLSUBAP",
+                                    "mappingInput": "flagSubappaltatori",
+                                    "mappingOutput": "flagSubappaltatori",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-inizio-amm-riserve",
+                                    "label": "FASE-COLLAUDO.ALTRI-DATI.DATA-INIZIO-AMM-RISERVE",
+                                    "oggettoProtezione": "W9.W9COLL.DATA_INIZIO_AMM_RISERVE",
+                                    "mnemonico": "W9COLLDTINAMMRI",
+                                    "mappingInput": "dataInizioRiserveAmm",
+                                    "mappingOutput": "dataInizioRiserveAmm"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-inizio-arb-riserve",
+                                    "label": "FASE-COLLAUDO.ALTRI-DATI.DATA-INIZIO-ARB-RISERVE",
+                                    "oggettoProtezione": "W9.W9COLL.DATA_INIZIO_ARB_RISERVE",
+                                    "mnemonico": "W9COLLDTINARBRI",
+                                    "mappingInput": "dataInizioRiserveArb",
+                                    "mappingOutput": "dataInizioRiserveArb"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-inizio-giu-riserve",
+                                    "label": "FASE-COLLAUDO.ALTRI-DATI.DATA-INIZIO-GIU-RISERVE",
+                                    "oggettoProtezione": "W9.W9COLL.DATA_INIZIO_GIU_RISERVE",
+                                    "mnemonico": "W9COLLDTINGIURI",
+                                    "mappingInput": "dataInizioRiserveGiu",
+                                    "mappingOutput": "dataInizioRiserveGiu"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-inizio-tra-riserve",
+                                    "label": "FASE-COLLAUDO.ALTRI-DATI.DATA-INIZIO-TRA-RISERVE",
+                                    "oggettoProtezione": "W9.W9COLL.DATA_INIZIO_TRA_RISERVE",
+                                    "mnemonico": "W9COLLDTINTRARI",
+                                    "mappingInput": "dataInizioRiserveTra",
+                                    "mappingOutput": "dataInizioRiserveTra"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-fine-amm-riserve",
+                                    "label": "FASE-COLLAUDO.ALTRI-DATI.DATA-FINE-AMM-RISERVE",
+                                    "oggettoProtezione": "W9.W9COLL.DATA_FINE_AMM_RISERVE",
+                                    "mnemonico": "W9COLLDTFIAMMRI",
+                                    "mappingInput": "dataFineRiserveAmm",
+                                    "mappingOutput": "dataFineRiserveAmm"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-fine-arb-riserve",
+                                    "label": "FASE-COLLAUDO.ALTRI-DATI.DATA-FINE-ARB-RISERVE",
+                                    "oggettoProtezione": "W9.W9COLL.DATA_FINE_ARB_RISERVE",
+                                    "mnemonico": "W9COLLDTFIARBRI",
+                                    "mappingInput": "dataFineRiserveArb",
+                                    "mappingOutput": "dataFineRiserveArb"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-fine-giu-riserve",
+                                    "label": "FASE-COLLAUDO.ALTRI-DATI.DATA-FINE-GIU-RISERVE",
+                                    "oggettoProtezione": "W9.W9COLL.DATA_FINE_GIU_RISERVE",
+                                    "mnemonico": "W9COLLDTFIGIURI",
+                                    "mappingInput": "dataFineRiserveGiu",
+                                    "mappingOutput": "dataFineRiserveGiu"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-fine-tra-riserve",
+                                    "label": "FASE-COLLAUDO.ALTRI-DATI.DATA-FINE-TRA-RISERVE",
+                                    "oggettoProtezione": "W9.W9COLL.DATA_FINE_TRA_RISERVE",
+                                    "mnemonico": "W9COLLDTFITRARI",
+                                    "mappingInput": "dataFineRiserveTra",
+                                    "mappingOutput": "dataFineRiserveTra"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

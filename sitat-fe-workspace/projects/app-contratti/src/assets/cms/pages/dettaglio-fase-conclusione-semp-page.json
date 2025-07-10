@@ -1,0 +1,341 @@
+{
+    "name": "dettaglio-fase-conclusione-semp-page",
+    "title": "TITLE.DETTAGLIO-FASE-CONCLUSIONE-SEMP-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [
+        "assets/cms/pages/pubblica-fase-lotto-page.css"
+    ],
+    "settings": {
+        "page": "dettaglio-fase-conclusione-semp-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-conclusione-semp-page",
+                "label": "BREADCRUMB.DETTAGLIO-FASE-CONCLUSIONE-SEMP",
+                "slug": "dettaglio-fase-conclusione-semp-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-fase-conclusione-semp-page-content-root-section",
+            "selector": "dettaglio-fase-conclusione-semp-section",
+            "description": "Pagina di dettaglio fase di conclusione semplificata",
+            "classNames": "dettaglio-fase-conclusione-semp-section",
+            "settings": {
+                "classNames": "dettaglio-fase-conclusione-semp-index",
+                "sectionTitle": "TITLE.DETTAGLIO-FASE-CONCLUSIONE-SEMP-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-fasi-lotto",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "check-pubblicazione",
+                            "label": "BUTTONS.CHECK-DATA",
+                            "provider": "APP_FASI_LOTTO_PUBBLICA",
+                            "oggettoProtezione": "ALT.W9.FasiDiGara-schede.ControlloDatiInseriti",
+                            "type": "functions",
+                            "icon": "mgg-icons-document-text"
+                        },
+                        {
+                            "code": "go-to-update-fase",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "APP_GARE_FASE_CONCLUSIONE_SEMP_QUADRO_PROVIDER",
+                            "oggettoProtezione": "MOD.*"
+                        }
+                    ],
+                    "sidebar": {
+                        "code": "sidebar",
+                        "position": "right",
+                        "width": 500,
+                        "classList": [
+                            "check-pubb-sidebar"
+                        ],
+                        "headerImage": "assets/images/app/logo.png",
+                        "component": "check-pubblicazione-widget",
+                        "componentConfig": {}
+                    },
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "interruzione-anticipata-data",
+                            "label": "FASE-CONCLUSIONE-SEMP.INTERRUZIONE-ANTICIPATA-DATA.INTERRUZIONE-ANTICIPATA-PROCEDIMENTO",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "intantic",
+                                    "label": "FASE-CONCLUSIONE-SEMP.INTERRUZIONE-ANTICIPATA-DATA.INTANTIC",
+                                    "oggettoProtezione": "W9.W9CONC.INTANTIC",
+                                    "mnemonico": "W3CSINTANT",
+                                    "mappingInput": "interruzioneAnticipata",
+                                    "mappingOutput": "interruzioneAnticipata",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "HIDDEN",
+                                    "code": "exists-iniz",
+                                    "mappingInput": "faseInizialeExists"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "id-motivo-interr",
+                                    "label": "FASE-CONCLUSIONE-SEMP.INTERRUZIONE-ANTICIPATA-DATA.ID-MOTIVO-INTERR",
+                                    "oggettoProtezione": "W9.W9CONC.ID_MOTIVO_INTERR",
+                                    "mnemonico": "W3ID_MOTI1",
+                                    "mappingInput": "motivoInterruzione",
+                                    "mappingOutput": "motivoInterruzione",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "MotivoInterruzione",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "intantic": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "id-motivo-risol",
+                                    "label": "FASE-CONCLUSIONE-SEMP.INTERRUZIONE-ANTICIPATA-DATA.ID-MOTIVO-RISOL",
+                                    "oggettoProtezione": "W9.W9CONC.ID_MOTIVO_RISOL",
+                                    "mnemonico": "W3ID_MOTI2",
+                                    "mappingInput": "motivoRisoluzione",
+                                    "mappingOutput": "motivoRisoluzione",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "MotivoRisoluzione",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "and": {
+                                            "intantic": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            },
+                                            "id-motivo-interr": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-risoluzione",
+                                    "label": "FASE-CONCLUSIONE-SEMP.INTERRUZIONE-ANTICIPATA-DATA.DATA-RISOLUZIONE",
+                                    "oggettoProtezione": "W9.W9CONC.DATA_RISOLUZIONE",
+                                    "mnemonico": "W3DATA_RIS",
+                                    "mappingInput": "dataRisoluzione",
+                                    "mappingOutput": "dataRisoluzione",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "and": {
+                                            "id-motivo-interr": {
+                                                "values": [
+                                                    {
+                                                        "value": null,
+                                                        "operation": "!="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "flag-oneri",
+                                    "label": "FASE-CONCLUSIONE-SEMP.INTERRUZIONE-ANTICIPATA-DATA.FLAG-ONERI",
+                                    "oggettoProtezione": "W9.W9CONC.FLAG_ONERI",
+                                    "mnemonico": "W3FLAG_ONE",
+                                    "mappingInput": "flagOneri",
+                                    "mappingOutput": "flagOneri",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "FlagOneri",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "id-motivo-interr": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    },
+                                                    {
+                                                        "value": "4",
+                                                        "operation": "="
+                                                    },
+                                                    {
+                                                        "value": "5",
+                                                        "operation": "="
+                                                    },
+                                                    {
+                                                        "value": "6",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "oneri-risoluzione",
+                                    "label": "FASE-CONCLUSIONE-SEMP.INTERRUZIONE-ANTICIPATA-DATA.ONERI-RISOLUZIONE",
+                                    "oggettoProtezione": "W9.W9CONC.ONERI_RISOLUZIONE",
+                                    "mnemonico": "W3ONERI_RI",
+                                    "mappingInput": "importoOneri",
+                                    "mappingOutput": "importoOneri",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "and": {
+                                            "flag-oneri": {
+                                                "values": [
+                                                    {
+                                                        "value": "0",
+                                                        "operation": "!="
+                                                    },
+                                                    {
+                                                        "value": "",
+                                                        "operation": "!="
+                                                    },
+                                                    {
+                                                        "value": null,
+                                                        "operation": "!="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "flag-polizza",
+                                    "label": "FASE-CONCLUSIONE-SEMP.INTERRUZIONE-ANTICIPATA-DATA.FLAG-POLIZZA",
+                                    "oggettoProtezione": "W9.W9CONC.FLAG_POLIZZA",
+                                    "mnemonico": "W3FLAG_POL",
+                                    "mappingInput": "flagPolizza",
+                                    "mappingOutput": "flagPolizza",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino",
+                                    "visible": false,
+                                    "visibleCondition": {
+                                        "or": {
+                                            "intantic": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "ultimazione-lavori-data",
+                            "label": "FASE-CONCLUSIONE-SEMP.ULTIMAZIONE-LAVORI-DATA.ULTIMAZIONE-LAVORI",
+                            "visible": false,
+                            "visibleCondition": {
+                                "or": {
+                                    "exists-iniz": {
+                                        "values": [
+                                            {
+                                                "value": true,
+                                                "operation": "="
+                                            }
+                                        ],
+                                        "visible": false
+                                    }
+                                }
+                            },
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "data-ultimazione",
+                                    "label": "FASE-CONCLUSIONE-SEMP.ULTIMAZIONE-LAVORI-DATA.DATA-ULTIMAZIONE",
+                                    "oggettoProtezione": "W9.W9CONC.DATA_ULTIMAZIONE",
+                                    "mnemonico": "W3DATA_ULT",
+                                    "mappingInput": "dataUltimazione",
+                                    "mappingOutput": "dataUltimazione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "ore-lavorate",
+                                    "label": "FASE-CONCLUSIONE-SEMP.ULTIMAZIONE-LAVORI-DATA.ORE-LAVORATE",
+                                    "oggettoProtezione": "W9.W9CONC.ORE_LAVORATE",
+                                    "mnemonico": "W9COORELAVO",
+                                    "mappingInput": "oreLavorate",
+                                    "mappingOutput": "oreLavorate",
+                                    "decimals": 0
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

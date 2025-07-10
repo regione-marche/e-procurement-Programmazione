@@ -1,0 +1,27 @@
+<h1 class="page-title">{{ 'TITLE.SSO-LOGIN-PAGE' | translate }}</h1>
+<div class="sso-loading-message" *ngIf="!showSpidButton">  
+  <div class="back-text">{{ 'LOGIN-PAGE.SSO-LOADING-MESSAGE' | translate }}</div>
+</div>
+<div class="back-sso" (click)="goBack()" tabindex="0" role="navigation">
+  <i class="mgg-icons-action-back"></i>
+  <div class="back-text">{{ 'LOGIN-PAGE.SSO-BACK-BUTTON' | translate }}</div>
+</div>
+<div class="spid-button" (click)="showMenu()" *ngIf="showSpidButton">
+  <span class="spid-button-icon"><i class="fas fa-key" ></i></span>
+  <span class="spid-button-text">Entra con SPID</span>
+</div>
+<ul class="spid-button-menu" *ngIf="visibleMenu">
+  <li *ngFor="let provider of providers" class="spid-element">
+    <a (click)="getSpidUrl(provider.id)" href="javascript:(void(0))">
+    <img class="spid-provider-img" src="{{provider.img}}" /></a>
+  </li>
+  <li class="spid-support-link">
+      <a href="https://www.spid.gov.it" target="blank">Maggiori informazioni</a>
+  </li>
+  <li class="spid-support-link">
+      <a href="https://www.spid.gov.it/richiedi-spid" target="blank">Non hai SPID?</a>
+  </li>
+  <li class="spid-support-link">
+      <a href="https://www.spid.gov.it/serve-aiuto" target="blank">Serve aiuto?</a>
+  </li>
+</ul>

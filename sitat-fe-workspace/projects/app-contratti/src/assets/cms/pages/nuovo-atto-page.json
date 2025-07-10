@@ -1,0 +1,403 @@
+{
+    "name": "nuovo-atto-page",
+    "title": "TITLE.NUOVO-ATTO-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "nuovo-atto-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-atti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-atti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "nuovo-atto-page",
+                "label": "BREADCRUMB.NUOVO-ATTO",
+                "slug": "nuovo-atto-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "nuovo-atto-page-content-root-section",
+            "selector": "nuovo-atto-section",
+            "description": "Pagina di nuovo atto",
+            "classNames": "nuovo-atto-section",
+            "settings": {
+                "classNames": "nuovo-atto-index",
+                "sectionTitle": "TITLE.NUOVO-ATTO-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-atti",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_GARE_LISTA_ATTI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-atto",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_ATTO"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "ATTO.GENERAL-DATA.GENERAL-DATA",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "tipologia-pubblicazione",
+                                    "label": "ATTO.GENERAL-DATA.TIPOLOGIA-PUBBLICAZIONE",
+                                    "oggettoProtezione": "W9.W9PUBBLICAZIONI.TIPDOC",
+                                    "mnemonico": "W9PBTIPDOC",
+                                    "mappingInput": "tipDoc"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "descrizione",
+                                    "label": "ATTO.GENERAL-DATA.DESCRIZIONE",
+                                    "oggettoProtezione": "W9.W9PUBBLICAZIONI.DESCRIZ",
+                                    "mnemonico": "W9PBDESCRIZ",
+                                    "mappingOutput": "descriz",
+                                    "maxLength": 100
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "primaPubblicazione",
+                                    "label": "ATTO.GENERAL-DATA.PRIMA-PUBB",
+                                    "mappingInput": "primaPubblicazione",
+                                    "mappingOutput": "primaPubblicazione",
+                                    "listCode": "sino",
+                                    "showClear": false,
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "ATTO.VALIDATORS.PRIMA-PUBB-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "DATAPUBB",
+                                    "label": "ATTO.GENERAL-DATA.DATAPUBB",
+                                    "oggettoProtezione": "W9.W9PUBBLICAZIONI.DATAPUBB",
+                                    "mnemonico": "W9PBDATAPUBB",
+                                    "mappingOutput": "dataPubb",
+                                    "visibleCondition": {
+                                        "or": {
+                                            "primaPubblicazione": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    },
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "ATTO.VALIDATORS.DATAPUBB-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "DATA_DECRETO",
+                                    "label": "ATTO.GENERAL-DATA.DATA-DECRETO",
+                                    "oggettoProtezione": "W9.W9PUBBLICAZIONI.DATA_DECRETO",
+                                    "mnemonico": "W9PBDATADEC",
+                                    "mappingOutput": "dataDecreto",
+                                    "visible": false
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "DATA_PROVVEDIMENTO",
+                                    "label": "ATTO.GENERAL-DATA.DATA-PROVVEDIMENTO",
+                                    "oggettoProtezione": "W9.W9PUBBLICAZIONI.DATA_PROVVEDIMENTO",
+                                    "mnemonico": "W9PBDATAPR",
+                                    "mappingOutput": "dataProvvedimento",
+                                    "visible": false
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "DATA_STIPULA",
+                                    "label": "ATTO.GENERAL-DATA.DATA-STIPULA",
+                                    "oggettoProtezione": "W9.W9PUBBLICAZIONI.DATA_STIPULA",
+                                    "mnemonico": "W9PBDATAST",
+                                    "mappingOutput": "dataStipula",
+                                    "visible": false
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "DATA_VERB_AGGIUDICAZIONE",
+                                    "label": "ATTO.GENERAL-DATA.DATA-VERB-AGGIUDICAZIONE",
+                                    "oggettoProtezione": "W9.W9PUBBLICAZIONI.DATA_VERB_AGGIUDICAZIONE",
+                                    "mnemonico": "W9PBDATAVA",
+                                    "mappingOutput": "dataVerbAggiudicazione",
+                                    "visible": false
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "DATASCAD",
+                                    "label": "ATTO.GENERAL-DATA.DATA-SCAD",
+                                    "oggettoProtezione": "W9.W9PUBBLICAZIONI.DATASCAD",
+                                    "mnemonico": "W9PBDATASCAD",
+                                    "mappingOutput": "dataScad",
+                                    "visible": false
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "IMPORTO_AGGIUDICAZIONE",
+                                    "label": "ATTO.GENERAL-DATA.IMPORTO-AGGIUDICAZIONE",
+                                    "oggettoProtezione": "W9.W9PUBBLICAZIONI.IMPORTO_AGGIUDICAZIONE",
+                                    "mnemonico": "W9PBIMPAGGI",
+                                    "mappingOutput": "importoAggiudicazione",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "visible": false,
+                                    "maxLength": 24
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "NUM_PROVVEDIMENTO",
+                                    "label": "ATTO.GENERAL-DATA.NUM-PROVVEDIMENTO",
+                                    "oggettoProtezione": "W9.W9PUBBLICAZIONI.NUM_PROVVEDIMENTO",
+                                    "mnemonico": "W9PBNUMPR",
+                                    "mappingOutput": "numProvvedimento",
+                                    "visible": false,
+                                    "maxLength": 50
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "NUM_PUBB",
+                                    "label": "ATTO.GENERAL-DATA.NUM-PUBB",
+                                    "oggettoProtezione": "W9.W9PUBBLICAZIONI.NUM_PUBB",
+                                    "mnemonico": "W9PBNUMPUBB",
+                                    "mappingOutput": "numPubb",
+                                    "decimals": 0,
+                                    "visible": false
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "NUM_REPERTORIO",
+                                    "label": "ATTO.GENERAL-DATA.NUM-REPERTORIO",
+                                    "oggettoProtezione": "W9.W9PUBBLICAZIONI.NUM_REPERTORIO",
+                                    "mnemonico": "W9PBNUMPER",
+                                    "mappingOutput": "numRepertorio",
+                                    "visible": false,
+                                    "maxLength": 50
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "PERC_OFF_AUMENTO",
+                                    "label": "ATTO.GENERAL-DATA.PERC-OFF-AUMENTO",
+                                    "oggettoProtezione": "W9.W9PUBBLICAZIONI.PERC_OFF_AUMENTO",
+                                    "mnemonico": "W9PBPERCOFF",
+                                    "mappingOutput": "percOffAumento",
+                                    "decimals": 2,
+                                    "visible": false,
+                                    "maxLength": 5
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "PERC_RIBASSO_AGG",
+                                    "label": "ATTO.GENERAL-DATA.PERC-RIBASSO-AGG",
+                                    "oggettoProtezione": "W9.W9PUBBLICAZIONI.PERC_RIBASSO_AGG",
+                                    "mnemonico": "W9PBPERCRIB",
+                                    "mappingOutput": "percRibassoAgg",
+                                    "decimals": 2,
+                                    "visible": false,
+                                    "maxLength": 5
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "URL_COMMITTENTE",
+                                    "label": "ATTO.GENERAL-DATA.URL-COMMITTENTE",
+                                    "oggettoProtezione": "W9.W9PUBBLICAZIONI.URL_COMMITTENTE",
+                                    "mnemonico": "W9PBURLCOMM",
+                                    "mappingOutput": "urlCommittente",
+                                    "visible": false,
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "regexp": "^$|(http|https):\/\/"
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "ATTO.VALIDATORS.URL-COMMITTENTE-PREFIX-INVALID"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": 2000
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "URL_EPROC",
+                                    "label": "ATTO.GENERAL-DATA.URL-EPROC",
+                                    "oggettoProtezione": "W9.W9PUBBLICAZIONI.URL_EPROC",
+                                    "mnemonico": "W9PBURLEPROC",
+                                    "mappingOutput": "urlEproc",
+                                    "visible": false,
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "regexp": "^$|(http|https):\/\/"
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "ATTO.VALIDATORS.URL-EPROC-PREFIX-INVALID"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "maxLength": 2000
+                                }
+                            ]
+                        },
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "documenti-data",
+                            "label": "ATTO.DOCUMENTS-DATA.DOCUMENTS-DATA",
+                            "sectionClass": ["styleuploadsection"],
+                            "fieldSections": [
+                                {
+                                    "type": "FORM-SECTION",
+                                    "code": "documenti-data-upload",
+                                    "label": "MODIFICA-ATTO-GENERALE.DOCUMENTS-DATA.NEW-DOCUMENTS",
+                                    "sectionClass": ["styleuploader"],
+                                    "visibleCondition": {
+                                        "or": {
+                                            "primaPubblicazione": {
+                                                "values": [
+                                                    {
+                                                        "value": "1",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    },
+                                    "fieldSections": [
+                                        {
+                                            "type": "FORM-GROUP",
+                                            "code": "documents-data-group",
+                                            "label": "",
+                                            "minGroupsNumber": 0,
+                                            "maxGroupsNumber": 0,
+                                            "defaultFormGroupFields": [
+                                                {
+                                                    "type": "DOCUMENT",
+                                                    "code": "doucment-field",
+                                                    "label": "",
+                                                    "fileInputLabel": "ATTO.CHOOSE-FILE",
+                                                    "titleInputLabel": "ATTO.TITOLO-DOCUMENT",
+                                                    "maxFileSize": "25 MB",
+                                                    "maxFileSizeLabel": "VALIDATORS.MAX-FILE-SIZE",
+                                                    "wrongExtensionLabel": "VALIDATORS.WRONG-EXTENSION",
+                                                    "mnemonico": "W9DGURL",
+                                                    "mappingOutput": "updateDocuments",
+                                                    "mandatory": true,
+                                                    "onlyFile": true,
+                                                    "accept": ".pdf,.p7m,.zip",
+                                                    "maxTitleLength": 250
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "FORM-SECTION",
+                                    "code": "documenti-data-url",
+                                    "label": "MODIFICA-ATTO-GENERALE.DOCUMENTS-DATA.NEW-DOCUMENTS",
+                                    "sectionClass": ["styleuploader"],
+                                    "visibleCondition": {
+                                        "or": {
+                                            "primaPubblicazione": {
+                                                "values": [
+                                                    {
+                                                        "value": "2",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    },
+                                    "fieldSections": [
+                                        {
+                                            "type": "FORM-GROUP",
+                                            "code": "documents-data-group",
+                                            "label": "",
+                                            "minGroupsNumber": 0,
+                                            "maxGroupsNumber": 0,
+                                            "defaultFormGroupFields": [
+                                                {
+                                                    "type": "DOCUMENT",
+                                                    "code": "doucment-field-url",
+                                                    "label": "",
+                                                    "urlLabel": "ATTO.URL",
+                                                    "titleInputLabel": "ATTO.TITOLO-DOCUMENT",
+                                                    "mnemonico": "W9AURL",
+                                                    "mappingOutput": "updateDocuments",
+                                                    "mandatory": true,
+                                                    "onlyUrl": true,
+                                                    "maxTitleLength": 250
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                } 
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

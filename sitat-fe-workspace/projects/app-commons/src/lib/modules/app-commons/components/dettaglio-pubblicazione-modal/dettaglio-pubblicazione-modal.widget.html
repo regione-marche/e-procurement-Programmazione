@@ -1,0 +1,16 @@
+<div class="dettaglio-pubblicazione-modal" *ngIf="isReady">
+    <div class="messages-box" #messages></div>
+
+    <div class="dettaglio-pubblicazione-container">
+        <div class="dettaglio-pubblicazione-testata">
+
+        </div>
+        <div class="dettaglio-pubblicazione-content">
+            <sdk-form-builder [config]="formBuilderConfigObs" (output)="manageFormOutput($event)" (outputClick)="manageFormClick($event)">
+            </sdk-form-builder>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+</div>

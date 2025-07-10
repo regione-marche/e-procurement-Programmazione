@@ -1,0 +1,42 @@
+{
+    "name": "richiesta-assistenza-completata-page",
+    "title": "TITLE.RICHIESTA-ASSISTENZA-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "richiesta-assistenza-completata-page"
+    },
+    "sections": [
+        {
+            "id": "richiesta-assistenza-completata-content-root-section",
+            "selector": "sdk-richiesta-assistenza-completata-section",
+            "description": "Componente per la richiesta assistenza completata",
+            "classNames": "richiesta-assistenza-completata-section anag-page",
+            "settings": {
+                "classNames": "richiesta-assistenza-completata-section",
+                "sectionTitle": "TITLE.RICHIESTA-ASSISTENZA-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-home-page",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_UTENTI_RICHIESTA_ASSISTENZA",
+                            "type": "cancel"
+                        }
+                    ],
+                    "buttonsErr": [
+                        {
+                            "code": "back-to-richiesta-assistenza-page",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_UTENTI_RICHIESTA_ASSISTENZA",
+                            "type": "cancel"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

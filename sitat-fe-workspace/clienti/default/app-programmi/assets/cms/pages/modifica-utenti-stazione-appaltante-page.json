@@ -1,0 +1,74 @@
+{
+    "name": "modifica-utenti-stazione-appaltante-page",
+    "title": "TITLE.MODIFICA-UTENTI-STAZIONE-APPALTANTE-PAGE",
+    "layout": "base-layout",
+    "appName": "app-programmi",
+    "styleUrls": [],
+    "settings": {
+        "page": "modifica-utenti-stazione-appaltante-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-archivio-stazioni-appaltanti-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-ARCHIVIO-STAZIONI-APPALTANTI",
+                "slug": "ricerca-avanzata-archivio-stazioni-appaltanti-page"
+            },
+            {
+                "code": "lista-archivio-stazioni-appaltanti-page",
+                "label": "BREADCRUMB.LISTA-ARCHIVIO-STAZIONI-APPALTANTI",
+                "slug": "lista-archivio-stazioni-appaltanti-page"
+            },
+            {
+                "code": "utenti-stazione-appaltante-page",
+                "label": "BREADCRUMB.UTENTI-STAZIONE-APPALTANTE",
+                "slug": "utenti-stazione-appaltante-page",
+                "additionalParams": "SDK_GESTIONE_UTENTI_DETTAGLIO_UTENTE_PARAMS"
+            },
+            {
+                "code": "modifica-utenti-stazione-appaltante-page",
+                "label": "BREADCRUMB.MODIFICA-UTENTI-STAZIONE-APPALTANTE",
+                "slug": "modifica-utenti-stazione-appaltante-page",
+                "additionalParams": "SDK_GESTIONE_UTENTI_DETTAGLIO_UTENTE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-utenti-stazione-appaltante-page-content-root-section",
+            "selector": "modifica-utenti-stazione-appaltante-section",
+            "description": "Pagina modifica utenti stazione appaltante",
+            "classNames": "modifica-utenti-stazione-appaltante-section",
+            "settings": {
+                "classNames": "modifica-utenti-stazione-appaltante-index",
+                "sectionTitle": "TITLE.MODIFICA-UTENTI-STAZIONE-APPALTANTE-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-utenti-stazione-appaltante",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_COMMONS_ARCHIVIO_STAZIONI_APPALTANTI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "select-current-filtered-utenti",
+                            "label": "STAZIONE-APPALTANTE.UTENTI.SELECT-CURRENT-FILTERED-UTENTI",
+                            "icon": "mgg-icons-crud-create",
+                            "provider": "APP_COMMONS_ARCHIVIO_STAZIONI_APPALTANTI_UTENTI"
+                        },
+                        {
+                            "code": "save-utenti-stazione-appaltante",
+                            "label": "BUTTONS.SET",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_COMMONS_ARCHIVIO_STAZIONI_APPALTANTI_UTENTI"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

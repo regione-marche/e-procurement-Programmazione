@@ -1,0 +1,91 @@
+{
+    "name": "registrazione-utente",
+    "title": "TITLE.SPID-LOGIN-PAGE",
+    "layout": "base-layout",
+    "appName": "app-programmi",
+    "styleUrls": [
+        "assets/cms/pages/spid-login-page.css"
+    ],
+    "settings": {
+        "page": "spid-login"
+    },
+    "sections": [
+        {
+            "id": "spid-login-content-root-section",
+            "selector": "spid-login-section",
+            "description": "Componente per la registrazione utente",
+            "classNames": "spid-login-section",
+            "settings": {
+                "classNames": "spid-login-section",
+                "sectionTitle": "TITLE.SPID-LOGIN-PAGE",
+                "body": {
+                    "logoutProvider":"APP_PROGRAMMI_LOGOUT",
+                    "buttons": [
+                        {
+                            "code": "back-to-home-page",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": ""
+                        }
+                    ],
+                    "providers": [{
+                        "id": "https://loginspid.aruba.it",
+                        "label":"SSO.SPID.PROVIDERS.ARUBA",
+                        "img":"assets/images/spid/spid-idp-arubaid.svg"
+                    },{
+                        "id": "https://identity.infocert.it",
+                        "label":"SSO.SPID.PROVIDERS.INFOCERT",
+                        "img":"assets/images/spid/spid-idp-infocertid.png"
+                    },{
+                        "id" :"https://id.lepida.it/idp/shibboleth",
+                        "label":"SSO.SPID.PROVIDERS.LEPIDA",
+                        "img":"assets/images/spid/spid-idp-lepidaid.svg"
+            
+                    },{  
+                        "id" :"https://idp.namirialtsp.com/idp",
+                        "label":"SSO.SPID.PROVIDERS.NAMIRIAL",
+                        "img":"assets/images/spid/spid-idp-namirialid.svg"
+                    },{  
+            
+                        "id" :"https://posteid.poste.it",
+                        "label":"SSO.SPID.PROVIDERS.POSTEID",
+                        "img":"assets/images/spid/spid-idp-posteid.svg"
+                    },{  
+                        "id" :"https://identity.sieltecloud.it",
+                        "label":"SSO.SPID.PROVIDERS.SIELTEID",
+                        "img":"assets/images/spid/spid-idp-sielteid.svg"
+                    },{  
+            
+                        "id" :"https://spid.register.it",
+                        "label":"SSO.SPID.PROVIDERS.SPIDITALIA",
+                        "img":"assets/images/spid/spid-idp-spiditalia.svg"
+                    },{  
+                        "id" :"https://spid.teamsystem.com/idp",
+                        "label":"SSO.SPID.PROVIDERS.TEAMSYSTEM",
+                        "img":"assets/images/spid/spid-idp-teamsystemid.svg"
+                        
+                    },{  			
+                        "id" :"https://login.id.tim.it/affwebservices/public/saml2sso",
+                        "label":"SSO.SPID.PROVIDERS.TIMID",
+                        "img":"assets/images/spid/spid-idp-timid.svg"
+            
+                    },{  
+                        "id" :"https://id.eht.eu",
+                        "label":"SSO.SPID.PROVIDERS.ETNAID",
+                        "img":"assets/images/spid/spid-idp-etnaid.svg"
+                    },{  
+            
+                        "id" :"https://loginspid.infocamere.it",
+                        "label":"SSO.SPID.PROVIDERS.INFOCAMERE",
+                        "img":"assets/images/spid/spid-idp-infocamereid.svg"
+                    },{  
+            
+                        "id" :"https://idp.intesigroup.com",
+                        "label":"SSO.SPID.PROVIDERS.INTESI",
+                        "img":"assets/images/spid/spid-idp-intesigroupspid.svg"
+                    }]
+                }
+            }
+        }
+    ]
+}

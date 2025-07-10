@@ -1,0 +1,567 @@
+{
+    "TITLE": {
+        "RICERCA-UTENTI-PAGE": "Ricerca utenti",
+        "LISTA-UTENTI-PAGE": "Lista utenti",
+        "CHECK-NUOVO-UTENTE-PAGE": "Verifica creazione utente",
+        "NUOVO-UTENTE-PAGE": "Nuovo utente",
+        "DETTAGLIO-UTENTE-PAGE": "Dettaglio utente",
+        "MODIFICA-UTENTE-PAGE": "Modifica utente",
+        "PROFILI-UTENTE-PAGE": "Profili",
+        "MODIFICA-PROFILI-UTENTE-PAGE": "Modifica associazione profili",
+        "STAZIONI-APPALTANTI-UTENTE-PAGE": "Amministrazioni",
+        "MODIFICA-STAZIONI-APPALTANTI-UTENTE-PAGE": "Modifica associazione amministrazioni",
+        "CAMBIA-PASSWORD-ADMIN-PAGE": "Cambia password",
+        "RICHIESTA-ASSISTENZA-PAGE": "Richiesta assistenza",
+        "RICERCA-CONFIGURAZIONI-PAGE": "Ricerca configurazioni",
+        "LISTA-CONFIGURAZIONI-PAGE": "Lista configurazioni",
+        "DETTAGLIO-CONFIGURAZIONE-PAGE": "Dettaglio configurazione",
+        "MODIFICA-CONFIGURAZIONE-PAGE": "Modifica configurazione",
+        "LISTA-PIANIFICAZIONI-PAGE": "Lista pianificazioni",
+        "DETTAGLIO-PIANIFICAZIONE-PAGE": "Dettaglio pianificazione",
+        "MODIFICA-PIANIFICAZIONE-PAGE": "Modifica pianificazione",
+        "RICERCA-EVENTI-PAGE": "Ricerca eventi",
+        "LISTA-EVENTI-PAGE": "Lista eventi",
+        "DETTAGLIO-EVENTO-PAGE": "Dettaglio evento",
+        "LISTA-SERVER-POSTA-PAGE": "Lista server di posta",
+        "DETTAGLIO-SERVER-POSTA-PAGE": "Dettaglio server di posta",
+        "NUOVO-SERVER-POSTA-PAGE": "Nuovo server di posta",
+        "MODIFICA-SERVER-POSTA-PAGE": "Modifica server di posta",
+        "IMPOSTA-PASSWORD-POSTA-PAGE": "Impostazione password",
+        "INVIA-TEST-EMAIL-PAGE": "Invia un messaggio di prova",
+        "RICERCA-TABELLATI-PAGE": "Ricerca dati tabellati",
+        "LISTA-TABELLATI-PAGE": "Lista dati tabellati",
+        "LISTA-DETTAGLIO-TABELLATO-PAGE": "Lista tabellato",
+        "DETTAGLIO-TABELLATO-PAGE": "Dettaglio tabellato",
+        "NUOVO-TABELLATO-PAGE": "Nuovo tabellato",
+        "MODIFICA-TABELLATO-PAGE": "Modifica tabellato",
+        "LISTA-MNEMONICI-PAGE": "Lista mnemonici",
+        "LISTA-CODIFICA-AUTOMATICA-PAGE": "Lista codifica automatica",
+        "DETTAGLIO-CODIFICA-AUTOMATICA-PAGE": "Dettaglio codifica automatica",
+        "MODIFICA-CODIFICA-AUTOMATICA-PAGE": "Modifica codifica automatica",
+        "RECUPERO-PASSWORD-PAGE": "Richiesta recupero password",
+        "MIO-ACCOUNT-PAGE": "Il mio account"
+    },
+    "BREADCRUMB": {
+        "RICERCA-UTENTI": "Ricerca utenti",
+        "LISTA-UTENTI": "Lista utenti",
+        "CHECK-NUOVO-UTENTE": "Verifica creazione utente",
+        "NUOVO-UTENTE": "Nuovo utente",
+        "DETTAGLIO-UTENTE": "Dettaglio utente",
+        "MODIFICA-UTENTE": "Modifica utente",
+        "PROFILI-UTENTE": "Profili",
+        "MODIFICA-PROFILI-UTENTE": "Modifica associazione profili",
+        "STAZIONI-APPALTANTI-UTENTE": "Amministrazioni",
+        "MODIFICA-STAZIONI-APPALTANTI-UTENTE": "Modifica associazione amministrazioni",
+        "CAMBIA-PASSWORD-ADMIN": "Cambia password",
+        "RICERCA-CONFIGURAZIONI": "Ricerca configurazioni",
+        "LISTA-CONFIGURAZIONI": "Lista configurazioni",
+        "DETTAGLIO-CONFIGURAZIONE": "Dettaglio configurazione",
+        "MODIFICA-CONFIGURAZIONE": "Modifica configurazione",
+        "LISTA-PIANIFICAZIONI": "Lista pianificazioni",
+        "DETTAGLIO-PIANIFICAZIONE": "Dettaglio pianificazione",
+        "MODIFICA-PIANIFICAZIONE": "Modifica pianificazione",
+        "RICERCA-EVENTI": "Ricerca eventi",
+        "LISTA-EVENTI": "Lista eventi",
+        "DETTAGLIO-EVENTO": "Dettaglio evento",
+        "LISTA-SERVER-POSTA": "Lista server di posta",
+        "DETTAGLIO-SERVER-POSTA": "Dettaglio server di posta",
+        "NUOVO-SERVER-POSTA": "Nuovo server di posta",
+        "MODIFICA-SERVER-POSTA": "Modifica server di posta",
+        "IMPOSTA-PASSWORD-POSTA": "Impostazione password",
+        "INVIA-TEST-EMAIL": "Invia un messaggio di prova",
+        "RICERCA-TABELLATI": "Ricerca dati tabellati",
+        "LISTA-TABELLATI": "Lista dati tabellati",
+        "LISTA-DETTAGLIO-TABELLATO": "Lista tabellato",
+        "DETTAGLIO-TABELLATO": "Dettaglio tabellato",
+        "NUOVO-TABELLATO": "Nuovo tabellato",
+        "MODIFICA-TABELLATO": "Modifica tabellato",
+        "LISTA-MNEMONICI": "Lista mnemonici",
+        "LISTA-CODIFICA-AUTOMATICA": "Lista codifica automatica",
+        "DETTAGLIO-CODIFICA-AUTOMATICA": "Dettaglio codifica automatica",
+        "MODIFICA-CODIFICA-AUTOMATICA": "Modifica codifica automatica",
+        "MIO-ACCOUNT": "Il mio account"
+    },
+    "MENU": {
+        "GESTIONE-UTENTI": "Gestione utenti",
+        "AMMINISTRAZIONE": "Amministrazione"
+    },
+    "SDK-GESTIONE-UTENTI": {
+        "LOGIN_UNAUTHORIZED": "Username o password errati.",
+        "LOGIN_MAX_TENTATIVI": "Sono stati eseguiti troppi tentativi di login, riprova in seguito.",
+        "LOGIN_ACCOUNT_EXPIRED": "L'account utente selezionato \u00E8 stato disattivato per inattivit\u00E0. Si prega di contattare un'amministratore per riattivarlo.",
+        "LOGIN_PASSWORD_EXPIRED": "La password associata all'account selezionato \u00E8 scaduta, si prega di aggiornarla per proseguire con l'autenticazione.",
+        "LOGIN_FIRST_ACCESS": "Attenzione: cambio password necessario. Si prega di cambiare la password.",
+        "LOGIN_USER_DISABLED": "L'account utente selezionato risulta disabilitato.",
+        "LOGIN_MTOKEN_CERT_NOT_FOUND": "Autenticazione tramite M-TOKEN: Certificato non trovato.",
+        "LOGIN_MTOKEN_MOTIVAZIONE_NOT_FOUND": "Autenticazione tramite M-TOKEN: Motivazione non valorizzata.",
+        "LOGIN_MTOKEN_FAILED": "Autenticazione tramite M-TOKEN fallita.",
+        "CHANGE_PASSWORD_SUCCESS": "Il cambio della password \u00E8 avvenuto con successo.",
+        "CHANGE_PASSWORD_CONFIRM_PASSWORD_MISMATCH": "La nuova password inserita e la conferma non combaciano.",
+        "CHANGE_PASSWORD_LENGTH": "La lunghezza della password inserita non \u00E8 valida, inserire almeno 8 caratteri.",
+        "CHANGE_PASSWORD_LENGTH_ADMIN": "La lunghezza della password inserita non \u00E8 valida, inserire almeno 14 caratteri.",
+        "CHANGE_PASSWORD_COMPLEXITY_ALLOWED_CHARACTERS": "I caratteri inseriti per la nuova password non sono validi oppure la complessit\u00E0 non \u00E8 sufficiente.",
+        "CHANGE_PASSWORD_COMPLEXITY_LOWER_CASE_CHARACTERS": "Non sono stati inseriti caratteri minuscoli.",
+        "CHANGE_PASSWORD_COMPLEXITY_UPPER_CASE_CHARACTERS": "Non sono stati inseriti caratteri maiuscoli.",
+        "CHANGE_PASSWORD_COMPLEXITY_NUMBERS_CHARACTERS": "Non sono stati inseriti caratteri numerici.",
+        "CHANGE_PASSWORD_COMPLEXITY_SPECIAL_CHARACTERS": "Non sono stati inseriti caratteri speciali.",
+        "CHANGE_PASSWORD_CONTENT_FOLLOWING_CHARACTERS": "Sono stati inseriti 4 o pi\u00F9 caratteri presenti nello username. Si prega di verificare.",
+        "CHANGE_PASSWORD_ALREADY_USED": "La nuova password selezionata \u00E8 gi\u00E0 stata utilizzata in precedenza. Si prega di verificare.",
+        "CHANGE_PASSWORD_CANNOT_CHANGE_TIME": "La password \u00E8 stata cambiata troppo di recente. Si prega di attendere 30 secondi tra un cambio password e un altro.",
+        "CHANGE_PASSWORD_NOT_ALLOWED_SSO_USER": "Il cambio della password non risulta possibile in quanto l'utente si \u00E8 autenticato tramite il sistema SSO (Single Sign On)",
+        "TITLE": {
+            "INTERNAL_LOGIN": "Autenticazione interna",
+            "CHANGE_PASSWORD": "Cambia password"
+        },
+        "FORM": {
+            "USERNAME": "Username",
+            "PASSWORD": "Password",
+            "OLD_PASSWORD": "Vecchia password",
+            "NEW_PASSWORD": "Nuova password",
+            "CONFIRM_NEW_PASSWORD": "Conferma nuova password",
+            "REQUEST-PASSWORD-RECOVERY": "Hai dimenticato la password?",
+            "REGISTRATION": "Registrazione utente",
+            "CERTIFICATO-FILE": "Carica il file del certificato",
+            "CERTIFICATO-TEXT": "Contenuto del certificato",
+            "MOTIVAZIONE": "Motivazione",
+            "BUTTONS": {
+                "INDIETRO": "Indietro",
+                "LOGIN": "Login",
+                "CHANGE_PASSWORD": "Cambia password",
+                "CONFIRM": "Conferma"
+            }
+        }
+    },
+    "SDK-RICERCA-UTENTI": {
+        "RICERCA-UTENTI-DATA": "Ricerca utenti",
+        "DENOMINAZIONE": "Denominazione",
+        "USERNAME": "Username",
+        "USERNAME-CF": "Username/Codice fiscale",
+        "ABILITATO": "Utente abilitato",
+        "CODICE-FISCALE": "Codice fiscale",
+        "EMAIL": "Email",
+        "UFFICIO-INTESTATARIO": "Ufficio intestatario",
+        "GESTIONE-UTENTI": "Gestione utenti",
+        "AMMINISTRATORE": "Amministratore",
+        "PROFILO": "Profilo"
+    },
+    "COMBOBOX": {
+        "NESSUN-PRIVILEGIO": "Nessun privilegio",
+        "SOLA-LETTURA": "Sola lettura",
+        "GESTIONE-COMPLETA": "Gestione completa",
+        "SCADENZA-ACCOUNT-MAI": "Mai",
+        "SCADENZA-ACCOUNT-ALLA-FINE-DI": "Alla fine di:",
+        "NON-ABILITATA": "Non abilitata",
+        "SOLO-MODELLI-PERSONALI": "Solo modelli personali"
+    },
+    "SDK-LISTA-UTENTI": {
+        "CODICE": "Codice",
+        "DENOMINAZIONE": "Denominazione",
+        "USERNAME": "Username",
+        "CODICE-FISCALE": "Codice fiscale",
+        "ABILITATO": "Utente abilitato",
+        "EMAIL": "E-mail",
+        "ULTIMO-ACCESSO": "Ultimo accesso",
+        "AZIONI": {
+            "TITLE": "Azioni",
+            "CANCELLA": "Cancella",
+            "DETTAGLIO": "Dettaglio",
+            "CAMBIO-PASSWORD": "Cambio password",
+            "ABILITA": "Abilita utente",
+            "DISABILITA": "Disabilita utente"
+        }
+    },
+    "SDK-CHECK-NUOVO-UTENTE": {
+        "SCELTA": "Scegli",
+        "UTENTE-AZIENDALE": "Seleziona un utente dall'elenco utenti che accedono alla intranet aziendale",
+        "NUOVO-UTENTE": "Definisci un nuovo utente interno all'applicativo"
+    },
+    "SDK-UTENTE": {
+        "GENERAL-DATA": {
+            "TITLE": "Dati Generali",
+            "CODICE": "Codice",
+            "DENOMINAZIONE": "Denominazione",
+            "USERNAME": "Username",
+            "USERNAME-CF": "Username/Codice fiscale",
+            "PASSWORD": "Password",
+            "CONFERMA-PASSWORD": "Conferma Password",
+            "EMAIL": "E-Mail",
+            "CODICE-FISCALE": "Codice fiscale",
+            "RUOLO": "Ruolo"
+        },
+        "OPZIONI-DATA": {
+            "TITLE": "Opzioni",
+            "GESTIONE-UTENTI": "Gestione utenti/amministrazioni",
+            "AMMINISTRAZIONE-SISTEMA": "Amministrazione di sistema",
+            "OPZIONI-UTENTE": {
+                "ABILITA-UTENTE-MODIFICA-UFFICI-INTESTATARI": "Abilita l'utente alla modifica delle amministrazioni",
+                "ABILITA-UTENTE-TUTTI-UFFICI-INTESTATARI": "Abilita l'utente a tutti gli uffici intestatari",
+                "GESTIONE-MODELLI": "Gestione modelli"
+            }
+        },
+        "SICUREZZA-DATA": {
+            "TITLE": "Sicurezza",
+            "SCADENZA-ACCOUNT": "Scadenza Account",
+            "SCADENZA-ACCOUNT-DATA": "Data Scadenza Account",
+            "CONTROLLI-GDPR": "Applica i controlli di sicurezza previsti dalle norme GDPR e AGID"
+        },
+        "DESCRIZIONE-NO-GDPR": "ATTENZIONE: rimuovere i controlli di sicurezza implica una non conformit\u00E0 alle norme (GDPR, AGID, ...)..",
+        "VALIDATORS": {
+            "DESCRIZIONE-OBBLIGATORIA": "Il campo Descrizione \u00E8 obbligatorio",
+            "NOME-UTENTE-OBBLIGATORIO": "Il campo Username \u00E8 obbligatorio",
+            "NOME-UTENTE-CODICE-FISCALE-OBBLIGATORIO": "Il campo Username/Codice fiscale \u00E8 obbligatorio",
+            "PASSWORD-OBBLIGATORIA": "Il campo Password \u00E8 obbligatorio",
+            "CONFERMA-PASSWORD-OBBLIGATORIA": "Il campo Conferma Password \u00E8 obbligatorio",
+            "GESTIONE_UTENTE_USER_ALREADY_EXISTS": "Il nome utente indicato \u00E8 gi\u00E0 stato utilizzato",
+            "GESTIONE_UTENTE_PASSWORD_CONFIRM_PASSWORD_MISMATCH": "La password e la conferma della password non corrispondono",
+            "GESTIONE_UTENTE_FORMATO_CODICE_FISCALE_NON_VALIDO": "Il formato del codice fiscale \u00E8 errato",
+            "GESTIONE_UTENTE_CODICE_FISCALE_GIA_UTILIZZATO": "Il codice fiscale indicato \u00E8 gi\u00E0 stato utilizzato",
+            "GESTIONE_UTENTE_FORMATO_EMAIL_NON_VALIDO": "Il formato della e-mail \u00E8 errato",
+            "GESTIONE_UTENTE_UFFICIO_APPARTENENZA_OBBLIGATORIO": "\u00C8 necessario indicare l'Ufficio di Appartenenza in quanto il campo \u00E8 obbligatorio",
+            "GESTIONE_UTENTE_AMMINISTRATORE_CANCELLAZIONE_INTERVALLO_TEMPO": "\u00C8 stata registrata una richiesta di cancellazione dell'utenza di amministrazione con lo stesso nome utente negli ultimi 6 mesi",
+            "GESTIONE_UTENTE_USER_NOT_FOUND": "L'utente selezionato non \u00E8 stato trovato",
+            "GESTIONE_UTENTE_USER_FORBIDDEN": "L'utente corrente non ha i permessi per operare su questo utente",
+            "GESTIONE_UTENTE_USER_EDIT_FORBIDDEN": "L'utente corrente non ha i permessi per la creazione o la modifica di un utente",
+            "GESTIONE_UTENTE_USER_NOT_ADMINISTRATOR": "L'utente corrente non ha i permessi per eliminare un utente amministratore",
+            "GESTIONE_UTENTE_USER_DATA_ULTIMO_ACCESSO_NOT_NULL": "L'utente selezionato ha gi\u00E0 eseguito l'accesso, impossibile procedere con l'eliminazione",
+            "GESTIONE_UTENTE_NO_UFFINT_SELECTED": "Non \u00E8 possibile associare zero amministrazioni, selezionarne almeno uno.",
+            "GESTIONE_UTENTE_NO_PROFILES_SELECTED": "Non \u00E8 possibile associare zero profili, selezionarne almeno uno.",
+            "ERRORE-GENERICO": "Errore durante il salvataggio dell'utente: {{value}}",
+            "EMAIL-NON-INVIATA": "Si \u00E8 verificato un'errore durante l'invio della E-Mail. L'utente non verr\u00E0 avvisato in quanto l'indirizzo E-Mail non \u00E8 presente oppure il server di posta non \u00E8 impostato o al momento disponibile.",
+            "DELETE-ERROR": "Errore inaspettato durante la cancellazione di account. Operazione annullata",
+            "CHANGE_PASSWORD_SUCCESS": "Il cambio della password \u00E8 avvenuto con successo.",
+            "CHANGE_PASSWORD_CONFIRM_PASSWORD_MISMATCH": "La nuova password inserita e la conferma non combaciano.",
+            "CHANGE_PASSWORD_LENGTH": "La lunghezza della password inserita non \u00E8 valida, inserire almeno 8 caratteri.",
+            "CHANGE_PASSWORD_LENGTH_ADMIN": "La lunghezza della password inserita non \u00E8 valida, inserire almeno 14 caratteri.",
+            "CHANGE_PASSWORD_COMPLEXITY_ALLOWED_CHARACTERS": "I caratteri inseriti per la nuova password non sono validi oppure la complessit\u00E0 non \u00E8 sufficiente.",
+            "CHANGE_PASSWORD_COMPLEXITY_LOWER_CASE_CHARACTERS": "Non sono stati inseriti caratteri minuscoli.",
+            "CHANGE_PASSWORD_COMPLEXITY_UPPER_CASE_CHARACTERS": "Non sono stati inseriti caratteri maiuscoli.",
+            "CHANGE_PASSWORD_COMPLEXITY_NUMBERS_CHARACTERS": "Non sono stati inseriti caratteri numerici.",
+            "CHANGE_PASSWORD_COMPLEXITY_SPECIAL_CHARACTERS": "Non sono stati inseriti caratteri speciali.",
+            "CHANGE_PASSWORD_CONTENT_FOLLOWING_CHARACTERS": "Sono stati inseriti 4 o pi\u00F9 caratteri presenti nello username. Si prega di verificare.",
+            "CHANGE_PASSWORD_ALREADY_USED": "La nuova password selezionata \u00E8 gi\u00E0 stata utilizzata in precedenza. Si prega di verificare.",
+            "CHANGE_PASSWORD_CANNOT_CHANGE_TIME": "La password \u00E8 stata cambiata troppo di recente. Si prega di attendere 30 secondi tra un cambio password e un altro.",
+            "ERROR_UNEXPECTED":"Attenzione si \u00E8 verificato un errore",
+            "CSV-EMPTY":"Non \u00E8 possibile generare il file CSV"
+        },
+        "TABS": {
+            "DETTAGLIO-UTENTE": "Dettaglio utente",
+            "PROFILI-UTENTE": "Profili",
+            "AMMINISTRAZIONI-UTENTE": "Amministrazioni"
+        },
+        "ABILITATO-CON-SUCCESSO": "Utente abilitato con successo",
+        "DISABILITATO-CON-SUCCESSO": "Utente disabilitato con successo",
+        "ELIMINATO-CON-SUCCESSO": "Utente eliminato con successo",
+        "PRIVILEGI-UTENTE-CONTRATTI": {
+            "A": "Responsabile (Accesso completo su tutti i contratti)",
+            "C": "Compilatore (Accesso su tutti i contratti senza facolt\u00E0 di invio)",
+            "U": "Utente (Accesso consentito solo ai propri contratti)"
+        },
+        "CHANGE-PASSWORD-SUCCESS": "La password \u00E8 stata cambiata con successo."
+    },
+    "SDK-PROFILI-UTENTE": {
+        "CODICE-PROFILO": "Codice del Profilo",
+        "NOME-PROFILO": "Nome",
+        "DESCRIZIONE-PROFILO": "Descrizione",
+        "EMPTY-PROFILI-UTENTE": "Non ci sono profili associati a questo utente.",
+        "EMPTY-PROFILI": "Non ci sono profili da associare a questo utente.",
+        "ASSOCIATO": "Associato"
+    },
+    "SDK-STAZIONI-APPALTANTI-UTENTE": {
+        "CODICE-STAZIONE-APPALTANTE": "Codice",
+        "DENOMINAZIONE-STAZIONE-APPALTANTE": "Denominazione",
+        "CODICE-FISCALE-STAZIONE-APPALTANTE": "Codice Fiscale",
+        "EMPTY-STAZIONI-APPALTANTI-UTENTE": "Non ci sono amministrazioni associate a questo utente.",
+        "ASSOCIATO": "Associato",
+        "CERCA": "Cerca",
+        "SELECT-CURRENT-FILTERED-STAZIONI-APPALTANTI": "Seleziona tutto",
+        "UNSELECT-CURRENT-FILTERED-STAZIONI-APPALTANTI": "Deseleziona tutto"
+    },
+    "SDK-RICHIESTA-ASSISTENZA": {
+        "HEADER-DESCRIPTION": "Benvenuto nella pagina in cui puoi inoltrare una richiesta di assistenza per questo prodotto.<br>Nel modulo sottostante vanno compilati almeno i campi obbligatori, marcati con il carattere asterisco (*). Indicare la denominazione dell'ente o dell'amministrazione a cui si appartiene, il proprio nome e cognome, l'indirizzo mail, il telefono, quindi selezionare la tipologia di richiesta di assistenza dalla lista, ed indicare una eventuale descrizione aggiuntiva nell'area di testo oppure allegare un file. Al termine della compilazione premere il pulsante \"Invia\".",
+        "ASSISTENZA-SECTION": {
+            "TITLE": "Richiesta di assistenza",
+            "NOMINATIVO-ENTE-AMMINISTRAZIONE": "Nominativo Ente/Amministrazione",
+            "REFERENTE-DA-CONTATTARE": "Referente (cognome e nome) da contattare",
+            "EMAIL": "Email",
+            "TELEFONO": "Telefono",
+            "TIPOLOGIA-RICHIESTA": "Tipologia di richiesta",
+            "DESCRIZIONE": "Descrizione",
+            "UPLOAD-DOCUMENTO": "Allega un file"
+        },
+        "VALIDATORS": {
+            "NOMINATIVO-ENTE-AMMINISTRAZIONE-OBBLIGATORIO": "Il campo Nominativo Ente/Amministrazione \u00E8 obbligatorio.",
+            "REFERENTE-DA-CONTATTARE-OBBLIGATORIO": "Il campo Referente (cognome e nome) da contattare \u00E8 obbligatorio.",
+            "EMAIL-OBBLIGATORIA": "Il campo Email \u00E8 obbligatorio.",
+            "TIPOLOGIA-RICHIESTA-OBBLIGATORIA": "Il campo Tipologia di richiesta \u00E8 obbligatorio.",
+            "ERRORE-GENERICO": "Errore durante l'invio della richiesta di assistenza: {{value}}"
+        },
+        "SEND-SUCCESS": "Gentile utente, La informiamo che la Sua richiesta \u00E8 stata inviata con successo.",
+        "SEND-FAILURE": "Si sono verificati problemi durante l'invio della mail di assistenza, si prega di riprovare pi\u00F9 tardi."
+    },
+    "SDK-AMMINISTRAZIONE": {
+        "GESTIONE-CONFIGURAZIONI": "Gestione configurazioni",
+        "GESTIONE-PIANIFICAZIONI": "Gestione pianificazioni",
+        "VISUALIZZAZIONE-EVENTI": "Visualizzazione eventi",
+        "SERVER-POSTA": "Server di posta",
+        "GESTIONE-TABELLATI": "Gestione dati tabellati",
+        "LISTA-MNEMONICI": "Lista mnemonici",
+        "CODIFICA-AUTOMATICA": "Codifica automatica"
+    },
+    "SDK-CONFIGURAZIONE": {
+        "RICERCA-CONFIGURAZIONI-DATA": "Ricerca configurazioni",
+        "GENERAL-DATA": {
+            "TITLE": "Dati generali",
+            "CODAPP": "Cod. app.",
+            "CODICE-APPLICATIVO": "Codice applicativo",
+            "SEZIONE": "Sezione",
+            "CONFIGURAZIONE": "Configurazione",
+            "DESCRIZIONE": "Descrizione",
+            "CRIPTATO": "Valore criptato?",
+            "VALORE": "Valore",
+            "VALORE-EFFETTIVO": "Valore effettivo",
+            "VALORE-EFFETTIVO-DESCRIPTION": "Il valore in chiaro, indicato in questa campo, verr\u00E0 memorizzato in forma criptata al salvataggio della configurazione."
+        },
+        "AZIONI": {
+            "DETTAGLIO": "Dettaglio"
+        },
+        "VALIDATORS": {
+            "GESTIONE_CONFIGURAZIONI_CONFIGURAZIONE_NOT_FOUND": "La configurazione richiesta non \u00E8 stata trovata.",
+            "ERRORE-GENERICO": "Errore durante il salvataggio della configurazione: {{value}}"
+        }
+    },
+    "SDK-PIANIFICAZIONE": {
+        "GENERAL-DATA": {
+            "TITLE": "Dati generali",
+            "NOME-TRIGGER": "Nome del trigger",
+            "DESCRIZIONE": "Descrizione",
+            "PIANIFICAZIONE": "Pianificazione",
+            "SECONDI": "Secondi",
+            "MINUTI": "Minuti",
+            "ORE": "Ore",
+            "GIORNI-DEL-MESE": "Giorni del mese",
+            "MESI": "Mesi",
+            "GIORNI-DELLA-SETTIMANA": "Giorni della settimana",
+            "ANNI": "Anni"
+        },
+        "AZIONI": {
+            "DETTAGLIO": "Dettaglio"
+        },
+        "VALIDATORS": {
+            "GESTIONE_PIANIFICAZIONI_PIANIFICAZIONE_NOT_FOUND": "La pianificazione richiesta non \u00E8 stata trovata.",
+            "ERRORE-GENERICO": "Errore durante il salvataggio della pianificazione: {{value}}",
+            "SECONDI-OBBLIGATORIO": "Il campo Secondi \u00E8 obbligatorio.",
+            "MINUTI-OBBLIGATORIO": "Il campo Minuti \u00E8 obbligatorio.",
+            "ORE-OBBLIGATORIO": "Il campo Ore \u00E8 obbligatorio.",
+            "GIORNI-DEL-MESE-OBBLIGATORIO": "Il campo Giorni del mese \u00E8 obbligatorio.",
+            "MESI-OBBLIGATORIO": "Il campo Mesi \u00E8 obbligatorio.",
+            "GIORNI-DELLA-SETTIMANA-OBBLIGATORIO": "Il campo Giorni della settimana \u00E8 obbligatorio.",
+            "ANNI-OBBLIGATORIO": "Il campo Anni \u00E8 obbligatorio."
+        },
+        "UPDATE-AFTER-RESTART": "Aggiornamento pianificazione avvenuta. Le modifiche saranno effetive al riavvio del server."
+    },
+    "SDK-EVENTO": {
+        "RICERCA-EVENTI-DATA": "Ricerca eventi",
+        "GENERAL-DATA": {
+            "TITLE": "Dati generali",
+            "ID-EVENTO": "Contatore eventi",
+            "N-EVENTO": "N. evento",
+            "DATA-EVENTO": "Data e ora evento",
+            "DATA-EVENTO-DA": "Data e ora evento da",
+            "DATA-EVENTO-A": "Data e ora evento a",
+            "DESCRIZIONE-UTENTE": "Descrizione utente",
+            "LIVELLO-EVENTO": "Livello evento",
+            "CODICE-EVENTO": "Codice evento",
+            "OGGETTO-EVENTO": "Riferimento evento",
+            "DESCRIZIONE": "Descrizione",
+            "CODICE-PROFILO": "Codice del Profilo",
+            "UTENTE": "Utente",
+            "MESSAGGIO-ERRORE": "Messaggio di errore",
+            "IP-EVENTO": "IP client evento"
+        },
+        "AZIONI": {
+            "DETTAGLIO": "Dettaglio"
+        },
+        "VALIDATORS": {
+            "GESTIONE_PIANIFICAZIONI_PIANIFICAZIONE_NOT_FOUND": "L'evento richiesto non \u00E8 stato trovato.",
+            "ERRORE-GENERICO": "Errore durante il recupero dell'evento: {{value}}"
+        }
+    },
+    "SDK-SERVER-POSTA": {
+        "GENERAL-DATA": {
+            "TITLE": "Dati Generali",
+            "CONFIGURAZIONE": "Configurazione",
+            "SERVER": "Server",
+            "MITTENTE": "Mittente",
+            "PORTA": "Porta",
+            "PROTOCOLLO": "Protocollo",
+            "TIMEOUT": "Timeout attesa server (in millisecondi)",
+            "DELAY": "Delay tra invii ripetuti di email (in millisecondi)",
+            "TRACCIATURA": "Attiva tracciatura messaggi nel log",
+            "MAIL-MITTENTE": "Mail mittente",
+            "PASSWORD": "Password",
+            "ID-USER": "Id di autenticazione (se diverso dalla mail mittente)",
+            "DIM-TOTALE-ALLEGATI": "Limite dimensione totale allegati (in MB)",
+            "PORTA-DESCRIPTION": "(vale 25 se non valorizzato)",
+            "TIMEOUT-DESCRIPTION": "(vale 5000 se non valorizzato, inserire un valore negativo per disabilitarlo)",
+            "VECCHIA-PASSWORD": "Vecchia password",
+            "NUOVA-PASSWORD": "Nuova password",
+            "CONFERMA-NUOVA-PASSWORD": "Conferma nuova password",
+            "TEST-EMAIL": "Indirizzo mail del destinatario"
+        },
+        "VALIDATORS": {
+            "GESTIONE_WMAIL_WMAIL_NOT_FOUND": "Il server di posta richiesto non \u00E8 stato trovato.",
+            "ERRORE-GENERICO": "Errore durante il recupero del server di posta: {{value}}",
+            "CONFIGURAZIONE-OBBLIGATORIA": "Il campo Configurazione \u00E8 obbligatorio.",
+            "SERVER-OBBLIGATORIO": "Il campo Server \u00E8 obbligatorio.",
+            "MITTENTE-OBBLIGATORIO": "Il campo Mail mittente \u00E8 obbligatorio.",
+            "GESTIONE_WMAIL_WMAIL_ALREADY_EXISTS": "Il server di posta richiesto \u00E8 gi\u00E0 presente.",
+            "DELETE-ERROR": "Errore inaspettato durante la cancellazione del server di posta. Operazione annullata.",
+            "GESTIONE_WMAIL_TIMEOUT_NOT_A_NUMBER": "Il campo Timeout inserto non \u00E8 un numero",
+            "GESTIONE_WMAIL_OLD_PASSWORD_EMPTY": "La vecchia password inserita non \u00E8 corretta.",
+            "GESTIONE_WMAIL_OLD_PASSWORD_MISMATCH": "La vecchia password inserita non \u00E8 corretta.",
+            "GESTIONE_WMAIL_NEW_PASSWORD_MISMATCH": "La nuova password e la conferma password devono essere uguali.",
+            "GESTIONE_WMAIL_OLD_NEW_PASSWORD_MATCH": "La vecchia password non deve essere uguale alla nuova password.",
+            "GESTIONE_WMAIL_ERROR_TEST_SEND": "Non \u00E8 stato possibile completare l'invio della mail di prova. Verificare la configurazione del server di posta ed il log dell'applicativo."
+        },
+        "VALUE-PASSWORD": "Impostata",
+        "NO-VALUE-PASSWORD": "Non impostata",
+        "PROTOCOLLO-POSTA": {
+            "SMTP": "SMTP",
+            "SMTPS": "SMTP + SSL (SMTPS)",
+            "STARTTLS": "SMTP + STARTTLS"
+        },
+        "AZIONI": {
+            "DETTAGLIO": "Dettaglio",
+            "TITLE": "Azioni",
+            "CANCELLA": "Cancella"
+        },
+        "ELIMINATO-CON-SUCCESSO": "Server di posta eliminato con successo",
+        "CHANGE-PASSWORD-DONE": "Password del server di posta aggiornata con successo.",
+        "TEST-SEND-DONE": "Test di invio mail terminato senza errori. Verificare se nella casella di posta \u00E8 arrivato il messaggio.",
+        "BUTTONS": {
+            "SET-PASSWORD": "Imposta password",
+            "SEND-TEST-EMAIL": "Invia mail di prova"
+        }
+    },
+    "SDK-TABELLATO": {
+        "RICERCA-TABELLATI-DATA": "Ricerca dati tabellati",
+        "GENERAL-DATA": {
+            "TITLE": "Dati Generali",
+            "CODICE": "Codice tabellato",
+            "DESCRIZIONE": "Descrizione del tabellato",
+            "PROVENIENZA": "Tabella di database",
+            "NUMERO-ORDINE": "Numero d'ordine",
+            "IDENTIFICATIVO": "Identificativo",
+            "IDENTIFICATIVO-ALFANUMERICO": "Identificativo (alfanumerico)",
+            "IDENTIFICATIVO-NUMERICO": "Identificativo (numerico)",
+            "CARATTERI": "Caratteri",
+            "DESCRIZIONE-BREVE": "Descrizione",
+            "BLOCCATO": "Bloccato?",
+            "ARCHIVIATO": "Archiviato?",
+            "PARAMETRO-ASSOCIATO": "Parametro associato"
+        },
+        "AZIONI": {
+            "TITLE": "Azioni",
+            "DETTAGLIO": "Dettaglio",
+            "CANCELLA": "Elimina"
+        },
+        "VALIDATORS": {
+            "IDENTIFICATIVO-OBBLIGATORIO": "Il campo Identificativo \u00E8 obbligatorio.",
+            "ERRORE-GENERICO": "Errore durante l'operazione: {{value}}",
+            "GESTIONE_TABELLATI_IDENTIFICATIVO_NULL": "Il campo Identificativo \u00E8 vuoto.",
+            "GESTIONE_TABELLATI_IDENTIFICATIVO_ALREADY_INSERTED": "Il tabellato per l'identificativo selezionato \u00E8 gi\u00E0 presente.",
+            "GESTIONE_TABELLATI_IDENTIFICATIVO_NOT_FOUND": "Il tabellato per l'identificativo selezionato non \u00E8 stato trovato.",
+            "DELETE-ERROR": "Errore inaspettato durante la cancellazione del tabellato. Operazione annullata",
+            "GESTIONE_TABELLATI_TABELLATO_BLOCCATO": "Il tabellato selezionato risulta bloccato, operazioni di modifica o cancellazione non permesse."
+        },
+        "ELIMINATO-CON-SUCCESSO": "Tabellato eliminato con successo"
+    },
+    "SDK-MNEMONICO": {
+        "T": "T",
+        "C": "C",
+        "ENTITA": "Entit\u00E0",
+        "CAMPO": "Campo",
+        "MNEMONICO": "Mnemonico",
+        "DESCRIZIONE": "Descrizione",
+        "FORM": "Form.",
+        "TAB": "Tab.",
+        "DOM": "Dom."
+    },
+    "SDK-CODIFICA-AUTOMATICA": {
+        "GENERAL-DATA": {
+            "TITLE": "Dati Generali",
+            "OGGETTO-CODIFICA": "Oggetto codifica",
+            "CODIFICA-AUTOMATICA-ATTIVA": "Codifica automatica attiva?",
+            "CRITERIO-CALCOLO": "Criterio di calcolo",
+            "CONTATORE": "Contatore"
+        },
+        "AZIONI": {
+            "TITLE": "Azioni",
+            "DETTAGLIO": "Dettaglio"
+        },
+        "VALIDATORS": {
+            "ERRORE-GENERICO": "Errore durante l'operazione: {{value}}",
+            "GESTIONE_CODIFICA_AUTOMATICA_G_CONFCOD_NOT_FOUND": "La codifica selezionata non \u00E8 stata trovata.",
+            "GESTIONE_CODIFICA_AUTOMATICA_SINTASSI_NON_CORRETTA": "Sintassi non corretta del criterio di codifica.",
+            "GESTIONE_CODIFICA_AUTOMATICA_NO_COUNTER": "Sintassi non corretta del criterio di codifica. Specificare un contatore.",
+            "GESTIONE_CODIFICA_AUTOMATICA_OVER_ONE_COUNTER": "Sintassi non corretta del criterio di codifica. Specificare solo un contatore.",
+            "GESTIONE_CODIFICA_AUTOMATICA_CARATTERI_NON_ACCETTATI": "Sintassi non corretta del criterio di codifica. Presenti caratteri non accettati. I caratteri specificati nel criterio devono appartenere all'insieme dei caratteri A-Z a-z 0-9 § . / $ _ - @ e spazio.",
+            "GESTIONE_CODIFICA_AUTOMATICA_CARATTERI_SUPERIORI_LUNGHEZZA_CAMPO": "Sintassi non corretta del criterio di codifica. Numero di caratteri superiore alla lunghezza del campo.",
+            "GESTIONE_CODIFICA_AUTOMATICA_CODCAL_CONTAT_NULL": "Errore, il campo codifica o contatore sono vuoti"
+        },
+        "ARCHIVI": "Archivi"
+    },
+    "SDK-RECUPERO-PASSWORD": {
+        "RECUPERO-PASSWORD-SECTION": {
+            "TITLE": "Hai dimenticato la password?",
+            "USERNAME": "Username",
+            "PASSWORD": "Password",
+            "CONFERMA-PASSWORD": "Conferma Password"
+        },
+        "VALIDATORS": {
+            "USERNAME-OBBLIGATORIO": "Il campo Username \u00E8 obbligatorio.",
+            "ERRORE-GENERICO": "Errore durante l'invio della richiesta di recupero password: {{value}}",
+            "PASSWORD-OBBLIGATORIA": "Il campo Password \u00E8 obbligatorio",
+            "CONFERMA-PASSWORD-OBBLIGATORIA": "Il campo Conferma Password \u00E8 obbligatorio",
+            "PASSWORD_RECOVERY_TOKEN_NOT_FOUND": "Il token indicato non \u00E8 valido.",
+            "PASSWORD_RECOVERY_TOKEN_EXPIRED": "Il token indicato \u00E8 scaduto.",
+            "PASSWORD_RECOVERY_PASSWORD_CONFIRM_PASSWORD_MISMATCH": "La nuova password inserita e la conferma non combaciano.",
+            "PASSWORD_RECOVERY_USER_NOT_FOUND": "L'utente per il token indicato non \u00E8 stato trovato",
+            "CHANGE_PASSWORD_LENGTH": "La lunghezza della password inserita non \u00E8 valida, inserire almeno 8 caratteri.",
+            "CHANGE_PASSWORD_LENGTH_ADMIN": "La lunghezza della password inserita non \u00E8 valida, inserire almeno 14 caratteri.",
+            "CHANGE_PASSWORD_COMPLEXITY_ALLOWED_CHARACTERS": "I caratteri inseriti per la nuova password non sono validi oppure la complessit\u00E0 non \u00E8 sufficiente.",
+            "CHANGE_PASSWORD_COMPLEXITY_LOWER_CASE_CHARACTERS": "Non sono stati inseriti caratteri minuscoli.",
+            "CHANGE_PASSWORD_COMPLEXITY_UPPER_CASE_CHARACTERS": "Non sono stati inseriti caratteri maiuscoli.",
+            "CHANGE_PASSWORD_COMPLEXITY_NUMBERS_CHARACTERS": "Non sono stati inseriti caratteri numerici.",
+            "CHANGE_PASSWORD_COMPLEXITY_SPECIAL_CHARACTERS": "Non sono stati inseriti caratteri speciali.",
+            "CHANGE_PASSWORD_CONTENT_FOLLOWING_CHARACTERS": "Sono stati inseriti 4 o pi\u00F9 caratteri presenti nello username. Si prega di verificare.",
+            "CHANGE_PASSWORD_ALREADY_USED": "La nuova password selezionata \u00E8 gi\u00E0 stata utilizzata in precedenza. Si prega di verificare."
+        },
+        "INVIATA-MESSAGE": "Richiesta presa in carico, verr\u00E0 a breve inviata un'email. Qualora non la si riceva, si \u00E8 verificata una delle seguenti situazioni:<br><br>utente non registrato o disabilitato<br>problemi in fase di invio email (es. indirizzo email errato, servizio di posta momentaneamente fuori servizio)",
+        "INVIATA-MESSAGE-WITH-PARAMS": "Richiesta presa in carico, verr\u00E0 a breve inviata un'email all'indirizzo {{value}}. Qualora non la si riceva, si \u00E8 verificata una delle seguenti situazioni:<br><br>utente non registrato o disabilitato<br>problemi in fase di invio email (es. indirizzo email errato, servizio di posta momentaneamente fuori servizio)",
+        "INVALID-TOKEN": "Il token indicato non \u00E8 valido",
+        "SEND-SUCCESS": "Il cambio password \u00E8 avvenuto con successo"
+    },
+    "WARNINGS": {
+        "GESTIONE_UTENTE_USER_EDIT_AMMINISTRAZIONI_WITHOUT_GESTIONE_COMPLETA": "Attenzione: l'utente \u00E8 abilitato alla modifica delle amministrazioni, ma non ha accesso alla gestione utenti/amministrazioni",
+        "GESTIONE_UTENTE_USER_DELEGATO_ALL_SA": "All'utente sono state associate pi\u00F9 amministrazioni. Verificare ed eventualmente modificare l'associazione nella sezione \"Amministrazioni\""
+    },
+    "SDK-UTENTE-CONNESSO": {
+        "GENERAL-DATA": {
+            "TITLE": "Dati Generali",
+            "DENOMINAZIONE": "Denominazione",
+            "USERNAME": "Username",
+            "EMAIL": "E-Mail"
+        },
+        "VALIDATORS": {
+            "ERRORE-GENERICO": "Errore durante il salvataggio dell'utente: {{value}}",
+            "GESTIONE_UTENTE_FORMATO_EMAIL_NON_VALIDO": "Il formato della e-mail \u00E8 errato",
+            "GESTIONE_UTENTE_USER_NOT_FOUND": "L'utente selezionato non \u00E8 stato trovato"
+        },
+        "EDIT-SUCCESS": "Dettaglio utente modificato con successo."
+    },
+    "CHANGE_PASSWORD_SUCCESS": "Il cambio della password \u00E8 avvenuto con successo.",
+    "BUTTONS": {
+        "DOWNLOAD-CSV": "Scarica CSV"
+    }
+}

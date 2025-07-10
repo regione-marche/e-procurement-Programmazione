@@ -1,0 +1,129 @@
+{
+    "name": "dettaglio-configurazione-page",
+    "title": "TITLE.DETTAGLIO-CONFIGURAZIONE-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "dettaglio-configurazione-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-configurazioni-page",
+                "label": "BREADCRUMB.RICERCA-CONFIGURAZIONI",
+                "slug": "ricerca-configurazioni-page"
+            },
+            {
+                "code": "lista-configurazioni-page",
+                "label": "BREADCRUMB.LISTA-CONFIGURAZIONI",
+                "slug": "lista-configurazioni-page"
+            },
+            {
+                "code": "dettaglio-configurazione-page",
+                "label": "BREADCRUMB.DETTAGLIO-CONFIGURAZIONE",
+                "slug": "dettaglio-configurazione-page",
+                "additionalParams": "SDK_GESTIONE_UTENTI_DETTAGLIO_CONFIGURAZIONE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "dettaglio-configurazione-page-content-root-section",
+            "selector": "sdk-dettaglio-configurazione-section",
+            "description": "Pagina dettaglio configurazione",
+            "classNames": "dettaglio-configurazione-section",
+            "settings": {
+                "classNames": "dettaglio-configurazione-index",
+                "sectionTitle": "TITLE.DETTAGLIO-CONFIGURAZIONE-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-configurazioni",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_CONFIGURAZIONI_LISTA",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "go-to-update-configurazione",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "SDK_GESTIONE_CONFIGURAZIONI_LISTA"
+                        }
+                    ],
+                    "buttonsReadonly": [
+                        {
+                            "code": "back-to-lista-configurazioni",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_CONFIGURAZIONI_LISTA",
+                            "type": "cancel"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "SDK-CONFIGURAZIONE.GENERAL-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "codapp",
+                                    "label": "SDK-CONFIGURAZIONE.GENERAL-DATA.CODICE-APPLICATIVO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "codApp"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "sezione",
+                                    "label": "SDK-CONFIGURAZIONE.GENERAL-DATA.SEZIONE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "sezione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "configurazione",
+                                    "label": "SDK-CONFIGURAZIONE.GENERAL-DATA.CONFIGURAZIONE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "chiave"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "descrizione",
+                                    "label": "SDK-CONFIGURAZIONE.GENERAL-DATA.DESCRIZIONE",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "descrizione"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "criptato",
+                                    "label": "SDK-CONFIGURAZIONE.GENERAL-DATA.CRIPTATO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "criptato",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "valore",
+                                    "label": "SDK-CONFIGURAZIONE.GENERAL-DATA.VALORE-EFFETTIVO",
+                                    "oggettoProtezione": "",
+                                    "mnemonico": "",
+                                    "mappingInput": "valore"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

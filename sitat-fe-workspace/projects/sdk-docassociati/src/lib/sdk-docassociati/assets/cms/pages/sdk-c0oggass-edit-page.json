@@ -1,0 +1,187 @@
+{
+    "name": "sdk-c0oggass-edit-page",
+    "title": "SDK-DOC-ASSOCIATI.TITLE.C0OGGASS-EDIT-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [
+        "assets/cms/pages/dettaglio-page.css"
+    ],
+    "settings": {
+        "page": "sdk-c0oggass-edit-page",
+        "breadcrumbs": [
+            {
+                "code": "sdk-c0oggass-details-page",
+                "label": "SDK-DOC-ASSOCIATI.BREADCRUMB.C0OGGASS-DETAILS",
+                "slug": "sdk-c0oggass-details-page",
+                "labelProvider": "SDK_DOC_ASSOCIATI_C0OGGASS_BREADCRUMB"
+            },
+            {
+                "code": "sdk-c0oggass-edit-page",
+                "label": "SDK-DOC-ASSOCIATI.BREADCRUMB.C0OGGASS-EDIT",
+                "slug": "sdk-c0oggass-edit-page",
+                "labelProvider": "SDK_DOC_ASSOCIATI_C0OGGASS_BREADCRUMB"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "sdk-c0oggass-edit-page-content-root-section",
+            "selector": "sdk-c0oggass-edit-section",
+            "description": " - edit",
+            "classNames": [
+                "sdk-c0oggass-edit-section"
+            ],
+            "settings": {
+                "classNames": "sdk-c0oggass-detail-index",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-detail",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "SDK_DOC_ASSOCIATI_C0OGGASS",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "download",
+                            "label": "BUTTONS.DOWNLOAD",
+                            "provider": "SDK_DOC_ASSOCIATI_C0OGGASS",
+                            "icon": "mgg-icons-action-download"
+                        },
+                        {
+                            "code": "save-edit",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "SDK_DOC_ASSOCIATI_C0OGGASS"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "SDK-DOC-ASSOCIATI.C0OGGASS-DETAIL.GENERAL-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "c0atit",
+                                    "label": "SDK-DOC-ASSOCIATI.C0OGGASS-DETAIL.C0ATIT",
+                                    "maxLength": 64,
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-DOC-ASSOCIATI.C0OGGASS-DETAIL.VALIDATORS.C0ATIT-MANDATORY"
+                                                }
+                                            ]
+                                        }
+                                    ],
+                                    "mappingOutput": "c0atit",
+                                    "oggettoProtezione": "GENE.C0OGGASS.C0ATIT",
+                                    "mnemonico": "C0A_TIT",
+                                    "mappingInput": "c0atit"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "c0anomogg",
+                                    "label": "SDK-DOC-ASSOCIATI.C0OGGASS-DETAIL.C0ANOMOGG",
+                                    "oggettoProtezione": "GENE.C0OGGASS.C0ANOMOGG",
+                                    "mnemonico": "C0A_NOM",
+                                    "mappingInput": "c0anomogg",
+                                    "mappingOutput": "c0anomogg",
+                                    "link": true
+                                },
+                                {
+                                    "type": "DOCUMENT",
+                                    "code": "digoggBase64",
+                                    "label": "SDK-DOC-ASSOCIATI.C0OGGASS-DETAIL.DIGOGG_REPLACE",
+                                    "oggettoProtezione": "GENEWEB.W_DOCDIG.DIGOGG",
+                                    "mnemonico": "DIGOGG",
+                                    "mappingOutput": "digoggBase64",
+                                    "mappingOutputFileName": "c0anomogg",
+                                    "maxFileSize": "0 MB",
+                                    "accept": "",
+                                    "maxFileSizeLabel": "VALIDATORS.MAX-FILE-SIZE",
+                                    "wrongExtensionLabel": "VALIDATORS.WRONG-EXTENSION",
+                                    "onlyFile": true,
+                                    "withTitle": false
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "c0atipo",
+                                    "label": "SDK-DOC-ASSOCIATI.C0OGGASS-DETAIL.C0ATIPO",
+                                    "mappingOutput": "c0atipo",
+                                    "itemsProviderCode": "SDK_DOC_ASSOCIATI_TABELLATI_COMBO",
+                                    "listCode": "AgzC5",
+                                    "oggettoProtezione": "GENE.C0OGGASS.C0ATIPO",
+                                    "mnemonico": "C0A_TIPO",
+                                    "mappingInput": "c0atipo"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "c0ascad",
+                                    "label": "SDK-DOC-ASSOCIATI.C0OGGASS-DETAIL.C0ASCAD",
+                                    "mappingOutput": "c0ascad",
+                                    "oggettoProtezione": "GENE.C0OGGASS.C0ASCAD",
+                                    "mnemonico": "C0A_SCAD",
+                                    "mappingInput": "c0ascad"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "c0anprot",
+                                    "label": "SDK-DOC-ASSOCIATI.C0OGGASS-DETAIL.C0ANPROT",
+                                    "maxLength": 20,
+                                    "mappingOutput": "c0anprot",
+                                    "oggettoProtezione": "GENE.C0OGGASS.C0ANPROT",
+                                    "mnemonico": "C0A_NPROT",
+                                    "mappingInput": "c0anprot"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "c0adprot",
+                                    "label": "SDK-DOC-ASSOCIATI.C0OGGASS-DETAIL.C0ADPROT",
+                                    "mappingOutput": "c0adprot",
+                                    "oggettoProtezione": "GENE.C0OGGASS.C0ADPROT",
+                                    "mnemonico": "C0A_DPROT",
+                                    "mappingInput": "c0adprot"
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "c0anatto",
+                                    "label": "SDK-DOC-ASSOCIATI.C0OGGASS-DETAIL.C0ANATTO",
+                                    "maxLength": 20,
+                                    "mappingOutput": "c0anatto",
+                                    "oggettoProtezione": "GENE.C0OGGASS.C0ANATTO",
+                                    "mnemonico": "C0A_NATTO",
+                                    "mappingInput": "c0anatto"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "c0adatto",
+                                    "label": "SDK-DOC-ASSOCIATI.C0OGGASS-DETAIL.C0ADATTO",
+                                    "mappingOutput": "c0adatto",
+                                    "oggettoProtezione": "GENE.C0OGGASS.C0ADATTO",
+                                    "mnemonico": "C0A_DATTO",
+                                    "mappingInput": "c0adatto"
+                                },
+                                {
+                                    "type": "TEXTAREA",
+                                    "code": "c0annote",
+                                    "label": "SDK-DOC-ASSOCIATI.C0OGGASS-DETAIL.C0ANNOTE",
+                                    "maxLength": 2000,
+                                    "mappingOutput": "c0annote",
+                                    "oggettoProtezione": "GENE.C0OGGASS.C0ANNOTE",
+                                    "mnemonico": "C0A_ANN",
+                                    "mappingInput": "c0annote"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+<mapper namespace="it.appaltiecontratti.inbox.mapper.ProgrammiMapper">
+		
+	<resultMap id="listaimmobiliMap" type="it.appaltiecontratti.inbox.entity.programmi.ImmobileEntry">
+    	<result column="contri" property="idProgramma" />
+    	<result column="conint" property="idIntervento" />
+    	<result column="numoi" property="idOpera" />     	
+    	<result column="numimm" property="id" />       
+    	<result column="cuiimm" property="cui" />     
+    	<result column="desimm" property="descrizione" />
+    	<result column="comist" property="codIstat" />
+    	<result column="nuts" property="nuts" />    	    	
+    	<result column="titcor" property="trasfImmCorrisp" />
+    	<result column="immdisp" property="dirittoGodimento" />
+    	<result column="alienati" property="alienati" />     	
+    	<result column="progdism" property="progDismiss" />       
+    	<result column="tipdisp" property="tipoDisp" />     
+    	<result column="va1imm" property="valStimato1" />
+    	<result column="va2imm" property="valStimato2" />
+    	<result column="va3imm" property="valStimato3" />     
+    	<result column="va9imm" property="valAnnoSucc" />
+    	<result column="valimm" property="valoreStimato" />   	
+    </resultMap> 
+    
+	<sql id="filtroImmobili">
+		<if test="contri != null"> AND contri = #{contri}</if>
+		<if test="numoi != null"> AND numoi = #{numoi}</if>
+		<if test="conint != null"> AND conint = #{conint}</if>
+	</sql>
+    
+	<select id="getImmobili" resultMap="listaimmobiliMap" parameterType="hashmap">
+		select contri, conint, numoi,numimm,cuiimm,desimm,comist,nuts,titcor,immdisp,alienati,progdism,tipdisp,va1imm,va2imm,va3imm,va9imm,valimm from immtrai
+		where 1 = 1
+		<include refid="filtroImmobili"></include>
+	</select>
+	
+</mapper>

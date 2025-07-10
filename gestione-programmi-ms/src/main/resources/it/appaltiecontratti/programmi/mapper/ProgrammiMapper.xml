@@ -1,0 +1,469 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+        namespace="it.appaltiecontratti.programmi.mapper.ProgrammiMapper">
+
+    <resultMap id="listaProgrammiMap"
+               type="it.appaltiecontratti.programmi.entity.ProgrammaBaseEntry">
+        <id column="contri" property="id"/>
+        <result column="id" property="idProgramma"/>
+        <result column="anntri" property="annoInizio"/>
+        <result column="bretri" property="descrizioneBreve"/>
+        <result column="tiprog" property="tipoProg"/>
+        <result column="id_ricevuto" property="idRicevuto"/>
+        <result column="syscon" property="syscon"/>
+        <result column="respro" property="referenteProgrammazione"/>
+        <result column="norma" property="norma"/>
+    </resultMap>
+
+    <select id="countSearchProgrammi" resultType="int"
+            parameterType="hashmap">
+        SELECT count(DISTINCT contri) from piatri
+        where norma >= 2
+        <include refid="filtroProgrammi"></include>
+    </select>
+
+    <sql id="filtroProgrammi">
+        <if test="syscon != null">and (SYSCON is null or SYSCON = #{syscon})</if>
+        <if test="tipologia != null">AND TIPROG = #{tipologia}</if>
+        <if test="stazioneAppaltante != ''">AND CENINT = #{stazioneAppaltante}</if>
+        <if test="idCentroCosto != null">and idufficio = #{idCentroCosto}</if>
+        <if test="searchString != null">AND (ANNTRI = #{searchString} OR UPPER( BRETRI ) like
+            #{searchStringLike} OR UPPER( ID ) like #{searchStringLike})
+        </if>
+
+    </sql>
+
+    <select id="searchProgrammi" resultMap="listaProgrammiMap"
+            parameterType="hashmap">
+        select contri, id, anntri, bretri, tiprog, id_ricevuto, syscon, respro, norma FROM
+        piatri p
+        where norma >= 2
+        <include refid="filtroProgrammi"></include>
+        order by
+        <if test="sort == 'idProgramma'">id</if>
+        <if test="sort == 'annoInizio'">anntri</if>
+        <if test="sort == 'descrizioneBreve'">bretri</if>
+        <if test="sort == 'tipoProg'">tiprog</if>
+        <if test="sort == 'descrizioneTipoProgramma'">bretri</if>
+        <if test="sortDirection == 'asc'">asc</if>
+        <if test="sortDirection == 'desc'">desc</if>
+    </select>
+
+    <resultMap id="listainterventiMap"
+               type="it.appaltiecontratti.programmi.entity.InterventoBaseEntry">
+        <result column="contri" property="idProgramma"/>
+        <result column="conint" property="id"/>
+        <result column="annrif" property="annoAvvio"/>
+        <result column="nprogint" property="numProgetto"/>
+        <result column="cuiint" property="numeroCui"/>
+        <result column="desint" property="descrizione"/>
+        <result column="totint" property="importoTotale"/>
+        <result column="annint" property="inPianoAnnuale"/>
+    </resultMap>
+
+    <select id="countSearchInterventi" resultType="int"
+            parameterType="hashmap">
+        SELECT count(DISTINCT conint) from inttri where contri =
+        #{idProgramma}
+        <include refid="filtroInterventi"></include>
+    </select>
+
+    <select id="getInterventi" resultMap="listainterventiMap"
+            parameterType="hashmap">
+        select contri,conint,annrif,nprogint,cuiint,desint,totint,annint from
+        inttri where contri = #{idProgramma}
+        <include refid="filtroInterventi"></include>
+        order by
+        <if test="sort == 'id'">conint</if>
+        <if test="sort == 'descrizioneAnnualita'">annrif</if>
+        <if test="sort == 'numeroCui'">cuiint</if>
+        <if test="sort == 'descrizione'">desint</if>
+        <if test="sort == 'importoTotale'">totint</if>
+        <if test="sortDirection == 'asc'">asc</if>
+        <if test="sortDirection == 'desc'">desc</if>
+    </select>
+
+    <sql id="filtroInterventi">
+        <if test="numeroCui != null">and UPPER(cuiint) like #{numeroCui}</if>
+        <if test="codInterno != null">AND UPPER(codint) like #{codInterno}</if>
+        <if test="descrizione != null">and UPPER(desint) like #{descrizione}</if>
+        <if test="annualita != null">and annrif = #{annualita}</if>
+        <if test="codiceCUP != null">and UPPER(cupprg) like #{codiceCUP}</if>
+        <if test="rup != null">and codrup = #{rup}</if>
+        <if test="importoTotaleDa != null">AND totint >= #{importoTotaleDa}</if>
+        <if test="importoTotaleA != null">AND totint &lt;= #{importoTotaleA}</if>
+    </sql>
+
+
+    <resultMap id="listainterventiNRMap"
+               type="it.appaltiecontratti.programmi.entity.InterventoNonRipropostoEntry">
+        <result column="contri" property="idProgramma"/>
+        <result column="conint" property="idIntervento"/>
+        <result column="cuiint" property="cui"/>
+        <result column="cupprg" property="cup"/>
+        <result column="prgint" property="priorita"/>
+        <result column="desint" property="descrizione"/>
+        <result column="totint" property="importoComplessivo"/>
+        <result column="motivo" property="motivo"/>
+    </resultMap>
+
+
+    <select id="countSearchInterventiNonRiproposti" resultType="int"
+            parameterType="hashmap">
+        SELECT count(DISTINCT conint) from INRTRI where contri =
+        #{idProgramma}
+    </select>
+
+    <select id="getInterventiNonRiproposti"
+            resultMap="listainterventiNRMap" parameterType="hashmap">
+        select contri,conint,cuiint,desint,cupprg,totint,prgint,motivo from
+        INRTRI where contri = #{idProgramma}
+        order by
+        <if test="sort == 'idIntervento'">conint</if>
+        <if test="sort == 'cui'">cuiint</if>
+        <if test="sort == 'cup'">cupprg</if>
+        <if test="sort == 'descrizione'">desint</if>
+        <if test="sort == 'importoComplessivo'">totint</if>
+        <if test="sort == 'priorita'">prgint</if>
+        <if test="sort == 'motivo'">motivo</if>
+        <if test="sortDirection == 'asc'">asc</if>
+        <if test="sortDirection == 'desc'">desc</if>
+    </select>
+
+    <resultMap id="listaopereMap"
+               type="it.appaltiecontratti.programmi.entity.OperaIncompiutaBaseEntry">
+        <result column="contri" property="idProgramma"/>
+        <result column="numoi" property="id"/>
+        <result column="cup" property="cup"/>
+        <result column="descrizione" property="descrizione"/>
+        <result column="annoultqe" property="annoUltimoQe"/>
+        <result column="avanzamento" property="avanzamento"/>
+    </resultMap>
+
+    <select id="countSearchOpereIncompiute" resultType="int"
+            parameterType="hashmap">
+        SELECT count(DISTINCT numoi) from oitri where contri =
+        #{idProgramma}
+    </select>
+
+    <select id="getOpereIncompiute" resultMap="listaopereMap"
+            parameterType="hashmap">
+        select contri,numoi,cup,descrizione,annoultqe,avanzamento from oitri
+        where contri = #{idProgramma}
+        order by
+        <if test="sort == 'id'">numoi</if>
+        <if test="sort == 'cup'">cup</if>
+        <if test="sort == 'descrizione'">descrizione</if>
+        <if test="sort == 'annoUltimoQe'">annoultqe</if>
+        <if test="sort == 'avanzamento'">avanzamento</if>
+        <if test="sortDirection == 'asc'">asc</if>
+        <if test="sortDirection == 'desc'">desc</if>
+    </select>
+
+    <resultMap id="listaRisorseCapitoloMap"
+               type="it.appaltiecontratti.programmi.entity.RisorsaCapitoloBaseEntry">
+        <result column="contri" property="idProgramma"/>
+        <result column="conint" property="idIntervento"/>
+        <result column="numcb" property="id"/>
+        <result column="TO1CB" property="importoComplessivo1"/>
+        <result column="TO2CB" property="importoComplessivo2"/>
+        <result column="TO3CB" property="importoComplessivo3"/>
+        <result column="TO9CB" property="importoComplessivoSucc"/>
+    </resultMap>
+
+    <select id="countSearchRisorseDiCapitolo" resultType="int"
+            parameterType="hashmap">
+        SELECT count(DISTINCT numcb) from ris_capitolo where
+        contri = #{idProgramma} and conint = #{idIntervento}
+    </select>
+
+    <select id="getRisorseDiCapitolo"
+            resultMap="listaRisorseCapitoloMap" parameterType="hashmap">
+        select contri,conint,numcb,TO1CB,TO2CB,TO3CB,TO9CB from ris_capitolo
+        where contri = #{idProgramma} and conint = #{idIntervento}
+        order by
+        <if test="sort == 'id'">numcb</if>
+        <if test="sort == 'importoComplessivo1'">TO1CB</if>
+        <if test="sort == 'importoComplessivo2'">TO2CB</if>
+        <if test="sort == 'importoComplessivo3'">TO3CB</if>
+        <if test="sort == 'importoComplessivoSucc'">TO9CB</if>
+        <if test="sortDirection == 'asc'">asc</if>
+        <if test="sortDirection == 'desc'">desc</if>
+    </select>
+
+
+    <resultMap id="listaimmobiliMap"
+               type="it.appaltiecontratti.programmi.entity.ImmobileEntry">
+        <result column="contri" property="idProgramma"/>
+        <result column="conint" property="idIntervento"/>
+        <result column="numoi" property="idOpera"/>
+        <result column="numimm" property="id"/>
+        <result column="cuiimm" property="cui"/>
+        <result column="desimm" property="descrizione"/>
+        <result column="comist" property="codIstat"/>
+        <result column="nuts" property="nuts"/>
+        <result column="titcor" property="trasfImmCorrisp"/>
+        <result column="immdisp" property="dirittoGodimento"/>
+        <result column="alienati" property="alienati"/>
+        <result column="progdism" property="progDismiss"/>
+        <result column="tipdisp" property="tipoDisp"/>
+        <result column="va1imm" property="valStimato1"/>
+        <result column="va2imm" property="valStimato2"/>
+        <result column="va3imm" property="valStimato3"/>
+        <result column="va9imm" property="valAnnoSucc"/>
+        <result column="valimm" property="valoreStimato"/>
+    </resultMap>
+
+    <sql id="filtroImmobili">
+        <if test="contri != null">AND contri = #{contri}</if>
+        <if test="numoi != null">AND numoi = #{numoi}</if>
+        <if test="conint != null">AND conint = #{conint}</if>
+    </sql>
+
+    <select id="getImmobili" resultMap="listaimmobiliMap"
+            parameterType="hashmap">
+        select contri, conint,
+        numoi,numimm,cuiimm,desimm,comist,nuts,titcor,immdisp,alienati,progdism,tipdisp,va1imm,va2imm,va3imm,va9imm,valimm
+        from immtrai
+        where 1 = 1
+        <include refid="filtroImmobili"></include>
+    </select>
+
+    <select id="getMaxConint" resultType="java.lang.Long">
+        select max(conint) from
+        ${table} where CONTRI=#{contri}
+    </select>
+
+    <select id="getMaxNumimm" resultType="java.lang.Long">
+        select max(numimm) from immtrai where CONTRI=#{contri}
+        <if test="numoi != null">AND numoi = #{numoi}</if>
+        <if test="conint != null">AND conint = #{conint}</if>
+    </select>
+
+    <select id="sommaValoriIntervento" resultType="java.lang.Double"
+            parameterType="hashmap">
+        select SUM(${column}) from INTTRI where CONTRI=#{contri}
+        and (ACQALTINT is null or ACQALTINT =1)
+    </select>
+
+    <select id="sommaValoriCapitolo" resultType="java.lang.Double"
+            parameterType="hashmap">
+        select SUM(${column}) from RIS_CAPITOLO where
+        CONTRI=#{contri} and conint=#{conint}
+    </select>
+
+    <sql id="filtroProgrammiNonPaginati">
+        <if test="syscon != null">and (SYSCON = null or SYSCON = #{syscon})</if>
+        <if test="stazioneAppaltante != ''">AND CENINT = #{stazioneAppaltante}</if>
+        <if test="searchString != null">AND (ANNTRI = #{searchString} OR LOWER( BRETRI ) like
+            #{searchStringLike} OR LOWER( ID ) like #{searchStringLike})
+        </if>
+    </sql>
+
+    <select id="getListaProgrammiNonPaginata" resultMap="listaProgrammiMap"
+            parameterType="hashmap">
+        select contri, id, anntri, bretri, tiprog, id_ricevuto, syscon FROM
+        piatri p
+        where norma >= 2
+        <include refid="filtroProgrammiNonPaginati"></include>
+    </select>
+
+    <select id="exportListaInterventiFiltrata" resultMap="exportListaInterventiFiltrataMap">
+        SELECT
+        coalesce(IT.CONTRI,0) as CONTRI,
+        coalesce(IT.CUIINT,'') AS CUI,
+        coalesce(IT.CODINT,'') AS COD_INT,
+        coalesce(IT.CUPPRG,'') AS COD_CUP,
+        coalesce(PI.ANNTRI,0) AS PRIMA_ANN,
+        coalesce(IT.ANNRIF,0) AS ANN_RIF,
+        coalesce(TE.NOMTEC,'') AS RESPONSABILE,
+        coalesce(IT.LOTFUNZ,'') AS LOTTO_F,
+        coalesce(IT.LAVCOMPL,'') AS LAVORO_C,
+        coalesce(IT.COMINT,'') AS COD_ISTAT,
+        coalesce(IT.NUTS,'') AS COD_NUTS,
+        coalesce(TAB3.tab3desc,'') AS TIPOLOGIA,
+        coalesce(TAB5.tab5desc,'') AS CATEGORIA,
+        coalesce(IT.DESINT,'') AS DESCRIZIONE,
+        coalesce(IT.PRGINT,0) AS PRIORITA,
+        (coalesce(IT.DI1INT,0.00) + coalesce(IT.PR1TRI,0.00)) AS COSTI_1ANNO,
+        (coalesce(IT.DI2INT,0.00) + coalesce(IT.PR2TRI,0.00)) AS COSTI_2ANNO,
+        (coalesce(IT.DI3INT,0.00) + coalesce(IT.PR3TRI,0.00)) AS COSTI_3ANNO,
+        (coalesce(IT.DI9INT,0.00) + coalesce(IT.PR9TRI,0.00)) AS COSTI_ALANNO,
+        coalesce(IT.TOTINT,0.00) AS COSTI_TOTALE,
+        (coalesce(IT.IM1TRI,0.00) + coalesce(IT.IM2TRI,0.00) + coalesce(IT.IM3TRI,0.00) + coalesce(IT.IM9TRI,0.00)) AS
+        IMMOBILI,
+        IT.SCAMUT AS SCADENZA,
+        coalesce(IT.ICPINT,0.00) AS CAP_PRIV_IMP,
+        coalesce(IT.TCPINT,'') AS TIPO_IMP,
+        IT.VARIATO AS VARIATO
+        FROM PIATRI PI LEFT JOIN INTTRI IT ON PI.CONTRI=IT.CONTRI
+        LEFT JOIN TECNI TE ON IT.CODRUP = TE.CODTEC
+        LEFT JOIN TAB3 ON IT.SEZINT = TAB3.tab3tip AND tab3cod='PTx01'
+        LEFT JOIN TAB5 ON IT.INTERV = TAB5.tab5tip AND tab5cod='PTj01'
+        WHERE PI.CONTRI = #{contri}
+        <include refid="filtroExportListaInterventiAquisti"></include>
+        ORDER BY IT.ANNRIF, IT.NPROGINT
+    </select>
+
+    <sql id="filtroExportListaInterventiAquisti">
+        <if test="searchForm.numeroCui != null">and UPPER(IT.cuiint) like #{searchForm.numeroCui}</if>
+        <if test="searchForm.codInterno != null">AND UPPER(IT.codint) like #{searchForm.codInterno}</if>
+        <if test="searchForm.descrizione != null">and UPPER(IT.desint) like #{searchForm.descrizione}</if>
+        <if test="searchForm.annualita != null">and IT.annrif = #{searchForm.annualita}</if>
+        <if test="searchForm.codiceCUP != null">and UPPER(IT.cupprg) like #{searchForm.codiceCUP}</if>
+        <if test="searchForm.rup != null">and IT.codrup = #{searchForm.rup}</if>
+        <if test="searchForm.importoTotaleDa != null">AND IT.totint >= #{searchForm.importoTotaleDa}</if>
+        <if test="searchForm.importoTotaleA != null">AND IT.totint &lt;= #{searchForm.importoTotaleA}</if>
+    </sql>
+
+    <resultMap id="exportListaInterventiFiltrataMap"
+               type="it.appaltiecontratti.programmi.entity.ExportInterventiQueryResult">
+        <result column="CONTRI" property="contri"/>
+        <result column="CUI" property="cui"/>
+        <result column="COD_INT" property="codInt"/>
+        <result column="COD_CUP" property="codCup"/>
+        <result column="PRIMA_ANN" property="primaAnn"/>
+        <result column="ANN_RIF" property="annRif"/>
+        <result column="RESPONSABILE" property="responsabile"/>
+        <result column="LOTTO_F" property="lottoF"/>
+        <result column="LAVORO_C" property="lavoroC"/>
+        <result column="COD_ISTAT" property="codIstat"/>
+        <result column="COD_NUTS" property="codNuts"/>
+        <result column="TIPOLOGIA" property="tipologia"/>
+        <result column="CATEGORIA" property="categoria"/>
+        <result column="DESCRIZIONE" property="descrizione"/>
+        <result column="PRIORITA" property="priorita"/>
+        <result column="COSTI_1ANNO" property="costi1Anno"/>
+        <result column="COSTI_2ANNO" property="costi2Anno"/>
+        <result column="COSTI_3ANNO" property="costi3Anno"/>
+        <result column="COSTI_ALANNO" property="costiAlAnno"/>
+        <result column="COSTI_TOTALE" property="costiTotale"/>
+        <result column="IMMOBILI" property="immobili"/>
+        <result column="SCADENZA" property="scadenza"/>
+        <result column="CAP_PRIV_IMP" property="capPrivImp"/>
+        <result column="TIPO_IMP" property="tipoImp"/>
+        <result column="VARIATO" property="variato"/>
+    </resultMap>
+
+    <select id="exportListaAcquistiFiltrata" resultMap="exportListaAcquistiFiltrataMap">
+        SELECT
+        coalesce(IT.CONTRI,0) as CONTRI,
+        coalesce(IT.CUIINT,'') AS CUI,
+        coalesce(UI.CFEIN,'') AS CF_AMM,
+        coalesce(PI.ANNTRI,0) AS PRIMA_ANN,
+        coalesce(IT.ANNRIF,0) AS ANN_RIF,
+        coalesce(IT.CUPPRG,'') AS COD_CUP,
+        coalesce(IT.ACQALTINT,0) AS ACQ_RIC,
+        coalesce(IT.CUICOLL,'') AS COD_CUI,
+        coalesce(IT.LOTFUNZ,'') AS LOTTO_F,
+        coalesce(NU.CODICE,'') AS AMBITO_GEO,
+        coalesce(IT.TIPOIN,'') AS SETTORE,
+        coalesce(IT.CODCPV,'') AS CPV,
+        coalesce(IT.DESINT,'') AS DESCRIZIONE_ACQ,
+        coalesce(IT.PRGINT,0) AS PRIORITA,
+        coalesce(TE.COGTEI,'') AS RESPONSABILE_COGNOME,
+        coalesce(TE.NOMETEI,'') AS RESPONSABILE_NOME,
+        coalesce(IT.DURCONT,0) AS DURATA,
+        coalesce(IT.CONTESS,'') AS CONTRATTO_ESSERE,
+        (coalesce(IT.DI1INT,0.00) + coalesce(IT.PR1TRI,0.00)) AS COSTI_1ANNO,
+        (coalesce(IT.DI2INT,0.00) + coalesce(IT.PR2TRI,0.00)) AS COSTI_2ANNO,
+        (coalesce(IT.DI3INT,0.00) + coalesce(IT.PR3TRI,0.00)) AS COSTI_3ANNO,
+        (coalesce(IT.DI9INT,0.00) + coalesce(IT.PR9TRI,0.00)) AS COSTI_ALANNO,
+        coalesce(IT.TOTINT,0.00) AS COSTI_TOTALE,
+        coalesce(IT.ICPINT,0.00) AS CAP_PRIV_IMP,
+        coalesce(IT.TCPINT,'') AS TIPO_IMP,
+        coalesce(IT.CODAUSA,'') AS COD_AUSA,
+        coalesce(IT.SOGAGG,'') AS DENOMINAZIONE_AUSA,
+        IT.VARIATO AS VARIATO
+        FROM PIATRI PI LEFT JOIN INTTRI IT ON PI.CONTRI = IT.CONTRI
+        LEFT JOIN TECNI TE ON IT.CODRUP = TE.CODTEC
+        LEFT JOIN TABNUTS NU ON IT.NUTS = NU.CODICE
+        LEFT JOIN (SELECT PT.CONTRI, UF.CFEIN FROM PIATRI PT JOIN UFFINT UF ON PT.CENINT = UF.CODEIN) UI ON UI.CONTRI =
+        IT.CONTRI
+        WHERE PI.CONTRI = #{contri}
+        <include refid="filtroExportListaInterventiAquisti"></include>
+        ORDER BY IT.ANNRIF, IT.NPROGINT
+    </select>
+
+    <resultMap id="exportListaAcquistiFiltrataMap"
+               type="it.appaltiecontratti.programmi.entity.ExportAcquistiQueryResult">
+        <result column="CONTRI" property="contri"/>
+        <result column="CUI" property="cui"/>
+        <result column="CF_AMM" property="cfAmm"/>
+        <result column="PRIMA_ANN" property="primaAnn"/>
+        <result column="ANN_RIF" property="annRif"/>
+        <result column="COD_CUP" property="codCup"/>
+        <result column="ACQ_RIC" property="acquistoRicompreso"/>
+        <result column="COD_CUI" property="codCuiLavoroCollegato"/>
+        <result column="LOTTO_F" property="lottoF"/>
+        <result column="AMBITO_GEO" property="ambitoGeografico"/>
+        <result column="SETTORE" property="settore"/>
+        <result column="CPV" property="cpv"/>
+        <result column="DESCRIZIONE_ACQ" property="descrizione"/>
+        <result column="PRIORITA" property="priorita"/>
+        <result column="RESPONSABILE_COGNOME" property="responsabileCognome"/>
+        <result column="RESPONSABILE_NOME" property="responsabileNome"/>
+        <result column="DURATA" property="durataContratto"/>
+        <result column="CONTRATTO_ESSERE" property="contrattoEssere"/>
+        <result column="COSTI_1ANNO" property="costi1Anno"/>
+        <result column="COSTI_2ANNO" property="costi2Anno"/>
+        <result column="COSTI_3ANNO" property="costi3Anno"/>
+        <result column="COSTI_ALANNO" property="costiAlAnno"/>
+        <result column="COSTI_TOTALE" property="costiTotale"/>
+        <result column="CAP_PRIV_IMP" property="capPrivImp"/>
+        <result column="TIPO_IMP" property="tipoImp"/>
+        <result column="COD_AUSA" property="codAusa"/>
+        <result column="DENOMINAZIONE_AUSA" property="denominazioneAusa"/>
+        <result column="VARIATO" property="variato"/>
+    </resultMap>
+
+    <select id="exportListaInterventiAcquistiNonRiproposti" resultMap="exportListaInterventiAcquistiNonRipropostiMap">
+        select
+        coalesce(IR.CONTRI,0) as CONTRI,
+        coalesce(IR.CUIINT,'') as CODICEUNICO,
+        coalesce(IR.CUPPRG,'') as CUP,
+        coalesce(IR.DESINT,'') as DESCRIZIONE,
+        coalesce(IR.TOTINT,0.00) as IMPORTO,
+        coalesce(IR.PRGINT,0) as PRIORITA,
+        coalesce(IR.MOTIVO,'') as MOTIVO
+        from PIATRI PI LEFT JOIN INRTRI IR ON PI.CONTRI = IR.CONTRI
+        where PI.CONTRI = #{contri}
+    </select>
+
+    <resultMap id="exportListaInterventiAcquistiNonRipropostiMap"
+               type="it.appaltiecontratti.programmi.entity.ExportInterventiAcquistiNonRipropostiQueryResult">
+        <result column="CONTRI" property="contri"/>
+        <result column="CODICEUNICO" property="codiceUnico"/>
+        <result column="CUP" property="cup"/>
+        <result column="DESCRIZIONE" property="descrizione"/>
+        <result column="IMPORTO" property="importo"/>
+        <result column="PRIORITA" property="priorita"/>
+        <result column="MOTIVO" property="motivo"/>
+    </resultMap>
+
+    <select id="exportListaInterventiDaConfronto" resultMap="exportListaInterventiDaConfrontoMap">
+        SELECT
+        coalesce(IT.CONTRI,0) as CONTRI,
+        coalesce(IT.CUIINT,'') AS CUI,
+        coalesce(PI.TIPROG, 0) as TIPROG,
+        coalesce((PI.ANNTRI + IT.ANNRIF - 1), 0) AS ANNUALITA,
+        coalesce(IT.DESINT,'') AS DESCRIZIONE,
+        coalesce(IT.TOTINT,0.00) AS COSTI_TOTALE,
+        IT.VARIATO AS VARIATO
+        FROM PIATRI PI LEFT JOIN INTTRI IT ON PI.CONTRI=IT.CONTRI
+        WHERE PI.CONTRI = #{contri}
+        ORDER BY IT.ANNRIF, IT.NPROGINT
+    </select>
+
+    <resultMap id="exportListaInterventiDaConfrontoMap"
+               type="it.appaltiecontratti.programmi.entity.InterventiDaConfrontoQueryResult">
+        <result column="CONTRI" property="contri"/>
+        <result column="CUI" property="cui"/>
+        <result column="TIPROG" property="tipoProgramma"/>
+        <result column="ANNUALITA" property="annualita"/>
+        <result column="DESCRIZIONE" property="descrizione"/>
+        <result column="COSTI_TOTALE" property="costiTotale"/>
+        <result column="VARIATO" property="variato"/>
+    </resultMap>
+</mapper>

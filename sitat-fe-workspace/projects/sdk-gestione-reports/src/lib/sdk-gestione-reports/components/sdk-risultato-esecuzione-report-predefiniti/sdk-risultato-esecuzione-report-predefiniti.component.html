@@ -1,0 +1,62 @@
+<div [class]="config.classNames" *ngIf="isReady">
+    <h1 class="page-title" *ngIf="config.sectionTitle != null">{{ config.sectionTitle | translate }} '{{ nomeReport }}'</h1>
+    <div class="blue-line" *ngIf="config.sectionTitle != null"></div>
+
+    <div class="messages-box" #infoBox></div>
+    <div class="messages-box" #messages></div>
+
+    <div class="sdk-risultati-esecuzione-report-container">
+        <div class="sdk-risultati-esecuzione-report-content">
+            <div class="card" *ngIf="executionFormDTO?.values && executionFormDTO?.values.length !== 0">
+                <div *ngIf="getParamsLength() > 0" class="defsql-replaced-with-params">
+                    <p-accordion>
+                        <p-accordionTab header="{{ 'SDK-DETTAGLIO-REPORT.PARAMETRI.TITLE' | translate}}">
+                            <p *ngFor="let key of getParamsArray()">
+                                {{ key.key }} -> {{ key.value }}
+                            </p>
+                        </p-accordionTab>
+                    </p-accordion>
+                </div>
+                <p-table #dt2   
+                    [value]="executionFormDTO?.values" 
+                    dataKey="idRicerca" 
+                    styleClass="p-datatable-all-report-results"
+                    [totalRecords]="executionFormDTO?.values?.length"
+                    [paginator]="true"
+                    [rows]="20"
+                    [rowsPerPageOptions]="[20,50,100,200]"
+                    [showCurrentPageReport]="true"
+                    [currentPageReportTemplate]="'currentPageReport' | translate"
+                >
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th *ngFor="let col of listaColumnNames" style="font-size: 20px;">
+                                {{ col }}
+                            </th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-rowData>
+                        <tr>
+                            <td *ngFor="let columnName of executionFormDTO?.columnNames" style="padding: 0.5em;">
+                                {{ rowData[columnName] }}
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+            <div *ngIf="executionFormDTO?.values.length === 0">
+                <span style="padding: 1em;">
+                    {{ 'SDK-DETTAGLIO-REPORT.ESECUZIONE.NO-RECORD' | translate }}
+                </span>
+            </div>
+            <div *ngIf="executionFormDTO?.values == null || executionFormDTO?.values == undefined">
+                <span style="padding: 1em;">
+                    {{ 'SDK-DETTAGLIO-REPORT.ESECUZIONE.TOO-MANY-RECORD' | translate }}
+                </span>
+            </div>
+        </div>
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,216 @@
+{
+    "name": "nuovo-parametro-report-page",
+    "title": "TITLE.NUOVO-PARAMETRO-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "nuovo-parametro-report-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-report-page",
+                "label": "BREADCRUMB.GESTIONE-REPORT",
+                "slug": "lista-report-page"
+            },
+            {
+                "code": "parametri-report-page",
+                "label": "BREADCRUMB.PARAMETRI-REPORT",
+                "slug": "parametri-report-page",
+                "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+            },
+            {
+                "code": "nuovo-parametro-report-page",
+                "label": "BREADCRUMB.NUOVO-PARAMETRO",
+                "slug": "nuovo-parametro-report-page",
+                "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "nuovo-parametro-report-page-content-root-section",
+            "selector": "sdk-nuovo-parametro-report-section",
+            "description": "Pagina per l'aggiunta di parametri al report",
+            "classNames": "sdk-nuovo-parametro-report-section",
+            "settings": {
+                "classNames": "nuovo-parametro-report-index",
+                "sectionTitle": "TITLE.NUOVO-PARAMETRO-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-param-list",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "SDK_GESTIONE_REPORT_LISTA_REPORT",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-nuovo-parametro",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PROVIDER"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "SDK-DETTAGLIO-REPORT.PARAMETRI.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "codice",
+                                    "label": "SDK-DETTAGLIO-REPORT.PARAMETRI.AGGIUNGI-PARAMETRO.CODICE",
+                                    "mappingInput": "codice",
+                                    "mappingOutput": "codice",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-DETTAGLIO-REPORT.VALIDATORS.CODICE-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "nome",
+                                    "label": "SDK-DETTAGLIO-REPORT.PARAMETRI.AGGIUNGI-PARAMETRO.NOME-PROMPT",
+                                    "mappingInput": "nome",
+                                    "mappingOutput": "nome",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-DETTAGLIO-REPORT.VALIDATORS.CAMPO-NOME-PARAM-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "descrizione",
+                                    "label": "SDK-DETTAGLIO-REPORT.PARAMETRI.AGGIUNGI-PARAMETRO.DESCRIZIONE",
+                                    "mappingInput": "descrizione",
+                                    "mappingOutput": "descrizione"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "tipo",
+                                    "label": "SDK-DETTAGLIO-REPORT.PARAMETRI.AGGIUNGI-PARAMETRO.TIPO",
+                                    "mappingInput": "tipo",
+                                    "mappingOutput": "tipo",
+                                    "listCode": "tipoParametroReport",
+                                    "itemsProviderCode": "SDK_GESTIONE_REPORT_TABELLATI_PROVIDER",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-DETTAGLIO-REPORT.VALIDATORS.TIPO-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "obbligatorio",
+                                    "label": "SDK-DETTAGLIO-REPORT.PARAMETRI.AGGIUNGI-PARAMETRO.OBBLIGATORIO",
+                                    "mappingInput": "obbligatorio",
+                                    "mappingOutput": "obbligatorio",
+                                    "itemsProviderCode": "SDK_GESTIONE_REPORT_TABELLATI_PROVIDER",
+                                    "listCode": "siNo",
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-DETTAGLIO-REPORT.VALIDATORS.OBBLIGATORIO-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "TEXTBOX",
+                                    "code": "menuField",
+                                    "label": "SDK-DETTAGLIO-REPORT.DATI-GENERALI.MODIFICA.SCHEDULAZIONE.MENU",
+                                    "mappingInput": "menuField",
+                                    "mappingOutput": "menuField",
+                                    "visibleCondition": {
+                                        "and": {
+                                            "tipo": {
+                                                "values": [
+                                                    {
+                                                        "value": "M",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    },
+                                    "validators": [
+                                        {
+                                            "config": {
+                                                "required": true
+                                            },
+                                            "messages": [
+                                                {
+                                                    "level": "error",
+                                                    "text": "SDK-DETTAGLIO-REPORT.VALIDATORS.CAMPO-MENU-OBBLIGATORIO"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "helpMenu",
+                                    "label": "SDK-DETTAGLIO-REPORT.PARAMETRI.MODIFICA-DETTAGLIO.HELP-MENU",
+                                    "mappingInput": "helpMenu",
+                                    "mappingOutput": "helpMenu",
+                                    "visibleCondition": {
+                                        "and": {
+                                            "tipo": {
+                                                "values": [
+                                                    {
+                                                        "value": "M",
+                                                        "operation": "="
+                                                    }
+                                                ],
+                                                "visible": false
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

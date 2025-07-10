@@ -1,0 +1,230 @@
+{
+    "name": "sdk-c0oggass-details-page",
+    "title": "SDK-DOC-ASSOCIATI.TITLE.C0OGGASS-DETAILS-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [
+        "assets/cms/pages/dettaglio-page.css"
+    ],
+    "settings": {
+        "page": "sdk-c0oggass-details-page",
+        "breadcrumbs": [
+            {
+                "code": "sdk-c0oggass-details-page",
+                "label": "SDK-DOC-ASSOCIATI.BREADCRUMB.C0OGGASS-DETAILS",
+                "slug": "sdk-c0oggass-details-page",
+                "labelProvider": "SDK_DOC_ASSOCIATI_C0OGGASS_BREADCRUMB"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "sdk-c0oggass-details-page-content-root-section",
+            "selector": "sdk-c0oggass-details-section",
+            "description": " - details",
+            "classNames": [
+                "sdk-c0oggass-details-section"
+            ],
+            "settings": {
+                "classNames": "sdk-c0oggass-detail-index",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-c0oggass-list",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_DOC_ASSOCIATI_C0OGGASS",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "download",
+                            "label": "BUTTONS.DOWNLOAD",
+                            "provider": "SDK_DOC_ASSOCIATI_C0OGGASS",
+                            "icon": "mgg-icons-action-download"
+                        },
+                        {
+                            "code": "edit",
+                            "label": "BUTTONS.EDIT",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "SDK_DOC_ASSOCIATI_C0OGGASS",
+                            "oggettoProtezione": "MOD.GENE.C0OGGASS-Scheda.MOD"
+                        }
+                    ],
+                    "buttonsSign": [
+                        {
+                            "code": "back-to-c0oggass-list",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_DOC_ASSOCIATI_C0OGGASS",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "altre-azioni",
+                            "label": "BUTTONS.ALTRE-AZIONI",
+                            "icon": "mgg-icons-menu-more",
+                            "dropdown": true,
+                            "type": "cancel",
+                            "dropdownData": [
+                                {
+                                    "code": "check-sign",
+                                    "label": "BUTTONS.SIGN",
+                                    "provider": "SDK_DOC_ASSOCIATI_C0OGGASS"
+                                }
+                            ]
+                        },
+                        {
+                            "code": "download",
+                            "label": "BUTTONS.DOWNLOAD",
+                            "provider": "SDK_DOC_ASSOCIATI_C0OGGASS",
+                            "icon": "mgg-icons-action-download"
+                        },
+                        {
+                            "code": "edit",
+                            "label": "BUTTONS.EDIT",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "SDK_DOC_ASSOCIATI_C0OGGASS",
+                            "oggettoProtezione": "MOD.GENE.C0OGGASS-Scheda.MOD"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "general-data",
+                            "label": "SDK-DOC-ASSOCIATI.C0OGGASS-DETAIL.GENERAL-DATA.TITLE",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "c0atit",
+                                    "label": "SDK-DOC-ASSOCIATI.C0OGGASS-DETAIL.C0ATIT",
+                                    "oggettoProtezione": "GENE.C0OGGASS.C0ATIT",
+                                    "mnemonico": "C0A_TIT",
+                                    "mappingInput": "c0atit"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "c0anomogg",
+                                    "label": "SDK-DOC-ASSOCIATI.C0OGGASS-DETAIL.C0ANOMOGG",
+                                    "oggettoProtezione": "GENE.C0OGGASS.C0ANOMOGG",
+                                    "mnemonico": "C0A_NOM",
+                                    "mappingInput": "c0anomogg",
+                                    "mappingOutput": "c0anomogg",
+                                    "link": true
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "c0atipo",
+                                    "label": "SDK-DOC-ASSOCIATI.C0OGGASS-DETAIL.C0ATIPO",
+                                    "listCode": "AgzC5",
+                                    "oggettoProtezione": "GENE.C0OGGASS.C0ATIPO",
+                                    "mnemonico": "C0A_TIPO",
+                                    "mappingInput": "c0atipo"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "c0ascad",
+                                    "date": true,
+                                    "label": "SDK-DOC-ASSOCIATI.C0OGGASS-DETAIL.C0ASCAD",
+                                    "oggettoProtezione": "GENE.C0OGGASS.C0ASCAD",
+                                    "mnemonico": "C0A_SCAD",
+                                    "mappingInput": "c0ascad"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "c0anprot",
+                                    "label": "SDK-DOC-ASSOCIATI.C0OGGASS-DETAIL.C0ANPROT",
+                                    "oggettoProtezione": "GENE.C0OGGASS.C0ANPROT",
+                                    "mnemonico": "C0A_NPROT",
+                                    "mappingInput": "c0anprot"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "c0adprot",
+                                    "date": true,
+                                    "label": "SDK-DOC-ASSOCIATI.C0OGGASS-DETAIL.C0ADPROT",
+                                    "oggettoProtezione": "GENE.C0OGGASS.C0ADPROT",
+                                    "mnemonico": "C0A_DPROT",
+                                    "mappingInput": "c0adprot"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "c0anatto",
+                                    "label": "SDK-DOC-ASSOCIATI.C0OGGASS-DETAIL.C0ANATTO",
+                                    "oggettoProtezione": "GENE.C0OGGASS.C0ANATTO",
+                                    "mnemonico": "C0A_NATTO",
+                                    "mappingInput": "c0anatto"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "c0adatto",
+                                    "date": true,
+                                    "label": "SDK-DOC-ASSOCIATI.C0OGGASS-DETAIL.C0ADATTO",
+                                    "oggettoProtezione": "GENE.C0OGGASS.C0ADATTO",
+                                    "mnemonico": "C0A_DATTO",
+                                    "mappingInput": "c0adatto"
+                                },
+                                {
+                                    "type": "TEXT",
+                                    "code": "c0annote",
+                                    "label": "SDK-DOC-ASSOCIATI.C0OGGASS-DETAIL.C0ANNOTE",
+                                    "oggettoProtezione": "GENE.C0OGGASS.C0ANNOTE",
+                                    "mnemonico": "C0A_ANN",
+                                    "mappingInput": "c0annote"
+                                }
+                            ]
+                        }
+                    ],
+                    "signModalConfig": {                        
+                        "fields": [
+                            {
+                                "type": "FORM-SECTION",
+                                "code": "signatory-data",
+                                "label": "SDK-DOC-ASSOCIATI.SIGN-MODAL.TITLE",
+                                "fieldSections": [
+                                    {
+                                        "type": "FORM-GROUP",
+                                        "code": "signatory-group",
+                                        "label": "",
+                                        "minGroupsNumber": 0,
+                                        "maxGroupsNumber": -1,
+                                        "mappingInput": "signatory",
+                                        "mappingOutput": "signatory",
+                                        "defaultFormGroupFields": [
+                                            {
+                                                "type": "TEXT",
+                                                "code": "signatory",
+                                                "label": "SDK-DOC-ASSOCIATI.SIGN-MODAL.NOME",
+                                                "mappingInput": "signatory"
+                                            },
+                                            {
+                                                "type": "TEXT",
+                                                "code": "status",
+                                                "label": "SDK-DOC-ASSOCIATI.SIGN-MODAL.STATO",
+                                                "mappingInput": "status"
+                                            },
+                                            {
+                                                "type": "TEXT",
+                                                "code": "date",
+                                                "label": "SDK-DOC-ASSOCIATI.SIGN-MODAL.DATA",
+                                                "mappingInput": "date"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        "buttons": [
+                            {
+                                "code": "modal-close-button",
+                                "label": "BUTTONS.BACK",
+                                "icon": "mgg-icons-paginator-previous",
+                                "provider": "DOCASSOCIATI_MODAL_WINDOW",
+                                "type": "cancel"                    
+                            }
+                        ]
+                        
+                    }
+                }
+            }
+        }
+    ]
+}

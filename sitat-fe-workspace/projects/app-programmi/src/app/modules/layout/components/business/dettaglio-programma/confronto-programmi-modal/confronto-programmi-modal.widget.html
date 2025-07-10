@@ -1,0 +1,58 @@
+<div class="confronto-programmi-modal" *ngIf="isReady">
+    <div class="messages-box" #messages></div>
+    <div class="confronto-programmi-container">
+
+        <table class="confronto-programmi-table"
+            *ngIf="showProgrammi && programmiDaConfronto != null && programmiDaConfronto.length > 0">
+            <thead>
+                <th class="confronto-programmi-header">{{ 'CONFRONTO-PROGRAMMI.ID-PROGRAMMA' | translate }}</th>
+                <th class="confronto-programmi-header">{{ 'CONFRONTO-PROGRAMMI.DESCRIZIONE' | translate }}</th>
+                <th class="confronto-programmi-header">{{ 'CONFRONTO-PROGRAMMI.AZIONI' | translate }}</th>
+            </thead>
+            <tbody>
+                <tr class="confronto-programmi-row" *ngFor="let programma of programmiDaConfronto">
+                    <td class="confronto-programmi-cell">{{ programma.idProgramma }}</td>
+                    <td class="confronto-programmi-cell">{{ programma.descrizioneBreve }}</td>
+                    <td class="confronto-programmi-cell">
+                        <div class="confronto-programmi-azioni">
+                            <div class="seleziona" sdkClick (aClick)="manageSelectProgramma(programma)" tabindex="0"
+                                role="button"
+                                [attr.aria-label]="'BUTTONS.SELEZIONA-PROGRAMMA-CONFRONTO' | translate:{value:programma.idProgramma}">
+                                <i class="mgg-icons-crud-save"></i>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div *ngIf="showProgrammi && programmiDaConfronto != null && programmiDaConfronto.length == 0" class="empty-list">
+            {{ 'CONFRONTO-PROGRAMMI.LISTA-VUOTA' | translate }}
+        </div>
+
+        <table class="confronto-programmi-table"
+            *ngIf="!showProgrammi && interventiDaConfronto != null && interventiDaConfronto.length > 0">
+            <thead>
+                <th class="confronto-programmi-header">{{ 'CONFRONTO-PROGRAMMI.CUI' | translate }}</th>
+                <th class="confronto-programmi-header">{{ 'CONFRONTO-PROGRAMMI.DESCRIZIONE' | translate }}</th>
+                <th class="confronto-programmi-header">{{ 'CONFRONTO-PROGRAMMI.VARIATO' | translate:{id:idProgramma} }}
+                </th>
+            </thead>
+            <tbody>
+                <tr class="confronto-programmi-row" *ngFor="let intervento of interventiDaConfronto">
+                    <td class="confronto-programmi-cell">{{ intervento.cui }}</td>
+                    <td class="confronto-programmi-cell">{{ intervento.descrizione }}</td>
+                    <td class="confronto-programmi-cell">{{ getVariazione(intervento) }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div *ngIf="!showProgrammi && interventiDaConfronto != null && interventiDaConfronto.length == 0" class="empty-list">
+            {{ 'CONFRONTO-PROGRAMMI.LISTA-INTERVENTI-VUOTA' | translate }}
+        </div>
+
+        <div class="buttons-row">
+            <sdk-button-group [config]="buttonsSubj" (output)="onButtonClick($event)"></sdk-button-group>
+        </div>
+    </div>
+</div>

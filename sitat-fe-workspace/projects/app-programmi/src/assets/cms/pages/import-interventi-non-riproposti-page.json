@@ -1,0 +1,136 @@
+{
+    "name": "import-interventi-non-riproposti-page",
+    "title": "TITLE.IMPORT-INTERVENTI-NON-RIPROPOSTI-PAGE",
+    "layout": "base-layout",
+    "appName": "app-programmi",
+    "styleUrls": [
+        "assets/cms/pages/import-interventi-non-riproposti-page.css"
+    ],
+    "settings": {
+        "page": "import-interventi-non-riproposti-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-programmi-page",
+                "label": "BREADCRUMB.LISTA-PROGRAMMI",
+                "slug": "lista-programmi-page",
+                "additionalParams": "APP_PROGRAMMI_LISTA_PROGRAMMI_PARAMS"
+            },
+            {
+                "code": "dett-prog-dati-generali-page",
+                "label": "BREADCRUMB.DETTAGLIO-PROGRAMMA",
+                "slug": "dett-prog-dati-generali-page",
+                "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "import-interventi-non-riproposti-page-content-root-section",
+            "selector": "import-interventi-non-riproposti-section",
+            "description": "Pagina per l'importazione di interventi non riproposti da anni precedenti",
+            "classNames": "import-interventi-non-riproposti-section",
+            "settings": {
+                "classNames": "import-interventi-non-riproposti-index",
+                "sectionTitle": "TITLE.IMPORT-INTERVENTI-NON-RIPROPOSTI-PAGE",
+                "menuTabs": [
+                    {
+                        "code": "dati-generali",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.DATI-GENERALI",
+                        "slug": "dett-prog-dati-generali-page",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+                    },
+                    {
+                        "code": "opere-incompiute",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.OPERE-INCOMPIUTE",
+                        "slug": "dett-prog-opere-incompiute-page",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS",
+                        "visible": "APP_PROGRAMMI_DETT_PROG_LAVORI_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "interventi",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.INTERVENTI",
+                        "slug": "dett-prog-interventi-page",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS",
+                        "visible": "APP_PROGRAMMI_DETT_PROG_LAVORI_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "interventi-non-riproposti",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.INTERVENTI-NON-RIPROPOSTI",
+                        "active": true,
+                        "slug": "dett-prog-interventi-non-riproposti-page",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS",
+                        "visible": "APP_PROGRAMMI_DETT_PROG_LAVORI_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "acquisti",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.ACQUISTI",
+                        "slug": "dett-prog-interventi-page",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS",
+                        "visible": "APP_PROGRAMMI_DETT_PROG_FORNITURE_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "acquisti-non-riproposti",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.ACQUISTI-NON-RIPROPOSTI",
+                        "active": true,
+                        "slug": "dett-prog-interventi-non-riproposti-page",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS",
+                        "visible": "APP_PROGRAMMI_DETT_PROG_FORNITURE_TABS_VISIBLE"
+                    },
+                    {
+                        "code": "riepilogo",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.RIEPILOGO",
+                        "slug": "dett-prog-riepilogo-page",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+                    },
+                    {
+                        "code": "pubblica",
+                        "title": "DETTAGLIO-PROGRAMMA.TABS.PUBBLICA",
+                        "slug": "dett-prog-pubblica-page",
+                        "additionalParams": "APP_PROGRAMMI_DETTAGLIO_PROGRAMMA_PARAMS"
+                    }
+                ],
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_PROGRAMMI_IMPORTA_INTERVENTI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "import",
+                            "label": "BUTTONS.IMPORT_SELECTION",
+                            "provider": "APP_PROGRAMMI_IMPORTA_INTERVENTI",
+                            "icon": "mgg-icons-file-import"
+                        }
+                    ],
+                    "buttons2": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_PROGRAMMI_IMPORTA_INTERVENTI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "import",
+                            "label": "BUTTONS.IMPORT_SELECTION2",
+                            "provider": "APP_PROGRAMMI_IMPORTA_INTERVENTI",
+                            "icon": "mgg-icons-file-import"
+                        }
+                    ],
+                    "searchField": {
+                        "code": "search-box",
+                        "label": "IMPORT-INTERVENTO.SEARCH"
+                    }
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+export interface ApplicationLoginConfiguration {
+    CONTEXT_URL: string;
+    SSO?: Array<ApplicationLoginSSOConfiguration>;
+    AUTHENTICATION_INTERNAL_ENABLED: boolean;
+    AUTHENTICATION_INTERNAL_LOGIN_URL?: string;
+    AUTHENTICATION_CHECK_USER_BASE_URL?: string;
+    AUTHENTICATION_GET_TOKEN_BASE_URL?: string;
+    AUTHENTICATION_TABELLATI_BASE_URL?: string;
+}
+
+export interface ApplicationLoginSSOConfiguration {
+    AUTHENTICATION_SSO_CODE: string;
+    AUTHENTICATION_SSO_ENABLED: boolean;
+    AUTHENTICATION_SSO_LOGIN_URL?: string;
+    AUTHENTICATION_SSO_LOGIN_URL_PARAMS?: any;
+    AUTHENTICATION_SSO_INTERNAL_PAGE_URL?: string;
+    AUTHENTICATION_SSO_INTERNAL_PAGE_PARAMS?: any;
+    AUTHENTICATION_SSO_DEFAULT_LOA?: string;
+}

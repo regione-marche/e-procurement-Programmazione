@@ -1,0 +1,165 @@
+{
+    "name": "nuova-fase-sospensione-page",
+    "title": "TITLE.NUOVA-FASE-SOSPENSIONE-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "nuova-fase-sospensione-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "nuova-fase-page",
+                "label": "BREADCRUMB.NUOVA-FASE",
+                "slug": "nuova-fase-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS"
+            },
+            {
+                "code": "nuova-fase-sospensione-page",
+                "label": "BREADCRUMB.NUOVA-FASE-SOSPENSIONE",
+                "slug": "nuova-fase-sospensione-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "nuova-fase-sospensione-page-content-root-section",
+            "selector": "nuova-fase-sospensione-section",
+            "description": "Pagina di inserimento nuova fase di sospensione",
+            "classNames": "nuova-fase-sospensione-section",
+            "settings": {
+                "classNames": "nuova-fase-sospensione-index",
+                "sectionTitle": "TITLE.NUOVA-FASE-SOSPENSIONE-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "go-to-fasi-visibili",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_GARE_LISTA_FASI",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-fase",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_FASE_SOSPENSIONE_PROVIDER"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "sospensione-data",
+                            "label": "FASE-SOSPENSIONE.SOSPENSIONE.SOSPENSIONE",
+                            "fieldSections": [
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "sosp-parziale",
+                                    "label": "FASE-SOSPENSIONE.SOSPENSIONE.SOSP_PARZIALE-SOSP",
+                                    "oggettoProtezione": "W9.W9SOSP.SOSP_PARZIALE",
+                                    "mnemonico": "W9SOSP_PARZIALE",
+                                    "mappingInput": "sospParziale",
+                                    "mappingOutput": "sospParziale",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-verb-sosp",
+                                    "label": "FASE-SOSPENSIONE.SOSPENSIONE.DATA-VERB-SOSP",
+                                    "oggettoProtezione": "W9.W9SOSP.DATA_VERB_SOSP",
+                                    "mnemonico": "W3DVERB_SO",
+                                    "mappingInput": "dataVerbSosp",
+                                    "mappingOutput": "dataVerbSosp"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-verb-ripr",
+                                    "label": "FASE-SOSPENSIONE.SOSPENSIONE.DATA-VERB-RIPR",
+                                    "oggettoProtezione": "W9.W9SOSP.DATA_VERB_RIPR",
+                                    "mnemonico": "W3DVERB_RI",
+                                    "mappingInput": "dataVerbRipr",
+                                    "mappingOutput": "dataVerbRipr"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "motivo-sosp",
+                                    "label": "FASE-SOSPENSIONE.SOSPENSIONE.MOTIVO-SOSP",
+                                    "oggettoProtezione": "W9.W9SOSP.ID_MOTIVO_SOSP",
+                                    "mnemonico": "W3ID_MOTI4",
+                                    "mappingInput": "motivoSosp",
+                                    "mappingOutput": "motivoSosp",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "MotivoSospensione"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "flag-supero-tempo",
+                                    "label": "FASE-SOSPENSIONE.SOSPENSIONE.FLAG-SUPERO-TEMPO",
+                                    "oggettoProtezione": "W9.W9SOSP.FLAG_SUPERO_TEMPO",
+                                    "mnemonico": "W3FLAG_SUP",
+                                    "mappingInput": "flagSuperoTempo",
+                                    "mappingOutput": "flagSuperoTempo",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "flag-riserve",
+                                    "label": "FASE-SOSPENSIONE.SOSPENSIONE.FLAG-RISERVE",
+                                    "oggettoProtezione": "W9.W9SOSP.FLAG_RISERVE",
+                                    "mnemonico": "W3RISERVE",
+                                    "mappingInput": "flagRiserve",
+                                    "mappingOutput": "flagRiserve",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                },
+                                {
+                                    "type": "COMBOBOX",
+                                    "code": "flag-verbale",
+                                    "label": "FASE-SOSPENSIONE.SOSPENSIONE.FLAG-VERBALE",
+                                    "oggettoProtezione": "W9.W9SOSP.FLAG_VERBALE",
+                                    "mnemonico": "W3FLAG_VER",
+                                    "mappingInput": "flagVerbale",
+                                    "mappingOutput": "flagVerbale",
+                                    "itemsProviderCode": "APP_GARE_TABELLATI_COMBO",
+                                    "listCode": "sino"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

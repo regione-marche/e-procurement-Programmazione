@@ -1,0 +1,124 @@
+{
+    "name": "lista-codifica-automatica-page",
+    "title": "TITLE.LISTA-CODIFICA-AUTOMATICA-PAGE",
+    "layout": "base-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "lista-codifica-automatica-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-codifica-automatica-page",
+                "label": "BREADCRUMB.LISTA-CODIFICA-AUTOMATICA",
+                "slug": "lista-codifica-automatica-page"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "lista-codifica-automatica-page-content-root-section",
+            "selector": "sdk-lista-codifica-automatica-section",
+            "description": "Pagina lista codifica automatica",
+            "classNames": "lista-codifica-automatica-section",
+            "settings": {
+                "classNames": "lista-codifica-automatica-index",
+                "sectionTitle": "TITLE.LISTA-CODIFICA-AUTOMATICA-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_CODIFICA_AUTOMATICA_LISTA",
+                            "type": "cancel"
+                        }
+                    ],
+                    "grid": {
+                        "showCurrentPageReport": true,
+                        "showCurrentRecordsReport": true,
+                        "navigable": true,
+                        "resizable": false,
+                        "debug": false,
+                        "sortable": {
+                            "allowUnsort": false,
+                            "mode": "single"
+                        },
+                        "sort": [
+                            {
+                                "field": "desCam",
+                                "dir": "asc"
+                            }
+                        ],
+                        "pageable": false,
+                        "toolbar": {
+                            "position": "top",
+                            "actions": []
+                        },
+                        "columns": [
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_LINK",
+                                    "params": {
+                                        "action": {
+                                            "label": "SDK-CODIFICA-AUTOMATICA.AZIONI.DETTAGLIO",
+                                            "disabled": false,
+                                            "performer": "dettaglio"
+                                        }
+                                    }
+                                },
+                                "title": "SDK-CODIFICA-AUTOMATICA.GENERAL-DATA.OGGETTO-CODIFICA",
+                                "field": "desCam",
+                                "width": 150,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-CODIFICA-AUTOMATICA.GENERAL-DATA.CODIFICA-AUTOMATICA-ATTIVA",
+                                "field": "codificaAutomaticaAttiva",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-CODIFICA-AUTOMATICA.GENERAL-DATA.CRITERIO-CALCOLO",
+                                "field": "codCal",
+                                "width": 150,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            },
+                            {
+                                "viewer": {
+                                    "type": "SDK_GRID_VIEW_CELL_STRING"
+                                },
+                                "title": "SDK-CODIFICA-AUTOMATICA.GENERAL-DATA.CONTATORE",
+                                "field": "contat",
+                                "width": 100,
+                                "hidden": false,
+                                "sortable": false,
+                                "resizable": false,
+                                "oggettoProtezione": ""
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

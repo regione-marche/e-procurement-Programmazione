@@ -1,0 +1,97 @@
+{
+    "name": "uffici-intestatari-report-page",
+    "title": "TITLE.UFFICI-INTESTATARI-PAGE",
+    "layout": "base-menu-tabs-layout",
+    "appName": "<APP-NAME>",
+    "styleUrls": [],
+    "settings": {
+        "page": "uffici-intestatari-report-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "lista-report-page",
+                "label": "BREADCRUMB.GESTIONE-REPORT",
+                "slug": "lista-report-page"
+            },
+            {
+                "code": "uffici-intestatari-report-page",
+                "label": "BREADCRUMB.UFFICI-INTESTATARI",
+                "slug": "uffici-intestatari-report-page",
+                "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "uffici-intestatari-report-page-content-root-section",
+            "selector": "sdk-uffici-intestatari-report-section",
+            "description": "Pagina per gli uffici intestatari report",
+            "classNames": "uffici-intestatari-report-section",
+            "settings": {
+                "classNames": "uffici-intestatari-report-index",
+                "sectionTitle": "TITLE.UFFICI-INTESTATARI-PAGE",
+                "menuTabs": [
+                    {
+                        "action": "DETAIL",
+                        "code": "dati-generali-report",
+                        "title": "SDK-DETTAGLIO-REPORT.TABS.DATI-GENERALI",
+                        "slug": "dati-generali-report-page",
+                        "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+                    },
+                    {
+                        "action": "DEFINIZIONE",
+                        "code": "definizione-report",
+                        "title": "SDK-DETTAGLIO-REPORT.TABS.DEFINIZIONE",
+                        "slug": "definizione-report-page",
+                        "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+                    },
+                    {
+                        "action": "PARAMETRI",
+                        "code": "parametri-report",
+                        "title": "SDK-DETTAGLIO-REPORT.TABS.PARAMETRI",
+                        "slug": "parametri-report-page",
+                        "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS"
+                    },
+                    {
+                        "action": "PROFILI",
+                        "code": "profili-report",
+                        "title": "SDK-DETTAGLIO-REPORT.TABS.PROFILI",
+                        "slug": "profili-report-page",
+                        "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS",
+                        "visible": "SDK_GESTIONE_REPORT_PROFILI_MENU_VISIBLE"
+                    },
+                    {
+                        "action": "UFF-INT",
+                        "code": "uff-int-report",
+                        "active": true,
+                        "title": "SDK-DETTAGLIO-REPORT.TABS.UFF-INT",
+                        "slug": "uffici-intestatari-report-page",
+                        "additionalParams": "SDK_GESTIONE_REPORT_DETTAGLIO_REPORT_PARAMS",
+                        "visible": "SDK_GESTIONE_REPORT_UFFINT_MENU_VISIBLE"
+                    }
+                ],
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-lista-report",
+                            "label": "BUTTONS.BACK",
+                            "icon": "mgg-icons-paginator-previous",
+                            "provider": "SDK_GESTIONE_REPORT_LISTA_REPORT",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "modifica-uffici-intestatari",
+                            "label": "BUTTONS.UPDATE",
+                            "icon": "mgg-icons-crud-edit",
+                            "provider": "SDK_GESTIONE_REPORT_LISTA_REPORT"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

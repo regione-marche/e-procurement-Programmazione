@@ -1,0 +1,69 @@
+@import "../../sdk-flex.scss";
+@import "../app/app-vars.scss";
+
+
+.spid-button{
+    background: #06c;
+    color: white;
+    padding: 1.5rem;
+    cursor: pointer;
+}
+
+.spid-button-icon{
+    padding: 0.5rem;
+}
+
+.spid-button-menu{
+    list-style: none;
+    background: white;
+    border: 1px solid gainsboro;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    overflow: visible;
+    padding: 0;
+    margin: 0;
+    width: 20%;
+}
+
+.spid-element{
+    display: block;
+    font-family: "Titillium Web",HelveticaNeue,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.5rem;
+
+    @include mq(small) {
+        font-size: 16px;
+    }
+
+    @extend %color-base;
+    border-top: 1px solid gainsboro;
+    text-decoration: underline;
+    line-height: 1.5rem;
+    white-space: nowrap;
+    padding: 0.5rem;
+}
+
+.spid-element:hover{
+    background-color: gainsboro;
+}
+
+.spid-provider-img{
+    height: 2rem;
+}
+
+.spid-support-link{
+    display: block;
+    padding: 0.5rem;
+    font-weight: bold;
+}
+
+.back-sso{
+    cursor:pointer;
+    display: flex;
+}
+
+.sso-loading-message{
+    padding: 5em;
+    text-align: center;
+    font-weight: bold;
+}

@@ -1,0 +1,14 @@
+<div class="assegna-cambia-delegato-container">
+
+    <div class="acd-content">
+        <div class="messages-box" #messages></div>
+        <sdk-radio *ngIf="!hiddenRadio" [config]="radioConfig" [data]="radioData" (output)="onOutputRadio($event)"></sdk-radio>        
+        <sdk-form-builder *ngIf="insert" [config]="formBuilderConfigObs"  (output)="manageFormOutput($event)" (outputField)="manageOutputField($event)" (outputClick)="manageFormClick($event)"></sdk-form-builder>                
+        <sdk-modal [config]="modalConfigObs" (output)="manageModalOutput($event)"></sdk-modal>
+        
+    </div>  
+        <div class="buttons-row">
+            <sdk-button-group *ngIf="buttonsSubj != null" [config]="buttonsSubj" (output)="onButtonClick($event)">
+            </sdk-button-group>
+        </div>
+    </div>

@@ -1,0 +1,49 @@
+{
+    "name": "home-page",
+    "title": "TITLE.HOME-PAGE",
+    "layout": "home-layout",
+    "appName": "app-launcher",
+    "styleUrls": [
+        "assets/cms/pages/home-page.css"
+    ],
+    "settings": {
+        "page": "home-page"
+    },
+    "sections": [
+        {
+            "id": "home-page-content-root-section",
+            "selector": "index-section",
+            "description": "Componente per il rendering dei link alle varie applicazioni",
+            "classNames": "index-section",
+            "settings": {
+                "classNames": "app-launcher-index",
+                "panels": {
+                    "classNames": "app-launcher-index-panels",
+                    "items": [
+                        {
+                            "classNames": "app-launcher-index-panel",
+                            "targetUrl": "PANELS_CONFIGURATION.CG.CONTEXT_URL",
+                            "icon": {
+                                "icon": "mgg-icons-touchpoint-laptop",
+                                "classNames": "app-launcher-index-panel-icon"
+                            },
+                            "panelCode": "CG",
+                            "title": {
+                                "classNames": "app-launcher-index-panel-title app-launcher-index-title-link",
+                                "label": "INDEX-PAGE.PANELS.FIRST.TITLE"
+                            },
+                            "body": {
+                                "classNames": "app-launcher-index-panel-body",
+                                "label": "INDEX-PAGE.PANELS.FIRST.BODY"
+                            },
+                            "link": {
+                                "classNames": "app-launcher-index-panel-link",
+                                "label": "INDEX-PAGE.PANELS.FIRST.LINK"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

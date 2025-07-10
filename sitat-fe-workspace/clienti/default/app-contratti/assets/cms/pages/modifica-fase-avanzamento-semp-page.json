@@ -1,0 +1,122 @@
+{
+    "name": "modifica-fase-avanzamento-semp-page",
+    "title": "TITLE.MODIFICA-FASE-AVANZAMENTO-SEMP-PAGE",
+    "layout": "base-layout",
+    "appName": "app-contratti",
+    "styleUrls": [],
+    "settings": {
+        "page": "modifica-fase-avanzamento-semp-page",
+        "breadcrumbs": [
+            {
+                "code": "home-page",
+                "label": "BREADCRUMB.HOME",
+                "slug": "home-page"
+            },
+            {
+                "code": "ricerca-avanzata-gare-page",
+                "label": "BREADCRUMB.RICERCA-AVANZATA-GARE",
+                "slug": "ricerca-avanzata-gare-page",
+                "visible": "BREADCRUMB_RICERCA_GARE_VISIBLE"
+            },
+            {
+                "code": "lista-gare-page",
+                "label": "BREADCRUMB.LISTA-GARE",
+                "slug": "lista-gare-page"
+            },
+            {
+                "code": "lista-lotti-page",
+                "label": "BREADCRUMB.DETTAGLIO-GARA",
+                "slug": "lista-lotti-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_GARA_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_GARA_NUMBER"
+            },
+            {
+                "code": "lista-fasi-lotto-page",
+                "label": "BREADCRUMB.DETTAGLIO-LOTTO",
+                "slug": "lista-fasi-lotto-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_LOTTO_PARAMS",
+                "labelProvider": "BREADCRUMB_DETTAGLIO_LOTTO_NUMBER"
+            },
+            {
+                "code": "dettaglio-fase-avanzamento-semp-page",
+                "label": "BREADCRUMB.DETTAGLIO-FASE-AVANZAMENTO-SEMP",
+                "slug": "dettaglio-fase-avanzamento-semp-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            },
+            {
+                "code": "modifica-fase-avanzamento-semp-page",
+                "label": "BREADCRUMB.MODIFICA-FASE-AVANZAMENTO-SEMP",
+                "slug": "modifica-fase-avanzamento-semp-page",
+                "additionalParams": "APP_GARE_DETTAGLIO_FASE_PARAMS"
+            }
+        ]
+    },
+    "sections": [
+        {
+            "id": "modifica-fase-avanzamento-semp-page-content-root-section",
+            "selector": "modifica-fase-avanzamento-semp-section",
+            "description": "Pagina di modifica fase di avanzamento-semp",
+            "classNames": "modifica-fase-avanzamento-semp-section",
+            "settings": {
+                "classNames": "modifica-fase-avanzamento-semp-index",
+                "sectionTitle": "TITLE.MODIFICA-FASE-AVANZAMENTO-SEMP-PAGE",
+                "body": {
+                    "buttons": [
+                        {
+                            "code": "back-to-dettaglio-fase",
+                            "label": "BUTTONS.ANNULLA",
+                            "icon": "mgg-icons-crud-cancel",
+                            "provider": "APP_GARE_FASE_AVANZAMENTO_SEMP_PROVIDER",
+                            "type": "cancel"
+                        },
+                        {
+                            "code": "save-fase",
+                            "label": "BUTTONS.SAVE",
+                            "icon": "mgg-icons-crud-save",
+                            "provider": "APP_GARE_FASE_AVANZAMENTO_SEMP_PROVIDER"
+                        }
+                    ],
+                    "fields": [
+                        {
+                            "type": "FORM-SECTION",
+                            "code": "stato-avanzamento-semp-data",
+                            "label": "FASE-AVANZAMENTO-SEMP.STATO-AVANZAMENTO-SEMP.STATO-AVANZAMENTO-SEMP",
+                            "fieldSections": [
+                                {
+                                    "type": "TEXT",
+                                    "code": "num-avan",
+                                    "label": "FASE-AVANZAMENTO-SEMP.STATO-AVANZAMENTO-SEMP.NUM-AVAN",
+                                    "oggettoProtezione": "W9.W9AVAN.NUM_AVAN",
+                                    "mnemonico": "W3AVNUMAVA",
+                                    "mappingInput": "num",
+                                    "mappingOutput": "num"
+                                },
+                                {
+                                    "type": "DATEPICKER",
+                                    "code": "data-certificato",
+                                    "label": "FASE-AVANZAMENTO-SEMP.STATO-AVANZAMENTO-SEMP.DATA-CERTIFICATO",
+                                    "oggettoProtezione": "W9.W9AVAN.DATA_CERTIFICATO",
+                                    "mnemonico": "W3DATA_CER",
+                                    "mappingInput": "dataCertificato",
+                                    "mappingOutput": "dataCertificato"
+                                },
+                                {
+                                    "type": "NUMERIC-TEXTBOX",
+                                    "code": "importo-certificato",
+                                    "label": "FASE-AVANZAMENTO-SEMP.STATO-AVANZAMENTO-SEMP.IMPORTO-CERTIFICATO",
+                                    "oggettoProtezione": "W9.W9AVAN.IMPORTO_CERTIFICATO",
+                                    "mnemonico": "W3I_CERTIF",
+                                    "mappingInput": "importoCertificato",
+                                    "mappingOutput": "importoCertificato",
+                                    "decimals": 2,
+                                    "currency": true,
+                                    "maxLength": 24
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
