@@ -266,10 +266,10 @@
   dependencies:
     tslib "^2.3.0"
 
-"@angular/platform-server@^17.3.8":
-  version "17.3.8"
-  resolved "https://registry.yarnpkg.com/@angular/platform-server/-/platform-server-17.3.8.tgz#1fc0d3f142bb435d03a2c272807f80b1a76003b9"
-  integrity sha512-x0pHXL4Aw67b/1fML41GrDj7nLyAtJYy5b/HExM5IAGsheHTsNT5Vuxnh4onGWfOdW7D5LhqDPg1D5S5ZXWW4A==
+"@angular/platform-server@^18.2.14":
+  version "18.2.14"
+  resolved "https://registry.yarnpkg.com/@angular/platform-server/-/platform-server-18.2.14.tgz#25a948e61003a12697170e0bdde804b04c0e7d12"
+  integrity sha512-XUErL0mOPvua5EtlmSOFllSM+Ts1wHzNIv0WNV5FJxWI3Pe6Xxs29xneKDOImC9ErYWuQqK7sQ/hyIaHO5fhOw==
   dependencies:
     tslib "^2.3.0"
     xhr2 "^0.2.0"
